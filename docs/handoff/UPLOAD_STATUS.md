@@ -1,11 +1,11 @@
 # Tatsächlicher Uploadstatus
 
-Status: **STARTPAKET_UEBERTRAGEN_QUELLIMPORT_NOCH_OFFEN**.
+Stand: 14.11.2026. Status: **APPROVED_SOURCE_SNAPSHOT_UPLOADED_AND_READ_BACK**.
 
-GitHub enthält den aktuellen Startprompt, Teamregeln, zwölf Agentendefinitionen, Status-/Importdokumentation und lokale Restore-/Exporthelfer. **Die 705 Projektdateien, privaten Originalarchive, Binärreferenzen und 14 historischen Gitrefs sind mit diesem Startsatz nicht vollständig hochgeladen.**
+Der geprüfte Quellsnapshot liegt auf `codex/extremelab-source-handoff-2026-11-14`, Commit `b5caf803f861419b0dc84ecbeb718a0745c67960`. Öffentliche Basis: `31f1188dd7466c4371463761589a8c52c9572948`. Private Quellreferenz: `66b04bfc8a46f0ef6b5b69b06f9b8c168f124783`.
 
-Das vollständige private Ausgangspaket ist `ExtremeLab_S06_NativeVertragsbindung_Offline.zip` (34.855.047 Bytes; SHA-256 `84577f10365a8017d3fa0caea5421afcaa52949d3d2ea5dc599f178c616c2d3d`). Es ist im Begleitdownload `ExtremeLab_Codex_Aktuell.zip` enthalten, nicht unter einer erfundenen GitHub-URL.
+651 unveränderte, manifestierte Quelldateien wurden zusätzlich zu den 25 erhaltenen Startdateien übertragen. Ein frischer GitHub-Readback bestätigte alle 651 Größen/SHA256 und alle 25 Startdateien. Freigabemanifest-SHA256: `d76c06594d27ed499efec53dea717f5c23899f36da40dcecb59a09ef38c631f8`.
 
-Die direkte GitHub-Verbindung bietet hier keinen Upload einer lokalen ZIP-/Bundledatei. Der im Begleitpaket enthaltene Quellbestand muss mit der authentisierten lokalen Git-/Codex-Umgebung übertragen werden. Die öffentliche Auswahl und zurückgehaltene private Inputs sind dort getrennt manifestiert.
+Der Branch ist ein neuer öffentlicher Snapshot, keine veröffentlichte private Git-Historie. 54 ausgeschlossene Originalpfade, private Archive/Kontologs, private Inputs, Fonts und automatische Workflows wurden nicht übertragen. README bleibt die neue Startfassung.
 
-Sensible Originale/Historie bleiben privat. Nach tatsächlichem bereinigten Import diese Datei anhand Remote-Commit und Dateimanifest aktualisieren, nicht allein aufgrund eines erfolgreichen lokalen Exportbefehls.
+`main` bleibt unverändert. Die Statusdokumentation folgt in einem separaten gewöhnlichen Commit. Kein Deployment, kein Brokerkontakt und keine Produktabnahme erfolgen durch diesen Upload. Die vollständige private Arbeitskopie bleibt Testbasis; externe Originalinputs bleiben separat.
