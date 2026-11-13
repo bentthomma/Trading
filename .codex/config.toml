@@ -1,0 +1,10 @@
+# Kein API-Key, kein Modellzwang, keine Berechtigungslockerung.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = false
+
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 2

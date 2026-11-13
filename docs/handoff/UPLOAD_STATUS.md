@@ -1,10 +1,11 @@
-# ExtremeLab – GitHub-Übergabe
+# Tatsächlicher Uploadstatus
 
-Diese Datei kennzeichnet den Beginn der ausdrücklich angeforderten GitHub-Übernahme. Sie ist noch KEIN Nachweis eines vollständigen Quellimports.
+Status: **STARTPAKET_UEBERTRAGEN_QUELLIMPORT_NOCH_OFFEN**.
 
-Gesicherte private Ausgangsrevision: `66b04bfc8a46f0ef6b5b69b06f9b8c168f124783`.
-Masterplan: 1.2.0. S00/S01 abgeschlossen; S02 benötigt den tatsächlichen nativen C#-Nachweis. S03/S04/S05/S06/S07 enthalten geprüfte private Vorarbeit, keine vollständige Produktfreigabe.
+GitHub enthält den aktuellen Startprompt, Teamregeln, zwölf Agentendefinitionen, Status-/Importdokumentation und lokale Restore-/Exporthelfer. **Die 705 Projektdateien, privaten Originalarchive, Binärreferenzen und 14 historischen Gitrefs sind mit diesem Startsatz nicht vollständig hochgeladen.**
 
-Private Konto-Rohlogs, Zugangsdaten, unfreigegebene Datensammlungen und Schriftdateien dürfen nicht veröffentlicht werden. Keine Deployment- oder Brokerfreigabe.
+Das vollständige private Ausgangspaket ist `ExtremeLab_S06_NativeVertragsbindung_Offline.zip` (34.855.047 Bytes; SHA-256 `84577f10365a8017d3fa0caea5421afcaa52949d3d2ea5dc599f178c616c2d3d`). Es ist im Begleitdownload `ExtremeLab_Codex_Aktuell.zip` enthalten, nicht unter einer erfundenen GitHub-URL.
 
-Der vollständige Uploadstatus, die enthaltenen Dateien und die genaue Fortsetzung werden nach dem Übertragungsabgleich ergänzt. Bis dahin keine vollständige Wiederherstellbarkeit aus diesem Repository behaupten.
+Die direkte GitHub-Verbindung bietet hier keinen Upload einer lokalen ZIP-/Bundledatei. Der im Begleitpaket enthaltene Quellbestand muss mit der authentisierten lokalen Git-/Codex-Umgebung übertragen werden. Die öffentliche Auswahl und zurückgehaltene private Inputs sind dort getrennt manifestiert.
+
+Sensible Originale/Historie bleiben privat. Nach tatsächlichem bereinigten Import diese Datei anhand Remote-Commit und Dateimanifest aktualisieren, nicht allein aufgrund eines erfolgreichen lokalen Exportbefehls.

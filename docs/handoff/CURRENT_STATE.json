@@ -1,0 +1,36 @@
+{
+  "source_revision": "66b04bfc8a46f0ef6b5b69b06f9b8c168f124783",
+  "source_archive": "ExtremeLab_S06_NativeVertragsbindung_Offline.zip",
+  "source_archive_sha256": "84577f10365a8017d3fa0caea5421afcaa52949d3d2ea5dc599f178c616c2d3d",
+  "source_archive_bytes": 34855047,
+  "checkout_files": 705,
+  "historical_branch_refs": 14,
+  "masterplan_version": "1.2.0",
+  "masterplan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "formal_status": {
+    "S00": "passed",
+    "S01": "passed",
+    "S02": "blocked",
+    "S03": "pending",
+    "S04": "pending",
+    "S05": "pending",
+    "S06": "pending",
+    "S07": "pending"
+  },
+  "prepared_not_formally_accepted": [
+    "S03 reference and field binding documentation",
+    "S04 historical original-log audit",
+    "S05 exact reference ledger and deferred-fee candidate",
+    "S06 restore-integrity candidate and native-contract analysis",
+    "S07 original tick/crypto and monthly-data quality audits"
+  ],
+  "open_native_proof": "S02-C01: actual C# execution; AM-003 1.2.1 prepared but inactive",
+  "next_js_work": "NB-04/J13: validate journal projections against contiguous raw receipts while preserving legacy merges",
+  "repo_visibility": "public",
+  "private_archive_uploaded": false,
+  "history_uploaded": false,
+  "source_snapshot_uploaded": false,
+  "github_scope": "Sanitized starter, prompts and agent definitions only; full project import still required",
+  "private_data_must_remain_private": true,
+  "broker_or_deployment_authorization": false
+}

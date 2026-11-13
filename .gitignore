@@ -1,0 +1,16 @@
+
+# Private Arbeitskopien und Daten niemals veröffentlichen.
+/private_workspace/
+/private_inputs/
+/original/
+/runs/
+*.bundle
+*.log
+*.sqlite
+*.sqlite-*
+*.db
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
