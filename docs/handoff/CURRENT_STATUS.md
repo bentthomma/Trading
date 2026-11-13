@@ -1,6 +1,6 @@
 # ExtremeLab – aktueller Entwicklungsstand
 
-Die private Referenzrevision ist `66b04bfc8a46f0ef6b5b69b06f9b8c168f124783`. Dieses Repository enthält zunächst das neue Startpaket; der vollständige Quellsnapshot ist noch nicht hochgeladen. Der Status wird erst nach einem tatsächlichen Import geändert.
+Die private Referenzrevision ist `66b04bfc8a46f0ef6b5b69b06f9b8c168f124783`. Auf dem benannten Übergabezweig ist der bereinigte Quellsnapshot jetzt tatsächlich vorhanden: 651 freigegebene Quelldateien zusätzlich zu den 25 Startdateien, durch frischen GitHub-Readback geprüft. Private Originalarchive, Eingaben und Git-Historie bleiben lokal; der öffentliche Snapshot ersetzt die vollständige private Testbasis nicht. Details: UPLOAD_STATUS.md.
 
 ## Erhaltene Arbeit
 

@@ -29,8 +29,16 @@
   "repo_visibility": "public",
   "private_archive_uploaded": false,
   "history_uploaded": false,
-  "source_snapshot_uploaded": false,
-  "github_scope": "Sanitized starter, prompts and agent definitions only; full project import still required",
+  "source_snapshot_uploaded": true,
+  "github_scope": "651 approved source files plus 25 retained bootstrap files on the named handoff branch; full private test inputs and history remain local",
   "private_data_must_remain_private": true,
-  "broker_or_deployment_authorization": false
+  "broker_or_deployment_authorization": false,
+  "source_transfer": {
+    "branch": "codex/extremelab-source-handoff-2026-11-14",
+    "snapshot_sha": "b5caf803f861419b0dc84ecbeb718a0745c67960",
+    "approved_files": 651,
+    "retained_bootstrap_files": 25,
+    "remote_readback_files": 676,
+    "manifest_sha256": "d76c06594d27ed499efec53dea717f5c23899f36da40dcecb59a09ef38c631f8"
+  }
 }
