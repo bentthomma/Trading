@@ -1,0 +1,22 @@
+[
+  {
+    "page_id": "page_337674debf4c8191a3d893ec1583e5a3",
+    "block_id": "8d099350-6297-433b-8b78-34fdeb5c59b1",
+    "expected_block_sha256": "7215b0fa10b10d24e1de87d6a731ea412445d510b7c9f4017d03ed189db3d8f4",
+    "copied_block_sha256": "7215b0fa10b10d24e1de87d6a731ea412445d510b7c9f4017d03ed189db3d8f4",
+    "javascript_sha256": "2850bb4cc9b887d0c026b23eeb83c0c0e7ebcc3050935fec50953c6c219cbe48",
+    "javascript_bytes": 4379,
+    "extraction": "removed exact Markdown code fences only",
+    "new_execution": false
+  },
+  {
+    "page_id": "page_337674debf4c8191a3d893ec1583e5a3",
+    "block_id": "ccbb4e3b-a4ee-4944-9bde-f808ee37045d",
+    "expected_block_sha256": "240599fa8cf5a9cb9ce55d095dc1ecfeff396a0a66b5825e14049dcc1fbfdf66",
+    "copied_block_sha256": "240599fa8cf5a9cb9ce55d095dc1ecfeff396a0a66b5825e14049dcc1fbfdf66",
+    "javascript_sha256": "8c3268d9e966b75a9d99c8b3bc9457f2dabaecfbb01c7c70c28aef151c70e30f",
+    "javascript_bytes": 6590,
+    "extraction": "removed exact Markdown code fences only",
+    "new_execution": false
+  }
+]

@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "plan_id": "EXTREMELAB-CONSOLIDATED-MASTERPLAN-20261111",
+  "plan_version": "1.2.0",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "locked_at": "2026-11-13T14:42:12.986000Z",
+  "step_fingerprints": {
+    "S00": "911aeaaf1235d41c82812981f17de1f21e8f20b0b72ebcbca5918684e526d17d",
+    "S01": "5114205b544a532723d6cdec4032aa458cb085bf062d6101e774d904122dbbeb",
+    "S02": "fbb64e8c3996afb88d59b007aaae2c89e0af3077840d7d0f53566478d8efad2c",
+    "S03": "87101c1898f0e8b181468aab2f4118f3eb5b9ed03ad1f1766efa861f46f2953f",
+    "S04": "d4c8b1b1cc14b183f5273079c2baba161f577beade0b4d04e0b93f9fb0918605",
+    "S05": "8b2c5258281b774e152c5638dadde2a9c583b2ce25ae1aa163aed0d996cb086d",
+    "S06": "979033fc5bfa0092cc98569933d99607deaf5e907f6faa50b47f394152aa355a",
+    "S07": "297175c8f9813ed9fe5e07ccb4e413ff8fdb780c064a81021a43b1976d7b7826",
+    "S08": "c12a7528bdb7723ef0a54a988bd9c0e022445b5d2233dbf88f754841199501e9",
+    "S09": "efcd3a339774d7c3025993b5c6df6f4c79a1078283dd51aad9b668fe9ce58f8d",
+    "S10": "a75a93fd041055f45ac9af80e17c75130149000d82143cd6087ead09b2bc8aa8",
+    "S11": "1329cc9358e4f4d8c1ea155d05f2493e729f266aca4e7fbdf3c9fc779b5227af",
+    "S12": "f787ba82d41efa23071835822b5e17351c17ad1048db4fc608e9c31af5d0511f",
+    "S13": "e83ddeab4566c6780974588257994eaf05c107fc0770c5af78d25d0037679e6a",
+    "S14": "48d212e10ccb61714ab5362dac5dc14bc8149fd903699bdc88eaf89a68aa6bb6",
+    "S15": "02534cf6e98cf5b886f9d4b720bbf32d7dbdaf84578cfcca7402b60bf223ed05",
+    "S16": "b708f387e845384f7a6caca6e9fe886240c1486cfbf1b52492a12a6e484745b4",
+    "S17": "c7aa25a86ab22b328177370645de2ead2d40a98e8f67db26305c209c350b3d31",
+    "S18": "7fb1089e8b890a6aa0372687cba9f4142c4bcbf705b5a8f18b760e2a7841d996",
+    "S19": "7e6778a8fef42271d0356738c47a9ec7241e8ffa1a898a13614cf18912dddde7",
+    "S20": "8052bf909623abe785a2d290f8e058a15e03ca4263b432e589fdfdb630a3cf07",
+    "S21": "64083a7de68d75bb206f8635940e7dd0e46de1d5883334f95c595d48b834a0d1",
+    "S22": "2a8f35ddf302a88eec9e870cca43d5d46d19cc62e6b45c96ecbe19adee8bb929",
+    "S23": "c3d0325695ed13bb2ed4aa157a59603376635575f6a165cf7e33badb38269f7e",
+    "S24": "c0e694abf6d5964b8d9e835e55a2af8b4ac269ae9b38ac2e4894288435b18510",
+    "S25": "05938a4a2c5a5b1991f5f2d84c818cd49c38a5a718af0e0db4d940c2a1d9805f",
+    "S30": "ecb1ce4cae89f685c535745f960a8b542122ea0713d122653bc722f04b1a9677",
+    "S31": "de57177e5e56e089b0cf9b715b1076abe77c80e7a7abc1b832b56ce20e6af66c",
+    "S32": "ea47a6643df03d4ff8731bea5a221feaf5af7b2f29d4f0cb46359f7ce3c33798",
+    "S33": "84b51be9148c3bd8f7584da25c01ce30162a597724f59db0f951c71a7d196f98",
+    "S34": "530a84154af58506098a5700616876c29b4a5c223cada198a7f25b3481253992",
+    "S35": "0666894f6239ca39d906e17aaa3ac8db78f23c248c453c1bf0a9356a3b3ea063",
+    "S26": "7eab09560fbd49f76edeedc0888d75c41c0eea65a592b42d551f342dab1bee10",
+    "S27": "94917df7adcd384152e2911141ebf69f9fd4c1a21eaf05aeb2d5e56b59b209af",
+    "S28": "c8fac0da94b3c8b42ea6671e844240c77a1e445aa852f4505386348a28da048b",
+    "S29": "fceb6ec7c4add88ff8d0fd07091ce18a09a582bc023cdc25f94c909f3e91968f"
+  },
+  "dependencies": {
+    "S00": [],
+    "S01": [
+      "S00"
+    ],
+    "S02": [
+      "S01"
+    ],
+    "S03": [
+      "S01",
+      "S02"
+    ],
+    "S04": [
+      "S02"
+    ],
+    "S05": [
+      "S02"
+    ],
+    "S06": [
+      "S05"
+    ],
+    "S07": [
+      "S02"
+    ],
+    "S08": [
+      "S01",
+      "S04",
+      "S06",
+      "S07"
+    ],
+    "S09": [
+      "S02",
+      "S07"
+    ],
+    "S10": [
+      "S05",
+      "S06",
+      "S07",
+      "S09"
+    ],
+    "S11": [
+      "S05",
+      "S06",
+      "S10"
+    ],
+    "S12": [
+      "S10",
+      "S11"
+    ],
+    "S13": [
+      "S02",
+      "S07"
+    ],
+    "S14": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13"
+    ],
+    "S15": [
+      "S09",
+      "S13",
+      "S14"
+    ],
+    "S16": [
+      "S07",
+      "S10",
+      "S14"
+    ],
+    "S17": [
+      "S06",
+      "S10",
+      "S16"
+    ],
+    "S18": [
+      "S12",
+      "S14",
+      "S15",
+      "S16",
+      "S17"
+    ],
+    "S19": [
+      "S09",
+      "S11",
+      "S14",
+      "S16",
+      "S17",
+      "S18"
+    ],
+    "S20": [
+      "S07",
+      "S10",
+      "S11",
+      "S16",
+      "S17",
+      "S19"
+    ],
+    "S21": [
+      "S03",
+      "S04",
+      "S06",
+      "S13",
+      "S16",
+      "S17"
+    ],
+    "S22": [
+      "S02",
+      "S13",
+      "S16",
+      "S17",
+      "S21"
+    ],
+    "S23": [
+      "S05",
+      "S06",
+      "S08",
+      "S11",
+      "S12",
+      "S21",
+      "S22"
+    ],
+    "S24": [
+      "S08",
+      "S11",
+      "S12",
+      "S19",
+      "S20",
+      "S23"
+    ],
+    "S25": [
+      "S06",
+      "S08",
+      "S21",
+      "S23",
+      "S24"
+    ],
+    "S30": [
+      "S21",
+      "S22",
+      "S25"
+    ],
+    "S31": [
+      "S30"
+    ],
+    "S32": [
+      "S31"
+    ],
+    "S33": [
+      "S31",
+      "S32"
+    ],
+    "S34": [
+      "S33"
+    ],
+    "S35": [
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34"
+    ],
+    "S26": [
+      "S20",
+      "S21",
+      "S22",
+      "S24",
+      "S25",
+      "S35"
+    ],
+    "S27": [
+      "S16",
+      "S17",
+      "S19",
+      "S26"
+    ],
+    "S28": [
+      "S02",
+      "S05",
+      "S06",
+      "S11",
+      "S23",
+      "S25",
+      "S26"
+    ],
+    "S29": [
+      "S26"
+    ]
+  },
+  "global_rules_snapshot": {
+    "max_in_progress": 2,
+    "implementation_may_be_autonomous": true,
+    "product_deploy_in_this_turn": false,
+    "live_trading_authorized_by_plan": false,
+    "required_independent_review": false,
+    "no_force_completion": true,
+    "known_holdouts_are_consumed": true,
+    "scope_mapping_required": true,
+    "design_implementation_after_technical_acceptance": [
+      "S21",
+      "S22",
+      "S25"
+    ],
+    "design_implementation_steps": [
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34",
+      "S35"
+    ],
+    "economic_success_is_not_technical_or_design_prerequisite": true,
+    "desktop_reference_approval_is_not_runtime_acceptance": true,
+    "immutable_paths": [
+      "design/approval.json",
+      "assets/design/approved/**"
+    ],
+    "evidence_source": "local_git_verified",
+    "completion_mode": "single_actor_test_evidence",
+    "public_github_writes_authorized": false,
+    "broker_actions_authorized": false,
+    "policy_authorization": "AM-002-user-removes-reviewer"
+  },
+  "amendment": {
+    "path": "governance/masterplan/governance/amendments/AM-002-user-removes-reviewer.json",
+    "sha256": "3028dd215baddf489c0e4107b44f4a4c8d802950f54803c742b35eab2a331a81",
+    "previous_plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+    "author": "ChatGPT (lokale Ausführung im Nutzerauftrag)",
+    "completion_mode": "single_actor_test_evidence",
+    "affected_steps": [
+      "S00",
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S24",
+      "S25",
+      "S26",
+      "S27",
+      "S28",
+      "S29",
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34",
+      "S35"
+    ],
+    "at": "2026-11-13T14:42:12.987629Z"
+  }
+}

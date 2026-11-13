@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "execution": "test-execution.json",
+  "actual_test_methods": 143,
+  "controller_tests": 47,
+  "acceptance_tests": 96,
+  "new_owner_completion_tests": 25,
+  "remote_ci_executed": false,
+  "state_altered_by_tests": false,
+  "scope": "actual local Git, source checks, fixtures for provider responses",
+  "preserved_guards": [
+    "dependency rejection",
+    "out-of-scope actual diff",
+    "missing or changed hashed evidence",
+    "wrong Git head",
+    "untracked and ignored source changes",
+    "design approval and reference hashes",
+    "max two running steps"
+  ],
+  "all_commands_exit_zero": true
+}

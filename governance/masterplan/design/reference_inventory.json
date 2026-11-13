@@ -1,0 +1,41 @@
+{
+  "scope": "desktop_baseline",
+  "selected_direction": "A",
+  "references": [
+    {
+      "id": "A01-r04",
+      "title": "Botübersicht",
+      "path": "assets/design/approved/A01-r04.png",
+      "sha256": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0",
+      "source_filename": "exec-b1eb450e-1978-4621-b959-2a0000fc50e3.png"
+    },
+    {
+      "id": "A02-r03",
+      "title": "Beobachtung",
+      "path": "assets/design/approved/A02-r03.png",
+      "sha256": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029",
+      "source_filename": "exec-a3a0fa45-be71-4276-8975-b05bec2a006c.png"
+    },
+    {
+      "id": "A03-r03",
+      "title": "Forschung",
+      "path": "assets/design/approved/A03-r03.png",
+      "sha256": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64",
+      "source_filename": "exec-8d4ccf91-615d-42dd-92f5-61e8584c9dfa.png"
+    },
+    {
+      "id": "A04-r03",
+      "title": "Bot-Einstellungen",
+      "path": "assets/design/approved/A04-r03.png",
+      "sha256": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9",
+      "source_filename": "exec-d72e505c-8618-4da9-ada2-49fe1da050ac.png"
+    },
+    {
+      "id": "A05-r03",
+      "title": "Positionen",
+      "path": "assets/design/approved/A05-r03.png",
+      "sha256": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4",
+      "source_filename": "exec-fdd1412d-2c91-454c-84f7-fe4f6086c2f1.png"
+    }
+  ]
+}

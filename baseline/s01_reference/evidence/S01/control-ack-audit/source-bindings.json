@@ -1,0 +1,184 @@
+{
+  "work_id": "S01-CONTROL-ACK-BOUNDARY",
+  "archive": {
+    "path": "baseline/original_platform097.zip",
+    "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+    "prefix": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/"
+  },
+  "sources": [
+    {
+      "path": "core/control.mjs",
+      "sha256": "9bbd47368f7b5c87a6ab402219f7d5cbc9cd173a7a244dfcbc3da741b897147c",
+      "bytes": 45218,
+      "fragments": [
+        {
+          "start_line": 19,
+          "end_line": 30,
+          "sha256": "6f12e81c9997f0b75981fbbdc16d2811d0858ef5d1795506853b57091650c667"
+        },
+        {
+          "start_line": 46,
+          "end_line": 69,
+          "sha256": "62cbe3c72e7d6b3df9a5106462ef7f3f5b925a693b914d306c27c95614a82674"
+        },
+        {
+          "start_line": 218,
+          "end_line": 265,
+          "sha256": "dd3564700f8f0f3f8f9b06b8a6e7c3a241601a2c5ac73210811f9b09f2228950"
+        },
+        {
+          "start_line": 279,
+          "end_line": 304,
+          "sha256": "128f9ea836bcaab71df270aea6086ae07b93ca39bc0ff9a532e6373ea36aed11"
+        },
+        {
+          "start_line": 311,
+          "end_line": 389,
+          "sha256": "b2b15318da6dd7e198f2f35bc042de867cc1107522ea7235e75fca12401e0b7f"
+        }
+      ]
+    },
+    {
+      "path": "core/store.mjs",
+      "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978",
+      "bytes": 18333,
+      "fragments": [
+        {
+          "start_line": 164,
+          "end_line": 179,
+          "sha256": "f3d1f64641d157158c467b0b8b5e3a295d41a86e3edc9726d3a3a052ab1c8f28"
+        }
+      ]
+    },
+    {
+      "path": "core/registry.mjs",
+      "sha256": "a4a6b5ca140d2539128d23ff764fd72d9af78ec65f1d035a5932de5d38a3d40e",
+      "bytes": 6863,
+      "fragments": [
+        {
+          "start_line": 15,
+          "end_line": 23,
+          "sha256": "ace817d0752f6dfbf1cddc6a7cef190fc43b5d7683f1c15ba4bdf0fb5a58abc1"
+        },
+        {
+          "start_line": 49,
+          "end_line": 62,
+          "sha256": "ada0bb59501df6ebe6bd2fb54446d1ed1d0eeb8ccdecfe817a006c2410133f92"
+        }
+      ]
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "f1bd2940bcbaa63056c42cbbc117adc1ad774618f012c0b39da330a5c93c0082",
+      "bytes": 62295,
+      "fragments": [
+        {
+          "start_line": 122,
+          "end_line": 129,
+          "sha256": "ae5a6dcf04c981fd5a0ef4022fa6e26c0727ec57dcd99ab9f4f74cc5c04a2e10"
+        },
+        {
+          "start_line": 435,
+          "end_line": 461,
+          "sha256": "c55e94ac02311e43dbbe1b14252efdaaab68da527724193c50bd8e069328d91b"
+        },
+        {
+          "start_line": 566,
+          "end_line": 586,
+          "sha256": "6b6467e619bca1d48de647ebc16f312bb3c16f5ea54a640f901bfe755d212c17"
+        }
+      ]
+    },
+    {
+      "path": "sdk/HubBridge.cs",
+      "sha256": "ca5916c2056ae9b49ef8d263092a72d8d7cc54bc58e542cd450ddc535979dba6",
+      "bytes": 16218,
+      "fragments": [
+        {
+          "start_line": 84,
+          "end_line": 157,
+          "sha256": "d76485564f48f6064487b7530264c86a29f84231f589c986029e602deaf32e64"
+        },
+        {
+          "start_line": 162,
+          "end_line": 239,
+          "sha256": "202086d76fe3099b53b0c4f56bc03703b0b10268989bfc7a2d70941794d7f2ef"
+        },
+        {
+          "start_line": 254,
+          "end_line": 265,
+          "sha256": "532e176b6b197576b85b677ac243ff0a84fd464306c6bcdc20fc700e7186182d"
+        }
+      ]
+    },
+    {
+      "path": "sdk/HubProtocol.cs",
+      "sha256": "a2e053aea3d7ab6288c2d9d03f47a9cb4b26b9812798cf4bfe4b63dcd0e21997",
+      "bytes": 14956,
+      "fragments": [
+        {
+          "start_line": 114,
+          "end_line": 165,
+          "sha256": "33c722d2e414fffea02efdc16aea5e6b128df045fe4d6e088c3b65f90ecef873"
+        }
+      ]
+    },
+    {
+      "path": "sdk/tests/Program.cs",
+      "sha256": "0800a78381899e07d99799bf9111b2ec6ddf66e004c51b7001880569ceb256f2",
+      "bytes": 15357,
+      "fragments": [
+        {
+          "start_line": 38,
+          "end_line": 98,
+          "sha256": "66fbfa27e9ae6368ef32acfdf790a5a5255b584d6a53464bd3cdfc5dbca75756"
+        }
+      ]
+    },
+    {
+      "path": "sdk/tests/bridge-roundtrip.mjs",
+      "sha256": "cf887a12b3b97cb2c976657d8b0326de42a0bacbd443a62f25fb9d7af0ecf5ca",
+      "bytes": 8353,
+      "fragments": [
+        {
+          "start_line": 12,
+          "end_line": 27,
+          "sha256": "c5481e4ffe20e4d14ba8f995edeca153183f8b62c60cccbf1fc544d823f5f4c2"
+        },
+        {
+          "start_line": 80,
+          "end_line": 114,
+          "sha256": "85cd2bd4d089986a6b4bd25d2f03f6b809d0c92c7c81dda39e7d0813b26667e4"
+        }
+      ]
+    },
+    {
+      "path": "core/schema.mjs",
+      "sha256": "caf21114e697df310a32dfc0d13e3a2671442e7e0752d533cc2f12d6094574c8",
+      "bytes": 9520,
+      "fragments": []
+    },
+    {
+      "path": "core/capabilities.mjs",
+      "sha256": "f36af396364827afba3f1cf69d1fc18aa8cb4630c4252bb80bc156748040cf57",
+      "bytes": 9843,
+      "fragments": []
+    }
+  ],
+  "exact_edits": [
+    {
+      "old": "status='pending' AND expires_at<?",
+      "new": "status='pending' AND expires_at<=?"
+    },
+    {
+      "old": "    const next=this.db.prepare(\"SELECT * FROM proposals WHERE bot_id=? AND runtime_id=? AND status='pending' AND expires_at>=? ORDER BY confirmed_at LIMIT 1\").get(b.id,runtimeId,this.now());",
+      "new": "    // Bind deadline selection and response metadata to one decision instant.\n    // The native callback still checks its current clock before applying.\n    const responseTime=this.now();\n    const next=this.db.prepare(\"SELECT * FROM proposals WHERE bot_id=? AND runtime_id=? AND status='pending' AND expires_at>? ORDER BY confirmed_at LIMIT 1\").get(b.id,runtimeId,responseTime);"
+    },
+    {
+      "old": "return {serverTime:iso(this.now()),blocked:m.id===OBSERVER_ID",
+      "new": "return {serverTime:iso(responseTime),blocked:m.id===OBSERVER_ID"
+    }
+  ],
+  "candidate_sha256": "02c2ab2bf9410bc0ea17b88f734b4e91d0f9762907694f0b146bb9d5d5937bae",
+  "scope": "Private proposal only; no original, formal plan or installed product change."
+}

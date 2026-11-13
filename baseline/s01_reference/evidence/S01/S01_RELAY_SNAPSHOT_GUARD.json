@@ -1,0 +1,36 @@
+{
+  "work_id": "S01-RELAY-SNAPSHOT-GUARD",
+  "basis_package_sha256": "a4e99bb549eb34e6fde1aca0b2c775c1136bf361ac0653617df29648085a133b",
+  "proposal": "proposals/relay-snapshot-guard/proposal.json",
+  "original_relay": "baseline/relay_snapshot/relay.py",
+  "original_relay_sha256": "62fb6b0d437b090be6dd0b1a1e2af1d72e6a794e1c7b14b19ea523a4fa583f8c",
+  "proposal_relay_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+  "producer_source": "baseline/relay_snapshot/ExtremeLabMobile.cs",
+  "legacy_test": "baseline/relay_snapshot/test_relay_legacy.py",
+  "runner": "tools/run_relay_snapshot_checks.py",
+  "scope": "Archived Python relay 1.3.3-qa; separate private read-projection correction only",
+  "website_sources": {
+    "complete": 38,
+    "total": 59,
+    "missing": 21,
+    "change": 0
+  },
+  "formal_status_changed": false,
+  "installed": false,
+  "independent_review": false,
+  "historical_runs_not_added_to_current_count": true,
+  "fresh_execution_authority": "External ExtremeLab_S01_RelaySnapshotGuard_Abschlusspruefung.json and Pruefprotokolle.zip",
+  "new_contract_fields": [
+    "checkpoint.invalidPayloadSequences",
+    "checkpoint.completeness=invalid_candle_payload"
+  ],
+  "limitations": [
+    "Not the missing Vercel JavaScript relay",
+    "No complete website pipeline or final UI client",
+    "No OHLC/timestamp/finite-number validation",
+    "No ingestion rejection or journal deletion",
+    "No live/demo broker, account, TLS or cloud test",
+    "No C# recompilation",
+    "No official S01 acceptance"
+  ]
+}

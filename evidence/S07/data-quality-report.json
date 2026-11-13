@@ -1,0 +1,1825 @@
+{
+  "archive_sha256": "cf2dd5842c6a22a15e82f6d19d7c16cf404d6b613640289dfe663e525bcdef3d",
+  "auditor_sha256": "559bf3737eb5957aaffcea1a98cc3075348407a60dbea63a09b18a8dd93f6262",
+  "crypto": {
+    "aligned_missing_bar_count": 19,
+    "aligned_missing_ranges": [
+      {
+        "first_missing_open_utc": "2021-02-11T03:00:00+00:00",
+        "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+        "missing_bar_count": 2
+      },
+      {
+        "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+        "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+        "missing_bar_count": 1
+      },
+      {
+        "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+        "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+        "missing_bar_count": 2
+      },
+      {
+        "first_missing_open_utc": "2021-04-25T04:00:00+00:00",
+        "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+        "missing_bar_count": 4
+      },
+      {
+        "first_missing_open_utc": "2021-08-13T01:00:00+00:00",
+        "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+        "missing_bar_count": 5
+      },
+      {
+        "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+        "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+        "missing_bar_count": 2
+      },
+      {
+        "first_missing_open_utc": "2021-12-24T04:00:00+00:00",
+        "last_missing_open_utc": "2021-12-24T04:00:00+00:00",
+        "missing_bar_count": 1
+      },
+      {
+        "first_missing_open_utc": "2023-03-24T12:00:00+00:00",
+        "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+        "missing_bar_count": 2
+      }
+    ],
+    "aligned_rows": 43805,
+    "constraints_not_verified": [
+      "historical exchange tick/lot filters",
+      "point-in-time universe",
+      "broker executable quotes",
+      "venue halt causality",
+      "intrabar path"
+    ],
+    "derived_table": {
+      "checked_values": 175220,
+      "decimal_text_deviations": 127623,
+      "different_float64_values": 0,
+      "first_deviation": {
+        "absolute_difference": "1E-12",
+        "derived_text": "28923.630000000001",
+        "original_decimal": "28923.63000000",
+        "symbol": "BTCUSDT",
+        "timestamp": "2021-01-01T00:00:00+00:00"
+      },
+      "lineage_sha256": "933851825b6d581c4c6c6b61900c9deecc412522772431af8fd3e23a2e0acaa9",
+      "maximum_absolute_decimal_difference": "1E-11",
+      "new_exact_sha256": "523c71daf4a11d5d9b932c357d6fcbd1a89b7cd11e61914df3faba83e6b1a2f2",
+      "original_sha256": "37907d4b384392c4cfdf512a6367a4a73c51624441b9025bb1f6a725db08f289"
+    },
+    "expected_hours": 43824,
+    "historical_quality_summary_reproduced": true,
+    "provider_checksums": "240 archived checksums plus metadata and inventory; not a digital signature",
+    "quarantined_rows": 20,
+    "source_archives": 240,
+    "source_rows": 175240,
+    "symbols": {
+      "BNBUSDT": {
+        "accepted_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T03:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T04:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T01:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 5
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "last_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T12:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 2
+          }
+        ],
+        "accepted_rows": 43805,
+        "quarantined_rows": 5,
+        "raw_missing_bar_count": 14,
+        "raw_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T05:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 3
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T02:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 1
+          }
+        ],
+        "raw_rows": 43810
+      },
+      "BTCUSDT": {
+        "accepted_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T03:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T04:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T01:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 5
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "last_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T12:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 2
+          }
+        ],
+        "accepted_rows": 43805,
+        "quarantined_rows": 5,
+        "raw_missing_bar_count": 14,
+        "raw_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T05:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 3
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T02:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 1
+          }
+        ],
+        "raw_rows": 43810
+      },
+      "ETHUSDT": {
+        "accepted_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T03:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T04:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T01:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 5
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "last_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T12:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 2
+          }
+        ],
+        "accepted_rows": 43805,
+        "quarantined_rows": 5,
+        "raw_missing_bar_count": 14,
+        "raw_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T05:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 3
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T02:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 1
+          }
+        ],
+        "raw_rows": 43810
+      },
+      "SOLUSDT": {
+        "accepted_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T03:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T04:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T01:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 5
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "last_missing_open_utc": "2021-12-24T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T12:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 2
+          }
+        ],
+        "accepted_rows": 43805,
+        "quarantined_rows": 5,
+        "raw_missing_bar_count": 14,
+        "raw_missing_ranges": [
+          {
+            "first_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "last_missing_open_utc": "2021-02-11T04:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "last_missing_open_utc": "2021-03-06T02:00:00+00:00",
+            "missing_bar_count": 1
+          },
+          {
+            "first_missing_open_utc": "2021-04-20T02:00:00+00:00",
+            "last_missing_open_utc": "2021-04-20T03:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2021-04-25T05:00:00+00:00",
+            "last_missing_open_utc": "2021-04-25T07:00:00+00:00",
+            "missing_bar_count": 3
+          },
+          {
+            "first_missing_open_utc": "2021-08-13T02:00:00+00:00",
+            "last_missing_open_utc": "2021-08-13T05:00:00+00:00",
+            "missing_bar_count": 4
+          },
+          {
+            "first_missing_open_utc": "2021-09-29T07:00:00+00:00",
+            "last_missing_open_utc": "2021-09-29T08:00:00+00:00",
+            "missing_bar_count": 2
+          },
+          {
+            "first_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "last_missing_open_utc": "2023-03-24T13:00:00+00:00",
+            "missing_bar_count": 1
+          }
+        ],
+        "raw_rows": 43810
+      }
+    }
+  },
+  "fx": [
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202402.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": null,
+      "bytes": 10010468,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202402.csv",
+      "csv_sha256": "7494dea6e2ad949a1c60f6e9febd46894accef2bd6e0df427232cac01a94edcb",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240201 000000246",
+      "first_time_key_ms": 63842428800246,
+      "first_utc": "2024-02-01T05:00:00.246+00:00",
+      "gaps_over_60s": 287,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240229 235937006",
+      "last_time_key_ms": 63844934377006,
+      "last_utc": "2024-03-01T04:59:37.006+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172801373,
+      "month": "202402",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1702058,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 10705,
+          "member": "DAT_ASCII_EURUSD_T_202402.txt",
+          "sha256": "1c63cabe2c5ef9b85e0ce20ed826348b9f86130530ef6ce62038d7a082d8d7e7"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1702058,
+      "zip_sha256": "bf38a79ae8032429adef649c35005100ba60eb88d247ac0432b48590db133517"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202403.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 23759,
+      "bytes": 8650249,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202403.csv",
+      "csv_sha256": "6e6d5b668b3a0348221082513bac8fe02a8e8767d574049e9799206218aed690",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240301 000000765",
+      "first_time_key_ms": 63844934400765,
+      "first_utc": "2024-03-01T05:00:00.765+00:00",
+      "gaps_over_60s": 427,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240331 235956361",
+      "last_time_key_ms": 63847612796361,
+      "last_utc": "2024-04-01T04:59:56.361+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 176460411,
+      "month": "202403",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1476727,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 17087,
+          "member": "DAT_ASCII_EURUSD_T_202403.txt",
+          "sha256": "af98fec2562ddb7422536da7919cdf79208123f011e9edf2bb983dbe7e659a26"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1476727,
+      "zip_sha256": "b70fcaf5ee82ca6dc847f8a6c0f4354ecb456ae8579faed8563b53ac2ac324df"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202404.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 3785,
+      "bytes": 9325132,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202404.csv",
+      "csv_sha256": "8ae19d919df75c343180da3747c495ecef3899b767060262d965726c388c5093",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240401 000000146",
+      "first_time_key_ms": 63847612800146,
+      "first_utc": "2024-04-01T05:00:00.146+00:00",
+      "gaps_over_60s": 445,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240430 235955269",
+      "last_time_key_ms": 63850204795269,
+      "last_utc": "2024-05-01T04:59:55.269+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 173040414,
+      "month": "202404",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1560509,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 17203,
+          "member": "DAT_ASCII_EURUSD_T_202404.txt",
+          "sha256": "958d5a6a2b55b4198f695f0f332c796fb2ae6d852ee620c3469a088f47f41ee9"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1560509,
+      "zip_sha256": "cb9b219aa3c557f8f4c3e5bddcdd3fc75a7f5113590329153fc17fce34ad17f2"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202405.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 11974,
+      "bytes": 7461772,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202405.csv",
+      "csv_sha256": "893c856d7f6e9c5c5faaf404929d9fc4ce2852201c3c25f583fbca4c08ac3894",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240501 000007243",
+      "first_time_key_ms": 63850204807243,
+      "first_utc": "2024-05-01T05:00:07.243+00:00",
+      "gaps_over_60s": 652,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240531 165959378",
+      "last_time_key_ms": 63852857999378,
+      "last_utc": "2024-05-31T21:59:59.378+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172809421,
+      "month": "202405",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1240628,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 25346,
+          "member": "DAT_ASCII_EURUSD_T_202405.txt",
+          "sha256": "473f098feeeed611891b3fefeb49f842eda1d92638ea0a2f3febfc62d684db79"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1240628,
+      "zip_sha256": "c81fd7c2c94829664e523dd18e54e985c07f7b7be6f4fa5998cbe7a15569360c"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202406.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 172807842,
+      "bytes": 7986935,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202406.csv",
+      "csv_sha256": "2df69d77777659d21c174ca8c6269d65de9d058ae7f93f7e54d6f8dcf4f635ea",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240602 170007220",
+      "first_time_key_ms": 63853030807220,
+      "first_utc": "2024-06-02T22:00:07.220+00:00",
+      "gaps_over_60s": 599,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240630 235957679",
+      "last_time_key_ms": 63855475197679,
+      "last_utc": "2024-07-01T04:59:57.679+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172812397,
+      "month": "202406",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1344506,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 24215,
+          "member": "DAT_ASCII_EURUSD_T_202406.txt",
+          "sha256": "bf9ca200e10fdb75d8c05e1485748ea34569bfa589e3e1764da95cdb8fd79981"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1344506,
+      "zip_sha256": "162e85bb8da67b35852b2950f1aa2e6d2eff7f2fef738849bc1327e4f5392d12"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202407.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 2782,
+      "bytes": 8641917,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202407.csv",
+      "csv_sha256": "2caa350929f00ea49e8311d70776e56e1bfe101d72ec092cd0ffe927d5d7aa06",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240701 000000461",
+      "first_time_key_ms": 63855475200461,
+      "first_utc": "2024-07-01T05:00:00.461+00:00",
+      "gaps_over_60s": 623,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240731 235955131",
+      "last_time_key_ms": 63858153595131,
+      "last_utc": "2024-08-01T04:59:55.131+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172809547,
+      "month": "202407",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1463751,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 22585,
+          "member": "DAT_ASCII_EURUSD_T_202407.txt",
+          "sha256": "05d5aec5e7a86697043e8442ed7caa94bfbf745ee40efb6f278e642c74fc8caf"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1463751,
+      "zip_sha256": "d46ff671cd5fd65c605d7c03496217dcbca3ed39086dc3afe202f193f518442c"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202408.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 5968,
+      "bytes": 10855541,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202408.csv",
+      "csv_sha256": "607f0bafc7a876673ea669b1290dcd0e152735ae16cfc7ce790f0d9f64a1db0f",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240801 000001099",
+      "first_time_key_ms": 63858153601099,
+      "first_utc": "2024-08-01T05:00:01.099+00:00",
+      "gaps_over_60s": 336,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240830 165959500",
+      "last_time_key_ms": 63860720399500,
+      "last_utc": "2024-08-30T21:59:59.500+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172808500,
+      "month": "202408",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1840228,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 10699,
+          "member": "DAT_ASCII_EURUSD_T_202408.txt",
+          "sha256": "49d55ee9c5e450cf3f42ac9f8643cdce6438b83dadfc6bf5837b11e1573f42d2"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1840228,
+      "zip_sha256": "89d4922aab8b3e83f10d8c9635f4e247652e8c0c1f7dcda306cbf83fc4b2751a"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202409.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 172806256,
+      "bytes": 10645505,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202409.csv",
+      "csv_sha256": "1bad8560b44ea966ec8388b4f30abc7508a9860de21979474ae20c5973c78bd4",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20240901 170005756",
+      "first_time_key_ms": 63860893205756,
+      "first_utc": "2024-09-01T22:00:05.756+00:00",
+      "gaps_over_60s": 480,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20240930 235959717",
+      "last_time_key_ms": 63863423999717,
+      "last_utc": "2024-10-01T04:59:59.717+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172940776,
+      "month": "202409",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1805004,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 16792,
+          "member": "DAT_ASCII_EURUSD_T_202409.txt",
+          "sha256": "01ae3ee9e6ec713d363ed6f4f2221a3070756c030a34d50873fc9b99e059a00a"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1805004,
+      "zip_sha256": "00ab61749d1d70081c18f9dfe4a175e160c54de29edb779a713432fcbae10059"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202410.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 404,
+      "bytes": 10424525,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202410.csv",
+      "csv_sha256": "4bae67238691b879d9bca02651f2fbc5004e723217861d818e1aed9f9c81ca92",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20241001 000000121",
+      "first_time_key_ms": 63863424000121,
+      "first_utc": "2024-10-01T05:00:00.121+00:00",
+      "gaps_over_60s": 369,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20241031 235959786",
+      "last_time_key_ms": 63866102399786,
+      "last_utc": "2024-11-01T04:59:59.786+00:00",
+      "locked_quotes": 1589,
+      "maximum_gap_ms": 173037380,
+      "month": "202410",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1772075,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 11907,
+          "member": "DAT_ASCII_EURUSD_T_202410.txt",
+          "sha256": "a7e262b4f638668ed2515bf6b27ee8e2292a26a0aaafc1b04207c31c5aa88825"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1772075,
+      "zip_sha256": "5041948a91b7c3ab6036c08c5adfbe2438c7c3d21ff7ccdaafbc8d61f18d039d"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202411.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 304,
+      "bytes": 13936558,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202411.csv",
+      "csv_sha256": "acbf1f7d162a9e4eb5ae5d7df98290a1101b7e4b7a2e4c02c7f7725e9acb44d6",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20241101 000000090",
+      "first_time_key_ms": 63866102400090,
+      "first_utc": "2024-11-01T05:00:00.090+00:00",
+      "gaps_over_60s": 171,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20241129 165959223",
+      "last_time_key_ms": 63868582799223,
+      "last_utc": "2024-11-29T21:59:59.223+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 176405431,
+      "month": "202411",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 2312773,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 5282,
+          "member": "DAT_ASCII_EURUSD_T_202411.txt",
+          "sha256": "402874965acff10b343410979a7f23ac63092f2bb1eb25effe441bd067585d22"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 2312773,
+      "zip_sha256": "2ca378fffe3fcaee698ef2486e6407d72afd8f292002983463c338f329838f17"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202412.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 172848898,
+      "bytes": 11965057,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202412.csv",
+      "csv_sha256": "7c450bc13d62e11850757eae23e60f3f3af29e3ce85eddc19deb880ef2bec0bf",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20241201 170048121",
+      "first_time_key_ms": 63868755648121,
+      "first_utc": "2024-12-01T22:00:48.121+00:00",
+      "gaps_over_60s": 355,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20241231 165958249",
+      "last_time_key_ms": 63871347598249,
+      "last_utc": "2024-12-31T21:59:58.249+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172810972,
+      "month": "202412",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1979900,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 13600,
+          "member": "DAT_ASCII_EURUSD_T_202412.txt",
+          "sha256": "00a2dc10287c865c3057e0d7ea58e6aed9ad8131b2abdeed8e43223aeef2c2d1"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1979900,
+      "zip_sha256": "a4dd430ed823a7671dd012faff1eda56f46a7cc54dd7bdb5cd5dc19db3eda3c5"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202501.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 86416398,
+      "bytes": 13954937,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202501.csv",
+      "csv_sha256": "841dd276909ca7d1974474b41c7c7c57f2746ddd5de95745e01fb5ffd8109475",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250101 170014647",
+      "first_time_key_ms": 63871434014647,
+      "first_utc": "2025-01-01T22:00:14.647+00:00",
+      "gaps_over_60s": 201,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250131 165957318",
+      "last_time_key_ms": 63874025997318,
+      "last_utc": "2025-01-31T21:59:57.318+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172998774,
+      "month": "202501",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 2283239,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 7091,
+          "member": "DAT_ASCII_EURUSD_T_202501.txt",
+          "sha256": "007eb3191249d83b515640adc0ce683b4cb617fcc97fd22f9d2bc860f2666d1e"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 2283239,
+      "zip_sha256": "159f906f8055f6ee835d95806cf7fdf4023b6e3ef098aa308d2ab6ce53ac964a"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202502.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 172809853,
+      "bytes": 12807066,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202502.csv",
+      "csv_sha256": "09b197dec4f64394baa0b15e456db584c00546a3daf469c8104faaa794fabad8",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250202 170007171",
+      "first_time_key_ms": 63874198807171,
+      "first_utc": "2025-02-02T22:00:07.171+00:00",
+      "gaps_over_60s": 204,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250228 165958852",
+      "last_time_key_ms": 63876445198852,
+      "last_utc": "2025-02-28T21:59:58.852+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172940796,
+      "month": "202502",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 2053257,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 7092,
+          "member": "DAT_ASCII_EURUSD_T_202502.txt",
+          "sha256": "c10d21fe7cd832737135deefbd3ad2546497efad605a714672e417119f8201d8"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 2053257,
+      "zip_sha256": "63c3b2717c024f7aada8642b38e7a944646dbe2440303632918e5c594db2313e"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202503.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 172801609,
+      "bytes": 14829874,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202503.csv",
+      "csv_sha256": "3ad5c6adb32890003387c1e6b076c3a950c604dfd2c61322cc1a3212322c1b7a",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250302 170000461",
+      "first_time_key_ms": 63876618000461,
+      "first_utc": "2025-03-02T22:00:00.461+00:00",
+      "gaps_over_60s": 245,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250331 235959754",
+      "last_time_key_ms": 63879148799754,
+      "last_utc": "2025-04-01T04:59:59.754+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 176451096,
+      "month": "202503",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 2353340,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 7158,
+          "member": "DAT_ASCII_EURUSD_T_202503.txt",
+          "sha256": "58c0d943a521ab3d7f533fcaf93240d0ee1eb2398725c40f0f25488135d2a74c"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 2353340,
+      "zip_sha256": "0746c04af3a4aba26a559d0bbd665bbeda8e237c624b51625e63bf10066cc096"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202504.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 765,
+      "bytes": 25044669,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202504.csv",
+      "csv_sha256": "b36650c3ecd6261f27fd61f3aaf5e7c75155c8b613bf000bc5cdf718f18fb0f4",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250401 000000519",
+      "first_time_key_ms": 63879148800519,
+      "first_utc": "2025-04-01T05:00:00.519+00:00",
+      "gaps_over_60s": 164,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250430 235958364",
+      "last_time_key_ms": 63881740798364,
+      "last_utc": "2025-05-01T04:59:58.364+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 173050691,
+      "month": "202504",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 3916978,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 4751,
+          "member": "DAT_ASCII_EURUSD_T_202504.txt",
+          "sha256": "7405d430775f1415f975ff82848a64ab59d0ab94436c107c102fd037a1f5a3f6"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 3916978,
+      "zip_sha256": "613aa42d654e66853ec35d233a372adf66d818614a2ebe9f92be4add59f7970e"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202505.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 2782,
+      "bytes": 15469791,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202505.csv",
+      "csv_sha256": "f4c3cff1e91a6971bb8bd45aed1f3800a2aee33015da12786ce8cb4395e8f286",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250501 000001146",
+      "first_time_key_ms": 63881740801146,
+      "first_utc": "2025-05-01T05:00:01.146+00:00",
+      "gaps_over_60s": 163,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250530 165959578",
+      "last_time_key_ms": 63884307599578,
+      "last_utc": "2025-05-30T21:59:59.578+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 173052558,
+      "month": "202505",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 2412228,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 4444,
+          "member": "DAT_ASCII_EURUSD_T_202505.txt",
+          "sha256": "4c7700867ddf50316d0c57274dfe2a2d27e28a7f4697ee3c07cee5dc525d36e5"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 2412228,
+      "zip_sha256": "3ce49d7b44e8b17c942ad2d5e77e317c023a5884f090c086806b888dae633f77"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202506.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 173012626,
+      "bytes": 13103978,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202506.csv",
+      "csv_sha256": "bda47292629b908444f551d6e5617d410d738eb56a494222ac8a7846f49e2bb7",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250601 170332204",
+      "first_time_key_ms": 63884480612204,
+      "first_utc": "2025-06-01T22:03:32.204+00:00",
+      "gaps_over_60s": 185,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250630 235954149",
+      "last_time_key_ms": 63887011194149,
+      "last_utc": "2025-07-01T04:59:54.149+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172845674,
+      "month": "202506",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 2044343,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 6674,
+          "member": "DAT_ASCII_EURUSD_T_202506.txt",
+          "sha256": "73f5793038700103644e10c02a9cebf53e9ed629659c7aff53e47f266f6478a7"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 2044343,
+      "zip_sha256": "a36a057d0afcb38e11cab1bec01c4e6de83f053530e0ea99c88acf99145af77c"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202507.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 6007,
+      "bytes": 10126233,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202507.csv",
+      "csv_sha256": "b65a6897a1010efbb2d52367d10c5991337b6d6172bee7f6f375c61a339dff10",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250701 000000156",
+      "first_time_key_ms": 63887011200156,
+      "first_utc": "2025-07-01T05:00:00.156+00:00",
+      "gaps_over_60s": 233,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250731 235956808",
+      "last_time_key_ms": 63889689596808,
+      "last_utc": "2025-08-01T04:59:56.808+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 173047055,
+      "month": "202507",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1555775,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 8654,
+          "member": "DAT_ASCII_EURUSD_T_202507.txt",
+          "sha256": "e9bd1630530d46d4d17a7967c9743ee4a6053744747952724573e70e0dce5647"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1555775,
+      "zip_sha256": "c671c79da3955d7f97dcbe4386165ac059878d29019e7ca6453b286bad2a2a74"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202508.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 3502,
+      "bytes": 8714119,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202508.csv",
+      "csv_sha256": "f9005db79861be05b31d93c82db5c0ae72180c7d8995a2e5af2f60918873990a",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250801 000000310",
+      "first_time_key_ms": 63889689600310,
+      "first_utc": "2025-08-01T05:00:00.310+00:00",
+      "gaps_over_60s": 260,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250831 235959533",
+      "last_time_key_ms": 63892367999533,
+      "last_utc": "2025-09-01T04:59:59.533+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172812395,
+      "month": "202508",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1338471,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 9510,
+          "member": "DAT_ASCII_EURUSD_T_202508.txt",
+          "sha256": "2e5b52bfcfa45f5c3accaf939d21659707f8525957494d9b947bb2e7c4c918bb"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1338471,
+      "zip_sha256": "c9b4869da23f24082614b8666159ce4a1f83573f5e687879634d7640f507a229"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202509.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 608,
+      "bytes": 9636235,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202509.csv",
+      "csv_sha256": "f6e0dbb9227c3c24c7cfe7dabf1a264c27f1221086188f6f5cd413751c06ddaf",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20250901 000000141",
+      "first_time_key_ms": 63892368000141,
+      "first_utc": "2025-09-01T05:00:00.141+00:00",
+      "gaps_over_60s": 321,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20250930 235959387",
+      "last_time_key_ms": 63894959999387,
+      "last_utc": "2025-10-01T04:59:59.387+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172846222,
+      "month": "202509",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1493622,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 13357,
+          "member": "DAT_ASCII_EURUSD_T_202509.txt",
+          "sha256": "fa601f81b809268d70e361c629f7b7e21c61c9745f78775b90fde800aed85f28"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1493622,
+      "zip_sha256": "d3a6310bd8427b6d9ea2d68c0edf5da2c469511a61b957b0a0d41c45dc9d9310"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202510.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 1,
+      "boundary_from_previous_month_ms": 5754,
+      "bytes": 9540843,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202510.csv",
+      "csv_sha256": "016aa9b056852c17710007470b00bf37d5317aba255681c3acda6cfcdee78be6",
+      "duplicate_timestamp_rows_within_day": 1494,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 1494,
+      "first_local_timestamp": "20251001 000005141",
+      "first_time_key_ms": 63894960005141,
+      "first_utc": "2025-10-01T05:00:05.141+00:00",
+      "gaps_over_60s": 320,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20251031 155957334",
+      "last_time_key_ms": 63897609597334,
+      "last_utc": "2025-10-31T20:59:57.334+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 172842541,
+      "month": "202510",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1483175,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [
+        {
+          "delta_ms": -3598189,
+          "line": 1185417,
+          "previous_line": 1185416,
+          "previous_row_sha256": "fa8d7234d054812fb32593dcd74d0dfefe17a021356b7ea909646622dd20288e",
+          "problem": "BACKWARD_TIMESTAMP",
+          "row_sha256": "61fb15717f8ca46465239f2be5d39695921de5cdc54f076151248a616b9cb08d"
+        }
+      ],
+      "source_status_reports": [
+        {
+          "bytes": 11728,
+          "member": "DAT_ASCII_EURUSD_T_202510.txt",
+          "sha256": "105cbf8814f9d2fc5c37ae777505befe4c1b978f27cc85020d36e0b50ff1817d"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1483175,
+      "zip_sha256": "80ff5b3bb0e172e30cf6003feb59bbb147629443041555d5e44ab54e40f7de5e"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202511.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "boundary_from_previous_month_ms": 176404229,
+      "bytes": 7883779,
+      "cohort": "main_2024_2025",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 0,
+      "csv_member": "DAT_ASCII_EURUSD_T_202511.csv",
+      "csv_sha256": "7db8d3cf9dafb1e7f87f295b28ecb79c8c666dde3d5c7aa06cc4721dfd086615",
+      "duplicate_timestamp_rows_within_day": 0,
+      "exact_adjacent_duplicates": 0,
+      "exact_duplicate_rows_within_day": 0,
+      "first_local_timestamp": "20251102 170001563",
+      "first_time_key_ms": 63897786001563,
+      "first_utc": "2025-11-02T22:00:01.563+00:00",
+      "gaps_over_60s": 310,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20251130 235955827",
+      "last_time_key_ms": 63900230395827,
+      "last_utc": "2025-12-01T04:59:55.827+00:00",
+      "locked_quotes": 0,
+      "maximum_gap_ms": 173042284,
+      "month": "202511",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 1242212,
+      "same_time_adjacent_rows": 0,
+      "same_time_different_adjacent_quotes": 0,
+      "sample_problems": [],
+      "source_status_reports": [
+        {
+          "bytes": 11909,
+          "member": "DAT_ASCII_EURUSD_T_202511.txt",
+          "sha256": "420c11abd3b1f10f84a13b4dcebf5f2f5f935880cafdd80afc350c9ee72b0e6f"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "utc_conversion_status": "documented_fixed_offset_rule_not_independently_certified",
+      "zero_volume_placeholders": 1242212,
+      "zip_sha256": "3e2b099ea6e94657b27c03ae64f4238d13ece34748289148b3675c250b0e65ae"
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/rejected_pilots/HISTDATA_COM_ASCII_EURUSD_T_200401.zip",
+      "backward_dates": 0,
+      "backward_timestamps": 0,
+      "bytes": 2556173,
+      "cohort": "rejected_pilot",
+      "coverage_note": "No fixed tick interval; gaps include scheduled closures. Calendar/completeness not certified. Equal-time distinct quotes preserved. Adjacent and within-day duplicate counts are separate. No backward dates => within-day check covers all timestamp duplicates. No sorting or deduplication applied.",
+      "crossed_quotes": 941593,
+      "csv_member": "DAT_ASCII_EURUSD_T_200401.csv",
+      "csv_sha256": "d5e4ff0ddb38d9b6a1eed3b0dda78dd245a3a44d9726469b17e1cb752de66d94",
+      "duplicate_timestamp_rows_within_day": 264300,
+      "exact_adjacent_duplicates": 190495,
+      "exact_duplicate_rows_within_day": 192117,
+      "first_local_timestamp": "20040101 190029000",
+      "first_time_key_ms": 63208666829000,
+      "first_utc": "2004-01-02T00:00:29.000+00:00",
+      "gaps_over_60s": 1117,
+      "invalid_format_or_time": 0,
+      "last_local_timestamp": "20040130 162924000",
+      "last_time_key_ms": 63211163364000,
+      "last_utc": "2004-01-30T21:29:24.000+00:00",
+      "locked_quotes": 20,
+      "maximum_gap_ms": 174614000,
+      "month": "200401",
+      "nonpositive_quotes": 0,
+      "nonzero_volume_field": 0,
+      "rows": 941613,
+      "same_time_adjacent_rows": 264300,
+      "same_time_different_adjacent_quotes": 73805,
+      "sample_problems": [
+        {
+          "line": 1,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "ffedb11d30074da32df8c7bd541b0c0f3423b4cd831f3aa332081f56692dd680"
+        },
+        {
+          "line": 2,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "4ff623d3316563cad9095f26a670a17fd6fcd0abcd6093b6419c10e469c141d5"
+        },
+        {
+          "line": 3,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "530530dbfeff9905051c9a606cd40282cb64c421e9ee7dbef87e5dd9565b0a5c"
+        },
+        {
+          "line": 4,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "8b3e5f132a64ee251a3bb962b361dcff4925881649c4ad7a19add21c304071eb"
+        },
+        {
+          "line": 5,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "290a2481228702431ea4dfa3d442c81f988c7d14cf07ec050094ca54abea8471"
+        },
+        {
+          "line": 6,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "26f2ab288b8d333ddec1b9db3840919c8ad391f88cbdf145a7efbb175de0f97c"
+        },
+        {
+          "line": 7,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "6ac30059d734314a1ecece5a620fa5414e86436a1e2907d341aa97d008da3347"
+        },
+        {
+          "line": 8,
+          "problem": "ASK_BELOW_BID",
+          "row_sha256": "7daa51201df2ddfdfdbc473ad66bd5f732b8b4ca9779ef889d74aa11730a096e"
+        }
+      ],
+      "source_status_reports": [
+        {
+          "bytes": 57241,
+          "member": "DAT_ASCII_EURUSD_T_200401.txt",
+          "sha256": "100d395f25c7f029d882e27eeff46083c627ea6a886e8cf64aa3d83b2d451c49"
+        }
+      ],
+      "time_basis": "fixed EST (UTC-05:00), never America/New_York DST",
+      "zero_volume_placeholders": 941613,
+      "zip_sha256": "8514eba5b551dad4d481125f74f572300636d90d85c4627c1d4f5b79502a0e61"
+    }
+  ],
+  "fx_full_scan_performed": true,
+  "master_monthly": {
+    "counts": {
+      "calendar_months": 336,
+      "collection_only_numeric_cells": 9744,
+      "dataset_month_rows": 2352,
+      "datasets": 7,
+      "numeric_cells": 10416
+    },
+    "cross_series": {
+      "automatic_substitution_allowed": false,
+      "cause_verified": false,
+      "market_difference_months": 87,
+      "market_max_abs_delta_decimal": "0.0006",
+      "performance_impact_measured": false,
+      "rf_difference_rows_across_three_regional_series": 3,
+      "rf_distinct_disagreement_months": [
+        "2025-07"
+      ]
+    },
+    "historical_run_binding": {
+      "development_and_final_inputs_match": true,
+      "development_is_exact_prefix": true,
+      "development_months": 264,
+      "full_months": 336,
+      "holdout_end": "2025-12",
+      "holdout_has_already_been_used": true,
+      "holdout_may_be_claimed_new_unseen_test": false,
+      "holdout_start": "2020-01",
+      "new_backtest_executed": false,
+      "protocol_and_selection_lock_preserved": true,
+      "signal_timing": "For return month t, latest feature observation is month t-2. One whole intervening month is excluded.",
+      "terminal_window_months": 72
+    },
+    "limits": {
+      "broker_account_currency": "not_implied_by_USD_research_return",
+      "commercial_or_redistribution_rights_granted": false,
+      "monthly_observation_is_publication_time": false,
+      "native_tests_executed": false,
+      "original_provider_archives_expected": 7,
+      "original_provider_archives_present": 0,
+      "point_in_time_certified": false,
+      "raw_transform_parity": "blocked_original_provider_zips_not_in_master_archive",
+      "tradable_quotes": false
+    },
+    "master_archive": {
+      "bytes": 90594027,
+      "file_id": "file_00000000cf2c81f4a791a7b5c454cf4c",
+      "filename": "Trading_Master_1_0_Arbeitsmaterialien.zip",
+      "sha256": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0"
+    },
+    "original_packaged_verifier_assertions": 50,
+    "preserved_members_verified": 74,
+    "products": [
+      {
+        "columns": {
+          "cma": "long_short_factor_return",
+          "hml": "long_short_factor_return",
+          "mkt_excess": "market_excess_return",
+          "rf": "cash_benchmark_monthly_return",
+          "rmw": "long_short_factor_return",
+          "smb": "long_short_factor_return"
+        },
+        "id": "FF_US_5F",
+        "member": "materials/data/research_collection/us_five_factors.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "cma": "0.09",
+            "hml": "0.1286",
+            "mkt_excess": "0.1358",
+            "rf": "0.0056",
+            "rmw": "0.1304",
+            "smb": "0.1854"
+          },
+          "min": {
+            "cma": "-0.0706",
+            "hml": "-0.1383",
+            "mkt_excess": "-0.172",
+            "rf": "0.00",
+            "rmw": "-0.1893",
+            "smb": "-0.1553"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 6,
+          "numeric_values": 2016,
+          "rows": 336,
+          "zero_cells": 74
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "3e86a78c058daad2fa60f14118fe08b1145450b76ee1fa9440d29b81888eddb1",
+        "transform_member": "materials/prepare_research_collection.py",
+        "transform_sha256": "1492b0c81aa0655bded6e7674d1eb669299dda5df0f8fc0fb5ba4ed172172913",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "17d7a575e71d6764a70ddec3f8d887756c0eebf3a60f64d6ba95d2adde3fed26",
+        "upstream_csv_sha256_declared": "0028f2f3b9f634c34a2bdc0e67dc1e6fc22a2ef18b77177a7926635a785330dd",
+        "upstream_database_declared": "CRSP",
+        "vintage_declared": "202609"
+      },
+      {
+        "columns": {
+          "mom": "long_short_factor_return"
+        },
+        "id": "FF_US_MOM",
+        "member": "materials/data/research_collection/us_momentum.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "mom": "0.1805"
+          },
+          "min": {
+            "mom": "-0.3436"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 1,
+          "numeric_values": 336,
+          "rows": 336,
+          "zero_cells": 0
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "d7fa3c412c29db69d27e4815e58d8f5aa1d5c75e62441af7738cb97086f43bcd",
+        "transform_member": "materials/prepare_research_collection.py",
+        "transform_sha256": "1492b0c81aa0655bded6e7674d1eb669299dda5df0f8fc0fb5ba4ed172172913",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "27ed60e5b2caa9ea334a261cddfa864a9926f6bf45e9677c95dfd835c5abb315",
+        "upstream_csv_sha256_declared": "81ff7cab5517159daa5a66c83fd90d4076a0864be2d5fef179719c0f9049a8cb",
+        "upstream_database_declared": "CRSP",
+        "vintage_declared": "202609"
+      },
+      {
+        "columns": {
+          "durbl": "industry_total_research_return",
+          "enrgy": "industry_total_research_return",
+          "hitec": "industry_total_research_return",
+          "hlth": "industry_total_research_return",
+          "manuf": "industry_total_research_return",
+          "nodur": "industry_total_research_return",
+          "other": "industry_total_research_return",
+          "shops": "industry_total_research_return",
+          "telcm": "industry_total_research_return",
+          "utils": "industry_total_research_return"
+        },
+        "id": "FF_US_INDUSTRY10_VW",
+        "member": "materials/data/research_collection/us_industry10_value_weighted.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "durbl": "0.4432",
+            "enrgy": "0.3231",
+            "hitec": "0.2075",
+            "hlth": "0.1345",
+            "manuf": "0.1706",
+            "nodur": "0.1099",
+            "other": "0.1622",
+            "shops": "0.1824",
+            "telcm": "0.2194",
+            "utils": "0.1166"
+          },
+          "min": {
+            "durbl": "-0.3362",
+            "enrgy": "-0.3447",
+            "hitec": "-0.2607",
+            "hlth": "-0.1237",
+            "manuf": "-0.2071",
+            "nodur": "-0.1341",
+            "other": "-0.2143",
+            "shops": "-0.1508",
+            "telcm": "-0.1653",
+            "utils": "-0.1305"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 10,
+          "numeric_values": 3360,
+          "rows": 336,
+          "zero_cells": 2
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "954e3f876da9dcdf72e7d4ef830f7f756d689d88777c438b607cdc75731bbc7c",
+        "transform_member": "materials/prepare_research_collection.py",
+        "transform_sha256": "1492b0c81aa0655bded6e7674d1eb669299dda5df0f8fc0fb5ba4ed172172913",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "cee051709825e60cc38f2aff01c2dec52265aa7ea4a1fefa023a2c8114a5166e",
+        "upstream_csv_sha256_declared": "921e2df7ae95355cf9030aebc8b2033c267f3153fb99a676ff912b3ea65d1ed3",
+        "upstream_database_declared": "CRSP",
+        "vintage_declared": "202609"
+      },
+      {
+        "columns": {
+          "hml": "long_short_factor_return",
+          "mkt_excess": "market_excess_return",
+          "rf": "cash_benchmark_monthly_return",
+          "smb": "long_short_factor_return"
+        },
+        "id": "FF_EUROPE_3F",
+        "member": "materials/data/research_collection/europe_three_factors.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "hml": "0.1209",
+            "mkt_excess": "0.1662",
+            "rf": "0.0056",
+            "smb": "0.0939"
+          },
+          "min": {
+            "hml": "-0.113",
+            "mkt_excess": "-0.2202",
+            "rf": "0.00",
+            "smb": "-0.0696"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 4,
+          "numeric_values": 1344,
+          "rows": 336,
+          "zero_cells": 73
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "3ca69d4efeee754fc3ae6df1d09f2af067a8474375599e5165c1c4cde508dcae",
+        "transform_member": "materials/prepare_research_collection.py",
+        "transform_sha256": "1492b0c81aa0655bded6e7674d1eb669299dda5df0f8fc0fb5ba4ed172172913",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "842332540d9c86681cbda628c6acc9d75d0c1563e364a2bf6a535072f651471e",
+        "upstream_csv_sha256_declared": "257d33397613706a3a2cfc1dac4c50f0deaad48b9c690326dd22451d9c519427",
+        "upstream_database_declared": "Bloomberg",
+        "vintage_declared": "202609"
+      },
+      {
+        "columns": {
+          "hml": "long_short_factor_return",
+          "mkt_excess": "market_excess_return",
+          "rf": "cash_benchmark_monthly_return",
+          "smb": "long_short_factor_return"
+        },
+        "id": "FF_JAPAN_3F",
+        "member": "materials/data/research_collection/japan_three_factors.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "hml": "0.1458",
+            "mkt_excess": "0.1612",
+            "rf": "0.0056",
+            "smb": "0.1335"
+          },
+          "min": {
+            "hml": "-0.1425",
+            "mkt_excess": "-0.1355",
+            "rf": "0.00",
+            "smb": "-0.0791"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 4,
+          "numeric_values": 1344,
+          "rows": 336,
+          "zero_cells": 72
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "fa3a9a64da2e7fefc3a817413d80db61b11cc0ab2167036a1936f2d448f7c69f",
+        "transform_member": "materials/prepare_research_collection.py",
+        "transform_sha256": "1492b0c81aa0655bded6e7674d1eb669299dda5df0f8fc0fb5ba4ed172172913",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "525605ffa42317b6a66389fb5911d5b2a7f34359b5cecdfa1c3aa52f63a6a15d",
+        "upstream_csv_sha256_declared": "ed96edc28028c32505cab71e82b14c069c971a5c4a5cd8dd59e843577eb57b2f",
+        "upstream_database_declared": "Bloomberg",
+        "vintage_declared": "202609"
+      },
+      {
+        "columns": {
+          "hml": "long_short_factor_return",
+          "mkt_excess": "market_excess_return",
+          "rf": "cash_benchmark_monthly_return",
+          "smb": "long_short_factor_return"
+        },
+        "id": "FF_ASIA_PACIFIC_EX_JAPAN_3F",
+        "member": "materials/data/research_collection/asia_pacific_ex_japan_three_factors.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "hml": "0.237",
+            "mkt_excess": "0.1849",
+            "rf": "0.0056",
+            "smb": "0.1241"
+          },
+          "min": {
+            "hml": "-0.0891",
+            "mkt_excess": "-0.26",
+            "rf": "0.00",
+            "smb": "-0.1174"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 4,
+          "numeric_values": 1344,
+          "rows": 336,
+          "zero_cells": 74
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "462636c249d33a23561cffd0a3fea77a801f2fc9a7d3083b9fa57644a5760451",
+        "transform_member": "materials/prepare_research_collection.py",
+        "transform_sha256": "1492b0c81aa0655bded6e7674d1eb669299dda5df0f8fc0fb5ba4ed172172913",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "d4496131f1e6b372c1969ee8966681a924155be076fd2346efcab70247404096",
+        "upstream_csv_sha256_declared": "def16d04a79c6cbf8b40b991e28b362a8ec79f3e74fbf76cfed3fc375a972b75",
+        "upstream_database_declared": "Bloomberg",
+        "vintage_declared": "202609"
+      },
+      {
+        "columns": {
+          "cash_return": "cash_benchmark_monthly_return",
+          "risky_return": "total_research_market_return"
+        },
+        "id": "FF_US_MARKET_CASH_MONTHLY",
+        "member": "materials/data/lab04/input.csv",
+        "profile": {
+          "duplicate_months": 0,
+          "first_period": "1998-01",
+          "last_period": "2025-12",
+          "max": {
+            "cash_return": "0.0056",
+            "risky_return": "0.136"
+          },
+          "min": {
+            "cash_return": "0.00",
+            "risky_return": "-0.1712"
+          },
+          "missing_months": 0,
+          "missing_or_nonfinite_values": 0,
+          "numeric_columns": 2,
+          "numeric_values": 672,
+          "rows": 336,
+          "zero_cells": 72
+        },
+        "raw_to_derived_replay_executed": false,
+        "sha256": "256c2e281a437b2fd9d71c3f49da8e094da69a1bf86f2c10b099df51f3f75158",
+        "transform_member": "materials/prepare_lab04_data.py",
+        "transform_sha256": "ab02f61e20765506d585a2c664558b2ba28115f4fa23f8884d791d8a61d9fa6d",
+        "upstream_archive_available": false,
+        "upstream_archive_sha256_declared": "b03d39e4bb253dda0f14893db3b78e64b40b8d6549a0fc0fd4111dae84c98618",
+        "upstream_csv_sha256_declared": "a3894d74d553cab812eabbe706bdbf443c97eb20b24b05e3e5f3ce47e46b90bb",
+        "upstream_database_declared": "CRSP",
+        "vintage_declared": "202609"
+      }
+    ],
+    "schema": "extremelab.master-monthly-audit/v1",
+    "scope": "private_source_and_unit_audit_not_new_strategy_test"
+  },
+  "native_or_broker_execution": false,
+  "original_inputs_unchanged": true,
+  "outer_members": 753,
+  "partial_scope": "Teil6 only; no claim to all historical lab archives"
+}

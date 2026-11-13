@@ -1,0 +1,75 @@
+{
+  "execution": "fresh_original_receiver_with_archived_synthetic_fixture",
+  "python": "3.13.5",
+  "uid": 65534,
+  "dependencies": {
+    "aiohttp": "3.13.3",
+    "cryptography": "46.0.4"
+  },
+  "fixture_sha256": "cebbfb3691a7055aa2fbe6d1c81635d7557b59df87b1cf88b98c9d7dfe1f391f",
+  "fixture_newly_generated_by_csharp": false,
+  "native_csharp_tests_executed": false,
+  "bot_started": false,
+  "broker_connection": false,
+  "network_guard": "cooperative Python socket/DNS loopback-only filter; not an OS sandbox",
+  "observed_test_endpoints": [
+    {
+      "operation": "bind",
+      "host": "127.0.0.1",
+      "port": 25345
+    },
+    {
+      "operation": "connect",
+      "host": "::1",
+      "port": 25345
+    },
+    {
+      "operation": "connect",
+      "host": "127.0.0.1",
+      "port": 25345
+    },
+    {
+      "operation": "connect",
+      "host": "127.0.0.1",
+      "port": 25345
+    },
+    {
+      "operation": "connect",
+      "host": "::1",
+      "port": 25345
+    },
+    {
+      "operation": "connect",
+      "host": "127.0.0.1",
+      "port": 25345
+    }
+  ],
+  "source_unchanged": true,
+  "result": {
+    "utc": "2026-11-12T23:09:02.288469+00:00",
+    "passed": 18,
+    "failed": 0,
+    "scope": "Actual C# serialized fixture -> Python replay over loopback TLS :25345 -> Python receiver -> SQLite FULL -> reader. No running cBot or broker.",
+    "wireSha256": "cebbfb3691a7055aa2fbe6d1c81635d7557b59df87b1cf88b98c9d7dfe1f391f",
+    "checks": [
+      "Receiver authenticates exact C# session envelope",
+      "Actual C# wire batch accepted and committed before ACK",
+      "ACK run, batch and count match C# pending outbox",
+      "Two fixture events inserted once",
+      "Database contains events when ACK arrives",
+      "Receiver authenticates exact C# session envelope",
+      "Reconnect retransmission yields original durable ACK",
+      "Retry creates no duplicate events",
+      "Separate read credential accepted",
+      "Read path returns exact C# event content and values",
+      "Test feed not claimed actual Cloud",
+      "Anonymous read denied",
+      "Write credential cannot read private events",
+      "Trading command rejected, never executed",
+      "Acknowledged events survive database reopen",
+      "Persisted duplicate ACK survives database reopen",
+      "Conflicting retransmission rejected after restart",
+      "Rejected conflict leaves original events unchanged"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "mutations": [
+    {
+      "mutation": "remove_viewer_publish_boundary",
+      "target": "src/api/socket.js",
+      "test": "socket: signed viewer reads synthetic snapshot but cannot publish or trade",
+      "returncode": 1,
+      "detected_by_behavior_not_hash_gate": true,
+      "scope": "temporary copy only; test manifest rebound deliberately for mutation execution, not provider provenance or release"
+    },
+    {
+      "mutation": "remove_origin_prefilter",
+      "target": "src/api/socket.js",
+      "test": "socket: cross-origin or invalid browser cookie is rejected before transport admission",
+      "returncode": 1,
+      "detected_by_behavior_not_hash_gate": true,
+      "scope": "temporary copy only; test manifest rebound deliberately for mutation execution, not provider provenance or release"
+    }
+  ],
+  "unique_test_methods_added": 0,
+  "baseline_modified": false
+}

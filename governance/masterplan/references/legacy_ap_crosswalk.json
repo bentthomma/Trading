@@ -1,0 +1,1193 @@
+[
+  {
+    "id": "AP01",
+    "title": "Unveränderte Quellen, Provenienz und Arbeitszweig sichern",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 183,
+    "dependencies": "keine.",
+    "requirements": "R01, R02, R28, R31, R39.",
+    "owner": "Integration.",
+    "inputs": "Vorliegende 0.8- und Planarchive sind erreichbar. Keine enthaltenen Skripte ungeprüft starten.",
+    "change_locations": "`package.json`; `SOURCE-SHA256.txt`; `docs/PRUEFBERICHT_DE.md`; `docs/RELEASE-PLAN_DE.md`; `separate aktuelle 1.9-Quellartefakte`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP01.01",
+        "title": "Archiv passiv prüfen"
+      },
+      {
+        "id": "AP01.02",
+        "title": "Richtige Enginequelle wiederfinden"
+      },
+      {
+        "id": "AP01.03",
+        "title": "Historische Referenzen fixieren"
+      },
+      {
+        "id": "AP01.04",
+        "title": "Isolierten Integrationszweig anlegen"
+      },
+      {
+        "id": "AP01.05",
+        "title": "Abweichungen und Verantwortliche erfassen"
+      },
+      {
+        "id": "AP01.06",
+        "title": "Reproduktionsplan erstellen"
+      }
+    ],
+    "deliverables": "baseline-lock.json; portmatrix.md; isolierter Arbeitszweig; private-fixture-map.json.",
+    "acceptance": "T001/T002/T003/T069/T070; keine Artefaktvermischung, keine Secrets im Übergabepaket. Der 0.8-Hash allein belegt nicht die richtige 1.9-Quelle.",
+    "rollback": "Arbeitszweig verwerfen; unveränderte Originalarchive bleiben erhalten. Kein Brokerrollback nötig, weil keine Brokeraktion Teil dieses Pakets ist.",
+    "blockers": "Fehlendes aktuelles Enginearchiv blockiert Engineportierung, nicht Plattform-/Vertragsanalyse.",
+    "new_steps": [
+      "S01"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP02",
+    "title": "Tatsächlichen Herstellerbuild und Zielhost abnehmen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 239,
+    "dependencies": "AP01.",
+    "requirements": "R02, R28, R30, R36.",
+    "owner": "Integration/Engine.",
+    "inputs": "Quellen und Herstellerartefakte eindeutig. Zielhostzugang fehlt gegebenenfalls noch.",
+    "change_locations": "`sdk/TradingLocal.Bridge.csproj`; `sdk/global.json`; `adapters/cli.mjs`; `integrations/ctrader-extremelab17/`; `tests/windows-acceptance-report.mjs`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP02.01",
+        "title": "Hostmatrix erheben"
+      },
+      {
+        "id": "AP02.02",
+        "title": "Reproduzierbaren Build herstellen"
+      },
+      {
+        "id": "AP02.03",
+        "title": "Metadaten unabhängig lesen"
+      },
+      {
+        "id": "AP02.04",
+        "title": "Beobachterbetrieb erzwingen"
+      },
+      {
+        "id": "AP02.05",
+        "title": "Echten Zielimport prüfen"
+      },
+      {
+        "id": "AP02.06",
+        "title": "Kompatibilitätsentscheidung fixieren"
+      }
+    ],
+    "deliverables": "host-matrix.json; build-provenance.json; observer.algo für spätere Freigabe; ADR-HOST.md.",
+    "acceptance": "T003/T065/T070/T078; Beobachter muss auch bei vorhandenen Positionen schreibfrei sein; kein Tradingtoken allein durch Start.",
+    "rollback": "Nur neue Testinstanz stoppen; vorhandene Engine unverändert. Ein fehlgeschlagener Port ersetzt kein bestehendes Release.",
+    "blockers": "Kein Zielhost: isolierter Build möglich, native Freigabe nicht möglich.",
+    "new_steps": [
+      "S08"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP03",
+    "title": "Fachlichen Bridge-, Telemetrie- und Zahlenvertrag einfrieren",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 295,
+    "dependencies": "AP01.",
+    "requirements": "R02, R03, R04, R05, R10, R20, R22, R32.",
+    "owner": "Integration/Plattform.",
+    "inputs": "0.8-v1-Vertrag und aktuelle Engineobjekte gelesen; Paket-IDs und v0.4-Begriffe bekannt.",
+    "change_locations": "`core/schema.mjs`; `core/control.mjs`; `core/capabilities.mjs`; `sdk/HubContracts.cs`; `sdk/HubProtocol.cs`; `docs/IMPLEMENTATION-CONTRACT.md`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP03.01",
+        "title": "Semantische Typen festlegen"
+      },
+      {
+        "id": "AP03.02",
+        "title": "Verträge ausdrücklich versionieren"
+      },
+      {
+        "id": "AP03.03",
+        "title": "Kanäle trennen"
+      },
+      {
+        "id": "AP03.04",
+        "title": "Befehlsumschlag definieren"
+      },
+      {
+        "id": "AP03.05",
+        "title": "Quellen und Frische festlegen"
+      },
+      {
+        "id": "AP03.06",
+        "title": "Vertragsreview abschliessen"
+      }
+    ],
+    "deliverables": "engine-contract.md; versionierte JSON-Fixtures; ADR-CONTRACT.md; capability-matrix.json.",
+    "acceptance": "T004–T013/T071/T072/T087 plus neue Zahlen-/Digest-Gegenfälle; keine Feldsemantik aus UI-Beschriftung erraten.",
+    "rollback": "Neue Vertragsversion deaktivieren; v1 bleibt funktionsfähig. Keine bestehende Datenbank allein durch Schemaentwurf umstempeln.",
+    "blockers": "Unbekannte APIpfade blockieren aktive Implementierung dieser Route, nicht den fachlichen Vertragsentwurf.",
+    "new_steps": [
+      "S02"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP04",
+    "title": "Lesende Engineintegration Ende zu Ende herstellen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 351,
+    "dependencies": "AP02, AP03.",
+    "requirements": "R02, R20, R28, R38.",
+    "owner": "Engine/Plattform.",
+    "inputs": "Beobachterartefakt und Fachvertrag abgenommen; keine neuen Tradingrechte.",
+    "change_locations": "`sdk/HubBridge.cs`; `sdk/CallbackRuntimeDispatcher.cs`; `adapters/broker.mjs`; `core/application.mjs`; `public/hub.js`; `Engine-Beobachteradapter`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP04.01",
+        "title": "Read-only Adapter isolieren"
+      },
+      {
+        "id": "AP04.02",
+        "title": "Enginepläne zuordnen"
+      },
+      {
+        "id": "AP04.03",
+        "title": "Transport anschliessen"
+      },
+      {
+        "id": "AP04.04",
+        "title": "Broker und Engine abgleichen"
+      },
+      {
+        "id": "AP04.05",
+        "title": "Lesende UI bauen"
+      },
+      {
+        "id": "AP04.06",
+        "title": "Nativer Nachweis sichern"
+      }
+    ],
+    "deliverables": "readonly-integration-report.json; Broker-/Engineprojektion; realer Beobachtungsbeleg.",
+    "acceptance": "T051–T053/T065/T083/T084; relevante neue Beobachter-/Snapshot-Gegenfälle. Eine schön gerenderte Fixture ist nicht der native Nachweis.",
+    "rollback": "Neue Telemetriecapability ausschalten; Observer ohne Writes stoppen. Brokerbestand bleibt unverändert.",
+    "blockers": "Fehlender Kontozugang blockiert nur nativen Beleg; isolierte UI-/HTTPfälle bleiben möglich.",
+    "new_steps": [
+      "S04"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP05",
+    "title": "Neues Strategieprofil und bestätigte Konfiguration anbinden",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 407,
+    "dependencies": "AP04.",
+    "requirements": "R03, R04, R05, R35.",
+    "owner": "Plattform/Engine.",
+    "inputs": "Lesender Zustand eindeutig. Neues Profil unterstützt nur tatsächlich implementierte Felder.",
+    "change_locations": "`core/control.mjs`; `core/schema.mjs`; `core/registry.mjs`; `sdk/HubParameters.cs`; `neues th3rev-Manifest`; `public/hub.js`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP05.01",
+        "title": "Alle Parameter klassifizieren"
+      },
+      {
+        "id": "AP05.02",
+        "title": "Atomaren Applyweg implementieren"
+      },
+      {
+        "id": "AP05.03",
+        "title": "Freigabebindung erhalten"
+      },
+      {
+        "id": "AP05.04",
+        "title": "Manuell und KI gleich behandeln"
+      },
+      {
+        "id": "AP05.05",
+        "title": "Wirksamkeit je Objekt testen"
+      },
+      {
+        "id": "AP05.06",
+        "title": "Native Rückleseprüfung"
+      }
+    ],
+    "deliverables": "neues Strategiemanifest; parameter-mapping.json; native-readback-report.json.",
+    "acceptance": "T005–T013/T035/T042/T077/T087; Konfiguration bleibt ohne passenden Grant und exakten ACK unbestätigt.",
+    "rollback": "Konfigurationsrollback ist eine neue bestätigte Revision, kein Wiederabspielen alter Grants. Der frühere Plan offener Positionen bleibt erhalten.",
+    "blockers": "Feld ohne live-Anwendbarkeit bleibt restart-required oder read-only; kein erfundener universeller Slider.",
+    "new_steps": [
+      "S23"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP06",
+    "title": "Originalpläne, Journal, Inbox/Outbox und Recovery bauen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 463,
+    "dependencies": "AP03.",
+    "requirements": "R10, R11, R17, R31.",
+    "owner": "Engine/Plattform.",
+    "inputs": "Normative Identitäten, Ereignisumschläge und Auftragszustände definiert.",
+    "change_locations": "`core/store.mjs`; `core/restore.mjs`; `core/maintenance*.mjs`; `neuer Engine-Journaladapter`; `neuer Telemetrie-Ingest`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP06.01",
+        "title": "Journalformat und Speichergrenzen definieren"
+      },
+      {
+        "id": "AP06.02",
+        "title": "Originalplan und Reservierung atomar vorbereiten"
+      },
+      {
+        "id": "AP06.03",
+        "title": "Hub-Inbox und Projektionen ergänzen"
+      },
+      {
+        "id": "AP06.04",
+        "title": "Migration und Durability prüfen"
+      },
+      {
+        "id": "AP06.05",
+        "title": "Ausfall- und Retentionregeln implementieren"
+      },
+      {
+        "id": "AP06.06",
+        "title": "Wiederanlauf aus mehreren Quellen testen"
+      }
+    ],
+    "deliverables": "journal-format.md; recovery-state-machine.md; Schema-/Installer-Migrationspatch; crash-window-evidence.json.",
+    "acceptance": "T029–T034/T040/T044/T045/T080/T089/T091; neue Commit-/Disk-/Cursor-Gegenfälle. Hashmanifest ist kein Ersatz für Stromausfall-/Hosttest.",
+    "rollback": "Migration nur nach konsistenter Sicherung. Bei inkompatiblem Rollback alte Software nicht auf neue DB öffnen. Brokerrealität nach jeder Wiederherstellung neu lesen.",
+    "blockers": "Nicht nachgewiesene Journalpersistenz verhindert neue Orders; lesende Projektion bleibt möglich.",
+    "new_steps": [
+      "S05",
+      "S06"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP07",
+    "title": "Orderzustände, Teilfills und wirtschaftliche Zuordnung vereinheitlichen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 519,
+    "dependencies": "AP04, AP06.",
+    "requirements": "R08, R09, R10, R15.",
+    "owner": "Engine/QA.",
+    "inputs": "Originalabsicht dauerhaft; Brokeradapter liefert echte Identitäten und Mengen ohne heuristische Umrechnung.",
+    "change_locations": "`Engine-Pending-/MarketRange-Adapter`; `HistoricalOrders/History/Positions-Beweisadapter`; `core Ereignisprojektion`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP07.01",
+        "title": "Drei Zustandsachsen implementieren"
+      },
+      {
+        "id": "AP07.02",
+        "title": "Identitätsbeweise normalisieren"
+      },
+      {
+        "id": "AP07.03",
+        "title": "Ursachen und Akteure trennen"
+      },
+      {
+        "id": "AP07.04",
+        "title": "Rennsituationen lösen"
+      },
+      {
+        "id": "AP07.05",
+        "title": "Reservierung übertragen"
+      },
+      {
+        "id": "AP07.06",
+        "title": "Native Ordertypen gezielt prüfen"
+      }
+    ],
+    "deliverables": "order-state-machine.md; reconciliation-proofs.json; native-order-conformance.json.",
+    "acceptance": "T023–T031/T041/T089; alle neu ergänzten Teilfill-/Mengen-/Stornogegenfälle. Nicht jedes technische Ereignis ist nativ erzwingbar.",
+    "rollback": "Neue Einstiege sperren, bekannte Positionsverwaltung weiterführen, offene Requests und Restorders zuerst abgleichen. Kein blindes Resubmit.",
+    "blockers": "Unklarer Konto-Gesamtbestand sperrt neue Belastung kontoweit; klar lokaler Fehler darf andere Instrumente nicht grundlos sperren.",
+    "new_steps": [
+      "S05"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP08",
+    "title": "Exitverwaltung und kontrollierte Altübernahme vervollständigen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 575,
+    "dependencies": "AP07.",
+    "requirements": "R11, R12, R35.",
+    "owner": "Engine/QA.",
+    "inputs": "Mengen und Brokerereignisse zuverlässig zugeordnet; Originalplan verfügbar oder ausdrücklich unbekannt.",
+    "change_locations": "`Engine-Exitmanager`; `Originalplanregister`; `Core Positionsdetail`; `UI Übernahmedialog`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP08.01",
+        "title": "Ausführungsplan aktivieren"
+      },
+      {
+        "id": "AP08.02",
+        "title": "Exitpriorität implementieren"
+      },
+      {
+        "id": "AP08.03",
+        "title": "Teilfill und Teilabbau erhalten"
+      },
+      {
+        "id": "AP08.04",
+        "title": "Brokeränderungen entkoppeln"
+      },
+      {
+        "id": "AP08.05",
+        "title": "Altpositionen führen"
+      },
+      {
+        "id": "AP08.06",
+        "title": "Menschliche Eingriffe behandeln"
+      }
+    ],
+    "deliverables": "exit-policy.md; positions-health-projection; legacy-adoption-review; exit-race-report.json.",
+    "acceptance": "T013/T032–T036/T077/T091; Deadline trotz Minus, Modifybackoff trotz erreichtem Ziel, falscher Plan und verlorener Bestkurs.",
+    "rollback": "Bestehenden brokerseitigen Schutz nicht löschen oder lockern. Bei fehlendem Plan keine spontane Ersatzstrategie; Interventionspfad anzeigen.",
+    "blockers": "Ursprünglich verlorene Metadaten können nicht durch Installation garantiert rekonstruiert werden.",
+    "new_steps": [
+      "S12"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP09",
+    "title": "Session Manager und rechtzeitigen Bestandsabbau implementieren",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 631,
+    "dependencies": "AP07, AP08.",
+    "requirements": "R06, R07, R16.",
+    "owner": "Engine.",
+    "inputs": "Orders und Exits korrekt, Timer und UTC-/Monotonievertrag vorhanden.",
+    "change_locations": "`Engine Sessionadapter`; `Symbol.MarketHours-Adapter`; `Orderexpiryplanung`; `unabhängiger Timerscheduler`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP09.01",
+        "title": "Sitzung des Brokersymbols bestimmen"
+      },
+      {
+        "id": "AP09.02",
+        "title": "Fristen berechnen"
+      },
+      {
+        "id": "AP09.03",
+        "title": "Abbaulast vorausplanen"
+      },
+      {
+        "id": "AP09.04",
+        "title": "Timerzustände unabhängig von Ticks führen"
+      },
+      {
+        "id": "AP09.05",
+        "title": "Abbau mit Brokerbeweis abschliessen"
+      },
+      {
+        "id": "AP09.06",
+        "title": "Carry und Finanzierung trennen"
+      }
+    ],
+    "deliverables": "session-state-machine.md; native-session-observations.json; session-bound-scenarios; unwind-planner.",
+    "acceptance": "T014–T022/T043/T090 plus Zeit-/Sonderschluss-/NoTick-Gegenfälle. Keine Garantie, dass illiquider Markt einen Close rechtzeitig annimmt.",
+    "rollback": "Neue sitzungsgebundene Pläne deaktivieren; vorhandene bereits freigegebene Deadlinepolicy bis zur kontrollierten Übergabe weiterführen.",
+    "blockers": "Unbekannter Kalender oder nicht abgenommene Zeitzone sperrt neue Sessionpläne des Symbols, nicht die Anzeige.",
+    "new_steps": [
+      "S12"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP10",
+    "title": "Ein gemeinsames Risiko-, Margin- und Operationsbuch bauen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 687,
+    "dependencies": "AP07, AP09.",
+    "requirements": "R05, R15, R16, R26, R33.",
+    "owner": "Engine/Quant/QA.",
+    "inputs": "Konsistente Mengenzustände; Sitzungspolitik und Operationsarten festgelegt.",
+    "change_locations": "`Engine Risikobuch`; `Symbolkontrakt-/FXadapter`; `Operationsscheduler`; `Core Budgetprojektion`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP10.01",
+        "title": "Risikoachsen trennen"
+      },
+      {
+        "id": "AP10.02",
+        "title": "Mengenberechnung robust implementieren"
+      },
+      {
+        "id": "AP10.03",
+        "title": "Alle möglichen Fills gemeinsam prüfen"
+      },
+      {
+        "id": "AP10.04",
+        "title": "Brokervertrag und Konversion einbeziehen"
+      },
+      {
+        "id": "AP10.05",
+        "title": "Operationsbudget priorisieren"
+      },
+      {
+        "id": "AP10.06",
+        "title": "Cashflows und Allokation abgrenzen"
+      }
+    ],
+    "deliverables": "risk-ledger-spec.md; budget-calculation-trace; operation-admission-controller; cashflow-report.",
+    "acceptance": "T012/T026/T041–T043/T061/T062/T073/T074/T090 plus FX-, MinFee-, Hebel- und Rundungsfälle.",
+    "rollback": "Neue Belastung sperren; vorhandene bestätigte Exits nicht von einer defekten Neuallokation abhängig machen. Keine Limits lockern, um einen Abgleichfehler zu kaschieren.",
+    "blockers": "Unbegrenzbarer Fremdbestand oder ungeklärte Kontokonversion verhindert verlässliche neue Budgetzuteilung.",
+    "new_steps": [
+      "S05",
+      "S11"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP11",
+    "title": "Marktdaten, faire Ladeplanung und Killed-Diagnose herstellen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 743,
+    "dependencies": "AP04.",
+    "requirements": "R18, R19, R20, R38.",
+    "owner": "Engine/Observability.",
+    "inputs": "Lesende Enginebindung vorhanden; aktueller Brokerumfang statt pauschaler Symbolnamenliste.",
+    "change_locations": "`Engine Marktdatenadapter`; `HistoryScheduler`; `Diagnoseexport`; `core/system-check.mjs`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP11.01",
+        "title": "Instrumentkatalog einfrieren"
+      },
+      {
+        "id": "AP11.02",
+        "title": "Gemeinsame Datenreihen begrenzen"
+      },
+      {
+        "id": "AP11.03",
+        "title": "Vollständige Kombinationen priorisieren"
+      },
+      {
+        "id": "AP11.04",
+        "title": "Latenz und Datenlücken messen"
+      },
+      {
+        "id": "AP11.05",
+        "title": "Killed-Hypothesen gegeneinander prüfen"
+      },
+      {
+        "id": "AP11.06",
+        "title": "Gezielte Entlastung implementieren"
+      }
+    ],
+    "deliverables": "instrument-coverage.json; history-scheduler-metrics; killed-investigation.md; resource-budget-measurements.",
+    "acceptance": "T046–T050/T068/T083/T088 plus Callback-, Ringbuffer-, NoProgress- und Druckabbaufälle.",
+    "rollback": "Zusätzliche Frames/Varianten zurücknehmen; Originalquellen und Crashbelege erhalten. Neustart nicht als Diagnoseersatz zählen.",
+    "blockers": "Hostexitgrund unzugänglich: Ursache offen, Freigabe auf überwachten Betrieb begrenzen.",
+    "new_steps": [
+      "S04",
+      "S07",
+      "S08",
+      "S09"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP12",
+    "title": "Supervisor, Prozessgrenzen und Ressourcenpriorität einführen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 799,
+    "dependencies": "AP11.",
+    "requirements": "R13, R14, R19, R36.",
+    "owner": "Plattform/Engine.",
+    "inputs": "Messbare Enginegesundheit und Hostgrenzen bekannt; keine automatische neue Handelsfreigabe.",
+    "change_locations": "`core/application.mjs`; `späterer Prozesssupervisor`; `Forschungsworkerhost`; `Diagnoseprojektion`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP12.01",
+        "title": "Lebenszeichen von Fortschritt trennen"
+      },
+      {
+        "id": "AP12.02",
+        "title": "Forschung isolieren"
+      },
+      {
+        "id": "AP12.03",
+        "title": "Degradationsstufen festlegen"
+      },
+      {
+        "id": "AP12.04",
+        "title": "Kontrollierten Wiederanlauf vorbereiten"
+      },
+      {
+        "id": "AP12.05",
+        "title": "Interventionsweg prüfen"
+      }
+    ],
+    "deliverables": "supervisor-policy.md; health-projection; worker-resource-guard; recovery-drill-report.",
+    "acceptance": "T037–T040/T049/T050/T068/T078/T079; NoProgress, zwei Writer, Crashloop und Workerabbruch.",
+    "rollback": "Autorestart deaktivieren und überwachten manuellen Wiederanlauf verwenden. Bestehende Brokerobjekte bleiben im Recoverybericht sichtbar.",
+    "blockers": "Ohne getesteten Interventionsweg kein unbeaufsichtigter Pilot.",
+    "new_steps": [
+      "S08",
+      "S17",
+      "S29"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP13",
+    "title": "Forschungsdaten und unveränderte Referenzen registrieren",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 849,
+    "dependencies": "AP01.",
+    "requirements": "R23, R24, R25, R37, R42.",
+    "owner": "Forschung.",
+    "inputs": "Gesicherte Quellen und konkrete Forschungsfragen; keine Brokerwrite-Rechte.",
+    "change_locations": "`neues Datenmanifest`; `private Brokerlogfixtures`; `Recordingadapter`; `Forschungsregister`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP13.01",
+        "title": "Datenquellen inventarisieren"
+      },
+      {
+        "id": "AP13.02",
+        "title": "Zwei Referenzen festhalten"
+      },
+      {
+        "id": "AP13.03",
+        "title": "Recording früh beginnen lassen"
+      },
+      {
+        "id": "AP13.04",
+        "title": "Chronologische Splits definieren"
+      },
+      {
+        "id": "AP13.05",
+        "title": "Versuchskatalog vorregistrieren"
+      },
+      {
+        "id": "AP13.06",
+        "title": "Datenbereitschaft entscheiden"
+      }
+    ],
+    "deliverables": "data-manifests/; research-preregistration.json; baseline-R0-R1-lock.json; recording-gap-report.",
+    "acceptance": "T048/T057–T060/T075/T076/T081/T082/T086/T092 plus zeitliche Verfügbarkeit/Selectionbias.",
+    "rollback": "Rohdaten und Manifeste nicht überschreiben; schlechte Datenpartition sperren. Vorregistrierten Versuch mit neuer Version neu anlegen.",
+    "blockers": "Fehlende geeignete Daten blockieren wirtschaftliche Aussage, nicht technische Replays.",
+    "new_steps": [
+      "S07",
+      "S13",
+      "S16",
+      "S20"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP14",
+    "title": "Replay und tatsächlichen Backtestadapter bauen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 905,
+    "dependencies": "AP06, AP07, AP13.",
+    "requirements": "R24, R25, R42.",
+    "owner": "Forschung/Engine.",
+    "inputs": "Datenqualität und deterministische Entscheidungs-/Ordersemantik definiert.",
+    "change_locations": "`reiner Enginekern`; `neuer Replayadapter`; `adapters/cli.mjs`; `Forschungsworker`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP14.01",
+        "title": "Reinen Kern extrahieren"
+      },
+      {
+        "id": "AP14.02",
+        "title": "Ereigniszeit korrekt simulieren"
+      },
+      {
+        "id": "AP14.03",
+        "title": "Fillmodelle ausdrücklich machen"
+      },
+      {
+        "id": "AP14.04",
+        "title": "Kosten und Equity vollständig führen"
+      },
+      {
+        "id": "AP14.05",
+        "title": "Nativen Vergleich separat einbinden"
+      },
+      {
+        "id": "AP14.06",
+        "title": "Reproduzierbarkeit prüfen"
+      }
+    ],
+    "deliverables": "replay-kernel; execution-model-cards; determinism-report; native-backtest-comparison.",
+    "acceptance": "T048/T058–T060/T075/T076/T082/T089; Intrabarmehrdeutigkeit, NoFill, Stopgap, Gebühren und Futures/CFD-Vertragslücken.",
+    "rollback": "Forschungsjob abbrechen; Brokerzugang bleibt schreibfrei. Alte Resultate mit altem Modellhash erhalten.",
+    "blockers": "Nicht nachgewiesene Fillparität verhindert Übertragung von Replaygewinn auf Brokerprofit.",
+    "new_steps": [
+      "S10",
+      "S16",
+      "S17"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP15",
+    "title": "Adaptive Bandbreiten und viele kurze Zyklen untersuchen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 961,
+    "dependencies": "AP14.",
+    "requirements": "R23, R25, R34.",
+    "owner": "Quant/Forschung.",
+    "inputs": "R1-Referenz und Daten-/Kostenmodell eingefroren; keine aktive Kontosteuerung.",
+    "change_locations": "`Forschungsrezepte H1/H2`; `Band-/Zeitfeatures`; `Ergebnisauswertung`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP15.01",
+        "title": "Fenster und Auflösung entkoppeln"
+      },
+      {
+        "id": "AP15.02",
+        "title": "Bandfamilien definieren"
+      },
+      {
+        "id": "AP15.03",
+        "title": "Kleinen registrierten Suchraum testen"
+      },
+      {
+        "id": "AP15.04",
+        "title": "Nettozyklen und Bindung vergleichen"
+      },
+      {
+        "id": "AP15.05",
+        "title": "Robustheit und Unsicherheit prüfen"
+      },
+      {
+        "id": "AP15.06",
+        "title": "Modulentscheidung festhalten"
+      }
+    ],
+    "deliverables": "bandwidth-study.md; all-trials.json; module-cards/; candidate-library-reviewed.json.",
+    "acceptance": "T057/T075/T076/T092 plus Kosten-/Selection-/OOS-Gegenfälle. Finanzieller Vorteil ist Ergebnis, nicht Zielzahl, die der Test erzwingen muss.",
+    "rollback": "Neue Kandidaten im Labor deaktivieren; unveränderte Referenz bleibt verfügbar. Keine Datenlöschung für schlechte Resultate.",
+    "blockers": "Ohne ausreichende Daten bleibt Mikrobereich Observe; das blockiert nicht die technischen mittleren Module.",
+    "new_steps": [
+      "S09",
+      "S13",
+      "S14",
+      "S15",
+      "S18"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP16",
+    "title": "Stops, Ziele, Zeitabbau und Impuls-Timing isoliert vergleichen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1017,
+    "dependencies": "AP14.",
+    "requirements": "R11, R23, R24, R25, R34.",
+    "owner": "Quant/Forschung.",
+    "inputs": "Reproduzierbare Eingangsentscheidungen und Kostenrechnung; Stopvergleich wird nicht mit anderer Menge verfälscht.",
+    "change_locations": "`Exit-/Impulsrezepte H4/H5`; `Forschungsdaten`; `Trade-Timelines`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP16.01",
+        "title": "Stopvarianten risikogleich aufsetzen"
+      },
+      {
+        "id": "AP16.02",
+        "title": "Gewinnziele und Zeitabbau entkoppeln"
+      },
+      {
+        "id": "AP16.03",
+        "title": "Impuls vorher normalisieren"
+      },
+      {
+        "id": "AP16.04",
+        "title": "Einstiegsverzögerung messen"
+      },
+      {
+        "id": "AP16.05",
+        "title": "Gewinnschutz mit Kosten abgleichen"
+      },
+      {
+        "id": "AP16.06",
+        "title": "Kombination erst nach Einzelbefunden"
+      }
+    ],
+    "deliverables": "stop-target-time-study.md; late-entry-study.md; exit-comparison-cards.",
+    "acceptance": "T013/T032/T057–T060/T073/T074/T077/T092; kein automatischer Trade bei verbrauchtem Ziel.",
+    "rollback": "Formeländerung zurücknehmen; alte Positionen behalten ihren ursprünglichen Plan. Kein globaler Parameterrollback als Positionsmutation.",
+    "blockers": "Unvollständige Bid/Ask-/Fillhistorie begrenzt Aussagen zum optimalen früheren Ausstieg.",
+    "new_steps": [
+      "S09",
+      "S12",
+      "S14",
+      "S15",
+      "S18"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP17",
+    "title": "Beidseitige Szenarien und adaptive Kapitalverteilung prüfen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1073,
+    "dependencies": "AP10, AP15, AP16.",
+    "requirements": "R15, R26, R27.",
+    "owner": "Quant/Engine.",
+    "inputs": "Gültige Modul-/Bandkandidaten und gemeinsame Budgetrechnung verfügbar.",
+    "change_locations": "`Szenariogruppen`; `Allokationsmodul`; `Forschungsrezepte H3/H6`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP17.01",
+        "title": "Beidseitigkeit definieren"
+      },
+      {
+        "id": "AP17.02",
+        "title": "Bestandsabhängigkeit abbilden"
+      },
+      {
+        "id": "AP17.03",
+        "title": "Feste Allokationsreferenz prüfen"
+      },
+      {
+        "id": "AP17.04",
+        "title": "Adaptiven Selektor begrenzen"
+      },
+      {
+        "id": "AP17.05",
+        "title": "Aufbau-/Sicherungsprofile vergleichen"
+      },
+      {
+        "id": "AP17.06",
+        "title": "Finale wirtschaftliche Entscheidung"
+      }
+    ],
+    "deliverables": "portfolio-allocation-study.md; bounded-policy-card; economic-release-decision.json.",
+    "acceptance": "T041/T061–T064/T074/T092 plus adverser Einseitentrend/kein Rücklauf/Finanzierung.",
+    "rollback": "Adaptiven Selektor auf freigegebene feste Policy zurückstellen; laufende Tradepläne nicht ändern. Abgelehnte Modelle bleiben im Register.",
+    "blockers": "Keine Modulaktivierung nur aufgrund technischer Testanzahl.",
+    "new_steps": [
+      "S11",
+      "S16",
+      "S19",
+      "S20",
+      "S29"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP18",
+    "title": "Gemeinsame lokale Oberfläche und Entscheidungsansichten fertigstellen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1129,
+    "dependencies": "AP03, AP04.",
+    "requirements": "R20, R21, R38, R40.",
+    "owner": "UI/Plattform.",
+    "inputs": "Semantischer Datenvertrag vorhanden; tatsächliche lesende Quelle oder ausdrücklich markierte Fixtures.",
+    "change_locations": "`public/hub.js`; `public/app.js`; `public/plot.mjs`; `public/data.mjs`; `public/hub.css`; `tests/ui-local.mjs`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP18.01",
+        "title": "Quellenmodell in UI übernehmen"
+      },
+      {
+        "id": "AP18.02",
+        "title": "Übersicht priorisieren"
+      },
+      {
+        "id": "AP18.03",
+        "title": "Chart je Plan/Position verbinden"
+      },
+      {
+        "id": "AP18.04",
+        "title": "Parameter- und Aktionssemantik gestalten"
+      },
+      {
+        "id": "AP18.05",
+        "title": "Reconnect und Last prüfen"
+      },
+      {
+        "id": "AP18.06",
+        "title": "Zugänglichkeit und visuelle Abnahme"
+      }
+    ],
+    "deliverables": "UI-Zustandsmodell; lokale integrierte Ansichten; mobile-browser-acceptance; accessibility-report.",
+    "acceptance": "T051–T054/T083/T084; neue Reconnect-/Schutzstatus-/ID-Gegenfälle. UI-Performancebudgets vor Lauf festhalten.",
+    "rollback": "Neue Ansichten hinter Featureflag deaktivieren; keine zweite Datenquelle oder fremde Kontodaten als Fallback einblenden.",
+    "blockers": "Nicht vorhandene Capability bleibt deaktiviert mit Grund, nicht als funktionsloser Button.",
+    "new_steps": [
+      "S03",
+      "S21",
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34",
+      "S35"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP19",
+    "title": "KI und MCP auf echte Daten und kontrollierte Vorschläge erweitern",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1185,
+    "dependencies": "AP05, AP18.",
+    "requirements": "R03, R22, R38.",
+    "owner": "Plattform/AI/Security.",
+    "inputs": "Gemeinsame Kontroll- und lesende Fachfunktionen vorhanden; keine beliebigen Brokerwrites durch Agenten.",
+    "change_locations": "`core/registry.mjs`; `core/mcp.mjs`; `adapters/providers.mjs`; `public/chat.mjs`; `tests/mcp-client.mjs`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP19.01",
+        "title": "Werkzeuge eng definieren"
+      },
+      {
+        "id": "AP19.02",
+        "title": "Belege in Antworten binden"
+      },
+      {
+        "id": "AP19.03",
+        "title": "Vorschlagsrechte und Bestätigung trennen"
+      },
+      {
+        "id": "AP19.04",
+        "title": "Providerfehler isolieren"
+      },
+      {
+        "id": "AP19.05",
+        "title": "Zwei konkrete Pfade testen"
+      },
+      {
+        "id": "AP19.06",
+        "title": "Kosten- und Privatsphärenansicht"
+      }
+    ],
+    "deliverables": "tool-catalogue; provider-acceptance; prompt-injection-report; AI-data-sharing-review.",
+    "acceptance": "T005/T006/T055/T056/T067/T086/T087 plus asynchroner Widerruf/SSRF-/Payloadfälle.",
+    "rollback": "KI abschalten; manuelle Bedienung und Enginefunktion bleiben erhalten. Externe Token separat widerrufen, lokale Löschung ist kein Anbieterwiderruf.",
+    "blockers": "Ohne konkret freigegebenen Anbieterzugang nur synthetischer Adaptertest.",
+    "new_steps": [
+      "S22"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP20",
+    "title": "Kontrollierte Start-, Stop- und Backtestprozesse anbinden",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1241,
+    "dependencies": "AP02, AP05, AP09.",
+    "requirements": "R14, R22, R36.",
+    "owner": "Plattform/Engine.",
+    "inputs": "Zielhost und Metadaten erfolgreich; Prozessrechte und Session-/Pendingfolgen definiert.",
+    "change_locations": "`adapters/cli.mjs`; `core Prozessverwaltung (neu)`; `SDK Betriebszustand`; `UI Engineaktionen`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP20.01",
+        "title": "CLI-Weg neu verifizieren"
+      },
+      {
+        "id": "AP20.02",
+        "title": "Prozessbesitz festhalten"
+      },
+      {
+        "id": "AP20.03",
+        "title": "Secrets ausserhalb sichtbarer Befehle"
+      },
+      {
+        "id": "AP20.04",
+        "title": "Stopaktionen aufteilen"
+      },
+      {
+        "id": "AP20.05",
+        "title": "Backtest isolieren"
+      },
+      {
+        "id": "AP20.06",
+        "title": "Abgebrochene Starts klären"
+      }
+    ],
+    "deliverables": "controlled-process-adapter; process-registry; native-launch-stop-backtest-report.",
+    "acceptance": "T039/T040/T055/T078/T079 plus PID-Reuse, LostStartReply und falscher Artefaktname.",
+    "rollback": "Neue automatische Starts deaktivieren; vorhandenen Prozess nur mit korrektem Besitz und sichtbarem Restbestand stoppen.",
+    "blockers": "CLI-Metadatenfähigkeit allein reicht nicht für Run-/Stop-/Backtestfreigabe.",
+    "new_steps": [
+      "S17",
+      "S23"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP21",
+    "title": "Update, Handover, Schemawechsel und Restore mit Handelsbestand verbinden",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1297,
+    "dependencies": "AP08, AP09, AP20.",
+    "requirements": "R12, R14, R17, R31, R39.",
+    "owner": "Plattform/Engine.",
+    "inputs": "Prozess- und Positionsbesitz eindeutig; DB-/Journalverträge kompatibel versioniert.",
+    "change_locations": "`core/deployment.mjs`; `core/restore.mjs`; `core/maintenance*.mjs`; `core/package-integrity.mjs`; `Windowsinstaller`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP21.01",
+        "title": "Übergabevorschau erstellen"
+      },
+      {
+        "id": "AP21.02",
+        "title": "Neue Exposition sperren und absichern"
+      },
+      {
+        "id": "AP21.03",
+        "title": "Bestand übergeben oder abbauen"
+      },
+      {
+        "id": "AP21.04",
+        "title": "Datenmigration und Artefaktallowlist anpassen"
+      },
+      {
+        "id": "AP21.05",
+        "title": "Restore gegen heutige Brokerrealität prüfen"
+      },
+      {
+        "id": "AP21.06",
+        "title": "Rollback ohne Handelsfiktion testen"
+      }
+    ],
+    "deliverables": "handover-runbook; migration-plan; rollback-drill; restored-broker-reconciliation-report.",
+    "acceptance": "T034–T040/T044/T045/T069/T070/T080/T085/T091; Disk-full/SIGKILL/Migration-/Restore-Gegenfälle.",
+    "rollback": "Vorherige geprüfte Programme plus konsistente Sicherung verfügbar halten, aber keine unbelegte Rücknahme von Brokerereignissen behaupten.",
+    "blockers": "Alte Runtime nicht nachweislich gestoppt: neuer Writer bleibt gesperrt.",
+    "new_steps": [
+      "S06",
+      "S25"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP22",
+    "title": "Gestaffelten Demo-, Last- und Dauerbetrieb durchführen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1353,
+    "dependencies": "AP09, AP10, AP12, AP18, AP21.",
+    "requirements": "R19, R20, R30, R38.",
+    "owner": "QA/Integration.",
+    "inputs": "Konkrete Demoaktivierung inklusive Konto, Limits, Verlustexit vor Schluss und Interventionsweg genehmigt.",
+    "change_locations": "`tatsächlicher Windows-/cTrader-Zielhost`; `Demopilotprofil`; `Ressourcenmessung`; `Runbooks`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP22.01",
+        "title": "Stufe A ohne Writes"
+      },
+      {
+        "id": "AP22.02",
+        "title": "Stufe B begrenzter technischer Pilot"
+      },
+      {
+        "id": "AP22.03",
+        "title": "Stufe C gemeinsame Szenarien"
+      },
+      {
+        "id": "AP22.04",
+        "title": "Stufe D Kapazität erweitern"
+      },
+      {
+        "id": "AP22.05",
+        "title": "Stufe E Dauerlauf"
+      },
+      {
+        "id": "AP22.06",
+        "title": "Gegenfälle/Intervention abnehmen"
+      }
+    ],
+    "deliverables": "demo-acceptance.json; soak-report; session-transition-report; intervention-drill.",
+    "acceptance": "T014–T022/T026/T037–T050/T065/T068/T079/T090/T091; native und synthetische Belege getrennt. Fünf Sessions sind kein statistischer Profitbeweis.",
+    "rollback": "Neue Belastung pausieren, bekannte Pläne/Schutz verwalten, Restorders bestätigt zurückziehen soweit genehmigt. Fehlgeschlagenen Lauf nicht löschen.",
+    "blockers": "Ohne Zielhost/Zugänge/konkrete Freigabe bleibt diese ganze Aktivitätsstufe blockiert.",
+    "new_steps": [
+      "S24",
+      "S25"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP23",
+    "title": "Bestehende Website als sichere lesende Fernansicht verbinden",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1409,
+    "dependencies": "AP03, AP18.",
+    "requirements": "R20, R21, R22, R29, R40.",
+    "owner": "UI/Plattform/Security.",
+    "inputs": "Lokale Quellenwahrheit und UIvertrag funktionieren; keine Cloudressource ungefragt buchen.",
+    "change_locations": "`bestehende Vercel-Kontoansicht`; `ausgehender Projektionsadapter`; `optionaler Auth-/Datendienst`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP23.01",
+        "title": "Transportentscheidung begrenzt prüfen"
+      },
+      {
+        "id": "AP23.02",
+        "title": "Nutzer/Konto/Gerät autorisieren"
+      },
+      {
+        "id": "AP23.03",
+        "title": "Snapshot plus Cursor liefern"
+      },
+      {
+        "id": "AP23.04",
+        "title": "Bestehendes Design übernehmen"
+      },
+      {
+        "id": "AP23.05",
+        "title": "Mobile tatsächliche Fernverbindung prüfen"
+      },
+      {
+        "id": "AP23.06",
+        "title": "Kosten/Retention/Intervention dokumentieren"
+      }
+    ],
+    "deliverables": "remote-readonly-design; device-auth-report; mobile-remote-acceptance; cost-and-retention-card.",
+    "acceptance": "T051–T054/T055/T067/T081/T084; keine echte Remoteausführung ohne eigene Capability.",
+    "rollback": "Ausgehenden Projektionszugang widerrufen; lokales System bleibt unverändert arbeitsfähig. Keine Cloudtabelle als alleinige Brokerwahrheit.",
+    "blockers": "Fehlende Hostreichweite oder Budgetfreigabe blockiert Remoteabschluss, nicht lokalen Alphabetrieb.",
+    "new_steps": [
+      "S03",
+      "S21",
+      "S30",
+      "S33",
+      "S34",
+      "S35"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP24",
+    "title": "Gemeinsamen Releasekandidaten und Weitergabe abnehmen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1465,
+    "dependencies": "AP17, AP19, AP22, AP23.",
+    "requirements": "R01, R02, R21, R30, R31, R39.",
+    "owner": "Integration/QA/Produkt.",
+    "inputs": "Pflichtumfang technisch nachgewiesen; wirtschaftlicher Status je Modul ausdrücklich entschieden.",
+    "change_locations": "`Releasebuilder`; `Installer`; `Dokumentation`; `Support-/Recoverykit`; `Zweitnutzerprüfung`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP24.01",
+        "title": "Releasezusammensetzung fixieren"
+      },
+      {
+        "id": "AP24.02",
+        "title": "Freigaben getrennt schreiben"
+      },
+      {
+        "id": "AP24.03",
+        "title": "Frischen zweiten Nutzer prüfen"
+      },
+      {
+        "id": "AP24.04",
+        "title": "Recovery und Support beilegen"
+      },
+      {
+        "id": "AP24.05",
+        "title": "Pakete verifizieren und zugänglich halten"
+      },
+      {
+        "id": "AP24.06",
+        "title": "Endstatus und nächste Erweiterung festhalten"
+      }
+    ],
+    "deliverables": "release-manifest; product-acceptance; economic-status-by-module; Recoverykit; installierbares Release erst nach Gates.",
+    "acceptance": "T065/T068/T070/T080/T085; vollständiger Zweitnutzer- und Zielhostnachweis im zugesagten Umfang.",
+    "rollback": "Keine aktive Installation ohne Freigabe. RC zurückziehen, bekannte kompatible Vorversion anbieten und betroffene Nutzer über verbleibende Brokerobjekte informieren.",
+    "blockers": "Ein offenes P0/P1 im Pflichtumfang verhindert RC; fehlende Wirtschaftsevidenz verhindert aktive Modulfreigabe.",
+    "new_steps": [
+      "S26",
+      "S29"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP25",
+    "title": "Optionalen News-/Kalenderadapter abnehmen",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1521,
+    "dependencies": "AP13.",
+    "requirements": "R22, R25, R37, R41.",
+    "owner": "Forschung/Plattform.",
+    "inputs": "Konkreter Anbieter, Lizenz, Kosten und Nutzerfreigabe geklärt; nicht Voraussetzung des lokalen Kernpiloten.",
+    "change_locations": "`neuer Kalender-/Newsadapter`; `Forschungsdatenmanifest`; `KI-Belegleser`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP25.01",
+        "title": "Quelle und Nutzungsrecht prüfen"
+      },
+      {
+        "id": "AP25.02",
+        "title": "Kalender zuerst strukturieren"
+      },
+      {
+        "id": "AP25.03",
+        "title": "Ausfallpolicy definieren"
+      },
+      {
+        "id": "AP25.04",
+        "title": "Zusatznutzen getrennt prüfen"
+      }
+    ],
+    "deliverables": "provider-license-card; news-time-manifest; calendar-filter-study.",
+    "acceptance": "T055/T081/T086; historische Verfügbarkeit und Prompt Injection.",
+    "rollback": "Feed deaktivieren, danach nach freigegebener Abhängigkeitsregel handeln oder pausieren; keine aktive Engine wegen Chattimeout beenden.",
+    "blockers": "Anbieter-/Lizenz-/Kostenoffenheit blockiert Newsfunktion, nicht den Kernrelease.",
+    "new_steps": [
+      "S13",
+      "S27"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  },
+  {
+    "id": "AP26",
+    "title": "Mehrkonten, MT5 und schreibenden Fernzugriff separat erweitern",
+    "source_file": "Th3R3v0lut10n_2_0_Ausfuehrungshandbuch_v1_0.md",
+    "source_line": 1565,
+    "dependencies": "AP24.",
+    "requirements": "R04, R14, R22, R29, R30.",
+    "owner": "Architektur/Adapter/Security.",
+    "inputs": "Stabiler Kernrelease und gesonderter Erweiterungsauftrag.",
+    "change_locations": "`separate Adapter`; `kontogebundene Datenhaltung`; `Remote-Kommandokanal`; `Fähigkeitsregister`. Neue Bereiche sind ausdrücklich Entwurf; vorhandene Pfade werden vor Änderung erneut gelesen.",
+    "subtasks": [
+      {
+        "id": "AP26.01",
+        "title": "Mehrkontengrenzen festlegen"
+      },
+      {
+        "id": "AP26.02",
+        "title": "MT5 separat modellieren"
+      },
+      {
+        "id": "AP26.03",
+        "title": "Remote-Kommandos begrenzen"
+      },
+      {
+        "id": "AP26.04",
+        "title": "Weitere Betriebsformen abnehmen"
+      }
+    ],
+    "deliverables": "extension-designs; adapter-conformance; multiaccount-isolation; remote-write-acceptance.",
+    "acceptance": "T004/T009/T010/T039/T055/T066/T067 plus neu zu registrierende echte Adapterfälle.",
+    "rollback": "Erweiterung getrennt deaktivieren; stabilen Ein-Konto-Kern und bestehende abgesicherte Positionen nicht mit zurücksetzen.",
+    "blockers": "Ohne neuen Auftrag bleibt diese Roadmap geplant; sie blockiert lokale 2.0-Abnahme nicht.",
+    "new_steps": [
+      "S28"
+    ],
+    "status": "historical_reference_superseded_for_execution"
+  }
+]

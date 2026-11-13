@@ -1,0 +1,67 @@
+--- a/core/control.mjs
++++ b/core/control.mjs
+@@ -366,28 +366,45 @@
+     return {serverTime:iso(responseTime),blocked:m.id===OBSERVER_ID||policy.blocked||!granted||!!fault,command:m.id===OBSERVER_ID?null:command};
+   }
+   ack(input,actor){
+-    this.assertBridge(actor,input.botId);const buildBlocker=buildEntryBlocker(this.store,input.botId);if(buildBlocker)fail(buildBlocker,'Die alte Parametervollmacht endet am Buildübergang. Keine neue Steuerfreigabe.',409);if(JSON.parse(this.rawBot(input.botId).manifest).id===OBSERVER_ID)fail('OBSERVER_READ_ONLY','Der Beobachter übernimmt keine Steueraufträge.',403);this.expire();const b=this.rawBot(input.botId),p=this.proposal(input.commandId);
+-    if(p.botId===b.id&&p.reason==='BOT_ARCHIVED')fail('ACK_ARCHIVED','Dieser Auftrag wurde durch die Archivierung dauerhaft gesperrt. Eine neue Verbindung kann ihn nicht nachträglich bestätigen.',409);
+-    if(p.botId===b.id&&p.reason==='FULL_RESTORE')fail('ACK_RESTORE_FENCED','Dieser Auftrag wurde durch die vollständige Wiederherstellung dauerhaft gesperrt. Eine neue Verbindung kann ihn nicht nachträglich bestätigen.',409);
+-    if(p.botId!==b.id||p.runtimeId!==input.runtimeId||b.runtime_id!==input.runtimeId||p.revision!==input.revision||p.digest!==input.digest||!p.deliveredAt)fail('ACK_MISMATCH','Bestätigung passt nicht zum übertragenen Auftrag.',409);
+-    if(typeof input.accepted!=='boolean')fail('ACK_INVALID','Bestätigungsstatus fehlt.');
+-    const values=validateValues(JSON.parse(b.manifest),input.values);
+-    if(input.accepted&&canonical(values)!==canonical(p.values))fail('ACK_VALUES_MISMATCH','Der Bot hat andere Werte als angefordert zurückgemeldet.',409);
+-    if(!input.accepted&&(input.revision!==p.revision||!b.actual||canonical(values)!==canonical(JSON.parse(b.actual))))fail('REJECTION_STATE_UNCERTAIN','Die Ablehnung belegt keinen unveränderten Laufzeitzustand.',409);
+-    if(p.status==='applied'||p.status==='rejected'){
+-      if((p.status==='applied')!==input.accepted)fail('ACK_CONFLICT','Widersprüchliche Bestätigung.',409);
+-      return {accepted:true,status:p.status,duplicate:true};
+-    }
+-    if(!['pending','timed_out'].includes(p.status))fail('ACK_STATE_INVALID','Dieser Auftrag wartet nicht auf eine Laufzeitbestätigung.',409);
+-    const newer=this.db.prepare("SELECT id FROM proposals WHERE bot_id=? AND revision>? AND status IN ('pending','applied')").get(b.id,p.revision);
+-    if(newer)fail('ACK_SUPERSEDED','Eine neuere Konfiguration muss zuerst abgeglichen werden.',409);
+-    const status=input.accepted?'applied':'rejected';
+-    this.store.transaction(()=>{
++    // One existing SQLite transaction binds validation, receipt and state.
++    // Receipts are insert-only here; this is not protection against DB tampering.
++    return this.store.transaction(()=>{
++      this.assertBridge(actor,input.botId);const buildBlocker=buildEntryBlocker(this.store,input.botId);if(buildBlocker)fail(buildBlocker,'Die alte Parametervollmacht endet am Buildübergang. Keine neue Steuerfreigabe.',409);if(JSON.parse(this.rawBot(input.botId).manifest).id===OBSERVER_ID)fail('OBSERVER_READ_ONLY','Der Beobachter übernimmt keine Steueraufträge.',403);this.expire();const b=this.rawBot(input.botId),p=this.proposal(input.commandId);
++      if(p.botId===b.id&&p.reason==='BOT_ARCHIVED')fail('ACK_ARCHIVED','Dieser Auftrag wurde durch die Archivierung dauerhaft gesperrt. Eine neue Verbindung kann ihn nicht nachträglich bestätigen.',409);
++      if(p.botId===b.id&&p.reason==='FULL_RESTORE')fail('ACK_RESTORE_FENCED','Dieser Auftrag wurde durch die vollständige Wiederherstellung dauerhaft gesperrt. Eine neue Verbindung kann ihn nicht nachträglich bestätigen.',409);
++      if(p.botId!==b.id||p.runtimeId!==input.runtimeId||b.runtime_id!==input.runtimeId||p.revision!==input.revision||p.digest!==input.digest||!p.deliveredAt)fail('ACK_MISMATCH','Bestätigung passt nicht zum übertragenen Auftrag.',409);
++      if(typeof input.accepted!=='boolean')fail('ACK_INVALID','Bestätigungsstatus fehlt.');
++      const values=validateValues(JSON.parse(b.manifest),input.values);
++      if(input.accepted&&canonical(values)!==canonical(p.values))fail('ACK_VALUES_MISMATCH','Der Bot hat andere Werte als angefordert zurückgemeldet.',409);
++      if(!input.accepted&&input.reason!=null&&typeof input.reason!=='string')fail('ACK_REASON_INVALID','Der Ablehnungsgrund muss Text oder null sein.');
++      // Bind the protocol fields, not JSON key order or transport credentials.
++      // Omitted/null reason are equivalent. Do not persist raw diagnostic text.
++      const receiptKey='configurationRejectedAck:'+p.id;
++      const receipt=input.accepted?null:{schema:'hub.rejected-ack/v1',fingerprint:digest({schema:'hub.rejected-ack/v1',botId:b.id,runtimeId:input.runtimeId,commandId:p.id,revision:p.revision,digest:p.digest,accepted:false,values,reason:input.reason??null})};
++      const saved=this.db.prepare('SELECT value FROM kv WHERE key=?').get(receiptKey);
++      if(p.status==='applied'||p.status==='rejected'){
++        if((p.status==='applied')!==input.accepted)fail('ACK_CONFLICT','Widersprüchliche Bestätigung.',409);
++        if(!input.accepted){
++          // Legacy rejections have no bound payload. Never invent a receipt from
++          // the current bot state or the first retry after upgrading.
++          let recorded;try{recorded=saved?JSON.parse(saved.value):null;}catch{}
++          if(!object(recorded)||Object.keys(recorded).length!==2||recorded.schema!==receipt.schema||typeof recorded.fingerprint!=='string'||!/^[a-f0-9]{64}$/.test(recorded.fingerprint))fail('ACK_RECEIPT_UNAVAILABLE','Für diese Ablehnung fehlt ein gültiger gebundener Quittungsbeleg. Zustandsabgleich erforderlich.',409);
++          if(recorded.fingerprint!==receipt.fingerprint)fail('ACK_PAYLOAD_CONFLICT','Diese Quittung weicht von der bereits gespeicherten Ablehnung ab.',409);
++        }else if(saved)fail('ACK_RECEIPT_STATE_CONFLICT','Quittungsbeleg und Auftragsstatus widersprechen sich.',409);
++        return {accepted:true,status:p.status,duplicate:true};
++      }
++      if(saved)fail('ACK_RECEIPT_STATE_CONFLICT','Quittungsbeleg und Auftragsstatus widersprechen sich.',409);
++      if(!input.accepted&&(!b.actual||canonical(values)!==canonical(JSON.parse(b.actual))))fail('REJECTION_STATE_UNCERTAIN','Die Ablehnung belegt keinen unveränderten Laufzeitzustand.',409);
++      if(!['pending','timed_out'].includes(p.status))fail('ACK_STATE_INVALID','Dieser Auftrag wartet nicht auf eine Laufzeitbestätigung.',409);
++      const newer=this.db.prepare("SELECT id FROM proposals WHERE bot_id=? AND revision>? AND status IN ('pending','applied')").get(b.id,p.revision);
++      if(newer)fail('ACK_SUPERSEDED','Eine neuere Konfiguration muss zuerst abgeglichen werden.',409);
++      const status=input.accepted?'applied':'rejected';
++      if(receipt)this.db.prepare('INSERT INTO kv(key,value) VALUES(?,?)').run(receiptKey,JSON.stringify(receipt));
+       this.db.prepare('UPDATE proposals SET status=?,completed_at=?,reason=? WHERE id=?').run(status,this.now(),input.accepted?(p.status==='timed_out'?'LATE_ACK':null):'RUNTIME_REJECTED',p.id);
+       if(input.accepted)this.db.prepare('UPDATE bots SET actual=?,actual_revision=? WHERE id=?').run(JSON.stringify(values),p.revision,b.id);
+       this.store.event('configuration.'+status,{proposalId:p.id,revision:p.revision,late:p.status==='timed_out'},actor.id,b.id);
+-    });
+-    return {accepted:true,status};
++      return {accepted:true,status};
++    });
+   }
+   export({botIds}={}){
+     let rows,scope='active';

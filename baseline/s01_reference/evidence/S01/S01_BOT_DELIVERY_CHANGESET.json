@@ -1,0 +1,25 @@
+{
+  "inherited_files": 231,
+  "inherited_unchanged": 219,
+  "changed_existing_paths": [
+    "README.md",
+    "RUN_S01_REPORT.md",
+    "UEBERGABE.md",
+    "evidence/S01/S01_CAPABILITY_MATRIX.json",
+    "evidence/S01/S01_MISSING_SOURCES.txt",
+    "evidence/S01/baseline-lock.json",
+    "evidence/S01/donor-map.json",
+    "evidence/S01/path-map.json",
+    "evidence/S01/reproduction-report.json",
+    "evidence/S01/version-crosswalk.md",
+    "tests/test_s01_recovery.py",
+    "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json"
+  ],
+  "previous_files_reconstructable": 231,
+  "old_mutable_bytes_in": "baseline/remoteview_checkpoint",
+  "existing_product_sources_unchanged": 36,
+  "new_original_sources": 2,
+  "masterplan_unchanged": true,
+  "gate_unchanged": true,
+  "no_product_patch": true
+}

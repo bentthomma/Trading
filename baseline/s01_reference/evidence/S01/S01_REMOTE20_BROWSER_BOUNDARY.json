@@ -1,0 +1,23 @@
+{
+  "browser_used": "system /usr/bin/chromium",
+  "default_playwright_bundled_browser_path_present": false,
+  "initial_attempt": "Existing all-sendmsg deny filter prevented Chromium Unix IPC/zygote startup. No application test ran.",
+  "followup_boundary": "Internet/raw/vsock socket creation denied while Unix IPC retained. Browser launched but navigation denied before routing. No policy override attempted. Experimental browser-only guard not included in final runtime.",
+  "attempts": [
+    {
+      "log": "browser_boundary_probe.log",
+      "sha256": "b3fa076ede57155f4191b060422f769482b0922dacc890dd545aa967a9afc6ec",
+      "result": "navigation failed before route handler: ERR_BLOCKED_BY_ADMINISTRATOR; zero application routes handled",
+      "not_counted_as_passed": true
+    },
+    {
+      "log": "browser_boundary_production_origin_probe.log",
+      "sha256": "344b8964376f8cd0380fefbf4449d85a40c2eaf5a961e23623d794b4b0ea01e6",
+      "result": "navigation failed before route handler: ERR_BLOCKED_BY_ADMINISTRATOR; zero application routes handled",
+      "not_counted_as_passed": true
+    }
+  ],
+  "browser_tests_passed": 0,
+  "browser_application_loaded": false,
+  "frontend_review": "Static original code only: pairing/revocation handlers call refresh(true) in finally; no visual or interactive acceptance."
+}

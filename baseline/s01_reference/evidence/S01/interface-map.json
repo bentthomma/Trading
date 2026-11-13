@@ -1,0 +1,328 @@
+{
+  "schema": "extremelab-as-is-interface-map/v1",
+  "work_id": "S01-INTERFACE-MAP",
+  "scope": "S01 reference evidence, not a target architecture or S02 activation",
+  "source_bindings": "vendor-manifests/S01_INTERFACE_SOURCE_BINDINGS.json",
+  "source_bindings_sha256": "290b684066ab5dfd53d3002c7b0c1bc086f8571652dce588df6b5f0adacfbbe6",
+  "predecessor_sha256": "e948472e28dad697a677add0fa74fb0915d6d115de34f0cec81157e7bad727a6",
+  "masterplan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "inventory": {
+    "complete": 38,
+    "total": 59,
+    "missing_complete": 21,
+    "new_recovered": 0
+  },
+  "interfaces": [
+    {
+      "id": "IF-01",
+      "title": "Laufzeitbindung vor Telemetrie",
+      "source_ids": [
+        "server",
+        "control",
+        "native-observer",
+        "native-journal"
+      ],
+      "protocol": {
+        "route": "/api/bridge/heartbeat",
+        "method": "POST",
+        "credential": "bridge bearer",
+        "schema": "profile manifest + botId + runtimeId + accountId + sequence"
+      },
+      "proof_status": "original_http_sqlite_tested_native_source_only",
+      "semantics": "Ein Heartbeat bindet ein Profil an eine Laufzeit; die Testprofile melden blocked=true. Die Observer-Nachricht folgt erst nach Bestätigung.",
+      "limits": "Kein gestarteter nativer Bot, kein Brokerkontakt; Empfangsbestätigung ist keine Orderfreigabe.",
+      "current_tests": [
+        "I01",
+        "I02",
+        "I03",
+        "I07"
+      ]
+    },
+    {
+      "id": "IF-02",
+      "title": "Beobachterbestand",
+      "source_ids": [
+        "native-observer",
+        "server",
+        "observation",
+        "store"
+      ],
+      "protocol": {
+        "route": "/api/bridge/observation",
+        "method": "POST",
+        "credential": "profile-bound bridge bearer",
+        "schema": "Observation/schemaVersion=1",
+        "storage": [
+          "observer:v1:state:<botId>",
+          "observer:v1:latest:<botId>"
+        ]
+      },
+      "proof_status": "original_http_sqlite_tested_native_source_only",
+      "semantics": "Nichtatomarer letzter Bestand mit Coverage, Sequenz und Quellzeit; Dezimalwerte und native IDs bleiben Strings. Kein ursprünglicher Handelsplan und keine vollständige Historie.",
+      "limits": "Aktualität ist nicht Vollständigkeit. Beobachterbericht ist keine unabhängige Bestätigung eines Brokers.",
+      "current_tests": [
+        "I01",
+        "I02",
+        "I03",
+        "I07",
+        "I09"
+      ]
+    },
+    {
+      "id": "IF-03",
+      "title": "Dauerhaftes Engine-Journal",
+      "source_ids": [
+        "native-journal",
+        "native-outbox",
+        "server",
+        "journal",
+        "store"
+      ],
+      "protocol": {
+        "route": "/api/bridge/journal",
+        "method": "POST",
+        "credential": "profile-bound bridge bearer",
+        "schema": "JournalBatch20/schemaVersion=1",
+        "storage": [
+          "enginejournal:v1:<botId>:*"
+        ]
+      },
+      "proof_status": "original_http_sqlite_tested_native_source_only",
+      "semantics": "Ereignis- und Sequenzbindung, Duplikaterkennung und atomare lokale Speicherung. Projektion schreitet nur über zusammenhängende Sequenzen fort.",
+      "limits": "stored>0 bedeutet nicht lückenlose Projektion. Historische Positionsberichte sind kein vollständiger jetzt offener Brokerbestand.",
+      "current_tests": [
+        "I01",
+        "I02",
+        "I03",
+        "I06",
+        "I07"
+      ]
+    },
+    {
+      "id": "IF-04",
+      "title": "Autorisierte lokale Lesemodelle",
+      "source_ids": [
+        "server",
+        "observation",
+        "journal",
+        "registry",
+        "mcp"
+      ],
+      "protocol": {
+        "routes": [
+          "/api/hub/bots/<id>/observation",
+          "/api/hub/bots/<id>/journal"
+        ],
+        "method": "GET",
+        "mcp_tools": [
+          "get_bot_observation",
+          "get_bot_journal"
+        ],
+        "credential": "human local session / separate agent token"
+      },
+      "proof_status": "original_http_sqlite_tested",
+      "semantics": "Die beiden Lesemodelle bleiben getrennt; ein Bridge-Token ist kein Agent-Lesetoken. Neustart und Duplikate erfrischen Quellen nicht.",
+      "limits": "Kein einheitlicher Event-Store oder automatischer Übertritt zwischen den Modellen nachgewiesen.",
+      "current_tests": [
+        "I01",
+        "I07",
+        "I12"
+      ]
+    },
+    {
+      "id": "IF-05",
+      "title": "Passiver Positionsvergleich",
+      "source_ids": [
+        "server",
+        "comparison-reader",
+        "comparison",
+        "registry",
+        "mcp"
+      ],
+      "protocol": {
+        "route": "/api/hub/reconciliation20",
+        "method": "GET",
+        "mcp_tool": "get_bot_reconciliation",
+        "selection": [
+          "engineBotId",
+          "observerBotId"
+        ],
+        "join_keys": [
+          "broker",
+          "id",
+          "environment",
+          "currency",
+          "nativePositionId"
+        ]
+      },
+      "proof_status": "original_http_sqlite_tested",
+      "semantics": "Zwei Profile explizit wählen; derselbe Originalreader dient HTTP und MCP. Werte, Originalplan und Quelle bleiben getrennt.",
+      "limits": "Keine Schreib-/Handelsfreigabe, keine unabhängige Brokerverifikation, keine automatische Zuordnung nach Symbol oder Kontonummer allein.",
+      "current_tests": [
+        "I04",
+        "I05",
+        "I12"
+      ]
+    },
+    {
+      "id": "IF-06",
+      "title": "Begrenzte Fernansicht erzeugen",
+      "source_ids": [
+        "remote",
+        "observation",
+        "journal",
+        "view-projection"
+      ],
+      "protocol": {
+        "target": "/api/revolution?action=receive",
+        "method": "POST",
+        "schema": "th3rev20_readonly/schemaVersion=1",
+        "credential": "separate synthetic device bearer in this run"
+      },
+      "proof_status": "original_projection_with_transport_double_tested",
+      "semantics": "Observerquelle meldet positionsbezogenen Bestand; Enginequelle meldet historische Berichte. Quellzeit je Zeile bleibt erhalten, Top-Level-Status kann neuer sein.",
+      "limits": "Verlustbehaftete Ansicht, kein Journal-Backup oder Ereignis-Replay. Vault/Transportbestätigung in neuen Tests sind Attrappen.",
+      "current_tests": [
+        "I08",
+        "I09",
+        "I10",
+        "I11"
+      ]
+    },
+    {
+      "id": "IF-07",
+      "title": "Fernansicht empfangen und lesen",
+      "source_ids": [
+        "view-api",
+        "view-http",
+        "view-service",
+        "view-projection"
+      ],
+      "protocol": {
+        "route": "/api/revolution",
+        "actions": [
+          "receive",
+          "status",
+          "snapshot",
+          "pair",
+          "revoke"
+        ],
+        "credentials": "device bearer for receive; owner session for other actions"
+      },
+      "proof_status": "source_bound_not_cloud_tested_this_run",
+      "semantics": "Gebundene Produktionsbytes entsprechen den Addonquellen des Originalarchivs. Gerätezuordnung und lesbare Projektion haben einen eigenen Vertrag.",
+      "limits": "Echte Cloud-Cache/Blob-Konsistenz und neue Produktions-API-End-to-End-Ausführung wurden hier nicht geprüft.",
+      "current_tests": [
+        "original:remote-view20"
+      ]
+    },
+    {
+      "id": "IF-08",
+      "title": "Vorhandener Fernansicht-Client",
+      "source_ids": [
+        "view-ui",
+        "view-projection"
+      ],
+      "protocol": {
+        "page": "revolution.html",
+        "consumer": "view20-public/revolution.js",
+        "api": "/api/revolution"
+      },
+      "proof_status": "source_bound_static_only",
+      "semantics": "Client warnt vor historischen Positionszählern, zeigt Zeilenquellzeit und Teilmengen. Vollständiger Addonclient liegt vor.",
+      "limits": "Nicht mit fehlendem finalen Skin-/Live-Dashboard gleichsetzen; kein neuer Browserlauf und keine Designabnahme in diesem Paket.",
+      "current_tests": []
+    },
+    {
+      "id": "IF-09",
+      "title": "Älterer Live-HTTP-Pfad",
+      "source_ids": [
+        "legacy-live"
+      ],
+      "protocol": {
+        "route": "/api/live",
+        "method": "GET",
+        "import": "../lib/relay.mjs"
+      },
+      "proof_status": "blocked_missing_original_dependency",
+      "semantics": "Der gesicherte Handler ruft relayRequest auf. Die vollständigen Bytes dieses JavaScript-Relays fehlen.",
+      "limits": "Der vorhandene Python-Relay ist kein Ersatz; der frühere Encoding-Vorschlag bleibt separat und nicht installiert.",
+      "current_tests": []
+    },
+    {
+      "id": "IF-10",
+      "title": "Separater WebSocket-Pfad",
+      "source_ids": [
+        "legacy-socket",
+        "legacy-storage",
+        "legacy-validator"
+      ],
+      "protocol": {
+        "route": "/api/socket",
+        "messages": [
+          "auth",
+          "ping",
+          "snapshot",
+          "publish"
+        ],
+        "storage": "lib/storage.mjs"
+      },
+      "proof_status": "source_bound_original_validator_tested",
+      "semantics": "Viewer und Producer benutzen den im Original vorhandenen Snapshotvertrag. Dieser Handler importiert storage.mjs, nicht den fehlenden relay.mjs. Der originale Validator erwartet XL1/XL2-Ereignisse mit run/kind/utc/data, nicht JournalEvent20.",
+      "limits": "Native JournalBatch20-, Observation- und Remoteprojektion werden vom Originalvalidator abgewiesen. Kein Konverter implementiert; kein neuer WebSocket-/Cloudtest.",
+      "current_tests": [
+        "I13"
+      ]
+    },
+    {
+      "id": "IF-11",
+      "title": "Separater Konto-Snapshot-Pfad",
+      "source_ids": [
+        "server",
+        "store"
+      ],
+      "protocol": {
+        "route": "/api/account-live?action=snapshot",
+        "storage": "SQLite snapshots table",
+        "method": "GET"
+      },
+      "proof_status": "separation_only_tested_no_account_connection",
+      "semantics": "Globale Kontosnapshots werden durch Observer- und Journalnachrichten nicht befüllt. Die echte Kontoabfrage besitzt eine eigene Provideranbindung.",
+      "limits": "Die Kontoabfrage selbst wurde nicht aufgerufen; keine Kontoanbindung oder unabhängige Providerbestätigung.",
+      "current_tests": [
+        "I01"
+      ]
+    },
+    {
+      "id": "IF-12",
+      "title": "Native Ausführung ist eine andere Grenze",
+      "source_ids": [
+        "native-dispatch",
+        "native-journal",
+        "journal"
+      ],
+      "protocol": {
+        "boundary": "native dispatch / journal receipt"
+      },
+      "proof_status": "source_only_not_executed",
+      "semantics": "Journalquittungen tragen grantsTrading=false. Der native Dispatch gehört nicht zum lesenden Fernansichts-/Vergleichsweg.",
+      "limits": "Kein nativer Build, keine native Prozessausführung und kein Beleg eines Broker-Sicherheitsverhaltens.",
+      "current_tests": [
+        "I02"
+      ]
+    }
+  ],
+  "formal_acceptance": false,
+  "S02_started": false,
+  "product_sources_changed": false,
+  "native_execution": false,
+  "cloud_execution": false,
+  "broker_action": false,
+  "unconfirmed": [
+    "final live/skin consumer",
+    "full JavaScript relay source",
+    "full website build",
+    "native C# execution/build in this run",
+    "real provider persistence/ack semantics in this run"
+  ]
+}

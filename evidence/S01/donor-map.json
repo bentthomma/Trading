@@ -1,0 +1,244 @@
+{
+  "broker_actions_authorized": false,
+  "entries": [
+    {
+      "boundary": "Only synthetic account events; route now exists, no broker connection",
+      "classification": "candidate_adapter",
+      "component": "Hub / Observer ingestion",
+      "historical_tests": "097_observation",
+      "paths": [
+        "server.mjs",
+        "core/observation.mjs"
+      ],
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "Linux sandbox only; no user-data restore",
+      "classification": "candidate_adapter",
+      "component": "Journal / backups / restore",
+      "historical_tests": [
+        "097_archive",
+        "097_restore"
+      ],
+      "paths": [
+        "core/engine-journal.mjs",
+        "core/journal-archives.mjs",
+        "core/restore.mjs"
+      ],
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "Not original 1.9; no new .algo build",
+      "classification": "reference_only",
+      "component": "Native engine 2.0 alpha5",
+      "historical_tests": "58 source input hashes and source-identity generator",
+      "paths": [
+        "integrations/ctrader-th3revolution20/"
+      ],
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "Only 10-file addon, not complete deployed website",
+      "classification": "candidate_adapter",
+      "component": "RemoteView20 website addon",
+      "historical_tests": "097_observation and web-unit tests in remaining groups",
+      "paths": [
+        "integrations/vercel-view20/"
+      ],
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "Windows installation still untested",
+      "classification": "reference_only",
+      "component": "Trading Local 0.8.0",
+      "historical_tests": "080_core_http 18/18",
+      "paths": [
+        "Trading_Local/"
+      ],
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "21 original inputs lack full bytes;38 complete inputs; no product integration or deployment.",
+      "classification": "reference_only",
+      "component": "Production website (Vercel source input tree)",
+      "current_proof": "38/59 original inputs SHA1/256 bound. Source availability is not complete build proof. Original patches, derived stages and proposals stay separate.",
+      "historical_tests": "28/59 source bytes SHA1-matched to Vercel UID; derived five raw asset pages/files; four independent stage checks, missing overlay causes expected failure. No full build.",
+      "paths": [
+        "src/build-release20.mjs",
+        "src/build.mjs",
+        "src/assets.0",
+        "src/assets.1",
+        "src/assets.2",
+        "src/assets.3",
+        "src/skin.0",
+        "src/skin.8",
+        "src/bot-src.0",
+        "src/bot-src.2",
+        "src/account-addon.br",
+        "src/live-overlay.b64"
+      ],
+      "source": "Vercel dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "External bundle not retrieved; cannot equate with native 2.0-alpha5",
+      "classification": "unresolved",
+      "component": "Original Engine 1.9 delivery preview",
+      "historical_tests": "3 deployment source entries listed and read-only preview build inspected",
+      "paths": [
+        "src/build.mjs",
+        "external delivery.json (not recovered)"
+      ],
+      "source": "Vercel dpl_DPoekz6ga9QJ5ebcWiRSLqFLKpRX",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "No live overlay and no full build; no publication or product integration.",
+      "classification": "reference_only",
+      "component": "Recovered production Vercel source bytes and packed assets",
+      "current_proof": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
+      "new_proof": "Current manifest contains 36 SHA1+SHA256-bound source files; older31 unchanged",
+      "paths": [
+        "baseline/vercel_recovered/src",
+        "baseline/derived_assets/public"
+      ],
+      "source": "authenticated Vercel UID + private source archives, exact SHA1 match",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "Source-input identity is established; exact original binary bytes/rebuild and nondeterminism cause remain unverified. Engine1.9 is not recovered.",
+      "classification": "reference_only",
+      "component": "Historical Engine 1.2.1 binary build provenance",
+      "current_proof": "All12 original C# inputs reconstructed to the exact provider-reported packed sourceHash and three provider segment UIDs",
+      "new_proof": "Same provider-reported sourceSha256 but two distinct artifact SHA-256 and bytes; library 1.2.1 archive 30 manifest hashes verified",
+      "paths": [
+        "evidence/S01/S01_HISTORICAL_VERCEL_BUILD_READBACK.json"
+      ],
+      "source": "Vercel dpl_6AuC... and dpl_RVq... build events + separate local 1.2.1 archive",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "No cTrader runtime, no bot or broker; archived wire fixture replayed in original Python receiver, not regenerated by C#",
+      "classification": "reference_only",
+      "component": "Original Engine1.2.1 source and synthetic receiver fixture",
+      "current_proof": "S01_ENGINE121_PRODUCTION_BINDING.json and S01_ORIGINAL_WIRE_REPLAY_CURRENT.json",
+      "paths": [
+        "src/bot-src.0",
+        "src/bot-src.1",
+        "src/bot-src.2"
+      ],
+      "source": "baseline/original_engine121_source.zip",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "No production repair or integration; WebSocket, cache and missing relay adapters are test doubles. Live trading and provider connectivity untested.",
+      "classification": "reference_only",
+      "component": "Recovered original endpoint handlers and UI patch",
+      "current_proof": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json; original-source tests in tests/test_endpoint_recovery.py and tests/endpoint_dispatch.test.mjs",
+      "paths": [
+        "src/api/account-chart.js",
+        "src/api/live.js",
+        "src/api/probe.js",
+        "src/api/socket.js",
+        "src/patch_ui.mjs"
+      ],
+      "source": "authenticated provider responses plus exact selected old source members",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "boundary": "Not the final deployed reader: later missing skin overwrites lib/ctrader-readonly.mjs and public/konto-live.html. No real token, provider request or broker action.",
+      "classification": "reference_only",
+      "component": "Production-bound account addon 1.3.4 (intermediate stage)",
+      "current_proof": "Unchanged real build script creates six byte-identical donor files; current original 26-test suite exercised on those generated modules.",
+      "generated_paths": [
+        "lib/ctrader-readonly.mjs",
+        "lib/account-handler.mjs",
+        "public/konto-live.html",
+        "public/konto-live.js",
+        "public/konto-live.css",
+        "add-account-link.mjs"
+      ],
+      "paths": [
+        "src/account-addon.br",
+        "src/build-account-addon.mjs",
+        "src/api/account-live.js",
+        "src/lib/security.mjs"
+      ],
+      "source_archive": "baseline/original_accountlive134.zip",
+      "source_archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+      "boundaries": [
+        "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+        "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+        "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+      ],
+      "classification": "reference_only",
+      "component": "Original RemoteView20 producer and production API adapter",
+      "consumer_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+      "no_product_integration": true,
+      "selected_sources": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+      "source": "baseline/original_platform097.zip plus unchanged 36/59 production source tree",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    },
+    {
+      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
+      "boundary": "Only original source extraction and synthetic download bytes. No .NET build, no real bot artifact, no release authorization. Self-consistent metadata is not independent build evidence.",
+      "classification": "source_bytes_verified_private_no_integration",
+      "component": "Production Engine1.2.1 builder and authenticated artifact download",
+      "paths": [
+        "src/build-bot.mjs",
+        "src/api/bot-download.js"
+      ],
+      "source_archive": "baseline/original_release121_audit.zip",
+      "proof_time_context": "Carried-forward source finding; proof/test wording in this entry is historical, not a new execution in the no-reviewer amendment."
+    }
+  ],
+  "github_writes_authorized": false,
+  "historical_donor_matrix": "baseline/s01_reference/evidence/S01/donor-map.json",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "product_integration_authorized": false,
+  "proposal_disposition": {
+    "apply_to_originals": false,
+    "disposition": "reference_only_unactivated_proposals",
+    "location": "baseline/s01_reference/proposals/",
+    "native_sdk_followup": "separate later product repair; not an additional inventory gate"
+  },
+  "schema": "extremelab-s01-closeout/v1",
+  "source_catalog": {
+    "path": "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json",
+    "sha256": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127"
+  },
+  "space_reference_sources": [
+    {
+      "bytes": 4379,
+      "classification": "complete_reference_source",
+      "deployment_equivalence_verified": false,
+      "engine_1_9_identity_verified": false,
+      "id": "adaptive_function",
+      "integration_authorized": false,
+      "original_page": "page_337674debf4c8191a3d893ec1583e5a3",
+      "sha256": "2850bb4cc9b887d0c026b23eeb83c0c0e7ebcc3050935fec50953c6c219cbe48",
+      "storage_path": "baseline/space_reference/recovered_space_source/adaptive_function.js"
+    },
+    {
+      "bytes": 6590,
+      "classification": "complete_reference_source",
+      "deployment_equivalence_verified": false,
+      "engine_1_9_identity_verified": false,
+      "id": "adaptive_tests",
+      "integration_authorized": false,
+      "original_page": "page_337674debf4c8191a3d893ec1583e5a3",
+      "sha256": "8c3268d9e966b75a9d99c8b3bc9457f2dabaecfbb01c7c70c28aef151c70e30f",
+      "storage_path": "baseline/space_reference/recovered_space_source/adaptive_tests.js"
+    }
+  ],
+  "usage_rights": "No new redistribution or integration rights inferred. Inventory does not grant adoption.",
+  "work_id": "S00-S01-NO-REVIEWER-CLOSURE",
+  "plan_version": "1.2.0",
+  "independent_review_required": false,
+  "completion_record": "governance/masterplan/control/state.json + evidence/S01/completion.json",
+  "scope_of_acceptance": "source_inventory_only"
+}

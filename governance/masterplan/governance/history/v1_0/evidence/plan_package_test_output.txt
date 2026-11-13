@@ -1,0 +1,37 @@
+test_any_plan_byte_change_blocks_existing_lock (test_planctl.PlanTests.test_any_plan_byte_change_blocks_existing_lock) ... ok
+test_block_resume_never_marks_step_passed (test_planctl.PlanTests.test_block_resume_never_marks_step_passed) ... ok
+test_cli_failure_returns_nonzero_without_state_write (test_planctl.PlanTests.test_cli_failure_returns_nonzero_without_state_write) ... ok
+test_cycle_is_rejected (test_planctl.PlanTests.test_cycle_is_rejected) ... ok
+test_different_actor_cannot_finish (test_planctl.PlanTests.test_different_actor_cannot_finish) ... ok
+test_disabled_step_cannot_start (test_planctl.PlanTests.test_disabled_step_cannot_start) ... ok
+test_duplicate_json_keys_are_rejected (test_planctl.PlanTests.test_duplicate_json_keys_are_rejected) ... ok
+test_duplicate_step_and_check_are_rejected (test_planctl.PlanTests.test_duplicate_step_and_check_are_rejected) ... ok
+test_external_symlink_is_rejected (test_planctl.PlanTests.test_external_symlink_is_rejected) ... ok
+test_failed_check_does_not_finish (test_planctl.PlanTests.test_failed_check_does_not_finish) ... ok
+test_finish_requires_start (test_planctl.PlanTests.test_finish_requires_start) ... ok
+test_globs_have_directory_semantics (test_planctl.PlanTests.test_globs_have_directory_semantics) ... ok
+test_in_progress_limit_is_enforced (test_planctl.PlanTests.test_in_progress_limit_is_enforced) ... ok
+test_initial_only_first_step_ready (test_planctl.PlanTests.test_initial_only_first_step_ready) ... ok
+test_missing_and_incorrect_hash_are_rejected (test_planctl.PlanTests.test_missing_and_incorrect_hash_are_rejected) ... ok
+test_missing_check_is_rejected (test_planctl.PlanTests.test_missing_check_is_rejected) ... ok
+test_missing_required_artifact_is_rejected (test_planctl.PlanTests.test_missing_required_artifact_is_rejected) ... ok
+test_path_traversal_and_absolute_paths_fail (test_planctl.PlanTests.test_path_traversal_and_absolute_paths_fail) ... ok
+test_proposed_scope_also_blocks_finish (test_planctl.PlanTests.test_proposed_scope_also_blocks_finish) ... ok
+test_proposed_scope_validates_but_blocks_start_and_next (test_planctl.PlanTests.test_proposed_scope_validates_but_blocks_start_and_next) ... ok
+test_relock_requires_exact_amendment_and_resets_dependants (test_planctl.PlanTests.test_relock_requires_exact_amendment_and_resets_dependants) ... ok
+test_scope_rejects_planfiles_even_with_broad_allow (test_planctl.PlanTests.test_scope_rejects_planfiles_even_with_broad_allow) ... ok
+test_scope_rejects_unlisted_paths (test_planctl.PlanTests.test_scope_rejects_unlisted_paths) ... ok
+test_scope_resolution_requires_amendment_then_allows_start (test_planctl.PlanTests.test_scope_resolution_requires_amendment_then_allows_start) ... ok
+test_scope_respects_forbidden_even_when_allowed (test_planctl.PlanTests.test_scope_respects_forbidden_even_when_allowed) ... ok
+test_self_review_is_rejected_case_insensitively (test_planctl.PlanTests.test_self_review_is_rejected_case_insensitively) ... ok
+test_start_requires_dependencies_and_does_not_write_on_error (test_planctl.PlanTests.test_start_requires_dependencies_and_does_not_write_on_error) ... ok
+test_unhashed_proof_reference_is_rejected (test_planctl.PlanTests.test_unhashed_proof_reference_is_rejected) ... ok
+test_unknown_dependency_is_rejected (test_planctl.PlanTests.test_unknown_dependency_is_rejected) ... ok
+test_verify_is_read_only_and_success_advances_next (test_planctl.PlanTests.test_verify_is_read_only_and_success_advances_next) ... ok
+test_workorder_contains_scope_and_checks (test_planctl.PlanTests.test_workorder_contains_scope_and_checks) ... ok
+test_wrong_evidence_planhash_and_step_are_rejected (test_planctl.PlanTests.test_wrong_evidence_planhash_and_step_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.176s
+
+OK

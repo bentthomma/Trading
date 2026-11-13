@@ -1,0 +1,61 @@
+{
+  "work_id": "S01-BOT-DELIVERY-RECOVERY",
+  "recorded_at_utc": "2026-11-13T09:34:33.801836+00:00",
+  "previous_archive_sha256": "70a42bcc7adec76792bf19a42b38ef74d0d1371e45793c7cbb20668bfc25f036",
+  "donor": {
+    "file_id": "file_000000004b2c8210b206fbdfb885d0a8",
+    "name": "ExtremeLab_Release_1_2_1_Pruefung.zip",
+    "sha256": "c7ed79c05ecfbdd1ba75e0974aa850de44d78ed265859621570d8a8dadc24c0c",
+    "bytes": 14633,
+    "crc_checked": true,
+    "internal_manifest_files_verified": 11
+  },
+  "source_binding": [
+    {
+      "path": "src/build-bot.mjs",
+      "archive_member": "ExtremeLab_Release_1_2_1/deployment/build-bot.mjs",
+      "original_bytes": 3165,
+      "original_sha256": "4a2f35bf2a4913cb08729e503c1e97ec0cfad172fbecce2655c78f529adf8c42",
+      "bytes": 3076,
+      "sha256": "8f860380eedb09dbdd75fd32bad0666ff489aef3ed65f7d674d584a92c8875a8",
+      "source_uid_sha1": "cb2628ce0d6dafe7f0a5805c23ac71df0ed1aa4b",
+      "removed_comment_lines": 1,
+      "method": "remove_standalone_double_slash_comment_lines_only",
+      "semantics_claim": "Identity accepted only after exact complete provider UID match; not heuristic source replacement."
+    },
+    {
+      "path": "src/api/bot-download.js",
+      "archive_member": "ExtremeLab_Release_1_2_1/deployment/bot-download.js",
+      "original_bytes": 2067,
+      "original_sha256": "b151720594e0c898e5ddb12a1647cafcf27b871ad486f3be4427568cfda00bb1",
+      "bytes": 1979,
+      "sha256": "218ca030d075a988ed0ee260a59631efd2ac674607dd018573f44ff903dabde0",
+      "source_uid_sha1": "6aea26a19a9f84fd97286554d44a6d564264329e",
+      "removed_comment_lines": 1,
+      "method": "remove_standalone_double_slash_comment_lines_only",
+      "semantics_claim": "Identity accepted only after exact complete provider UID match; not heuristic source replacement."
+    }
+  ],
+  "provider_observation": {
+    "tool": "Vercel.list_deployment_files",
+    "deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "team": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+    "note": "Local transcription of authenticated read-only connector output, not a provider signature. Two expected source UIDs re-observed in the unchanged 59-source tree.",
+    "uids": {
+      "src/build-bot.mjs": "cb2628ce0d6dafe7f0a5805c23ac71df0ed1aa4b",
+      "src/api/bot-download.js": "6aea26a19a9f84fd97286554d44a6d564264329e"
+    }
+  },
+  "security_dependency": {
+    "archive_member": "ExtremeLab_Release_1_2_1/tests/lib/security.mjs",
+    "production_path": "src/lib/security.mjs",
+    "sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f",
+    "byte_identical": true
+  },
+  "new_sources": 2,
+  "previous_sources_unchanged": 36,
+  "source_count": 38,
+  "missing_count": 21,
+  "native_build_performed": false,
+  "formal_acceptance": false
+}

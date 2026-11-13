@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "prepared_tests_results_external",
+  "cases": [
+    {
+      "id": "C01-MPR1",
+      "runner": "test_ledger_reference.ExactCash",
+      "scope": "Exact arithmetic; no signal or fill simulation"
+    },
+    {
+      "id": "C02-ORIGINAL",
+      "runner": "original_orders.test.mjs",
+      "scope": "Existing quantity/fee reducer, 24 event permutations, deduplication; not account-wide cash"
+    },
+    {
+      "id": "C03-STORE",
+      "runner": "original_orders.test.mjs",
+      "scope": "Original Store + reducer reload in a second process; no actual sender or crash-during-broker-call"
+    },
+    {
+      "id": "C04-CASH",
+      "runner": "test_ledger_reference.ExactCash",
+      "scope": "Exact cash/MTM/explicit fee identity for synthetic CHF fully funded pieces"
+    },
+    {
+      "id": "GAP-01",
+      "runner": "original_orders.test.mjs",
+      "scope": "Expected original defect retained; passing characterization does NOT mean fixed"
+    }
+  ],
+  "not_tested": [
+    "native_CSharp",
+    "broker_history",
+    "live_or_demo_bot",
+    "cashflow_writer",
+    "FX_conversion",
+    "power_loss",
+    "full_S05_acceptance"
+  ],
+  "formal_gate_changed": false
+}

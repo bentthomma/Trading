@@ -1,0 +1,22 @@
+{
+  "work_id": "S07-TEIL6-AND-MASTER-MONTHLY-AUDIT",
+  "formal_step_completed": false,
+  "formal_status_changed": false,
+  "scope": "Independent private preparation on the actual supplied Teil6 archive",
+  "criteria": {
+    "S07-C01": "Teil6 raw and seven preserved monthly derived series bound; monthly provider raw ZIPs remain unavailable, no raw-to-derived parity claim",
+    "S07-C02": "Private compatibility checks reject inappropriate resolutions and quarantined candidates; no production gateway installed",
+    "S07-C03": "Missing histories explicitly distinguished from test cases and symbol names in the inspected input, not a claim about every external archive",
+    "S07-C04": "Content-addressed catalogue versions; original collection writer no-overwrite candidate tested; prior histories unchanged"
+  },
+  "remaining": [
+    "Actual S02 native result and normal later integration",
+    "Original timestamp clarification or new explicitly versioned correction for HistData October 2025",
+    "Historical instrument/broker filters, session/holiday calendars and intended-use rights",
+    "Seven original provider ZIPs for exact Master monthly raw-to-derived replay",
+    "Cause of 87 monthly market-return disagreements and one regional RF month remains unconfirmed; no substitution",
+    "Private one-line output guard not installed in any production pipeline"
+  ],
+  "historical_test_counts_are_not_current_results": true,
+  "fresh_package_receipt": "Delivered separately after fresh unpacking"
+}

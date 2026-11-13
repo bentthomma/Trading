@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "source": "Vercel authenticated list_deployment_events(builds=1), get_deployment; read-only",
+  "historical_external_build_not_local_reproduction": true,
+  "effective_build_command_undetermined": true,
+  "build_script_sha1": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38",
+  "build_stage_order": [
+    "build.mjs",
+    "postbuild-132.mjs",
+    "version133.mjs",
+    "build-account-addon.mjs",
+    "build-bot.mjs",
+    "build-bot14.mjs",
+    "build-ui.mjs",
+    "build-revolution20.mjs"
+  ],
+  "package_json_build_script": "node build.mjs",
+  "build_logs_confirm_stage_side_effects": true,
+  "builds": [
+    {
+      "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "target": "production",
+      "provider_state": "READY",
+      "build_event_count": 58,
+      "sdk": "6.0.428",
+      "automate": "1.0.21",
+      "artifact_name": "ExtremeLabReady121",
+      "artifact_version": "1.2.1",
+      "artifact_bytes": 90700,
+      "source_sha256_reported": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+      "binary_sha256_reported": "09052b508b13366c13d843d96e2706b628dd2573b2083bb4d2a7af24407e5b16",
+      "built_utc": "2026-11-07T18:07:18.211Z",
+      "build_success_reported": true,
+      "build_event_observed": true
+    },
+    {
+      "deployment_id": "dpl_RVqZwzFTD5mU9rc9Xc1i3QqFMXSt",
+      "target": "production",
+      "provider_state": "READY",
+      "build_event_count": 57,
+      "sdk": "6.0.428",
+      "automate": "1.0.21",
+      "artifact_name": "ExtremeLabReady121",
+      "artifact_version": "1.2.1",
+      "artifact_bytes": 90703,
+      "source_sha256_reported": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+      "binary_sha256_reported": "763afdc68adadc580bbe73308329afaaaf00ba2d0b72af2bdf60e72f3ef1e502",
+      "built_utc": "2026-11-06T12:16:35.723Z",
+      "build_success_reported": true,
+      "build_event_observed": true
+    }
+  ],
+  "conclusion": "Same reported source hash, different binaries (3 bytes); do not assert deterministic binary reproducibility, nor derive exact cause",
+  "not_engine19": true,
+  "not_native20alpha5": true,
+  "missing_local_complete_source": true
+}

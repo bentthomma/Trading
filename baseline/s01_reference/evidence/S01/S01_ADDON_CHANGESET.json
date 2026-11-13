@@ -1,0 +1,20 @@
+{
+  "previous_archive_sha256": "269436124048029d40921cbb35d30be254d67e6a4f815761cdee69676a2fdeba",
+  "previous_manifest_files": 127,
+  "previous_files_unchanged": 119,
+  "changed_existing_paths": [
+    "README.md",
+    "RUN_S01_REPORT.md",
+    "UEBERGABE.md",
+    "evidence/S01/baseline-lock.json",
+    "evidence/S01/donor-map.json",
+    "evidence/S01/path-map.json",
+    "evidence/S01/reproduction-report.json",
+    "evidence/S01/version-crosswalk.md"
+  ],
+  "unchanged_original_provider_files": 36,
+  "masterplan_unchanged": true,
+  "gate_unchanged": true,
+  "product_code_modified": false,
+  "scope": "Existing changes are only S01 inventory/report documentation; scripts/tests/generated stage outputs added to private audit package."
+}

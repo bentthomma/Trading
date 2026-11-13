@@ -1,0 +1,33 @@
+{
+  "observed_at_utc": "2026-11-12T23:10:59.097017+00:00",
+  "github": {
+    "method": "GitHub connector GET only",
+    "main": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+    "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+    "paths": [
+      "README.md"
+    ],
+    "tree_truncated": false
+  },
+  "vercel": {
+    "method": "Vercel connector list_deployment_files and get_deployment_file_contents",
+    "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "team_id": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+    "observed_source_entries": 59,
+    "three_recovered_bot_segment_uids_freshly_confirmed": [
+      "c47e00bbee5c0ca058b82f22551fd889bd2c88e4",
+      "2af389e11c004cb94b600bd1b095f769c73b2435",
+      "30b8b6e95fe03e4b798bd61768608deef0d126da"
+    ],
+    "larger_content_responses_still_truncated": [
+      "build-bot.mjs",
+      "build-ui.mjs",
+      "api/socket.js",
+      "api/probe.js",
+      "api/bot-download.js"
+    ],
+    "current_alias_target_not_requeried": true,
+    "input_listing_not_a_release_signature": true
+  },
+  "no_external_writes": true
+}

@@ -1,0 +1,46 @@
+{
+  "work_id": "S01-NEGATIVE-ACK-RECEIPT",
+  "predecessor_archive_sha256": "33d560a6186b3e02794f8db57d70e98902e95960a5592e3768349e1ef6c40e89",
+  "baseline_path": "evidence/S01/control-ack-audit/candidate/core/control.mjs",
+  "baseline_sha256": "02c2ab2bf9410bc0ea17b88f734b4e91d0f9762907694f0b146bb9d5d5937bae",
+  "candidate_sha256": "ef5fbc946409a3ad1a51f78ba75a0bfe95f181ff3f51e43e23c19b2ea09d7920",
+  "patch_sha256": "1dd35b5234d89c9387391ab26fcdf8305632db15107f7bbb832ff52d5c16c7c0",
+  "original_archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+  "changed_method": "ack",
+  "schema_changes": false,
+  "activated": false,
+  "original_sources": [
+    {
+      "path": "core/control.mjs",
+      "sha256": "9bbd47368f7b5c87a6ab402219f7d5cbc9cd173a7a244dfcbc3da741b897147c"
+    },
+    {
+      "path": "core/store.mjs",
+      "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978"
+    },
+    {
+      "path": "core/schema.mjs",
+      "sha256": "caf21114e697df310a32dfc0d13e3a2671442e7e0752d533cc2f12d6094574c8"
+    },
+    {
+      "path": "core/maintenance.mjs",
+      "sha256": "12e543eb526a4f8172f2f677a80ae374fbe0021ae9f28b8ee41bed88831103f9"
+    },
+    {
+      "path": "core/errors.mjs",
+      "sha256": "803d4626fab45b2ec38bc3c57fdbc34535008fa5bdefd44aa7226886724d3736"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "f1bd2940bcbaa63056c42cbbc117adc1ad774618f012c0b39da330a5c93c0082"
+    },
+    {
+      "path": "sdk/HubBridge.cs",
+      "sha256": "ca5916c2056ae9b49ef8d263092a72d8d7cc54bc58e542cd450ddc535979dba6"
+    },
+    {
+      "path": "sdk/HubProtocol.cs",
+      "sha256": "a2e053aea3d7ab6288c2d9d03f47a9cb4b26b9812798cf4bfe4b63dcd0e21997"
+    }
+  ]
+}

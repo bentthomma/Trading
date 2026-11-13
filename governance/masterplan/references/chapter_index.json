@@ -1,0 +1,3303 @@
+[
+  {
+    "domain": "foundations",
+    "id": "F01",
+    "title": "So wird aus Wissen eine überprüfbare Handelsidee",
+    "master_pdf_page": 78,
+    "sections": [
+      "Was dieses Buch leistet",
+      "Vier Fragen, die jede Methode beantworten muss",
+      "Drei Wege durch das Handbuch",
+      "Wie ein Lehrblatt zu lesen ist"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F02",
+    "title": "Preise, Kerzen und Einheiten richtig lesen",
+    "master_pdf_page": 79,
+    "sections": [
+      "OHLCV und der tatsächliche Dateninhalt",
+      "Preisabstand ist noch kein Geldbetrag",
+      "Renditen und Kapitalveränderungen"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F03",
+    "title": "Zeit, Bestätigung und die Grenze zur Zukunftsinformation",
+    "master_pdf_page": 80,
+    "sections": [
+      "Drei Zeiten statt nur eines Zeitstempels",
+      "Bestätigte Pivots ohne nachträglichen Vorteil",
+      "Mehrere Zeitebenen synchronisieren",
+      "Reihenfolge innerhalb einer Kerze"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F04",
+    "title": "Marktstruktur und Chartmuster in messbare Regeln übersetzen",
+    "master_pdf_page": 81,
+    "sections": [
+      "Von einem Bild zu einer Zustandsmaschine",
+      "Bereiche, Toleranzen und Skalierung",
+      "Trend, Range und Übergang",
+      "Was ein Chart nicht beobachten kann"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F05",
+    "title": "Formelsammlung: Trend, Momentum und Volatilität",
+    "master_pdf_page": 82,
+    "sections": [
+      "Notation und Berechnungsfenster",
+      "Gleitende Durchschnitte und Momentum",
+      "True Range und ATR",
+      "RSI mit vollständig definiertem Sonderfall",
+      "Standardabweichung, Bänder und Z-Score"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F06",
+    "title": "Volumen, VWAP, Profile und Orderflow",
+    "master_pdf_page": 84,
+    "sections": [
+      "Drei verschiedene Beobachtungen",
+      "VWAP und die Grenze des OHLCV-Ersatzes",
+      "Volume Profile und Market Profile",
+      "Absorption und Divergenz als Hypothesen"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F07",
+    "title": "Erwartungswert und Leistungskennzahlen nachrechnen",
+    "master_pdf_page": 85,
+    "sections": [
+      "Trefferquote, Gewinnhöhe und Kosten zusammen betrachten",
+      "R-Multiple und Geldrechnung",
+      "Rendite, Streuung und Verlustverlauf"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F08",
+    "title": "Positionsgrösse, Stops, Margin und Verlustserien",
+    "master_pdf_page": 86,
+    "sections": [
+      "Geldrisiko zuerst, Stückzahl danach",
+      "Ein Hebel ersetzt kein Risikomodell",
+      "Verlustserien und notwendige Erholung",
+      "Stops und Betriebsgrenzen unterscheiden"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F09",
+    "title": "Mehrere Strategien als gemeinsames Portfolio",
+    "master_pdf_page": 87,
+    "sections": [
+      "Die richtige Einheit ist die Gesamtexponierung",
+      "Kovarianz und Risikobeiträge",
+      "Signale kombinieren und Konflikte entscheiden",
+      "Kapazität und Kosten"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F10",
+    "title": "Optionslogik mit Formeln und Auszahlungsbildern",
+    "master_pdf_page": 89,
+    "sections": [
+      "Zuerst Rechte, Mengen und Verfall festlegen",
+      "Grundformeln",
+      "Warum Volatilität und Zeit eine eigene Rolle haben",
+      "Greeks sind lokale Sensitivitäten"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F11",
+    "title": "Eine Forschungskette, die sich selbst widerlegen kann",
+    "master_pdf_page": 90,
+    "sections": [
+      "Hypothese, Daten und Referenz vorab festhalten",
+      "Chronologische Trennung und Walk-forward",
+      "Kosten, Parameter und Verlustphasen belasten",
+      "Unsicherheit und Abhängigkeit"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F12",
+    "title": "Referenzlabor: einen einfachen Simulator nachvollziehen",
+    "master_pdf_page": 91,
+    "sections": [
+      "Warum ein kleiner, lesbarer Simulator hilfreich ist",
+      "Feste Ereignisreihenfolge",
+      "Was im Labor geprüft wird",
+      "Reproduktionsdateien",
+      "Übertragung nach cTrader"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F13",
+    "title": "Modelle, KI und zentrale Systemsteuerung",
+    "master_pdf_page": 93,
+    "sections": [
+      "Merkmal, Ziel und Entscheidung sauber trennen",
+      "Wahrscheinlichkeiten und Handlungsregeln",
+      "Aufgaben eines Sprachmodells im System",
+      "Zustandsautomat und zentrale Freigabe"
+    ]
+  },
+  {
+    "domain": "foundations",
+    "id": "F14",
+    "title": "Übungsfälle mit vollständigen Lösungen",
+    "master_pdf_page": 94,
+    "sections": [
+      "Aufgaben: erst selbst rechnen",
+      "Lösungen und Begründungen",
+      "Vom richtigen Rechnen zum richtigen Prüfen"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA01",
+    "title": "Von der sichtbaren Kerze zur tatsächlich möglichen Entscheidung",
+    "master_pdf_page": 97,
+    "sections": [
+      "Arbeitsauftrag: vier Zeitpunkte getrennt aufschreiben",
+      "Den Preis des Signals vom Preis des Geschäfts trennen",
+      "Das eigene Ergebnis prüfen"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA02",
+    "title": "Preis, Pip, Tick, Menge und Kontowährung durchgehend rechnen",
+    "master_pdf_page": 100,
+    "sections": [
+      "Ein fiktives Instrument vollständig beschreiben",
+      "Die Einheiten bis zum Geldbetrag mitführen",
+      "Runden ist eine Handelsentscheidung"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA03",
+    "title": "Wann die richtige Positionsgrösse null ist",
+    "master_pdf_page": 103,
+    "sections": [
+      "Ein identisches Setup bei drei Kontogrössen",
+      "Margin und Verlustbudget beantworten verschiedene Fragen",
+      "Die Reihenfolge der Mengenprüfung"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA04",
+    "title": "Eine Kerze kann zwei verschiedene Trade-Ergebnisse verbergen",
+    "master_pdf_page": 106,
+    "sections": [
+      "Zwei Pfade, dieselben vier OHLC-Werte",
+      "Drei saubere Möglichkeiten mit fehlender Reihenfolge umzugehen",
+      "Wie die Ungewissheit im Ergebnisbericht sichtbar bleibt"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA05",
+    "title": "Ein Retest wird als Zustandsfolge nachvollziehbar",
+    "master_pdf_page": 109,
+    "sections": [
+      "Vor dem ersten Signal feste Bezugswerte einfrieren",
+      "Drei vollständige Entscheidungen statt eines schönen Ausschnitts",
+      "Welche Zeilen ein Entwickler speichern sollte"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA06",
+    "title": "Break-even und Trailing auf demselben Preisweg vergleichen",
+    "master_pdf_page": 112,
+    "sections": [
+      "Zuerst definieren, welcher Einstand gemeint ist",
+      "Drei Regeln auf einem fest vorgegebenen Pfad",
+      "Was ein sauberer Vergleich unverändert lässt"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA07",
+    "title": "Wenn zwei Systeme dasselbe Instrument unterschiedlich handeln wollen",
+    "master_pdf_page": 115,
+    "sections": [
+      "Netto, brutto und Modulabsicht getrennt sehen",
+      "Ein kleiner Nettowert kann nach dem ersten Ausstieg grösser werden",
+      "Warum eine Mehrheit ähnlicher Indikatoren keine unabhängige Abstimmung ist"
+    ]
+  },
+  {
+    "domain": "learning",
+    "id": "PRA08",
+    "title": "Einen Trade bis zur Kontobuchhaltung zurückverfolgen",
+    "master_pdf_page": 118,
+    "sections": [
+      "Ein vollständig finanziertes Longbeispiel",
+      "Ein Teilverkauf und der Schlussverkauf",
+      "Wie daraus ein prüfbares Journal entsteht"
+    ]
+  },
+  {
+    "domain": "technical",
+    "id": "TECH_G01",
+    "title": "Gemeinsame Rechen- und Ausführungsregeln der technischen Lehrblätter",
+    "master_pdf_page": 172,
+    "sections": [
+      "Was eine Lehrversion festlegt",
+      "Datenzeit und elementare Berechnungen",
+      "Signal, Ausführung und Intrabar-Reihenfolge",
+      "TP0: Kosten, Menge, Zustandsautomat und Sitzung"
+    ]
+  },
+  {
+    "domain": "quant",
+    "id": "QUANT_CH01",
+    "title": "Wie ein quantitatives Modell zu einer nachvollziehbaren Entscheidung wird",
+    "master_pdf_page": 248,
+    "sections": [
+      "Eine konkrete Zielgrösse vor dem Modellnamen",
+      "Vier unterschiedliche Zeitpunkte einer Information",
+      "Transformationen gehören zum gespeicherten Modell",
+      "Ausgereifte Labels und getrennte Kalibrierung",
+      "Wahrscheinlichkeit, Auszahlung und Risiko getrennt halten",
+      "Modulauswahl ist eine zusätzliche Strategieentscheidung",
+      "Gemeinsame Ausführungsregeln der Lehrblätter"
+    ]
+  },
+  {
+    "domain": "markets",
+    "id": "MKT_CH01",
+    "title": "Instrumente, Orders und die Übertragung auf cTrader-CFDs",
+    "master_pdf_page": 312,
+    "sections": [
+      "1. Zuerst den Kontrakt lesen, dann die Strategie übertragen",
+      "2. Exposure, Verlustbudget und Margin sind verschiedene Grössen",
+      "3. Verfallspayoff und heutiger Optionspreis beantworten verschiedene Fragen",
+      "4. Greeks, Skew und 0DTE verlangen lokale statt pauschale Aussagen",
+      "5. Basis, Funding und Finanzierung getrennt buchen",
+      "6. Orderbedingungen bestimmen, welchen Fehler man akzeptiert",
+      "7. Was sich auf ein cTrader-CFD-Konto übertragen lässt",
+      "8. Kausal mit geschlossenen Bars arbeiten",
+      "9. Stückzahl und Schutz in cTrader richtig übersetzen",
+      "10. Ein überprüfbarer Übersetzungstest vor dem Botbetrieb"
+    ]
+  },
+  {
+    "domain": "advanced",
+    "id": "ADV_G01",
+    "title": "Was bei mehrbeinigen Strategien zusätzlich stimmen muss",
+    "master_pdf_page": 377,
+    "sections": [
+      "Position, Liquidität und Informationsstand getrennt führen"
+    ]
+  },
+  {
+    "domain": "equity",
+    "id": "EQC01",
+    "title": "Unternehmenszahlen verbinden: Bilanz, Ergebnis, Cashflow und Eigentümer",
+    "master_pdf_page": 427,
+    "sections": [
+      "Drei Perspektiven auf dieselbe Firma",
+      "Eine vollständige kleine Zahlenbrücke",
+      "Kontenabgrenzung vor dem Kennzahlenvergleich",
+      "Aktien sind ein eigener Datenbestand"
+    ]
+  },
+  {
+    "domain": "equity",
+    "id": "EQC02",
+    "title": "Damals bekannte Fundamentalstände: Versionen, Zeit und Vergleichbarkeit",
+    "master_pdf_page": 429,
+    "sections": [
+      "Ein Abschlussdatum ist kein Kenntnisdatum",
+      "Revisionen ergänzen die Historie",
+      "Zeitreihen und Vergleichsgruppen wirklich passend machen",
+      "Von einem Merkmal zu einer Entscheidung"
+    ]
+  },
+  {
+    "domain": "equity",
+    "id": "EQC03",
+    "title": "Bewerten mit sichtbaren Annahmen: operativer Wert, Eigentümeransprüche und Szenarien",
+    "master_pdf_page": 431,
+    "sections": [
+      "Zuerst bestimmen, wessen Zahlungsstrom bewertet wird",
+      "Wachstum braucht Kapital oder eine nachvollziehbare andere Ursache",
+      "Ein Reverse DCF löst eine Modellgleichung",
+      "Rechenrichtigkeit und Prognosegüte getrennt prüfen"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES01",
+    "title": "Daten, die damals noch nicht existierten: einen scheinbaren Gewinn zerlegen",
+    "master_pdf_page": 486,
+    "sections": [
+      "Der Auftrag an die Untersuchung",
+      "Zwei fehlerhafte Verknüpfungen",
+      "Die kausale Fassung Schritt für Schritt",
+      "Ein zweiter Fall: das verschwundene Unternehmen",
+      "Welche Prüfung den Fehler wirklich aufdeckt"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES02",
+    "title": "Labelintervalle aufzeichnen: weshalb ein pauschales gap nicht genügt",
+    "master_pdf_page": 490,
+    "sections": [
+      "Was eine Lernzeile zeitlich bedeutet",
+      "Der falsch positive Eindruck einer zeitlichen Lücke",
+      "Die zulässige Auswahl explizit nachrechnen",
+      "Purging und Embargo haben unterschiedliche Aufgaben",
+      "Wann andere Kreuzvalidierung eine andere Frage beantwortet",
+      "Reproduzierbarer Abschluss dieses Falls"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES03",
+    "title": "Vierundzwanzig Varianten und ein Gewinner: Auswahl ist selbst eine Strategie",
+    "master_pdf_page": 494,
+    "sections": [
+      "Die Versuchsfamilie vor dem Ergebnis festlegen",
+      "Was der einmalig geöffnete Test tatsächlich zeigt",
+      "Warum mehr Versuche mehr Zufallstreffer ermöglichen",
+      "Eine überprüfbare Forschungsakte statt einer einzigen Siegerkurve",
+      "Was jetzt eine sinnvolle Entscheidung wäre"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES04",
+    "title": "Vom Bruttosignal zur tragbaren Ordermenge: Kosten und Umsatz gemeinsam rechnen",
+    "master_pdf_page": 498,
+    "sections": [
+      "Die Gewinnschwelle beginnt mit einer Kostendefinition",
+      "Die doppelte Handelsseite sichtbar machen",
+      "Eine zusätzliche, offen deklarierte Mengenkurve",
+      "Nullpunkt und bestes Modellbudget sind verschiedene Grössen",
+      "Welche Daten die Annahme ersetzen müssten"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES05",
+    "title": "Unsicherheit bei abhängigen Daten: was ein Blockintervall leisten kann",
+    "master_pdf_page": 502,
+    "sections": [
+      "Die Fragestellung vor der Simulation",
+      "Weshalb die Zahl 240 allein zu wenig sagt",
+      "Vier klar benannte Resamplingverfahren",
+      "Die Intervallgrenzen lesen, ohne eine Erfolgswahrscheinlichkeit zu erfinden",
+      "Welche Fehler auch ein breiteres Intervall nicht repariert",
+      "Die Entscheidung aus dieser Darstellung"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES06",
+    "title": "Walk-forward mit festgelegter Referenz: ein schlechter Abschnitt bleibt im Bericht",
+    "master_pdf_page": 506,
+    "sections": [
+      "Was vor dem ersten Prüfmonat feststehen muss",
+      "Ein gespeicherter Prüfpfad ohne Modellbehauptung",
+      "Frühere Prüfungen dürfen später Vergangenheit werden",
+      "Drift als prüfbare Verletzung einer Annahme",
+      "Der falsche Reparaturversuch",
+      "Ein ehrlicher Schluss aus dem Gegenbeispiel"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES07",
+    "title": "Mehrere Module, gemeinsames Risiko: weshalb eine Abstimmung kein Portfolio ersetzt",
+    "master_pdf_page": 510,
+    "sections": [
+      "Drei Namen sind noch keine drei unabhängigen Quellen",
+      "Gleiche Kapitalanteile nachrechnen",
+      "Eine Gruppenbegrenzung ist eine eigene Allokationsentscheidung",
+      "Ein Kovarianzstress ohne erfundene Verlustwahrscheinlichkeit",
+      "Ein separater Orderfall: erst Positionen zusammenführen",
+      "Welche Aussage aus dem Modulvergleich folgt"
+    ]
+  },
+  {
+    "domain": "research",
+    "id": "RES08",
+    "title": "Die vollständige Forschungsentscheidung: Belege, offene Punkte und Verzichtsgründe",
+    "master_pdf_page": 514,
+    "sections": [
+      "Eine konkrete Akte anlegen",
+      "Der ausgefüllte Kern des Entscheidungsdokuments",
+      "Eine Evidenzleiter ohne Punktestand",
+      "Ablehnung, Unentschieden und Weiterarbeit unterscheiden",
+      "Ein Risikoentscheid als überprüfbare Nebenrechnung",
+      "Die Akte so schliessen, dass ein anderer sie prüfen kann"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB01",
+    "title": "Split und Dividende: dieselbe wirtschaftliche Position ohne doppelten Ertrag",
+    "master_pdf_page": 524,
+    "sections": [
+      "Was das Aktienkonto tatsächlich enthält",
+      "Split: neue Einheit, unveränderte Gesamtsumme",
+      "Ex-Ereignis und Zahlung sind zwei Buchungen",
+      "Warum die heutige Stückzahl nicht den alten Anspruch bestimmt",
+      "Zwei zulässige Renditepfade und eine unzulässige Addition",
+      "Die technische Konsequenz für ein Aktienmodell"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB02",
+    "title": "Handelshalt und Delisting: Bestand bleibt bestehen, Ausführbarkeit bleibt offen",
+    "master_pdf_page": 527,
+    "sections": [
+      "Ein fehlender Preis ist kein Verkauf",
+      "Drei verschiedene Fragen an denselben Datensatz",
+      "Bewertungsunsicherheit sichtbar statt still ausgefüllt",
+      "Wiederaufnahme: der erste Preis gilt nicht für jede Menge",
+      "Wie viel der falsche Abschluss verdeckt",
+      "Welche Tests und Entscheidungen daraus folgen"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB03",
+    "title": "Gemeinsamer Aktienschock: Stopabstand ist keine Verlustgarantie",
+    "master_pdf_page": 530,
+    "sections": [
+      "Vom Einzeltitelbudget zum tatsächlichen Konto",
+      "Welche Bedeutung ein Stop tatsächlich hat",
+      "Der gemeinsame Schock wird als Vektor vorgegeben",
+      "Warum ein Stop-Limit die Rechnung nicht repariert",
+      "Ein kleinerer Einsatz ist eine konkrete Gegenrechnung",
+      "Wie ein ehrliches Szenariobuch daraus entsteht"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB04",
+    "title": "Verlustpfade: gleiche Einzelrenditen, andere Drawdowns und spätere Einsätze",
+    "master_pdf_page": 533,
+    "sections": [
+      "Eine kontrollierte Reihenfolgefrage",
+      "Drawdown verwendet das bis dahin erreichte Hoch",
+      "Erholung wird auf der kleineren Basis verdient",
+      "Eine vorher festgelegte Schwelle ändert die Stückzahl",
+      "Stückhalbierung ist keine dauernde hälftige Kapitalquote",
+      "Welche Folgerung der schlechte Gegenfall erlaubt"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB05",
+    "title": "Datenfehler und Wiederaufnahme: erst den Kontostand erklären, dann neues Risiko",
+    "master_pdf_page": 536,
+    "sections": [
+      "Ein Nachrichtenfall statt eines behaupteten Liveadapters",
+      "Drei Arten von Unvollständigkeit brauchen verschiedene Antworten",
+      "Der erste Fill und die wiederholte Nachricht",
+      "Das Cancel-Rennen: bestätigt storniert ist nicht vollständig verbucht",
+      "Wiederaufnahme ist eine überprüfbare Übergangsbedingung",
+      "Welche Evidenz eine spätere Implementierung liefern müsste"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB06",
+    "title": "Kosten und Fillquote: denselben Kandidaten unter drei Ausführungen prüfen",
+    "master_pdf_page": 539,
+    "sections": [
+      "Ein Kandidatenbuch mit unveränderter Auswahl",
+      "Die Einheit der Kosten verhindert doppelte Abzüge",
+      "Szenario eins und zwei: alle etwas kleiner ausführen",
+      "Szenario drei: die gleiche Quote trifft andere Aufträge",
+      "Das ungünstige Muster ist eine Frage, keine Wahrscheinlichkeit",
+      "Was ein besserer Ausführungsversuch speichern müsste"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB07",
+    "title": "Der faire Vergleich: Expositionspfad, Kapitalbasis und Umsatz mitrechnen",
+    "master_pdf_page": 542,
+    "sections": [
+      "Vier Konten beantworten vier verschiedene Fragen",
+      "Warum durchschnittlich halb investiert nicht ausreicht",
+      "Zielgewicht nach Kosten verhindert einen versteckten Kredit",
+      "Ein vollständiger Kostenledger für jedes Konto",
+      "Die Ergebnisse werden zusammen mit ihrem Zweck gelesen",
+      "Welche Vergleiche ein späterer Aktienversuch zusätzlich braucht"
+    ]
+  },
+  {
+    "domain": "robustness",
+    "id": "ROB08",
+    "title": "Eine Aktien-Forschungsakte: begründet ablehnen, vertagen oder weiter untersuchen",
+    "master_pdf_page": 545,
+    "sections": [
+      "Ein enges Vorhaben mit überprüfbaren Behauptungen",
+      "Die Akte nennt den erwarteten Widerlegungsbeleg",
+      "Verwerfen bedeutet einen konkreten Fehler benennen",
+      "Vertagen ist eine offene Frage mit festgelegtem nächsten Schritt",
+      "Ein bestandener Einzelfall erlaubt nur den nächsten begrenzten Schritt",
+      "Das Variantenbudget begrenzt die Frage, nicht die Wahrheit"
+    ]
+  },
+  {
+    "domain": "lab",
+    "id": "LABC01",
+    "title": "LAB02: drei Systeme brauchen zuerst dieselbe Buchführung",
+    "master_pdf_page": 554,
+    "sections": [
+      "Was dieses ausführbare Labor tatsächlich untersucht",
+      "Long und Short verwenden dieselbe Geldgleichung",
+      "Cash, Equity und freies Collateral sind verschiedene Grössen",
+      "Positionsgrösse aus Verlustannahme, nicht aus verfügbarem Hebel",
+      "Die künstliche Maintenance-Regel bleibt überprüfbar"
+    ]
+  },
+  {
+    "domain": "lab",
+    "id": "LABC02",
+    "title": "Die drei Lehrregeln: Informationen, Zustände und Ausstiege",
+    "master_pdf_page": 559,
+    "sections": [
+      "Gemeinsame Regeln schaffen einen fairen Vergleich",
+      "System 1: Donchian-Ausbruch mit ausgeschlossenem Entscheidungsbar",
+      "System 2: EMA-Kreuzung mit definierter Initialisierung",
+      "System 3: Ein Retest ist ein befristeter Zustand",
+      "Welche These müsste später unabhängig geprüft werden?"
+    ]
+  },
+  {
+    "domain": "lab",
+    "id": "LABC03",
+    "title": "Ausführung, Datenvertrag und reproduzierbare Prüfung",
+    "master_pdf_page": 565,
+    "sections": [
+      "Ein Bar ist kein beobachteter Tickpfad",
+      "Stoprundung, Lücken und die offene Intrabar-Grenze",
+      "Der CSV-Vertrag lehnt Unklarheit sichtbar ab",
+      "Starten, exportieren und die Konten ohne Ergebniszauber lesen",
+      "Tests bestätigen Eigenschaften, keinen Handelsvorteil"
+    ]
+  },
+  {
+    "domain": "lab",
+    "id": "LABC04",
+    "title": "Mehrere Systeme: Freigaben, Konflikte und gemeinsames Risiko",
+    "master_pdf_page": 569,
+    "sections": [
+      "Warum drei getrennte Konten noch kein Portfolio sind",
+      "Freigaben müssen vor der Order feststehen",
+      "Gleiche oder gegensätzliche Signale brauchen eine feste Konfliktregel",
+      "Ein gemeinsames Risikobudget benötigt mehr als drei Stopbeträge",
+      "Auswahlfehler entstehen auch ohne künstliche Intelligenz"
+    ]
+  },
+  {
+    "domain": "lab",
+    "id": "LABC05",
+    "title": "Vom Offline-Kern zum Live-Adapter: Zustände statt Orderwünsche",
+    "master_pdf_page": 572,
+    "sections": [
+      "Der tatsächlich vorhandene Kern und die fehlende Verbindung",
+      "cTrader: abgeschlossene Bars und konkrete Instrumenteinheiten",
+      "Menge, Preisraster und Trigger werden getrennt übersetzt",
+      "Eine übergebene Order ist noch kein bestätigter Bestand",
+      "Idempotenz und Neustart sind Abgleichaufgaben",
+      "Welche Nachweise vor einem echten Adapter noch fehlen"
+    ]
+  },
+  {
+    "domain": "portfolio",
+    "id": "PORTC01",
+    "title": "LAB03: Ein gemeinsames Aktienkonto und sein Datenvertrag",
+    "master_pdf_page": 576,
+    "sections": [
+      "Die Frage hinter dem Labor",
+      "Sechs fiktive Aktien, drei feste Sektoren",
+      "Ein einziger Preisgenerator mit vorab definierten Belastungen",
+      "Vollständige Daten verlangen und Fehlstellen sichtbar stoppen",
+      "Die bewusst vereinfachte Aktienbuchhaltung"
+    ]
+  },
+  {
+    "domain": "portfolio",
+    "id": "PORTC02",
+    "title": "LAB03: Zwei feste Module, Nettierung und gemeinsame Zielgewichte",
+    "master_pdf_page": 579,
+    "sections": [
+      "Trend als vollständig bestimmte Auswahlregel",
+      "Relative Stärke ist eine Rangfolge, keine absolute Kaufbestätigung",
+      "Eine feste Mischung ersetzt keine gemeinsame Kasse",
+      "Kappen in fester Reihenfolge und den Rest als Cash behalten",
+      "Von Schlussinformation zu einer nächsten Eröffnungsabsicht"
+    ]
+  },
+  {
+    "domain": "portfolio",
+    "id": "PORTC03",
+    "title": "LAB03: Stückzahlen, Kostenbudget und tatsächliche Ausführung",
+    "master_pdf_page": 582,
+    "sections": [
+      "Mid, Bid, Ask und ungünstiges Runden",
+      "Ein Kostenbudget als Kontrollgrösse",
+      "Zielstücke aus reserviertem Kapital ableiten",
+      "Was vor einem tatsächlichen Kauf geprüft wird",
+      "Eine reale Modellorder vollständig nachrechnen",
+      "Grenzen gelten zu bestimmten Zeitpunkten"
+    ]
+  },
+  {
+    "domain": "portfolio",
+    "id": "PORTC04",
+    "title": "LAB03: Kontobuch, Benchmark und nachvollziehbare Ergebnisinterpretation",
+    "master_pdf_page": 588,
+    "sections": [
+      "Drei Identitäten halten die Geldrechnung zusammen",
+      "Eine Vergleichsregel mit denselben Ausführungsbedingungen",
+      "Den Standardlauf mit den richtigen Einheiten lesen",
+      "Umsatz und Kosten getrennt auswerten",
+      "Das Ende des Datensatzes bleibt ein offenes Ende"
+    ]
+  },
+  {
+    "domain": "portfolio",
+    "id": "PORTC05",
+    "title": "LAB03: Reproduktion, Prüfungen und klare Grenzen einer Live-Übertragung",
+    "master_pdf_page": 592,
+    "sections": [
+      "Den Versuch aus einem anderen Ordner starten",
+      "Welche Dateien welche Frage beantworten",
+      "Was die Selbstprüfungen tatsächlich nachweisen",
+      "Idempotenz im Labor und Wiederanlauf beim Broker unterscheiden",
+      "Gemeinsame Freigaben und Konflikte vor einer Erweiterung",
+      "Ein sinnvoller nächster Nachweis"
+    ]
+  },
+  {
+    "domain": "system",
+    "id": "SYS01",
+    "title": "Ein Vorteil braucht eine Rechnung und einen Vergleich",
+    "master_pdf_page": 596,
+    "sections": [
+      "Die Frage vor der Modellwahl",
+      "Drei Annahmensätze für denselben Rechentyp",
+      "Der passende Vergleich gehört zum Versuch",
+      "Einzelaktien erfordern ein vollständiges Universum"
+    ]
+  },
+  {
+    "domain": "system",
+    "id": "SYS02",
+    "title": "Eine grosse Methodensammlung braucht eine vollständige Versuchsliste",
+    "master_pdf_page": 599,
+    "sections": [
+      "Lernen und statistisches Ausprobieren trennen",
+      "Ein exakt begrenztes Fehlalarmmodell",
+      "Ein konkretes Forschungsprotokoll",
+      "Anforderung an einen weiterführenden Versuchskatalog"
+    ]
+  },
+  {
+    "domain": "system",
+    "id": "SYS03",
+    "title": "Vom Wissen zu einer begrenzten und nachvollziehbaren Freigabe",
+    "master_pdf_page": 602,
+    "sections": [
+      "Belegarten werden nicht zu einem Qualitätspunktestand addiert",
+      "Sollschema und tatsächlich gespeicherte Entscheidungsfelder",
+      "Zielgrenzen und spätere Bestände sind verschiedene Beobachtungen",
+      "Verantwortung zwischen Analyse, Code und Betrieb"
+    ]
+  },
+  {
+    "domain": "validation",
+    "id": "VALC01",
+    "title": "LAB04: Historische Renditen mit einem überprüfbaren Datenvertrag",
+    "master_pdf_page": 608,
+    "sections": [
+      "Was mit echten Monatsdaten erstmals untersucht wird",
+      "Marktüberschuss und Marktrendite auseinanderhalten",
+      "Ein festgehaltener Datenstand ist keine damalige Veröffentlichung",
+      "Welche Zeilen tatsächlich in den Versuch gelangen"
+    ]
+  },
+  {
+    "domain": "validation",
+    "id": "VALC02",
+    "title": "LAB04: Sechs Regeln und ihre zulässigen Informationszeitpunkte",
+    "master_pdf_page": 611,
+    "sections": [
+      "Eine überschaubare Familie vor dem ersten Ergebnis",
+      "Zwei Formeln mit unterschiedlicher Fensterbedeutung",
+      "Der Januarentscheid sieht höchstens den November",
+      "Was im Vorlauf geschieht und was nicht"
+    ]
+  },
+  {
+    "domain": "validation",
+    "id": "VALC03",
+    "title": "LAB04: Die jährliche Auswahl als eigene Regel auswerten",
+    "master_pdf_page": 614,
+    "sections": [
+      "Zehn Entscheidungen aus jeweils vergangenen Ergebnissen",
+      "Einheitlicher Score statt nachträglicher Siegerdefinition",
+      "Was die vollständige Auswahltabelle offenlegt",
+      "Das tatsächliche Auswahlprotokoll dieses Laufs",
+      "Die Auswahl selbst bleibt eine zu untersuchende Hypothese"
+    ]
+  },
+  {
+    "domain": "validation",
+    "id": "VALC04",
+    "title": "LAB04: Kosten, Cash und Kontowert über Regelwechsel verbinden",
+    "master_pdf_page": 617,
+    "sections": [
+      "Ein analytisches Renditekonto mit enger Bedeutung",
+      "Erst den Gewichtswechsel bezahlen, dann die Rendite verdienen",
+      "Eine Kontobuchung vollständig nachrechnen",
+      "Referenzen und Drawdown aus demselben Zeitraum",
+      "Der historische Entwicklungsbefund"
+    ]
+  },
+  {
+    "domain": "validation",
+    "id": "VALC05",
+    "title": "LAB04: Höhere Kosten auf unveränderte Entscheidungen anwenden",
+    "master_pdf_page": 620,
+    "sections": [
+      "Drei Kostenannahmen, eine festgehaltene Auswahlfolge",
+      "Die Wirkung aus einer einfachen Produktform verstehen",
+      "Was in der Kostengrafik direkt verglichen werden darf",
+      "Die drei tatsächlich gerechneten Kostenstufen",
+      "Kennzahlen beschreiben, ohne Sicherheit zu erfinden"
+    ]
+  },
+  {
+    "domain": "validation",
+    "id": "VALC06",
+    "title": "LAB04: Die festgelegte Endprüfung und ihre vollständige Versuchsakte",
+    "master_pdf_page": 623,
+    "sections": [
+      "Eine feste Variante kann ihre Monatsposition weiter ändern",
+      "Der Kontozustand wird weitergeführt, die Abschnittsrendite getrennt gemessen",
+      "Die tatsächlich festgelegte Endvariante und ihr Ergebnis",
+      "Der vollständige Pfad bleibt Bestandteil des Berichts",
+      "Was die Dateien und ihre Prüfsummen tatsächlich sichern",
+      "Welcher Fortschritt damit belegt ist"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC01",
+    "title": "Eine Wissenskarte mit überprüfbaren Verbindungen",
+    "master_pdf_page": 630,
+    "sections": [
+      "Welche Aufgaben im Wort Strategie stecken",
+      "Abdeckung wird an konkreten Inhalten festgemacht",
+      "Ein lesbarer und ein maschinenlesbarer Zugang",
+      "52 Themenfelder mit konkretem Einstieg"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC02",
+    "title": "Chartschulen: Beobachtungssprache, Interpretation und formaler Test",
+    "master_pdf_page": 635,
+    "sections": [
+      "Gemeinsame Daten, unterschiedliche Ordnungen",
+      "Was die Schulen jeweils beschreiben",
+      "Alternativen sind zu protokollieren",
+      "Annotationen können selbst geprüft werden"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC03",
+    "title": "Kerzen und klassische Muster als messbare Familien",
+    "master_pdf_page": 637,
+    "sections": [
+      "Eine Kerze vollständig zerlegen",
+      "Welche Familien zu unterscheiden sind",
+      "Mehrfachzählung und Auswertungsbasis"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC04",
+    "title": "Fibonacci und harmonische Formen ohne nachträgliche Ankerwahl",
+    "master_pdf_page": 638,
+    "sections": [
+      "Ein Verhältnis benötigt feste Bezugspunkte",
+      "Anker, Toleranzen und Bestätigungszeit",
+      "Ein zusätzlicher Filter kann ein bisher gültiges Muster ablehnen"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC05",
+    "title": "SMC und ICT: sichtbare Muster und vermutete Ursachen auseinanderhalten",
+    "master_pdf_page": 639,
+    "sections": [
+      "Drei verschiedene Arten von Aussagen",
+      "Eine Dreikerzenlücke ist kein Beweis eines unhandelten Bereichs",
+      "Die übrigen Begriffe brauchen ebenfalls Verträge"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC06",
+    "title": "Charttransformationen und die verlorene Information",
+    "master_pdf_page": 640,
+    "sections": [
+      "Darstellung und Ausführung verwenden unterschiedliche Preise",
+      "Welche Transformation welche Frage verändert",
+      "Repainting ist eine Zustandsfrage"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC07",
+    "title": "Auktionsprofile: Zeitblöcke, Mengen und Sessions",
+    "master_pdf_page": 641,
+    "sections": [
+      "TPO und Volumen zählen verschiedene Dinge",
+      "Ein Profil braucht feste Grenzen",
+      "Kontextmerkmale bleiben Hypothesen"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC08",
+    "title": "Positionierung, Sentiment und Onchain-Merkmale richtig lesen",
+    "master_pdf_page": 642,
+    "sections": [
+      "Bestand, Aktivität und Meinung",
+      "Quoten benötigen vergleichbare Zähler und Nenner",
+      "Onchain-Zustände und wirtschaftliche Zuordnung",
+      "Extrem ist kein automatischer Wendepunkt"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC09",
+    "title": "Diskretionäre Entscheidungen nachvollziehbar machen",
+    "master_pdf_page": 643,
+    "sections": [
+      "Eine gute Entscheidung kann ein schlechtes Ergebnis haben",
+      "Das Journal wird zum Datenvertrag",
+      "Menschen und Sprachmodelle haben begrenzte Rollen"
+    ]
+  },
+  {
+    "domain": "knowledge",
+    "id": "KBC10",
+    "title": "Neue Methoden aufnehmen, abgrenzen und weiterentwickeln",
+    "master_pdf_page": 644,
+    "sections": [
+      "Ein Aufnahmevertrag verhindert Namenssammlungen",
+      "Quellen werden nach ihrer Aufgabe gelesen",
+      "Was eine offene Lücke konkret bedeutet",
+      "Zusätzlich gelieferte historische Forschungsdaten",
+      "So werden die sechs Reihen richtig gelesen",
+      "Datenumfang und Versuchsergebnis bleiben getrennte Angaben"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC01",
+    "title": "Zinskurven und Inflation: ähnliche Laufzeit ist noch kein gleicher Risikofaktor",
+    "master_pdf_page": 669,
+    "sections": [
+      "Vom Zahlungsstrom zur Kurve",
+      "DV01, Key Rates und Konvexität beantworten verschiedene Fragen",
+      "Was ein Inflationslinker tatsächlich auszahlt",
+      "Breakeven ist eine Preiszerlegung, keine veröffentlichte Zukunft",
+      "Ein Hedge muss seine verbliebenen Risiken benennen"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC02",
+    "title": "Swapspreads: Kurvenmeinung, Sicherheiten und tatsächliche Finanzierung auseinanderhalten",
+    "master_pdf_page": 671,
+    "sections": [
+      "Der Spread hat eine Richtung",
+      "Der Zinsswap ist kein finanzierter Bondkauf",
+      "Carry muss aus Zahlungen hergeleitet werden",
+      "Mehrere Kurven und Collateral sind eigene Modellentscheidungen",
+      "Ein negativer Spread ist keine kostenlose Rendite"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC03",
+    "title": "Kredit und Kapitalstruktur: Spread-Hedge, Ausfall-Hedge und Vertragsschutz sind verschieden",
+    "master_pdf_page": 672,
+    "sections": [
+      "Gleicher Schuldner bedeutet nicht gleiche Forderung",
+      "Die CDS-Anleihen-Basis zuerst sauber definieren",
+      "CS01 glättet kleine Bewegungen, nicht den Ausfall",
+      "Recovery und Abwicklung können auseinanderlaufen",
+      "Kapitalstruktur-Relative-Value benötigt mehr als ein Aktien-Delta",
+      "Ein prüfbares Kreditverfahren endet auch mit Ablehnung"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC04",
+    "title": "Treasury-Futures, Lieferoption und Repo: vom Bildschirmspread zum Zahlungsstrom",
+    "master_pdf_page": 674,
+    "sections": [
+      "Clean, Dirty und Konversionsfaktor",
+      "Implizite Repo-Rate als Vergleichsgrösse",
+      "Variation Margin nicht in der Lieferrechnung verstecken",
+      "CTD und Delivery Option sind Zustände, keine ewigen Eigenschaften",
+      "Specialness verändert die Finanzierung genau dieses Papiers"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC05",
+    "title": "Rohstoffe: Terminstruktur, Ort, Qualität und physische Durchführbarkeit",
+    "master_pdf_page": 676,
+    "sections": [
+      "Eine Rohstoffquote enthält eine Spezifikation",
+      "Carry ist ein Kalender von Kosten",
+      "Die Mengenbilanz kommt vor der Gewinnbilanz",
+      "Eine positive Spanne kann an einem Engpass scheitern",
+      "Arbitrageband und riskanter Standortspread"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC06",
+    "title": "Devisen: Carry, Bewertung und Finanzierung in zwei Währungen",
+    "master_pdf_page": 677,
+    "sections": [
+      "Drei unterschiedliche Hypothesen",
+      "Quote, Notional und Bezugsleg sind Pflichtfelder",
+      "Eigener Zahlungsstromvergleich mit negativer EUR-Leg-Basis",
+      "Warum eine Basis nicht automatisch verschwindet",
+      "Was im Live-Betrieb übrig bleibt"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC07",
+    "title": "Volatilitätsmärkte: Varianz, Zeitfenster, Skew und Korrelation richtig zusammenführen",
+    "master_pdf_page": 679,
+    "sections": [
+      "Volatilität ist die Wurzel einer addierbaren Grösse",
+      "Ein vollständiger Einheitencheck",
+      "Die Termstruktur kann ein Ereignisfenster einpreisen",
+      "Eine Forward-Position ist ein Verhältnis von Varianznominalen",
+      "Skew und Dispersion sind weitere, unabhängige Dimensionen",
+      "Die Validierung testet Einheiten und Abbruchbedingungen"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC08",
+    "title": "Ereignisse und Wandelinstrumente: Verträge als Zustandsmaschine lesen",
+    "master_pdf_page": 680,
+    "sections": [
+      "Das Ereignis besitzt mehrere mögliche Endzustände",
+      "Ein Collar ist eine stückweise Vertragsfunktion",
+      "Fixingpreis und Lieferungskurs sind nicht identisch",
+      "Ein positiver Abschlussgewinn kann einen negativen Szenariomittelwert haben",
+      "Convertibles haben ebenfalls Zustandswechsel",
+      "Prüfbarkeit verlangt Versions- und Zustandskontrolle"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC09",
+    "title": "Bond-ETFs: NAV, Holdings und ausführbarer Rücknahmekorb sind drei verschiedene Grössen",
+    "master_pdf_page": 682,
+    "sections": [
+      "Zwei Märkte und mehrere Zeitstempel",
+      "Warum ein Bondkorb vom Fondsportfolio abweichen kann",
+      "Scheinbarer Discount und ausführbare Rechnung",
+      "Inventar und Finanzierung können das Verhalten des AP erklären",
+      "Datenprüfung und unabhängige Gegenfälle"
+    ]
+  },
+  {
+    "domain": "crossmarket",
+    "id": "CMC10",
+    "title": "Repo, Haircuts und Liquidität: eine relative Position muss den Weg überleben",
+    "master_pdf_page": 683,
+    "sections": [
+      "Eigenkapital und verfügbarer Cash erfüllen verschiedene Aufgaben",
+      "Haircut und Initial-Margin-Quote sind nicht derselbe Prozentsatz",
+      "Ein gemeinsamer Preis- und Haircutschock",
+      "Ein kleiner Cashfehlbetrag kann grosse Verkäufe erzwingen",
+      "Funding, Specialness und Wrong-Way können zusammenwirken",
+      "Risikokapazität vor Signalstärke"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC01",
+    "title": "Querschnitt, Kalender und Ensembles als getrennte Informationsquellen",
+    "master_pdf_page": 722,
+    "sections": [
+      "Zuerst die Beobachtungseinheit bestimmen",
+      "Was ein festes Ensemble wirklich kombiniert",
+      "Saisonalität braucht Zellen, Zählung und Schrumpfung",
+      "Vom Score zu einer prüfbaren Entscheidung"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC02",
+    "title": "Latente Zustände: Kalman-Filter, Innovation und HMM-Wahrscheinlichkeit",
+    "master_pdf_page": 723,
+    "sections": [
+      "Ein Zustand ist eine Modellvariable",
+      "Die neue Information ist die Innovation",
+      "Ein HMM aktualisiert Wahrscheinlichkeiten diskreter Zustände",
+      "Was die Modellvarianz nicht enthält"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC03",
+    "title": "Fraktionale Differenzierung: Erinnerung, Filterbreite und Datenleckage",
+    "master_pdf_page": 725,
+    "sections": [
+      "Stationarisieren und Prognostizieren sind verschiedene Aufgaben",
+      "Die Gewichte selbst nachrechnen",
+      "Feste Breite und Schwellenabbruch sind verschiedene Modelle",
+      "Die Einbettung in eine Lernpipeline entscheidet über die Aussage"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC04",
+    "title": "Korrelation, Kointegration, Fehlerkorrektur und die Grenzen des OU-Modells",
+    "master_pdf_page": 726,
+    "sections": [
+      "Ähnlichkeit auf einer Skala ist keine stabile Bindung",
+      "AR(1) und Fehlerkorrektur verbinden",
+      "Die exakte diskrete OU-Beziehung",
+      "Warum die Diagnose vor der Positionsrechnung kommt"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC05",
+    "title": "Prognose und Kausalität: ein Ereignis braucht eine Gegenfrage",
+    "master_pdf_page": 728,
+    "sections": [
+      "Drei Bedeutungen des Wortes kausal",
+      "Die synthetische Gegenfrage sichtbar formulieren",
+      "Identifikationsannahmen in überprüfbare Fragen übersetzen",
+      "Von einer Wirkungsfrage zu einer Handelshypothese"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC06",
+    "title": "Überwachtes Lernen, Sequenzmodelle und die Grenze zum Offline-RL",
+    "master_pdf_page": 729,
+    "sections": [
+      "Das Ziel definiert den Lernversuch",
+      "Eine kleine kausale Faltung vollständig verstehen",
+      "Training, Modellwahl und Wiederverwendung auseinanderhalten",
+      "Warum Offline-RL eine andere Datenfrage stellt",
+      "Konservative Verfahren und ihre begrenzte Aussage"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC07",
+    "title": "Wahrscheinlichkeiten, Quantile und Prognoseintervalle unter wechselnden Bedingungen",
+    "master_pdf_page": 732,
+    "sections": [
+      "Eine Wahrscheinlichkeit benötigt eine Häufigkeitsfrage",
+      "Ein Konfidenzintervall ist kein Prognoseintervall",
+      "Den Streuungswechsel in SQ07 lesen",
+      "Anpassung beobachten und Grenzen dokumentieren"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC08",
+    "title": "Suchfamilien, Auswahlunsicherheit und robuste Schätzung",
+    "master_pdf_page": 733,
+    "sections": [
+      "Welche Fehlerwahrscheinlichkeit wird überhaupt kontrolliert?",
+      "Die fünf erfundenen Tests vollständig verfolgen",
+      "Robust ist ein Schätzverfahren, nicht eine bereinigte Gewinnhistorie",
+      "Die Auswahlunsicherheit bleibt sichtbar"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC09",
+    "title": "Portfoliooptimierung mit Szenarioverlusten, CVaR und ausführbaren Grenzen",
+    "master_pdf_page": 735,
+    "sections": [
+      "Ein Optimierer löst die gestellte Aufgabe",
+      "Den Tail-Verlust als Optimierungsproblem ausdrücken",
+      "Die konkrete Rasterlösung und ihre Geldrechnung",
+      "Wie Schätzfehler und Nebenbedingungen die Lösung ändern"
+    ]
+  },
+  {
+    "domain": "systematic",
+    "id": "SQC10",
+    "title": "Kapazität, Markteinfluss und zeitlicher Zerfall einer Handelsidee",
+    "master_pdf_page": 736,
+    "sections": [
+      "Der eigene Auftrag ist Teil der Modellwelt",
+      "Eine dimensionsrichtige Kapazitätsrechnung",
+      "Nullstelle, Nutzenmaximum und Handelsgrenze unterscheiden",
+      "Zeitverzögerung kann den Vorteil ebenfalls verbrauchen"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC01",
+    "title": "Marktdaten als Ereignisse: Was ein Kursfeed wirklich beobachtet",
+    "master_pdf_page": 777,
+    "sections": [
+      "Drei verschiedene Aussagen: Trade, Quote und Orderaktion",
+      "Level 1, Level 2 und Level 3 sind keine austauschbaren Auflösungen",
+      "Vier Uhren und der Gültigkeitsbereich einer Sequenz",
+      "Snapshot plus Deltas: die Lücke ist ein Zustandsfehler",
+      "Bars, Korrekturen und ehrliche Qualitätsmerkmale",
+      "Vom Wörterbuch zur prüfbaren Datenzulassung"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC02",
+    "title": "Warteschlange und Auktion: Ausführung ist eine bedingte Zuteilung",
+    "master_pdf_page": 779,
+    "sections": [
+      "Eine Limitberührung ist noch keine Ausführung",
+      "Die beobachtbare Queue und ihre Identifikationsgrenze",
+      "Pro-rata benötigt mehr als ein Mengenverhältnis",
+      "Auktionspreise aus Mengen und einer expliziten Tie-Break-Regel",
+      "Adverse Selection getrennt vom verdienten Spread messen",
+      "Was der Simulator offenlegen muss"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC03",
+    "title": "Point-in-time für Fundamental-, Makro- und Alternativdaten",
+    "master_pdf_page": 781,
+    "sections": [
+      "Eine Beobachtung braucht mindestens zwei historische Achsen",
+      "Fundamentaldaten: Einreichung, Konzept und Einheit gehören zusammen",
+      "Makrodaten: Erstschätzung, Revision und Erwartung",
+      "Alternative Daten: Gemessen wird eine Stichprobe unter Bedingungen",
+      "Ein zulässiger As-of-Join braucht eine konkrete Auswahlreihenfolge",
+      "Zugang, Rechte und tatsächlicher Lieferumfang",
+      "Datenwörterbuch 1/6: Typ, zentrale Unterscheidung und Zugang",
+      "Datenwörterbuch 2/6: Typ, zentrale Unterscheidung und Zugang",
+      "Datenwörterbuch 3/6: Typ, zentrale Unterscheidung und Zugang",
+      "Datenwörterbuch 4/6: Typ, zentrale Unterscheidung und Zugang",
+      "Datenwörterbuch 5/6: Typ, zentrale Unterscheidung und Zugang",
+      "Datenwörterbuch 6/6: Typ, zentrale Unterscheidung und Zugang",
+      "Den gemeinsamen Schema-Umschlag richtig lesen"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC04",
+    "title": "Kapitalmassnahmen, Kontraktwechsel und Währungen ohne Buchungsillusionen",
+    "master_pdf_page": 788,
+    "sections": [
+      "Das Instrument ist mehr als sein Ticker",
+      "Split: Preis- und Mengenbasis ändern sich gemeinsam",
+      "Dividende: Forderung ist noch keine zahlbare Liquidität",
+      "Futuresrollen: ein Preisabstand ist kein geschenkter Ertrag",
+      "Währungsrichtung, Bewertung und Finanzierung",
+      "Kalender, Verfall und die Grenzen der Vergleichbarkeit"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC05",
+    "title": "Ausführung messen: vollständige Kosten statt eines einzigen Slippage-Werts",
+    "master_pdf_page": 790,
+    "sections": [
+      "Der Benchmark ist Teil der Frage",
+      "Implementation Shortfall einschliesslich Nichtausführung",
+      "Zerlegung ohne doppelt gezählte Verzögerung",
+      "POV und Volumenprofile brauchen eine kausale Mengenuhr",
+      "Kosten-Risiko-Abwägung nach dem Gedanken von Almgren und Chriss",
+      "Ein belastbarer TCA-Bericht erhält auch die schlechten Aufträge"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC06",
+    "title": "Orders, Fills und Cash: zuverlässige Zustände trotz Stornorennen",
+    "master_pdf_page": 792,
+    "sections": [
+      "Absicht, Anfrage, Order, Fill und Position sind fünf Objekte",
+      "Timeout ist Ungewissheit, keine bestätigte Ablehnung",
+      "Das Stornorennen bleibt wirtschaftlich offen",
+      "Deduplikation und Korrekturen brauchen verschiedene Schlüssel",
+      "Das Kontobuch ist ein zweiter, unabhängiger Konsistenzanker",
+      "Wiederanlauf mit einer beweisbaren Abgleichgrenze"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC07",
+    "title": "Portfolio-Greeks, Sicherheiten und Finanzierung auf derselben Zeitachse",
+    "master_pdf_page": 794,
+    "sections": [
+      "Sensitivitäten sind Einheitenrechnungen",
+      "Ein vollständig gerechnetes Zwei-Leg-Beispiel",
+      "Marktverlust und Liquiditätsbedarf können auseinanderfallen",
+      "Haircuts, Netting und Margin sind vertragsabhängig",
+      "Funding, Borrow und Währungsbasis als laufende Exposures",
+      "Stressmatrizen verbinden Preis, Liquidität und Handlung"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC08",
+    "title": "Feature Store und Forschungsregister: Der benutzte Datenstand muss rekonstruierbar sein",
+    "master_pdf_page": 795,
+    "sections": [
+      "Ein Feature ist Wert plus Herkunft plus zulässige Zeit",
+      "Eine späte Korrektur darf nicht die falsche Beobachtung verdrängen",
+      "Lernende Transformationen besitzen einen eigenen Informations-Cut-off",
+      "Register: jeder Versuch und jede Ablehnung zählen",
+      "Hashes und Archive haben einen begrenzten Beweiswert",
+      "Zugangsrechte und Datenänderung erreichen auch die Modelle"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC09",
+    "title": "Drift und Retraining: erst diagnostizieren, dann ein neues Modell prüfen",
+    "master_pdf_page": 797,
+    "sections": [
+      "Datenfehler, Verteilungswechsel und Prognosefehler sind verschiedene Alarme",
+      "Ein einfacher Driftabstand ohne Signifikanzbehauptung",
+      "Verspätete Labels bestimmen den Nenner",
+      "Kalibrierung messen, ohne fünf Fälle zu überdeuten",
+      "Retraining erzeugt einen Kandidaten, keine automatische Verbesserung",
+      "Freigabe, Rückfall und die Lernschleife dokumentieren"
+    ]
+  },
+  {
+    "domain": "dataops",
+    "id": "DOC10",
+    "title": "Vom Papiermodell zum cTrader-Adapter: ein prüfbarer Freigabevertrag",
+    "master_pdf_page": 799,
+    "sections": [
+      "Die Systemgrenze ist Teil des Produkts",
+      "Ein hundertfacher Mengenfehler kann formal gültige Daten erzeugen",
+      "Normalisierung ist nur eine von mehreren Freigaben",
+      "Schutzauftrag und tatsächliches Positionsrisiko",
+      "Ereignisse sind nützlich, aber kein vollständiger Kontobeweis",
+      "Paper-to-live wird durch konkrete Abweichungen geprüft",
+      "Was die neuen Materialien tatsächlich liefern"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF01",
+    "title": "Preise entstehen am ausführbaren Rand",
+    "master_pdf_page": 926,
+    "sections": [
+      "Käufer, Verkäufer und die nächste verfügbare Gegenorder",
+      "Letzter Handel, Geld, Brief und Mittelpunkt",
+      "Eigener Rechenfall: dieselbe Kaufmenge, anderer Durchschnitt",
+      "Welche Geschichte die Beobachtung noch zulässt",
+      "So wird daraus eine prüfbare Frage"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF02",
+    "title": "Spread, Tiefe, Warteschlange und Belastbarkeit",
+    "master_pdf_page": 929,
+    "sections": [
+      "Vier unterschiedliche Eigenschaften von Liquidität",
+      "Warum eine sichtbare Order keine reservierte Ausführung ist",
+      "Eigener Vergleich zweier Bücher",
+      "Gegenfälle: dicht angezeigt, dünn ausführbar",
+      "Messvertrag und Konsequenz für Strategien"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF03",
+    "title": "Orderflow, Absorption und die Rückkehr der Liquidität",
+    "master_pdf_page": 932,
+    "sections": [
+      "Eine Ereignisfolge statt eines einzelnen Volumenbalkens",
+      "Absorption als operationaler Begriff",
+      "Eigene zwei Pfade mit identischem Kaufvolumen",
+      "Persistenter Orderflow ist nicht automatisch persistente Rendite",
+      "Abgrenzung von Erzählung und testbarer Reaktion"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF04",
+    "title": "Marktliquidität und Finanzierung sind zwei verschiedene Engpässe",
+    "master_pdf_page": 936,
+    "sections": [
+      "Verkaufen können und durchhalten können",
+      "Gewinn, Vermögen und fällige Zahlung auseinanderhalten",
+      "Wie ein lokaler Engpass andere Positionen erreicht",
+      "Was historische Stressbeobachtungen belegen",
+      "Ein Verhaltenstest braucht beide Seiten"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF05",
+    "title": "Nachrichten bewegen Erwartungen, nicht nur Schlagzeilen",
+    "master_pdf_page": 939,
+    "sections": [
+      "Überraschung braucht einen vorher bekannten Vergleich",
+      "Drei verschiedene Änderungen können gleichzeitig wirken",
+      "Eigener Erwartungsfall ohne Handelsversprechen",
+      "Antizipation, Veröffentlichung und Verarbeitung",
+      "Was eine Strategie aus diesem Kapitel übernehmen kann"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF06",
+    "title": "Zeitskalen, wechselnde Regeln und die Grenzen stabiler Muster",
+    "master_pdf_page": 942,
+    "sections": [
+      "Eine Datenreihe hat keinen eingebauten Handelsmassstab",
+      "Stabilität ist eine Annahme mit unterschiedlichen Stärken",
+      "Eigener Aggregationsfall",
+      "Was eine Ablehnung des Zufallsmodells nicht beweist",
+      "Änderungen erkennen, ohne die Vergangenheit umzuschreiben"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF07",
+    "title": "Seltene grosse Bewegungen, Sprünge und Pfadrisiko",
+    "master_pdf_page": 945,
+    "sections": [
+      "Verteilung und Einzelfall auseinanderhalten",
+      "Was schwere Verteilungsränder praktisch bedeuten",
+      "Sprung und schneller kontinuierlicher Verlauf",
+      "Gleicher Endstand, unterschiedliche Überlebensfähigkeit",
+      "Messung und Anwendung"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF08",
+    "title": "Volatilität kann anhalten, ohne die Richtung vorherzusagen",
+    "master_pdf_page": 948,
+    "sections": [
+      "Bedingte Schwankung und erwartete Rendite",
+      "Eigener Ablauf einer aktualisierten Risikoschätzung",
+      "Asymmetrie braucht einen Markt und einen Horizont",
+      "Volatilität, Spanne, Richtung und Kosten trennen",
+      "Rückkopplung durch die eigene Risikoregel"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF09",
+    "title": "Trend und Rückkehr können auf verschiedenen Ebenen zugleich auftreten",
+    "master_pdf_page": 952,
+    "sections": [
+      "Erst festlegen, was zurückkehren oder fortbestehen soll",
+      "Ein historischer Befund mit genauer Reichweite",
+      "Eigener Pfad mit zwei gleichzeitig richtigen Beschreibungen",
+      "Erklärungsmöglichkeiten und ihre Gegenfälle",
+      "Eine saubere Gegenüberstellung im Forschungssystem"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF10",
+    "title": "Tageszeit, Handelsphasen und Auktionen verändern den Vergleich",
+    "master_pdf_page": 956,
+    "sections": [
+      "Die Uhrzeit gehört zum Marktbeobachtungszustand",
+      "Fortlaufender Handel und Auktion sind unterschiedliche Abläufe",
+      "Eigene Normalisierung eines ungewöhnlich wirkenden Volumens",
+      "Eröffnungslücke und anschliessender Verlauf",
+      "Zeitstempel und Strategieaussage"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF11",
+    "title": "Volumen, offene Positionen und Positionierungsberichte richtig lesen",
+    "master_pdf_page": 959,
+    "sections": [
+      "Fluss und Bestand haben unterschiedliche Nenner",
+      "Eigene Buchungstabelle für Futures",
+      "Was COT-Kategorien tatsächlich einteilen",
+      "Ein verwandter Fehler bei Aktien",
+      "Welche bedingten Fragen trotzdem sinnvoll sind"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF12",
+    "title": "Menschen, Herden und die Grenzen von Gegenwetten",
+    "master_pdf_page": 962,
+    "sections": [
+      "Verhaltenstendenzen sind keine Gedankenleserei",
+      "Gleichgerichtetes Handeln kann verschiedene Ursachen haben",
+      "Eigener Fall mit einem Referenzpreis",
+      "Warum eine plausible Fehlbewertung bestehen bleiben kann",
+      "Die praktische Folgerung ist ein besseres Prüfprotokoll"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF13",
+    "title": "Rückkopplung: Wenn Preisänderungen selbst neue Orders erzeugen",
+    "master_pdf_page": 965,
+    "sections": [
+      "Von der Information zur Bilanz und zurück zum Preis",
+      "Eigene Bilanzrechnung",
+      "Positive Rückkopplung und stabilisierende Gegenkraft",
+      "Reflexivität ohne beliebige Erklärung",
+      "So wird der Ablauf für Forschung nutzbar"
+    ]
+  },
+  {
+    "domain": "behavior_foundations",
+    "id": "BF14",
+    "title": "Marktzustände beschreiben und bei Unklarheit keine Geschichte erzwingen",
+    "master_pdf_page": 969,
+    "sections": [
+      "Ein Zustand ist eine komprimierte Beschreibung",
+      "Geschätztes Regime und nachträgliche Rekonstruktion",
+      "Eigener Fall mit widersprüchlichen Merkmalen",
+      "Wann kein Handeln eine vollständig definierte Antwort ist",
+      "Ein wiederverwendbarer Schluss von Beobachtung zu Entscheidung"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA01",
+    "title": "Aktien: Unternehmenserfolg, Erwartungen und bezahlter Preis",
+    "master_pdf_page": 979,
+    "sections": [
+      "Was bei einer Aktie bewertet wird",
+      "Wie dieselbe Meldung verschiedene Reaktionen auslösen kann",
+      "Eigener Lehrfall: Gewinn und Bewertung ziehen gegeneinander",
+      "Messung und Bezug zu Strategien"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA02",
+    "title": "Sektoren, Faktoren und Marktbreite: Was sich hinter einem Indexanstieg verbirgt",
+    "master_pdf_page": 982,
+    "sections": [
+      "Drei unterschiedliche Ordnungen",
+      "Bedingte Reaktionsketten innerhalb der Wirtschaft",
+      "Eigener Lehrfall: Breite und Indexgewicht",
+      "Daten und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA03",
+    "title": "Small Caps, Neuemissionen und Short Squeezes",
+    "master_pdf_page": 985,
+    "sections": [
+      "Kleine Grösse beschreibt mehrere verschiedene Risiken",
+      "Was einen Squeeze mechanisch möglich macht",
+      "Eigene Gegenpfade statt eines zwingenden Kurssprungs",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA04",
+    "title": "Indizes und ETFs: Gewichtung, Handelsfluss und Wert des Korbs",
+    "master_pdf_page": 988,
+    "sections": [
+      "Index, Fondsanteil und Basiswerte",
+      "Wie Flüsse und Indexänderungen wirken könnten",
+      "Eigener Lehrfall: Ein scheinbar billiger ETF",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA05",
+    "title": "Staatsanleihen, Geldmarkt und Zinskurve",
+    "master_pdf_page": 991,
+    "sections": [
+      "Preis, Rendite und Laufzeit",
+      "Warum eine Zinssenkung nicht jede Anleihe steigen lässt",
+      "Eigener Lehrfall und Grenzen der Sensitivität",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA06",
+    "title": "Kreditmärkte: Zins, Ausfall, Rang und Finanzierung",
+    "master_pdf_page": 994,
+    "sections": [
+      "Versprochene Rendite und tatsächlich erhaltener Betrag",
+      "Warum sinkende Staatszinsen und fallende Kreditpreise zusammenpassen",
+      "Sonderfall Hypotheken und eigener Rechenfall",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA07",
+    "title": "Inflationsgeschützte Anleihen: Realzins, Indexierung und Erwartung",
+    "master_pdf_page": 997,
+    "sections": [
+      "Was die Inflationsbindung tatsächlich leistet",
+      "Realrendite und Breakeven auseinanderhalten",
+      "Eigener Lehrfall: Mehr Indexierung, trotzdem geringerer Marktwert",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA08",
+    "title": "Devisen: Relative Preise, Zinsdifferenzen und Absicherungsbedarf",
+    "master_pdf_page": 1000,
+    "sections": [
+      "Jeder Wechselkurs hat zwei Seiten",
+      "Bedingte Ketten statt „höherer Zins gleich stärkere Währung“",
+      "Eigener Lehrfall: Carry verliert gegen den Wechselkurs",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA09",
+    "title": "Schwellenländer: Lokale Erträge, globale Finanzierung und Währungsrisiko",
+    "master_pdf_page": 1003,
+    "sections": [
+      "Keine einheitliche Anlageklasse",
+      "Zwei gegensätzliche Wirkungsketten",
+      "Eigener Lehrfall und zeitlicher Ablauf",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA10",
+    "title": "Gold: Realzinsen, Währung, Sicherheitsnachfrage und physischer Zugang",
+    "master_pdf_page": 1006,
+    "sections": [
+      "Mehrere Motive treffen auf denselben Preis",
+      "Warum Inflation, Zinsen und Gold nicht mechanisch zusammenlaufen",
+      "Eigener Lehrfall: Gold in Dollar und in Franken",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA11",
+    "title": "Silber und Platingruppenmetalle: Industrielle Nutzung trifft Anlagebedarf",
+    "master_pdf_page": 1009,
+    "sections": [
+      "Warum Edelmetalle unterschiedliche Märkte sind",
+      "Bedingte Wirkungen von Wachstum und Technologiewandel",
+      "Eigener Lehrfall: Das Verhältnis besitzt keinen festen Zielwert",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA12",
+    "title": "Öl: Weltbilanz, lokale Engpässe und Erwartungen über freie Kapazität",
+    "master_pdf_page": 1012,
+    "sections": [
+      "Das gehandelte Gut und sein Ort",
+      "Nachricht, Überraschung und tatsächliche Bilanz",
+      "Eigener Lehrfall: Ein Lagerabbau kann relativ enttäuschen",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA13",
+    "title": "Erdgas und LNG: Wetter, Speicher und regionale Verbindungen",
+    "master_pdf_page": 1014,
+    "sections": [
+      "Gas hat keinen überall identischen Preis",
+      "Kälte, Hitze und der richtige Vergleich",
+      "Eigener Lehrfall: Ein Exportausfall hat zwei Seiten",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA14",
+    "title": "Strom: Gleichzeitige Lieferung, Flexibilität und negative Preise",
+    "master_pdf_page": 1017,
+    "sections": [
+      "Zeit und Ort gehören zum Produkt",
+      "Ein eigenes einfaches Angebotsmodell",
+      "Gegenfälle und die Entstehung negativer Preise",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA15",
+    "title": "Industriemetalle: Produktionsstufen, Lagerort und tatsächlicher Bedarf",
+    "master_pdf_page": 1020,
+    "sections": [
+      "Ein Metallpreis fasst eine Lieferkette zusammen",
+      "Sichtbares Lager ist nicht die gesamte verfügbare Weltmenge",
+      "Bedingte Ketten und Gegenfälle",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA16",
+    "title": "Agrarprodukte und Vieh: Biologie, Wetter und Wirtschaftsjahre",
+    "master_pdf_page": 1023,
+    "sections": [
+      "Produktion folgt einem biologischen Kalender",
+      "Wetter ist nur zusammen mit dem Zustand aussagekräftig",
+      "Vieh reagiert anders als eine jährliche Ernte",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA17",
+    "title": "Rohstofffutures: Kurvenform, Basis und Rendite beim Rollen",
+    "master_pdf_page": 1026,
+    "sections": [
+      "Ein Liefermonat ist ein eigener Vertrag",
+      "Was beim Rollen passiert",
+      "Eigener Lehrfall: Unveränderter Spot und fallender Future",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA18",
+    "title": "Optionen und Volatilität: Nichtlineare Ansprüche und bedingtes Hedging",
+    "master_pdf_page": 1030,
+    "sections": [
+      "Mehr als eine Wette auf die Richtung",
+      "Dealer-Gamma braucht echte Positionen",
+      "Eigener Lehrfall: Richtung und Unsicherheit wirken gegeneinander",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA19",
+    "title": "Kryptomärkte: Spot, Perpetuals, Funding und Liquidationsdynamik",
+    "master_pdf_page": 1034,
+    "sections": [
+      "Token, Handelsplatz und Vertrag getrennt erfassen",
+      "Wie Preis und Sicherheiten einander beeinflussen können",
+      "Eigener Lehrfall: Funding ist nur eine Ertragskomponente",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA20",
+    "title": "Stablecoins, DeFi und AMMs: Rückzahlungsanspruch und Poolmechanik",
+    "master_pdf_page": 1037,
+    "sections": [
+      "Ein Preisanker braucht einen Mechanismus",
+      "Ein konkretes AMM-Modell statt „die Blockchain bestimmt den Preis“",
+      "Eigener Lehrfall: Die Menge verändert den Durchschnittspreis",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA21",
+    "title": "Immobilien, REITs und private Anlagen: Preisfindung mit verschiedenen Uhren",
+    "master_pdf_page": 1040,
+    "sections": [
+      "Objekt, Gesellschaftsanteil und ausgewiesener Wert",
+      "Zinsen und Nutzung konkurrieren",
+      "Eigener Lehrfall: Ein kleiner Bewertungszins verändert das Eigenkapital stark",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_assets",
+    "id": "BA22",
+    "title": "Spezialmärkte: Emissionsrechte, Fracht und Ereigniskontrakte",
+    "master_pdf_page": 1043,
+    "sections": [
+      "Emissionsrechte: Politischer Rahmen und wirtschaftliche Nutzung",
+      "Fracht: Transportleistung statt Warenpreis",
+      "Ereigniskontrakte: Der Wortlaut bestimmt das Ergebnis",
+      "Messung und Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP01",
+    "title": "Trendfortsetzung und Pullback: Richtung, Tempo und Unterbrechung",
+    "master_pdf_page": 1053,
+    "sections": [
+      "Was ein Trend tatsächlich beschreibt",
+      "Mögliche Gründe für Fortsetzung",
+      "Woran ein harmloser Rücklauf scheitern kann",
+      "Messung und früheste Verfügbarkeit",
+      "Eigenes Rechenbeispiel",
+      "Bezug zu Handelsansätzen"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP02",
+    "title": "Seitwärtsphase und Mean Reversion: welcher Mittelwert soll gelten?",
+    "master_pdf_page": 1056,
+    "sections": [
+      "Seitwärts ist eine Definition auf einem Fenster",
+      "Wie Rückbewegung entstehen könnte",
+      "Ein gefährlicher Gegenfall",
+      "Eigenes Zahlenbeispiel und Messfehler",
+      "Was vor einer Interpretation geprüft wird",
+      "Strategiebezug und Enthaltung"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP03",
+    "title": "Support, Resistance und Retest: Preisbereiche mit bedingter Bedeutung",
+    "master_pdf_page": 1059,
+    "sections": [
+      "Niveau, Zone und beobachteter Kontakt",
+      "Warum solche Bereiche relevant sein können",
+      "Rollenwechsel als Hypothese",
+      "Eigenes Beispiel mit zwei zulässigen Ausgängen",
+      "Zeit, Daten und Vergleichbarkeit",
+      "Strategie und Ausführungsentscheidung"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP04",
+    "title": "Ausbruch und Bestätigung: ein neues Niveau ist noch keine neue Verteilung",
+    "master_pdf_page": 1062,
+    "sections": [
+      "Was genau überschritten wird",
+      "Plausible Fortsetzungsmechanismen",
+      "Bestätigung verändert den Zeitpunkt",
+      "Eigenes Zahlenbeispiel",
+      "Gegenfälle und notwendige Daten",
+      "Konsequenz für den Strategievergleich"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP05",
+    "title": "Fehlausbruch, Sweep und Spring: Rückkehr beobachten, Absicht offenlassen",
+    "master_pdf_page": 1066,
+    "sections": [
+      "Eine zeitliche Folge statt eines sicheren Wendepunkts",
+      "Mögliche Abläufe hinter derselben Form",
+      "Was die Rückkehr noch nicht beweist",
+      "Eigenes Beispiel und Zustandswechsel",
+      "Beobachtbarkeit und Orderrisiko",
+      "Wie daraus ein prüfbarer Ansatz wird"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP06",
+    "title": "Kompression und Expansion: Schwankungsbreite liefert keine Richtung",
+    "master_pdf_page": 1069,
+    "sections": [
+      "Was enger und weiter tatsächlich bedeutet",
+      "Banddefinition und Aussagegrenze",
+      "Mögliche Ursachen und Gegenfälle",
+      "Eigenes Zahlenbeispiel",
+      "Zeitgerechte Messung",
+      "Verbindung zu Strategiefamilien"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP07",
+    "title": "Gaps, Overnight und Wiedereröffnung: eine Lücke muss sich nicht schliessen",
+    "master_pdf_page": 1073,
+    "sections": [
+      "Verschiedene Arten von Lücken",
+      "Wie neue Eröffnungspreise entstehen",
+      "Warum Gap-Fill und Fortsetzung beide möglich sind",
+      "Ein zeitlich begrenzter Forschungsbefund",
+      "Eigenes Zahlenbeispiel und Zerlegung",
+      "Strategiebezug"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP08",
+    "title": "Kerzenkörper, Schatten und Mehrkerzenmuster: vier Preise mit vielen möglichen Wegen",
+    "master_pdf_page": 1077,
+    "sections": [
+      "Welche Information eine Kerze enthält",
+      "Nützliche formale Merkmale",
+      "Plausible Interpretation und Gegenfall",
+      "Eigenes OHLC-Beispiel",
+      "Zeitgerechte Mustererkennung",
+      "Verbindung zur Strategieprüfung"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP09",
+    "title": "Doppeltop, Schulter-Kopf-Schulter, Dreieck und Flagge: Geometrie operationalisieren",
+    "master_pdf_page": 1081,
+    "sections": [
+      "Familien von Formen",
+      "Was die Forschung tatsächlich untersuchte",
+      "Mögliche Bedeutung und alternative Erklärung",
+      "Ein eigener Detektor statt unbestimmter Ähnlichkeit",
+      "Erkennungszeit und projizierte Ziele",
+      "Sinnvolle Verwendung im System"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP10",
+    "title": "Momentum, Erschöpfung und Divergenz: langsamer steigen ist noch nicht fallen",
+    "master_pdf_page": 1084,
+    "sections": [
+      "Mehrere Bedeutungen von Momentum",
+      "Was Divergenz logisch aussagt",
+      "Möglicher Mechanismus und Gegenfall",
+      "Eigenes Zahlenbeispiel",
+      "Historische Zustandsabhängigkeit",
+      "Wie ein Bot damit arbeiten könnte"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP11",
+    "title": "Nachrichtenreaktion, Drift, Fade und Umkehr: entscheidend ist die Änderung der Erwartungen",
+    "master_pdf_page": 1088,
+    "sections": [
+      "Eine gute Nachricht ist keine vollständige Marktüberraschung",
+      "Vier verschiedene Abläufe",
+      "Mögliche Mechanismen und begrenzte Evidenz",
+      "Eigenes Erwartungsbeispiel",
+      "Messung und Gegenprobe",
+      "Was ein Handelssystem daraus machen kann"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP12",
+    "title": "Squeeze, Liquidationskaskade und Kapitulation: Zwangsbedarf erkennen, nicht erfinden",
+    "master_pdf_page": 1091,
+    "sections": [
+      "Unterschiedliche Mechanismen hinter starken Bewegungen",
+      "Was zusätzliche Daten leisten",
+      "Ein historischer Gegenbeleg gegen einfache Geschichten",
+      "Eigenes Bilanzbeispiel",
+      "Kapitulation ist häufig eine rückblickende Bezeichnung",
+      "Strategiebezug und Widerlegung"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP13",
+    "title": "Volumenprofil, VWAP und Akzeptanz: Handelsverteilung ist kein innerer Wert",
+    "master_pdf_page": 1094,
+    "sections": [
+      "Was ein Profil misst",
+      "Akzeptanz als beobachtbare Arbeitsdefinition",
+      "VWAP und seine Anker",
+      "Eigenes Zahlenbeispiel",
+      "Orderblock und Fair Value Gap sauber einordnen",
+      "Datenbedarf und Strategiegrenzen"
+    ]
+  },
+  {
+    "domain": "behavior_patterns",
+    "id": "BP14",
+    "title": "Zeitebenen, Saisonmuster und Regimewechsel: wie aus Beobachtung belastbare Forschung wird",
+    "master_pdf_page": 1098,
+    "sections": [
+      "Mehrere Zeitebenen beschreiben denselben Prozess",
+      "Der Informationszeitpunkt höherer Bars",
+      "Saisonmuster brauchen einen Mechanismus und einen Vergleich",
+      "Regimewechsel statt unveränderlicher Musterbibliothek",
+      "Vom beobachteten Muster zum fairen Test",
+      "Eigenes Beispiel und Ergebnisformen"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX01",
+    "title": "Erwartungen, Überraschungen und die Reaktion auf Nachrichten",
+    "master_pdf_page": 1105,
+    "sections": [
+      "Der Bezugspunkt ist die vorherige Erwartung",
+      "Drei Wege vom Text zum Preis",
+      "Wenn die erste Bewegung die Richtung wechselt",
+      "So wird daraus eine prüfbare Beobachtung"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX02",
+    "title": "Wachstums- und Inflationsschocks: warum dieselbe Zahl anders wirkt",
+    "master_pdf_page": 1108,
+    "sections": [
+      "Zwei Fragen statt einer Wirtschaftslage",
+      "Mehrere Wirkungen können gegeneinander laufen",
+      "Inflation verändert die Bedeutung von Anleihen",
+      "Gegenfälle und ein eigener Denkversuch"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX03",
+    "title": "Zentralbanken: Entscheidung, Ausblick und Information auseinanderhalten",
+    "master_pdf_page": 1110,
+    "sections": [
+      "Der aktuelle Zinsschritt ist nur ein Teil",
+      "Politikschock und Informationsschock",
+      "Liquiditätsmassnahme bedeutet nicht automatisch Richtungswechsel",
+      "Ein Ereignis braucht eine Zeitachse"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX04",
+    "title": "Zinskurven: erwartete Kurzfristzinsen, Laufzeitprämie und Emissionen",
+    "master_pdf_page": 1112,
+    "sections": [
+      "Eine lange Rendite hat mehrere Bestandteile",
+      "Dieselbe Kurvenbewegung kann andere Ursachen haben",
+      "Eigene Rechnung zur Richtung",
+      "Beobachtungen für eine Kurvenhypothese"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX05",
+    "title": "Dollar, Wechselkurse und grenzüberschreitende Finanzierung",
+    "master_pdf_page": 1114,
+    "sections": [
+      "Eine Währung ist immer ein relativer Preis",
+      "Zinsdifferenz und unerwartete Abwertung",
+      "Finanzierungswährung und Risikokapazität",
+      "Prüfen, welches Risiko im Paar steckt"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX06",
+    "title": "Rohstoffschocks, Lieferketten und die Ursache einer Preisänderung",
+    "master_pdf_page": 1116,
+    "sections": [
+      "Ein höherer Preis identifiziert nicht den Schock",
+      "Mengen, Lager und Lieferzeit gemeinsam lesen",
+      "Übertragung auf Unternehmen und Inflation",
+      "Ein Index ist eine Verdichtung",
+      "Eigener Vergleich zweier Ursachen"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX07",
+    "title": "Realzinsen, Inflationserwartungen und Edelmetalle im Zusammenhang",
+    "master_pdf_page": 1119,
+    "sections": [
+      "Nominal und real sauber trennen",
+      "Ein alternativer Ertrag verändert den Vergleich",
+      "Inflationsnachricht und Inflationsschutz sind verschiedene Fragen",
+      "Wie man eine vermeintliche Korrelation prüft"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX08",
+    "title": "Kredit, Liquidität und selbstverstärkende Stressphasen",
+    "master_pdf_page": 1121,
+    "sections": [
+      "Drei Arten von Enge",
+      "Vom Preisverlust zum zusätzlichen Verkauf",
+      "Warum sichere Titel verkauft werden können",
+      "Beobachtung statt dramatisches Etikett"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX09",
+    "title": "Fiskalpolitik, Staaten, Banken und Nichtbanken",
+    "master_pdf_page": 1123,
+    "sections": [
+      "Fiskalische Nachrichten haben mehrere Kanäle",
+      "Verbindungen durch Vermögen und Finanzierung",
+      "Warum ein Schock über Märkte wandert",
+      "Ein eigener Vergleich und seine Daten"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX10",
+    "title": "Korrelation, Ansteckung und die Grenzen sicherer Häfen",
+    "master_pdf_page": 1125,
+    "sections": [
+      "Korrelation ist eine Beschreibung eines Fensters",
+      "Warum Diversifikation vom Zustand abhängt",
+      "Sicher in welcher Bedeutung?",
+      "Besser nach gemeinsamen Schocks fragen"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX11",
+    "title": "Kalender, Rebalancing und mechanische Zahlungsströme",
+    "master_pdf_page": 1127,
+    "sections": [
+      "Nicht jede Order reagiert auf eine neue Meinung",
+      "Ein eigener Rebalancing-Fall",
+      "Historischer Befund mit begrenztem Umfang",
+      "Verfall und Fixing sind eigene Marktprozesse"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX12",
+    "title": "Von einer Markterklärung zu einer überprüfbaren Wenn-dann-Aussage",
+    "master_pdf_page": 1130,
+    "sections": [
+      "Fünf verschiedene Arten von Wissen",
+      "Die vollständig formulierte Frage",
+      "Viele passende Geschichten erhöhen das Auswahlproblem",
+      "Drei getrennte Ergebnisse eines Versuchs"
+    ]
+  },
+  {
+    "domain": "behavior_macro",
+    "id": "BX13",
+    "title": "Beschreibende Marktbeobachtung mit den vorhandenen Forschungsdaten",
+    "master_pdf_page": 1133,
+    "sections": [
+      "Was hier tatsächlich ausgewertet wird",
+      "Streuung und Verlustpfad im selben Fenster",
+      "Gleichlauf schwankt und Beobachtungen überlappen",
+      "Branchenstreuung ist kein nachträglich kaufbarer Gewinn",
+      "Grenzen und reproduzierbare Dateien"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT01",
+    "title": "Dealer-Inventar, verschobene Quotes und nachteilige Informationsauswahl",
+    "master_pdf_page": 1143,
+    "sections": [
+      "Zwei Gründe für unterschiedliche Geld- und Briefkurse",
+      "Ein einfaches Bestandsmodell vollständig ausrechnen",
+      "Die zeitliche Reihenfolge entscheidet über die Erklärung",
+      "Ausführungen mit ihrem späteren Wert vergleichen",
+      "Konsequenz für die Forschungslogik"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT02",
+    "title": "Grosse Parentorders: Zeitplan, Teilnahmequote und Informationsverwechslung",
+    "master_pdf_page": 1146,
+    "sections": [
+      "Ein Auftrag besitzt ein Ziel und mehrere Kosten",
+      "Gleiche Gesamtmenge, sehr unterschiedliche Belastung",
+      "Fortschritt, Restmenge und Zeitdruck zusammen betrachten",
+      "Persistenter Flow ist noch keine dauerhafte Information",
+      "Ausführungsqualität ohne nachträglichen Zielwechsel beurteilen"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT03",
+    "title": "Fondsrückgaben: Wer trägt Liquidierungskosten und wer muss zuerst zahlen?",
+    "master_pdf_page": 1150,
+    "sections": [
+      "Rückgaberecht und verkaufbarer Vermögenswert passen nicht immer zusammen",
+      "Kostenverschiebung in einer geschlossenen Rechnung",
+      "Vier Zeitpunkte erzeugen unterschiedliche Anreize",
+      "Was verkauft wird, hängt von der zweiten Runde ab",
+      "Ein prüfbarer Zusammenhang statt einer Verkaufsprognose"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT04",
+    "title": "Passive Mandate und ETFs: Drei verschiedene Flussrechnungen",
+    "master_pdf_page": 1154,
+    "sections": [
+      "Handel mit Anteilen ist nicht automatisch Handel des Fonds",
+      "Umsatz, Bruttoschaffung und Nettobestand unterscheiden",
+      "Die Mandatsgleichung benötigt mehr als ein neues Gewicht",
+      "Preise verschiedener Uhren nicht mechanisch vergleichen",
+      "Welche Daten eine Flusserklärung tragen können"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT05",
+    "title": "Pensionen, Versicherer und LDI: Ökonomische Absicherung kann Cash verlangen",
+    "master_pdf_page": 1158,
+    "sections": [
+      "Verbindlichkeit und Sicherheitenpflicht sind unterschiedliche Verträge",
+      "Bessere Deckung und fehlendes Cash können gleichzeitig auftreten",
+      "Die Uhr des Sicherheitenkontos läuft schneller",
+      "Pensions- und Versicherungsbilanzen nicht gleichsetzen",
+      "Was eine belegte LDI-Verkaufshypothese voraussetzt"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT06",
+    "title": "Volatilitätsziele und Risikobudgets: Regeln können Flüsse synchronisieren",
+    "master_pdf_page": 1161,
+    "sections": [
+      "Eine Forschungsregel ist kein beobachteter Fondsbestand",
+      "Preisbewegung und neue Zielquote getrennt buchen",
+      "Messfenster und Umsetzung erzeugen verschiedene Uhren",
+      "Risikobudget eines Portfolios hängt auch von Beziehungen ab",
+      "Bedingte Synchronität untersuchen"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT07",
+    "title": "Primebroker, Haircuts und die Geometrie einer Finanzierungslücke",
+    "master_pdf_page": 1164,
+    "sections": [
+      "Finanzierung verknüpft Positionen und Gegenparteien",
+      "Preisrückgang und höherer Haircut wirken zusammen",
+      "Verkauf derselben Sicherheiten ist eine andere Rechnung",
+      "Ein Netzwerk besteht aus rechtlich getrennten Töpfen",
+      "Die Forschungsfrage folgt dem Geldweg"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT08",
+    "title": "Aktienleihe: Eine Short-These benötigt eine haltbare Liefer- und Kostenkette",
+    "master_pdf_page": 1167,
+    "sections": [
+      "Kursrisiko und Verfügbarkeit geliehener Aktien trennen",
+      "Eine kleine Kostenrechnung mit ausdrücklich festgelegter Basis",
+      "Ein Recall beginnt nicht zwingend mit einem steigenden Kurs",
+      "Bestandsgrössen erklären die verfügbare Menge nur teilweise",
+      "Das Ereignis testen, das tatsächlich behauptet wird"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT09",
+    "title": "Unternehmen als Marktteilnehmer: Rückkauf, Emission und Nettodilution",
+    "master_pdf_page": 1170,
+    "sections": [
+      "Eine Ermächtigung ist noch kein ausgeführter Auftrag",
+      "Mehr Gewinn je Aktie ist nicht automatisch mehr Wert je Aktie",
+      "Bruttorückkäufe und Nettoaktienzahl gemeinsam lesen",
+      "Emissionsdruck ist von der Mittelverwendung zu trennen",
+      "Ein Flussmodell braucht den noch offenen Rest"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT10",
+    "title": "Grenzüberschreitende Anleger: Währungshedge, Laufzeiten und Basis",
+    "master_pdf_page": 1173,
+    "sections": [
+      "Ein Auslandsinvestment besteht aus mehreren Preisen",
+      "Die Zinsdifferenz mit eindeutiger Kursnotation rechnen",
+      "Eine langfristige Anlage kann kurzfristig gerollte Hedges besitzen",
+      "Eine gemeinsame Basisbewegung hat mehrere mögliche Ursachen",
+      "Welche Zeitreihen in eine saubere Untersuchung gehören"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT11",
+    "title": "Arbitrage zwischen Handelsplätzen: Preisabstand braucht bewegliches Kapital",
+    "master_pdf_page": 1176,
+    "sections": [
+      "Eine Preisdifferenz ist erst der Anfang der Prüfung",
+      "Ein Geschäft mit vorfinanzierten Beständen durchrechnen",
+      "Ohne Vorpositionierung wird aus Gleichzeitigkeit ein Preisrisiko",
+      "Kapazität hängt vom langsamsten Glied ab",
+      "Den ausführbaren Restabstand dokumentieren"
+    ]
+  },
+  {
+    "domain": "behavior_participants",
+    "id": "BT12",
+    "title": "Crowding: Verschiedene Ideen können denselben Liquidationsweg besitzen",
+    "master_pdf_page": 1179,
+    "sections": [
+      "Gemeinsame Verwundbarkeit reicht über gleiche Strategien hinaus",
+      "Die Überlappung besitzt mehrere Schichten",
+      "Eine einfache Rückkopplung mit überprüfbaren Zahlen",
+      "Ein grösserer Koeffizient ist noch keine Crashprognose",
+      "Von einer Erzählung zu einem brauchbaren Stresstest"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR01",
+    "title": "Ein Zustandswechsel beginnt früher, als er erkennbar wird",
+    "master_pdf_page": 1188,
+    "sections": [
+      "Zwei Uhren für denselben Übergang",
+      "Vor der Beobachtung festlegen",
+      "Eigener Lehrfall mit messbarem Verzug",
+      "Der Preis früherer Gewissheit",
+      "Drei Ursachen eines identischen Alarms",
+      "Was ein Bot daraus lernen kann"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR02",
+    "title": "Von der Range zum Trend: Akzeptanz entsteht über einen Weg",
+    "master_pdf_page": 1192,
+    "sections": [
+      "Die Grenze muss vor dem Bruch existieren",
+      "Drei aufeinanderfolgende Beobachtungsfragen",
+      "Zeit und Menge geben verschiedene Antworten",
+      "Warum derselbe Bruch mehrere Fortsetzungen erlaubt",
+      "Wenn Ordermechanik zur Verstärkung beitragen könnte",
+      "Übergang statt nachträglichem Siegeretikett"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR03",
+    "title": "Vom Trend zur Range: verlorener Fortschritt ist noch kein Gegentrend",
+    "master_pdf_page": 1196,
+    "sections": [
+      "Die Frage wechselt von Richtung zu Fortschritt",
+      "Ein Zahlenpfad mit noch positivem Endergebnis",
+      "Die zeitliche Folge macht den Unterschied",
+      "Plausible Mechanik und fehlender Nachweis",
+      "Was gegen eine echte Range spricht",
+      "Konsequenz für überprüfbare Systeme"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR04",
+    "title": "Vom Trend zur Umkehr: die Reaktionsfolge zählt",
+    "master_pdf_page": 1200,
+    "sections": [
+      "Ein Wendepunkt besitzt zwei Zeitstempel",
+      "Eigene Sequenz mit schrittweise mehr Evidenz",
+      "Zwei Bestätigungen beantworten verschiedene Fragen",
+      "Mechanik braucht mehr als fallende Zwischenhochs",
+      "Gegenfälle systematisch aufbewahren",
+      "Forschungsnutzen des abgestuften Urteils"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR05",
+    "title": "Von Kompression zu Expansion: auch Ruhe ist ein Ergebnis",
+    "master_pdf_page": 1203,
+    "sections": [
+      "Kompression ist eine Aussage über einen Schätzer",
+      "Eigener Lehrfall: ein alter Ausreisser verschwindet",
+      "Richtung, Amplitude und Zeit getrennt prüfen",
+      "Wenn eine Kerze beide Grenzen berührt",
+      "Warum Ruhe anhalten oder abrupt enden könnte",
+      "Ein vollständiger Test enthält die stillen Fälle"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR06",
+    "title": "Nach dem Liquiditätsschock: was hat sich wirklich erholt?",
+    "master_pdf_page": 1206,
+    "sections": [
+      "Erholung benötigt ein vorheriges Bezugsniveau",
+      "Vor, während und nach dem Schock messen",
+      "Eigener Lehrfall mit unterschiedlichen Erholungsuhren",
+      "Kleine Mengen können wieder passen, grosse noch nicht",
+      "Rasche Auffüllung erlaubt mehrere Erklärungen",
+      "Erholung ist eine bedingte Zustandsbeschreibung"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR07",
+    "title": "Vorübergehender Impact oder Information: der unbeobachtete Gegenverlauf",
+    "master_pdf_page": 1210,
+    "sections": [
+      "Eine beobachtete Bewegung hat keinen sichtbaren Ursachenanteil",
+      "Eigener Lehrfall mit verführerisch klarer Rechnung",
+      "Zwei verschiedene Zerlegungen passen zu denselben Daten",
+      "Die Uhr beginnt erst bei einem begründeten Ereignisende",
+      "Welche Daten die konkurrierenden Geschichten trennen helfen",
+      "Wie der Bot die Grenze seiner Erklärung speichert"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR08",
+    "title": "Volatilitätsasymmetrie: mehrere Mechanismen hinter demselben Vorzeichen",
+    "master_pdf_page": 1214,
+    "sections": [
+      "Ein statistischer Zusammenhang ist keine einzelne Ursache",
+      "Eigener Bilanzfall: derselbe absolute Schock trifft weniger Eigenkapital",
+      "Andere Wege zur gleichen beobachteten Asymmetrie",
+      "Eigener Modellfall: Asymmetrie wird als Annahme eingebaut",
+      "Die Richtung ist von Markt und Notation abhängig",
+      "Welche Prüfung für ein System sinnvoll ist"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR09",
+    "title": "Wenn Korrelation steigt: gemeinsamer Stress ist noch kein Übertragungsbeweis",
+    "master_pdf_page": 1217,
+    "sections": [
+      "Drei verschiedene Aussagen auseinanderhalten",
+      "Eigener Faktorfall ohne neue Verbindung",
+      "Was vor dem Schock bereits feststehen muss",
+      "Warum kleine Stressfenster besonders täuschen können",
+      "Welche Beobachtung eine Übertragungsthese stärker machen würde",
+      "Folgen für Risiko und Strategiewahl"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR10",
+    "title": "Intraday-Rückkehr und längeres Momentum können zusammen auftreten",
+    "master_pdf_page": 1221,
+    "sections": [
+      "Ein Instrument kann mehrere Bewegungen überlagern",
+      "Eigener Lehrfall: steigender Mid, wechselnde Abschlüsse",
+      "Der beobachtete Sprung ist kein kostenlos erreichbarer Ertrag",
+      "Beobachtungsuhren verändern den gemessenen Prozess",
+      "Eine echte ökonomische Koexistenz bleibt möglich",
+      "Welche Untersuchung die Überlagerung prüfbar macht"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR11",
+    "title": "Handelspause und Wiedereröffnung: ein Wechsel des Preisfindungsverfahrens",
+    "master_pdf_page": 1224,
+    "sections": [
+      "Die Pause ist ein eigener Zustand",
+      "Indikation und Abschluss sind verschiedene Datenarten",
+      "Eigene Sequenz ohne fiktive Zwischenkäufe",
+      "Dieselbe Imbalance kann eine andere Aufnahmekapazität verbergen",
+      "Drei mögliche Wege nach der Wiedereröffnung",
+      "Der Datenfilter gehört vor jedes Signal"
+    ]
+  },
+  {
+    "domain": "behavior_transitions",
+    "id": "BR12",
+    "title": "Strukturbruch: neue Regeln erzeugen nicht automatisch einen neuen Mittelwert",
+    "master_pdf_page": 1227,
+    "sections": [
+      "Ein Bruch kann das Messobjekt selbst verändern",
+      "Eigener Datenfall: halbierter Preis ohne halbiertes Vermögen",
+      "Eigener Kontraktfall: gleicher Preis, anderes Risiko",
+      "Ein neues Niveau garantiert keine stationäre neue Welt",
+      "Modellgrenzen und Teilnehmerverhalten getrennt untersuchen",
+      "Ein versioniertes Marktmodell ersetzt den reflexhaften Neustart"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE01",
+    "title": "Inflationsmeldungen: Messreihe, Überraschung und Basiseffekt auseinanderhalten",
+    "master_pdf_page": 1237,
+    "sections": [
+      "Die Veröffentlichung als Datenpaket",
+      "Vor der Meldung den Bezugspunkt einfrieren",
+      "Basiseffekt mit steigenden Preisen",
+      "Saisonbereinigung verändert den Vergleich",
+      "Vom Datenpaket zum möglichen Marktpfad",
+      "Nach der ersten Reaktion die Erklärung prüfen"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE02",
+    "title": "Arbeitsmarktberichte: neue Beschäftigung, Revisionen und Zusammensetzung",
+    "master_pdf_page": 1241,
+    "sections": [
+      "Zwei Erhebungen sind kein gemeinsamer Zähler",
+      "Der neue Monat verändert auch das Gestern",
+      "Ein eigener Zahlenfall mit festem Ausgangspunkt",
+      "Löhne können durch die Mischung steigen",
+      "Arbeitsmenge, Einkommen und Zinsdeutung",
+      "Zeitliche Messung und überprüfbare Strategieidee"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE03",
+    "title": "Zentralbankereignisse: Entscheidung, Wortlaut und anschliessende Erläuterung",
+    "master_pdf_page": 1245,
+    "sections": [
+      "Mehrere Veröffentlichungen, mehrere Informationsstände",
+      "Entscheidung und erwarteten Pfad getrennt lesen",
+      "Fensterarithmetik verhindert falsche Schlagzeilen",
+      "Fragen können den Bewertungsrahmen verschieben",
+      "Information über Wirtschaft und Reaktionsfunktion",
+      "Sprachmaterial muss zum Beobachtungszeitpunkt passen"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE04",
+    "title": "Unternehmensergebnisse: Überraschung, Qualität und der nächste Ausblick",
+    "master_pdf_page": 1248,
+    "sections": [
+      "Drei Nachrichten in einer Veröffentlichung",
+      "Vorhersage und gemeldete Zahl müssen zusammenpassen",
+      "Mehr Gewinn je Aktie ohne mehr Gesamtgewinn",
+      "Die Brücke zwischen Ergebnis und Geld",
+      "Guidance verändert Erwartungen unter Bedingungen",
+      "Nachfragequalität und Reaktionsfenster überprüfen"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE05",
+    "title": "Staatsanleiheauktionen: Preis, Zuschlag und die passende Vorabreferenz",
+    "master_pdf_page": 1252,
+    "sections": [
+      "Der Ablauf bestimmt, was die Zahl bedeutet",
+      "When-issued ist eine zeitlich genaue Referenz",
+      "Das Vorzeichen in einem eigenen Zahlenfall",
+      "Bid-to-cover misst Menge unter einer Definition",
+      "Vorbereitung und anschliessende Aufnahme trennen",
+      "Forschung benötigt vergleichbare Auktionen"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE06",
+    "title": "Indexänderungen und Schlussauktionen: Ankündigung ist nicht Ausführung",
+    "master_pdf_page": 1256,
+    "sections": [
+      "Mehrere Daten gehören zu derselben Indexänderung",
+      "Vom Indexgewicht zu einem einzelnen Auftrag",
+      "Die Erwartung kann früher auf Gegenparteien treffen",
+      "Eine Auktionsimbalance ist ein veränderlicher Zustand",
+      "Schlusskurs, Volumen und anschliessender Handel",
+      "Eine Strategieidee braucht tatsächliche Umsetzbarkeit"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE07",
+    "title": "Dividenden, Splits und Bezugsrechte: echte Rendite von Preisumbuchung trennen",
+    "master_pdf_page": 1259,
+    "sections": [
+      "Erst den Anspruch, dann die Kursbewegung verstehen",
+      "Dividendenabschlag in einer vereinfachten Bilanz",
+      "Ein Split ändert zunächst die Stückelung",
+      "Bezugsrechte bringen zusätzliches Geld ins Modell",
+      "Datenanpassung muss zur Fragestellung passen",
+      "Was eine handelbare Ereignisfrage wäre"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE08",
+    "title": "Übernahmen: Dealspread, Zeit und alternative Ausgänge",
+    "master_pdf_page": 1263,
+    "sections": [
+      "Der angebotene Betrag ist ein bedingter Anspruch",
+      "Ein binärer Lehrfall mit offengelegten Annahmen",
+      "Kosten und Zeit können denselben Spread anders machen",
+      "Eine Aktiengegenleistung bewegt sich mit dem Käufer",
+      "Nachrichten verändern verschiedene Zweige des Ablaufs",
+      "Was ein sauberer Untersuchungsdatensatz enthält"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE09",
+    "title": "Futuresverfall: Handel, Lieferpflicht und Preisserie richtig verbinden",
+    "master_pdf_page": 1267,
+    "sections": [
+      "Ein Futuresname enthält noch nicht die Lieferbedingungen",
+      "First Notice und letzter Handel sind verschiedene Ereignisse",
+      "Kontraktwert und Sicherheitsleistung sind verschieden",
+      "Lieferbarkeit beeinflusst die mögliche Annäherung",
+      "Ein Rollen kann einen künstlichen Chartbruch erzeugen",
+      "Preisfindung untersuchen, bevor der Kontrakt wechselt"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE10",
+    "title": "Optionsverfall: Ausübung, Zuteilung und der richtige Abrechnungswert",
+    "master_pdf_page": 1270,
+    "sections": [
+      "Die Vertragsfamilie kommt vor dem Verfallsmuster",
+      "Frühe Ausübung besitzt einen eigenen Preis",
+      "Eine Zuteilung betrifft den offenen Verpflichtungsbestand",
+      "Der letzte Indexstand ist nicht jeder Settlementwert",
+      "Nähe zum Strike erklärt noch keinen Händlerfluss",
+      "Ein Ereignismodell verfolgt den Bestand weiter"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE11",
+    "title": "Lager- und Produktionsmeldungen: Messfenster, Flüsse und der Ort der Knappheit",
+    "master_pdf_page": 1273,
+    "sections": [
+      "Eine Bestandszahl ist ein zeitlich abgegrenzter Ausschnitt",
+      "Rückgang und Überraschung haben verschiedene Vorzeichen",
+      "Die Bestandsidentität identifiziert noch keine Ursache",
+      "Schätzungen und spätere Informationen auseinanderhalten",
+      "Saison, Ort und Verarbeitung können gegeneinander laufen",
+      "Was eine belastbare Strategieprüfung erfordern würde"
+    ]
+  },
+  {
+    "domain": "behavior_events",
+    "id": "BE12",
+    "title": "Stablecoin-Depeg: Rücktausch, Sicherheiten und mögliche Rückkopplungen",
+    "master_pdf_page": 1277,
+    "sections": [
+      "Drei Werte und ein tatsächlich zugänglicher Weg",
+      "Ein nomineller Abstand ist noch kein realisierter Gewinn",
+      "Eine mögliche Abwärtskette braucht mehrere Bedingungen",
+      "Ein Zahlenbeispiel für die Sicherheitenbedingung",
+      "Ein Rückweg benötigt überprüfbare Zahlungsfähigkeit",
+      "Daten aus mehreren Systemen müssen zusammenpassen"
+    ]
+  },
+  {
+    "domain": "behavior_diagnostics",
+    "id": "BD01",
+    "title": "Gleicher Preisanstieg, verschiedene Ursachen",
+    "master_pdf_page": 1286,
+    "sections": [
+      "Zuerst feststellen, welcher Preis sich bewegt hat",
+      "Zwei vollständig definierte Lehrabläufe",
+      "Welche zusätzliche Beobachtung hilft?",
+      "Käufer ist noch keine Strategie",
+      "Die nächste Beobachtung vorab festlegen"
+    ]
+  },
+  {
+    "domain": "behavior_diagnostics",
+    "id": "BD02",
+    "title": "Informationszeit: Was konnte das System tatsächlich wissen?",
+    "master_pdf_page": 1289,
+    "sections": [
+      "Sechs verschiedene Zeiten",
+      "Ein eigener Nachrichtenablauf mit festen Zahlen",
+      "Was ein Vintage-Archiv leisten kann",
+      "Der Bezugspunkt muss ebenfalls zeitgerecht sein",
+      "Prüfbare Zeitordnung für einen späteren Nachbau"
+    ]
+  },
+  {
+    "domain": "behavior_diagnostics",
+    "id": "BD03",
+    "title": "Gewinne, Zinsen und Währung können gleichzeitig wirken",
+    "master_pdf_page": 1292,
+    "sections": [
+      "Eine gemeinsame Nachricht hat mehrere Bewertungskanäle",
+      "Ein vollständig offengelegtes Aktienmodell",
+      "Ein Anleihenpreis folgt einer anderen Zahlungsstruktur",
+      "Die Kontowährung verändert das beobachtete Ergebnis",
+      "Vom Modell zurück zu einer vorsichtigen Diagnose"
+    ]
+  },
+  {
+    "domain": "behavior_diagnostics",
+    "id": "BD04",
+    "title": "Messkonventionen verändern das scheinbare Marktmuster",
+    "master_pdf_page": 1295,
+    "sections": [
+      "Eine Aussage braucht einen definierten Nenner",
+      "Ein steigender Index bei fallender Mehrheit",
+      "Preisänderung und Vermögensänderung getrennt halten",
+      "Währung, Aggregation und Stichtage",
+      "Welche Schlussfolgerung der Fall erlaubt"
+    ]
+  },
+  {
+    "domain": "behavior_diagnostics",
+    "id": "BD05",
+    "title": "Grundhäufigkeit und Fehlalarme verändern die Bedeutung eines Signals",
+    "master_pdf_page": 1299,
+    "sections": [
+      "Zuerst definieren, welches Ereignis erkannt werden soll",
+      "Eine Erkennungsquote von 70 Prozent ist nicht dieselbe Trefferquote",
+      "Nur die Grundhäufigkeit verändern",
+      "Warum eine einzige Gesamtquote täuschen kann",
+      "Übertragung auf Marktphasen bleibt eine empirische Frage"
+    ]
+  },
+  {
+    "domain": "behavior_diagnostics",
+    "id": "BD06",
+    "title": "Gleicher Endkurs, verschiedene Wege und Handlungszwänge",
+    "master_pdf_page": 1303,
+    "sections": [
+      "Eine Endrendite enthält keine vollständige Geschichte",
+      "Zwei Pfade mit exakt demselben Anfang und Ende",
+      "Eine Linie kreuzen ist noch keine Ausführungsrechnung",
+      "Was zwischen den Beobachtungen unbekannt bleibt",
+      "Weitere Eigenschaften des Wegs"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM01",
+    "title": "Breakeven-Bewegungen: dieselbe Anzeige kann verschiedene verborgene Ursachen haben",
+    "master_pdf_page": 1309,
+    "sections": [
+      "Eine beobachtbare Differenz enthält unbeobachtbare Komponenten",
+      "Die Rechnung braucht eine gemeinsame Konvention",
+      "Drei eigene Zustandswechsel ergeben denselben Breakeven",
+      "Zusätzliche Daten sind keine direkte Sicht auf den verborgenen Zustand",
+      "Gegenfall: mehrere Komponenten bewegen sich gleichzeitig",
+      "Strategiebezug und Grenze der Zuordnung"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM02",
+    "title": "Zinskurvenrisiko als Vektor: gleiche Gesamtsensitivität, andere Verluste",
+    "master_pdf_page": 1314,
+    "sections": [
+      "Der Zinsausblick erklärt noch nicht die Portfolioexposition",
+      "Eine Zahl fasst nur einen bestimmten Schock zusammen",
+      "Vier Schocks machen das verbliebene Risiko sichtbar",
+      "Bewegungsform und Ursache bleiben verschiedene Ebenen",
+      "Messfehler und Gegenfälle ausdrücklich führen",
+      "Was daraus für einen systematischen Vergleich folgt"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM03",
+    "title": "Ein anderer Schockmix kann die Aktien-Anleihen-Korrelation umkehren",
+    "master_pdf_page": 1319,
+    "sections": [
+      "Die gemeinsame Reaktion hängt von den wirkenden Einflüssen ab",
+      "Zwei unabhängige Modellschocks mit bekannten Einheiten",
+      "Nur die Schockvarianzen wechseln",
+      "Die Grafik zeigt eine exakte kleine Konstruktion",
+      "Anleihepreis und Anleihezins dürfen ihr Vorzeichen nicht tauschen",
+      "Eine Diagnose braucht zusätzliche unabhängige Beobachtungen"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM04",
+    "title": "Zwei Länder, mehrere Laufzeiten: ein Zinsschritt ist noch kein Devisensignal",
+    "master_pdf_page": 1324,
+    "sections": [
+      "Die relevante Überraschung besitzt mehrere Dimensionen",
+      "Vier eigene Zukunftsabschnitte statt eines heutigen Satzes",
+      "Aus dem Mittelwert folgt noch kein terminierter Zahlungswert",
+      "Relative Erwartungen und heutiger Spot können gleichzeitig anders reagieren",
+      "Die beiden Länder müssen denselben Informationsstand besitzen",
+      "Ein prüfbarer Ansatz bleibt bedingt"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM05",
+    "title": "Währungshedges bei unbekanntem Endwert: ein abgesicherter Anfangsbetrag kann überholt werden",
+    "master_pdf_page": 1328,
+    "sections": [
+      "Anlage und Absicherungsvertrag haben verschiedene Werttreiber",
+      "Alle Grössen und Zahlungsrichtungen explizit festlegen",
+      "Ein positiver Anlageertrag lässt einen ungesicherten Rest entstehen",
+      "Bei einem Verlust kann aus demselben Vertrag eine Überabsicherung werden",
+      "Dynamische Anpassung löst eine Aufgabe und erzeugt weitere",
+      "Die Zieldefinition entscheidet über den passenden Vergleich"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM06",
+    "title": "Gedeckte Zinsparität mit ausführbaren Preisen: aus einem Punkt wird ein Band",
+    "master_pdf_page": 1332,
+    "sections": [
+      "Bilanzkosten und Laufzeiten begrenzen die einfache Paritätsidee",
+      "Eigene ausführbare Eingaben für genau ein Jahr",
+      "Die obere Grenze aus dem vollständigen Dollarweg herleiten",
+      "Die untere Grenze benötigt den umgekehrten Weg",
+      "Eine rechnerische Verletzung verlangt trotzdem eine vollständige Finanzierung",
+      "Das Band ist ein Forschungsfilter, keine universelle Basisdefinition"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM07",
+    "title": "Dollarbedarf nach Fälligkeit: eine natürliche Absicherung kann zu spät eintreffen",
+    "master_pdf_page": 1337,
+    "sections": [
+      "Währung und Fälligkeit müssen gemeinsam betrachtet werden",
+      "Zwei Firmen mit derselben späteren Nettoposition",
+      "Ein Wechselkursschock wirkt auf den Zwischenbedarf",
+      "Natürlich abgesichert ist eine Aussage mit Bedingungen",
+      "Auch derselbe Kalendertag kann zwei verschiedene Liquiditätslagen enthalten",
+      "Beobachtbare Spuren und alternative Erklärungen"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM08",
+    "title": "Emissionsvolumen, Zinsrisiko und Ankündigung: drei verschiedene Grössen",
+    "master_pdf_page": 1341,
+    "sections": [
+      "Bilanzabbau hat mehrere mögliche Übertragungskanäle",
+      "Gleicher Geldbetrag bedeutet unterschiedlich viel Zinsrisiko",
+      "Entscheidend ist auch, wer das Risiko nachher hält",
+      "Eine erwartete Bestandsänderung ist keine neue Überraschung",
+      "Gegenfälle und fehlende Preiselastizität",
+      "Datenvertrag für einen Vergleich über Ereignisse"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM09",
+    "title": "Devisenintervention und Sterilisierung: drei getrennte Bilanzvorgänge",
+    "master_pdf_page": 1344,
+    "sections": [
+      "Zentralbankreserven, Bankeinlagen und Wechselkurs sind verschiedene Objekte",
+      "Erster Vorgang: Kauf aus dem Eigenbestand einer Bank",
+      "Zweiter Vorgang: dieselben Reserven werden abgeschöpft",
+      "Dritter Vorgang: Bewertung ohne neue Transaktion",
+      "Eine andere Gegenpartei verändert die Bankbuchungen",
+      "Welche Beobachtung die Erklärung stützen oder begrenzen würde"
+    ]
+  },
+  {
+    "domain": "behavior_transmission",
+    "id": "BM10",
+    "title": "Gold in verschiedenen Rechnungseinheiten: nominaler Anstieg, reale und lokale Gegenbilder",
+    "master_pdf_page": 1349,
+    "sections": [
+      "Ein Einfluss auf Gold ist noch keine vollständige Preisgleichung",
+      "Ein vollständig festgelegter eigener Jahresfall",
+      "Kaufkraft erfordert den passenden Preisindex",
+      "Ein relativer Vergleich kann positiv sein, obwohl Kaufkraft verloren geht",
+      "Erwarteter Realzins und nachträglicher Realertrag gehören auf verschiedene Uhren",
+      "Von einer Schlagzeile zu einem überprüfbaren Vermögensvergleich"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC01",
+    "title": "Nutzbarer Bestand und Lieferleistung: Warum volle Lager eine Knappheit nicht ausschliessen",
+    "master_pdf_page": 1358,
+    "sections": [
+      "Bestandsmenge und rechtzeitige Versorgung sind verschiedene Grössen",
+      "Ein explizites Vier-Tage-Modell",
+      "Mehr Entnahmeleistung verändert den Pfad",
+      "Der Preis einer zusätzlichen Einheit hängt vom Zeitpunkt ab",
+      "Zwei Uhren und mehrere Bestandsbegriffe dokumentieren",
+      "Aus der Mechanik eine falsifizierbare Forschungsfrage machen"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC02",
+    "title": "Futures über zwei Rollperioden: Position, Kontobuch und Preisserie getrennt führen",
+    "master_pdf_page": 1363,
+    "sections": [
+      "Ein Rollwechsel besteht aus zwei konkreten Geschäften",
+      "Ein eigener Pfad mit zwei nacheinander gehaltenen Verträgen",
+      "Kontowert und Kosten müssen dieselben Ereignisse zählen",
+      "Warum ein steigender zusammengesetzter Chart täuschen kann",
+      "Kurvenform allein legt die spätere Rendite nicht fest",
+      "Prüfbare Verknüpfung für Forschung und Erklärung"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC03",
+    "title": "Vom Rohölpreis zur Raffineriespanne: Qualität, Ort und Ausbeute gemeinsam rechnen",
+    "master_pdf_page": 1367,
+    "sections": [
+      "Mehrere wirtschaftliche Güter hinter einem Ölpreis",
+      "Ein 3:2:1-Lehrfall mit einheitlichen Einheiten",
+      "Ein gemeinsamer Preisanstieg kann die Spanne verkleinern",
+      "Lieferkosten und Qualität können einen Bildschirmvorteil umdrehen",
+      "Zeitversetzte Wartung erzeugt unterschiedliche Signale",
+      "Relative Werte benötigen eine vollständig benannte Position"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC04",
+    "title": "LNG als begrenzte Prozesskette: Nettoenergie, Durchsatz und regionale Preisreaktionen",
+    "master_pdf_page": 1371,
+    "sections": [
+      "Die Verbindung zwischen Regionen besteht aus mehreren Anlagen",
+      "Die kleinste kompatible Leistung bestimmt den Modellfluss",
+      "Ein Ausbau verschiebt zunächst nur den bindenden Engpass",
+      "Eine wirtschaftliche Spanne braucht die Nettomenge",
+      "Quelle und Ziel können auf denselben Ausfall verschieden reagieren",
+      "Einen regionalen Spread mit der richtigen Informationslage prüfen"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC05",
+    "title": "Zwei Stromzonen und ein begrenztes Netz: Marktpreis, Engpass und eigener Erlös",
+    "master_pdf_page": 1375,
+    "sections": [
+      "Eine räumliche Verbindung ist selbst eine Beschränkung",
+      "Zwei lokale Angebote, ein gemeinsamer Bedarf",
+      "Mehr Netzkapazität spart Kosten, ohne sofort gleiche Preise zu garantieren",
+      "Durchschnittspreis und erzielter Anlagenpreis unterscheiden sich",
+      "Leistung, Energie und Speicherzustand gemeinsam führen",
+      "Welche Beobachtung den Engpassmechanismus widerlegt"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC06",
+    "title": "Agrarbilanz über zwei Wirtschaftsjahre: Ernte, Verbrauch und verbleibender Puffer",
+    "master_pdf_page": 1380,
+    "sections": [
+      "Eine Prognosebilanz ist eine geordnete Mengenrechnung",
+      "Das erste Jahr schliesst mit einem definierten Puffer",
+      "Ein zweiter Ernteschock trifft einen kleineren Anfangsbestand",
+      "Nachfrageanpassung verändert die vermeintlich eindeutige Geschichte",
+      "Aus einer Prognoserevision darf keine physische Lieferung werden",
+      "Saisonale Forschung braucht damals bekannte Bilanzen"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC07",
+    "title": "Metallbestände und gelieferte Preise: Statusänderung, Abfluss und Prämie unterscheiden",
+    "master_pdf_page": 1384,
+    "sections": [
+      "Eine Bestandsmeldung enthält mehrere Zustände",
+      "Ein Statuswechsel verändert die Summe zunächst nicht",
+      "Eine weitere Umbuchung ist kein erneuter Weltzufluss",
+      "Ein fallender Börsenpreis kann mit höheren Lieferkosten zusammenfallen",
+      "Recycling und Verarbeitung benötigen eigene Mengenquoten",
+      "Eine belastbare Interpretation verfolgt jede Einheit nur einmal"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC08",
+    "title": "CO2-Preis und Kraftwerkseinsatz: Eine Kostenänderung verändert auch den Bedarf an Rechten",
+    "master_pdf_page": 1388,
+    "sections": [
+      "Der Preis einer Emission wirkt über mehrere Entscheidungen",
+      "Zwei eigene Kostenkurven und ein berechenbarer Wechselpunkt",
+      "Der Einsatzwechsel senkt die modellierten Emissionen",
+      "Weniger Emissionen bedeuten nicht automatisch billigeren Strom",
+      "Verfügbarkeit kann den vermeintlich einfachen Brennstoffwechsel blockieren",
+      "Die gemeinsame Hypothese für mehrere Märkte formulieren"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC09",
+    "title": "Fracht als Zeitbindung: Flottenumlauf, Lieferverzug und verzögerte Kostenweitergabe",
+    "master_pdf_page": 1392,
+    "sections": [
+      "Transportmenge und dafür gebundene Zeit unterscheiden",
+      "Ein längerer Umlauf senkt die laufend verfügbare Leistung",
+      "Mehr Schiffe und ein vorübergehender Rückstau sind getrennte Fragen",
+      "Ein verdoppelter Frachtsatz verdoppelt nicht den Warenpreis",
+      "Zeitverträge und vorhandene Ware verzögern die sichtbare Reaktion",
+      "Route, Schiff und Abrechnungsfenster in die Hypothese aufnehmen"
+    ]
+  },
+  {
+    "domain": "behavior_physical",
+    "id": "BC10",
+    "title": "Vom Rohstoffpreis zum Unternehmensergebnis: Menge, Basis und Zeit verändern die Wirkung",
+    "master_pdf_page": 1396,
+    "sections": [
+      "Eine Übertragungskette besitzt mehrere eigenständige Rechenschritte",
+      "Ein höherer Verkaufspreis kann mit einem niedrigeren Ergebnis zusammenfallen",
+      "Die relevante Schwelle bewegt sich mit der Auslastung",
+      "Eine passende Preisabsicherung lässt eine veränderte Basis übrig",
+      "Lager und Verträge können die Ergebnisreaktion zeitlich verschieben",
+      "Ein Aktiennarrativ braucht eine überprüfbare Ergebnisbrücke"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL01",
+    "title": "Steigender Bondpreis trotz breiterem Spread: mehrere Preisursachen gleichzeitig",
+    "master_pdf_page": 1405,
+    "sections": [
+      "Ein Spread ist eine Differenz mit einer Messvereinbarung",
+      "Den gemeinsamen Zinssatz vollständig ausrechnen",
+      "Ein Hedge verändert die Frage, die beantwortet wird",
+      "Die zeitliche Erklärung mit mehreren Märkten abgleichen",
+      "Daten und Attribution dürfen keinen Rest verschwinden lassen",
+      "Forschungsnutzen und begrenzte Aussage"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL02",
+    "title": "Aus dem Preis zur Ausfallzahl: welche Wahrscheinlichkeit ist gemeint?",
+    "master_pdf_page": 1410,
+    "sections": [
+      "Erwarteter Verlust und Preis für Risiko trennen",
+      "Ein geschlossenes Einperiodenmodell",
+      "Warum eine verbreitete Näherung andere Zahlen liefert",
+      "Recovery ist ein Modellparameter mit grosser Wirkung",
+      "Die beobachtbare Ereigniskette präzisieren",
+      "Was ein späteres System speichern müsste"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL03",
+    "title": "Refinanzierungsfälligkeiten: positiver Betrieb, fehlendes Geld am Stichtag",
+    "master_pdf_page": 1414,
+    "sections": [
+      "Der Kalender verändert die Wirkung eines Zinsniveaus",
+      "Eine Liquiditätsbrücke mit allen Zahlungsarten",
+      "Der bisherige Coupon reagiert oft erst später",
+      "Zugang, Preis und Betrag sind verschiedene Zustände",
+      "Die Messung braucht damalige Unternehmensunterlagen",
+      "Von der Brücke zur bedingten Marktreaktion"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL04",
+    "title": "Repo-Sätze lesen: knappes Geld und ein knappes Wertpapier können gegeneinander wirken",
+    "master_pdf_page": 1418,
+    "sections": [
+      "Zwei knappe Güter in derselben Transaktion",
+      "Die Zinsdifferenz aus Sicht des Geldgebers",
+      "Geldknappheit und Sicherheitenknappheit getrennt schocken",
+      "Die Übertragung auf Cashpreis und Shortposition ist bedingt",
+      "Wiederverwendung ist keine mehrfache freie Verfügbarkeit",
+      "Den relativen Engpass als eigene Hypothese prüfen"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL05",
+    "title": "Ein Hedge mit positivem Wert kann vor dem Zahlungstermin scheitern",
+    "master_pdf_page": 1423,
+    "sections": [
+      "Wirtschaftlicher Ausgleich und Zahlungsfähigkeit",
+      "Den anfänglichen Bestand und jede Rechnung festlegen",
+      "Eine positive Tagesendbilanz löst keinen früheren Fehlbetrag",
+      "Das Endergebnis getrennt vom erreichbaren Pfad rechnen",
+      "Mehrere Konten und Währungen verschärfen die Zeitfrage",
+      "Eine Liquiditätskurve gehört neben jede Ertragskurve"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL06",
+    "title": "Bilanzkapazität: kleine Nettoposition, grosser Vermittlungsbedarf",
+    "master_pdf_page": 1428,
+    "sections": [
+      "Marktrisiko ist nur eine Art von Beanspruchung",
+      "Einen Bruttoindikator nicht mit Bilanzaktiva verwechseln",
+      "Vier verschiedene Verrechnungen auseinanderhalten",
+      "Die Reihenfolge kann einen kleinen Rest gross machen",
+      "Wie Kapazitätsknappheit andere Märkte erreicht",
+      "Datenfelder und Forschungsgrenze"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL07",
+    "title": "Ratingmigration: Mandate und Indexuhren verteilen mögliche Verkäufe",
+    "master_pdf_page": 1432,
+    "sections": [
+      "Eine Herabstufung besitzt mehrere Bedeutungen",
+      "Drei ausdrücklich hypothetische Haltergruppen",
+      "Ein Verkaufsbedarf ist keine bereits ausgeführte Menge",
+      "Informationsreaktion und Mandatsreaktion getrennt untersuchen",
+      "Damals geltende Regeln statt heutiger Rückschau",
+      "Forschungsfrage ohne automatische Gegenwette"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL08",
+    "title": "Bankabflüsse: Cashbedarf, Buchverlust und Marktwertverlust nicht doppelt zählen",
+    "master_pdf_page": 1435,
+    "sections": [
+      "Ein historischer Mechanismus, eine eigene Bilanz",
+      "Anfangszustand und Preisänderung exakt festhalten",
+      "Eine Auszahlung von 20 verändert die Bilanzseiten",
+      "Verkaufskosten sind ein eigener zusätzlicher Kanal",
+      "Zeit und Zugriff bleiben zusätzlich relevant",
+      "Die Beobachtung an der richtigen Ebene auswerten"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL09",
+    "title": "Staat, Bank und Nichtbank: direkte Bestände und finanzierte Bestände unterscheiden",
+    "master_pdf_page": 1440,
+    "sections": [
+      "Mehrere Verbindungen statt eines einzigen Kreislaufs",
+      "Zwei Einzelbilanzen und ihre Konsolidierung",
+      "Ein moderater Preisrückgang kann beim Schuldner bleiben",
+      "Ein grösserer Schock erreicht eine andere Anspruchsebene",
+      "Währung und Unterstützung verändern den Vertrag",
+      "Welche Beobachtung einen Übertragungskanal tragen würde"
+    ]
+  },
+  {
+    "domain": "behavior_credit",
+    "id": "BL10",
+    "title": "Netzwerkverluste bilanzieren: Weitergabe ist nicht automatisch ein neuer Schaden",
+    "master_pdf_page": 1444,
+    "sections": [
+      "Gemeinsame Bestände und gegenseitige Forderungen",
+      "Das Netzwerk vor dem Schock konsolidieren",
+      "Ein externer Verlust wird durch die Haftungskette verteilt",
+      "Die Summe der getragenen Verluste muss stimmen",
+      "Zusätzliche Verluste brauchen eine zusätzliche Annahme",
+      "Ein prüfbares Netzwerk statt einer dramatischen Kurve"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP01",
+    "title": "Mit der Master-Ausgabe arbeiten: Frage, Beleg und nächster Schritt",
+    "master_pdf_page": 29,
+    "sections": [
+      "Ein Arbeitsziel für eine Sitzung wählen",
+      "Fünf Arten von Belegen auseinanderhalten",
+      "Den gelieferten Stand richtig lesen",
+      "Einen Begriff bis zu seiner konkreten Definition verfolgen",
+      "Ein kleines, überprüfbares Arbeitsprodukt erzeugen",
+      "Bei offenen Punkten die richtige nächste Arbeit wählen",
+      "Eine Sitzung mit einem Zustand abschliessen"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP02",
+    "title": "Instrumentvertrag und Einheiten: vom angezeigten Preis zum Geldbetrag",
+    "master_pdf_page": 32,
+    "sections": [
+      "Das tatsächlich betrachtete Instrument benennen",
+      "Eine vollständig künstliche Einheitenbrücke rechnen",
+      "Runden und Mindestmengen vor einer Order klären",
+      "Preisraster, Pipwert und Währungszeitpunkt getrennt halten",
+      "Verlustbudget und Margin in zwei Rechnungen führen",
+      "Die Instrumentkarte als Eingabevertrag verwenden",
+      "Den Gegenfall gezielt einsetzen"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP03",
+    "title": "Informationszeit rekonstruieren: was bei einer Entscheidung wirklich bekannt war",
+    "master_pdf_page": 36,
+    "sections": [
+      "Mindestens drei Uhren führen",
+      "Eine kleine Veröffentlichungsfolge nachzeichnen",
+      "Vintages und heutigen Forschungsstand unterscheiden",
+      "Barabschluss in einer Plattform nicht mit einer Wandzeit verwechseln",
+      "Eine spätere Bestätigung besitzt eine eigene Verfügbarkeit",
+      "Fehlende Daten sind ein Zustand mit Folgen",
+      "Die zeitliche Grenze in der Forschungsakte festhalten"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP04",
+    "title": "Aus einer Beobachtung eine widerlegbare Hypothese machen",
+    "master_pdf_page": 40,
+    "sections": [
+      "Beobachtung und Erklärung in zwei Sätzen formulieren",
+      "Den Vergleich vor dem Ergebnis wählen",
+      "Grundhäufigkeit und Treffer getrennt zählen",
+      "Ein Ereignislabel ist noch kein Handelsergebnis",
+      "Einen Gegenfall vorab benennen",
+      "Den Entwurf in eine kleine Akte übersetzen",
+      "Die gewünschte Aussage begrenzen"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP05",
+    "title": "MPR1: einen Retest als vollständigen Forschungsvertrag formulieren",
+    "master_pdf_page": 44,
+    "sections": [
+      "Geltungsbereich und Daten festlegen",
+      "Ausbruch erkennen und den Bezug einfrieren",
+      "Bestätigung und Einstieg sind verschiedene Ereignisse",
+      "Menge und Schutzbedingungen bestimmen",
+      "Zeitablauf, Lücken und offene Zustände regeln",
+      "Die Ausführungssprache mit echten Orderbegriffen vergleichen",
+      "Ein normaler und zwei abgelehnte Wege"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP06",
+    "title": "Menge, Kosten und Gapverlust mit demselben Vertrag nachrechnen",
+    "master_pdf_page": 48,
+    "sections": [
+      "Vom geplanten Geldbetrag zur tatsächlich zulässigen Menge",
+      "Das Kontobuch ab dem Kauf führen",
+      "Normalen Stop, Ziel und Gap als getrennte Pfade rechnen",
+      "Geometrisches Ziel und Nettoverhältnis nicht verwechseln",
+      "Eine zu kleine Menge als korrektes Ergebnis akzeptieren",
+      "Kostenannahmen durch kontrollierte Gegenrechnungen prüfen",
+      "Die Rechnung als Abnahmefall ausliefern"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP07",
+    "title": "Gemeinsame Kasse und Kapitalbindung: mehrere Signale richtig zusammenführen",
+    "master_pdf_page": 52,
+    "sections": [
+      "Zuerst das gemeinsame Konto definieren",
+      "Zwei Käufe aus derselben Kasse rechnen",
+      "Bewertung und Zahlungsrechnung versöhnen",
+      "Einen getrennten Sicherheitenfall aufsetzen",
+      "Margininformationen im richtigen Kontext benutzen",
+      "Gemeinsame Treiber und gegenläufige Signale prüfen",
+      "Einen abgelehnten Auftrag als Portfolioergebnis verstehen"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP08",
+    "title": "Versuche trennen und Auswahl als eigene Regel behandeln",
+    "master_pdf_page": 56,
+    "sections": [
+      "Vor dem ersten Ergebnis das Auswahlproblem beschreiben",
+      "Eine einfache Mehrfachversuchsrechnung korrekt einordnen",
+      "Einen chronologischen Lern- und Prüfplan festlegen",
+      "Merkmale und Anpassungen innerhalb der Grenze halten",
+      "Den Schlussabschnitt wirklich nach dem festgelegten Plan auswerten",
+      "Kostenfälle und neue Optimierungen auseinanderhalten",
+      "Eine Freigabe als begrenzte Schlussfolgerung formulieren"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP09",
+    "title": "Ergebnisse zerlegen: Daten, Ausführung, Kosten und verbleibender Vorteil",
+    "master_pdf_page": 60,
+    "sections": [
+      "Zuerst feststellen, welche Rechnung überhaupt misslingt",
+      "Dasselbe Geschäft ausgehend von klaren Referenzpreisen zerlegen",
+      "Trefferquote mit Gewinn- und Verlusthöhe zusammen lesen",
+      "Kostenwirkung isolieren, bevor die Regeln verändert werden",
+      "Gezielte Gegenprüfungen statt ungerichteter Variantenflut",
+      "Ein negatives Ergebnis nicht automatisch in eine Gegenstrategie drehen",
+      "Die Diagnose mit einer begrenzten Entscheidung abschliessen"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP10",
+    "title": "Die vier Offline-Labore starten, wiederholen und ihre Grenzen lesen",
+    "master_pdf_page": 64,
+    "sections": [
+      "Mit einem begrenzten Reproduktionsauftrag beginnen",
+      "Das passende Labor anhand seiner tatsächlich gestellten Frage wählen",
+      "Einen Standardlauf mit eindeutigem Ausgabeort ausführen",
+      "Entwicklung und Schlussauswertung von LAB04 auseinanderhalten",
+      "Was für die Master-Ausgabe tatsächlich wiederholt wurde",
+      "Einen Ergebnisbericht von der Buchung zur Kennzahl lesen",
+      "Das Arbeitsprodukt der ersten Reproduktion festhalten"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP11",
+    "title": "Eine Umsetzung an Codex übergeben und fachlich abnehmen",
+    "master_pdf_page": 67,
+    "sections": [
+      "Einen Auftrag schreiben, dessen Ergebnis man prüfen kann",
+      "Die Eingabe als Vertrag und nicht als Beispieltext übergeben",
+      "Abnahmekriterien aus den schwierigen Fällen ableiten",
+      "Informationszeit und Wiederholung ausdrücklich prüfen",
+      "Einen Plattformadapter als eigenen nächsten Auftrag behandeln",
+      "Ausgaben so gestalten, dass eine Person die Rechnung nachbauen kann",
+      "Den Übergabestatus ohne pauschale Qualitätsnote festhalten"
+    ]
+  },
+  {
+    "domain": "master_practice",
+    "id": "MP12",
+    "title": "Eine Forschungsakte führen und nachvollziehbar weiterarbeiten",
+    "master_pdf_page": 70,
+    "sections": [
+      "Mit einem sichtbaren Arbeitsblatt beginnen",
+      "Ein Arbeitsziel mit einem passenden Ende versehen",
+      "Vorlagen, Journal und Laborinputs sauber verbinden",
+      "Eine Forschungsfassung ändern, ohne die frühere Frage zu verlieren",
+      "Mit einer kleinen Entscheidungstabelle arbeiten",
+      "Eigene Ergebnisse tatsächlich sichern und wiederfinden",
+      "Den nächsten Schritt aus dem letzten Beleg ableiten"
+    ]
+  }
+]

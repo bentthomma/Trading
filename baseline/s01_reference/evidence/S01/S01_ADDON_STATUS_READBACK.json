@@ -1,0 +1,27 @@
+{
+  "recorded_at_utc": "2026-11-13T00:06:52.929647+00:00",
+  "github_read_only": {
+    "branch": "main",
+    "head": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+    "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+    "tree_truncated": false,
+    "paths": [
+      "README.md"
+    ],
+    "protected_flag": false,
+    "connector_responses": [
+      "GitHub.fetch branches/main, response turn5",
+      "GitHub.fetch git/trees, response turn12"
+    ],
+    "workflow_or_pr_lists_queried_this_run": false
+  },
+  "vercel_read_only": {
+    "deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "project": "prj_pIEbUZ8G8K4oWx7FgnLgClOaAFkg",
+    "state": "READY",
+    "target": "production",
+    "hostname": "extremelab-desk-4m1ohbw4s-ben-a958e9d0.vercel.app",
+    "scope": "Observed existing deployment only; neither deployed nor contacted any account API."
+  },
+  "writes_to_connected_services": false
+}

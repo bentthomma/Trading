@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "plan_id": "EXTREMELAB-CONSOLIDATED-MASTERPLAN-20261111",
+  "plan_version": "1.0.0",
+  "plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+  "locked_at": "2026-11-11T18:40:18.987753Z",
+  "step_fingerprints": {
+    "S00": "281aa837cfbfc1bd5edd531961c68fd8b70f02404207d2924f39a229b7079332",
+    "S01": "230610310db9fe2b038436bcdde1f72aa4dfcb9c23c1b5450d523d35355cc1a6",
+    "S02": "0601d37f4df120f77fd59f6f92fc943ff4e4e0d6214588339ae94e668c851966",
+    "S03": "c5c7190ff43cb9d98e346e4c237d8c77dbbf85a02a1226f5cff5f5afe51c7bc7",
+    "S04": "06898031714231d207481d8ae16e94a70db4c7d25dbc0e3a06faa62e4ebd9631",
+    "S05": "5825549bef3736f2b91134e03bf8f733a6bf5e9390c39fddc674ecb79221f564",
+    "S06": "b8f42907aa03c97512e22cda6acefa96975a83f54d3e59c35ce674cc1e49f12c",
+    "S07": "1f370e716c7fef5f9913ffccf8e193ccf85efa19d24b0acd4899bc218c1a82cb",
+    "S08": "ccf23f7ad6695d8e2f72eb45f3c07e8bdcb1018c5a22d76f628f11c4b359b4e4",
+    "S09": "cb6c2f66039310959d029ecca2e2fbc13739eb24c8d66c33c1099936e7fed22e",
+    "S10": "582f977b1ddf0ce2ee34878554fb4225f53ecf208572638a09e8b89955dad9f0",
+    "S11": "bdb2fc025c77ba414dd1a8a8c1e996c066a151481c02d5e2b316e73d46cc5539",
+    "S12": "b27df18217ae9149465c2ef8b0778452883e305257e787a7c21e907f44cd0598",
+    "S13": "223dab86701f06ca0f9309b82fbf5219c245d805c199aab3f7e09eae8e3f1d3a",
+    "S14": "43801cd56526df03d8cfbd255afef2815215717f78d99658d250ebb4a9952a88",
+    "S15": "1a3469ad4bcd234171352376850b14a659478753498fec1a21eb4ca51a245077",
+    "S16": "c5c8ec3ef93858d5cf0d6c9f506e6ec0befaeac98014e8cf127e19a1829860bd",
+    "S17": "00dc77f93da327c0ea025627341a20b458df12805dc5f651ca463c43a001cffb",
+    "S18": "35aa2872b8b8115c6721bfc204a104251daf40058b37fb7d374c41c1ee1f671d",
+    "S19": "a90051f1257c14f156a0c7e529df6715d86cadc518252fcead480610574f4643",
+    "S20": "5c6ca680431f6c483a736f18a3d7cb9bc2a0556f52fbd6482c44aba84abc7995",
+    "S21": "0cf3387cfb943622c33744d47ba404559bac5e26a6bc4b24ac6b0dc9b0aedbfb",
+    "S22": "d897a95af7fbff70249cb9b032d19e29715d8d5472b61c20f11bb0ed5d8dff67",
+    "S23": "623c1df57d56f37b3727c6e09195a240f2cfd3eed60ccf156e366f0b7fb1371a",
+    "S24": "0d3c6d05e761cb82b52ba243cb0d29413d8234ae78a6385d15403d9d64c6eb10",
+    "S25": "ff6af93bd329e5004d0c6766da3ccd5460ec9031d2a91194d917508b6881544c",
+    "S26": "d96d33f5358be26713db98fe3106e07b25e5de504b9e659159fe7cf5d8d47341",
+    "S27": "42f0cd946b89367b64bee47da3b8efd61c27485a7b67b64d3062de0f0d3db339",
+    "S28": "a10b9dfe4fcbfe63c4f37ec0c91e5d6bcc0c25d421855efaa03eefb863b1761c",
+    "S29": "d9e9ca3c6aa83fc6d965157353675018d6db50b611fa9f948ca047c9ab7d3c43"
+  },
+  "dependencies": {
+    "S00": [],
+    "S01": [
+      "S00"
+    ],
+    "S02": [
+      "S01"
+    ],
+    "S03": [
+      "S01",
+      "S02"
+    ],
+    "S04": [
+      "S02"
+    ],
+    "S05": [
+      "S02"
+    ],
+    "S06": [
+      "S05"
+    ],
+    "S07": [
+      "S02"
+    ],
+    "S08": [
+      "S01",
+      "S04",
+      "S06",
+      "S07"
+    ],
+    "S09": [
+      "S02",
+      "S07"
+    ],
+    "S10": [
+      "S05",
+      "S06",
+      "S07",
+      "S09"
+    ],
+    "S11": [
+      "S05",
+      "S06",
+      "S10"
+    ],
+    "S12": [
+      "S10",
+      "S11"
+    ],
+    "S13": [
+      "S02",
+      "S07"
+    ],
+    "S14": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13"
+    ],
+    "S15": [
+      "S09",
+      "S13",
+      "S14"
+    ],
+    "S16": [
+      "S07",
+      "S10",
+      "S14"
+    ],
+    "S17": [
+      "S06",
+      "S10",
+      "S16"
+    ],
+    "S18": [
+      "S12",
+      "S14",
+      "S15",
+      "S16",
+      "S17"
+    ],
+    "S19": [
+      "S09",
+      "S11",
+      "S14",
+      "S16",
+      "S17",
+      "S18"
+    ],
+    "S20": [
+      "S07",
+      "S10",
+      "S11",
+      "S16",
+      "S17",
+      "S19"
+    ],
+    "S21": [
+      "S03",
+      "S04",
+      "S06",
+      "S13",
+      "S16",
+      "S17"
+    ],
+    "S22": [
+      "S02",
+      "S13",
+      "S16",
+      "S17",
+      "S21"
+    ],
+    "S23": [
+      "S05",
+      "S06",
+      "S08",
+      "S11",
+      "S12",
+      "S21",
+      "S22"
+    ],
+    "S24": [
+      "S08",
+      "S11",
+      "S12",
+      "S19",
+      "S20",
+      "S23"
+    ],
+    "S25": [
+      "S06",
+      "S08",
+      "S21",
+      "S23",
+      "S24"
+    ],
+    "S26": [
+      "S20",
+      "S21",
+      "S22",
+      "S24",
+      "S25"
+    ],
+    "S27": [
+      "S16",
+      "S17",
+      "S19",
+      "S26"
+    ],
+    "S28": [
+      "S02",
+      "S05",
+      "S06",
+      "S11",
+      "S23",
+      "S25",
+      "S26"
+    ],
+    "S29": [
+      "S26"
+    ]
+  },
+  "global_rules_snapshot": {
+    "max_in_progress": 2,
+    "implementation_may_be_autonomous": true,
+    "product_deploy_in_this_turn": false,
+    "live_trading_authorized_by_plan": false,
+    "required_independent_review": true,
+    "no_force_completion": true,
+    "known_holdouts_are_consumed": true,
+    "scope_mapping_required": true
+  }
+}

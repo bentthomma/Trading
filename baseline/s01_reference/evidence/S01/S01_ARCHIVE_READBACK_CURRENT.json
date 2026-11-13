@@ -1,0 +1,38 @@
+{
+  "observed_utc": "2026-11-12T23:44:43.047152+00:00",
+  "archives": [
+    {
+      "name": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "bytes": 295516,
+      "sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "zip_crc_bad_member": null,
+      "members": 23,
+      "full_archive_included": false
+    },
+    {
+      "name": "ExtremeLab_Autotest_20261106.zip",
+      "bytes": 2535352,
+      "sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+      "zip_crc_bad_member": null,
+      "members": 45,
+      "full_archive_included": false
+    },
+    {
+      "name": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+      "bytes": 32852,
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+      "zip_crc_bad_member": null,
+      "members": 17,
+      "full_archive_included": false
+    },
+    {
+      "name": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "bytes": 703909,
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "zip_crc_bad_member": null,
+      "members": 27,
+      "full_archive_included": false
+    }
+  ],
+  "scope": "Only selected source members copied into final package; personal/trade evidence from Autotest archive not copied. Original archives preserved unchanged in work/original_archives and Library."
+}

@@ -1,0 +1,732 @@
+{
+  "schema": "extremelab-as-is-source-bindings/v1",
+  "work_id": "S01-INTERFACE-MAP",
+  "archive": {
+    "path": "baseline/original_platform097.zip",
+    "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d"
+  },
+  "sources": [
+    {
+      "id": "server",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/server.mjs",
+      "bytes": 62295,
+      "sha256": "f1bd2940bcbaa63056c42cbbc117adc1ad774618f012c0b39da330a5c93c0082",
+      "evidence": [
+        {
+          "anchor": "if(path.startsWith('/api/bridge/'))",
+          "line": 447,
+          "start_line": 446,
+          "end_line": 450,
+          "excerpt_sha256": "bd05e05cecc3e8a2767080a5a2ebde4d83ceb0446b7287f2cbc9940c14e28ff2"
+        },
+        {
+          "anchor": "if(path==='/api/hub/reconciliation20')",
+          "line": 488,
+          "start_line": 487,
+          "end_line": 491,
+          "excerpt_sha256": "52651a0d8e7dc57e58e41fb55c6155313c0e6406b484f109ef0c35e643a84f58"
+        },
+        {
+          "anchor": "if(path==='/api/account-live')",
+          "line": 472,
+          "start_line": 471,
+          "end_line": 475,
+          "excerpt_sha256": "f5ca94d304ac45d46b864f6b0caa973c88ff1aaad1e53985eb6668e10401ccb4"
+        },
+        {
+          "anchor": "if(path==='/mcp')",
+          "line": 435,
+          "start_line": 434,
+          "end_line": 438,
+          "excerpt_sha256": "b63bdea0baf7c8605bbd1c67832b2634ce37275ac727017499d8c09cf1181066"
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/control.mjs",
+      "bytes": 45218,
+      "sha256": "9bbd47368f7b5c87a6ab402219f7d5cbc9cd173a7a244dfcbc3da741b897147c",
+      "evidence": [
+        {
+          "anchor": "export class Control",
+          "line": 18,
+          "start_line": 17,
+          "end_line": 21,
+          "excerpt_sha256": "fac9feadbf622ef9029edc43c41d169a531c469401fafe1bb53b0c6e26c0a4f1"
+        },
+        {
+          "anchor": "heartbeat(",
+          "line": 311,
+          "start_line": 310,
+          "end_line": 314,
+          "excerpt_sha256": "a8a1be7a5e9d6df479c2492a8be2e417805c3d31d3a7ce05021763128f2b99f9"
+        },
+        {
+          "anchor": "ack(",
+          "line": 365,
+          "start_line": 364,
+          "end_line": 368,
+          "excerpt_sha256": "ec1aada611fa1e33cb445abff512377e3ada25c5363787123365be676f5f50e5"
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/store.mjs",
+      "bytes": 18333,
+      "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978",
+      "evidence": [
+        {
+          "anchor": "CREATE TABLE kv",
+          "line": 124,
+          "start_line": 123,
+          "end_line": 127,
+          "excerpt_sha256": "2a06680b29a7a5bba1fe7fe934c47fd40f23c1b7067c37e756260105d2732c2b"
+        },
+        {
+          "anchor": "CREATE TABLE snapshots",
+          "line": 144,
+          "start_line": 143,
+          "end_line": 147,
+          "excerpt_sha256": "9910934abc7262998065d75fda2b750545c227ff92ccd30642364dfe6dcdeae4"
+        }
+      ]
+    },
+    {
+      "id": "observation",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/observation.mjs",
+      "bytes": 17360,
+      "sha256": "af52f2ec951f26bed4f1c7c51acf928cb31fe58470619fb16522e1cccdb65ba6",
+      "evidence": [
+        {
+          "anchor": "observer:v1:state:",
+          "line": 15,
+          "start_line": 14,
+          "end_line": 18,
+          "excerpt_sha256": "3d84434a8e16514042e5c13187a4fa2617dea3f91b517ad9999cd208fb784639"
+        },
+        {
+          "anchor": "observer:v1:latest:",
+          "line": 16,
+          "start_line": 15,
+          "end_line": 19,
+          "excerpt_sha256": "a6a0e860aaedea4585b17663e80d4bf1ac31805b79021dbf23003994521490bc"
+        },
+        {
+          "anchor": "this.store.transaction(()=>{",
+          "line": 166,
+          "start_line": 165,
+          "end_line": 169,
+          "excerpt_sha256": "3165d971a8da3a2cfd7310c7a762ecf62148b83dda4b6353017280ae988c923b"
+        },
+        {
+          "anchor": "CORE_RESTART_AWAITING_OBSERVATION",
+          "line": 184,
+          "start_line": 183,
+          "end_line": 187,
+          "excerpt_sha256": "6cab6eb9d55e07a9af55d8606f07eceb2f5cdfa20f592eb6b505a16a6a6242ee"
+        },
+        {
+          "anchor": "historyAvailable:false",
+          "line": 105,
+          "start_line": 104,
+          "end_line": 108,
+          "excerpt_sha256": "186f64f94ca49192bc2437b67907327181530e02e786dc5860e56cda0ab6704c"
+        }
+      ]
+    },
+    {
+      "id": "journal",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/engine-journal.mjs",
+      "bytes": 26628,
+      "sha256": "1a56bc2cd9559dea9ac5231db2cab121d6a1c73e03410951390d7693bb63dd93",
+      "evidence": [
+        {
+          "anchor": "enginejournal:v1:",
+          "line": 20,
+          "start_line": 19,
+          "end_line": 23,
+          "excerpt_sha256": "acee8a2389a4c5ca295b821ff72c3370758f34fe0c9fa6cffb872180009bee27"
+        },
+        {
+          "anchor": "if(added===0)return",
+          "line": 225,
+          "start_line": 224,
+          "end_line": 228,
+          "excerpt_sha256": "b3d24f76197090369f8cbfedc98133c0754faabdb7b6512720fafa45b0c65058"
+        },
+        {
+          "anchor": "this.store.transaction(()=>{",
+          "line": 227,
+          "start_line": 226,
+          "end_line": 230,
+          "excerpt_sha256": "da0a58dcf43cab6895d41d709f9967d6320fea2c83defaff8f66ce6cef9f48b6"
+        },
+        {
+          "anchor": "CORE_RESTART_AWAITING_JOURNAL",
+          "line": 270,
+          "start_line": 269,
+          "end_line": 273,
+          "excerpt_sha256": "fc30f91e32465e67c118371354704be5e9639dc4b06f3be4f43b392bac7a50b9"
+        },
+        {
+          "anchor": "plansAreExecutionGrants:false",
+          "line": 280,
+          "start_line": 279,
+          "end_line": 282,
+          "excerpt_sha256": "345df49225970d93261a1aac26b6843a1369fbe5ad5b0cb4fe28ecc0b1f8cdd1"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/reconciliation20.mjs",
+      "bytes": 19697,
+      "sha256": "a81776bf38e646462444b687f819fb7814ef65c3c6128f1cbc6a7dd1002e6197",
+      "evidence": [
+        {
+          "anchor": "const sameAccount=",
+          "line": 17,
+          "start_line": 16,
+          "end_line": 20,
+          "excerpt_sha256": "4f8768c9a83f90aff682d7032ccd855e0fbf8dbbbc717beaa3c74bddb24b3031"
+        },
+        {
+          "anchor": "export function reconcilePositionViews20",
+          "line": 139,
+          "start_line": 138,
+          "end_line": 142,
+          "excerpt_sha256": "1d41f85fba578d6d4d12d324adec691c67c593417a2ef8966cc04bfa432291a4"
+        },
+        {
+          "anchor": "engineIsOpenPositionList:false",
+          "line": 153,
+          "start_line": 152,
+          "end_line": 156,
+          "excerpt_sha256": "e8b91a7f3602ee012f3626a0b3416e78a92effd712b96437e43b8cc49aea47c7"
+        }
+      ]
+    },
+    {
+      "id": "comparison-reader",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/reconciliation-read20.mjs",
+      "bytes": 1453,
+      "sha256": "9d93d080858478ad3afbe6c65d32fe7513b5682a4999b02be253fac4c049f193",
+      "evidence": [
+        {
+          "anchor": "export function readReconciliation20",
+          "line": 7,
+          "start_line": 6,
+          "end_line": 10,
+          "excerpt_sha256": "0a6d410e2fedc1bd0252e00d44a3f69a023107bdf3d5c4f881b471942043556f"
+        },
+        {
+          "anchor": "em.id!=='th3rev.ready20.v1'",
+          "line": 13,
+          "start_line": 12,
+          "end_line": 16,
+          "excerpt_sha256": "cd15d1daa1fd7d53bd6d5e7b1f87646a8ebf95d3811a3e8b54c39a1f632015d2"
+        }
+      ]
+    },
+    {
+      "id": "registry",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/registry.mjs",
+      "bytes": 6863,
+      "sha256": "a4a6b5ca140d2539128d23ff764fd72d9af78ec65f1d035a5932de5d38a3d40e",
+      "evidence": [
+        {
+          "anchor": "tool('get_bot_observation'",
+          "line": 13,
+          "start_line": 12,
+          "end_line": 16,
+          "excerpt_sha256": "d981ea0414ea149ed6e68af6324c2100c37bdbdd58fb8ae7df9c649a59fc9dc8"
+        },
+        {
+          "anchor": "tool('get_bot_journal'",
+          "line": 14,
+          "start_line": 13,
+          "end_line": 17,
+          "excerpt_sha256": "8551d7fca13794fb74b4d75824d37411e718a32a25318b7c053e0b660be0c7d4"
+        },
+        {
+          "anchor": "tool('get_bot_reconciliation'",
+          "line": 15,
+          "start_line": 14,
+          "end_line": 18,
+          "excerpt_sha256": "ea4a593d4774d4f97d49a0019ef2141741a5b2b91f2ff9e49342785ad9a9a602"
+        },
+        {
+          "anchor": "else if(name==='get_bot_reconciliation')",
+          "line": 49,
+          "start_line": 48,
+          "end_line": 52,
+          "excerpt_sha256": "15ecbb322d3da062c539c3a3c2c81a33f0805c9dd1cd6f2a2b58bcd9cfb46559"
+        }
+      ]
+    },
+    {
+      "id": "mcp",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/mcp.mjs",
+      "bytes": 3295,
+      "sha256": "b8df5695fd3c953caa68dd3d1be491bbc164e62419724398807c7cc7804ccfcf",
+      "evidence": [
+        {
+          "anchor": "isError:true",
+          "line": 35,
+          "start_line": 34,
+          "end_line": 38,
+          "excerpt_sha256": "1c50a4010baf67c06b72f2e4f3ea88a1141a8aa34a908f860a5aa023ea4fabda"
+        },
+        {
+          "anchor": "structuredContent",
+          "line": 33,
+          "start_line": 32,
+          "end_line": 36,
+          "excerpt_sha256": "b0382f420c6be253a98db8b29b6f0ba6a65aabcda36e5dbbe089fdc62c0b46c7"
+        }
+      ]
+    },
+    {
+      "id": "remote",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/remote-view20.mjs",
+      "bytes": 10642,
+      "sha256": "8ace0751f7917d299a843578127a2b832051da463bdbf30723cbbeca5f46fe7c",
+      "evidence": [
+        {
+          "anchor": "function snapshot(",
+          "line": 9,
+          "start_line": 8,
+          "end_line": 12,
+          "excerpt_sha256": "38c920c606bf7604e39386e5053c264a12f80ff05866f33b6a047843728e5839"
+        },
+        {
+          "anchor": "kind:'paired_observer'",
+          "line": 14,
+          "start_line": 13,
+          "end_line": 17,
+          "excerpt_sha256": "58a1292748714f6792232d35ccc1ac4cc9a0bcb29c6ff828016092cd31af9025"
+        },
+        {
+          "anchor": "kind:'paired_engine_report'",
+          "line": 19,
+          "start_line": 18,
+          "end_line": 22,
+          "excerpt_sha256": "00e446ab78ff2eb5fe3c5a35c90ef1245703f5ba3b7ffdc0e3a57b993284a176"
+        },
+        {
+          "anchor": "base.positions=v.positions.map",
+          "line": 20,
+          "start_line": 19,
+          "end_line": 23,
+          "excerpt_sha256": "d8fa807eca90b22f00ed94afb9ce9b20d55e358d0105ad0065d269388f4ae2ca"
+        },
+        {
+          "anchor": "Persist the slot before transmission",
+          "line": 65,
+          "start_line": 64,
+          "end_line": 68,
+          "excerpt_sha256": "c2476d634d3b353d919f08df6f945095d442bd5dbf5699eab0ece2c48f73f5cf"
+        }
+      ]
+    },
+    {
+      "id": "native-observer",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/ctrader-observer20/observer/src/ObserverProtocol.cs",
+      "bytes": 11009,
+      "sha256": "3f43284dadb69f47d544d14e8986db60f33efc333c79783a69c6f5fd1ce8bd65",
+      "evidence": [
+        {
+          "anchor": "public sealed record Observation(",
+          "line": 80,
+          "start_line": 79,
+          "end_line": 83,
+          "excerpt_sha256": "010404b7e8038cd9ad3a290efc0b1fd49949b6bf0cc8f99753b5090d7c3f192b"
+        },
+        {
+          "anchor": "api/bridge/heartbeat",
+          "line": 96,
+          "start_line": 95,
+          "end_line": 99,
+          "excerpt_sha256": "fd2f9d31241d893c651a1c70e2e56372dfd8cd5fb52f9ecc2e329fde0e76a988"
+        },
+        {
+          "anchor": "api/bridge/observation",
+          "line": 99,
+          "start_line": 98,
+          "end_line": 102,
+          "excerpt_sha256": "bbe55cdd54f316b6f87d1ac48679723d196ecf66a928b30308d6089dd8b3cc19"
+        }
+      ]
+    },
+    {
+      "id": "native-journal",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/ctrader-th3revolution20/src/Th3JournalProtocol20.cs",
+      "bytes": 21807,
+      "sha256": "979115af3c388cc3aa473de66c5fba76c30c88098286ae4add71de9bdf092eb4",
+      "evidence": [
+        {
+          "anchor": "public sealed record JournalBatch20(",
+          "line": 122,
+          "start_line": 121,
+          "end_line": 125,
+          "excerpt_sha256": "c36afbc192060ebcfea5a67e30f6b7e04d1bf804b0da08576d409898fa5ca939"
+        },
+        {
+          "anchor": "public sealed record JournalEvent20(",
+          "line": 120,
+          "start_line": 119,
+          "end_line": 123,
+          "excerpt_sha256": "c2669dd8fefc458275e433ee85b1f0415f49f571f96699f939a7a5feeac376f4"
+        },
+        {
+          "anchor": "public sealed record JournalReceipt20(",
+          "line": 124,
+          "start_line": 123,
+          "end_line": 127,
+          "excerpt_sha256": "6fcd5b6fb924f27b80a4fcf4074e55a58bb90a4548913ce25597736dfdccc70e"
+        },
+        {
+          "anchor": "api/bridge/journal",
+          "line": 250,
+          "start_line": 249,
+          "end_line": 253,
+          "excerpt_sha256": "0c182e89fd031ef09393200f043a0d8036ba5975e76f17047c1a5d882cf16ae0"
+        }
+      ]
+    },
+    {
+      "id": "native-outbox",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/ctrader-th3revolution20/src/Th3JournalOutbox20.cs",
+      "bytes": 21777,
+      "sha256": "1f7e55be395f9171f8f5f0ceb642e2a74ef443b0de977a3d05744acb9ad8d57f",
+      "evidence": [
+        {
+          "anchor": "class JournalOutbox20",
+          "line": 23,
+          "start_line": 22,
+          "end_line": 26,
+          "excerpt_sha256": "cb027c2ba6e3e7468f271ed26df77816b7739f6809907645926a21ba08a52e08"
+        }
+      ]
+    },
+    {
+      "id": "native-dispatch",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/ctrader-th3revolution20/src/Th3JournalDispatch20.cs",
+      "bytes": 4312,
+      "sha256": "e5e46a9538ce8e2f901b340b603ee8205117445f2dd81fee8cbb7eb2967e20ae",
+      "evidence": [
+        {
+          "anchor": "class",
+          "line": 12,
+          "start_line": 11,
+          "end_line": 15,
+          "excerpt_sha256": "f2ee1e340beddd2e0f4761d4b403995bb3cef45b5586ce9400dd8e910f33b6f0"
+        }
+      ]
+    },
+    {
+      "id": "view-projection",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+      "bytes": 6049,
+      "sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3",
+      "evidence": [
+        {
+          "anchor": "REMOTE20_INTERVAL",
+          "line": 5,
+          "start_line": 4,
+          "end_line": 8,
+          "excerpt_sha256": "324882be9c6e87d8d28f5a16b0db48c70604cabacad2576f858ef566ded0a260"
+        },
+        {
+          "anchor": "validateRemoteProjection20",
+          "line": 23,
+          "start_line": 22,
+          "end_line": 26,
+          "excerpt_sha256": "c97ad7ee150b37362c52246fa088eb9abf5d8d8b38df62f6834deb68dfd8af1b"
+        },
+        {
+          "anchor": "sameAccount20",
+          "line": 9,
+          "start_line": 8,
+          "end_line": 12,
+          "excerpt_sha256": "e18fdf30c22cc1441705c4496ed205dab4fcb40479a841b92a1a09b888807887"
+        }
+      ]
+    },
+    {
+      "id": "view-http",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/http.mjs",
+      "bytes": 2796,
+      "sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7",
+      "evidence": [
+        {
+          "anchor": "export function createRemoteView20Handler",
+          "line": 14,
+          "start_line": 13,
+          "end_line": 17,
+          "excerpt_sha256": "946fe4938257d3333ad9b55f55d120ba44e81730b700441c61c4a66acce540e1"
+        },
+        {
+          "anchor": "action==='receive'",
+          "line": 20,
+          "start_line": 19,
+          "end_line": 23,
+          "excerpt_sha256": "e6846b5554947da72b8e4d0a34fe668475395cd48f416e4f4fa4396d5a53169d"
+        },
+        {
+          "anchor": "action==='snapshot'",
+          "line": 25,
+          "start_line": 24,
+          "end_line": 28,
+          "excerpt_sha256": "e185d364d6dadf75d5de51ca92b6ae1721b7de824fb344127206c107e6d3fda5"
+        }
+      ]
+    },
+    {
+      "id": "view-service",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/service.mjs",
+      "bytes": 7496,
+      "sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604",
+      "evidence": [
+        {
+          "anchor": "export class RemoteView20Service",
+          "line": 18,
+          "start_line": 17,
+          "end_line": 21,
+          "excerpt_sha256": "d19f0e74e82e9d4a1ee114c4505bc97937bd7562b2f5a6f1a8ea0f063acddc25"
+        },
+        {
+          "anchor": "async receive(",
+          "line": 45,
+          "start_line": 44,
+          "end_line": 48,
+          "excerpt_sha256": "3f6b91ea86bd60aedb58482d2222ac074a02600fd0a7cd9c09c336e358b629a2"
+        },
+        {
+          "anchor": "async read(",
+          "line": 55,
+          "start_line": 54,
+          "end_line": 58,
+          "excerpt_sha256": "74e665d50f3a5dad1681b953243f01f9351f6094287d45793a8820a7b1563c48"
+        }
+      ]
+    },
+    {
+      "id": "view-api",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/api/revolution.js",
+      "bytes": 1543,
+      "sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139",
+      "evidence": [
+        {
+          "anchor": "createRemoteView20Handler",
+          "line": 5,
+          "start_line": 4,
+          "end_line": 8,
+          "excerpt_sha256": "620d6c177063494d20b373643855a71b892fc69a9bf9ce6cc913020e854ebe7c"
+        },
+        {
+          "anchor": "ifMatch",
+          "line": 11,
+          "start_line": 10,
+          "end_line": 14,
+          "excerpt_sha256": "1b6e61b20c3a5894275027667abee0fef54747f3500e55a9cc7ea74778e52d3b"
+        }
+      ]
+    },
+    {
+      "id": "view-ui",
+      "kind": "archive_member",
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution.js",
+      "bytes": 11174,
+      "sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f",
+      "evidence": [
+        {
+          "anchor": "function render(v)",
+          "line": 16,
+          "start_line": 15,
+          "end_line": 19,
+          "excerpt_sha256": "d3f5acdde2953589e96e6d4c9e23c36a479d376468315f0eb0105f1a6371e967"
+        },
+        {
+          "anchor": "positionCountIsOpenInventory",
+          "line": 22,
+          "start_line": 21,
+          "end_line": 25,
+          "excerpt_sha256": "c26cc8f89cc8e9d7bece51af9840650dab213ca3805a0d2425cf0ce85bea7e8e"
+        },
+        {
+          "anchor": "['Quellzeit',stamp(p.sourceAt)]",
+          "line": 25,
+          "start_line": 24,
+          "end_line": 28,
+          "excerpt_sha256": "38e4c8d65674962de46c4e99208ab840f9f209c911d8feab733e8b70f62ff8a1"
+        }
+      ]
+    },
+    {
+      "id": "legacy-live",
+      "kind": "package_file",
+      "path": "baseline/vercel_recovered/src/api/live.js",
+      "bytes": 1281,
+      "sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+      "evidence": [
+        {
+          "anchor": "from '../lib/relay.mjs'",
+          "line": 2,
+          "start_line": 1,
+          "end_line": 5,
+          "excerpt_sha256": "0d981260e8a411ae88bc0060f205c2149417caa5ac1d63bb5082165b3d7377ee"
+        },
+        {
+          "anchor": "relayRequest(",
+          "line": 11,
+          "start_line": 10,
+          "end_line": 14,
+          "excerpt_sha256": "a1d74da5cb99f6e0e3772dfbb15e277efa5bf955944057fe0f10ab396ca41fd1"
+        }
+      ]
+    },
+    {
+      "id": "legacy-socket",
+      "kind": "package_file",
+      "path": "baseline/vercel_recovered/src/api/socket.js",
+      "bytes": 2358,
+      "sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
+      "evidence": [
+        {
+          "anchor": "from '../lib/storage.mjs'",
+          "line": 4,
+          "start_line": 3,
+          "end_line": 7,
+          "excerpt_sha256": "bfdc334c959d0f3336a37b85ccb08a4b857a7ec6a7ab1528970371313e8e11c0"
+        },
+        {
+          "anchor": "msg.type==='publish'",
+          "line": 25,
+          "start_line": 24,
+          "end_line": 28,
+          "excerpt_sha256": "a31d1d6061d3136ee54e9aa7532eb3a0520bbe8be6ae20d73a25e0f3d78c5523"
+        },
+        {
+          "anchor": "msg.type==='snapshot'",
+          "line": 24,
+          "start_line": 23,
+          "end_line": 27,
+          "excerpt_sha256": "46c08c89d642c727f760074f96898ed7b82ac5c2e6b7e074d97f4e2694158f09"
+        }
+      ]
+    },
+    {
+      "id": "legacy-storage",
+      "kind": "package_file",
+      "path": "baseline/vercel_recovered/src/lib/storage.mjs",
+      "bytes": 2730,
+      "sha256": "afd0f7747f23d738ee688710f209099dd39fadbde7b5a65c0daabe07ea55931d",
+      "evidence": [
+        {
+          "anchor": "setSnapshot",
+          "line": 26,
+          "start_line": 25,
+          "end_line": 29,
+          "excerpt_sha256": "ab4108558b765bc561c25e1d768679b5536acc1bbb948c594c4f488dbe9cfb41"
+        },
+        {
+          "anchor": "latest",
+          "line": 31,
+          "start_line": 30,
+          "end_line": 34,
+          "excerpt_sha256": "97c4830703d1a0258a4fce15943199be1f93cdeaaaa601023d9cbff2aa96afe9"
+        }
+      ]
+    },
+    {
+      "id": "legacy-validator",
+      "kind": "package_file",
+      "path": "baseline/vercel_recovered/src/lib/security.mjs",
+      "bytes": 3309,
+      "sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f",
+      "evidence": [
+        {
+          "anchor": "export",
+          "line": 2,
+          "start_line": 1,
+          "end_line": 5,
+          "excerpt_sha256": "49e4219c3e32d0b1f84cd19fc31ed9b0e5c71d926713d61d5fc3456ad840948a"
+        }
+      ]
+    }
+  ],
+  "exact_production_matches": [
+    {
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/api/revolution.js",
+      "production_path": "baseline/vercel_recovered/src/api/revolution.js",
+      "sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139"
+    },
+    {
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/http.mjs",
+      "production_path": "baseline/vercel_recovered/src/lib/http.mjs",
+      "sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7"
+    },
+    {
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/service.mjs",
+      "production_path": "baseline/vercel_recovered/src/lib/service.mjs",
+      "sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604"
+    },
+    {
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+      "production_path": "baseline/vercel_recovered/src/lib/projection.mjs",
+      "sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3"
+    },
+    {
+      "archive": "baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution.js",
+      "production_path": "baseline/vercel_recovered/src/view20-public/revolution.js",
+      "sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f"
+    }
+  ],
+  "native_runtime_executed": false,
+  "independent_review": false
+}

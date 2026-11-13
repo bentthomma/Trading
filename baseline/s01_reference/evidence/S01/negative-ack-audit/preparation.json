@@ -1,0 +1,21 @@
+{
+  "initial_development": {
+    "methods": 21,
+    "pass": 20,
+    "fail": 1,
+    "cause": "new static SDK test used nonexistent HubHttpTransport.cs; actual transport is LoopbackHubTransport in HubProtocol.cs",
+    "corrected": true,
+    "log_sha256": "5c11e3a3bb0c0f017a556fe46e240aebfb33a459f159ba84c0e3b1e9677120c9"
+  },
+  "development_after_correction": {
+    "methods": 21,
+    "pass": 21,
+    "log_sha256": "306e2195b6ba0d1e706ba7f3f3cc57e7e249296a283d6ab150e63ea98c2bb3f9"
+  },
+  "full_preparation": {
+    "status": "passed",
+    "unique_methods": 87,
+    "execution_json_sha256": "ecd471aabd1a6d1e449d23c5c6441781a86a0231692c74de594644388a0ff273"
+  },
+  "final_fresh_execution": "external; do not count preparation as final ZIP verification"
+}

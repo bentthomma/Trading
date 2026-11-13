@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "steps": {
+    "S00": {
+      "status": "passed",
+      "actor": "ChatGPT-local",
+      "started_at": "2026-11-13T14:44:48.179000Z",
+      "finished_at": "2026-11-13T14:44:50.082212Z",
+      "completion_mode": "single_actor_test_evidence",
+      "base_revision": "ae0a493fa31f31b681b4e732d7eee76ce66aee56",
+      "head_revision": "ee7bb970953e2e4b3d576336fc33f663bb341c16",
+      "evidence_path": "evidence/S00/completion.json",
+      "evidence_sha256": "ec60c5d408f87c93e1791317544e1e0f9569c7a964d3f37cc35926d6d8b33dc7"
+    },
+    "S01": {
+      "status": "passed",
+      "actor": "ChatGPT-local",
+      "started_at": "2026-11-13T14:45:47.096308Z",
+      "finished_at": "2026-11-13T14:46:54.961505Z",
+      "completion_mode": "single_actor_test_evidence",
+      "base_revision": "e486de547923c7b66f5ddc25f44fbc2295b4a885",
+      "head_revision": "79a957705b7e14b7ba4885dc666b468325fac78d",
+      "evidence_path": "evidence/S01/completion.json",
+      "evidence_sha256": "1eda9f16e20a416366c25904a436e82347d85e64041de6f8ddab1310addaa67a"
+    },
+    "S02": {
+      "status": "blocked",
+      "actor": "ChatGPT-local",
+      "started_at": "2026-11-13T15:00:24.517004Z",
+      "blocked_by": "ChatGPT-local",
+      "blocked_at": "2026-11-13T15:27:46.014548Z",
+      "block_reason": "S02-C01: echte C#-Kompilation und Roundtrip nicht ausfuehrbar; dotnet-SDK fehlt, Bezug scheitert an DNS/Download. Architektur und Python/JS-Pruefungen liegen vor. Scope-Amendment vorbereitet, nicht aktiviert."
+    },
+    "S03": {
+      "status": "pending"
+    },
+    "S04": {
+      "status": "pending"
+    },
+    "S05": {
+      "status": "pending"
+    },
+    "S06": {
+      "status": "pending"
+    },
+    "S07": {
+      "status": "pending"
+    },
+    "S08": {
+      "status": "pending"
+    },
+    "S09": {
+      "status": "pending"
+    },
+    "S10": {
+      "status": "pending"
+    },
+    "S11": {
+      "status": "pending"
+    },
+    "S12": {
+      "status": "pending"
+    },
+    "S13": {
+      "status": "pending"
+    },
+    "S14": {
+      "status": "pending"
+    },
+    "S15": {
+      "status": "pending"
+    },
+    "S16": {
+      "status": "pending"
+    },
+    "S17": {
+      "status": "pending"
+    },
+    "S18": {
+      "status": "pending"
+    },
+    "S19": {
+      "status": "pending"
+    },
+    "S20": {
+      "status": "pending"
+    },
+    "S21": {
+      "status": "pending"
+    },
+    "S22": {
+      "status": "pending"
+    },
+    "S23": {
+      "status": "pending"
+    },
+    "S24": {
+      "status": "pending"
+    },
+    "S25": {
+      "status": "pending"
+    },
+    "S30": {
+      "status": "pending"
+    },
+    "S31": {
+      "status": "pending"
+    },
+    "S32": {
+      "status": "pending"
+    },
+    "S33": {
+      "status": "pending"
+    },
+    "S34": {
+      "status": "pending"
+    },
+    "S35": {
+      "status": "pending"
+    },
+    "S26": {
+      "status": "pending"
+    },
+    "S27": {
+      "status": "pending"
+    },
+    "S28": {
+      "status": "pending"
+    },
+    "S29": {
+      "status": "pending"
+    }
+  },
+  "history": [
+    {
+      "path": "governance/amendments/AM-001-design-after-technology.json",
+      "sha256": "8218352868fa19a745c5c882703bc3f3229828645b236a2336a63d0b7acc9923",
+      "previous_plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+      "author": "/root",
+      "reviewer": "/root/plan_guard_design",
+      "affected_steps": [
+        "S00",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24",
+        "S25",
+        "S26",
+        "S27",
+        "S28",
+        "S29",
+        "S30",
+        "S31",
+        "S32",
+        "S33",
+        "S34",
+        "S35"
+      ],
+      "at": "2026-11-11T20:11:37.573052Z",
+      "action": "relock"
+    },
+    {
+      "path": "governance/masterplan/governance/amendments/AM-002-user-removes-reviewer.json",
+      "sha256": "3028dd215baddf489c0e4107b44f4a4c8d802950f54803c742b35eab2a331a81",
+      "previous_plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+      "author": "ChatGPT (lokale Ausführung im Nutzerauftrag)",
+      "completion_mode": "single_actor_test_evidence",
+      "affected_steps": [
+        "S00",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24",
+        "S25",
+        "S26",
+        "S27",
+        "S28",
+        "S29",
+        "S30",
+        "S31",
+        "S32",
+        "S33",
+        "S34",
+        "S35"
+      ],
+      "at": "2026-11-13T14:42:12.987629Z",
+      "action": "relock"
+    },
+    {
+      "action": "start",
+      "step_id": "S00",
+      "actor": "ChatGPT-local",
+      "at": "2026-11-13T14:44:48.179000Z"
+    },
+    {
+      "action": "finish",
+      "step_id": "S00",
+      "at": "2026-11-13T14:44:50.082212Z",
+      "actor": "ChatGPT-local",
+      "completion_mode": "single_actor_test_evidence",
+      "evidence_sha256": "ec60c5d408f87c93e1791317544e1e0f9569c7a964d3f37cc35926d6d8b33dc7"
+    },
+    {
+      "action": "start",
+      "step_id": "S01",
+      "actor": "ChatGPT-local",
+      "at": "2026-11-13T14:45:47.096308Z"
+    },
+    {
+      "action": "finish",
+      "step_id": "S01",
+      "at": "2026-11-13T14:46:54.961505Z",
+      "actor": "ChatGPT-local",
+      "completion_mode": "single_actor_test_evidence",
+      "evidence_sha256": "1eda9f16e20a416366c25904a436e82347d85e64041de6f8ddab1310addaa67a"
+    },
+    {
+      "action": "start",
+      "step_id": "S02",
+      "actor": "ChatGPT-local",
+      "at": "2026-11-13T15:00:24.517004Z"
+    },
+    {
+      "action": "block",
+      "step_id": "S02",
+      "actor": "ChatGPT-local",
+      "reason": "S02-C01: echte C#-Kompilation und Roundtrip nicht ausfuehrbar; dotnet-SDK fehlt, Bezug scheitert an DNS/Download. Architektur und Python/JS-Pruefungen liegen vor. Scope-Amendment vorbereitet, nicht aktiviert.",
+      "at": "2026-11-13T15:27:46.014548Z"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "trading-local-core",
+  "version": "0.9.7",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.mjs"
+  },
+  "integrationCheckpoint": "technical-1.0-preparation.7",
+  "integrationReleaseReady": false
+}

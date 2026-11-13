@@ -1,0 +1,102 @@
+{
+  "work_id": "S01-ADDON-BUILD-AUDIT",
+  "bindings": {
+    "donor_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+    "packed_sha256": "321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283",
+    "generated": {
+      "lib/ctrader-readonly.mjs": {
+        "bytes": 16559,
+        "sha256": "fc98b6b083c13af16bf6cb720b3dafe80d1c685e5b7e523a1e33e56f02bede02"
+      },
+      "lib/account-handler.mjs": {
+        "bytes": 3312,
+        "sha256": "a9257d0e687d70f730f62c1e66f3e9bf3199707c6ea7743f973914b39684d0fa"
+      },
+      "public/konto-live.html": {
+        "bytes": 5450,
+        "sha256": "e36e674284b980f0ef9acb8e608bdc33d0bdde0999fa555fe300e4ad3ae79ec9"
+      },
+      "public/konto-live.js": {
+        "bytes": 9570,
+        "sha256": "bd8b6a64635372c02b9a15e38e2150dadf0fc941cc4f2c90371c6a589c18deba"
+      },
+      "public/konto-live.css": {
+        "bytes": 1261,
+        "sha256": "dffcb6394157a0203d4615a9f40e25a5fce93cf1ae86c5632eecbeb6d3639f50"
+      },
+      "add-account-link.mjs": {
+        "bytes": 485,
+        "sha256": "f26d1f7e9eac8b63db240ecf5682249624d335028fb36afa793a91f4cd487694"
+      }
+    },
+    "full_provider_input_count": 36,
+    "missing_provider_input_count": 23,
+    "provider_total": 59
+  },
+  "skin_boundary": {
+    "source": "authenticated truncated build-ui.mjs prefix, not executable full file",
+    "later_stage": "build-ui.mjs",
+    "release_order": [
+      "build.mjs",
+      "postbuild-132.mjs",
+      "version133.mjs",
+      "build-account-addon.mjs",
+      "build-bot.mjs",
+      "build-bot14.mjs",
+      "build-ui.mjs",
+      "build-revolution20.mjs"
+    ],
+    "observed_bundle_members": [
+      "public/interface.html",
+      "public/dashboard.css",
+      "public/dashboard.js",
+      "public/ui-core.mjs",
+      "public/charts.mjs",
+      "public/mark.svg",
+      "lib/ctrader-readonly.mjs",
+      "lib/market-reader.mjs"
+    ],
+    "observed_page_aliases": [
+      "public/index.html",
+      "public/konto-live.html"
+    ],
+    "overwrites_of_addon_members": [
+      "lib/ctrader-readonly.mjs",
+      "public/konto-live.html"
+    ],
+    "skin_payload_sha256": "abab24849786a62c367d84913173868afd3e22ad3dcc16d68b9ee3698ed5d37e",
+    "full_skin_stage_executed": false,
+    "final_deployment_reader_verified": false,
+    "conclusion": "Addon-stage outputs are verified intermediate sources, NOT proof of the final reader or UI after skin and subsequent stages."
+  },
+  "commands": [
+    {
+      "name": "genuine_build",
+      "exit": 0,
+      "log": "genuine_build.log"
+    },
+    {
+      "name": "native_entrypoint_import",
+      "exit": 0,
+      "log": "native_entrypoint_import.log"
+    },
+    {
+      "name": "original_reader_tests",
+      "exit": 0,
+      "log": "original_reader_tests.log"
+    }
+  ],
+  "full_website_build": false,
+  "broker_connected": false,
+  "stage_outputs_represent_final_deployment": false,
+  "original_test_sha256": "dfd8eef4fd5e64b3708c468acda26607d5fa2ca166ed64f9f3b43d906e8bb2ab",
+  "original_reader_test_counts": {
+    "tests": 26,
+    "pass": 26,
+    "fail": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "mock_boundary": "Unchanged archived tests inject synthetic fetcher/handler read functions; no broker, HTTP server, credentials or native provider API is used. JS native module resolution and Node builtins are real.",
+  "generated_output_tree_sha256": "5101b28c95f07c16a600cdb7de56f684474561d8f8c9b73d6e07fc8df0764581"
+}

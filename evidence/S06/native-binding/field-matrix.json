@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "scope": "source-bound compatibility analysis; no adapter installed",
+  "native_compiled": false,
+  "native_execution": false,
+  "rows": [
+    {
+      "id": "ID01",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+      "source_lines": [
+        49
+      ],
+      "source_fields": [
+        "Broker",
+        "Account",
+        "Environment"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "AccountRef.provider",
+        "AccountRef.account_id",
+        "AccountRef.environment"
+      ],
+      "status": "explicit_adapter_required",
+      "required_rule": "Broker display text is not a proven canonical provider ID. Preserve exact broker/account/environment; normalize only with versioned mapping."
+    },
+    {
+      "id": "ID02",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+      "source_lines": [
+        49
+      ],
+      "source_fields": [
+        "Label",
+        "Symbol",
+        "Side",
+        "Kind",
+        "RequestedUnits",
+        "PlanId"
+      ],
+      "target_path": "core/planning/order-lifecycle.mjs",
+      "target_fields": [
+        "intent.label",
+        "intent.symbol",
+        "intent.side",
+        "intent.kind",
+        "intent.requestedUnits",
+        "intent.planId"
+      ],
+      "status": "partial_not_drop_in",
+      "required_rule": "Label/PlanId alone do not prove intentId or S02 instrument/policy/data version. Side +/-1 and order kinds require explicit enumerated mapping."
+    },
+    {
+      "id": "ID03",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalProtocol20.cs",
+      "source_lines": [
+        118
+      ],
+      "source_fields": [
+        "Broker",
+        "Id",
+        "Environment",
+        "Currency"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "AccountRef.model"
+      ],
+      "status": "missing",
+      "required_rule": "Journal scope lacks account model; never infer hedging/netting from matching ID."
+    },
+    {
+      "id": "ID04",
+      "source_path": "core/observation.mjs",
+      "source_lines": [
+        48
+      ],
+      "source_fields": [
+        "account.type=hedged"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "AccountRef.model=hedging"
+      ],
+      "status": "explicit_adapter_required",
+      "required_rule": "Scope-bound observer report may be translated; no cross-profile inference or native identity proof."
+    },
+    {
+      "id": "ID05",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalProtocol20.cs",
+      "source_lines": [
+        119
+      ],
+      "source_fields": [
+        "Engine",
+        "Version",
+        "SourceHash"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "instrument_version",
+        "policy_version",
+        "data_version"
+      ],
+      "status": "missing",
+      "required_rule": "Build source hash is not an instrument, policy or dataset version."
+    },
+    {
+      "id": "D01",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+      "source_lines": [
+        52
+      ],
+      "source_fields": [
+        "Id",
+        "OrderId",
+        "PositionId",
+        "Units",
+        "AtUtc"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Deal.deal_id",
+        "Deal.broker_order_id",
+        "Deal.position_id",
+        "Deal.quantity",
+        "Deal.execution_time"
+      ],
+      "status": "native_only_not_exported",
+      "required_rule": "Native snapshot retains IDs/quantity/time but current journal projection exports aggregates, not individual deals. C# not executed here."
+    },
+    {
+      "id": "D02",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+      "source_lines": [
+        52
+      ],
+      "source_fields": [],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Deal.price",
+        "Deal.commission"
+      ],
+      "status": "missing",
+      "required_rule": "NativeDealFact20 has neither fill price nor commission. Do not derive either from position entry/net."
+    },
+    {
+      "id": "D03",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalOrderProjection20.cs",
+      "source_lines": [
+        48
+      ],
+      "source_fields": [
+        "brokerOrderId",
+        "positionId",
+        "state",
+        "requestedUnits",
+        "filledUnits",
+        "remainingUnits"
+      ],
+      "target_path": "core/planning/order-lifecycle.mjs",
+      "target_fields": [
+        "BROKER_FILL.payload.dealId",
+        "BROKER_FILL.payload.price",
+        "BROKER_FILL.payload.executedAt"
+      ],
+      "status": "missing",
+      "required_rule": "Aggregate fill quantity is not an identified execution. No synthetic deal ID from order ID/sequence."
+    },
+    {
+      "id": "D04",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalOrderProjection20.cs",
+      "source_lines": [
+        45
+      ],
+      "source_fields": [
+        "NATIVE_QUANTITY_CONFLICT",
+        "filledUnits=null",
+        "remainingUnits=null"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "BrokerOrder.filled_quantity"
+      ],
+      "status": "unavailable_not_zero",
+      "required_rule": "Overfill cannot be expressed in legacy v1 summary; conflict quantities remain in native ledger. Do not clamp/null-to-zero."
+    },
+    {
+      "id": "D05",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalProtocol20.cs",
+      "source_lines": [
+        218
+      ],
+      "source_fields": [
+        "entry",
+        "net",
+        "units"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Deal.price",
+        "Deal.commission",
+        "Cashflow.amount"
+      ],
+      "status": "not_equivalent",
+      "required_rule": "Position entry and net aggregate do not identify execution price or separate commission/cashflow."
+    },
+    {
+      "id": "F01",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        99
+      ],
+      "source_fields": [
+        "plan.recorded",
+        "order.reported",
+        "position.reported",
+        "engine.status"
+      ],
+      "target_path": "core/planning/order-lifecycle.mjs",
+      "target_fields": [
+        "DEAL_COST_CONFIRMED"
+      ],
+      "status": "unsupported",
+      "required_rule": "A new event requires versioned producer and receiver contracts. Current receiver rejects unknown event types before writing."
+    },
+    {
+      "id": "F02",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        83
+      ],
+      "source_fields": [
+        "order.reported"
+      ],
+      "target_path": "core/planning/order-lifecycle.mjs",
+      "target_fields": [
+        "payload.dealId",
+        "payload.fee",
+        "payload.feeCurrency"
+      ],
+      "status": "unsupported",
+      "required_rule": "Extra wire fields are rejected, not extension points; no silent dropping."
+    },
+    {
+      "id": "F03",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        46,
+        52
+      ],
+      "source_fields": [
+        "plan.costEstimate"
+      ],
+      "target_path": "core/planning/order-lifecycle.mjs",
+      "target_fields": [
+        "DEAL_COST_CONFIRMED.payload.fee"
+      ],
+      "status": "not_equivalent",
+      "required_rule": "Estimated planned cost is not a booked deal fee."
+    },
+    {
+      "id": "F04",
+      "source_path": "core/observation.mjs",
+      "source_lines": [
+        73
+      ],
+      "source_fields": [
+        "coverage.historyComplete=false"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Deal",
+        "Cashflow"
+      ],
+      "status": "missing",
+      "required_rule": "Observer currently reports current holdings/orders/quotes, not complete deal or cost history."
+    },
+    {
+      "id": "F05",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalAdapter20.cs",
+      "source_lines": [
+        319
+      ],
+      "source_fields": [
+        "position.NetProfit"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Cashflow.kind=realized_pnl"
+      ],
+      "status": "not_equivalent",
+      "required_rule": "No currency/account cashflow booking can be inferred from net snapshot. No cost double deduction."
+    },
+    {
+      "id": "F06",
+      "source_path": "core/planning/order-lifecycle.mjs",
+      "source_lines": [
+        292
+      ],
+      "source_fields": [
+        "dealId",
+        "fee",
+        "feeCurrency"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Deal.commission",
+        "Cashflow.related_deal_id"
+      ],
+      "status": "identity_link_required",
+      "required_rule": "Full deal-fee total, not incremental debit. Future cash writer must bind booking identity so a deal fee and cashflow cannot charge twice."
+    },
+    {
+      "id": "V01",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+      "source_lines": [
+        70
+      ],
+      "source_fields": [
+        "NativeOrderLedger20.Format=1"
+      ],
+      "target_path": "evidence/S05/fee-reconciliation/order-lifecycle.patch",
+      "target_fields": [
+        "OrderState.schemaVersion=2"
+      ],
+      "status": "different_schema",
+      "required_rule": "Native quantity ledger v1 and JS cost-state v2 are different formats. No relabel/downcast."
+    },
+    {
+      "id": "V02",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        135
+      ],
+      "source_fields": [
+        "JournalBatch.schemaVersion=1"
+      ],
+      "target_path": "evidence/S05/fee-reconciliation/order-lifecycle.patch",
+      "target_fields": [
+        "OrderState.schemaVersion=2"
+      ],
+      "status": "different_schema",
+      "required_rule": "Changing the journal schemaVersion to 2 cannot activate the order-state migration."
+    },
+    {
+      "id": "V03",
+      "source_path": "core/store.mjs",
+      "source_lines": [
+        124,
+        125,
+        130,
+        136,
+        138,
+        141,
+        144
+      ],
+      "source_fields": [
+        "SQLite schema"
+      ],
+      "target_path": "evidence/S05/fee-reconciliation/order-lifecycle.patch",
+      "target_fields": [
+        "OrderState.schemaVersion"
+      ],
+      "status": "different_schema",
+      "required_rule": "SQLite storage version, native ledger format, journal wire version and OrderState version are not interchangeable."
+    },
+    {
+      "id": "T01",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3JournalProtocol20.cs",
+      "source_lines": [
+        115,
+        171
+      ],
+      "source_fields": [
+        "sourceTime millisecond UTC"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Times",
+        "Timestamp microsecond UTC"
+      ],
+      "status": "explicit_adapter_required",
+      "required_rule": "Formatting padding must not claim added measured precision. Source, receipt, availability, decision and execution times remain distinct."
+    },
+    {
+      "id": "T02",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        230
+      ],
+      "source_fields": [
+        "receivedAt"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Deal.execution_time"
+      ],
+      "status": "not_equivalent",
+      "required_rule": "Hub arrival is not execution time."
+    },
+    {
+      "id": "T03",
+      "source_path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+      "source_lines": [
+        74
+      ],
+      "source_fields": [
+        "CTRADER_DOUBLE_ROUNDTRIP_NOT_EXCHANGE_DECIMAL_PRECISION"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "Quantity"
+      ],
+      "status": "precision_qualification",
+      "required_rule": "Decimal string roundtrip of API double is not a proof of exchange decimal precision."
+    },
+    {
+      "id": "P01",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        225,
+        251
+      ],
+      "source_fields": [
+        "contiguousSequence",
+        "stored",
+        "grantsTrading=false"
+      ],
+      "target_path": "core/planning/order-lifecycle.mjs",
+      "target_fields": [
+        "broker confirmation",
+        "economic posting"
+      ],
+      "status": "not_equivalent",
+      "required_rule": "Receipt certifies accepted persisted range, not actual broker authenticity or filled orders."
+    },
+    {
+      "id": "P02",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        227
+      ],
+      "source_fields": [
+        "raw receipts",
+        "projections",
+        "stream cursor"
+      ],
+      "target_path": "evidence/S05/fee-reconciliation/state-contract.md",
+      "target_fields": [
+        "v2 cost-state transaction"
+      ],
+      "status": "not_connected",
+      "required_rule": "Real journal transaction does not call the order reducer or the candidate writer."
+    },
+    {
+      "id": "P03",
+      "source_path": "core/reconciliation-read20.mjs",
+      "source_lines": [
+        2,
+        15
+      ],
+      "source_fields": [
+        "observerView",
+        "engineView"
+      ],
+      "target_path": "contracts/domain/v1/schema.json",
+      "target_fields": [
+        "native protection confirmation",
+        "Deal.commission"
+      ],
+      "status": "read_only_comparison",
+      "required_rule": "Matching snapshots do not authorize trading or establish cash/fee proof."
+    },
+    {
+      "id": "P04",
+      "source_path": "core/journal-archive-format.mjs",
+      "source_lines": [
+        13,
+        46
+      ],
+      "source_fields": [
+        "raw receipts",
+        "original plans",
+        "build lineage"
+      ],
+      "target_path": "evidence/S05/fee-reconciliation/state-contract.md",
+      "target_fields": [
+        "costEvidence",
+        "feeBasis",
+        "legacyCostGaps"
+      ],
+      "status": "not_full_backup",
+      "required_rule": "Journal archive does not export arbitrary v2 KV order documents. Do not call archive a full economic restore."
+    },
+    {
+      "id": "P05",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        272
+      ],
+      "source_fields": [
+        "stored projection",
+        "sourceBuild from raw event"
+      ],
+      "target_path": "evidence/S06/native-binding/integration-gaps.md",
+      "target_fields": [
+        "projection-to-raw validation"
+      ],
+      "status": "open_semantic_gap",
+      "required_rule": "Reader validates raw receipt but not equality/lineage of stored projected payload. J13 reproduces mismatch."
+    },
+    {
+      "id": "P06",
+      "source_path": "core/engine-journal.mjs",
+      "source_lines": [
+        175
+      ],
+      "source_fields": [
+        "retained planId",
+        "retained quantity"
+      ],
+      "target_path": "evidence/S06/native-binding/integration-gaps.md",
+      "target_fields": [
+        "deterministic projection rebuild"
+      ],
+      "status": "merge_contract_required",
+      "required_rule": "Latest raw payload may legitimately differ; one-event equality is not a correct repair."
+    }
+  ],
+  "all_rows_are_reading_or_planning_not_execution_grants": true
+}

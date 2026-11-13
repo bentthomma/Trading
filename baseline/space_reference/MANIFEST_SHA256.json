@@ -1,0 +1,12 @@
+{
+  "QUELLENFUNDSTELLEN.md": "e2d6efac02debe3fdc0d192081a8e049f9cd0c8c274f843a25c77195a8d8f0cf",
+  "baseline_source_inventory.json": "b696abbc9b5e71471a17299838ef72f6a506dfc39ecc9ec3a0c0ac49da818e48",
+  "missing_website_inputs.json": "ab440d0e96f4219eeb03395aa051d6d1a22f8fb6f1f5b1a780321d54352e0e84",
+  "read_only_url_attempts.json": "d53e507769e7cdef114de7a3571a804dacc78666a54216f3a408e8175a4f9a6e",
+  "recovered_space_source/adaptive_function.block.md": "7215b0fa10b10d24e1de87d6a731ea412445d510b7c9f4017d03ed189db3d8f4",
+  "recovered_space_source/adaptive_function.js": "2850bb4cc9b887d0c026b23eeb83c0c0e7ebcc3050935fec50953c6c219cbe48",
+  "recovered_space_source/adaptive_tests.block.md": "240599fa8cf5a9cb9ce55d095dc1ecfeff396a0a66b5825e14049dcc1fbfdf66",
+  "recovered_space_source/adaptive_tests.js": "8c3268d9e966b75a9d99c8b3bc9457f2dabaecfbb01c7c70c28aef151c70e30f",
+  "recovered_space_source/provenance.json": "959557a4cd734608881f95dab17ee0b791fc161d431ea9987a0a5b415acb3236",
+  "source_locations.json": "304f9ecd781b979ae6a41890205a3166314d4258b6cfdefb609a697d7be85d3a"
+}

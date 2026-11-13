@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "step_id": "S00",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "base_revision": "ae0a493fa31f31b681b4e732d7eee76ce66aee56",
+  "head_revision": "ee7bb970953e2e4b3d576336fc33f663bb341c16",
+  "actor": "ChatGPT-local",
+  "changed_files": [
+    "evidence/S00/ci-negative-tests.json",
+    "evidence/S00/governance.json",
+    "evidence/S00/handoff.md",
+    "evidence/S00/source-binding.json",
+    "evidence/S00/test-execution.json",
+    "governance/s00-first-import-manifest.json"
+  ],
+  "artifacts": {
+    "evidence/S00/governance.json": "9658b615cc6614b29657bfc646138572637a598b1f643dfe5701caddf17c337e",
+    "evidence/S00/ci-negative-tests.json": "0eb38e0c48bf0b769afa924aa4104990d02daec0ff636fd1ee9b0016f60698d8",
+    "evidence/S00/handoff.md": "f7cc95352b84ee216955ad705e0af7c78878aff186d1e48b9f0bbdfeb96ab67f",
+    "evidence/S00/test-execution.json": "8390f1c62d80fc3183d094bfd909624db825e57db6e42df0591d7a57eb5e87e9",
+    "evidence/S00/source-binding.json": "fb4bf9ba387f5553b6e31456fc52447b42b235de0e59f3e44519de02700c6d31"
+  },
+  "checks": [
+    {
+      "id": "S00-C01",
+      "status": "pass",
+      "summary": "Original dependency and active local-Git tests reject S01 before S00; no forced start.",
+      "proof_artifacts": [
+        "evidence/S00/test-execution.json",
+        "evidence/S00/source-binding.json",
+        "evidence/S00/governance.json"
+      ]
+    },
+    {
+      "id": "S00-C02",
+      "status": "pass",
+      "summary": "Actual Git collector and negative tests reject wrong scope, missing artifacts, tampered plan/hash and revision.",
+      "proof_artifacts": [
+        "evidence/S00/test-execution.json",
+        "evidence/S00/source-binding.json",
+        "evidence/S00/governance.json"
+      ]
+    },
+    {
+      "id": "S00-C03",
+      "status": "pass",
+      "summary": "Explicit user-authorized AM-002, existing Controller.verify/finish with actual Git binding; same actor passes, hosted CI remains uninstalled.",
+      "proof_artifacts": [
+        "evidence/S00/test-execution.json",
+        "evidence/S00/source-binding.json",
+        "evidence/S00/governance.json"
+      ]
+    },
+    {
+      "id": "S00-C04",
+      "status": "pass",
+      "summary": "Tests start from pending; no product step passed by document presence. Product permission flags remain false.",
+      "proof_artifacts": [
+        "evidence/S00/test-execution.json",
+        "evidence/S00/source-binding.json",
+        "evidence/S00/governance.json"
+      ]
+    },
+    {
+      "id": "S00-C05",
+      "status": "pass",
+      "summary": "Original 47 controller tests include parallel limit/design approval/reference tampering; all36 dependency, scope and entry definitions unchanged.",
+      "proof_artifacts": [
+        "evidence/S00/test-execution.json",
+        "evidence/S00/source-binding.json",
+        "evidence/S00/governance.json"
+      ]
+    }
+  ],
+  "scope_of_acceptance": "private_local_governance_only",
+  "independent_review_required": false
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "component": "planctl",
+  "tested_at_utc": "2026-11-11T18:25:18.682780+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "output/extremelab_masterplan_v1/control",
+    "-p",
+    "test_planctl.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "tests_run": 32,
+  "scope": "isolated temporary fixture plans only; no real plan progress altered",
+  "files": {
+    "planctl.py": "2699022d8fef6a8b5d9fefcf5d3c63a6f70a0be92845da4c8e21c871c7bc3d43",
+    "test_planctl.py": "2317700ddc1a2f35ff908d0aab45696c6707c878e0a89e66cfce13f01454eea2",
+    "README_DE.md": "bf4a63add5fa103685f4fd3230a82ebef722d738de8916bc21908cae15e8b0df",
+    "validator_test_output.txt": "94c62813145b1619d419aeb5eab99ea0a0e9b592bddcfd6ea6a5e50cadc52852"
+  }
+}

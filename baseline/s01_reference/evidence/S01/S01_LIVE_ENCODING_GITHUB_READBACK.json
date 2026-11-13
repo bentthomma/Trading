@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-11-13",
+  "connector": "GitHub.fetch GET only",
+  "branch": "main",
+  "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+  "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+  "tree_truncated": false,
+  "paths": [
+    "README.md"
+  ],
+  "branch_response_protected": false,
+  "scope_limit": "Branch response and full tree read. No new workflow, pull-request, branch-protection or ruleset endpoint read.",
+  "writes": false
+}

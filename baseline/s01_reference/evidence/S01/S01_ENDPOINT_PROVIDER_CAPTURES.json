@@ -1,0 +1,121 @@
+[
+  {
+    "path": "src/api/account-chart.js",
+    "capture_status": "complete",
+    "data_base64": "aW1wb3J0IHtjcmVhdGVDaGFydEhhbmRsZXJ9IGZyb20gJy4uL2xpYi9tYXJrZXQtcmVhZGVyLm1qcyc7CmV4cG9ydCBkZWZhdWx0IGNyZWF0ZUNoYXJ0SGFuZGxlcigpOwo=",
+    "omittedStringChars": 0,
+    "prefix_bytes": 98,
+    "vercel_source_uid": "6e84205548e771ae4604ce12d4a95e9247288b30",
+    "method": "complete_connector_response",
+    "recovered": true,
+    "bytes": 98,
+    "sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
+    "provider": {
+      "operation": "get_deployment_file_contents",
+      "id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "teamId": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+      "fileId": "6e84205548e771ae4604ce12d4a95e9247288b30"
+    }
+  },
+  {
+    "path": "src/api/live.js",
+    "capture_status": "complete",
+    "data_base64": "aW1wb3J0IHthdXRoZW50aWNhdGVkLHZhbGlkYXRpb25FcnJvcn0gZnJvbSAnLi4vbGliL3NlY3VyaXR5Lm1qcyc7CmltcG9ydCB7cmVsYXlSZXF1ZXN0fSBmcm9tICcuLi9saWIvcmVsYXkubWpzJzsKaW1wb3J0IHtnemlwU3luY30gZnJvbSAnbm9kZTp6bGliJzsKZXhwb3J0IGRlZmF1bHQgYXN5bmMgZnVuY3Rpb24gaGFuZGxlcihyZXEscmVzKXsKIHJlcy5zZXRIZWFkZXIoJ0NhY2hlLUNvbnRyb2wnLCdwcml2YXRlLCBuby1zdG9yZScpO3Jlcy5zZXRIZWFkZXIoJ1gtQ29udGVudC1UeXBlLU9wdGlvbnMnLCdub3NuaWZmJyk7cmVzLnNldEhlYWRlcignWC1Sb2JvdHMtVGFnJywnbm9pbmRleCwgbm9mb2xsb3cnKTsKIGxldCBzdGF0dXM9MjAwLGRhdGE7CiB0cnl7CiAgaWYocmVxLm1ldGhvZCE9PSdHRVQnKXRocm93IHZhbGlkYXRpb25FcnJvcignUkVBRF9PTkxZX0VORFBPSU5UJyw0MDUpOwogIGlmKCFhdXRoZW50aWNhdGVkKHJlcSkpdGhyb3cgdmFsaWRhdGlvbkVycm9yKCdBbm1lbGR1bmcgZXJmb3JkZXJsaWNoLicsNDAxKTsKICBjb25zdCBwPW5ldyBVUkwocmVxLnVybCwnaHR0cHM6Ly9pbnRlcm5hbC5pbnZhbGlkJykuc2VhcmNoUGFyYW1zOwogIGRhdGE9YXdhaXQgcmVsYXlSZXF1ZXN0KHAuZ2V0KCdhY3Rpb24nKXx8J2xpdmUnLHApOwogfWNhdGNoKGUpe3N0YXR1cz1OdW1iZXIuaXNJbnRlZ2VyKGUuc3RhdHVzKT9lLnN0YXR1czo1MDM7ZGF0YT17ZXJyb3I6c3RhdHVzPj01MDA/J0xpdmUtVmVyYmluZHVuZyBuaWNodCBlcnJlaWNoYmFyOyBsZXR6dGUgQW5zaWNodCBibGVpYnQgZXJoYWx0ZW4uJzplLm1lc3NhZ2UsY29kZTpzdGF0dXM+PTUwMCYmL15bQS1aX10rJC8udGVzdChlLm1lc3NhZ2UpP2UubWVzc2FnZTp1bmRlZmluZWR9O30KIHJlcy5zdGF0dXNDb2RlPXN0YXR1cztyZXMuc2V0SGVhZGVyKCdDb250ZW50LVR5cGUnLCdhcHBsaWNhdGlvbi9qc29uOyBjaGFyc2V0PXV0Zi04Jyk7CiBsZXQgcGF5bG9hZD1CdWZmZXIuZnJvbShKU09OLnN0cmluZ2lmeShkYXRhKSk7CiBpZihwYXlsb2FkLmxlbmd0aD40MDk2JiYvXGJnemlwXGIvLnRlc3QocmVxLmhlYWRlcnNbJ2FjY2VwdC1lbmNvZGluZyddfHwnJykpe3BheWxvYWQ9Z3ppcFN5bmMocGF5bG9hZCk7cmVzLnNldEhlYWRlcignQ29udGVudC1FbmNvZGluZycsJ2d6aXAnKTtyZXMuc2V0SGVhZGVyKCdWYXJ5JywnQWNjZXB0LUVuY29kaW5nJyk7fQogcmVzLnNldEhlYWRlcignQ29udGVudC1MZW5ndGgnLFN0cmluZyhwYXlsb2FkLmxlbmd0aCkpO3Jlcy5lbmQocGF5bG9hZCk7Cn0K",
+    "omittedStringChars": 0,
+    "prefix_bytes": 1281,
+    "vercel_source_uid": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+    "method": "complete_connector_response",
+    "recovered": true,
+    "bytes": 1281,
+    "sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+    "provider": {
+      "operation": "get_deployment_file_contents",
+      "id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "teamId": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+      "fileId": "185785a143e2a1aaf34e767d71297c7e5370abe0"
+    }
+  },
+  {
+    "path": "src/api/probe.js",
+    "capture_status": "truncated",
+    "data_base64": "Ly8gUHVibGljIGRpYWdub3N0aWNzIE9OTFk6IG5vIGFjY291bnQgZGF0YSwgYXV0aCBieXBhc3MsIHN0b3JhZ2Ugb3IgdHJhZGluZy4KaW1wb3J0IGh0dHAgZnJvbSAnbm9kZTpodHRwJzsKaW1wb3J0IHtXZWJTb2NrZXRTZXJ2ZXJ9IGZyb20gJ3dzJzsKY29uc3Qgc2VydmVyPWh0dHAuY3JlYXRlU2VydmVyKChyZXEscmVzKT0+e3Jlcy53cml0ZUhlYWQoMjAwLHsnQ29udGVudC1UeXBlJzonYXBwbGljYXRpb24vanNvbicsJ0NhY2hlLUNvbnRyb2wnOiduby1zdG9yZScsJ1gtQ29udGVudC1UeXBlLU9wdGlvbnMnOidub3NuaWZmJywnWC1Sb2JvdHMtVGFnJzonbm9pbmRleCwgbm9mb2xsb3cnfSk7cmVzLmVuZChKU09OLnN0cmluZ2lmeSh7c2VydmljZTonRXh0cmVtZUxhYlByb2JlJyx2ZXJzaW9uOicxLjMuMicsZGlhZ25vc3RpY09ubHk6dHJ1ZSxzdG9yZXNQYXlsb2FkOmZhbHNlLHRyYWRpbmc6ZmFsc2V9KSk7fSk7CmNvbnN0IHdzcz1uZXcgV2ViU29ja2V0U2VydmVyKHtub1NlcnZlcjp0cnVlLG1heFBheWxvYWQ6MjU2LHBlck1lc3NhZ2VEZWZsYXRlOmZhbHNlfSk7CnNlcnZlci5vbigndXBncmFkZScsKHJlcSxzb2NrZXQsaGVhZCk9PntsZXQgdXJsO3RyeXt1cmw9bmV3IFVSTChyZXEudXJsLCdodHRwczovL2ludmFsaWQubG9jYWwnKTt9Y2F0Y2h7c29ja2V0LmRlc3Ryb3koKTtyZXR1cm47fWlmKHVybC5wYXRobmFtZSE9PScvYXBpL3Byb2JlJ3x8dXJsLnNlYXJjaHx8d3NzLmNsaWVudHMuc2l6ZT49OCl7c29ja2V0LndyaXRlKCdIVFRQLzEuMSA0MDAgQmFkIFJlcXVlc3RcclxuQ29ubmVjdGlvbjogY2xvc2VcclxuXHJcbicpO3NvY2tldC5kZXN0cm95KCk7cmV0dXJuO313c3MuaGFuZGxlVXBncmFkZShyZXEsc29ja2V0LGhlYWQsd3M9Pndzcy5lbWl0KCdjb25uZWN0aW9uJyx3cykpO30pOwp3c3Mub24oJ2Nvbm5lY3Rpb24nLHdzPT57bGV0IHJlY2VpdmVkPWZhbHNlO2NvbnN0IHRpbWVyPXNldFRpbWVvdXQoKCk9PndzLnRlcm1pbmF0ZSgpLDEwMDAwKTt3cy5vbignZXJyb3InLCgpPT57fSk7d3Mub24oJ2Nsb3NlJywoKT0+Y2xlYXJUaW1lb3V0KHRpbWVyKSk7d3Muc2VuZChKU09OLnN0cmluZ2lmeSh7dHlwZToncHJvYmVfaGVsbG8nLHNlcnZpY2U6J0V4dHJlbWVMYWJQcm9iZScsZGlhZ25vc3RpY09ubHk6dHJ1ZX0pKTt3cy5vbignbWVzc2FnZScsKHJhdyxiaW5hcnkpPT57aWYocmVjZWl2ZWR8fGJpbmFyeSl7d3MuY2xvc2UoMTAwOCwnSW52YWxpZCBwcm9iZScpO3JldHVybjt9cmVjZWl2ZWQ9dHJ1ZTtsZXQgbTt0cnl7bT1KU09OLnBhcnNlKHJhdy50b1N0cmluZygpKTt9Y2F0Y2h7d3MuY2xvc2UoMTAwOCwnSW52YWxpZCBwcm9iZScpO3JldHVybjt9aWYoIW18fG0udHlwZSE9PSdwcm9iZSd8fHR5cGVvZiBtLm5vbmNlIT09J3N0cmluZyd8fCEvXlthLWYwLTldezMyfSQvLnRlc3QobS5ub25jZSl8fE9iamVjdC5rZXlzKG0pLnNvcnQoKS5qb2luKCcsJykhPT0nbm9uY2UsdHlwZScpe3dzLmNsb3NlKDEwMDgsJ0ludmFs",
+    "omittedStringChars": 300,
+    "prefix_bytes": 1500,
+    "vercel_source_uid": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
+    "recovered": true,
+    "method": "connector_prefix_and_archived_suffix_transform",
+    "donor_archive": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+    "donor_member": "ExtremeLab_Live_Bridge_1_3_2/web/probe.js",
+    "donor_sha256": "d46d1718a26028b466328840a65aac09b8d72c4a53c5961a78bf4f847b177cae",
+    "prefix_end": 1500,
+    "donor_suffix_start": 1554,
+    "overlap_bytes": 80,
+    "transformation": "compact-lines-preserve-export",
+    "bytes": 1724,
+    "sha256": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
+    "provider": {
+      "operation": "get_deployment_file_contents",
+      "id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "teamId": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+      "fileId": "f58b0d02add33a4c18880288cf00a23a9c521b0c"
+    },
+    "donor_archive_sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+    "donor_path": "baseline/recovery_donors/probe_legacy.js",
+    "donor_note": "Exact selected member extracted from unchanged Library archive; the complete private archive remains in work/original_archives, not redistributed in this small package."
+  },
+  {
+    "path": "src/api/socket.js",
+    "capture_status": "truncated",
+    "data_base64": "aW1wb3J0IGh0dHAgZnJvbSAnbm9kZTpodHRwJzsKaW1wb3J0IHtXZWJTb2NrZXRTZXJ2ZXJ9IGZyb20gJ3dzJzsKaW1wb3J0IHthdXRoZW50aWNhdGVkLHNhbWVPcmlnaW4sYWxsb3dlZEtleX0gZnJvbSAnLi4vbGliL3NlY3VyaXR5Lm1qcyc7CmltcG9ydCB7bGF0ZXN0LHNldFNuYXBzaG90fSBmcm9tICcuLi9saWIvc3RvcmFnZS5tanMnOwpjb25zdCBzZXJ2ZXI9aHR0cC5jcmVhdGVTZXJ2ZXIoKHJlcSxyZXMpPT57cmVzLndyaXRlSGVhZCg0MjYseydDb250ZW50LVR5cGUnOidhcHBsaWNhdGlvbi9qc29uJywnQ2FjaGUtQ29udHJvbCc6J25vLXN0b3JlJ30pO3Jlcy5lbmQoSlNPTi5zdHJpbmdpZnkoe2Vycm9yOidXZWJTb2NrZXQgdXBncmFkZSByZXF1aXJlZCd9KSk7fSk7CmNvbnN0IHNvY2tldHM9bmV3IFdlYlNvY2tldFNlcnZlcih7bm9TZXJ2ZXI6dHJ1ZSxtYXhQYXlsb2FkOjUxMioxMDI0LHBlck1lc3NhZ2VEZWZsYXRlOmZhbHNlfSk7CnNlcnZlci5vbigndXBncmFkZScsKHJlcSxzb2NrZXQsaGVhZCk9PnsKIGNvbnN0IGJyb3dzZXI9YXV0aGVudGljYXRlZChyZXEpJiZzYW1lT3JpZ2luKHJlcSk7CiBpZighYnJvd3NlciYmcmVxLmhlYWRlcnMub3JpZ2luKXtzb2NrZXQud3JpdGUoJ0hUVFAvMS4xIDQwMyBGb3JiaWRkZW5cclxuQ29ubmVjdGlvbjogY2xvc2VcclxuXHJcbicpO3NvY2tldC5kZXN0cm95KCk7cmV0dXJuO30KIHNvY2tldHMuaGFuZGxlVXBncmFkZShyZXEsc29ja2V0LGhlYWQsd3M9PnNvY2tldHMuZW1pdCgnY29ubmVjdGlvbicsd3Mse2Jyb3dzZXJ9KSk7Cn0pOwpzb2NrZXRzLm9uKCdjb25uZWN0aW9uJywod3MsY3R4KT0+ewogbGV0IHJvbGU9Y3R4LmJyb3dzZXI/J3ZpZXdlcic6bnVsbCxidXN5PWZhbHNlLGxhc3RXcml0ZT0wOwogY29uc3Qgc2VuZD1vYmo9PntpZih3cy5yZWFkeVN0YXRlPT09MSYmd3MuYnVmZmVyZWRBbW91bnQ8MTAyNCoxMDI0KXdzLnNlbmQoSlNPTi5zdHJpbmdpZnkob2JqKSk7fTsKIGNvbnN0IGRlYWRsaW5lPXNldFRpbWVvdXQoKCk9PntpZighcm9sZSl3cy5jbG9zZSg0NDAxLCdBdXRoZW50aWNhdGlvbiByZXF1aXJlZCcpO30sNTAwMCk7CiBjb25zdCBsaWZldGltZT1zZXRUaW1lb3V0KCgpPT53cy5jbG9zZSgxMDAwLCdSZWNvbm5lY3QnKSw0NTAwMCk7CiBzZW5kKHt0eXBlOidoZWxsbycsYXV0aGVudGljYXRlZDohIXJvbGUscmVhZE9ubHk6dHJ1ZSxjbG91ZFZlcmlmaWVkOmZhbHNlfSk7CiB3cy5vbignbWVzc2FnZScsYXN5bmMgcmF3PT57CiAgaWYoYnVzeSl7c2VuZCh7dHlwZTonZXJyb3InLGNvZGU6J0JVU1knfSk7cmV0dXJuO31idXN5PXRydWU7CiAgdHJ5ewogICBjb25zdCBtc2c9SlNPTi5wYXJzZShyYXcudG9TdHJpbmcoKSk7CiAgIGlmKCFyb2xlKXtpZihtc2cudHlwZT09PSdhdXRoJyYmYWxsb3dlZEtleShtc2cua2V5LHByb2Nlc3MuZW52LlBST0RVQ0VSX0tFWV9TSEEyNTYpKXtyb2xlPSdwcm9kdWNlcic7Y2xlYXJUaW1lb3V0KGRlYWRsaW5lKTtzZW5kKHt0eXBl",
+    "omittedStringChars": 1144,
+    "prefix_bytes": 1500,
+    "vercel_source_uid": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
+    "method": "connector_prefix_and_archived_suffix",
+    "donor_archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+    "donor_member": "ExtremeLab_Online_1_3/api/socket.js",
+    "donor_sha256": "0e3c73f5daab68865ed5dc1904c4d3b58a478fa797aed6fbd155bc84ba62c629",
+    "prefix_end": 1500,
+    "donor_suffix_start": 1656,
+    "overlap_bytes": 80,
+    "recovered": true,
+    "bytes": 2358,
+    "sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
+    "provider": {
+      "operation": "get_deployment_file_contents",
+      "id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "teamId": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+      "fileId": "d9530e568b57c20894f1a738cf5ad4fef3e944a3"
+    },
+    "donor_archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+    "donor_path": "baseline/recovery_donors/socket_legacy.js",
+    "donor_note": "Exact selected member extracted from unchanged Library archive; the complete private archive remains in work/original_archives, not redistributed in this small package."
+  },
+  {
+    "path": "src/patch_ui.mjs",
+    "capture_status": "truncated",
+    "data_base64": "aW1wb3J0IGZzIGZyb20gJ25vZGU6ZnMnOwpjb25zdCBmaWxlbmFtZT1wcm9jZXNzLmFyZ3ZbMl18fCdwdWJsaWMvYXBwLmpzJztsZXQgcz1mcy5yZWFkRmlsZVN5bmMoZmlsZW5hbWUsJ3V0ZjgnKTsKZnVuY3Rpb24gcmVwbGFjZShmcm9tLHRvKXtpZihzLnNwbGl0KGZyb20pLmxlbmd0aCE9PTIpdGhyb3cgRXJyb3IoJ0V4cGVjdGVkIGV4YWN0bHkgb25lIG1hdGNoOiAnK2Zyb20uc2xpY2UoMCw3MCkpO3M9cy5yZXBsYWNlKGZyb20sdG8pO30KcmVwbGFjZSgiY29uc3QgbmFtZXM9bmV3IFNldChbLi4uY292ZXJhZ2Uua2V5cygpLC4uLnJvd3MuZmlsdGVyKGU9PmUua2luZD09PSdERUNJU0lPTicpLm1hcChlPT5lLmRhdGEuU3ltYm9sKV0pOyIsICJjb25zdCBuYW1lcz1uZXcgU2V0KFsuLi5jb3ZlcmFnZS5rZXlzKCksLi4uY3VycmVudFBvc2l0aW9ucy5tYXAocD0+cC5zeW1ib2wpLC4uLnJvd3MuZmlsdGVyKGU9PmUua2luZD09PSdERUNJU0lPTicpLm1hcChlPT5lLmRhdGEuU3ltYm9sKV0pOyIpOwpyZXBsYWNlKCJjb25zdCBuYW1lcz1bLi4ubmV3IFNldChbLi4uY292ZXJhZ2Uua2V5cygpLC4uLmxhdGVzdC5rZXlzKCldKV0iLCAiY29uc3QgbmFtZXM9Wy4uLm5ldyBTZXQoWy4uLmNvdmVyYWdlLmtleXMoKSwuLi5sYXRlc3Qua2V5cygpLC4uLmN1cnJlbnRQb3NpdGlvbnMubWFwKHA9PnAuc3ltYm9sKV0pXSIpOwpyZXBsYWNlKCJmaWx0ZXI9PT0nb3BlbicmJmU/LmRhdGEuU3RhdHVzPT09J1BPU0lUSU9OIE9GRkVOJyIsICJmaWx0ZXI9PT0nb3BlbicmJihyb3dzLnNvbWUoeD0+eC5raW5kPT09J1BPU0lUSU9OUycpP2N1cnJlbnRQb3NpdGlvbnMuc29tZShwPT5wLnN5bWJvbD09PXMpOmU/LmRhdGEuU3RhdHVzPT09J1BPU0lUSU9OIE9GRkVOJykiKTsKcmVwbGFjZSgiIGNvbnN0IHN0YXR1c2VzPXJvd3MuZmlsdGVyKGU9PmUua2luZD09PSdTVEFUVVMnJiZudW0oZS5kYXRhLmVxdWl0eSkhPT1udWxsKTsiLCAiIGlmKHR5cGVvZiBzLnN0YXRlPT09J3N0cmluZycmJigvRkVITEVSfERSQVdET1dOLVNUT1AvLnRlc3Qocy5zdGF0ZSkpKXskKCdoZWFkbGluZScpLnRleHRDb250ZW50PXMuc3RhdGU7JCgnaGVhZGxpbmVEZXRhaWwnKS50ZXh0Q29udGVudD0nU3RhdHVzIGRlcyBsZXR6dGVuIEJvdC1CZXJpY2h0cyAoJytkYXRlKGxhc3RTdGF0dXMudXRjKSsnKS4gRGllIEFuemVpZ2UgZ2lidCBkZW4gSGFuZGVsIG5pY2h0IGZyZWkuIEtvbnRvcmVjaG51bmc6ICcrKHMuYWNjb3VudENoZWNrfHwndW5iZWthbm50JykrJzsgUmVzdCAnK24ocy5yZXNpZHVhbCkrJyAnK2N1cnJlbmN5KycuIERpZSBrb25rcmV0ZSBFcnN0dXJzYWNoZSBtdXNzIGltIEJvdC1Qcm90b2tvbGwgc3RlaGVuLic7fVxuIGNvbnN0IHN0YXR1c2VzPXJvd3MuZmlsdGVyKGU9PmUua2luZD09PSdTVEFUVVMnJiZudW0oZS5kYXRhLmVxdWl0eSkhPT1udWxsKTsiKTsKcmVwbGFjZSgiIGlmKCFmKXskKCdjaGFydCcpLmlubmVySFRNTD0iLCBgIGNvbnN0IHBvc2l0aW9uU3Vt",
+    "omittedStringChars": 1540,
+    "prefix_bytes": 1500,
+    "vercel_source_uid": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
+    "recovered": true,
+    "method": "connector_prefix_and_archived_suffix_transform",
+    "donor_archive": "ExtremeLab_Autotest_20261106.zip",
+    "donor_member": "ExtremeLab_Autotest_20261106/patched/patch_ui.mjs",
+    "donor_sha256": "9bf4494f981450f000635d60ba88fd245af46b2d12bf90de049aa1ac6aae53e5",
+    "prefix_end": 1500,
+    "donor_suffix_start": 1500,
+    "overlap_bytes": 80,
+    "transformation": "remove-comment",
+    "bytes": 2653,
+    "sha256": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1",
+    "provider": {
+      "operation": "get_deployment_file_contents",
+      "id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "teamId": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+      "fileId": "6a7d1e0a3048e4cabcd40d6787deec35019867d5"
+    },
+    "donor_archive_sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+    "donor_path": "baseline/recovery_donors/patch_ui_legacy.mjs",
+    "donor_note": "Exact selected member extracted from unchanged Library archive; the complete private archive remains in work/original_archives, not redistributed in this small package."
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "archive": "ExtremeLab_1_2_1_Quellcode_und_Tests.zip",
+  "library_file_id": "file_00000000ac3882468ee2eba7f3d0c9ef",
+  "archive_sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43",
+  "inner_hashes_verified": 30,
+  "zip_crc": "ok",
+  "deploy_build_source_sha256": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+  "source_linkage_to_deploy_build": "not_verified; supplied source_tar_sha256 is a distinct kind of hash",
+  "source_package_suitable_for_actual_bot_rebuild": "not_cleared_without_brokerfree_build_toolchain_and_source_boundaries"
+}

@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+const filename=process.argv[2]||'public/app.js';let s=fs.readFileSync(filename,'utf8');
+function replace(from,to){if(s.split(from).length!==2)throw Error('Expected exactly one match: '+from.slice(0,70));s=s.replace(from,to);}
+replace("const names=new Set([...coverage.keys(),...rows.filter(e=>e.kind==='DECISION').map(e=>e.data.Symbol)]);", "const names=new Set([...coverage.keys(),...currentPositions.map(p=>p.symbol),...rows.filter(e=>e.kind==='DECISION').map(e=>e.data.Symbol)]);");
+replace("const names=[...new Set([...coverage.keys(),...latest.keys()])]", "const names=[...new Set([...coverage.keys(),...latest.keys(),...currentPositions.map(p=>p.symbol)])]");
+replace("filter==='open'&&e?.data.Status==='POSITION OFFEN'", "filter==='open'&&(rows.some(x=>x.kind==='POSITIONS')?currentPositions.some(p=>p.symbol===s):e?.data.Status==='POSITION OFFEN')");
+replace(" const statuses=rows.filter(e=>e.kind==='STATUS'&&num(e.data.equity)!==null);", " if(typeof s.state==='string'&&(/FEHLER|DRAWDOWN-STOP/.test(s.state))){$('headline').textContent=s.state;$('headlineDetail').textContent='Status des letzten Bot-Berichts ('+date(lastStatus.utc)+'). Die Anzeige gibt den Handel nicht frei. Kontorechnung: '+(s.accountCheck||'unbekannt')+'; Rest '+n(s.residual)+' '+currency+'. Die konkrete Erstursache muss im Bot-Protokoll stehen.';}\n const statuses=rows.filter(e=>e.kind==='STATUS'&&num(e.data.equity)!==null);");
+replace(" if(!f){$('chart').innerHTML=", ` const positionSummary=$('active').closest('details')?.querySelector('summary');if(positionSummary)positionSummary.textContent=ev?'Aktive Position zum Entscheidungszeitpunkt':'Aktive Position im letzten Positionsbericht';
+ if(!ev){const known=currentPositions.filter(p=>p.symbol===symbol),stamp=rows.filter(e=>e.kind==='POSITIONS').at(-1)?.utc;if(known.length){$('state').textContent='POSITION OFFEN · Modell fehlt im Ausschnitt';$('reason').textContent='Offene Position im Bericht '+date(stamp)+'. Keine Strategieentscheidung für dieses Instrument im geladenen Ausschnitt. Kein Modell wird erfunden.';$('active').innerHTML=known.map(p=>'<div class="position"><strong>#'+esc(p.positionId)+' · '+esc(p.side)+'</strong><span>Fill '+price(p.entry)+' · SL '+price(p.stop)+' · TP '+price(p.target)+'</span><span>Netto im Positionsbericht: '+n(p.net)+' '+esc(lastStatus?.data?.currency||'')+'</span>'+excursionHtml(p.excursion)+'</div>').join('');}}
+ if(!f){$('chart').innerHTML=`);
+// Both checkpoints and coverage are multipart. Keep their part keys under memory pressure.
+if(s.includes("(e.kind==='COVERAGE'?e.data.part:'')"))replace("(e.kind==='COVERAGE'?e.data.part:'')","(['COVERAGE','BARS'].includes(e.kind)?e.data.part:'')");
+fs.writeFileSync(filename,s);

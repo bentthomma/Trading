@@ -1,0 +1,2404 @@
+--- a/README.md
++++ b/README.md
+@@ -1,29 +1,25 @@
+-# ExtremeLab S01 · SnapshotConsumerGuard
++# ExtremeLab · S01 InventoryConsolidation
+ 
+-Privater Ein-Dateien-Vorschlag für den vollständig archivierten Journalrenderer.
+-**Nicht** die finale Live-/Skin-Website; keine Veröffentlichung oder Freigabe.
++Ein konsolidiertes privates Quelleninventar auf Basis von SnapshotConsumerGuard. Keine Produktänderung, kein neuer Controller und keine öffentliche Installation.
+ 
+-Der bestehende Import-/Analyseexport erhält Snapshotdiagnosen und zeichnet
+-strukturell ungültige Kerzenpayloads nicht. Rohereignisse bleiben erhalten.
+-Reale SQLite-Projektion, echter Chromium-DOM und echter Blobdownload; synthetische
+-Testdaten, keine IP-Netzwerkverbindungen. Keine Designänderung.
++## Einstieg
+ 
+-Start: `UEBERGABE.md`, Details: `RUN_S01_REPORT.md`, Vorschlag und Patch:
+-`proposals/snapshot-consumer-guard/`. Der gesamte vorherige Stand ist
+-rekonstruierbar; Ausgangsarchive und Produktoriginale wurden nicht verändert.
++`UEBERGABE.md` bezeichnet den Fortsetzungspunkt. `RUN_S01_REPORT.md` erklärt Änderungen und Prüfgrenzen. Die fünf ursprünglichen Pflichtlieferdateien bleiben unter `evidence/S01/` erreichbar und verweisen auf `S01_CURRENT_INVENTORY.json`. Die Kriterienzuordnung steht in `S01_INVENTORY_ACCEPTANCE.md`.
++
++**38 vollständige Produktionsinputs, fünf nur als Präfix zugänglich, 16 nur als Metadaten bekannt.** Damit fehlen weiterhin 21 Vollquellen. Keine zusätzliche Produktionsdatei wurde wiederhergestellt. Originalquellen und die drei privaten Patchvorschläge sind unverändert.
++
++## Offline prüfen
++
++Erforderlich sind Linux, libseccomp, Python mit Brotli und Node. Keine Downloads. Die vollständige Prüfung muss als normaler Benutzer, nicht als root, laufen:
+ 
+ ```sh
+ python -B verify_package.py
+-# Nicht als root; externe, noch nicht vorhandene Protokollablage:
+-python -B tools/run_snapshot_consumer_checks.py --reports-dir /tmp/neuer-prueflauf
++python -B tools/check_inventory_consistency.py
++python -B tools/run_inventory_checks.py --reports-dir /absoluter/neuer/externer/logordner
+ ```
+ 
+-Voraussetzungen: Linux/libseccomp, Python/Playwright/aiohttp, Chromium unter
+-`/usr/bin/chromium`, Node, natives patch. Keine automatischen Downloads.
++Der Runner prüft 40 unterschiedliche Inventar- und Regressionstestmethoden. Zusätzlich führt er den echten ersten Original-Buildschritt aus: Dieser erzeugt fünf bytegleiche Basisdateien und scheitert anschließend am fehlenden Overlay. Der erwartete Fehler ist **kein erfolgreicher Vollbuild**. Die früheren Produktverhaltenstests werden nicht wiederholt. Negative Manipulationsproben werden separat gezählt.
+ 
+-36 unterschiedliche Methoden (16 neu,20 Inventar),2 erwartete Originalfehler,
+-3 Mutationen,3 Paketproben. Wiederholungen zählen nicht doppelt. Die tatsächliche
+-frische ZIP-Endprüfung steht außerhalb des ZIP in der Abschlussdatei.
++Der SHA-256 des endgültigen ZIPs muss mit der externen Übergabe verglichen werden. Das Paketmanifest allein ist keine unabhängige Authentisierung. Protokolle bleiben außerhalb des Pakets. Die 320 Vorgängerdateien sind aus unveränderten Dateien und `baseline/inventory_checkpoint/` rekonstruierbar.
+ 
+-Websitequellen unverändert38/59;21 fehlend. Masterplan und formale Gates
+-unverändert. Keine Kontoverbindung, kein Botstart, kein Deployment.
++Masterplan, Gatecheckpoint und formaler Status bleiben unverändert. Ein konsistentes Inventar erteilt keine Produkt-, Broker- oder Veröffentlichungsfreigabe.
+--- a/RUN_S01_REPORT.md
++++ b/RUN_S01_REPORT.md
+@@ -1,161 +1,52 @@
+-# ExtremeLab · S01 SnapshotConsumerGuard
++# S01 – Quelleninventar konsolidiert und nachgeprüft
+ 
+-13. November 2026 · privater Ein-Dateien-Vorschlag, keine Installation
++**Arbeitskennung:** S01-INVENTORY-CONSOLIDATION  
++**Basis:** ExtremeLab_S01_SnapshotConsumerGuard_Offline.zip  
++**Basis-SHA-256:** `80e603e63abd663c27199179662e08b8be28cc77fc6c36919d5e92d4f3e760ff`
+ 
+-## Ergebnis und präzise Quellenabgrenzung
++## 1. Konkreter Fehler und Korrektur
+ 
+-Der archivierte Journalrenderer kann strukturell ungültige BARS-Kerzenpayloads
+-übernehmen und dann beim Lesen/Zeichnen scheitern. Bei einem gültigen Snapshot
+-geht außerdem dessen Unvollständigkeitsdiagnose im Originalimport verloren.
+-Beide Fälle sind in echtem Chromium am Originalcode reproduziert.
++Im Vorgänger widersprachen mehrere als aktuell bezeichnete Felder dem tatsächlichen Quellenbestand. Der Reproduktionsbericht nannte 36 vorhandene und 23 fehlende Dateien; seine Begründung sprach noch von 31/59. Auch die offenen Lücken, die Donormatrix, die Pfadzuordnung und die führende Versionstabelle enthielten veraltete Zahlen.
+ 
+-Der neue Vorschlag korrigiert ausschließlich eine separate Kopie von
+-`baseline/recovery_donors/expected_patched_app.js`. Diese vollständige
+-Zwischenstufe lässt sich mit dem unveränderten originalen `patch_ui.mjs` aus
+-`baseline/derived_assets/public/app.js` bytegleich erzeugen. Sie ist NICHT
+-der fehlende finale Skin-/Live-Client. Die neue Verbindung verwendet sein
+-vorhandenes Journalimportinterface, keinen behaupteten bestehenden Live-Poller.
+-HTML, CSS, Layout und Strategien bleiben unverändert.
++Der neue lesende Prüfer reproduziert **acht operative Widersprüche** am unveränderten Vorgänger. Die fünf S01-Lieferdateien sind jetzt auf denselben hashgebundenen aktuellen Index abgestimmt. Die Originalfassungen wurden vor der Bearbeitung vollständig gesichert.
+ 
+-Der neue Quellabgleich liefert keine zusätzlichen Websiteinputs: **38/59,
+-21 fehlen**. Vier zugängliche Originalarchive wurden geprüft, keine vollständige
+-finale Snapshot-Verbraucherquelle gefunden. Die öffentliche statische Abfrage
+-scheiterte; das beweist keine Abwesenheit der Ressourcen. Bibliothekssuche und
+-Listings waren partiell. Einzelheiten und Archivehashes in
+-`evidence/S01/S01_CONSUMER_SOURCE_ACCESS.json`. Nicht erneut derselbe gekürzte
+-Vercel-Dateiabruf. Keine historische Benutzerdatei als Testdaten verwendet.
++Historische Ausführungsblöcke mit Namen wie `current_*` sind nun ausdrücklich historisch eingeordnet. Frühere Testzahlen werden nicht als Ergebnisse dieses Laufs ausgegeben. Zwei bereits vollständig wiederhergestellte Dateien besitzen außerdem nicht länger ein missverständliches `blocked_capability`-Quellenlabel: Quelle und Integrationsfähigkeit sind getrennte Angaben.
+ 
+-## Fehler und minimale Korrektur
++Der Gatecheckpoint enthält weiterhin seinen alten Quellenzähler. Er wurde **nicht verändert**. Seine historischen Mengenangaben werden nicht als aktuelles Inventar verwendet; seine formalen Sperren bleiben bestehen.
+ 
+-1. **Ungültige Kerzenstruktur:** Die reale SQLite-Projektion des bestehenden
+-   Pythonrelay-Vorschlags liefert Rohereignisse und Diagnose. Das Original-UI
+-   übernimmt die Ereignisse; bei `candles:42` meldet der Renderer
+-   `number 42 is not iterable`. Der korrigierte Pfad zeichnet solche Payloads
+-   nicht, bewahrt aber sämtliche ursprünglichen Ereignisse inhaltlich unverändert.
+-   Listen mit Nichtobjekten werden als ganzer ungültiger Chunk behandelt.
+-   Direkte Kerzenlisten in DECISION sowie einzelne BAR-Objekte erhalten
+-   dieselbe begrenzte Strukturprüfung. Keine vollständige OHLC-/Zeitprüfung.
+-2. **Verlorene Diagnose:** Der Originalimport übernimmt `events`, verwirft
+-   aber `partialSnapshot` und `checkpoint`. Der Vorschlag übernimmt einen
+-   normalisierten, klar begrenzten Diagnosesatz in `meta.snapshot`. Der bestehende
+-   Datenqualitätbereich zeigt Snapshot-Ausschnitt, unvollständigen/unklaren
+-   Antwortumfang, Checkpointstatus und ungültige Ereignissequenzen an. Die
+-   Diagnose wird als Text escaped, nicht als aktives HTML übernommen.
+-3. **Analyseexport/-reimport:** Der vorhandene vollständige Analyseexport behält
+-   Diagnose und Rohereignisse. Sein Kennzeichen `imported_journal_not_live` bleibt
+-   erhalten. Ein echter Browser-Blobdownload und erneuter Import prüfen die
+-   Rundreise. Das ist KEIN signierter Herkunftsnachweis; vom Nutzer gelieferte
+-   Metadaten bleiben untrusted. Der separate Entscheidungs-/Notizexport wird
+-   nicht zu einem neuen allgemeinen Snapshotformat umgebaut.
++## 2. Tatsächlicher Quellenstand
+ 
+-Ein vollständiger Checkpoint wird nicht mit einer vollständigen Antwort
+-gleichgesetzt: Ein tatsächlicher Größenlimitfall mit dem unveränderten
+-Relaylimit bleibt ausdrücklich partiell. Unbekannte Vollständigkeit bleibt
+-`null`. Ein neuer gültiger Checkpoint beziehungsweise ein normaler Journalimport
+-setzt alte Warnungen zurück; das Rohjournal wird nicht bereinigt oder geändert.
++| Klasse | Anzahl | Bedeutung |
++|---|---:|---|
++| Vollständige Originalinputs | 38 | Tatsächliche Bytes stimmen mit Provider-UID und dokumentiertem SHA-256 überein. |
++| Nur Präfixzugriff | 5 | Abgeschnittene Quellinhalte sind zugänglich; keine vollständige Datei ist bestätigt. |
++| Nur Metadaten | 16 | Quellpfad und Provider-ID sind bekannt, aber keine vollständigen Bytes gesichert. |
++| Gesamt | 59 | Weiterhin 21 fehlende Vollquellen; keine neue Produktionsquelle in diesem Lauf. |
+ 
+-## Tatsächlicher Prüfpfad
++Der erneute Abruf von `lib/relay.mjs` blieb abgeschnitten. Er wird deshalb als Präfixzugriff, nicht als wiederhergestellte Vollquelle klassifiziert. Fehlende Dateien werden nicht durch Platzhalter ergänzt.
+ 
+-**Realer SQLite-Store → originale Snapshotprojektion aus dem vorhandenen
+-Relayvorschlag → JSON-Import des archivierten Renderers → echter DOM →
+-echter Blobdownload → erneuter Import.**
++Das zusätzliche Originalarchiv des Dashboards wurde einschließlich seiner komprimierten Nutzdaten untersucht. Seine fünf Premiumsegmente ergeben sechs manifestgebundene Dateien. Weder diese Ausgaben noch die Archivmitglieder passen zu den fehlenden Produktionsinputs. Der Bundlehash unterscheidet sich vom benötigten Skinhash. Der Builder wurde nicht ausgeführt; dies war Quellenanalyse, keine Designimplementierung.
+ 
+-Es gibt keinen Fake-DOM, keinen nachgebauten Renderer und keine Datenbankattrappe.
+-Der Test ruft die vorhandene Storeprojektion direkt auf. HTTP/WebSockettransport
+-war Gegenstand des vorherigen Pakets und wurde hier NICHT erneut behauptet.
++Vier historische Originalarchivangaben im `baseline-lock` sind in diesem Paket nicht als Vollarchiv enthalten. Sie sind jetzt ausdrücklich historische Quellenrecords. Daraus folgt nicht, dass die Archive in allen externen Ablagen fehlen. Vier weitere dort genannte Originalarchive sind vollständig eingebettet und hashgeprüft. Die Bibliothekssuche war partiell, nicht vollständig.
+ 
+-Der Browser läuft auf `about:blank`; das Original-HTML erhält zur Isolation
+-keine externen Script-/Stylesheetimporte. Das vollständige echte App-Script
+-wird geladen. Der Test zeigt nur den lokalen Renderercontainer, nicht einen
+-produktiven Login. Das ist eine Funktions-/DOM-Prüfung, keine visuelle Abnahme
+-und kein Nachweis der Website-Navigation. So konnte der frühere
+-Navigationsblocker umgangen werden, ohne Schutzmaßnahmen der Produktionsseite
+-zu ändern oder fremde Authentisierung zu umgehen.
++## 3. Produktions- und Entwicklungsstand
+ 
+-Alle Testprozesse laufen unprivilegiert. Vor Start der Browser-/Node-Kinder
+-verbietet der geerbte seccomp-Filter andere Socketfamilien als AF_UNIX.
+-Playwright blockiert zusätzlich alle Requests; jede Browsermethode prüft
+-null Netzwerkrequests und null unaufgefangene Seitenfehler. Chromium benötigt
+-hier `--no-sandbox`: Die Isolation beruht deshalb auf unprivilegiertem Prozess,
+-Netzwerkfilter und ausschließlich synthetischen Testdaten, nicht auf einer
+-behaupteten Chromium-Sicherheitsabnahme. Keine Broker- oder Kontoanbindung.
++Der Produktionsalias `extremelab-bt.vercel.app` wurde ausschließlich lesend geprüft. Er zeigt weiterhin auf `dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp`.
+ 
+-## Verifizierte Fälle und kritische Gegenprüfung
++GitHub `main` bleibt bei `1a5cfe9d3139276f5432c79a8ee0be1938b7066c`; der vollständig gelesene Baum enthält nur `README.md`. Der private Entwicklungsstand ist dieses Dateipaket, **kein nachgewiesener installierter Git-Entwicklungszweig**. PR- und Workflowlisten wurden in diesem Aufruf nicht erneut abgefragt.
+ 
+-Die neue Suite enthält 14 Browsermethoden und 2 Quellenmethoden. Sie prüft
+-gültige und ungültige Payloads, gemischte Chunks, Größenlimit, unbekannten
+-Checkpoint, Export/Reimport, Erholung, HTML-Escaping der Diagnose, normalen
+-Journalimport, leere Snapshots sowie bisherige Replay-/Duplikat-/Lücken- und
+-Positions-/Fehlersperrenanzeige. Unterfälle werden nicht als Methoden addiert.
++## 4. Prüfumfang und Gegenfälle
+ 
+-Zwei Gegenläufe mit den unveränderten Originalbytes müssen gezielt scheitern:
+-Iteratorfehler und fehlende Snapshotmetadaten. Drei temporäre Mutationen nehmen
+-jeweils Strukturprüfung, Diagnoseimport oder Exportbindung zurück. Sie müssen
+-an konkreten Verhaltensaussagen scheitern, nicht an Hashprüfungen; der Runner
+-verlangt auch die passende Fehlerdiagnose. Paketproben testen zusätzlich
+-veränderte Bytes, unerwartete Datei und Symlink. Ein nativer Patchrundlauf muss
+-exakt ursprüngliche beziehungsweise vorgeschlagene Bytes rekonstruieren.
++Die 20 neuen Inventartests verwenden die tatsächlichen Dateien und gezielt verfälschte Kopien. Geprüft werden unter anderem ein Privatpatch anstelle des Originals trotz neu berechneter lokaler Hashes, ein Präfix als Vollquelle, zusätzliche oder doppelte Quellen, ein Zwischenreader als angeblicher Finalstand, umetikettierte historische Tests, ein nicht enthaltenes Archiv als angeblich vorhanden sowie Änderungen am Gatecheckpoint. Dazu kommen die 20 unveränderten vorhandenen Inventarregressionen.
+ 
+-Der vollständige neue Prüflauf führt zusätzlich die vorhandenen 12+8
+-Inventarmethoden aus. **36 unterschiedliche Methoden**, keine erneut
+-gezählten Relay-/Encodingregressionen. Die beiden erwarteten Originalfehler,
+-drei Mutationen und drei Paketproben gehören nicht zu dieser Erfolgszahl.
++Der vorhandene Erststufenprüfer führt den Originalbuilder begrenzt aus. Fünf Basisoutputs stimmen bytegleich; anschließend folgt das erwartete `ENOENT` für `live-overlay.b64`. Das ist weder ein Vollbuilderfolg noch eine native Kompilation.
+ 
+-Die Entwicklungsprüfung der 16 neuen Methoden bestand. Maßgeblich für den
+-Endstand ist ausschließlich die externe Abschlussprüfung nach frischem
+-Entpacken des endgültigen ZIP. Das interne Dokument ersetzt diesen Nachweis
+-nicht und markiert keine unabhängige Abnahme als erteilt.
++Drei gezielt entfernte Schutzprüfungen müssen die passenden Gegenprüfungen scheitern lassen. Drei Paketmanipulationen – geänderte Bytes, eine Zusatzdatei und ein Symlink – müssen abgewiesen werden. Der neue Prüfer schreibt keine Statusdatei und ersetzt keine unabhängige Abnahme.
+ 
+-## Erhaltung und verbleibende Grenzen
++Die endgültigen Ergebnisse stehen ausschließlich im externen Protokoll der frischen ZIP-Prüfung. Vorbereitungsläufe werden nicht addiert. Der vollständige Runner verlangt einen unprivilegierten Benutzer und sperrt Netzwerkverbindungen per vererbtem Linux-seccomp. Das ist keine allgemeine Sicherheits-Sandbox.
+ 
+-Vorgängerarchiv SHA256: `58a172d87232d80a0951f3e0ca65d7f5f4b0d30681492509c61e411e6d61d5f0`
+-Originalrenderer SHA256: `54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127`
+-Vorschlag SHA256: `8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af`
+-Unveränderter Relayvorschlag SHA256: `7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a`
++## 5. Erhaltener Bestand und Abschlussgrenze
+ 
+-Alle 302 Vorgänger-Manifestdateien bleiben direkt oder im Checkpoint
+-`baseline/relay_guard_checkpoint/` rekonstruierbar. Die bisherigen 38
+-Produktionsinputs und ihre Katalogbindung, beide alten Vorschläge, der
+-Masterplan und `GATE_STATUS.json` bleiben bytegleich. Die fünf S01-Lieferdateien
+-erhalten einen getrennten Ergänzungsblock; ihre vorherigen Bytes bleiben
+-im Checkpoint erhalten. Historische Inventarzähler werden nicht als aktuell
+-ausgegeben. Die genaue Rekonstruktionsliste steht in
+-`evidence/S01/S01_CONSUMER_PRESERVATION.json`.
++Masterplan, Gatecheckpoint, die 38 Produktionsoriginale, bestehende Tests und Runner, die drei privaten Produktvorschläge sowie die ursprünglichen Archive bleiben bytegleich. Es gibt keinen neuen Produktcodepatch. Alle 320 Dateien des Vorgängerpakets sind rekonstruierbar.
+ 
+-Die Strukturprüfung macht nicht jedes beliebige Schema korrekt, authentisiert
+-keine Diagnosen, prüft keine Preise/Zeitstempel vollständig und repariert keine
+-anderen Ereignistypen. Fehlerhafte Rohereignisse bleiben absichtlich vorhanden.
+-Der originale Import ist nicht zu einer generell atomaren Transaktion umgebaut.
+-Der vollständige finale Website-Verbraucher, JavaScript-Relay und Skin-Build
+-fehlen weiterhin; diese 21 Inputs werden nicht durch den archivierten Renderer
+-ersetzt. Kein vollständiger Website-Build, keine Live-/Cloud-/Windows-Abnahme,
+-keine C#-Kompilation und kein Botstart in diesem Lauf.
+-
+-## GitHub und nächster konkreter Schritt
+-
+-Nur lesender Connectorabgleich: `main=1a5cfe9d3139276f5432c79a8ee0be1938b7066c`,
+-vollständiger Baum nur README, Branchantwort `protected=false`. PR-/Workflow-
+-listen wurden nicht erneut abgefragt. Keine GitHub-Schreibaktion.
+-
+-Das Ein-Dateien-Paket ist als isolierter Korrekturvorschlag vorbereitet.
+-Nächster Integrationsnachweis: vollständige Originalbytes des tatsächlichen
+-finalen Snapshotclients/JavaScriptrelays beschaffen und dessen Behandlung der
+-Diagnose prüfen. Die jetzt geprüfte importbasierte Zwischenstufe darf nicht
+-als live integrierte Endfassung bezeichnet werden. Keine zweite Relay- oder
+-Consumerimplementierung auf Basis fehlender Suffixe erstellen. Formalstatus
+-und Masterplan bleiben unverändert. Installation und unabhängige Prüfung
+-bleiben separat erforderlich, nicht durch erfolgreiche Browsermethoden ersetzt.
+-
+-
+-## Korrektur des neuen Prüflaufs vor Übergabe
+-
+-Die erste frisch entpackte Prüffassung bestand alle 36 normalen Methoden,
+-stoppt aber korrekt an ihrer neuen Mutationserwartung: Nach Entfernung des
+-Arrayguards meldet Chromium `ev.data.candles is not iterable`, nicht den
+-etwas anders formulierten Iteratorfehler des unveränderten Originalcodes.
+-Der Verhaltenstest hatte den eingebauten Fehler bereits erkannt. Nur die
+-exakte erwartete Diagnose im neuen Runner wurde berichtigt. Produktvorschlag,
+-Originalcode und Tests wurden dafür nicht gelockert oder verändert. Diese
+-vorläufige Gesamtausführung wird nicht als bestanden gezählt. Die endgültige
+-ZIP-Fassung wird vollständig frisch erneut geprüft; der externe Endbeleg
+-enthält beide Abläufe getrennt.
++Die private Inventarkonsolidierung ist ein abgegrenztes Arbeitspaket. S01-C02 erlaubt ausdrücklich einen Inventarabschluss trotz dokumentierter `blocked_capability`. Eine formale Abnahme wurde hier nicht erteilt. Die 21 fehlenden Vollquellen blockieren weiterhin ihre jeweiligen Builds und Integrationen, aber nicht jede unabhängige Referenzdokumentation.
+--- a/UEBERGABE.md
++++ b/UEBERGABE.md
+@@ -1,66 +1,37 @@
+-# S01 SnapshotConsumerGuard – exakter Fortsetzungspunkt
++# ExtremeLab – maßgebliche private S01-Fortsetzungsübergabe
+ 
+-## Ausgangsstand
++## Ausgangsstand und Grenzen
+ 
+-Vorgänger `ExtremeLab_S01_RelaySnapshotGuard_Offline.zip`, SHA256
+-`58a172d87232d80a0951f3e0ca65d7f5f4b0d30681492509c61e411e6d61d5f0`.
+-Masterplan 1.1.0 bleibt unverändert, SHA256
+-`60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d`.
+-**Private S01-Arbeit, keine formale S00/S01-Abnahme oder Installation.**
++Vorgänger: `ExtremeLab_S01_SnapshotConsumerGuard_Offline.zip`, SHA-256 `80e603e63abd663c27199179662e08b8be28cc77fc6c36919d5e92d4f3e760ff`. Seine 320 manifestierten Dateien wurden geprüft. Die neue Fassung bewahrt diese Bytes entweder am ursprünglichen Pfad oder unter `baseline/inventory_checkpoint/`; dort liegt auch das Originalmanifest.
+ 
+-## Erledigt und nicht verwechseln
++Aktueller Arbeitsschritt: **S01 – private Inventarkonsolidierung**. Originalplan 1.1.0, SHA-256 `60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d`. Offizieller S00-/S01-Status und Freigabegates sind unverändert. Keine Selbstfreigabe.
+ 
+-Ein vorhandener, vollständiger archivierter Journalrenderer wurde separat
+-gegen ungültige Kerzenpayloads und Verlust von Snapshotdiagnosen abgesichert.
+-Er ist ein ursprüngliches Zwischenprodukt der nachweisbaren `patch_ui.mjs`-
+-Buildstufe, NICHT der finale Skin-/Live-Verbraucher. Seine echte Import-/DOM-/
+-Blob-Exportkette wurde mit der realen SQLite-Projektion des unveränderten
+-Pythonrelay-Vorschlags geprüft. Kein nachgebauter DOM, kein Ersatz-Relay.
++## Abgeschlossenes fachliches Ergebnis
+ 
+-Die 38 Websiteoriginale bleiben identisch; 21/59 fehlen weiterhin. Die beiden
+-vorigen Vorschläge, HTML/CSS, Strategien, Masterplan und Gatedatei bleiben
+-unverändert. Keine historischen Benutzerjournale als Testdaten verwendet.
++Die fünf Pflichtlieferdateien verweisen konsistent auf `evidence/S01/S01_CURRENT_INVENTORY.json`: 38 vollständige Originalinputs, fünf nur als Präfix zugänglich, 16 nur als Metadaten bekannt. Es fehlen weiterhin 21 Vollquellen. Keine zusätzliche Produktionsquelle wurde wiederhergestellt.
++
++Acht operative Widersprüche des Vorgängers wurden korrigiert. Historische Test- und Runtimeangaben sind ausdrücklich historisch eingeordnet. Der Gatecheckpoint bleibt trotz alter Quellenzähler unverändert. Quellenverfügbarkeit, erzeugte Zwischenstände und drei private Vorschläge sind getrennt.
++
++Das zusätzliche Premium-Dashboardarchiv ist auch nach Dekodierung seiner Nutzdaten kein Ersatz für das fehlende Skinbundle. Der Produktionsalias zeigt weiterhin auf den gebundenen Deploymentstand. GitHub enthält nur die README; kein installierter Entwicklungszweig wird behauptet.
+ 
+ ## Reproduktion
+ 
+ ```sh
+-python -B verify_package.py
+-python -B tools/run_snapshot_consumer_checks.py --reports-dir /neuer/externer/ordner
++python -B tools/run_inventory_checks.py --reports-dir /neuer/externer/logordner
+ ```
+ 
+-Als Benutzer ohne Administratorrechte, Linux/libseccomp, Python mit Playwright
+-und aiohttp, `/usr/bin/chromium`, Node und natives `patch`. Keine Installation
+-von Abhängigkeiten oder Netzwerk-Downloads im Prüflauf. Die Browserseite ist
+-`about:blank`; Netzwerkrequests sind verboten und werden abgeprüft. Das ist
+-kein erfolgreicher Abruf der Produktionsseite und keine visuelle Designabnahme.
++Als normaler Benutzer auf Linux mit libseccomp, Python/Brotli und Node ausführen. Erwarteter Umfang: 40 unterschiedliche Inventar- und Regressionstestmethoden, drei Prüfermutationen und drei Paketmanipulationen. Die acht Widersprüche werden am gesicherten Vorgänger nochmals als Gegenbeleg erkannt.
+ 
+-Erwarteter neuer Umfang: 16 eigene +20 vorhandene Inventarmethoden =36.
+-Dazu getrennt: zwei erwartete Originalfehler, drei Verhaltensmutationen,
+-drei Paketmanipulationen sowie Patch-Vorwärts-/Rückwärtsrekonstruktion.
+-Alte Relay-/Encoding-Suites nicht als erneut ausgeführt zählen.
+-**Tatsächliches Endergebnis steht in der externen Abschlussprüfung und den
+-frischen Protokollen, nicht in einer historischen Zahl dieses Dokuments.**
++Die Original-Erststufe erzeugt fünf bytegleiche Basisoutputs und endet erwartungsgemäß an der fehlenden Overlaydatei. Das ist kein erfolgreicher Vollbuild. Maßgeblich sind nur die separat gelieferten frischen Logs und die Abschlussprüfung. Frühere Produktverhaltenstests wurden nicht erneut ausgeführt.
+ 
+-## Quellenbindung und Rückfall
++## Eindeutiger Fortsetzungspunkt
+ 
+-Originalrenderer: `54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127`.
+-Neue private Kopie: `8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af`.
+-Details: `proposals/snapshot-consumer-guard/proposal.json`; nur eine Produkt-
+-dateikopie geändert, native diff liegt daneben. Alle vorherigen 302
+-Manifestdateien sind direkt oder im Checkpoint rekonstruierbar. Erst ZIP-Hash
+-und Manifest prüfen; Vorschlag zum Rückfall verwerfen, Originale nicht ersetzen.
++Das Inventar nicht erneut zu einer Endlossuche nach denselben 21 Dateien machen: S01-C02 erlaubt den Inventarabschluss mit präzisen `blocked_capability`-Einträgen. Der nächste zulässige dokumentarische Anschluss ist die Zuordnung tatsächlich vorhandener Hub-, Observer-, Journal- und Website-Module sowie ihrer echten Schnittstellen zu den Architekturbegriffen.
+ 
+-## Grenzen und nächster Schritt
++Dafür `baseline/original_platform097.zip` und die 38 gebundenen Websiteinputs verwenden. Fehlende Module bleiben `unconfirmed`. Keine neue Architekturimplementierung und keine Aktivierung von S02 oder produktiver Integration ohne den formalen Weg. Die Karte S01-C03 erlaubt unabhängige Referenzdokumentation; daraus folgt keine automatische Freigabe anderer Planschritte.
+ 
+-Snapshotmetadaten sind unbeglaubigte Quelldiagnosen; rohe fehlerhafte Ereignisse
+-bleiben erhalten. Keine vollständige OHLC-/Zeitvalidierung, kein atomarer
+-Allzweckimport und keine allgemeine Ereignisschemaabnahme. Vollständiger
+-Analyseexport ist geprüft; separate Notiz-/Entscheidungsexporte sind kein
+-neues Snapshotformat.
++Ein vollständiger Website-, Skin- oder Native-Build darf erst mit vollständigen Originalbytes und erforderlicher Werkzeugkette behauptet werden. Der fehlende JavaScript-Relay ist nicht der vorhandene Python-Relay. Die bereits belegte 1.2.1-Quellbindung und die drei Privatvorschläge nur bei neuer Fehlerhypothese oder tatsächlichem Integrationsbedarf erneut untersuchen.
+ 
+-Für die endgültige Websiteintegration fehlen vollständige Originalbytes
+-des finalen Live-/Skin-Clients und JavaScriptrelays. Zuerst diese beschaffen
+-und binden; danach denselben Diagnosesatz gegen den tatsächlichen Endverbraucher
+-prüfen. Die jetzt abgeschlossene Zwischenstufe nicht nochmals als Ersatz
+-prüfen und den Quellenstand nicht künstlich erhöhen. Kein weiteres Produkt-
+-modul oder parallel erfundener Relay. Keine GitHub-/Broker-/Kontoschreibaktion.
++## Unveränderte Sicherheitsgrenzen
++
++Keine GitHub-Schreibaktion, Veröffentlichung, Deployment-, Broker- oder Kontoaktion. Keine privaten Handelsdaten in Tests. Keine erfundenen Nutzungsrechte oder Reviewer. Die Bibliothekssuche war partiell; externe Ablagen wurden nicht vollständig durchsucht. S01-C04 enthält weiterhin keinen bestätigten installierten Entwicklungszweig.
+--- a/evidence/S01/S01_CAPABILITY_MATRIX.json
++++ b/evidence/S01/S01_CAPABILITY_MATRIX.json
+@@ -132,5 +132,11 @@
+     }
+   ],
+   "addon_runs_in_successful_release_wrapper": 2,
+-  "nested_edge_note": "Static call order, not a completed execution of the unavailable full pipeline. version133 imports addon, then the wrapper invokes addon as a new Node process."
++  "nested_edge_note": "Static call order, not a completed execution of the unavailable full pipeline. version133 imports addon, then the wrapper invokes addon as a new Node process.",
++  "current_inventory": {
++    "path": "evidence/S01/S01_CURRENT_INVENTORY.json",
++    "sha256": "0d7646c4983822adda5e8d0feaf2fa911dfdee5c759d9fbf5e620a962da8bbe5"
++  },
++  "historical_test_scope": "Numeric original_tests and prior run execution observations are historical, not rerun totals. Current run is source inventory consistency plus bounded original first-stage replay.",
++  "formal_inventory_acceptance": false
+ }
+--- a/evidence/S01/S01_CURRENT_HANDOFF.md
++++ b/evidence/S01/S01_CURRENT_HANDOFF.md
+@@ -1,66 +1,3 @@
+-# S01 SnapshotConsumerGuard – exakter Fortsetzungspunkt
++# S01 – aktueller Einstieg
+ 
+-## Ausgangsstand
+-
+-Vorgänger `ExtremeLab_S01_RelaySnapshotGuard_Offline.zip`, SHA256
+-`58a172d87232d80a0951f3e0ca65d7f5f4b0d30681492509c61e411e6d61d5f0`.
+-Masterplan 1.1.0 bleibt unverändert, SHA256
+-`60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d`.
+-**Private S01-Arbeit, keine formale S00/S01-Abnahme oder Installation.**
+-
+-## Erledigt und nicht verwechseln
+-
+-Ein vorhandener, vollständiger archivierter Journalrenderer wurde separat
+-gegen ungültige Kerzenpayloads und Verlust von Snapshotdiagnosen abgesichert.
+-Er ist ein ursprüngliches Zwischenprodukt der nachweisbaren `patch_ui.mjs`-
+-Buildstufe, NICHT der finale Skin-/Live-Verbraucher. Seine echte Import-/DOM-/
+-Blob-Exportkette wurde mit der realen SQLite-Projektion des unveränderten
+-Pythonrelay-Vorschlags geprüft. Kein nachgebauter DOM, kein Ersatz-Relay.
+-
+-Die 38 Websiteoriginale bleiben identisch; 21/59 fehlen weiterhin. Die beiden
+-vorigen Vorschläge, HTML/CSS, Strategien, Masterplan und Gatedatei bleiben
+-unverändert. Keine historischen Benutzerjournale als Testdaten verwendet.
+-
+-## Reproduktion
+-
+-```sh
+-python -B verify_package.py
+-python -B tools/run_snapshot_consumer_checks.py --reports-dir /neuer/externer/ordner
+-```
+-
+-Als Benutzer ohne Administratorrechte, Linux/libseccomp, Python mit Playwright
+-und aiohttp, `/usr/bin/chromium`, Node und natives `patch`. Keine Installation
+-von Abhängigkeiten oder Netzwerk-Downloads im Prüflauf. Die Browserseite ist
+-`about:blank`; Netzwerkrequests sind verboten und werden abgeprüft. Das ist
+-kein erfolgreicher Abruf der Produktionsseite und keine visuelle Designabnahme.
+-
+-Erwarteter neuer Umfang: 16 eigene +20 vorhandene Inventarmethoden =36.
+-Dazu getrennt: zwei erwartete Originalfehler, drei Verhaltensmutationen,
+-drei Paketmanipulationen sowie Patch-Vorwärts-/Rückwärtsrekonstruktion.
+-Alte Relay-/Encoding-Suites nicht als erneut ausgeführt zählen.
+-**Tatsächliches Endergebnis steht in der externen Abschlussprüfung und den
+-frischen Protokollen, nicht in einer historischen Zahl dieses Dokuments.**
+-
+-## Quellenbindung und Rückfall
+-
+-Originalrenderer: `54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127`.
+-Neue private Kopie: `8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af`.
+-Details: `proposals/snapshot-consumer-guard/proposal.json`; nur eine Produkt-
+-dateikopie geändert, native diff liegt daneben. Alle vorherigen 302
+-Manifestdateien sind direkt oder im Checkpoint rekonstruierbar. Erst ZIP-Hash
+-und Manifest prüfen; Vorschlag zum Rückfall verwerfen, Originale nicht ersetzen.
+-
+-## Grenzen und nächster Schritt
+-
+-Snapshotmetadaten sind unbeglaubigte Quelldiagnosen; rohe fehlerhafte Ereignisse
+-bleiben erhalten. Keine vollständige OHLC-/Zeitvalidierung, kein atomarer
+-Allzweckimport und keine allgemeine Ereignisschemaabnahme. Vollständiger
+-Analyseexport ist geprüft; separate Notiz-/Entscheidungsexporte sind kein
+-neues Snapshotformat.
+-
+-Für die endgültige Websiteintegration fehlen vollständige Originalbytes
+-des finalen Live-/Skin-Clients und JavaScriptrelays. Zuerst diese beschaffen
+-und binden; danach denselben Diagnosesatz gegen den tatsächlichen Endverbraucher
+-prüfen. Die jetzt abgeschlossene Zwischenstufe nicht nochmals als Ersatz
+-prüfen und den Quellenstand nicht künstlich erhöhen. Kein weiteres Produkt-
+-modul oder parallel erfundener Relay. Keine GitHub-/Broker-/Kontoschreibaktion.
++Maßgeblich: `UEBERGABE.md`, `evidence/S01/S01_CURRENT_INVENTORY.json` und `evidence/S01/S01_INVENTORY_ACCEPTANCE.md`. Die fünf ursprünglichen Lieferdateien bleiben die fachlichen Einstiegspunkte. Keine neue formale Freigabe.
+--- a/evidence/S01/baseline-lock.json
++++ b/evidence/S01/baseline-lock.json
+@@ -1,6 +1,6 @@
+ {
+   "schema": "s01-recovered-sources/v2",
+-  "work_id": "S01-BOT-DELIVERY-RECOVERY",
++  "work_id": "S01-INVENTORY-CONSOLIDATION",
+   "canonical_plan": "1.1.0",
+   "canonical_plan_markdown_sha256": "186d75abc4775c53d17000d5b04072495b61761466dfd0b9b06b1c50c3b1baa0",
+   "prior_artifact": {
+@@ -27,7 +27,11 @@
+       "rights": "not independently established",
+       "published_by_this_run": false,
+       "manifest": "vendor-manifests/hub080.json",
+-      "duplicate_of": null
++      "duplicate_of": null,
++      "current_local_availability": "historical_source_record_only_not_bundled",
++      "current_archive_paths": [],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "hub080_duplicate",
+@@ -42,7 +46,11 @@
+       "rights": "not independently established",
+       "published_by_this_run": false,
+       "manifest": "vendor-manifests/hub080_duplicate.json",
+-      "duplicate_of": "hub080"
++      "duplicate_of": "hub080",
++      "current_local_availability": "historical_source_record_only_not_bundled",
++      "current_archive_paths": [],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "platform092",
+@@ -57,7 +65,11 @@
+       "rights": "not independently established",
+       "published_by_this_run": false,
+       "manifest": "vendor-manifests/platform092.json",
+-      "duplicate_of": null
++      "duplicate_of": null,
++      "current_local_availability": "historical_source_record_only_not_bundled",
++      "current_archive_paths": [],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "platform097",
+@@ -72,7 +84,13 @@
+       "rights": "not independently established",
+       "published_by_this_run": false,
+       "manifest": "vendor-manifests/platform097.json",
+-      "duplicate_of": null
++      "duplicate_of": null,
++      "current_local_availability": "complete_archive_bundled",
++      "current_archive_paths": [
++        "baseline/original_platform097.zip"
++      ],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "observer_alpha3",
+@@ -87,7 +105,11 @@
+       "rights": "not independently established",
+       "published_by_this_run": false,
+       "manifest": "vendor-manifests/observer_alpha3.json",
+-      "duplicate_of": null
++      "duplicate_of": null,
++      "current_local_availability": "historical_source_record_only_not_bundled",
++      "current_archive_paths": [],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "accountlive134",
+@@ -102,7 +124,13 @@
+       "rights": "not independently established",
+       "published_by_this_run": false,
+       "manifest": "vendor-manifests/accountlive134.json",
+-      "duplicate_of": null
++      "duplicate_of": null,
++      "current_local_availability": "complete_archive_bundled",
++      "current_archive_paths": [
++        "baseline/original_accountlive134.zip"
++      ],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "engine121_original",
+@@ -114,7 +142,13 @@
+       "manifest_verified_files": 30,
+       "production_packed_source_match": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+       "rights": "not independently established; no public redistribution authorization inferred",
+-      "published_by_this_run": false
++      "published_by_this_run": false,
++      "current_local_availability": "complete_archive_bundled",
++      "current_archive_paths": [
++        "baseline/original_engine121_source.zip"
++      ],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     },
+     {
+       "id": "release121audit",
+@@ -127,7 +161,13 @@
+       "crc_valid": true,
+       "internal_manifest_files_verified": 11,
+       "rights": "Private user-provided archive; no public redistribution approval inferred",
+-      "published_by_this_run": false
++      "published_by_this_run": false,
++      "current_local_availability": "complete_archive_bundled",
++      "current_archive_paths": [
++        "baseline/original_release121_audit.zip"
++      ],
++      "historical_manifest_present": false,
++      "metadata_epoch": "Inherited original source evidence; only current_archive_paths was verified in this run."
+     }
+   ],
+   "selected_hub": "platform097",
+@@ -140,7 +180,7 @@
+   ],
+   "remaining_gaps": [
+     "S00 independent GitHub protected trust root and reviewer acceptance missing",
+-    "Full 59-file production website input not recovered: 36 byte-identical, 23 unmaterialized; complete build blocked by missing inputs",
++    "Full 59-file production website input not recovered: 38 byte-identical, 21 unmaterialized; complete build blocked by missing inputs",
+     "Runtime live overlay patch (live-overlay.b64) unavailable: original postbuild stage fails closed on raw assets",
+     "Original Engine 1.9 release source, package and binary unavailable",
+     "Two historical 1.2.1 Vercel builds report same sourceSha256 but different .algo sizes/hashes; binary reproducibility not proven",
+@@ -162,8 +202,8 @@
+       "compared": 26
+     }
+   },
+-  "predecessor_work_id": "S01-REMOTE-VIEW20-INTEGRATION",
+-  "upstream_package_sha256": "70a42bcc7adec76792bf19a42b38ef74d0d1371e45793c7cbb20668bfc25f036",
++  "predecessor_work_id": "S01-BOT-DELIVERY-RECOVERY",
++  "upstream_package_sha256": "80e603e63abd663c27199179662e08b8be28cc77fc6c36919d5e92d4f3e760ff",
+   "source_tree_prod_v2": {
+     "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+     "provider_entries": 59,
+@@ -210,7 +250,7 @@
+   },
+   "private_work_authorized_by_latest_user": true,
+   "scope": "S01 private source inventory continuation directed by user; no canonical plan/status modification",
+-  "upstream_package_path": "original predecessor archive supplied separately; exact original mutable file bytes preserved in baseline/remoteview_checkpoint",
++  "upstream_package_path": "ExtremeLab_S01_SnapshotConsumerGuard_Offline.zip",
+   "runtime_historical": {
+     "name": "Node",
+     "version": "24.11.1",
+@@ -220,14 +260,6 @@
+     "publisher_signature_verified_here": false
+   },
+   "network_boundary_historical": "Cooperative Node net/fetch guard plus clean test environment. Not OS isolation; review and fake adapters remain necessary.",
+-  "current_inventory_runtime": {
+-    "node": "24.11.1",
+-    "node_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
+-    "provider": "bundled local Playwright driver executable; no new download; no signature claim",
+-    "python": "3.13.5",
+-    "os": "Linux",
+-    "runtime_is_not_a_windows_or_cloud_acceptance": true
+-  },
+   "source_tree_prod_v4": {
+     "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+     "provider_entries": 59,
+@@ -315,47 +347,6 @@
+       "src/patch_ui.mjs"
+     ]
+   },
+-  "current_addon_build_audit": {
+-    "work_id": "S01-ADDON-BUILD-AUDIT",
+-    "previous_archive_sha256": "269436124048029d40921cbb35d30be254d67e6a4f815761cdee69676a2fdeba",
+-    "full_source_inputs": 36,
+-    "missing_source_inputs": 23,
+-    "new_full_source_inputs": 0,
+-    "intermediate_output_count": 6,
+-    "generated_sources": "S01_ADDON_GENERATED_SOURCES.json",
+-    "build_writer_boundary": "S01_BUILD_WRITER_BOUNDARIES.json",
+-    "full_website_build_status": "blocked_capability",
+-    "native_reader_test_scope": "actual addon-stage modules; 26 unchanged archived synthetic tests; no final skin or provider integration",
+-    "not_an_official_plan_finish": true
+-  },
+-  "current_remote_view20_integration": {
+-    "work_id": "S01-REMOTE20-INTEGRATION-20261113",
+-    "baseline_archive": "baseline/prior_addon_build_audit.zip",
+-    "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+-    "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+-    "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+-    "new_production_inputs": 0,
+-    "available_production_inputs": 36,
+-    "missing_production_inputs": 23,
+-    "original_product_source_changed": false,
+-    "formal_status_changed": false,
+-    "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+-    "known_boundaries": [
+-      "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+-      "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+-      "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+-    ],
+-    "counterexamples_are_fixes": false,
+-    "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
+-    "not_verified": [
+-      "Actual SDK/cloud consistency or durability",
+-      "physical HTTP/websocket transport or browser rendering",
+-      "Windows DPAPI",
+-      "complete website build",
+-      "cTrader/native bot execution",
+-      "official S01 acceptance"
+-    ]
+-  },
+   "source_tree_prod_v6": {
+     "source_total": 59,
+     "materialized_full_files": 38,
+@@ -363,17 +354,7 @@
+     "complete_backup": false,
+     "source_manifest": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json"
+   },
+-  "current_bot_delivery_recovery": {
+-    "work_id": "S01-BOT-DELIVERY-RECOVERY",
+-    "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
+-    "sources_recovered": 38,
+-    "sources_missing": 21,
+-    "native_compilation": false,
+-    "website_full_build": false,
+-    "formal_acceptance": false,
+-    "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun"
+-  },
+-  "historical_current_fields_note": "Source tree v6 remains current (38/59). Older current_* execution blocks remain historical; this work is private_live_encoding_proposal with no new original input.",
++  "historical_current_fields_note": "All inherited source_tree_prod_v*, current_* execution/runtime and private proposal blocks describe their named historical work. Only current_inventory is the consolidated present source observation; historical tests were not rerun unless listed in this run external execution.json.",
+   "private_live_encoding_proposal": {
+     "work_id": "S01-LIVE-ENCODING-FIX",
+     "kind": "private_patch_not_integrated",
+@@ -467,5 +448,70 @@
+       "Authenticated provenance of imported snapshot metadata",
+       "Native bot compile or startup"
+     ]
++  },
++  "current_inventory": {
++    "path": "evidence/S01/S01_CURRENT_INVENTORY.json",
++    "sha256": "0d7646c4983822adda5e8d0feaf2fa911dfdee5c759d9fbf5e620a962da8bbe5"
++  },
++  "historical_work_records": {
++    "current_inventory_runtime": {
++      "node": "24.11.1",
++      "node_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
++      "provider": "bundled local Playwright driver executable; no new download; no signature claim",
++      "python": "3.13.5",
++      "os": "Linux",
++      "runtime_is_not_a_windows_or_cloud_acceptance": true
++    },
++    "current_addon_build_audit": {
++      "work_id": "S01-ADDON-BUILD-AUDIT",
++      "previous_archive_sha256": "269436124048029d40921cbb35d30be254d67e6a4f815761cdee69676a2fdeba",
++      "full_source_inputs": 36,
++      "missing_source_inputs": 23,
++      "new_full_source_inputs": 0,
++      "intermediate_output_count": 6,
++      "generated_sources": "S01_ADDON_GENERATED_SOURCES.json",
++      "build_writer_boundary": "S01_BUILD_WRITER_BOUNDARIES.json",
++      "full_website_build_status": "blocked_capability",
++      "native_reader_test_scope": "actual addon-stage modules; 26 unchanged archived synthetic tests; no final skin or provider integration",
++      "not_an_official_plan_finish": true
++    },
++    "current_remote_view20_integration": {
++      "work_id": "S01-REMOTE20-INTEGRATION-20261113",
++      "baseline_archive": "baseline/prior_addon_build_audit.zip",
++      "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
++      "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
++      "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
++      "new_production_inputs": 0,
++      "available_production_inputs": 36,
++      "missing_production_inputs": 23,
++      "original_product_source_changed": false,
++      "formal_status_changed": false,
++      "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
++      "known_boundaries": [
++        "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
++        "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
++        "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
++      ],
++      "counterexamples_are_fixes": false,
++      "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
++      "not_verified": [
++        "Actual SDK/cloud consistency or durability",
++        "physical HTTP/websocket transport or browser rendering",
++        "Windows DPAPI",
++        "complete website build",
++        "cTrader/native bot execution",
++        "official S01 acceptance"
++      ]
++    },
++    "current_bot_delivery_recovery": {
++      "work_id": "S01-BOT-DELIVERY-RECOVERY",
++      "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
++      "sources_recovered": 38,
++      "sources_missing": 21,
++      "native_compilation": false,
++      "website_full_build": false,
++      "formal_acceptance": false,
++      "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun"
++    }
+   }
+ }
+--- a/evidence/S01/donor-map.json
++++ b/evidence/S01/donor-map.json
+@@ -71,9 +71,9 @@
+       ],
+       "source": "Vercel dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+       "classification": "reference_only",
+-      "boundary": "23 source inputs missing; no production reuse or deployment",
++      "boundary": "21 original inputs lack full bytes;38 complete inputs; no product integration or deployment.",
+       "historical_tests": "28/59 source bytes SHA1-matched to Vercel UID; derived five raw asset pages/files; four independent stage checks, missing overlay causes expected failure. No full build.",
+-      "current_proof": "36/59 complete sources; original UI patch reproduces archived app.js in isolation; overlay, skin and full pipeline remain unavailable."
++      "current_proof": "38/59 original inputs SHA1/256 bound. Source availability is not complete build proof. Original patches, derived stages and proposals stay separate."
+     },
+     {
+       "component": "Original Engine 1.9 delivery preview",
+@@ -276,5 +276,10 @@
+       "Authenticated provenance of imported snapshot metadata",
+       "Native bot compile or startup"
+     ]
+-  }
++  },
++  "current_inventory": {
++    "path": "evidence/S01/S01_CURRENT_INVENTORY.json",
++    "sha256": "0d7646c4983822adda5e8d0feaf2fa911dfdee5c759d9fbf5e620a962da8bbe5"
++  },
++  "historical_test_scope": "All historical_tests fields refer to original earlier runs, not this inventory consolidation."
+ }
+--- a/evidence/S01/path-map.json
++++ b/evidence/S01/path-map.json
+@@ -92,7 +92,9 @@
+       "source_sha256": "321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283",
+       "bytes": 11686,
+       "recovered_local_path": "baseline/vercel_recovered/src/account-addon.br",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/account-live.js",
+@@ -101,7 +103,9 @@
+       "source_sha256": "ca34d9547411a6b13b89310f30cb8cec548fbd8bfaea5b488e20161ab1a382ed",
+       "bytes": 69,
+       "recovered_local_path": "baseline/vercel_recovered/src/api/account-live.js",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/desk.js",
+@@ -110,7 +114,9 @@
+       "source_sha256": "1aff4975b785e3ee13da1dda038faad293307685c6d46cfb76c7530f2e6fcce9",
+       "bytes": 5909,
+       "recovered_local_path": "baseline/vercel_recovered/src/api/desk.js",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/revolution.js",
+@@ -119,7 +125,9 @@
+       "source_sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139",
+       "bytes": 1543,
+       "recovered_local_path": "baseline/vercel_recovered/src/api/revolution.js",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/assets.0",
+@@ -128,7 +136,9 @@
+       "status": "source_bytes_verified_private_no_integration",
+       "source_sha256": "424db7b1fbe6ace3e01e626c1241a384009b3b906fc40c1e12083f428d208b6b",
+       "bytes": 4500,
+-      "recovered_local_path": "baseline/vercel_recovered/src/assets.0"
++      "recovered_local_path": "baseline/vercel_recovered/src/assets.0",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/assets.1",
+@@ -137,7 +147,9 @@
+       "source_sha256": "f4d4549d5bca064a3b07b0ac6a0b00616bdf334b6fc488b989d9a90cabdba18b",
+       "bytes": 4500,
+       "recovered_local_path": "baseline/vercel_recovered/src/assets.1",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/assets.2",
+@@ -146,7 +158,9 @@
+       "source_sha256": "2568b3879d407193705746add6092ec66a3920e337106d14beb0e6c907a3d303",
+       "bytes": 4500,
+       "recovered_local_path": "baseline/vercel_recovered/src/assets.2",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/assets.3",
+@@ -155,7 +169,9 @@
+       "source_sha256": "d9f6386a4be6655378df36e7d047e6d83dea0a5da76ec4a00520daad11ed13f3",
+       "bytes": 2498,
+       "recovered_local_path": "baseline/vercel_recovered/src/assets.3",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/bot-src.0",
+@@ -164,7 +180,9 @@
+       "status": "source_bytes_verified_private_no_integration",
+       "source_sha256": "e2036b08e1760ee56a3511b4efa63f5ba06da7b8b6e2e6cbf0b6ea2faf892548",
+       "local_path": "baseline/vercel_recovered/src/bot-src.0",
+-      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
++      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/build-account-addon.mjs",
+@@ -173,7 +191,9 @@
+       "source_sha256": "a87c666dc997abc1ddae5399f33a105a7fd245211c27698c489441dca16fee5c",
+       "bytes": 1012,
+       "recovered_local_path": "baseline/vercel_recovered/src/build-account-addon.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/build-release20.mjs",
+@@ -182,7 +202,9 @@
+       "status": "source_bytes_verified_private_no_integration",
+       "source_sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6",
+       "bytes": 451,
+-      "recovered_local_path": "baseline/vercel_recovered/src/build-release20.mjs"
++      "recovered_local_path": "baseline/vercel_recovered/src/build-release20.mjs",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/build-revolution20.mjs",
+@@ -191,7 +213,9 @@
+       "source_sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439",
+       "bytes": 1070,
+       "recovered_local_path": "baseline/vercel_recovered/src/build-revolution20.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/build.mjs",
+@@ -200,7 +224,9 @@
+       "status": "source_bytes_verified_private_no_integration",
+       "source_sha256": "6ef5455d53cd08b614bb710999b04bc901d5da12639a5424ae52536d8bc841aa",
+       "bytes": 1316,
+-      "recovered_local_path": "baseline/vercel_recovered/src/build.mjs"
++      "recovered_local_path": "baseline/vercel_recovered/src/build.mjs",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/lib/http.mjs",
+@@ -209,7 +235,9 @@
+       "source_sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7",
+       "bytes": 2796,
+       "recovered_local_path": "baseline/vercel_recovered/src/lib/http.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/lib/projection.mjs",
+@@ -218,7 +246,9 @@
+       "source_sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3",
+       "bytes": 6049,
+       "recovered_local_path": "baseline/vercel_recovered/src/lib/projection.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/lib/security.mjs",
+@@ -227,7 +257,9 @@
+       "source_sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f",
+       "bytes": 3309,
+       "recovered_local_path": "baseline/vercel_recovered/src/lib/security.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/lib/service.mjs",
+@@ -236,7 +268,9 @@
+       "source_sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604",
+       "bytes": 7496,
+       "recovered_local_path": "baseline/vercel_recovered/src/lib/service.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/lib/storage.mjs",
+@@ -245,13 +279,17 @@
+       "source_sha256": "afd0f7747f23d738ee688710f209099dd39fadbde7b5a65c0daabe07ea55931d",
+       "bytes": 2730,
+       "recovered_local_path": "baseline/vercel_recovered/src/lib/storage.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/live-overlay.b64",
+       "source_archive": "vercel-production-deployment-source-tree",
+       "source_uid": "e8a1affc744cb33812fbda76cb9d95f2885a0914",
+-      "status": "provider_mapped_not_materialized_no_integration"
++      "status": "provider_mapped_not_materialized_no_integration",
++      "source_classification": "prefix_only",
++      "original_full_bytes": false
+     },
+     {
+       "path": "src/package.json",
+@@ -260,7 +298,9 @@
+       "status": "source_bytes_verified_private_no_integration",
+       "source_sha256": "63aa6b23f143b44d81b528ab8b9f973d29604032a9022220c431b99b2df41533",
+       "bytes": 221,
+-      "recovered_local_path": "baseline/vercel_recovered/src/package.json"
++      "recovered_local_path": "baseline/vercel_recovered/src/package.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/postbuild-132.mjs",
+@@ -269,7 +309,9 @@
+       "source_sha256": "431ccc89f5eb8c4aedbce2054dfad4bd98a9c63445cc4311e208f356c18d78bf",
+       "bytes": 953,
+       "recovered_local_path": "baseline/vercel_recovered/src/postbuild-132.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/public/bot-download.js",
+@@ -278,7 +320,9 @@
+       "source_sha256": "399d27ccad273a570b60c87d1a4b30a0eed32675bd652fb98e92ba4b16f8dbcb",
+       "bytes": 1119,
+       "recovered_local_path": "baseline/vercel_recovered/src/public/bot-download.js",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/public/bot.html",
+@@ -287,7 +331,9 @@
+       "source_sha256": "da344e50260940e02bb6e0ae7d100306b4ba4b5de858384c2091c112cb077e80",
+       "bytes": 1457,
+       "recovered_local_path": "baseline/vercel_recovered/src/public/bot.html",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/public/connection.html",
+@@ -296,13 +342,17 @@
+       "source_sha256": "20d35811f6a6cc8ac5a14ec380e700f0a626ee2f36096bf3bf6c2f7bf58f6852",
+       "bytes": 811,
+       "recovered_local_path": "baseline/vercel_recovered/src/public/connection.html",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/skin.0",
+       "source_archive": "vercel-production-deployment-source-tree",
+       "source_uid": "5fa03aba3d6558e9c8abfc205e9a5403f91a8c2d",
+-      "status": "provider_mapped_not_materialized_no_integration"
++      "status": "provider_mapped_not_materialized_no_integration",
++      "source_classification": "prefix_only",
++      "original_full_bytes": false
+     },
+     {
+       "path": "src/vercel.json",
+@@ -311,7 +361,9 @@
+       "source_sha256": "fbcd3cd7d68d45f7a7bc65f7bf9935332d3abd31c1fb25d7c372e05546139d9f",
+       "bytes": 786,
+       "recovered_local_path": "baseline/vercel_recovered/src/vercel.json",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/version133.mjs",
+@@ -320,7 +372,9 @@
+       "source_sha256": "c85a18a87266df26fa267cbbc3e4290083c27bd3c23304d5e337b95b82298c99",
+       "bytes": 424,
+       "recovered_local_path": "baseline/vercel_recovered/src/version133.mjs",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/view20-public/revolution-link.css",
+@@ -329,7 +383,9 @@
+       "source_sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24",
+       "bytes": 417,
+       "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution-link.css",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/view20-public/revolution.css",
+@@ -338,7 +394,9 @@
+       "source_sha256": "78c42edb7bc27a1770df3b0c4e32f9f2bfb46472c97876289de369ec5630bbfd",
+       "bytes": 2494,
+       "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution.css",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/view20-public/revolution.html",
+@@ -347,7 +405,9 @@
+       "source_sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30",
+       "bytes": 2693,
+       "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution.html",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/view20-public/revolution.js",
+@@ -356,7 +416,9 @@
+       "source_sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f",
+       "bytes": 11174,
+       "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution.js",
+-      "status": "source_bytes_verified_private_no_integration"
++      "status": "source_bytes_verified_private_no_integration",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/bot-src.1",
+@@ -365,7 +427,9 @@
+       "source_sha256": "0e066b8cc210c917727a606690475db0075aa1ecc8aae05d59a35c25a7fbecfd",
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/bot-src.1",
+-      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
++      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/bot-src.2",
+@@ -374,7 +438,9 @@
+       "source_sha256": "fe9d96d51756e84a34525d4e4ac0de8909c237f0b01881a4607bb55b7b6a74ed",
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/bot-src.2",
+-      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
++      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/account-chart.js",
+@@ -384,7 +450,9 @@
+       "bytes": 98,
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/api/account-chart.js",
+-      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/live.js",
+@@ -394,7 +462,9 @@
+       "bytes": 1281,
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/api/live.js",
+-      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/probe.js",
+@@ -404,7 +474,9 @@
+       "bytes": 1724,
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/api/probe.js",
+-      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/socket.js",
+@@ -414,7 +486,9 @@
+       "bytes": 2358,
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/api/socket.js",
+-      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/patch_ui.mjs",
+@@ -424,7 +498,9 @@
+       "bytes": 2653,
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/patch_ui.mjs",
+-      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/build-bot.mjs",
+@@ -433,7 +509,9 @@
+       "bytes": 3076,
+       "source_uid": "cb2628ce0d6dafe7f0a5805c23ac71df0ed1aa4b",
+       "status": "source_bytes_verified_private_no_integration",
+-      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json"
++      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     },
+     {
+       "path": "src/api/bot-download.js",
+@@ -442,7 +520,9 @@
+       "bytes": 1979,
+       "source_uid": "6aea26a19a9f84fd97286554d44a6d564264329e",
+       "status": "source_bytes_verified_private_no_integration",
+-      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json"
++      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
++      "source_classification": "complete",
++      "original_full_bytes": true
+     }
+   ],
+   "unresolved": [
+@@ -450,12 +530,12 @@
+     "Native .NET10/Windows/cTrader provider build and independent S00 gate",
+     "Original Engine 1.9 release bytes, release ZIP and .algo still unavailable",
+     "Binary reproducibility for historical Engine1.2.1 cannot be established from build logs alone",
+-    "23 of 59 original production website source inputs remain unavailable; complete eight-stage build blocked"
++    "21 of 59 original production website source inputs remain unavailable; complete eight-stage build blocked"
+   ],
+   "mapping_scope": "source inventory only; no product path amendment or integration authorization",
+   "current_s01_source_recovery_manifest": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+   "source_binding_current": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
+-  "current_work_id": "S01-RELAY-SNAPSHOT-GUARD",
++  "current_work_id": "S01-INVENTORY-CONSOLIDATION",
+   "current_recovered_source_count": 38,
+   "current_missing_source_paths": [
+     "src/api/bot14-download.js",
+@@ -480,7 +560,6 @@
+     "src/skin.7",
+     "src/skin.8"
+   ],
+-  "current_endpoint_binding": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
+   "generated_intermediate_outputs": [
+     {
+       "path": "lib/ctrader-readonly.mjs",
+@@ -533,44 +612,6 @@
+   ],
+   "generated_path_scope": "These paths are a separate intermediate-stage namespace, not additional provider input paths and not asserted final deployed bytes. The later skin stage rewrites the reader and account page.",
+   "current_capability_boundaries": "S01_CAPABILITY_MATRIX.json",
+-  "current_remote_view20_integration": {
+-    "work_id": "S01-REMOTE20-INTEGRATION-20261113",
+-    "baseline_archive": "baseline/prior_addon_build_audit.zip",
+-    "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+-    "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+-    "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+-    "new_production_inputs": 0,
+-    "available_production_inputs": 36,
+-    "missing_production_inputs": 23,
+-    "original_product_source_changed": false,
+-    "formal_status_changed": false,
+-    "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+-    "known_boundaries": [
+-      "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+-      "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+-      "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+-    ],
+-    "counterexamples_are_fixes": false,
+-    "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
+-    "not_verified": [
+-      "Actual SDK/cloud consistency or durability",
+-      "physical HTTP/websocket transport or browser rendering",
+-      "Windows DPAPI",
+-      "complete website build",
+-      "cTrader/native bot execution",
+-      "official S01 acceptance"
+-    ]
+-  },
+-  "current_bot_delivery_recovery": {
+-    "work_id": "S01-BOT-DELIVERY-RECOVERY",
+-    "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
+-    "sources_recovered": 38,
+-    "sources_missing": 21,
+-    "native_compilation": false,
+-    "website_full_build": false,
+-    "formal_acceptance": false,
+-    "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun"
+-  },
+   "private_live_encoding_proposal": {
+     "work_id": "S01-LIVE-ENCODING-FIX",
+     "kind": "private_patch_not_integrated",
+@@ -664,5 +705,51 @@
+       "Authenticated provenance of imported snapshot metadata",
+       "Native bot compile or startup"
+     ]
++  },
++  "current_inventory": {
++    "path": "evidence/S01/S01_CURRENT_INVENTORY.json",
++    "sha256": "0d7646c4983822adda5e8d0feaf2fa911dfdee5c759d9fbf5e620a962da8bbe5"
++  },
++  "execution_epoch_note": "All inherited runtime/current_*/private-proposal execution blocks are historical evidence, not executions of S01-INVENTORY-CONSOLIDATION. Current execution status lives only in fresh external execution.json; no native or full website build is claimed.",
++  "historical_work_records": {
++    "current_endpoint_binding": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++    "current_remote_view20_integration": {
++      "work_id": "S01-REMOTE20-INTEGRATION-20261113",
++      "baseline_archive": "baseline/prior_addon_build_audit.zip",
++      "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
++      "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
++      "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
++      "new_production_inputs": 0,
++      "available_production_inputs": 36,
++      "missing_production_inputs": 23,
++      "original_product_source_changed": false,
++      "formal_status_changed": false,
++      "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
++      "known_boundaries": [
++        "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
++        "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
++        "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
++      ],
++      "counterexamples_are_fixes": false,
++      "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
++      "not_verified": [
++        "Actual SDK/cloud consistency or durability",
++        "physical HTTP/websocket transport or browser rendering",
++        "Windows DPAPI",
++        "complete website build",
++        "cTrader/native bot execution",
++        "official S01 acceptance"
++      ]
++    },
++    "current_bot_delivery_recovery": {
++      "work_id": "S01-BOT-DELIVERY-RECOVERY",
++      "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
++      "sources_recovered": 38,
++      "sources_missing": 21,
++      "native_compilation": false,
++      "website_full_build": false,
++      "formal_acceptance": false,
++      "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun"
++    }
+   }
+ }
+--- a/evidence/S01/reproduction-report.json
++++ b/evidence/S01/reproduction-report.json
+@@ -1,6 +1,6 @@
+ {
+   "schema": 1,
+-  "generated_at_date": "2026-11-12",
++  "generated_at_date": "2026-11-13",
+   "product_source": "platform097",
+   "full_runtime": {
+     "version": "0.9.7",
+@@ -218,7 +218,7 @@
+   },
+   "website_full_build": {
+     "status": "blocked_capability",
+-    "reason": "31/59 source files recovered. Missing live-overlay.b64 prevents original first stage completing; skin.0-8 and build-bot*.mjs/build-ui.mjs remain incomplete.",
++    "reason": "38/59 original inputs complete;21 lack full bytes. Original first stage stops at live-overlay.b64. build-bot.mjs is recovered; build-bot14.mjs, build-bot15.mjs, build-ui.mjs and skin inputs remain unavailable. No successful full pipeline.",
+     "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+     "file_entries_listed": 59,
+     "build_stages": [
+@@ -234,8 +234,8 @@
+     "stage_sources_present_in_provider_tree": 8,
+     "stage_contents_incomplete": true,
+     "build_executed": false,
+-    "source_files_recovered_current": 36,
+-    "source_files_unavailable_current": 23,
++    "source_files_recovered_current": 38,
++    "source_files_unavailable_current": 21,
+     "derived_website_assets_verified": 5,
+     "partial_replay_log": "evidence/S01/S01_PARTIAL_WEBSITE_REPLAY.json",
+     "historical_build_readback": "evidence/S01/S01_HISTORICAL_VERCEL_BUILD_READBACK.json",
+@@ -247,11 +247,11 @@
+     "first_stage_attempt": "evidence/S01/S01_BUILD_BOUNDARY_CURRENT.json"
+   },
+   "limitations": [
+-    "19 original opt-in/platform-dependent cases skipped",
+-    "Unit and local HTTP/SQLite tests are not live trading acceptance",
+-    "Two interrupted orchestration attempts preserved, not counted as successes",
+-    "OS network namespace denied; LD_PRELOAD probe ineffective; cooperative JS guard effective only for audited Node paths",
+-    "No package install, no broker, no deployment, no native or demo bot start"
++    "No native binary build or complete website pipeline.",
++    "Source inventory completeness does not imply runtime capability or gate acceptance.",
++    "Inherited test numbers remain historical; no combined grand total.",
++    "Current external execution.json alone records new invocations.",
++    "No deployment, broker/account access, GitHub writes or official status change."
+   ],
+   "original_complete_runtime_097_historical_not_rerun": {
+     "tests": 983,
+@@ -312,97 +312,7 @@
+       "binary_build": false
+     }
+   },
+-  "evidence_epoch_note": "All previous current_* or original runtime execution blocks are historical. This work only runs the bot-delivery recovery, original download checks, targeted boundaries and relevant inventory checks.",
+-  "current_sourcebinding_executions": {
+-    "work_id": "S01-SOURCEBINDING-20261112",
+-    "source_packing": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
+-    "original_receiver_fixture_replay": "evidence/S01/S01_ORIGINAL_WIRE_REPLAY_CURRENT.json",
+-    "first_stage_attempt": "evidence/S01/S01_BUILD_BOUNDARY_CURRENT.json",
+-    "native_csharp_compilation": {
+-      "executed": false,
+-      "status": "blocked_capability",
+-      "cause": "dotnet not installed; official SDK metadata fetch failed due to DNS resolution; binary download unavailable in tools"
+-    },
+-    "native_csharp_test_runs": false,
+-    "new_csharp_fixture_generated": false,
+-    "full_website_pipeline": false,
+-    "old_test_totals_counted_as_new": false
+-  },
+-  "current_endpoint_recovery_executions": {
+-    "work_id": "S01-ENDPOINTRECOVERY-20261113",
+-    "source_reconstruction": "evidence/S01/S01_ENDPOINT_RECONSTRUCTION_CURRENT.json",
+-    "test_report": "evidence/S01/S01_ENDPOINT_EXECUTIONS_CURRENT.json",
+-    "full_website_pipeline": false,
+-    "native_websocket_protocol_tested": false,
+-    "provider_cache_blob_tested": false,
+-    "live_relay_original_available": false,
+-    "native_csharp_build_executed": false,
+-    "product_source_changed": false,
+-    "test_counts": "See fresh external closure report; internal execution report records prepackaging run only."
+-  },
+-  "current_addon_build_audit": {
+-    "work_id": "S01-ADDON-BUILD-AUDIT",
+-    "historical_endpoint_recovery_tests_rerun": false,
+-    "stage": "build-account-addon.mjs",
+-    "stage_build_executed": true,
+-    "verified_intermediate_outputs": 6,
+-    "entrypoint_import_executed": true,
+-    "original_tests_executed": 26,
+-    "prepack_source_evidence": "S01_ADDON_BUILD_EXECUTIONS_PREPACK.json",
+-    "fresh_endpackage_evidence": "external ExtremeLab_S01_AddonBuildAudit_Abschlusspruefung.json (only after actual completed run)",
+-    "new_tests_scope": "Original-stage failure/replay behavior and intermediate/final provenance separation",
+-    "final_website_build_status": "blocked_capability",
+-    "known_unfixed_build_limits": [
+-      "late addon errors can leave generated files",
+-      "out-of-order rerun of addon removes later account-page view link until later stage is repeated"
+-    ],
+-    "subsequent_reader_overwrite_observed": true,
+-    "counterexamples_are_not_product_fixes": true
+-  },
+-  "current_remote_view20_integration": {
+-    "work_id": "S01-REMOTE20-INTEGRATION-20261113",
+-    "baseline_archive": "baseline/prior_addon_build_audit.zip",
+-    "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+-    "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+-    "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+-    "new_production_inputs": 0,
+-    "available_production_inputs": 36,
+-    "missing_production_inputs": 23,
+-    "original_product_source_changed": false,
+-    "formal_status_changed": false,
+-    "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+-    "known_boundaries": [
+-      "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+-      "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+-      "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+-    ],
+-    "counterexamples_are_fixes": false,
+-    "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
+-    "not_verified": [
+-      "Actual SDK/cloud consistency or durability",
+-      "physical HTTP/websocket transport or browser rendering",
+-      "Windows DPAPI",
+-      "complete website build",
+-      "cTrader/native bot execution",
+-      "official S01 acceptance"
+-    ]
+-  },
+-  "current_bot_delivery_recovery": {
+-    "work_id": "S01-BOT-DELIVERY-RECOVERY",
+-    "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
+-    "sources_recovered": 38,
+-    "sources_missing": 21,
+-    "native_compilation": false,
+-    "website_full_build": false,
+-    "formal_acceptance": false,
+-    "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun",
+-    "evidence": "evidence/S01/S01_BOT_DELIVERY_PREPACK.json",
+-    "new_original_download_assertions": 15,
+-    "new_boundary_and_binding_methods": 13,
+-    "related_inventory_methods": 20,
+-    "execution_status": "prepack_passed_final_evidence_external",
+-    "sdk_fetch_refused": true
+-  },
++  "evidence_epoch_note": "All inherited runtime/current_*/private-proposal execution blocks are historical evidence, not executions of S01-INVENTORY-CONSOLIDATION. Current execution status lives only in fresh external execution.json; no native or full website build is claimed.",
+   "private_live_encoding_proposal": {
+     "work_id": "S01-LIVE-ENCODING-FIX",
+     "kind": "private_patch_not_integrated",
+@@ -496,5 +406,129 @@
+       "Authenticated provenance of imported snapshot metadata",
+       "Native bot compile or startup"
+     ]
++  },
++  "current_inventory": {
++    "path": "evidence/S01/S01_CURRENT_INVENTORY.json",
++    "sha256": "0d7646c4983822adda5e8d0feaf2fa911dfdee5c759d9fbf5e620a962da8bbe5"
++  },
++  "historical_execution_fields": [
++    "historical_work_records",
++    "full_runtime",
++    "baseline080",
++    "native_identity",
++    "historical_preacceptance_executions",
++    "private_live_encoding_proposal",
++    "private_relay_snapshot_guard",
++    "private_snapshot_consumer_guard"
++  ],
++  "historical_limitations": [
++    "19 original opt-in/platform-dependent cases skipped",
++    "Unit and local HTTP/SQLite tests are not live trading acceptance",
++    "Two interrupted orchestration attempts preserved, not counted as successes",
++    "OS network namespace denied; LD_PRELOAD probe ineffective; cooperative JS guard effective only for audited Node paths",
++    "No package install, no broker, no deployment, no native or demo bot start"
++  ],
++  "current_reproduction_scope": {
++    "work_id": "S01-INVENTORY-CONSOLIDATION",
++    "original_first_stage": "tools/check_build_boundary.py (real partial build, expected ENOENT; not success of full build)",
++    "source_provenance": "Existing source/inventory regression methods plus current consistency audit",
++    "not_repeated": [
++      "Original product behavior suites",
++      "Native compile",
++      "Browser functional tests",
++      "All previous fixes"
++    ]
++  },
++  "historical_work_records": {
++    "current_sourcebinding_executions": {
++      "work_id": "S01-SOURCEBINDING-20261112",
++      "source_packing": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
++      "original_receiver_fixture_replay": "evidence/S01/S01_ORIGINAL_WIRE_REPLAY_CURRENT.json",
++      "first_stage_attempt": "evidence/S01/S01_BUILD_BOUNDARY_CURRENT.json",
++      "native_csharp_compilation": {
++        "executed": false,
++        "status": "blocked_capability",
++        "cause": "dotnet not installed; official SDK metadata fetch failed due to DNS resolution; binary download unavailable in tools"
++      },
++      "native_csharp_test_runs": false,
++      "new_csharp_fixture_generated": false,
++      "full_website_pipeline": false,
++      "old_test_totals_counted_as_new": false
++    },
++    "current_endpoint_recovery_executions": {
++      "work_id": "S01-ENDPOINTRECOVERY-20261113",
++      "source_reconstruction": "evidence/S01/S01_ENDPOINT_RECONSTRUCTION_CURRENT.json",
++      "test_report": "evidence/S01/S01_ENDPOINT_EXECUTIONS_CURRENT.json",
++      "full_website_pipeline": false,
++      "native_websocket_protocol_tested": false,
++      "provider_cache_blob_tested": false,
++      "live_relay_original_available": false,
++      "native_csharp_build_executed": false,
++      "product_source_changed": false,
++      "test_counts": "See fresh external closure report; internal execution report records prepackaging run only."
++    },
++    "current_addon_build_audit": {
++      "work_id": "S01-ADDON-BUILD-AUDIT",
++      "historical_endpoint_recovery_tests_rerun": false,
++      "stage": "build-account-addon.mjs",
++      "stage_build_executed": true,
++      "verified_intermediate_outputs": 6,
++      "entrypoint_import_executed": true,
++      "original_tests_executed": 26,
++      "prepack_source_evidence": "S01_ADDON_BUILD_EXECUTIONS_PREPACK.json",
++      "fresh_endpackage_evidence": "external ExtremeLab_S01_AddonBuildAudit_Abschlusspruefung.json (only after actual completed run)",
++      "new_tests_scope": "Original-stage failure/replay behavior and intermediate/final provenance separation",
++      "final_website_build_status": "blocked_capability",
++      "known_unfixed_build_limits": [
++        "late addon errors can leave generated files",
++        "out-of-order rerun of addon removes later account-page view link until later stage is repeated"
++      ],
++      "subsequent_reader_overwrite_observed": true,
++      "counterexamples_are_not_product_fixes": true
++    },
++    "current_remote_view20_integration": {
++      "work_id": "S01-REMOTE20-INTEGRATION-20261113",
++      "baseline_archive": "baseline/prior_addon_build_audit.zip",
++      "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
++      "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
++      "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
++      "new_production_inputs": 0,
++      "available_production_inputs": 36,
++      "missing_production_inputs": 23,
++      "original_product_source_changed": false,
++      "formal_status_changed": false,
++      "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
++      "known_boundaries": [
++        "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
++        "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
++        "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
++      ],
++      "counterexamples_are_fixes": false,
++      "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
++      "not_verified": [
++        "Actual SDK/cloud consistency or durability",
++        "physical HTTP/websocket transport or browser rendering",
++        "Windows DPAPI",
++        "complete website build",
++        "cTrader/native bot execution",
++        "official S01 acceptance"
++      ]
++    },
++    "current_bot_delivery_recovery": {
++      "work_id": "S01-BOT-DELIVERY-RECOVERY",
++      "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
++      "sources_recovered": 38,
++      "sources_missing": 21,
++      "native_compilation": false,
++      "website_full_build": false,
++      "formal_acceptance": false,
++      "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun",
++      "evidence": "evidence/S01/S01_BOT_DELIVERY_PREPACK.json",
++      "new_original_download_assertions": 15,
++      "new_boundary_and_binding_methods": 13,
++      "related_inventory_methods": 20,
++      "execution_status": "prepack_passed_final_evidence_external",
++      "sdk_fetch_refused": true
++    }
+   }
+ }
+--- a/evidence/S01/version-crosswalk.md
++++ b/evidence/S01/version-crosswalk.md
+@@ -1,99 +1,32 @@
+-# S01 – Quellen- und Versionsabgleich
++# S01 – konsolidierter Quellen- und Versionsabgleich
+ 
+-## Aktueller Arbeitsstand: S01-ENDPOINTRECOVERY-20261113
++Arbeitskennung: **S01-INVENTORY-CONSOLIDATION** · 2026-11-13
+ 
+-| Bestand | Aktueller Nachweis | Abgrenzung |
++## Aktueller, nach Bytes abgeglichener Bestand
++
++| Bestand | Verifizierter Quellenstatus | Nicht daraus ableiten |
+ |---|---|---|
+-| Produktionswebsite, gebundenes Vercel-Deployment | 36 von 59 Eingabedateien vollständig lokal vorhanden; alle SHA1-UID- und SHA256-gebunden | 23 fehlen. Kein vollständiger Build oder Deployment. |
+-| Endpunkte / UI-Patch | Fünf zusätzliche Produktionsdateien komplett hashgebunden; originaler UI-Patch wird unverändert isoliert geprüft | Fehlende Relay-/Skinquellen bleiben fehlend; Handlerprüfungen verwenden explizite Dienst-/Transportattrappen. |
+-| Engine 1.2.1 | Originalarchiv 30/30 Manifestdateien geprüft; 12 originale C#-Inputs reproduzieren exakt alle drei Produktionssegmente und den vollständigen gepackten Sourcehash | Keine Engine1.9 und kein neuer nativer Binärbuild. |
+-| 1.2.1 Empfänger/Protokoll | Historisch im Vorgänger mit archivierter synthetischer Wire-Fixture über Loopback-TLS/SQLite geprüft; hier nicht erneut ausgeführt | Kein laufender C#-Sender, kein cTrader, kein Broker. |
+-| Engine 1.9 | Historischer Liefernachweis und Preview-Wrapper | Originalquellen und Releasebytes weiterhin nicht wiederhergestellt. |
+-| Native Engine 2.0.0-alpha.5 | Separater bekannter Quellstand und historische Source-Identity-Prüfung | Nicht mit1.2.1 oder1.9 gleichsetzen; in diesem Lauf nicht neu gebaut. |
+-| Trading Local 0.8.0 / Plattform0.9.7 | Bereits gefundene getrennte Archivstände;0.9.7 im Vorgänger auf passende Produktionssource-UIDs gescannt | Frühere Runtimezahlen bleiben historisch; keine neue Hub-Abnahme. |
+-| AccountLive1.3.4 / RemoteView20 | Bestehende unabhängige Website-Addons | Kein vollständiges Websiteprodukt. |
++| Website-Originalinputs | **38 vollständig, 5 nur Präfixzugriff, 16 nur Metadaten = 59**;21 Vollquellen fehlen. | Kein vollständiger Websitebuild. |
++| Engine 1.2.1 | 12 Originalquell-Dateien und drei produktionsidentische Botsegmente vorhanden; Quellzuordnung bereits belegt. | Kein neuer nativer Build, keine Gleichsetzung mit1.9/2.0. |
++| Pythonrelay 1.3.3-qa | Original aus Engine 1.2.1-Archiv und getrennte Vorschlagskopie vorhanden. | Nicht der fehlende Vercel-JavaScriptrelay. |
++| Journalansicht nach patch_ui | Originale Zwischenstufe und separater SnapshotConsumer-Vorschlag vorhanden. | Nicht der finale Skin-/Live-Verbraucher. |
++| Account-Addon | Sechs erzeugte Zwischendateien, historische Originaltests belegt. | Spätere Skin-Stufe überschreibt Reader; keine finale Readerabnahme. |
++| Dashboard polished-02 | Archiv/Brotli-Bundle geprüft; sechs Originalausgaben; kein Hash passt zu fehlenden Produktionsinputs. | Nicht als Skinbundle einsetzen oder als zusätzliche Eingabedateien zählen. |
++| Platform 0.9.7 | Vollarchiv vorhanden, ausgewählter privater Donor. | Keine Behauptung einer Liveinstallation. |
++| Engine 1.9 | Nur historische Preview-/Quellenmetadaten. | Keine originalen Releasebytes oder neue native Kompilation. |
+ 
+-Die ursprüngliche Website-`package.json` nennt1.3.1 und Node22.x. Die separate Hubplattform0.9.7 verlangt eine andere Laufzeit; diese Nummern sind kein gemeinsamer Produktrelease.
++## Ein verbindlicher aktueller Index
+ 
+-Die acht Namen in `build-release20.mjs` sind nur die oberste Ebene: das echte `build.mjs` importiert zusätzlich `build-bot15.mjs`. Fehlende Unterstufen dürfen nicht durch einen erfolgreichen Teilbuild verdeckt werden.
++`S01_CURRENT_INVENTORY.json` bindet alle aktuellen Angaben an Katalog, Originalbaum, Masterplan und unveränderten Gatecheckpoint. `baseline-lock.json`, `donor-map.json`, `path-map.json` und `reproduction-report.json` referenzieren genau diesen Index. Historische `current_*`-Blöcke bleiben explizit historisch.
+ 
+-## Historie und Freigaben
++## Regeln der Zuordnung
+ 
+-Vollständige unmittelbare Vorgängerfassung dieses Crosswalks im unveränderten `baseline/prior_s01_sourcebinding.zip`; ältere Fassung in `baseline/prior_s01_source_recovery.zip`. Frühere Node-/native Testzahlen werden nicht als in diesem Lauf neu ausgeführt gezählt. S00 und der kanonische Planstatus wurden nicht geändert. Die aktuelle Nutzeranweisung autorisiert die private S01-Arbeit, keine öffentliche Installation oder Brokeraktion.
++Eine vollständige Quelle ist kein Buildartefakt und kein geprüfter Laufzeitadapter. Eine Build-Zwischenstufe zählt nicht als zusätzlicher Produktionsinput. Ein privater Patch ist kein Produktionsoriginal. Providerpräfixe werden nie als Vollquelle abgelegt. Herkunft per Hash ist keine unabhängige Freigabe oder Nutzungsrechtserteilung.
+ 
++## Formale Grenzen
+ 
+-## S01-ADDON-BUILD-AUDIT – keine Versionsgleichsetzung
++Masterplan 1.1.0 und GATE_STATUS.json sind bytegleich. Deren älterer 28/31-Quellenzähler ist ein historischer Checkpoint; pending/Freigaben bleiben unverändert. S01-C02 erlaubt den Inventarabschluss trotz `blocked_capability`, aber dieses Paket erteilt keine unabhängige Abnahme. Entwicklungsstand: private lokale Verzeichnisfassung, kein installierter Git-Entwicklungszweig.
+ 
+-Das produktionsgebundene `account-addon.br` erzeugt sechs Quellen der Konto-Addon-Stufe 1.3.4. Alle sechs sind exakt mit dem Originalarchiv `ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip` (SHA-256 `6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b`) abgeglichen. Die 26 archivierten Originaltests wurden auf den tatsächlich neu erzeugten Modulen ausgeführt; Providerantworten bleiben synthetisch.
++## Historie
+ 
+-**Nicht der finale Website-Reader:** Der authentisiert gelesene, unvollständige `build-ui.mjs`-Präfix schreibt später `lib/ctrader-readonly.mjs` und ersetzt `public/konto-live.html`. Seine 1500 Bytes reichen für diesen statischen Schreibpfadnachweis, aber nicht zum Ausführen oder zum Prüfen der finalen Modulbytes. Die Skin-Payload ist auf SHA-256 `abab24849786a62c367d84913173868afd3e22ad3dcc16d68b9ee3698ed5d37e` gebunden und bleibt unzugänglich.
+-
+-Kein neuer 1.2.1-/1.9-/2.0-Botbuild, kein Beweis der endgültigen Produktionsoberfläche. Die Website-Eingabequellen bleiben 36/59; sechs Build-Erzeugnisse erhöhen diese Zahl nicht.
+-
+-
+-## Aktuelle private Ergänzung: S01-RemoteView20-Integration (13.11.2026)
+-
+-Die zehn Dateien des Original-Addons `integrations/vercel-view20` aus Plattform
+-0.9.7 stimmen bytegleich mit den bereits vorhandenen Produktionsinputs überein.
+-Die zugehörigen zehn Provider-SHA1-UIDs wurden erneut lesend abgeglichen.
+-Quelle, aktuelle SHA256 und exakte Pfadzuordnung: `S01_REMOTE20_SOURCE_BINDING.json`.
+-Die Plattform-/Botversion 0.9.7, die Ansichtsversion 2.0 und Engine 1.2.1/1.9
+-werden dadurch nicht zu einer einzigen Version gleichgesetzt.
+-
+-Neu geprüft wird der tatsächliche Produktions-API-Einstieg zusammen mit dem
+-originalen lokalen Journal und dem originalen Producer. Nur Transport und
+-Blob-/Cacheanbieter sind Attrappen; keine Cloud-, Browser- oder Brokerabnahme.
+-Die vorhandene nichtatomare Registry-/Cache-Grenze ist reproduziert, nicht
+-behoben. 36/59 vollständige Produktionsinputs bleiben unverändert; 23 fehlen.
+-Die bisherigen Addon-/Endpoint-Testzahlen sind historische Angaben.
+-
+-
+-## Aktuelle Ergänzung: S01 BotDeliveryRecovery
+-
+-38/59 Originalinputs sind vollständig hashgebunden, 21 fehlen. Das separate Release-1.2.1-Prüfarchiv liefert nach Entfernung genau einer reinen Kommentarzeile je Datei die vollständigen Produktionsbytes von `src/build-bot.mjs` und `src/api/bot-download.js`. Quelle: `S01_BOT_DELIVERY_SOURCE_BINDING.json`.
+-
+-Engine 1.2.1 bleibt von Engine 1.9, der 2.0-Ansicht und Plattform 0.9.7 getrennt. Originale Buildquellen sind jetzt lesbar, nicht jedoch ein neuer nativer Build nachgewiesen. Alle älteren Zahlen und `current_*`-Abschnitte sind historische Arbeitsstände; maßgeblich sind die jetzige Quellenliste und der neue externe Prüfbeleg.
+-
+-
+-## Private Quellenfehler-Korrektur: S01 LiveEncodingFix (13.11.2026)
+-
+-Originalbestand unverändert **38/59**, **21 fehlen**. Keine neue Source-ID und
+-keine neue Produktversionsnummer. `api/live.js` bleibt im Quellenbestand bytegleich.
+-Der separate Vorschlag `proposals/live-encoding/src/api/live.js` korrigiert die
+-belegte gzip-Aushandlung; er ist keine wiederhergestellte Produktionsquelle.
+-Original und Vorschlag sind in `proposal.json` einzeln hashgebunden. Tatsächlicher
+-HTTP-Transport wird jetzt lokal über Unix-Domain-Sockets geprüft; nur der fehlende
+-Relay bleibt synthetisch. Die historische Aussage «Transportattrappe» früherer
+-Tests wird dadurch nicht rückwirkend verändert. Keine vollständige Websiteabnahme.
+-
+-
+-## Privater RelaySnapshotGuard – aktuelle Ergänzung, 13.11.2026
+-
+-Die Engine-1.2.1-Archivlinie enthält `relay.py` mit Versionsantwort `1.3.3-qa`.
+-Sie ist von der älteren LiveBridge-1.3.2-Datei und vom fehlenden JavaScript-
+-Produktionsrelay zu trennen. Nur die 1.3.3-qa-Readprojektion wird in einer privaten
+-Vorschlagskopie geändert. Die unveränderten 24 StorageTests aus dem früheren
+-1.3.2-Archiv werden als Regressionen wiederverwendet; dies bezeichnet nicht die
+-getestete Runtime als Version 1.3.2. Die 38/59 Website-Inputs bleiben unverändert.
+-Bindungen und Grenzen: `S01_RELAY_SNAPSHOT_GUARD.json`.
+-
+-
+-## S01 SnapshotConsumerGuard – private Ergänzung vom 13.11.2026
+-
+-Der Verbraucher ist die archivierte Zwischenstufe `expected_patched_app.js`, bytegleich
+-mit dem Ergebnis der originalen `patch_ui.mjs`-Stufe. Der private Ein-Dateien-Vorschlag
+-sichert deren Journalimport gegen strukturell ungültige Kerzenpayloads ab und
+-erhält normalisierte Snapshotdiagnosen beim Analyseexport/-reimport. Er ist NICHT
+-der fehlende finale Skin-/Live-Verbraucher und ersetzt `lib/relay.mjs` nicht.
+-
+-Die vorhandene Pythonrelay-Vorschlagsdatei bleibt unverändert. Ihre echte SQLite-
+-Projektion speist den tatsächlichen archivierten Importpfad in Chromium; keine
+-nachgebaute UI. Das zeigt Kompatibilität am Importinterface, keine bestehende
+-produktive Live-Verbindung. Produktionsinputs unverändert 38/59; 21 blockiert.
+-
+-Originalrenderer SHA256: `54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127`
+-Vorschlag SHA256: `8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af`
+-
+-Historische Testzahlen bleiben historische Angaben. Die neue Endprüfung umfasst
+-16 neue Methoden und 20 relevante Inventarmethoden; nur das externe Endprotokoll
+-belegt deren tatsächliches Ergebnis. Keine Gateänderung oder Freigabe.
++Die vollständige vorherige Versionschronik steht unverändert unter `baseline/inventory_checkpoint/evidence/S01/version-crosswalk.md`. Vorherige Tests werden nicht als neu gezählt. Die drei Vorschläge und ihre Originalbindungen stehen weiterhin unverändert unter `proposals/`.
+--- a/vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json
++++ b/vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json
+@@ -25,7 +25,9 @@
+         "library_file_id": "file_00000000397081f4a92e8651821ed99a"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/account-chart.js",
+@@ -45,7 +47,9 @@
+         "donor_archive_sha256": null,
+         "donor_member": null,
+         "transformation": null
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/account-live.js",
+@@ -63,14 +67,16 @@
+         "library_file_id": "file_00000000397081f4a92e8651821ed99a"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/bot-download.js",
+       "status": "byte_recovered",
+       "source_uid_sha1": "6aea26a19a9f84fd97286554d44a6d564264329e",
+       "bytes_present": true,
+-      "classification": "blocked_capability",
++      "classification": "verified_source_not_integration_approved",
+       "prior_connector_retrieval_status": "provider_listing_only",
+       "source_availability": "local_full_bytes_sha1_sha256_verified",
+       "sha1_verified": true,
+@@ -83,7 +89,9 @@
+         "member": "ExtremeLab_Release_1_2_1/deployment/bot-download.js",
+         "library_file_id": "file_000000004b2c8210b206fbdfb885d0a8",
+         "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json"
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/bot14-download.js",
+@@ -92,7 +100,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/bot15-download.js",
+@@ -101,7 +111,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/desk.js",
+@@ -119,7 +131,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/live.js",
+@@ -139,7 +153,9 @@
+         "donor_archive_sha256": null,
+         "donor_member": null,
+         "transformation": null
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/probe.js",
+@@ -159,7 +175,9 @@
+         "donor_archive_sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+         "donor_member": "ExtremeLab_Live_Bridge_1_3_2/web/probe.js",
+         "transformation": "compact-lines-preserve-export"
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/revolution.js",
+@@ -177,7 +195,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/api/socket.js",
+@@ -197,7 +217,9 @@
+         "donor_archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+         "donor_member": "ExtremeLab_Online_1_3/api/socket.js",
+         "transformation": null
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/assets.0",
+@@ -215,7 +237,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/assets.1",
+@@ -233,7 +257,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/assets.2",
+@@ -251,7 +277,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/assets.3",
+@@ -269,7 +297,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/bot-src.0",
+@@ -277,7 +307,7 @@
+       "source_uid_sha1": "c47e00bbee5c0ca058b82f22551fd889bd2c88e4",
+       "bytes_present": true,
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "complete_bytes",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
+       "bytes": 10500,
+       "sha256": "e2036b08e1760ee56a3511b4efa63f5ba06da7b8b6e2e6cbf0b6ea2faf892548",
+       "sha1_verified": true,
+@@ -290,7 +320,9 @@
+         "full_packed_payload_sha256": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+         "binding_proof": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
+       },
+-      "previously_not_recovered": true
++      "previously_not_recovered": true,
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/bot-src.1",
+@@ -298,7 +330,7 @@
+       "source_uid_sha1": "2af389e11c004cb94b600bd1b095f769c73b2435",
+       "bytes_present": true,
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "complete_bytes",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
+       "bytes": 10500,
+       "sha256": "0e066b8cc210c917727a606690475db0075aa1ecc8aae05d59a35c25a7fbecfd",
+       "sha1_verified": true,
+@@ -311,7 +343,9 @@
+         "full_packed_payload_sha256": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+         "binding_proof": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
+       },
+-      "previously_not_recovered": true
++      "previously_not_recovered": true,
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/bot-src.2",
+@@ -319,7 +353,7 @@
+       "source_uid_sha1": "30b8b6e95fe03e4b798bd61768608deef0d126da",
+       "bytes_present": true,
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "complete_bytes",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
+       "bytes": 10406,
+       "sha256": "fe9d96d51756e84a34525d4e4ac0de8909c237f0b01881a4607bb55b7b6a74ed",
+       "sha1_verified": true,
+@@ -332,7 +366,9 @@
+         "full_packed_payload_sha256": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+         "binding_proof": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
+       },
+-      "previously_not_recovered": true
++      "previously_not_recovered": true,
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-account-addon.mjs",
+@@ -350,14 +386,16 @@
+         "library_file_id": "file_00000000397081f4a92e8651821ed99a"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-bot.mjs",
+       "status": "byte_recovered",
+       "source_uid_sha1": "cb2628ce0d6dafe7f0a5805c23ac71df0ed1aa4b",
+       "bytes_present": true,
+-      "classification": "blocked_capability",
++      "classification": "verified_source_not_integration_approved",
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+       "source_availability": "local_full_bytes_sha1_sha256_verified",
+       "sha1_verified": true,
+@@ -370,7 +408,9 @@
+         "member": "ExtremeLab_Release_1_2_1/deployment/build-bot.mjs",
+         "library_file_id": "file_000000004b2c8210b206fbdfb885d0a8",
+         "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json"
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-bot14.mjs",
+@@ -379,7 +419,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "prefix_only_in_connector"
++      "source_availability": "prefix_only_in_connector",
++      "source_classification": "prefix_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-bot15.mjs",
+@@ -388,7 +430,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-release20.mjs",
+@@ -406,7 +450,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-revolution20.mjs",
+@@ -424,7 +470,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build-ui.mjs",
+@@ -433,7 +481,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "prefix_only_in_connector"
++      "source_availability": "prefix_only_in_connector",
++      "source_classification": "prefix_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/build.mjs",
+@@ -448,7 +498,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/lib/http.mjs",
+@@ -466,7 +518,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/lib/projection.mjs",
+@@ -484,7 +538,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/lib/relay.mjs",
+@@ -493,7 +549,10 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "prefix_only_in_connector",
++      "source_classification": "prefix_only",
++      "current_access_evidence": "evidence/S01/S01_INVENTORY_SOURCE_ACCESS.json#/source_read",
++      "source_integrated": false
+     },
+     {
+       "path": "src/lib/security.mjs",
+@@ -511,7 +570,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/lib/service.mjs",
+@@ -529,7 +590,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/lib/storage.mjs",
+@@ -547,7 +610,9 @@
+         "library_file_id": "file_00000000e33c8211b3cb8d6037021b17"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/live-overlay.b64",
+@@ -556,7 +621,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "prefix_only_in_connector"
++      "source_availability": "prefix_only_in_connector",
++      "source_classification": "prefix_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/package.json",
+@@ -571,7 +638,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/patch_ui.mjs",
+@@ -591,7 +660,9 @@
+         "donor_archive_sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+         "donor_member": "ExtremeLab_Autotest_20261106/patched/patch_ui.mjs",
+         "transformation": "remove-comment"
+-      }
++      },
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/postbuild-132.mjs",
+@@ -606,7 +677,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/bot-download.js",
+@@ -621,7 +694,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/bot.html",
+@@ -636,7 +711,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/bot14.html",
+@@ -645,7 +722,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/bot14.js",
+@@ -654,7 +733,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/bot15.html",
+@@ -663,7 +744,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/bot15.js",
+@@ -672,7 +755,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/connection-check.js",
+@@ -681,7 +766,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/public/connection.html",
+@@ -696,7 +783,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.0",
+@@ -705,7 +794,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "content_response_truncated_prefix_only",
+-      "source_availability": "prefix_only_in_connector"
++      "source_availability": "prefix_only_in_connector",
++      "source_classification": "prefix_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.1",
+@@ -714,7 +805,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.2",
+@@ -723,7 +816,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.3",
+@@ -732,7 +827,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.4",
+@@ -741,7 +838,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.5",
+@@ -750,7 +849,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.6",
+@@ -759,7 +860,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.7",
+@@ -768,7 +871,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/skin.8",
+@@ -777,7 +882,9 @@
+       "bytes_present": false,
+       "classification": "blocked_capability",
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "source_availability": "provider_metadata_only",
++      "source_classification": "missing_bytes_metadata_only",
++      "source_integrated": false
+     },
+     {
+       "path": "src/vercel.json",
+@@ -792,7 +899,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/version133.mjs",
+@@ -807,7 +916,9 @@
+         "source": "Vercel connected content response; transferred locally with byte-hash verification"
+       },
+       "prior_connector_retrieval_status": "content_read_complete_not_materialized",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/view20-public/revolution-link.css",
+@@ -825,7 +936,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/view20-public/revolution.css",
+@@ -843,7 +956,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/view20-public/revolution.html",
+@@ -861,7 +976,9 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     },
+     {
+       "path": "src/view20-public/revolution.js",
+@@ -879,10 +996,14 @@
+         "library_file_id": "file_000000001bc481f5af5b162ef4838f27"
+       },
+       "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "local_full_bytes_sha1_sha256_verified"
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "source_classification": "complete",
++      "source_integrated": false
+     }
+   ],
+   "work_id": "S01-BOT-DELIVERY-RECOVERY",
+   "verified_at_utc": "2026-11-13T09:34:33.801836+00:00",
+-  "recovery_note": "Two new originals matched in full after removal of standalone comment lines from original release audit; previous 36 sources unchanged. No full website or native binary build claimed."
++  "recovery_note": "Two new originals matched in full after removal of standalone comment lines from original release audit; previous 36 sources unchanged. No full website or native binary build claimed.",
++  "inventory_work_id": "S01-INVENTORY-CONSOLIDATION",
++  "availability_note": "Source completeness is independent of integration capability. Prefix-only entries remain not_recovered and no partial file is placed in the original source tree."
+ }

@@ -1,0 +1,51 @@
+{
+  "scope": "Four visible original archives, exact raw file bytes against 21 missing input SHA1 IDs. Library and external search partial, not exhaustive.",
+  "archives": [
+    {
+      "archive": "Dashboard_Design_Motion_Quellcode_und_Tests.zip",
+      "sha256": "375d8969ad1c4f9a1f2c28daebde7759a2973f076a4f0e19dd11745d04e6e689",
+      "bytes": 1716986,
+      "zip_crc_valid": true,
+      "file_members_read": 33,
+      "new_complete_source_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Autotest_20261106.zip",
+      "sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+      "bytes": 2535352,
+      "zip_crc_valid": true,
+      "file_members_read": 45,
+      "new_complete_source_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+      "bytes": 32852,
+      "zip_crc_valid": true,
+      "file_members_read": 17,
+      "new_complete_source_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "bytes": 703909,
+      "zip_crc_valid": true,
+      "file_members_read": 27,
+      "new_complete_source_matches": []
+    }
+  ],
+  "fresh_recovered_inputs": 0,
+  "current_original_inputs": 38,
+  "current_missing_inputs": 21,
+  "vercel_read": {
+    "deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "team": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+    "source_tree_paths": 59,
+    "build_ui_uid": "50fb11eea21558d605a056880beac3dcd2a03f4e",
+    "content_result": "truncated=true",
+    "omitted_string_chars": 228,
+    "complete_source_recovered": false
+  },
+  "public_asset_attempts": "No source bytes retrieved: tool fetch failed and container DNS resolution failed. No authentication bypass or share URL created.",
+  "conclusion": "Do not retry identical truncated reads as progress; continued on previously documented original HTTP-ENCODING-Q0 source error."
+}

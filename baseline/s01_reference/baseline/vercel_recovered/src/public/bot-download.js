@@ -1,0 +1,6 @@
+'use strict';
+(async()=>{const $=id=>document.getElementById(id);let valid=false,owner=false;
+try{const r=await fetch('/api/bot-download?action=manifest',{cache:'no-store'});if(!r.ok)throw Error('Build-Datei nicht erreichbar');const m=await r.json();valid=m.buildSucceeded===true&&m.filename==='ExtremeLabReady_1_2_1_Kandidat.algo';$('buildState').textContent=valid?'Build-Datei vorhanden und serverseitig auf Integrität geprüft.':'Build noch nicht bestätigt.';$('manifest').textContent='Version: '+m.version+'\nGrösse: '+m.bytes+' Bytes\nSHA-256: '+m.sha256+'\nCloud-Laufzeit geprüft: '+(m.cloudRuntimeVerified?'Ja':'Nein')+'\nOnline-Sender voreingestellt: '+(m.onlineSenderDefault?'Ein':'Aus');}catch(e){$('buildState').textContent=e.message;}
+try{const r=await fetch('/api/desk?action=session',{credentials:'same-origin',cache:'no-store'});owner=r.ok;$('authState').textContent=owner?'Angemeldet. Der Download ist freigegeben.':'Zuerst im Decision Desk anmelden; der Download bleibt geschützt.';}catch{$('authState').textContent='Anmeldung derzeit nicht prüfbar.';}
+$('download').hidden=!(valid&&owner);
+})();

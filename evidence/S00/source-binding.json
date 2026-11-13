@@ -1,0 +1,593 @@
+{
+  "tested_bootstrap_commit": "d97d0f7e603ffe1f6ad3128b1755c15a4596073d",
+  "development_commit_before_proofs": "ae0a493fa31f31b681b4e732d7eee76ce66aee56",
+  "identical_bootstrap_files": [
+    {
+      "path": ".github/workflows/plan-gates.yml",
+      "sha256": "8e01f1fd0663ed76407980795059c8df16cf20ec69b5f2a53953bf21ef17083c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1501bf8d0de062d053e04347cb29f7dbc00d890dec6eb856e647735835ed5e95"
+    },
+    {
+      "path": "assets/design/approved/A01-r04.png",
+      "sha256": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0"
+    },
+    {
+      "path": "assets/design/approved/A02-r03.png",
+      "sha256": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029"
+    },
+    {
+      "path": "assets/design/approved/A03-r03.png",
+      "sha256": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64"
+    },
+    {
+      "path": "assets/design/approved/A04-r03.png",
+      "sha256": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9"
+    },
+    {
+      "path": "assets/design/approved/A05-r03.png",
+      "sha256": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4"
+    },
+    {
+      "path": "docs/plan/S00_CANDIDATE_CHECKS.md",
+      "sha256": "417f35edd8c44ccd1f54c73c90f97540aa68cdd8c297a8e5021f56432b908eca"
+    },
+    {
+      "path": "docs/plan/S00_RUNBOOK.md",
+      "sha256": "a5055e611916e110ac75d471266289fbb2c13b9a4763ecf5a3b968dedeccecea"
+    },
+    {
+      "path": "evidence/S00/ci-negative-tests.json",
+      "sha256": "04cd23ec795e10f280fa21e7bbfd315532a6e5a60511c2a68f5f4382b918efe0"
+    },
+    {
+      "path": "evidence/S00/governance.json",
+      "sha256": "f638ae0b7de623082e7dffa7fac1a4caf0ae68464fca5d834b5e0acfbc8d4c79"
+    },
+    {
+      "path": "evidence/S00/handoff.md",
+      "sha256": "3ff6d1aa94ec76dd954bfd7fd5788dc1b6c133dd4b06d52136566e2e332e4965"
+    },
+    {
+      "path": "governance/ci-policy.json",
+      "sha256": "4ce251ee21a6d236175e7d91505065a7d27af202767e483df4e7945c14173ddc"
+    },
+    {
+      "path": "governance/masterplan/MASTERPLAN.md",
+      "sha256": "a5055e611916e110ac75d471266289fbb2c13b9a4763ecf5a3b968dedeccecea"
+    },
+    {
+      "path": "governance/masterplan/MASTERPLAN_KOMPLETT.md",
+      "sha256": "ec357af834e3d55708df33eb674fbebf1739e7876563e97e9b4fd8e34a0e5c7c"
+    },
+    {
+      "path": "governance/masterplan/README.md",
+      "sha256": "a5055e611916e110ac75d471266289fbb2c13b9a4763ecf5a3b968dedeccecea"
+    },
+    {
+      "path": "governance/masterplan/RELEASE_NOTES.md",
+      "sha256": "eda480ed5a1f30981819d265f35cfa6b2883249a8b51f0996ad296da74bd3153"
+    },
+    {
+      "path": "governance/masterplan/assets/design/approved/A01-r04.png",
+      "sha256": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0"
+    },
+    {
+      "path": "governance/masterplan/assets/design/approved/A02-r03.png",
+      "sha256": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029"
+    },
+    {
+      "path": "governance/masterplan/assets/design/approved/A03-r03.png",
+      "sha256": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64"
+    },
+    {
+      "path": "governance/masterplan/assets/design/approved/A04-r03.png",
+      "sha256": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9"
+    },
+    {
+      "path": "governance/masterplan/assets/design/approved/A05-r03.png",
+      "sha256": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4"
+    },
+    {
+      "path": "governance/masterplan/audits/bot_audit.md",
+      "sha256": "86e6c15cb26ff4c8198f5f1b37f6d2b9b0d1558a142fb8065b2a391b47e3b8ed"
+    },
+    {
+      "path": "governance/masterplan/audits/control_review_v1_1.md",
+      "sha256": "f3bb7dd499a291a8d53785e0ee44fd300bf16836fa15bbdccaeedbd6de91e419"
+    },
+    {
+      "path": "governance/masterplan/audits/documents_audit.md",
+      "sha256": "5f83442f6a93db71f8c55230234bce4cc5d216f578ca70903892a7d7048a12bf"
+    },
+    {
+      "path": "governance/masterplan/audits/final_plan_review.md",
+      "sha256": "b02df601cef309eb7a70ec099b4700d7ff72de6b78d4bb22c579b47a01742d1c"
+    },
+    {
+      "path": "governance/masterplan/audits/independent_draft_review.md",
+      "sha256": "573e4f59f7d2b1e0af16fc09398c434fd846ab6c3eeed0855d0ba346aebe0fde"
+    },
+    {
+      "path": "governance/masterplan/audits/platform_audit.md",
+      "sha256": "816f7bda05ca455bf2bf0bac03deec03898ee8da8254a7997a0cad83d17590d0"
+    },
+    {
+      "path": "governance/masterplan/audits/website_audit.md",
+      "sha256": "6f97b9d82ee46dd5ae75933a3e895b80bc0ff064695405a3269b128e07663bf5"
+    },
+    {
+      "path": "governance/masterplan/contracts/README.md",
+      "sha256": "99c5d83e4bfc710e31490c3aaca79d54faacedb4d60d546c1b5eac1acb218886"
+    },
+    {
+      "path": "governance/masterplan/control/README_DE.md",
+      "sha256": "a5055e611916e110ac75d471266289fbb2c13b9a4763ecf5a3b968dedeccecea"
+    },
+    {
+      "path": "governance/masterplan/control/plan.lock.json",
+      "sha256": "d0b5df2e1298eb716197c6960de27112060bf2e5a0144dcfb8be84fada3c9361"
+    },
+    {
+      "path": "governance/masterplan/control/planctl.py",
+      "sha256": "a595bff55fe744e508493950e2ce3f85a15754b77855c1b9a18c63a469cbde48"
+    },
+    {
+      "path": "governance/masterplan/control/state.json",
+      "sha256": "e129cd1024041c6803cc0358e6d23067a889c7b236fea8b54866e32fb5154228"
+    },
+    {
+      "path": "governance/masterplan/control/test_planctl.py",
+      "sha256": "c88bd3158d69530a7e5bd54b009bde331d4c761c7eb050590b91065e7f896575"
+    },
+    {
+      "path": "governance/masterplan/control/validator_test_output.txt",
+      "sha256": "94c62813145b1619d419aeb5eab99ea0a0e9b592bddcfd6ea6a5e50cadc52852"
+    },
+    {
+      "path": "governance/masterplan/control/validator_test_report.json",
+      "sha256": "92a2e0357c7b0a1f16652e0ef820d3ccb95ca0f0d727c8de0ec5638ef0e496d9"
+    },
+    {
+      "path": "governance/masterplan/design/DESIGNENTSCHEIDUNGEN.md",
+      "sha256": "e22bd0f3189de320d63ffb62b9a2c79ee8ce31dc31520bfcdecce02d09bd90d3"
+    },
+    {
+      "path": "governance/masterplan/design/UX_MOTION_SPEC.md",
+      "sha256": "4081b06fb93223b9a50a1d82270a29735c81c0714d86a7904d460c3483843aa5"
+    },
+    {
+      "path": "governance/masterplan/design/approval.json",
+      "sha256": "f8ab1f76c7d5a61ea11a334561019bdd2ac2be04a7a1dd7ed009275d5328de3e"
+    },
+    {
+      "path": "governance/masterplan/design/reference_inventory.json",
+      "sha256": "4941fdf744cbe169c2621ee0d8688c6dd4e56585bcc950bc1ebd4df3ac317cdc"
+    },
+    {
+      "path": "governance/masterplan/design/visual_acceptance_TEMPLATE.json",
+      "sha256": "b766da254b260218a61e5ce8da6ea186173f6f187822c1744727a6862d35024f"
+    },
+    {
+      "path": "governance/masterplan/docs/design_step_changes.md",
+      "sha256": "3020326abf9e9e63bc4ce00ba7446ca4522580bccbdc24fb2af4091e46b201a4"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-01.jpg",
+      "sha256": "1e3aa62602362415aac39c8cf4773eda9e3ffe5d7b42591090307b252015dc0e"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-02.jpg",
+      "sha256": "60dc5176a0d5f9d20ce524c42c7003c950744b0065dd0a15eff49feffca7f5a0"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-03.jpg",
+      "sha256": "127f69130a104bbb35b66ca0257cc5cd4dbf4d3d5302c59dddd71a122b00ea3a"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-04.jpg",
+      "sha256": "e8c7554df8562e8278a92fb28e702ffddb30f965a354a297c3904aca2eb0da86"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-05.jpg",
+      "sha256": "14762f5a4a6964aaab7d60a58462e571124fec8327abe3b23bf19b86fb75e154"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-06.jpg",
+      "sha256": "bfcc980672dbdd5b78eaa992fcd9f70bf4ba2a3b8ca629ba62556208e3575b80"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-07.jpg",
+      "sha256": "634544ec8012a13feabd746ebfa8692609af1b574b597a804776033805526134"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-qa/contact-08.jpg",
+      "sha256": "4d35410b7cbb1908aa2eadda504e9a06d624ae579c8599d4c9e69a653e96a0a3"
+    },
+    {
+      "path": "governance/masterplan/evidence/pdf-render-report.json",
+      "sha256": "c87a1ba4ffbdc0529e0302021d59ce2388677fd2019fc5c111f24e0129959e03"
+    },
+    {
+      "path": "governance/masterplan/evidence/plan_package_test_output.txt",
+      "sha256": "641c43beb36a8cd6126a89dbd1547e72717edd2ef1c5257136fb2489df20b64b"
+    },
+    {
+      "path": "governance/masterplan/evidence/plan_package_verification.json",
+      "sha256": "3f20b9a4fe67666d2e71ca4e2e582f297c123490568817635ea48cbfe65a21f8"
+    },
+    {
+      "path": "governance/masterplan/governance/amendments/AM-001-design-after-technology.json",
+      "sha256": "8218352868fa19a745c5c882703bc3f3229828645b236a2336a63d0b7acc9923"
+    },
+    {
+      "path": "governance/masterplan/governance/amendments/AM-002-test-contract-changes.json",
+      "sha256": "aa638a6497f59e63ed44fc4818669c875baab0bc6237a43a30ff53c93a33bebb"
+    },
+    {
+      "path": "governance/masterplan/governance/amendments/AM-002-user-removes-reviewer.json",
+      "sha256": "3028dd215baddf489c0e4107b44f4a4c8d802950f54803c742b35eab2a331a81"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/HISTORY.md",
+      "sha256": "2b57087aa482be02684fc3374b1366b4de4d29e292ee8dcecde128925d578b70"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/README.md",
+      "sha256": "fac9dccb10f7497064244c3e1dded23f4fcd4b7ce3c23a46c1090e6539084c27"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/RELEASE_NOTES.md",
+      "sha256": "34a80e1f2fbac498feea7a107eba12ce5b74413aa6d3ed052d2c46dd8c7e21bc"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/audits/final_plan_review.md",
+      "sha256": "7e847e04d53fdc3a024f61e37534f50f87e97f0593b91231017aacf9571bc2a7"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/audits/independent_draft_review.md",
+      "sha256": "6da65abbe2082f39f7365e4aa8a06c846c680687ba244cc54267f8d6f137879f"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/control/plan.lock.json",
+      "sha256": "8971ab70021e7aa92395ad64841556824ac56aa0559ecf6484f46056bda3dbc8"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/evidence/pdf-render-report.json",
+      "sha256": "2408ca917be160467df25898be2ab31791470d882d86828ed8b3ede1c3dbd5f7"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/evidence/plan_package_test_output.txt",
+      "sha256": "23d5455b4315db6a539ded8078b31930442a4df0c7d3e7fc321dcf16a6f8efe9"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/evidence/plan_package_verification.json",
+      "sha256": "e6e41d0bb712ab7bb90699a3a9d75d0a5d6ec869a1773b4478f545debc3c6bcc"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_0/plan.json",
+      "sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/MASTERPLAN.pdf",
+      "sha256": "157eeabbb08c2b05576462dcf2029ac2014f291b095f2431aa7bbcc1e96ea50c"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/PACKAGE_MANIFEST.json",
+      "sha256": "dde1a9b5263b236d3fbd973d71fcaf57c6fe22ac07b9f5e05f18910338db992d"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/control/plan.lock.json",
+      "sha256": "b7f349c7d969ecf841e51424abc7b04bd6a599a1721098137735b30681ae924e"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/control/planctl.py",
+      "sha256": "3c6a73afb93225373806725d3e5fd85c67457a1c0305b11cac719d44358d3319"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/control/state.json",
+      "sha256": "9f8adf6b61a84d2a0942903eb9dfb37a5114253ab073e845d7c25868b9a30827"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/evidence/independent-review.json",
+      "sha256": "7619fcb2baa1d58d8880e168848ba95b17102f5f18c6af953fffe18d2216f11a"
+    },
+    {
+      "path": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/plan.json",
+      "sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d"
+    },
+    {
+      "path": "governance/masterplan/plan.json",
+      "sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5"
+    },
+    {
+      "path": "governance/masterplan/references/card_index.json",
+      "sha256": "577e83651b377a1034c60d4abbb7ac4b2e35612f95b802e438687e3790077faf"
+    },
+    {
+      "path": "governance/masterplan/references/chapter_index.json",
+      "sha256": "5d1ff7ddc96dce71abd31e4b6c604a50bdb647e7d361853bfb5595c5efd20c40"
+    },
+    {
+      "path": "governance/masterplan/references/extraction_coverage.json",
+      "sha256": "f59b0d46b18510cf5e1aa6a1f55401e77f8399fc629bf8505b2ca1c4b961aec6"
+    },
+    {
+      "path": "governance/masterplan/references/input_inventory.json",
+      "sha256": "ae739879fbf2bce7547b57d0b7eab61885e7a1c05e726c34ad384d6bc1cd6c65"
+    },
+    {
+      "path": "governance/masterplan/references/legacy_ap_crosswalk.json",
+      "sha256": "f646133803aae4f9e0d1fc9289d7834c9f91ddfda47c032738967ad6c3262dfd"
+    },
+    {
+      "path": "governance/masterplan/references/legacy_ap_crosswalk.md",
+      "sha256": "867b4b1b4e39d0a3f0ae6e9d2acc023b8324e13f8921407202a004cc25a790c3"
+    },
+    {
+      "path": "governance/masterplan/references/version_comparison.json",
+      "sha256": "928e2bf54f2dc07bcff0adc8c018867074d82e7f96684b1a6a1f50ca254ad53f"
+    },
+    {
+      "path": "governance/masterplan/references/website_source_observation.json",
+      "sha256": "101e6722002ae615d29641a6b608c47da8a1dbbb4d56dedc95b7bdef5d69bced"
+    },
+    {
+      "path": "governance/masterplan/steps/S00.md",
+      "sha256": "304b98ef9a106cbbfc1c5e5fb1a95416ae842d033cf6a319279e59688f5da164"
+    },
+    {
+      "path": "governance/masterplan/steps/S01.md",
+      "sha256": "cb5a23186b64b647d497f075dc43f09f6bd44b65649da08dc07d58a0efe53ad0"
+    },
+    {
+      "path": "governance/masterplan/steps/S02.md",
+      "sha256": "cc96fb37d1af974d14ac60f331621e1f1d804c1b97bba4572f01a6fef9e05ee4"
+    },
+    {
+      "path": "governance/masterplan/steps/S03.md",
+      "sha256": "164a7ee0e9c21c266f7163b440cfe6069dd390911da049ad2370c7ff70f637e4"
+    },
+    {
+      "path": "governance/masterplan/steps/S04.md",
+      "sha256": "6c049253ca34844f2cfd88c5091826fef29e8c4981aa3bbf9efbeb2fe655fc1c"
+    },
+    {
+      "path": "governance/masterplan/steps/S05.md",
+      "sha256": "a5b5af7c76bfbb87036eb32416ab1ce797fca03a64207705b7ef9593e20defc3"
+    },
+    {
+      "path": "governance/masterplan/steps/S06.md",
+      "sha256": "51330e0513a9ddfb67be9a7ebf2b0aa946c1594cc0a4b8df87753c8cb24773a0"
+    },
+    {
+      "path": "governance/masterplan/steps/S07.md",
+      "sha256": "1b7d224f9079d9c023656997ffbac845935b86e8e41a96178609633b13892cd3"
+    },
+    {
+      "path": "governance/masterplan/steps/S08.md",
+      "sha256": "e0a568ce06c57d74f3f4f1f8c7e7d5b4170038db64bebd9b14ca944c6bd7ae9d"
+    },
+    {
+      "path": "governance/masterplan/steps/S09.md",
+      "sha256": "b171b8218ae5327ca6152d17a023c92291caad5d9f65012ea6eff02316876269"
+    },
+    {
+      "path": "governance/masterplan/steps/S10.md",
+      "sha256": "e3206805e7dd5779e89f704d0a8f09396827cc7699453919e6ccb5c7db85f43e"
+    },
+    {
+      "path": "governance/masterplan/steps/S11.md",
+      "sha256": "b3a3adc66774ae92420eaccaedc86da65159f4c5cad446a3c3973838373dc657"
+    },
+    {
+      "path": "governance/masterplan/steps/S12.md",
+      "sha256": "3939d48cbceec187bc50bf83dc602fca983028d95abcf589360eeda8f48fb55e"
+    },
+    {
+      "path": "governance/masterplan/steps/S13.md",
+      "sha256": "57970bc482a3aa8a2732df7383caf5894252db18dcd94eb572e98e2003da66f6"
+    },
+    {
+      "path": "governance/masterplan/steps/S14.md",
+      "sha256": "1dd4e6fffe55c7ee47de8774e41395c3ae6d5bd3c02ed75b6c306701d51624b3"
+    },
+    {
+      "path": "governance/masterplan/steps/S15.md",
+      "sha256": "b1babedcc40d2e81131721f420456647d8723dd0767803151d86176f8613ec36"
+    },
+    {
+      "path": "governance/masterplan/steps/S16.md",
+      "sha256": "858157cd3b5c575d4eeb072877c8d04a776ab8ffe566660f0821db32f17a5a1e"
+    },
+    {
+      "path": "governance/masterplan/steps/S17.md",
+      "sha256": "40f1c146f3428ed18884936e90d058d92be0da6c56c16d503ba0eb0b68879a6b"
+    },
+    {
+      "path": "governance/masterplan/steps/S18.md",
+      "sha256": "945b5c7610892f45e09bdca10ff89a08a6d608b470d6c4fcf1beb2416402a177"
+    },
+    {
+      "path": "governance/masterplan/steps/S19.md",
+      "sha256": "11ee2cc02f60f984d0ad17e3e016ed299c606c26f70c92a3b6c15d43db81b13a"
+    },
+    {
+      "path": "governance/masterplan/steps/S20.md",
+      "sha256": "f8f5a3d3439e1a433bb8f425b5c57860e89285deb6eb1046ac7860df83609ec7"
+    },
+    {
+      "path": "governance/masterplan/steps/S21.md",
+      "sha256": "912faff68325a1a7fdbaa4942ad3aaac4732f9715d0101ba3b5108eb540aba22"
+    },
+    {
+      "path": "governance/masterplan/steps/S22.md",
+      "sha256": "5bae218710d85026d4dcfc9ceb5b84e2f1295cab6f87e4354ff1c783e28a0bdb"
+    },
+    {
+      "path": "governance/masterplan/steps/S23.md",
+      "sha256": "46818f98a435c03d839cc6c1bc179604c3a6b51c840a1d83f277325aaa232e5e"
+    },
+    {
+      "path": "governance/masterplan/steps/S24.md",
+      "sha256": "467a24b7f5ed31dd329b71939717c1ac03eede2c76c3bd1c31322f6e9ae4731d"
+    },
+    {
+      "path": "governance/masterplan/steps/S25.md",
+      "sha256": "642199b508aecb30bc6e15e10e8fba72869126c3136638cc8945b728870ef3a6"
+    },
+    {
+      "path": "governance/masterplan/steps/S26.md",
+      "sha256": "a7ae9d79b5932ae66eea063fba9c30f3b161469bc7413fe6bf99f22aa118b968"
+    },
+    {
+      "path": "governance/masterplan/steps/S27.md",
+      "sha256": "1a8dcb24fbcb0e046c83b704a278871afc5cb6c767c9e7f596f26f8a724955c7"
+    },
+    {
+      "path": "governance/masterplan/steps/S28.md",
+      "sha256": "e4905669a9a18802167914d15d8c864e72363dbd259d15cf69bbb12529735f5c"
+    },
+    {
+      "path": "governance/masterplan/steps/S29.md",
+      "sha256": "0b1d169bdf0a415d188ee47374a4f3d19db2ff2b04dc3e834d7ea93bb9702b24"
+    },
+    {
+      "path": "governance/masterplan/steps/S30.md",
+      "sha256": "cb1d42c66654d0ae147986a81f84651726a537d9cb3553a335463c6e6baa6dd0"
+    },
+    {
+      "path": "governance/masterplan/steps/S31.md",
+      "sha256": "c9d19dd0c6f8453bc3c00426b9b209e7a71da77ff596ce0089096bf5d8c6f51d"
+    },
+    {
+      "path": "governance/masterplan/steps/S32.md",
+      "sha256": "425c32bbb55c1102cf0e64355d2ca8115511ec428eb9d65596bfe1106f12928a"
+    },
+    {
+      "path": "governance/masterplan/steps/S33.md",
+      "sha256": "0566250de4fc957765468ed964c47592bedb87b196726ed344299d73e3d076d5"
+    },
+    {
+      "path": "governance/masterplan/steps/S34.md",
+      "sha256": "5ad66563f6508800d2551e2e2aafbc482b79136099e9d30bc0d006032d81a5f8"
+    },
+    {
+      "path": "governance/masterplan/steps/S35.md",
+      "sha256": "9eaae843811e7fa98db0fefdf6e85b6410be64dc1808f1b745dc35c722fdcd14"
+    },
+    {
+      "path": "governance/masterplan/templates/ADR.md",
+      "sha256": "3a48bb3b75a6c53760cfa8613554059dff31b9998d4e50aaa801582c8baab9d4"
+    },
+    {
+      "path": "governance/masterplan/templates/Arbeitsauftrag.md",
+      "sha256": "0afe17fb31d43be965269041d3cdd6cfec7b3dacb6b1c3fc755fc3e66cab9c7b"
+    },
+    {
+      "path": "governance/masterplan/templates/Fehlerbericht.md",
+      "sha256": "c12a7f877c41e9ae84322f80d27fabbcb55a46964f79ed07fe0259c4013de5e0"
+    },
+    {
+      "path": "governance/masterplan/templates/Planänderung.md",
+      "sha256": "64c2ee91418e4bc480d7f0407f8fe8b32438be6702a221c6b7c8e37e80acdad9"
+    },
+    {
+      "path": "governance/masterplan/templates/Uebergabe.md",
+      "sha256": "d522dc96e4ceb179e5304946d6a9bcb05b996291a2ae289168b83a2bb369251c"
+    },
+    {
+      "path": "governance/masterplan/templates/evidence_TEMPLATE.json",
+      "sha256": "e9cfed05f9351abea651ff559d9210bf230ed6139f86601666d7b2c894fb573d"
+    },
+    {
+      "path": "governance/masterplan/templates/path-map_TEMPLATE.json",
+      "sha256": "a58b6bd52d6261abda2eee7619d1db93eb53ab93a1bb38b5994451ca526ce345"
+    },
+    {
+      "path": "governance/masterplan/templates/research/Champion-Decision.md",
+      "sha256": "ccb94c2aff877ff0fd0432a35638487b11e109408f64ec9d5b26c6e83778863f"
+    },
+    {
+      "path": "governance/masterplan/templates/research/Evidence-Labels.md",
+      "sha256": "9779f7ce79d6ecbe01492e70451e85b4c0795bc9937bc2be8f2b1bbc8d17fbfb"
+    },
+    {
+      "path": "governance/masterplan/templates/research/Hypothesenkarte.md",
+      "sha256": "51b74b46120b038c3e2d0c8e76d5698fed27359747a25f1d6259de8744de4eb2"
+    },
+    {
+      "path": "governance/masterplan/templates/research/Pattern-Spec.json",
+      "sha256": "65559de64b7b0768cc2d5771815bae993f0c9a87c16f5c60930dddb40c346255"
+    },
+    {
+      "path": "governance/masterplan/templates/research/Run-Protocol.json",
+      "sha256": "6bfe681eac222742005b8c394e5fcaf598d4a737f044a29e2b981475088c2863"
+    },
+    {
+      "path": "governance/masterplan/templates/research/Strategy-Spec.json",
+      "sha256": "2618ce1cc01dd4eba19aadd0bee8ffe7361c6d087f3037758e34cca6ef8b5dc4"
+    },
+    {
+      "path": "governance/s00-first-import-manifest.json",
+      "sha256": "4afbed6aa0445969672c5d0d063c92140fcdc371eab2eee1a96e99d3c57e7eb8"
+    },
+    {
+      "path": "tools/acceptance/candidate_ci.py",
+      "sha256": "39fa9a6bfc5959f061db814b5c4acbfb43baad482887bb5c28ea95881155f53c"
+    },
+    {
+      "path": "tools/acceptance/collect_changes.py",
+      "sha256": "919262ca0ec997807d310e4cd39ecfd9d59597fe67593a72044f64dee870a2d0"
+    },
+    {
+      "path": "tools/acceptance/first_import_candidate.py",
+      "sha256": "a1487a38e9bb70bcb26faba40afdc60fd8ac10323be33cf7ba197bed3184eddf"
+    },
+    {
+      "path": "tools/acceptance/git_object_boundary.py",
+      "sha256": "3c3b3e044c6ad4e86c725febcc9fab8c22e57503c5adb1e228f545937dc0b93d"
+    },
+    {
+      "path": "tools/acceptance/github_s00.py",
+      "sha256": "b62fbe0c9b526f8df10ffcae051fa215e1042ce23c85bab5436ed4e48c7c106e"
+    },
+    {
+      "path": "tools/acceptance/merge_object_view.py",
+      "sha256": "cb46066d725f3f60a7ac2e76d29e4acad33c7314492375ddcd6c054fbb07a852"
+    },
+    {
+      "path": "tools/acceptance/merge_readback.py",
+      "sha256": "d4e61b3e6f898773f3e7821cec4e8d015dbc79aca691ba6b16d2773dbe98709a"
+    },
+    {
+      "path": "tools/acceptance/test_candidate_ci.py",
+      "sha256": "ad5d69a751d72d3229febf4a34f4e12bc40dcddacedab8fb2e63e948efe11978"
+    },
+    {
+      "path": "tools/acceptance/test_collect_changes.py",
+      "sha256": "f35599ec6b0f7aff8e0f035aebe12403ed932bfb0e6f60e9162838089dbca0c7"
+    },
+    {
+      "path": "tools/acceptance/test_first_import_candidate.py",
+      "sha256": "f8a7dc6c076ecee59eaef58e7880b6ed3cabd43c5a0063e032bf9c9d40145cf7"
+    },
+    {
+      "path": "tools/acceptance/test_owner_completion.py",
+      "sha256": "5fec3c3b6ecc912438ad089e02c9738921c3ef22f0c365637d90b9f9de7998af"
+    },
+    {
+      "path": "tools/acceptance/test_trusted_gate.py",
+      "sha256": "3963337ce31fef91cfb16bd5b92c5ddd2959fe8cff82ca046026a5512d8a710a"
+    },
+    {
+      "path": "tools/acceptance/trusted_gate.py",
+      "sha256": "cd25650d17630eb8a905b281deeff5fe694f250e3f6f9af883ea7ae7966eeb11"
+    }
+  ],
+  "preserved_original_dependency_scope_design_flags": 36,
+  "identity_claim": "single local executor; no independent reviewer",
+  "network_test_guard": "libseccomp denied connect/sendto/sendmsg/sendmmsg inherited by subprocesses"
+}

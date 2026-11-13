@@ -1,0 +1,19 @@
+{
+  "reason": "Obsolete four-eyes prohibition removed by explicit user decision; real Git/test guards preserved.",
+  "removed_obsolete_test_methods": [
+    "test_synchronize_event_without_valid_push_sender_fails_closed",
+    "test_earlier_implementation_and_observed_pusher_cannot_review",
+    "test_partial_or_unattributed_implementation_history_fails_closed",
+    "test_self_review_and_unconfigured_identities_cannot_pass",
+    "test_approval_of_previous_head_is_rejected",
+    "test_later_dismissal_or_changes_requested_invalidates_approval",
+    "test_another_authorized_change_request_blocks_existing_approval",
+    "test_configured_independent_automation_identity_is_supported",
+    "test_comment_does_not_invent_or_remove_a_review_decision"
+  ],
+  "replaced_controller_contracts": [
+    "same-actor evidence is allowed",
+    "resume requires actor and reason, no second identity"
+  ],
+  "new_regressions": "tools/acceptance/test_owner_completion.py"
+}

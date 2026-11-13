@@ -1,0 +1,49 @@
+{
+  "step_id": "S05",
+  "status": "independent_offline_preparation_not_formal_completion",
+  "plan_version": "1.2.0",
+  "criteria": [
+    {
+      "id": "S05-C01",
+      "reference_status": "exact_MPR1_case_verified_in_Python_and_original_JS_decimal",
+      "product_status": "not_integrated"
+    },
+    {
+      "id": "S05-C02",
+      "reference_status": "original_partial_fill_duplicate_fee_and_quantity_tests_pass",
+      "product_status": "gap_fee_before_fill_and_account_cash_ledger_open",
+      "private_candidate_status": "fee-ordering corrected and persisted in synthetic actual-Store test composition; account cash writer still not integrated"
+    },
+    {
+      "id": "S05-C03",
+      "reference_status": "original_Store_and_reducer_second_process_replay_pass",
+      "product_status": "native_dispatch_and_full_cash_writer_not_executed"
+    },
+    {
+      "id": "S05-C04",
+      "reference_status": "MPR1_cash_and_fee_identity_exact",
+      "product_status": "general_FX_cashflow_PnL_accounting_open"
+    }
+  ],
+  "native_CSharp_executed": false,
+  "formal_gate_changed": false,
+  "reviewer_required": false,
+  "fresh_final_execution": "External archive receipt; previous tests are not counted as a fresh run.",
+  "known_unfixed_issue_in_archived_original": "S05-GAP-01",
+  "historical_reference_test_counts": {
+    "new_reference_and_source_methods": 25,
+    "new_original_boundary_methods": 15,
+    "unchanged_original_order_methods": 41,
+    "total_unique_methods": 81,
+    "characterization_methods_confirming_open_gap": 3
+  },
+  "private_fee_candidate": {
+    "path": "evidence/S05/fee-reconciliation/order-lifecycle.patch",
+    "S05-GAP-01": "fixed_for_new_version2_states",
+    "legacy_missing_payload": "still_unresolved_until_verified_history_replay",
+    "database_schema_changed": false,
+    "product_installed": false,
+    "runtime_contract_version": 2,
+    "current_test_evidence": "External fresh package execution; no historical counts added"
+  }
+}

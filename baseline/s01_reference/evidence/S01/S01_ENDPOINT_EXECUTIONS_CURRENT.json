@@ -1,0 +1,293 @@
+{
+  "work_id": "S01-ENDPOINTRECOVERY-20261113",
+  "executed_at_utc": "2026-11-12T23:44:43.859810+00:00",
+  "uid": 0,
+  "node": "v22.16.0",
+  "python": "3.13.5",
+  "scope": "Private source recovery and original handler dispatch; no native WebSocket/provider integration",
+  "commands": [
+    {
+      "name": "package_before",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "package_before.log",
+      "result": {
+        "verified_files": 122,
+        "formal_status_unchanged": true,
+        "s01_private_work": "active",
+        "independent_review": false
+      }
+    },
+    {
+      "name": "network_deny_probe",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "network_deny_probe.log"
+    },
+    {
+      "name": "reconstruction",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "reconstruction.log",
+      "result": {
+        "work_id": "S01-ENDPOINTRECOVERY-20261113",
+        "source_files_reproduced": 5,
+        "files": [
+          {
+            "path": "src/api/account-chart.js",
+            "bytes": 98,
+            "sha1": "6e84205548e771ae4604ce12d4a95e9247288b30",
+            "sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
+            "method": "complete_connector_response",
+            "transformation": null
+          },
+          {
+            "path": "src/api/live.js",
+            "bytes": 1281,
+            "sha1": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+            "sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+            "method": "complete_connector_response",
+            "transformation": null
+          },
+          {
+            "path": "src/api/probe.js",
+            "bytes": 1724,
+            "sha1": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
+            "sha256": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
+            "method": "connector_prefix_and_archived_suffix_transform",
+            "transformation": "compact-lines-preserve-export"
+          },
+          {
+            "path": "src/api/socket.js",
+            "bytes": 2358,
+            "sha1": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
+            "sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
+            "method": "connector_prefix_and_archived_suffix",
+            "transformation": null
+          },
+          {
+            "path": "src/patch_ui.mjs",
+            "bytes": 2653,
+            "sha1": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
+            "sha256": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1",
+            "method": "connector_prefix_and_archived_suffix_transform",
+            "transformation": "remove-comment"
+          }
+        ],
+        "publishes": false,
+        "product_repair": false,
+        "full_website_build": false
+      }
+    },
+    {
+      "name": "python_tests",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "python_tests.log",
+      "test_methods": 53
+    },
+    {
+      "name": "endpoint_dispatch",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "endpoint_dispatch.log",
+      "tests": 16,
+      "pass": 16,
+      "fail": 0,
+      "skipped": 0
+    },
+    {
+      "name": "original_security",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "original_security.log",
+      "tests": 9,
+      "pass": 9,
+      "fail": 0,
+      "skipped": 0
+    },
+    {
+      "name": "native_import_account-chart",
+      "returncode": 1,
+      "expected_exitcodes": [
+        1
+      ],
+      "expected_outcome_observed": true,
+      "log": "native_import_account-chart.log"
+    },
+    {
+      "name": "native_import_live",
+      "returncode": 1,
+      "expected_exitcodes": [
+        1
+      ],
+      "expected_outcome_observed": true,
+      "log": "native_import_live.log"
+    },
+    {
+      "name": "native_import_socket",
+      "returncode": 1,
+      "expected_exitcodes": [
+        1
+      ],
+      "expected_outcome_observed": true,
+      "log": "native_import_socket.log"
+    },
+    {
+      "name": "native_import_probe",
+      "returncode": 1,
+      "expected_exitcodes": [
+        1
+      ],
+      "expected_outcome_observed": true,
+      "log": "native_import_probe.log"
+    },
+    {
+      "name": "first_stage_build",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "first_stage_build.log",
+      "result": {
+        "top_level_stages": [
+          {
+            "path": "build.mjs",
+            "complete_source_present": true
+          },
+          {
+            "path": "postbuild-132.mjs",
+            "complete_source_present": true
+          },
+          {
+            "path": "version133.mjs",
+            "complete_source_present": true
+          },
+          {
+            "path": "build-account-addon.mjs",
+            "complete_source_present": true
+          },
+          {
+            "path": "build-bot.mjs",
+            "complete_source_present": false
+          },
+          {
+            "path": "build-bot14.mjs",
+            "complete_source_present": false
+          },
+          {
+            "path": "build-ui.mjs",
+            "complete_source_present": false
+          },
+          {
+            "path": "build-revolution20.mjs",
+            "complete_source_present": true
+          }
+        ],
+        "nested_imports": [
+          {
+            "parent": "build.mjs",
+            "path": "patch-live.mjs",
+            "complete_source_present": false,
+            "origin": "generated_from_live-overlay.b64"
+          },
+          {
+            "parent": "build.mjs",
+            "path": "build-bot15.mjs",
+            "complete_source_present": false,
+            "origin": "listed_provider_source"
+          }
+        ],
+        "full_pipeline_executed": false,
+        "full_pipeline_successful": false,
+        "first_stage_attempt": {
+          "script": "build.mjs",
+          "exit_code": 1,
+          "expected_missing_input": "live-overlay.b64",
+          "original_asset_outputs_verified": 5,
+          "stdout": "",
+          "stderr": "node:fs:442\n    return binding.readFileUtf8(path, stringToFlags(options.flag));\n                   ^\n\nError: ENOENT: no such file or directory, open 'live-overlay.b64'\n    at Object.readFileSync (node:fs:442:20)\n    at file:///tmp/s01-first-stage-p0ez3sq1/build.mjs:8:18\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: 'live-overlay.b64'\n}\n\nNode.js v22.16.0\n"
+        },
+        "connect_deny_probe": "CONNECT_DENIED_EPERM",
+        "network_restriction": "Linux seccomp: connect, sendto, sendmsg, sendmmsg denied with EPERM; no general sandbox claim",
+        "native_compiler_invoked": false,
+        "bot_executed": false,
+        "source_inputs_unchanged": true,
+        "toolchain": {
+          "node": "v22.16.0",
+          "dotnet_path": null
+        }
+      }
+    },
+    {
+      "name": "package_after",
+      "returncode": 0,
+      "expected_exitcodes": [
+        0
+      ],
+      "expected_outcome_observed": true,
+      "log": "package_after.log",
+      "result": {
+        "verified_files": 122,
+        "formal_status_unchanged": true,
+        "s01_private_work": "active",
+        "independent_review": false
+      }
+    }
+  ],
+  "known_unfixed_compatibility_gap": "api/live.js sends gzip for Accept-Encoding gzip;q=0 on a large synthetic response; one characterization test, not conformance success",
+  "prior_receiver_tests_rerun": false,
+  "native_csharp_build": false,
+  "broker_actions": false,
+  "publication": false,
+  "native_import_gaps": [
+    {
+      "source": "api/account-chart.js",
+      "exit": 1,
+      "missing": "market-reader.mjs",
+      "native_integration": "NOT_TESTED_MISSING_DEPENDENCY"
+    },
+    {
+      "source": "api/live.js",
+      "exit": 1,
+      "missing": "relay.mjs",
+      "native_integration": "NOT_TESTED_MISSING_DEPENDENCY"
+    },
+    {
+      "source": "api/socket.js",
+      "exit": 1,
+      "missing": "Cannot find package 'ws'",
+      "native_integration": "NOT_TESTED_MISSING_DEPENDENCY"
+    },
+    {
+      "source": "api/probe.js",
+      "exit": 1,
+      "missing": "Cannot find package 'ws'",
+      "native_integration": "NOT_TESTED_MISSING_DEPENDENCY"
+    }
+  ],
+  "unique_test_methods": 78,
+  "network_restriction": "Linux seccomp denies connect,sendto,sendmsg,sendmmsg in all test children; no general sandbox or native WebSocket conformance claim",
+  "scope_result": "OFFLINE_PACKAGE_CHECKS_PASSED_WITH_KNOWN_COMPATIBILITY_GAP_AND_INCOMPLETE_PRODUCTION_BUILD",
+  "product_acceptance": false,
+  "full_website_build": false
+}

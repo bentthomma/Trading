@@ -1,0 +1,78 @@
+{
+  "schema": "extremelab-route-documentation/1",
+  "main_navigation": [
+    "Übersicht",
+    "Beobachtung",
+    "Forschung",
+    "Positionen"
+  ],
+  "settings_entry": "Zahnrad",
+  "routes": [
+    {
+      "id": "root",
+      "source_url": "/",
+      "evidence": "public/index.html im Original-Assetpaket",
+      "source_ids": [
+        "build-website",
+        "assets-0",
+        "assets-1",
+        "assets-2",
+        "assets-3"
+      ],
+      "future_destination": "Übersicht",
+      "status": "mapping_proposal_no_redirect_installed",
+      "caveat": "Finale Overlay/Skin-Schritte fehlen; aktuelle Produktionsnavigation nicht daraus ableiten."
+    },
+    {
+      "id": "journal",
+      "source_url": null,
+      "evidence": "Journal laden ist eine Aktion in public/index.html, keine separat belegte /journal-Route",
+      "source_ids": [
+        "assets-0",
+        "assets-1",
+        "assets-2",
+        "assets-3"
+      ],
+      "future_destination": "kontextbezogene Journal-/Analyseunteransicht",
+      "status": "mapping_proposal_no_redirect_installed",
+      "caveat": "Import bleibt importiert, nicht live; bestehende Analyseexporte erhalten."
+    },
+    {
+      "id": "account",
+      "source_url": "/konto-live.html",
+      "evidence": "public/konto-live.html im Account-Addon und Link im Build",
+      "source_ids": [
+        "build-account",
+        "account-addon"
+      ],
+      "future_destination": "Konto-Unteransicht aus Übersicht/Positionen; Verbindung aus Einstellungen",
+      "status": "mapping_proposal_no_redirect_installed",
+      "caveat": "Kein fünfter Hauptbereich; Skin kann Reader/HTML später überschreiben."
+    },
+    {
+      "id": "remote",
+      "source_url": "/revolution.html",
+      "evidence": "Originale Kopie und Link im build-revolution20.mjs",
+      "source_ids": [
+        "build-view",
+        "view-html",
+        "view-ui"
+      ],
+      "future_destination": "lesende Hub-/Journal-Details unter Beobachtung und Positionen",
+      "status": "mapping_proposal_no_redirect_installed",
+      "caveat": "Verlustbehaftete Projektion bleibt von vollständigem Journal/Restore getrennt."
+    },
+    {
+      "id": "unrecovered",
+      "source_url": null,
+      "evidence": "21 vollständige Produktionsinputs fehlen laut Quelleninventar",
+      "source_ids": [
+        "source-catalog"
+      ],
+      "future_destination": null,
+      "status": "unknown_not_invented",
+      "caveat": "Weitere URLs/Chartreader aus fehlendem Skin sind erst nach echten Quellbytes zuzuordnen."
+    }
+  ],
+  "changes_installed": false
+}

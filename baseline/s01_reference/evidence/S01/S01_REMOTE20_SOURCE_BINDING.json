@@ -1,0 +1,85 @@
+{
+  "schema": "extremelab-s01-remote-binding/v1",
+  "work_id": "S01-REMOTE20-INTEGRATION",
+  "selected_platform_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+  "provider_readback": {
+    "tool": "Vercel.list_deployment_files",
+    "deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "team": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+    "observed_utc_date": "2026-11-13",
+    "scope": "Ten selected path/UID values copied from returned original source tree and compared with local whole bytes. Out/lambda IDs not counted as source inputs.",
+    "not_a_signature": true
+  },
+  "files": [
+    {
+      "platform_path": "integrations/vercel-view20/build-addon.mjs",
+      "source_path": "src/build-revolution20.mjs",
+      "bytes": 1070,
+      "sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439",
+      "current_provider_uid_sha1": "b29c77450e2c140c8c3b04976c5e6c7996fc3c70"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/build-release20.mjs",
+      "source_path": "src/build-release20.mjs",
+      "bytes": 451,
+      "sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6",
+      "current_provider_uid_sha1": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/api/revolution.js",
+      "source_path": "src/api/revolution.js",
+      "bytes": 1543,
+      "sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139",
+      "current_provider_uid_sha1": "13f44cf339c6f462f2676dc54885de0c2878bf86"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/lib/http.mjs",
+      "source_path": "src/lib/http.mjs",
+      "bytes": 2796,
+      "sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7",
+      "current_provider_uid_sha1": "06d25ef629e4cf23e3116aa50969c5b2a1c327be"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/lib/projection.mjs",
+      "source_path": "src/lib/projection.mjs",
+      "bytes": 6049,
+      "sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3",
+      "current_provider_uid_sha1": "2fda4938aec2b8bccd28a64cdcb747730d385982"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/lib/service.mjs",
+      "source_path": "src/lib/service.mjs",
+      "bytes": 7496,
+      "sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604",
+      "current_provider_uid_sha1": "c03aa212b6033bab55f738dbf8c277974fcfd105"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/public/revolution.css",
+      "source_path": "src/view20-public/revolution.css",
+      "bytes": 2494,
+      "sha256": "78c42edb7bc27a1770df3b0c4e32f9f2bfb46472c97876289de369ec5630bbfd",
+      "current_provider_uid_sha1": "6dfd5a5c91cd5f9e3d25ae9c3a43645f756067b9"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/public/revolution.html",
+      "source_path": "src/view20-public/revolution.html",
+      "bytes": 2693,
+      "sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30",
+      "current_provider_uid_sha1": "feaafe8869faa062b1c845959b3fbd97d4e020c8"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/public/revolution-link.css",
+      "source_path": "src/view20-public/revolution-link.css",
+      "bytes": 417,
+      "sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24",
+      "current_provider_uid_sha1": "9de921e2cc570afe2a197d918ff6e532bb0b662b"
+    },
+    {
+      "platform_path": "integrations/vercel-view20/public/revolution.js",
+      "source_path": "src/view20-public/revolution.js",
+      "bytes": 11174,
+      "sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f",
+      "current_provider_uid_sha1": "8d206b064d1c375d84cece81969ad1a38704ca8f"
+    }
+  ]
+}

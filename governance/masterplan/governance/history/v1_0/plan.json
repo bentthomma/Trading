@@ -1,0 +1,2773 @@
+{
+  "schema_version": 1,
+  "plan_id": "EXTREMELAB-CONSOLIDATED-MASTERPLAN-20261111",
+  "version": "1.0.0",
+  "created_at": "2026-11-11",
+  "language": "de-CH",
+  "purpose": "Konsolidierter autonom ausführbarer Entwicklungsplan; Produktimplementierung beginnt nach Übergabe, nicht als Teil dieser Bestandsaufnahme.",
+  "canonical_website": "https://extremelab-bt.vercel.app/",
+  "status": "PLANNING_PACKAGE_READY_PRODUCT_STEPS_PENDING",
+  "global_rules": {
+    "max_in_progress": 2,
+    "implementation_may_be_autonomous": true,
+    "product_deploy_in_this_turn": false,
+    "live_trading_authorized_by_plan": false,
+    "required_independent_review": true,
+    "no_force_completion": true,
+    "known_holdouts_are_consumed": true,
+    "scope_mapping_required": true
+  },
+  "steps": [
+    {
+      "id": "S00",
+      "title": "Plansteuerung im Arbeitsprojekt verankern",
+      "dependencies": [],
+      "phase": "A · Verbindliche Ausgangsbasis",
+      "legacy_refs": [],
+      "owner": "Integration",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Genau einen ausführbaren Plan mit geschützten Abhängigkeiten, überprüfbaren Nachweisen und kleinen Änderungsaufträgen etablieren.",
+      "inputs": [
+        "Dieses Planpaket vollständig lesen; Originalquellen nur lesend behandeln.",
+        "Zielrepository zunächst unbekannt: kein Produktverzeichnis aus einem alten temporären Pfad annehmen."
+      ],
+      "tasks": [
+        "Plan, Quelleninventar und historische AP-Zuordnung als neue kanonische Planversion erfassen. Alte Pläne werden Referenzstände und nicht parallel ausführbare Aufträge.",
+        "Einmaliger Bootstrap vor dem Lock: Planpaket samt control-Verzeichnis in den isolierten Arbeitsbereich kopieren, unverändert prüfen, danach lock erzeugen. Ab diesem Zeitpunkt keine Bootstrapausnahme mehr. Initial nur S00 starten; Produktfortschritt steht überall auf pending.",
+        "Eine vertrauenswürdige CI liefert tatsächliche geänderte Dateien einschließlich unversionierter Dateien, Löschungen, Umbenennungen und Untermoduländerungen. Übergabedateien allein sind kein Änderungsnachweis.",
+        "Erforderliche Prüfungen und getrennte Reviewer in der Repository-Verwaltung festlegen. Statusdatei und geschützte Plandateien dürfen nicht direkt durch den Implementierer freigegeben werden.",
+        "Planänderungen als eigenen Änderungsantrag mit altem/neuem Hash, Begründung, betroffenen Folgeschritten und unabhängiger Prüfung behandeln. Routineentscheidungen innerhalb des Auftrags bleiben autonom.",
+        "Fortsetzungsprotokoll anlegen: letzte bestandene Stufe, aktueller Commit, offene Befunde, nächster freigegebener Schritt. Nach Kontextverlust zuerst dieses Protokoll lesen."
+      ],
+      "required_artifacts": [
+        "evidence/S00/governance.json",
+        "evidence/S00/ci-negative-tests.json",
+        "evidence/S00/handoff.md"
+      ],
+      "checks": [
+        {
+          "id": "S00-C01",
+          "description": "Ein absichtlich gestarteter Folgeschritt mit offener Abhängigkeit wird abgewiesen."
+        },
+        {
+          "id": "S00-C02",
+          "description": "Eine Änderung außerhalb der erlaubten Pfade, ein fehlender Nachweis und eine veränderte Planversion verhindern Abschluss."
+        },
+        {
+          "id": "S00-C03",
+          "description": "Getrennte Implementierung/Prüfung ist eingerichtet; Branchschutzstatus wird als tatsächlich vorhanden oder noch blockiert dokumentiert."
+        },
+        {
+          "id": "S00-C04",
+          "description": "Keine Produktstufe wird allein aufgrund des vorliegenden Plans als bestanden markiert."
+        }
+      ],
+      "allowed_paths": [
+        "governance/**",
+        ".github/workflows/plan-gates.yml",
+        "docs/plan/**",
+        "tools/acceptance/**",
+        "evidence/S00/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Engineentwicklung, keine Datenmigration, keine Websiteveröffentlichung."
+      ],
+      "stop_conditions": [
+        "Ohne vertrauenswürdige Quelle für den Änderungsumfang ist Scopeprüfung nur lokal vorbereitet, nicht technisch erzwungen."
+      ],
+      "rollback": "Neue Governanceintegration zurücknehmen; Originalquellen und veröffentlichte Website bleiben bestehen.",
+      "sources": [
+        "Blueprint S.7–9,16–19",
+        "Ausführungshandbuch v1.0: Status- und Nachweismodell"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": false,
+      "scope_status": "resolved",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S01",
+      "title": "Quellen, Versionen und Produktionsstand eindeutig sichern",
+      "dependencies": [
+        "S00"
+      ],
+      "phase": "A · Verbindliche Ausgangsbasis",
+      "legacy_refs": [
+        "AP01"
+      ],
+      "owner": "Integration",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Den tatsächlichen Bestand und fehlende Quellen verbindlich feststellen; Inventarfreigabe und vollständige Integrationsfähigkeit getrennt nachweisen.",
+      "inputs": [
+        "Quelleninventar und alle drei Auditberichte dieses Pakets.",
+        "Vercel-Produktionsdeployment dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp; vollständige Quellen noch nicht vollständig materialisiert."
+      ],
+      "tasks": [
+        "Alle Originalarchive unverändert mit SHA256, Herkunft und Zugriffsdatum erfassen. Kein ungeprüftes Startskript ausführen.",
+        "Vercel-Quellbaum vollständig sichern: auch assets.0–3, skin.*, bot-src.*, account-addon.br und live-overlay.b64 sowie alle Buildstufen. Die derzeitigen 23 Dateipräfixe sind ausdrücklich unvollständig.",
+        "Den zu ExtremeLabReady 1.9 gehörenden vollständigen C#-Quellstand und das native Artefakt suchen und verknüpfen. Vorhandenes C17/1.7 darf nicht als 1.9 bezeichnet werden.",
+        "Trading_Local 0.7.0 gegenüber dem in alten Plänen vorausgesetzten 0.8.0 abgleichen. Fehlende 0.8-Funktionen einzeln erfassen; kein stilles Versionshochstufen.",
+        "Websitequellstand, cBot-Build, Brokerprofil, Datenpakete und frühere Labors jeweils separat versionieren. Historische ChatGPT-Site-Experimente erhalten einen Legacy-Eintrag.",
+        "In einem isolierten Zweig unveränderten Build reproduzieren. Erst nach Quellenprüfung erforderliche Herstellerwerkzeuge einsetzen; weder Produktivkonto noch Produktionsdaten für den Build verwenden.",
+        "Donormatrix erstellen: übernehmen, adaptieren, nur Referenz, verwerfen, ungeklärt. Datei-/Funktionsnamen und Besitz-/Nutzungsnachweis mitführen.",
+        "path-map.json erzeugen: Jedes logische Modul wird auf tatsächlich vorhandene Repositorydateien oder ausdrücklich neue Dateien abgebildet. Die vorgeschlagenen apps/*-Pfade erzwingen keine Verlagerung vorhandener core/, sdk/, public/ oder server.mjs-Dateien."
+      ],
+      "required_artifacts": [
+        "evidence/S01/baseline-lock.json",
+        "evidence/S01/version-crosswalk.md",
+        "evidence/S01/donor-map.json",
+        "evidence/S01/reproduction-report.json",
+        "evidence/S01/path-map.json"
+      ],
+      "checks": [
+        {
+          "id": "S01-C01",
+          "description": "Jede Quelle ist vollständig, nur als Präfix oder fehlend klassifiziert; keine fehlende Vollquelle wird als vorhanden bestätigt."
+        },
+        {
+          "id": "S01-C02",
+          "description": "Reproduktionsbericht enthält für verfügbare vollständige Quellen reale Buildnachweise; fehlende native/Websitequellen stehen als blocked_capability mit genauer Ursache. Inventarabschluss ist trotzdem möglich."
+        },
+        {
+          "id": "S01-C03",
+          "description": "Inventarabschluss gibt keine fehlende native Integrationsfähigkeit frei; unabhängige Offline-Daten-/Designarbeit darf fortgesetzt werden."
+        },
+        {
+          "id": "S01-C04",
+          "description": "Produktionsdomain und Entwicklungszweig sind eindeutig; keine versehentliche Veröffentlichung."
+        }
+      ],
+      "allowed_paths": [
+        "baseline/**",
+        "docs/architecture/**",
+        "vendor-manifests/**",
+        "evidence/S01/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Reparatur der Originalstrategien in derselben Änderung.",
+        "Keine automatische Vereinigung der Vercel- und alten ChatGPT-Site-Codebasis."
+      ],
+      "stop_conditions": [
+        "Eine Quelle wird ohne vollständigen Beleg als vollständig/produktionsidentisch ausgegeben. Fehlende Quellen dürfen mit genauer blocked_capability-Kennzeichnung im Inventar abgeschlossen werden.",
+        "Ungeklärtes Nutzungsrecht sperrt die betreffende Codeübernahme, nicht das Quelleninventar."
+      ],
+      "rollback": "Integrationszweig verwerfen oder zum gesicherten Ausgangscommit zurückkehren; Originalarchive bleiben unverändert.",
+      "sources": [
+        "PLAT-01",
+        "BOT-01",
+        "WEB-01",
+        "input_inventory.json"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": false,
+      "scope_status": "resolved",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S02",
+      "title": "Zielarchitektur, Begriffe und Schnittstellen festlegen",
+      "dependencies": [
+        "S01"
+      ],
+      "phase": "A · Verbindliche Ausgangsbasis",
+      "legacy_refs": [
+        "AP03"
+      ],
+      "owner": "Architektur",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Eine gemeinsame Sprache für Daten, Entscheidungen, Aufträge und Nachweise festlegen, bevor weitere Systeme gekoppelt werden.",
+      "inputs": [
+        "Abgenommene Versionsmatrix; tatsächliche Hub-, cTrader- und MT5-Verträge.",
+        "Die vorgeschlagenen Verträge im Ordner contracts sind Entwürfe, keine existierenden Endpunkte."
+      ],
+      "tasks": [
+        "Vier Verantwortungen trennen: Website/Bedienung, lokaler Hub/Journal, Forschungsworker, Broker-Ausführung mit eigenem Risikoprüfer.",
+        "Standardentscheidung festhalten: bestehende Web-/Node-Oberfläche erhalten, C#-Entscheidungskern möglichst ohne cTrader-Abhängigkeit extrahieren, Python für Datenanalyse und Forschungsorchestrierung nutzen. Eine Abweichung benötigt einen begründeten Architekturentscheid.",
+        "Das Domänenmodell auf InstrumentVersion, Quote, Bar, FeatureSnapshot, SignalIntent, OrderIntent, BrokerOrder, Deal, Position, Cashflow, Run und PolicyVersion abbilden.",
+        "Zeitstempel trennen: Ereigniszeit, öffentliche Verfügbarkeit, Empfang, Merkmalsfertigstellung, Entscheidung, zulässige Ausführung. Geld, Preis, Stück, Units, Lots, Pip und Kontowährung ausdrücklich typisieren.",
+        "Inbox/Outbox, Sequenz, Wiederholung, Idempotenz, Revision, Schema- und Datenversion definieren. Kontozustand unbekannt ist ein eigener Zustand.",
+        "Fähigkeiten trennen: lesen, Forschung anfordern, Vorschlag erstellen, Demo-Konfiguration übernehmen, nativen Auftrag ausführen. Ein MCP-Zugang erhält daraus keine pauschalen Brokerrechte.",
+        "Alt- und Neuverträge über versionierte Adapter verbinden; eine Migration verändert nie rückwirkend frühere Entscheidungen.",
+        "Nach Architekturentscheidung die Pfadkarte freigeben und S03–S29 über ein versioniertes, unabhängig geprüftes Planamendment auf reale Dateiscopes auflösen. Ohne resolved Scope bleibt deren Start gesperrt.",
+        "Geld/Preis/Mengen als kanonische Dezimalzeichenketten mit expliziter Einheit übertragen; Zeit als UTC-ISO8601 plus eindeutigem Sequenzwert. Native Double-Werte an der Brokergrenze kontrolliert quantisieren; Indikatoren dürfen Float mit dokumentierter Toleranz verwenden."
+      ],
+      "required_artifacts": [
+        "evidence/S02/architecture.md",
+        "evidence/S02/domain-contract.json",
+        "evidence/S02/capability-matrix.json",
+        "evidence/S02/adr-001.md"
+      ],
+      "checks": [
+        {
+          "id": "S02-C01",
+          "description": "Identische fachliche Ereignisse sind in C#, Python und JavaScript ohne Einheitenverlust darstellbar."
+        },
+        {
+          "id": "S02-C02",
+          "description": "Unbekannte Schemafelder, NaN/Infinity, unzulässige Einheiten und fehlende Versionsbezüge werden für ausführbare Aufträge abgewiesen."
+        },
+        {
+          "id": "S02-C03",
+          "description": "Eine Forschungsantwort kann ohne separate Freigabekette keine Brokerorder erzeugen."
+        },
+        {
+          "id": "S02-C04",
+          "description": "Die Website kann ausfallen, ohne dass bestätigte lokale Schutzregeln verschwinden."
+        }
+      ],
+      "allowed_paths": [
+        "contracts/**",
+        "docs/architecture/**",
+        "adapters/contracts/**",
+        "evidence/S02/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Noch kein neuer Brokerwrite und keine neue Strategie.",
+        "Kein universeller öffentlicher Remotezugriff auf localhost."
+      ],
+      "stop_conditions": [
+        "Fachliche Bedeutungen eines vorhandenen Feldes sind unklar.",
+        "Eine Schnittstelle vermischt gemeldeten und bestätigten Zustand."
+      ],
+      "rollback": "Neue Vertragsversion deaktivieren; bestehende kompatible Leser bleiben nutzbar.",
+      "sources": [
+        "Trading_Local core/schema.mjs,control.mjs; sdk/HubContracts.cs",
+        "Blueprint S.7–9",
+        "Arbeitsbuch MP05–MP11"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": false,
+      "scope_status": "resolved",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S03",
+      "title": "Bestehendes Design und Navigationsmodell einfrieren",
+      "dependencies": [
+        "S01",
+        "S02"
+      ],
+      "phase": "A · Verbindliche Ausgangsbasis",
+      "legacy_refs": [
+        "AP18",
+        "AP23"
+      ],
+      "owner": "Produkt und UI",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Die heutige ExtremeLab-Oberfläche erkennbar erhalten und ihre Erweiterung vor der Implementierung spezifizieren.",
+      "inputs": [
+        "Browserprüfung vom 11.11.2026; Design-Tokens und UI-Audit.",
+        "Vollständiger Websitequellstand aus S01."
+      ],
+      "tasks": [
+        "Farben #070a08, #0b0f0d, #1d2621, #26dc77, #edf1ee und die vorhandene Inter-Schrift-/Kachelstruktur als Ausgangsbasis erfassen.",
+        "Übersicht, Märkte, Positionen, Regeln, Statistik und Verlauf erhalten. Labor, Wissen und Projektfortschritt als konsistente zusätzliche Arbeitsbereiche planen.",
+        "Kontokacheln, großer Chart links, Regelbereich rechts und untere Position-/Marginübersicht mit echten Zuständen dokumentieren.",
+        "Die bisher getrennten Konto-, Journal- und Revolution-Ansichten unter einem eindeutigen Projekt-/Kontokontext verbinden. Bestehende Links müssen weiter funktionieren.",
+        "Zu jeder Ansicht Leer-, Lade-, veraltet-, Fehler-, Berechtigung-fehlt- und Ergebniszustand entwerfen. Lokal gespeichert, vorgeschlagen, bestätigt und angewendet erhalten eigene Texte.",
+        "Desktop 1440/1024 und Mobil 390/320 CSS-Pixel prüfen; Tastatur, Fokus, Tabellenbedienung und reduzierte Bewegung berücksichtigen.",
+        "Neue Produktfunktionen mit einer primären Aktion pro Arbeitsablauf skizzieren. Technische IDs im Detailinspektor, nicht als Hauptnavigation."
+      ],
+      "required_artifacts": [
+        "evidence/S03/design-baseline.json",
+        "evidence/S03/navigation-map.md",
+        "evidence/S03/screen-state-matrix.json",
+        "evidence/S03/visual-acceptance.md"
+      ],
+      "checks": [
+        {
+          "id": "S03-C01",
+          "description": "Die heutige Kontoübersicht bleibt im Vergleich wiedererkennbar; keine ungeforderte Sternkarte oder neue Designsprache."
+        },
+        {
+          "id": "S03-C02",
+          "description": "Jeder Navigationspunkt hat einen eindeutigen Zweck und ein reales oder klar bezeichnetes leeres Ziel."
+        },
+        {
+          "id": "S03-C03",
+          "description": "Kein UI-Entwurf behauptet Live-Verbindung, gewonnene Trades oder laufende Forschung ohne Datenquelle."
+        },
+        {
+          "id": "S03-C04",
+          "description": "Fokus und Inhalte bleiben bei neuer Telemetrie stabil; Dialoge verdecken keine zwingenden Folgeaktionen."
+        }
+      ],
+      "allowed_paths": [
+        "apps/web/design/**",
+        "docs/ui/**",
+        "design-tokens/**",
+        "evidence/S03/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Backendmigration und keine kosmetische Komplettneuentwicklung.",
+        "Keine Veröffentlichung eines Mock-Dashboards als funktionsfähiges Labor."
+      ],
+      "stop_conditions": [
+        "Produktionsquelle fehlt oder eine UI-Funktion wird aus einem Screenshot als implementiert angenommen."
+      ],
+      "rollback": "Nur Entwürfe und Design-Tokens zurücksetzen; veröffentlichte Website unverändert.",
+      "sources": [
+        "WEB-01",
+        "Blueprint: Zustände und Artefaktfreigaben, nicht Konstellationsdesign"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S04",
+      "title": "Botzustand und Verlustursachen lesend rekonstruieren",
+      "dependencies": [
+        "S02"
+      ],
+      "phase": "B · Verlässliche Realität",
+      "legacy_refs": [
+        "AP04",
+        "AP11"
+      ],
+      "owner": "Brokerintegration und Datenanalyse",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Offline die verfügbare Botbeobachtung und Verlustkomponenten rekonstruieren; den nativen Lesebeleg als späteres separates Gate vorbereiten.",
+      "inputs": [
+        "Vorliegendes cTrader-Log und Bot-Audit.",
+        "Native Leseschnittstelle wird spezifiziert; tatsächlicher Zielhost- und Read-only-Nachweis folgt in S08 und ist keine Voraussetzung für dieses Offline-Audit."
+      ],
+      "tasks": [
+        "Logparser für umgebrochene Ereignisse, mehrere Runs und Ereignistypen reproduzieren. Alle Originalzeilen mit Ereignis-ID verknüpfen.",
+        "Verfügbare Log-/Exportdaten für Positionen, Deals, Gebühren, Swap und Cashflows strukturieren. Fehlende native Brokerhistorie als konkreten Beschaffungsauftrag für S08 erfassen.",
+        "Offenen PnL, realisierten Netto-PnL und reine Saldoänderung getrennt anzeigen. Positionssummen mit Brokerkonto abgleichen.",
+        "Pro Symbol, Strategie, Haltedauer, Session, Richtung und Kostenart eine Verlustzerlegung erzeugen; fehlende Dealhistorie sichtbar lassen.",
+        "Zeitreihen-Vollständigkeit, letzten erfolgreichen Snapshot, Prozessende und Reloads erfassen. Killed ist ein beobachtetes Ende, noch keine bewiesene Speicherursache.",
+        "Lesenden Adapter zunächst mit aufgezeichneten und synthetischen Ereignissen prüfen; kein bestehender Bestand wird verwaltet. Native Ende-zu-Ende-Prüfung ist ausdrücklich S08."
+      ],
+      "required_artifacts": [
+        "evidence/S04/readonly-reconciliation.json",
+        "evidence/S04/loss-attribution.md",
+        "evidence/S04/telemetry-coverage.json",
+        "evidence/S04/native-read-evidence.json"
+      ],
+      "checks": [
+        {
+          "id": "S04-C01",
+          "description": "21 offene Positionen aus dem Log werden als historischer Snapshot und nicht als heutiger Bestand dargestellt."
+        },
+        {
+          "id": "S04-C02",
+          "description": "Ein fehlgeschlagener Positionsabruf ergibt unknown und verhindert neue Handelsabsichten; niemals leere Liste als Erfolgsersatz."
+        },
+        {
+          "id": "S04-C03",
+          "description": "Vorliegende Kontogleichungen sind nachvollzogen; nicht auflösbare Differenzen bleiben explizit unconfirmed und blockieren wirtschaftliche Gesamtaussagen, nicht die Offline-Engineentwicklung."
+        },
+        {
+          "id": "S04-C04",
+          "description": "Observervertrag und Offlinefälle enthalten keine Order-/Stop-/Close-Wirkung; native_read_evidence steht bis S08 ehrlich auf not_observed."
+        }
+      ],
+      "allowed_paths": [
+        "adapters/ctrader/observer/**",
+        "apps/hub/ingest/**",
+        "research/diagnostics/**",
+        "tests/observer/**",
+        "evidence/S04/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Strategieoptimierung auf unvollständige Kontohistorie.",
+        "Keine automatische Altpositionsübernahme."
+      ],
+      "stop_conditions": [
+        "Nicht aufgeklärte Abweichung wird als bestätigte Gesamtrendite oder heutiger Bestand dargestellt. Fehlende History ist ein dokumentierter Befund und Beschaffungsauftrag, kein Verbot der Offlineanalyse."
+      ],
+      "rollback": "Neuen Beobachter deaktivieren; Rohdaten und vorherige bestätigte Projektionen erhalten.",
+      "sources": [
+        "BOT-01 Abschnitt Log",
+        "Trading_Local sdk/HubBridge.cs",
+        "WEB-01 Statistikzustände"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S05",
+      "title": "Gemeinsames Geld- und Orderbuch bauen",
+      "dependencies": [
+        "S02"
+      ],
+      "phase": "B · Verlässliche Realität",
+      "legacy_refs": [
+        "AP06",
+        "AP07",
+        "AP10"
+      ],
+      "owner": "Domäne und Ausführung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Jede wirtschaftliche Veränderung exakt zuordnen und Doppelaufträge, Teilfüllungen und Scheingewinne verhindern.",
+      "inputs": [
+        "Normative Brokeridentitätsverträge aus S02; für die Offlineimplementierung synthetische Golden Cases. Native Identitätsparität folgt erst S08/S23.",
+        "Unveränderte Rohereignisse; synthetische Grenzfälle aus Arbeitsbuch."
+      ],
+      "tasks": [
+        "Orderabsicht, brokerseitige Order, Deal, Position und Gebührenbuchung separat modellieren; ein Intent ist noch keine Position.",
+        "Kontobuch für Cash, gebundene Mittel, Menge, realisierte/ungeklärte Ergebnisse und mark-to-market Equity mit zeitgerechtem FX-Kurs führen.",
+        "Annahme, Ablehnung, Teilfill, Vollfill, Cancel angefordert, Cancel bestätigt und unbekannt getrennt halten. Späte Fills nach Cancel-Anfrage sind zulässige Ereignisse.",
+        "Bei unklarer Orderantwort zuerst anhand Client-ID/Brokerhistorie abgleichen, anschließend nur eindeutig fehlende Absicht erneut senden.",
+        "Kommission, Spread, Slippage, Swap und Finanzierung so buchen, dass der verwendete Ausführungspreis nicht nochmals als pauschale Kosten abgezogen wird.",
+        "Einzahlungen, Auszahlungen und Wechselkursbewegungen von Strategierendite trennen; Netto-Profitfaktor aus wirklich geschlossenen, definierten Tradeeinheiten ableiten.",
+        "Wiederholte und anders geordnete Telemetrie deterministisch auf denselben bestätigten Buchstand projizieren."
+      ],
+      "required_artifacts": [
+        "evidence/S05/ledger-contract.md",
+        "evidence/S05/golden-ledger.json",
+        "evidence/S05/order-state-machine.json",
+        "evidence/S05/reconciliation-tests.json"
+      ],
+      "checks": [
+        {
+          "id": "S05-C01",
+          "description": "MPR1-Referenzfall: 36 Stück; normaler Verlust 24,48 CHF; Zielgewinn 46,08 CHF; Gapverlust 42,48 CHF unter genau dessen Annahmen."
+        },
+        {
+          "id": "S05-C02",
+          "description": "Duplikate erzeugen weder zweite Gebühr noch zweite Position; Teilfills reservieren nur noch die verbleibende Menge."
+        },
+        {
+          "id": "S05-C03",
+          "description": "Timeout nach einem echten Fill erzeugt nach Wiederanlauf keinen zweiten Auftrag."
+        },
+        {
+          "id": "S05-C04",
+          "description": "Nettoergebnis plus Gebührenaufschlüsselung führt auf dieselbe Kontogleichung zurück."
+        }
+      ],
+      "allowed_paths": [
+        "core/ledger/**",
+        "core/orders/**",
+        "contracts/ledger/**",
+        "tests/ledger/**",
+        "evidence/S05/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine optimierte Signalwahl; keine Broker-Sonderfälle durch generische Lot-Faktoren kaschieren."
+      ],
+      "stop_conditions": [
+        "Währung, Multiplikator, Fillmenge oder Identitätszuordnung bleibt unbekannt."
+      ],
+      "rollback": "Neue Projektion neu aus dem unveränderten Journal aufbauen; bei Schemakonflikt alte Anwendung nur mit kompatiblem Snapshot starten.",
+      "sources": [
+        "Arbeitsbuch S.21–36",
+        "BOT-01 B03–B09",
+        "AP07"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S06",
+      "title": "Journal, Wiederanlauf und Originalpläne dauerhaft machen",
+      "dependencies": [
+        "S05"
+      ],
+      "phase": "B · Verlässliche Realität",
+      "legacy_refs": [
+        "AP06",
+        "AP21"
+      ],
+      "owner": "Persistenz und QA",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Nach Prozessende den tatsächlichen Brokerbestand und die ursprüngliche Handelsabsicht wieder zusammenführen.",
+      "inputs": [
+        "Abgenommenes Order-/Geldbuch und Datenbankmigrationsplan.",
+        "Vorhandene Trading_Local-SQLite-, Backup- und Recoverybausteine."
+      ],
+      "tasks": [
+        "Vor einem ausführbaren Auftrag Intent, Risiko-Reservierung, Originalstop, Ziel, Strategie-/Policyversion und Datenreferenz dauerhaft speichern.",
+        "Inbox/Outbox und Commit-Grenzen implementieren. Transport-ACK, Hubpersistenz und Brokerbestätigung bleiben unterschiedliche Nachweise.",
+        "Vor Transportbeginn DISPATCH_MAY_HAVE_STARTED dauerhaft setzen. Nach Crash kann die Wirkung unklar sein: Reservierung halten, Broker identifizieren, nicht blind wiederholen. Netzwerkübergreifendes Exactly-once wird nicht vorausgesetzt.",
+        "Bei Neustart zuerst native Orders/Deals/Positionen lesen, danach lokal rekonstruieren. Nicht zuordenbarer Altbestand bleibt quarantänisiert und sichtbar.",
+        "Unveränderlichen fachlichen Verlauf von kurzfristigen UI-Snapshots trennen. Die bisherigen 100.000 Events/20.000 Snapshots dürfen keine benötigte Handelsbeweiskette abschneiden.",
+        "Disk-full, beschädigten letzten Datensatz, Wiederholung, fehlenden Cursor und abgestürzte Migration kontrolliert behandeln.",
+        "Backup und Wiederherstellung mit Schema- und Codeversion binden. Nach Restore wird Brokerrealität erneut gelesen, nicht aus einem alten Backup gehandelt."
+      ],
+      "required_artifacts": [
+        "evidence/S06/journal-durability.md",
+        "evidence/S06/recovery-matrix.json",
+        "evidence/S06/retention-policy.json",
+        "evidence/S06/restore-evidence.json"
+      ],
+      "checks": [
+        {
+          "id": "S06-C01",
+          "description": "Bei jedem simulierten Commit-/Sendabbruch entstehen höchstens eine nachweisbare wirtschaftliche Wirkung oder ein explizit ungeklärter, weiter reservierter Zustand; kein blinder Retry."
+        },
+        {
+          "id": "S06-C02",
+          "description": "Fehlende Journalpersistenz sperrt neue Orders; lesende Diagnose und bestehender nativer Schutz bleiben verfügbar."
+        },
+        {
+          "id": "S06-C03",
+          "description": "Kein übernommener Altbestand erhält erfundene Entry-ATR-, Strategie- oder Risikometadaten."
+        },
+        {
+          "id": "S06-C04",
+          "description": "Ein Restoretest belegt Datenlesbarkeit und Brokerreconciliation, nicht bloß einen passenden ZIP-Hash."
+        }
+      ],
+      "allowed_paths": [
+        "apps/hub/journal/**",
+        "apps/hub/storage/**",
+        "core/recovery/**",
+        "tests/recovery/**",
+        "evidence/S06/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine stillen Datenlöschungen zur Fehlerbehebung.",
+        "Keine Erweiterung von Risiko nach einem Neustart."
+      ],
+      "stop_conditions": [
+        "Eine aktive native Wirkung wird ohne Originalplan/Bestandsbeleg automatisch verwaltet. Offline-Recoverytests dürfen und müssen ungeklärten Bestand als reservierten Zustand abbilden."
+      ],
+      "rollback": "Auf kompatiblen gesicherten Datenstand zurück; neue Orders bis zur erneuten Reconciliation gesperrt.",
+      "sources": [
+        "Trading_Local core/store.mjs,restore.mjs",
+        "BOT-01 Recoverylog",
+        "AP06/AP21"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S07",
+      "title": "Datenkatalog, Herkunft und Qualitätsprüfungen aufbauen",
+      "dependencies": [
+        "S02"
+      ],
+      "phase": "B · Verlässliche Realität",
+      "legacy_refs": [
+        "AP13",
+        "AP11"
+      ],
+      "owner": "Marktdaten",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Jeder Simulation einen nachvollziehbaren, ausreichend genauen und zulässig verwendbaren Datensatz zuordnen.",
+      "inputs": [
+        "Teil6-Datenarchiv; Master-Labordaten; Broker-Symbolmetadaten.",
+        "Quell-, Transformations- und Nutzungsregister."
+      ],
+      "tasks": [
+        "Binance-Roh-OHLCV, abgeleitete Open-Tabelle, EURUSD-Ticks, Monatsfaktorportfolios und synthetische Daten als verschiedene Datenprodukte registrieren.",
+        "Die gefundenen 19 fehlenden Stunden und 20 quarantänisierten Zeilen explizit übernehmen. Der verworfene 2004-Pilot bleibt getrennt.",
+        "Tick-/Kerzenreihen auf monotone Zeit, Duplikate, endliche und instrumentgemäß zulässige Preise, Ask>=Bid, OHLC-Konsistenz, Raster, Session und Vollständigkeit prüfen. Preispositivität gilt nur für entsprechend spezifizierte Instrumente; mögliche negative Futurespreise erhalten einen eigenen Vertrag.",
+        "Instrumentenidentität, Börse/Broker, Quoteart, Währung, Vertrag, Tick-/Volumenschritt, Halt, Roll, Split, Dividende und damalige Universumsmitgliedschaft versionieren.",
+        "Gültigkeitsmatrix definieren: Open-only kann keine intrabar Stopausführung belegen; Monatsrenditen können keine Minutenstrategie prüfen.",
+        "Nutzungsrechte pro Quelle dokumentieren. Persönliche historische Forschung, Produktionshandel und Weitergabe über eine Website sind getrennte Verwendungen.",
+        "DatasetManifest mit Rohhash, Transformcodehash, Zeitraum, Lücken, Ausschlüssen und Lizenz-/Kostenstatus einfrieren. Keine stille Interpolation handeln lassen."
+      ],
+      "required_artifacts": [
+        "evidence/S07/dataset-registry.json",
+        "evidence/S07/data-quality-report.json",
+        "evidence/S07/rights-matrix.md",
+        "evidence/S07/coverage-grid.json"
+      ],
+      "checks": [
+        {
+          "id": "S07-C01",
+          "description": "Jeder verwendete Datenpunkt ist auf Rohquelle und Transformationsversion zurückführbar."
+        },
+        {
+          "id": "S07-C02",
+          "description": "Inkompatible Datenauflösung verhindert den betreffenden Versuch oder erzwingt einen ausdrücklich anderen Modellmodus."
+        },
+        {
+          "id": "S07-C03",
+          "description": "Nicht verfügbare Aktien-/Gold-/Silberhistorien werden als Lücke geführt, nicht durch Symbolnamen simuliert."
+        },
+        {
+          "id": "S07-C04",
+          "description": "Ein Quellwechsel oder eine Korrektur erzeugt eine neue Datasetversion und verändert archivierte Runs nicht."
+        }
+      ],
+      "allowed_paths": [
+        "data/catalog/**",
+        "data/transforms/**",
+        "data/quality/**",
+        "contracts/data/**",
+        "tests/data/**",
+        "evidence/S07/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine automatische kostenpflichtige Datenbeschaffung.",
+        "Keine öffentliche Weiterverteilung ungeklärter Datensätze."
+      ],
+      "stop_conditions": [
+        "Benötigte Quote-/Corporate-Action-/Lizenzinformationen fehlen."
+      ],
+      "rollback": "Neue Datasetversion quarantänisieren; vorherige eingefrorene Version für zulässige Referenztests behalten.",
+      "sources": [
+        "PLAT-01 Datenabdeckung",
+        "Arbeitsbuch MP03/MP04",
+        "WEB-EXT BinanceTerms"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S08",
+      "title": "Zielhost, Datenladen und Prozessüberwachung absichern",
+      "dependencies": [
+        "S01",
+        "S04",
+        "S06",
+        "S07"
+      ],
+      "phase": "B · Verlässliche Realität",
+      "legacy_refs": [
+        "AP02",
+        "AP11",
+        "AP12"
+      ],
+      "owner": "Runtime und Betrieb",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Die reale Ausführungsumgebung messbar stabil machen und Forschung vom zeitkritischen Bot entkoppeln.",
+      "inputs": [
+        "Tatsächlicher cTrader-Build und Zielhost für den ersten Adapter; MT5-Hostabnahme folgt erst bei S28.",
+        "Beobachtete Reload-/Killed-Ereignisse und Datenladestatus."
+      ],
+      "tasks": [
+        "Herstellerbuild, Architektur, Betriebssystem, native Artefakte und erforderliche Paketversionen in einer Hostmatrix erfassen.",
+        "Datenabfragen begrenzen und fair planen: priorisierte aktive Positionen, dann gültige Setups, danach Hintergrunduniversum; identische Reihen gemeinsam cachen.",
+        "Prozess-Heartbeat, Speicher-/CPU-Spitzen, Warteschlangenalter, Barverzug und Abbruchgrund instrumentieren. Ursachen nicht aus einem einzelnen Killed-Text erraten.",
+        "Ausführung, Hub und Forschungsworker getrennt betreiben. Forschungsjobs bekommen feste Ressourcen- und Zeitbudgets sowie kontrollierten Abbruch.",
+        "cTrader-Cloudfähigkeiten am konkreten Build prüfen. Wegen fehlendem HTTP und widersprüchlicher WebSocket-Dokumentation ist lokaler/VPS-Host die vorläufige Integrationsbasis.",
+        "Zielhostimport, Reconnect, Schlafmodus, Brokerunterbruch und veralteten Feed als echte Betriebsfälle prüfen.",
+        "Lesende Native-Ende-zu-Ende-Prüfung aus S04 jetzt nachholen: Broker/Engine/Hub/Websiteprojektion abgleichen, tatsächlich schreibfreien Observer belegen, native-read-capability nur für den getesteten Build erteilen."
+      ],
+      "required_artifacts": [
+        "evidence/S08/host-matrix.json",
+        "evidence/S08/runtime-budget.json",
+        "evidence/S08/resource-observations.json",
+        "evidence/S08/native-import-report.json",
+        "evidence/S08/native-readonly-parity.json"
+      ],
+      "checks": [
+        {
+          "id": "S08-C01",
+          "description": "Ein Forschungslasttest verzögert lokale Schutzverarbeitung nicht über das vorher festgelegte Budget."
+        },
+        {
+          "id": "S08-C02",
+          "description": "Nicht geladene Reihen werden nicht als gültiger neutraler Indikator gewertet."
+        },
+        {
+          "id": "S08-C03",
+          "description": "Nach einem Daten-/Prozessausfall wird keine Order auf veralteten Informationen neu eröffnet."
+        },
+        {
+          "id": "S08-C04",
+          "description": "Cloud-/lokale Fähigkeiten sind pro Herstellerbuild getestet und nicht nur aus allgemeinen Produkttexten abgeleitet."
+        },
+        {
+          "id": "S08-C05",
+          "description": "Native Kontodaten und schreibfreier Observer sind am echten Zielhost nachgewiesen; fehlender Zugriff bleibt als Blocker und wird nicht durch Fixtures ersetzt."
+        }
+      ],
+      "allowed_paths": [
+        "runtime/**",
+        "adapters/ctrader/host/**",
+        "apps/hub/supervisor/**",
+        "tests/runtime/**",
+        "evidence/S08/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine neue Cloudinfrastruktur auf Kosten des Nutzers ohne konkreten Bedarf und Budget.",
+        "Keine Umgehung nativer Netzwerkgrenzen."
+      ],
+      "stop_conditions": [
+        "Native Kompatibilität oder stabiler Schutzpfad nicht nachgewiesen."
+      ],
+      "rollback": "Neue Worker stoppen; letzter bestätigter Executorstand und lesende Diagnose bleiben bestehen.",
+      "sources": [
+        "BOT-01 Laufzeit",
+        "PLAT-01 Hostgrenzen",
+        "WEB-EXT cTraderCloud"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S09",
+      "title": "Mehrzeitanalyse mit kausalen Merkmalen vereinheitlichen",
+      "dependencies": [
+        "S02",
+        "S07"
+      ],
+      "phase": "C · Gemeinsamer Forschungskern",
+      "legacy_refs": [
+        "AP11",
+        "AP15",
+        "AP16"
+      ],
+      "owner": "Feature- und Strategiekern",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Woche/Tag, Stunden und Minuten verbinden, ohne aus späteren Kerzen unbemerkt Zukunftswissen zu beziehen.",
+      "inputs": [
+        "C17 TimeRecipe, FrameView, TimePlanner, TimePicker als Donoren.",
+        "Zeit- und Datenverträge aus S02/S07; vollständige 1.9-Quelle nur sofern gesichert."
+      ],
+      "tasks": [
+        "Kontext-, Setup-, Trigger- und Schutzebene getrennt modellieren: zunächst D1/H4, H1/M15, M5/M1; W1 nur bei ausreichender Historie.",
+        "Bars pro Handelskalender und Quoteart aggregieren; offene Kerzen bleiben getrennt von bestätigten Merkmalen.",
+        "As-of-Verknüpfung verwenden: ein Merkmal darf erst ab seinem tatsächlichen available_at in eine Entscheidung eingehen.",
+        "Bestehende 14 Rezepte fachlich katalogisieren und als versionierte Kandidaten übernehmen. Die alte Scorezahl bleibt ein Score und wird nicht als Gewinnwahrscheinlichkeit angezeigt.",
+        "Aufwärmfenster, maximale Alterung, fehlende Teilreihen und widersprüchliche Horizonte behandeln; unknown/no-trade ist eine gültige Ausgabe.",
+        "Präfixtest implementieren: spätere Daten, eine spätere Revision oder ein später bestätigter Pivot dürfen frühere Features und Signale nicht ändern.",
+        "Langsame und schnelle Ebenen nur bei neuer relevanter Information aktualisieren; keine identischen H4-Merkmale auf jedem Tick neu berechnen."
+      ],
+      "required_artifacts": [
+        "evidence/S09/timeframe-recipes.json",
+        "evidence/S09/feature-contract.json",
+        "evidence/S09/prefix-test-report.json",
+        "evidence/S09/mtf-parity.json"
+      ],
+      "checks": [
+        {
+          "id": "S09-C01",
+          "description": "M5-Entscheidung um 10:35 nutzt niemals den erst um 11:00 bestätigten H1-Schluss."
+        },
+        {
+          "id": "S09-C02",
+          "description": "Fehlende/alte Kontextdaten erzeugen einen begründeten unklaren Zustand statt Vorwärtsauffüllung ohne Altersgrenze."
+        },
+        {
+          "id": "S09-C03",
+          "description": "Batchberechnung und schrittweise Replayberechnung ergeben dieselben Features/Entscheidungen innerhalb festgelegter numerischer Toleranz."
+        },
+        {
+          "id": "S09-C04",
+          "description": "Zeitstempelkonventionen an Wochenenden, DST und Sitzungsgrenzen sind getestet."
+        }
+      ],
+      "allowed_paths": [
+        "core/features/**",
+        "core/timeframes/**",
+        "contracts/features/**",
+        "tests/causality/**",
+        "evidence/S09/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine optimierten Rezeptgewichte; keine automatische Auswahl anhand späterer Gewinne."
+      ],
+      "stop_conditions": [
+        "Eine Eingangsgröße hat keinen belegten Verfügbarkeitszeitpunkt."
+      ],
+      "rollback": "Neues Rezept deaktivieren; gespeicherte vorherige Featureversion weiterhin lesbar.",
+      "sources": [
+        "C17 ExtremeLabTimeframes.cs",
+        "Atlas BF06/BF09/BR01/BD02",
+        "WEB-EXT cTraderBarEvents und MT5Bars"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S10",
+      "title": "Deterministischen Replay- und Ausführungssimulator bauen",
+      "dependencies": [
+        "S05",
+        "S06",
+        "S07",
+        "S09"
+      ],
+      "phase": "C · Gemeinsamer Forschungskern",
+      "legacy_refs": [
+        "AP14"
+      ],
+      "owner": "Simulator und QA",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Denselben Entscheidungskern mit historischen Ereignissen und nativen Brokerrückmeldungen prüfen können.",
+      "inputs": [
+        "Geprüftes Ledger, Featureverträge, Datensätze und Referenzfälle.",
+        "Vorhandene LAB01–04 sind getrennte Donoren, kein schon fertiger universeller Simulator."
+      ],
+      "tasks": [
+        "Den C#-Domänenkern von Plattformaufrufen trennen; Daten-/Orderports ersetzen echte Brokeraktionen im Replay. Python orchestriert Experimente, schreibt nicht parallel eine andere Handelslogik.",
+        "Ereignisreihenfolge für Session, Barbestätigung, Signal, Quote, Orderantwort, Fill, Gebühr und Finanzierung explizit implementieren.",
+        "Tick-/Quote-Replay, OHLC-Modell und synthetischen Stresstest getrennt ausweisen. Bei OHLC-Doppeltreffern eine vorab fixierte konservative Regel und Sensitivität rechnen.",
+        "Bid/Ask, Spread, Slippage, Latenz, Teilfills, Mindestmenge, Tickrundung, Hebel, Margin, Stop-out und Haltekosten aus InstrumentVersion verwenden.",
+        "Aktienkapitalmaßnahmen, Leihe/Short-Verfügbarkeit, Futuresrollen und FX-Umrechnung nur unterstützen, wenn die nötigen Daten vorliegen.",
+        "MPR1 als eng definierten Referenzautomaten vollständig umsetzen; seine Lehrparameter bleiben Referenzfall, nicht produktive Strategieempfehlung.",
+        "Gleiche Eingaben und gleicher Seed müssen reproduzierbare Ereignis-/Ledgerhashes ergeben. Ergebnis enthält auch abgelehnte, ungefüllte und ungeklärte Fälle."
+      ],
+      "required_artifacts": [
+        "evidence/S10/engine-manifest.json",
+        "evidence/S10/execution-model.md",
+        "evidence/S10/mpr1-golden-report.json",
+        "evidence/S10/replay-parity.json"
+      ],
+      "checks": [
+        {
+          "id": "S10-C01",
+          "description": "Keine Order wird zum Signalbarpreis gefüllt, bevor das Signal verfügbar war."
+        },
+        {
+          "id": "S10-C02",
+          "description": "Gap, fehlender Quote, doppeltes Ereignis, beidseitiger Schwellentreffer, Teilfill und Marginablehnung bestehen die unabhängig gerechneten Referenzfälle."
+        },
+        {
+          "id": "S10-C03",
+          "description": "MPR1-Werte aus S05 und sämtliche Queue-/Ablaufgegenfälle stimmen."
+        },
+        {
+          "id": "S10-C04",
+          "description": "Derselbe eingefrorene Run reproduziert seine Trace- und Ledgerhashes auf einem zweiten Prozess."
+        }
+      ],
+      "allowed_paths": [
+        "core/replay/**",
+        "core/execution-model/**",
+        "adapters/simulation/**",
+        "tests/replay/**",
+        "evidence/S10/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Leistungsoptimierung vor korrektem Ledger.",
+        "Keine Ergebnisfüllung für unbekannte Ausführung."
+      ],
+      "stop_conditions": [
+        "Broker- und Replaysemantik weichen wirtschaftlich relevant ab oder Datenauflösung genügt nicht."
+      ],
+      "rollback": "Neue Modellversion sperren; alte Runs unverändert sichtbar halten.",
+      "sources": [
+        "Arbeitsbuch MP05–MP11",
+        "LAB01–04 mit Grenzen",
+        "AP14"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S11",
+      "title": "Portfolio-, Margin- und Risikoprüfung zentralisieren",
+      "dependencies": [
+        "S05",
+        "S06",
+        "S10"
+      ],
+      "phase": "C · Gemeinsamer Forschungskern",
+      "legacy_refs": [
+        "AP10",
+        "AP17"
+      ],
+      "owner": "Risiko und Portfolio",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Alle Strategien teilen sich dieselbe Kasse und dieselben Gesamtgrenzen; parallel laufende Bots dürfen Risiko nicht mehrfach vergeben.",
+      "inputs": [
+        "Ledger, Orderreservierungen, echte Symbolverträge und Kostenmodell.",
+        "LAB03 als begrenzter Donor gemeinsamer Portfoliorechnung."
+      ],
+      "tasks": [
+        "Vor jedem Auftrag Menge nach Stopabstand einschließlich bekannter Gebühren, Währungsumrechnung, Volumenschritt und Mindestmenge bestimmen.",
+        "Ein gemeinsames Konto-/Symbol-/Strategie-/Sektor-/Währungsbudget führen; Pending Orders reservieren Risiko und Margin vor dem Fill.",
+        "Korrelierte oder gegenläufige Positionen wirtschaftlich bewerten. Verschiedene Magic Numbers sind keine getrennten Risikokonten.",
+        "Tagesverlust-, Drawdown-, Margin- und Expositionsgrenzen mit eingerasteten Zuständen und definiertem Reset bauen.",
+        "100, 1.000, 10.000 und 1.000.000 CHF in derselben Modelllogik prüfen. Unzulässige Mindestmenge führt zu no-trade, nicht zu unbemerktem Risikoaufschlag.",
+        "Gap- und Liquiditätsstress getrennt vom normalen Stopbudget rechnen; kein Stopniveau wird als garantierte Verlustobergrenze bezeichnet.",
+        "Für Forschung mehrere vorab definierte Risikoprofile vergleichen; eine experimentelle aggressive Variante erhält eigene Verlust-/Ausfallverteilung."
+      ],
+      "required_artifacts": [
+        "evidence/S11/risk-policy.json",
+        "evidence/S11/portfolio-budget.json",
+        "evidence/S11/risk-reference-tests.json",
+        "evidence/S11/capital-feasibility.json"
+      ],
+      "checks": [
+        {
+          "id": "S11-C01",
+          "description": "Zwei gleichzeitige Strategien können dasselbe freie Risiko nicht doppelt reservieren."
+        },
+        {
+          "id": "S11-C02",
+          "description": "Das tatsächlich modellierte Stoprisiko überschreitet das genehmigte Budget nicht durch Mindestlot-Aufrundung."
+        },
+        {
+          "id": "S11-C03",
+          "description": "Tagesverlustsperre bleibt bis zum definierten Sitzungswechsel aktiv, auch wenn offener PnL kurz steigt."
+        },
+        {
+          "id": "S11-C04",
+          "description": "Unbekannter Kontostand, unbekannte Vertragsgrößen oder nicht berechenbare definierte Stressszenarien sperren neue Exposition. Stressverlust ist keine garantierte absolute Verlustobergrenze."
+        }
+      ],
+      "allowed_paths": [
+        "core/risk/**",
+        "core/portfolio/**",
+        "contracts/risk/**",
+        "tests/risk/**",
+        "evidence/S11/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Renditeziele durch nachträglich erhöhten Hebel erfüllen.",
+        "Keine pauschale Empfehlung eines Risikoprozents für ein echtes Konto."
+      ],
+      "stop_conditions": [
+        "Margin-/Mengen-/Kontraktmetadaten fehlen oder Kontobudgets widersprechen sich."
+      ],
+      "rollback": "Auf letzte freigegebene Risikopolicy zurück; neue Exposition bis zum Abgleich blockieren.",
+      "sources": [
+        "BOT-01 Sizing/Tageslimit",
+        "LAB03",
+        "Arbeitsbuch MP06/MP08",
+        "AP10"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S12",
+      "title": "Gewinnsicherung, Sessions und sichere Ausstiege spezifizieren",
+      "dependencies": [
+        "S10",
+        "S11"
+      ],
+      "phase": "C · Gemeinsamer Forschungskern",
+      "legacy_refs": [
+        "AP08",
+        "AP09",
+        "AP16"
+      ],
+      "owner": "Exit- und Ausführungskern",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Gewinne regelgebunden laufen lassen und Schutz nur über bestätigte, kausal berechnete Anpassungen verändern.",
+      "inputs": [
+        "C17 RelativeMath.ProtectedStop/Target und Davids einmalige Gewinnsicherung.",
+        "Orderzustände, Risikopolicy, Sessionkalender und vollständige Originalpläne.",
+        "Diese Karte implementiert und prüft Offline-Exitlogik; native Stop-ACK-Parität ist zusätzlich in S23 zwingend."
+      ],
+      "tasks": [
+        "Fixstop, kostenbereinigtes Break-even, ATR-Trailing, Struktur-Trailing und zeitbasierte Beendigung als getrennte Policys implementieren.",
+        "Für Long darf Schutz nur steigen, für Short nur fallen, sofern die Policy keine ausdrücklich getrennte neue Position eröffnet. Bei weniger klarer Lage Schutz nicht unbemerkt lockern.",
+        "Neuen Stop erst ab berechnetem und tatsächlich bestätigtem Änderungszeitpunkt wirksam behandeln. Brokerreject und Freeze-/Stop-Distance berücksichtigen.",
+        "Gewinnzielentfernung, Zielverschiebung und Stopintelligenz getrennt testen. Ein Vergleich muss die gleiche Take-Profit-Bedingung enthalten, wenn nur Stoplogik bewertet wird.",
+        "Sessionende, Wochenendgap, Swap-/Finanzierungszeit und maximale Haltedauer im Plan vor Einstieg berücksichtigen.",
+        "Altpositionen nur mit nachvollziehbarem Plan übernehmen; unbekannte ursprüngliche Stop-/ATRwerte verhindern automatische Neuerfindung.",
+        "Exitprioritäten für Stop, Zeitende, Margin, Policywechsel und Datenfehler festlegen. Bei fehlendem Fill bleibt offener Bestand als solcher sichtbar."
+      ],
+      "required_artifacts": [
+        "evidence/S12/exit-policies.json",
+        "evidence/S12/session-policy.json",
+        "evidence/S12/stop-ack-tests.json",
+        "evidence/S12/legacy-position-policy.md"
+      ],
+      "checks": [
+        {
+          "id": "S12-C01",
+          "description": "Ein höheres späteres Hoch kann keinen früheren Trailingstop verbessern."
+        },
+        {
+          "id": "S12-C02",
+          "description": "Bei Kurslücke wird der nächste tatsächlich verfügbare Preis verwendet, nicht rückwirkend die gewünschte Stopmarke."
+        },
+        {
+          "id": "S12-C03",
+          "description": "Im simulierten Adapter bleibt abgelehnte Stopänderung abgelehnt und alter bestätigter Stop wirksam; native Gegenprüfung ist S23 vorbehalten."
+        },
+        {
+          "id": "S12-C04",
+          "description": "Kostenbereinigtes Break-even und Schutzpreis sind getrennt vom garantierten Nettoergebnis beschrieben."
+        }
+      ],
+      "allowed_paths": [
+        "core/exits/**",
+        "core/sessions/**",
+        "adapters/ctrader/protection/**",
+        "tests/exits/**",
+        "evidence/S12/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Noch keine Wahl des profitabelsten Exitparameters.",
+        "Keine autonome Verwaltung unbekannter Altpositionen."
+      ],
+      "stop_conditions": [
+        "Schutzbestätigung, Preisraster oder ursprünglicher Positionsplan ist nicht belegt."
+      ],
+      "rollback": "Neue Exitpolicy für neue Positionen sperren; bestehende Positionen behalten ihre gebundene und bestätigte Policy.",
+      "sources": [
+        "BOT-01 Exitprüfung",
+        "Arbeitsbuch MP06",
+        "AP08/AP09/AP16"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S13",
+      "title": "Wissensbibliothek in prüfbare Hypothesen übersetzen",
+      "dependencies": [
+        "S02",
+        "S07"
+      ],
+      "phase": "D · Wissen und Strategien",
+      "legacy_refs": [
+        "AP13",
+        "AP15",
+        "AP25"
+      ],
+      "owner": "Research und Wissensmodell",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Die PDFs als durchsuchbaren fachlichen Unterbau nutzen und jede daraus abgeleitete Handelsidee auf einen messbaren Vertrag reduzieren.",
+      "inputs": [
+        "Master-1.0-Katalog, Knowledge Graph, Szenarienregister und Kapitelindex.",
+        "251 Kapitel, 124 Lehrblätter und 405 Szenarien sind Wissenseinträge, keine fertigen Bots."
+      ],
+      "tasks": [
+        "Master 1.0 als Wissenshauptfassung registrieren; Atlas/Arbeitsbuch auf ihre Masterkapitel verlinken und v8 als Vorgänger behandeln.",
+        "Einträge in Definition, institutionelle Mechanik, Forschungsbefund, synthetisches Beispiel, Hypothese und implementierte Funktion klassifizieren.",
+        "Jede Hypothese mit Quellen-ID/PDF-Seite, benötigten Daten, Assetklasse, Horizont, Gegenhypothese, Widerlegungsbedingung und erwartbarem Kostenmechanismus versehen.",
+        "Die acht bestehenden JSON-Vorlagen adaptieren. Draft darf null enthalten; ready_to_run verlangt vollständige fachliche Werte und passende Enginefähigkeiten.",
+        "Die 43 dokumentierten Datentypen nicht alle sofort implementieren. Pro erster Strategie genau die tatsächlich benötigten Typen auswählen und den Rest als fehlende Capability kennzeichnen.",
+        "Überblick über umgesetzte, geprüfte, verworfene und datenbedingt blockierte Ideen erstellen. Quellenbeleg und eigene Testergebnisse bleiben getrennt.",
+        "Die Website-Suche soll vom Begriff zur Quelle, von der Hypothese zum Versuch und vom Ergebnis zurück zur genauen Regel führen."
+      ],
+      "required_artifacts": [
+        "evidence/S13/knowledge-catalog.json",
+        "evidence/S13/hypothesis-registry.json",
+        "evidence/S13/ready-contract-validation.json",
+        "evidence/S13/knowledge-traceability.md"
+      ],
+      "checks": [
+        {
+          "id": "S13-C01",
+          "description": "Jede ausführbare Hypothese hat eine vollständige maschinenlesbare Spezifikation und einen Quellen-/Begründungsbezug."
+        },
+        {
+          "id": "S13-C02",
+          "description": "Ein formal gültiges JSON mit null in Pflichtfeldern wird nicht zur Ausführung zugelassen."
+        },
+        {
+          "id": "S13-C03",
+          "description": "Duplizierte PDFs erhöhen weder Strategiezahl noch Evidenzmenge."
+        },
+        {
+          "id": "S13-C04",
+          "description": "Ein verworfener Versuch bleibt mit Begründung auffindbar."
+        }
+      ],
+      "allowed_paths": [
+        "knowledge/**",
+        "contracts/research/**",
+        "research/hypotheses/**",
+        "tests/knowledge/**",
+        "evidence/S13/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Kein automatischer Wissen-zu-Gewinn-Compiler.",
+        "Keine vollständige Umsetzung aller Lehrblätter vor dem ersten funktionierenden Durchlauf."
+      ],
+      "stop_conditions": [
+        "Eine Idee lässt sich nicht in verfügbare Beobachtungen, Regeln und Widerlegung übersetzen."
+      ],
+      "rollback": "Eintrag als Entwurf/deaktiviert markieren; alte IDs und Quellenverweise erhalten.",
+      "sources": [
+        "DOC-01 Masterregister",
+        "Atlas BF06/BP09/BP10/BR01/BD02",
+        "master_1_0/templates"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S14",
+      "title": "Strategiefamilien als unveränderte Referenzen portieren",
+      "dependencies": [
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13"
+      ],
+      "phase": "D · Wissen und Strategien",
+      "legacy_refs": [
+        "AP15",
+        "AP16"
+      ],
+      "owner": "Strategieentwicklung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Mehrere wirklich unterschiedliche Entscheidungslogiken vergleichbar machen, bevor ihre Parameter verbessert werden.",
+      "inputs": [
+        "Geprüfte Donorfunktionen und eindeutige Lizenz-/Besitzlage.",
+        "Simulator, gemeinsames Risikobuch und Hypothesenregister."
+      ],
+      "tasks": [
+        "Vier erste Familien registrieren: Trend/Pullback; Band-/Range-Rückkehr; Ausbruch/Retest; Gold/Silber-Momentum-Divergenz.",
+        "Hauptbot und David V2 als Varianten derselben Trendfamilie führen. Gold/Silber-Donor als Goldsignal mit Silberreferenz kennzeichnen; er ist kein bereits implementiertes marktneutrales Paarportfolio.",
+        "Pro Familie Einstieg, Invalidierung, Zustandswechsel, Ausstieg, Menge, Zeitebenen, Handelszeit und fehlende Daten vollständig beschreiben.",
+        "Pure Signalberechnung von MT5/cTrader-Aufrufen trennen. Davids Vektor-/Einzelsignalpfad als Paritätsreferenz verwenden.",
+        "Bekannte Ausführungsfehler nicht mitportieren: unknown Positionsabruf, unklare Retryantwort, fehlende Teilfills, unbestätigter Schutz, veraltete Silberreferenz.",
+        "Zuerst Originalparameter reproduzieren, dann genau eine geänderte Variante anlegen. Alle Referenzen bekommen unveränderliche IDs.",
+        "Einfaches Nicht-Handeln und passende ungehebelte/margenangepasste Referenzanlage als Vergleich implementieren."
+      ],
+      "required_artifacts": [
+        "evidence/S14/strategy-registry.json",
+        "evidence/S14/reference-policies.json",
+        "evidence/S14/port-parity-report.json",
+        "evidence/S14/donor-change-log.md"
+      ],
+      "checks": [
+        {
+          "id": "S14-C01",
+          "description": "Jede Familie erfüllt denselben SignalIntent-Vertrag und denselben Geld-/Kostenpfad."
+        },
+        {
+          "id": "S14-C02",
+          "description": "Originalsignalparität wird auf eingefrorenen Daten nachgewiesen; fachliche Abweichungen sind einzeln begründet."
+        },
+        {
+          "id": "S14-C03",
+          "description": "Gold-/Silberreferenz wird bei zu altem oder asynchronem Preis nicht verwendet."
+        },
+        {
+          "id": "S14-C04",
+          "description": "Eine Strategie kann no-trade ausgeben, ohne durch einen anderen Default heimlich ersetzt zu werden."
+        }
+      ],
+      "allowed_paths": [
+        "core/strategies/**",
+        "adapters/legacy-reference/**",
+        "research/reference-policies/**",
+        "tests/strategy-parity/**",
+        "evidence/S14/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine gemeinsame Hyperparameteroptimierung aller Familien.",
+        "Keine Verwendung von Codekommentaren als Performancebeleg."
+      ],
+      "stop_conditions": [
+        "Quelle, Regeldefinition oder benötigte Referenzdaten fehlen."
+      ],
+      "rollback": "Neue Familie deaktivieren; unveränderte Referenz und Donorabbildung erhalten.",
+      "sources": [
+        "BOT-01",
+        "Arbeitsbuch MPR1",
+        "Master TECH05; LAB02 bewusst abweichend",
+        "C17-Kern"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S15",
+      "title": "Nachvollziehbare Mustererkennung hinzufügen",
+      "dependencies": [
+        "S09",
+        "S13",
+        "S14"
+      ],
+      "phase": "D · Wissen und Strategien",
+      "legacy_refs": [
+        "AP15",
+        "AP16"
+      ],
+      "owner": "Pattern-Forschung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Muster mit Zeitpunkt, Unsicherheit und Gegenfällen erkennen und ihren zusätzlichen Nutzen messbar prüfen.",
+      "inputs": [
+        "Zeitgerechte Features und drei erste fest definierte Patternhypothesen.",
+        "BP-Kapitel und Szenarienregister; genügend negative Beispiele."
+      ],
+      "tasks": [
+        "Mit drei deterministischen Familien starten: Ausbruch/Retest, Trend-Pullback und Kompression/Expansion. Range-Randkontakte und Divergenzen als nächste Kandidaten katalogisieren.",
+        "Anker, Fenster, ATR-/Volatilitätsnormierung, Toleranzen, Mindestdauer, Bestätigung und Ablauf pro Pattern fixieren.",
+        "Retrospektiven Pivotzeitpunkt von Erkennungszeit unterscheiden. Ein bestätigter Swing kann erst nach der Bestätigung verwendet werden.",
+        "PatternEvent mit Richtungsannahme, timeframe, known_at, available_at, expiry, invalidation, Featureversion und Qualitätsstatus erzeugen.",
+        "Geometrische Musterqualität, heuristischen Score und kalibrierte Wahrscheinlichkeit getrennt halten. Ohne Kalibrierung keine Prozentchance anzeigen.",
+        "Positive, negative und unklare Fälle aus mehreren Marktphasen prüfen; dieselbe überlappende Bewegung nicht als viele unabhängige Treffer zählen.",
+        "A/B-Versuchsplan gegen dieselbe Strategie ohne Pattern vorbereiten; technische Fixtures und Kausalität jetzt prüfen. Wirtschaftliche Ablation erst nach S16-Protokollfreeze in S18 durchführen."
+      ],
+      "required_artifacts": [
+        "evidence/S15/pattern-registry.json",
+        "evidence/S15/pattern-fixtures.json",
+        "evidence/S15/pattern-causality.json",
+        "evidence/S15/pattern-ablation-plan.json"
+      ],
+      "checks": [
+        {
+          "id": "S15-C01",
+          "description": "Das Entfernen aller späteren Daten ändert kein bereits emittiertes PatternEvent."
+        },
+        {
+          "id": "S15-C02",
+          "description": "Jeder Treffer und jede Ablehnung lässt sich mit damaligen Merkmalen und Regeln nachvollziehen."
+        },
+        {
+          "id": "S15-C03",
+          "description": "Patternwissen allein vergibt keine neue Handelsfreigabe."
+        },
+        {
+          "id": "S15-C04",
+          "description": "Unterschiedliche Zeitebenen werden nicht als unabhängige Mehrheitsstimmen gezählt."
+        }
+      ],
+      "allowed_paths": [
+        "core/patterns/**",
+        "research/patterns/**",
+        "contracts/patterns/**",
+        "tests/patterns/**",
+        "evidence/S15/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Bild-KI auf beliebigen Screenshots als erste Handelsentscheidung.",
+        "Keine RL-/Deep-Learning-Plattform ohne belastbaren einfachen Vergleich."
+      ],
+      "stop_conditions": [
+        "Ankerdefinition benötigt Zukunftsdaten oder Patternlabel ist rückblickend angepasst."
+      ],
+      "rollback": "Patternfilter deaktivieren; zuvor eingefrorene Strategie ohne Filter bleibt Referenz.",
+      "sources": [
+        "Atlas BP09/BP10/BP14/BR01",
+        "DOC-01",
+        "research/Pattern-Spec.json"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S16",
+      "title": "Versuchsprotokoll und unabhängige Bewertung einfrieren",
+      "dependencies": [
+        "S07",
+        "S10",
+        "S14"
+      ],
+      "phase": "E · Belegbare Forschung",
+      "legacy_refs": [
+        "AP13",
+        "AP14",
+        "AP17"
+      ],
+      "owner": "Statistik und unabhängige Prüfung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Vor der Suche festlegen, woran Verbesserung gemessen wird und welche Daten für welche Entscheidung verwendet werden dürfen.",
+      "inputs": [
+        "Reproduzierbare Referenzstrategien, Datasetversionen und Risikoprofile.",
+        "Historische LAB04-/Site-Ergebnisse sind bereits bekannt und keine neuen unberührten Holdouts."
+      ],
+      "tasks": [
+        "Zielmetrik, Risikorahmen, Nettokosten, Benchmark, Anlageuniversum, Suchbudget und Auswertungsregeln vor dem ersten Variantenlauf registrieren.",
+        "Chronologische Trainings-, Auswahl- und äußere Testfenster festlegen. Features, Skalierungen, Schwellen und Regimemodelle nur aus der erlaubten Vergangenheit schätzen.",
+        "Überlappende Labels/Haltedauern an Fensterrändern trennen; Zeitabstand und Datenrevisionen dokumentieren. Kein zufälliges Mischen benachbarter Zeitreihenzeilen.",
+        "Einen finalen Holdout nur einmal für die vorab fixierte Entscheidung verwenden. Nach Einsicht wird er verbraucht; neue Verbesserung benötigt neues späteres oder unabhängiges Material.",
+        "Alle versuchten und gescheiterten Konfigurationen zählen. Auswahlverzerrung, effektive Versuchszahl und gegebenenfalls Deflated Sharpe/PBO als Zusatzdiagnostik ausweisen.",
+        "Blockweise Unsicherheitsintervalle über Tage/Wochen/Marktgruppen berechnen; korrelierte Trades oder wiederverwendete Pfade nicht als unabhängige Stichprobe behandeln.",
+        "Ergebnisstatus passend, besser belegt, schlechter, unzureichende Evidenz oder unzulässig trennen. Ein grüner Techniktest ist kein Profitabilitätsnachweis."
+      ],
+      "required_artifacts": [
+        "evidence/S16/frozen-research-protocol.json",
+        "evidence/S16/split-manifest.json",
+        "evidence/S16/metric-definitions.md",
+        "evidence/S16/decision-gates.json"
+      ],
+      "checks": [
+        {
+          "id": "S16-C01",
+          "description": "Protokollhash und Suchbudget stehen vor den Ergebnisdateien fest."
+        },
+        {
+          "id": "S16-C02",
+          "description": "Ein bekannter Schlussabschnitt wird nicht durch Umbenennung erneut holdout."
+        },
+        {
+          "id": "S16-C03",
+          "description": "Modellwahl und abschließende Bewertung verwenden nicht dieselben unverbrauchten Daten."
+        },
+        {
+          "id": "S16-C04",
+          "description": "Jede Erfolgsbehauptung enthält Nettoergebnis, Drawdown, Exposition, Kosten, Stichprobenumfang und Unsicherheit."
+        }
+      ],
+      "allowed_paths": [
+        "research/protocols/**",
+        "research/evaluation/**",
+        "contracts/runs/**",
+        "tests/evaluation/**",
+        "evidence/S16/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Kein Rennen bis zu einer gewünschten Screenshotzahl.",
+        "Kein globales Siegerlabel aus einem einzigen günstigen Markt."
+      ],
+      "stop_conditions": [
+        "Endprüfung wurde zur Auswahl benutzt oder Versuchshistorie fehlt."
+      ],
+      "rollback": "Unzulässigen Versuch als explorativ markieren; neues Protokoll und neues zulässiges Testmaterial planen.",
+      "sources": [
+        "LAB04 research_lab.py",
+        "WEB-EXT Bailey/López de Prado",
+        "Master F/DOC/ROB-Kapitel"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S17",
+      "title": "Fortsetzbare Forschungsjobs und Ergebnisregister bauen",
+      "dependencies": [
+        "S06",
+        "S10",
+        "S16"
+      ],
+      "phase": "E · Belegbare Forschung",
+      "legacy_refs": [
+        "AP12",
+        "AP14",
+        "AP20"
+      ],
+      "owner": "Forschungsplattform",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Viele reproduzierbare Versuche ausführen, ohne Websiteanfragen oder den Handelsprozess zu überlasten.",
+      "inputs": [
+        "Eingefrorenes Runprotokoll und reproduzierbarer Replaykern.",
+        "Aktuelle Vercel-Konfiguration: maxDuration 60 Sekunden; kein Dauerworker im Request."
+      ],
+      "tasks": [
+        "ResearchJob mit Dataset-/Engine-/Strategy-/Policyhash, Split, Seed, Budget und Idempotenzschlüssel einführen.",
+        "Warteschlange und Worker mit Zuständen queued, accepted, running, checkpointed, succeeded, failed, cancelled, expired bauen.",
+        "Jobs in kleine wiederholbare Pakete teilen; Teilergebnisse und Cursor dauerhaft sichern. Fortschritt nur aus tatsächlich abgeschlossenen Fällen berechnen.",
+        "CPU, RAM, Laufzeit, Datentransfer und Ergebnisspeicher pro Job begrenzen. Offlineworker werden separat geprüft; gemeinsame Last mit nativem Executor ist zusätzlich ein Gate in S24.",
+        "Identische Aufgaben deduplizieren und Featurecaches ausschließlich nach Daten-/Merkmalversion wiederverwenden.",
+        "Ergebnisregister mit unveränderlichen Rohmetriken, Trades, Abweisungen, Ledger, Protokoll und Belegen führen; große Dateien separat speichern.",
+        "Website und Bot dürfen Forschungsanfragen einreichen, bekommen aber sofort nur eine bestätigte Job-ID. Keine lange synchrone Antwort im Handelszyklus."
+      ],
+      "required_artifacts": [
+        "evidence/S17/job-contract.json",
+        "evidence/S17/worker-resume-report.json",
+        "evidence/S17/run-registry.json",
+        "evidence/S17/resource-cost-report.json"
+      ],
+      "checks": [
+        {
+          "id": "S17-C01",
+          "description": "Ein unterbrochener Job setzt am bestätigten Checkpoint fort und zählt Fälle nicht doppelt."
+        },
+        {
+          "id": "S17-C02",
+          "description": "Ein abgebrochener Job erzeugt kein scheinbar vollständiges Ergebnis."
+        },
+        {
+          "id": "S17-C03",
+          "description": "Identischer Jobschlüssel erzeugt denselben archivierten Run oder eine eindeutige Konfliktmeldung."
+        },
+        {
+          "id": "S17-C04",
+          "description": "Workerbudgets und kontrollierter Abbruch sind offline getestet; Native-Koexistenz bleibt bis S24 unbestätigt."
+        },
+        {
+          "id": "S17-C05",
+          "description": "Server und Worker verweigern DRAFT/ready_to_run=false, fehlende Pflichtfelder, unbekannte Dataset-/Policyversion und Protokollhashabweichung; UI-Zustand allein erteilt keine Runfreigabe."
+        }
+      ],
+      "allowed_paths": [
+        "apps/research-worker/**",
+        "apps/hub/jobs/**",
+        "apps/web/api/research/**",
+        "research/run-store/**",
+        "tests/jobs/**",
+        "evidence/S17/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine unbegrenzte Cloudschleife und keine automatische Budgeterhöhung.",
+        "Kein Trading direkt aus einem Workerresultat."
+      ],
+      "stop_conditions": [
+        "Ergebnis-/Checkpointpersistenz oder Jobkontozuordnung ist nicht eindeutig."
+      ],
+      "rollback": "Queue pausieren; laufende Pakete kontrolliert beenden; bestätigte Ergebnisse und lokale Ausführung erhalten.",
+      "sources": [
+        "PLAT-01 Runtime",
+        "AP12/AP20",
+        "WEB-EXT VercelDuration"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S18",
+      "title": "Exits und Parameter mit kontrollierten Vergleichen verbessern",
+      "dependencies": [
+        "S12",
+        "S14",
+        "S15",
+        "S16",
+        "S17"
+      ],
+      "phase": "E · Belegbare Forschung",
+      "legacy_refs": [
+        "AP15",
+        "AP16"
+      ],
+      "owner": "Strategieforschung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Den Nutzen jeder Änderung einzeln messen und robuste Kandidaten statt einzelner Glückstreffer auswählen.",
+      "inputs": [
+        "Unveränderte Referenzfamilien, Patternvarianten, vorab definierte Suchräume und Vergleichsgruppen."
+      ],
+      "tasks": [
+        "Erste Suchrunde klein halten: pro Familie höchstens eine vorab begründete Parametergruppe und ein festes Kandidatenbudget.",
+        "Equal-entry-Tests verwenden, um ausschließlich Ausstiegslogik zu vergleichen; anschließend dieselben Kandidaten im realen gemeinsamen Portfoliopfad prüfen.",
+        "Fixstop, Trailing, adaptive Ziele, Zeitabbau und Sessionfilter getrennt abtragen. Take-Profit-Effekt von Stopanpassung isolieren.",
+        "Nach Kosten, Slippage-/Spreadstress, Verzögerung, Gapereignissen, Gebührenminimum und 100-CHF-Mindestmengen neu rechnen.",
+        "Parameterplateaus gegenüber isolierten Spitzen bevorzugen; leichte Nachbaränderungen und spätere Zeitfenster ausdrücklich zeigen.",
+        "Schlechte Märkte, No-trade-Fälle und gescheiterte Konfigurationen in der Ergebnismatrix behalten.",
+        "Nur innerhalb des inneren Auswahlfensters einen Kandidaten bestimmen und dessen vollständige Policy für die äußere Prüfung einfrieren."
+      ],
+      "required_artifacts": [
+        "evidence/S18/ablation-matrix.json",
+        "evidence/S18/candidate-trials.json",
+        "evidence/S18/cost-stress-report.json",
+        "evidence/S18/candidate-selection.md"
+      ],
+      "checks": [
+        {
+          "id": "S18-C01",
+          "description": "Die verglichenen Varianten teilen sich Inputs und Bedingungen, soweit die getestete Frage dies verlangt."
+        },
+        {
+          "id": "S18-C02",
+          "description": "Ergebnisunterschiede lassen sich auf die benannte Änderung und deren Folgewirkungen zurückführen."
+        },
+        {
+          "id": "S18-C03",
+          "description": "Keine Kandidatenauswahl verwendet Ergebnisse des äußeren Testfensters."
+        },
+        {
+          "id": "S18-C04",
+          "description": "Der beste Kandidat darf als unprofitabel oder unzureichend belegt enden; Suche wird dann nach Protokoll geschlossen."
+        }
+      ],
+      "allowed_paths": [
+        "research/experiments/exits/**",
+        "research/experiments/parameters/**",
+        "research/reports/**",
+        "tests/experiments/**",
+        "evidence/S18/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Kein Verschieben des Stopbudgets zur Ergebnisverschönerung.",
+        "Kein endloser Suchlauf bis Profitfaktor/80%-Ziel zufällig erreicht wird."
+      ],
+      "stop_conditions": [
+        "Suchbudget verbraucht, Datenleck festgestellt oder Kostenmodell ungültig."
+      ],
+      "rollback": "Unveränderte Referenz bleibt Champion; Kandidat und Misserfolg werden archiviert.",
+      "sources": [
+        "Arbeitsbuch MP09/MP10",
+        "AP15/AP16",
+        "BOT-01 Exits",
+        "research/Run-Protocol.json"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S19",
+      "title": "Regimeabhängige Auswahl gegen feste Strategien prüfen",
+      "dependencies": [
+        "S09",
+        "S11",
+        "S14",
+        "S16",
+        "S17",
+        "S18"
+      ],
+      "phase": "E · Belegbare Forschung",
+      "legacy_refs": [
+        "AP17"
+      ],
+      "owner": "Adaptive Strategieauswahl",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Strategien nur dann wechseln oder mischen, wenn der kausale Auswahlmechanismus nach Kosten einen belegten Mehrwert hat.",
+      "inputs": [
+        "Eingefrorene Strategiekandidaten, regimebezogene Features und Portfoliorisikobuch.",
+        "Alte TimePicker-Hysterese als Referenz, nicht als bereits bewiesene Optimierung."
+      ],
+      "tasks": [
+        "Zunächst einfache beobachtbare Zustände definieren: Trend/Range, hohe/niedrige Schwankung, liquide/teuer, Ereignisnähe und unbekannt.",
+        "Zustandsdiagnose von erwarteter Handelsrichtung trennen. Ein Volatilitätsalarm ist noch kein Kaufsignal.",
+        "Feste Einzelfamilien, feste Mischung, einfache regelbasierte Auswahl und adaptive Auswahl bei gleichem Risikobudget vergleichen.",
+        "Wechselhysterese, Mindesthaltezeit, Wechselkosten, auslaufende Setups und maximale Expositionsänderung vorab definieren.",
+        "Bei offenen Positionen ursprüngliche Schutzpolicy gebunden halten. Eine neue Entrystrategie schreibt keinen alten Positionsplan um.",
+        "Nur im Trainings-/inneren Auswahlfenster Gewichtung lernen; in jedem äußeren Fenster das vorher festgelegte Updateverfahren ausführen.",
+        "Bei Unsicherheit oder Drift neue Exposition reduzieren/aussetzen gemäß festem Vertrag; Forschungskandidat und aktiver Champion bleiben getrennt."
+      ],
+      "required_artifacts": [
+        "evidence/S19/selector-policy.json",
+        "evidence/S19/regime-causality.json",
+        "evidence/S19/switch-cost-report.json",
+        "evidence/S19/selector-comparison.json"
+      ],
+      "checks": [
+        {
+          "id": "S19-C01",
+          "description": "Eine später erkannte Trendphase führt nicht zu rückdatierten Wechseln."
+        },
+        {
+          "id": "S19-C02",
+          "description": "Adaptive Auswahl wird bei identischen Kosten-/Risikobedingungen gegen beste erlaubte feste Referenzen geprüft."
+        },
+        {
+          "id": "S19-C03",
+          "description": "Häufige Wechsel und schlechtere Ergebnisse können eine Ablehnung auslösen; Komplexität gilt nicht als Verbesserung."
+        },
+        {
+          "id": "S19-C04",
+          "description": "Unklare Zustände und fehlende Daten erzeugen eine explizite, geprüfte Rückfallentscheidung."
+        }
+      ],
+      "allowed_paths": [
+        "core/selector/**",
+        "research/experiments/selector/**",
+        "contracts/policies/**",
+        "tests/selector/**",
+        "evidence/S19/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Auswahl des rückblickend besten Bots pro Kerze.",
+        "Kein autonomes Lernen auf dem laufenden Echtgeldbestand."
+      ],
+      "stop_conditions": [
+        "Kausale Zustandsbestimmung, Wechselkosten oder Policybindung sind nicht nachgewiesen."
+      ],
+      "rollback": "Auf zuvor freigegebene feste Strategie/Mischung oder no-trade zurück; bestehende Schutzpläne behalten.",
+      "sources": [
+        "C17 TimePicker",
+        "Atlas BR01/BR10/BF14",
+        "DOC09",
+        "AP17"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S20",
+      "title": "Breiten Allround-Test über Märkte, Zeiten und Kapital durchführen",
+      "dependencies": [
+        "S07",
+        "S10",
+        "S11",
+        "S16",
+        "S17",
+        "S19"
+      ],
+      "phase": "F · Breite und Produktintegration",
+      "legacy_refs": [
+        "AP13",
+        "AP17"
+      ],
+      "owner": "Daten und Portfolioprüfung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Die Übertragbarkeit systematisch messen und Datenbreite von bloßer Anzahl künstlicher Symbolprofile unterscheiden.",
+      "inputs": [
+        "Nachgewiesene Datennutzungsrechte und Datasetabdeckung.",
+        "Eingefrorener Kandidat/Selektor; gemeinsame Kapital- und Kostenregeln."
+      ],
+      "tasks": [
+        "Drei Ausbaustufen planen: etwa 8–12 gut dokumentierte Instrumente, später etwa 100 liquide Einzelaktien, danach 500+ Titel. Pflicht dieser Karte ist nur die vor Testbeginn eindeutig freigegebene erste Kohorte; jede Erweiterung ist ein neuer gebundener Forschungsauftrag mit eigener Daten-/Budgetprüfung.",
+        "Jede Stufe nach Ländern, Sektoren, Liquidität, Volatilität und historischen Marktphasen schichten. Delistete Titel und damalige Universumsmitgliedschaft berücksichtigen.",
+        "M1/M5/M15/H1/H4/D1 nur dort testen, wo die passende Historie existiert; W1 für längerfristigen Kontext getrennt behandeln.",
+        "Horizonte 7/30/90/365 Tage sowie rollierende Starttermine vorab festlegen; warme Vorlaufperioden nicht als investierbare Testtage zählen.",
+        "Kapital 100/1.000/10.000/1.000.000 CHF mit Mindestkosten, Marktliquidität und Kapazitätsmodell prüfen. Die Rendite ist nicht automatisch skalierungsunabhängig.",
+        "Ein echtes Mehrinstrumentenportfolio separat von unabhängigen Modellkonten rechnen. Summierte fiktive Kontogewinne sind kein gemeinsamer Portfoliogewinn.",
+        "Nettoertrag, Erholungsdauer, Zeit bis Ziel, Ziel-Nichterreichung, Drawdown, Verlustwahrscheinlichkeit, Exposition, Umsatz und Marktkapazität gemeinsam auswerten."
+      ],
+      "required_artifacts": [
+        "evidence/S20/allround-matrix.json",
+        "evidence/S20/universe-history.json",
+        "evidence/S20/portfolio-vs-cases.json",
+        "evidence/S20/coverage-performance-report.json"
+      ],
+      "checks": [
+        {
+          "id": "S20-C01",
+          "description": "Jede Zelle trägt real/synthetisch, Datenauflösung, Anzahl unabhängiger Zeitblöcke und Fehlstatus."
+        },
+        {
+          "id": "S20-C02",
+          "description": "Kein abgelehnter oder verlustreicher Markt wird nach Ergebnisansicht aus der Gesamtwertung entfernt."
+        },
+        {
+          "id": "S20-C03",
+          "description": "Zeit bis 2x/10x/30x enthält auch Nichterreichung und Ausfall; keine Durchschnittszeit nur über Gewinner."
+        },
+        {
+          "id": "S20-C04",
+          "description": "Die breite Erweiterung verändert nicht nachträglich die Auswahlentscheidung des eingefrorenen Kandidaten."
+        },
+        {
+          "id": "S20-C05",
+          "description": "Kohorten- und Mindestabdeckungsdefinition wurde vor Ergebnissen fixiert. Fehlende geplante Markterweiterungen bleiben sichtbar; kein nachträgliches Verkleinern einer erfolglosen Kohorte."
+        }
+      ],
+      "allowed_paths": [
+        "research/universe/**",
+        "research/experiments/allround/**",
+        "data/equities/**",
+        "tests/universe/**",
+        "evidence/S20/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Nicht alle weltweiten Aktien und alle Intervalle als bereits verfügbar versprechen.",
+        "Keine Renditeannualisierung kurzer Extrempfade als belastbare Jahresprognose."
+      ],
+      "stop_conditions": [
+        "Survivorship-/Corporate-Action-/Quoteinformationen fehlen oder Datenbudget ist erschöpft."
+      ],
+      "rollback": "Betroffene Marktstufe als datenbedingt blockiert ausweisen; kleinere gültige Abdeckung weiter betreiben.",
+      "sources": [
+        "PLAT-01 Datenlücken",
+        "DOC-01 historische Sammlung",
+        "Nutzerziel breite Aktien/Zeiten/Kapital"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S21",
+      "title": "Alles in der bestehenden Website zusammenführen",
+      "dependencies": [
+        "S03",
+        "S04",
+        "S06",
+        "S13",
+        "S16",
+        "S17"
+      ],
+      "phase": "F · Breite und Produktintegration",
+      "legacy_refs": [
+        "AP18",
+        "AP23"
+      ],
+      "owner": "Web und Produktintegration",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Ein zusammenhängendes Arbeitsprodukt schaffen, das reale Konten, Forschung, Wissen und Entwicklungsstand verständlich verbindet.",
+      "inputs": [
+        "Designbaseline, bestehender RemoteView20-Weg, verifizierte APIs und Ergebnisregister.",
+        "Aktuelle Website bleibt Produktadresse und optische Grundlage."
+      ],
+      "tasks": [
+        "Gemeinsamen Projekt-/Bot-/Kontokontext und identische Navigation über Konto, Journal, Revolution und neue Laborbereiche führen.",
+        "Dashboard zeigt Verbindung, letzte Quellzeit, echte Kontowerte, offene/geschlossene Ergebnisse und nächste sinnvolle Aktion.",
+        "Labor erhält Versuchsdefinition, Queue, Fortschritt, Filter, Vergleich und vollständige Ergebnisdetails; eine Auswahl exportiert dasselbe archivierte Runobjekt.",
+        "Wissen verknüpft Quellen/Hypothesen/Implementierung/Resultate. Marktansicht zeigt tatsächliche Datenabdeckung und bekannte Lücken.",
+        "Projektansicht zeigt S00–S29 mit Abhängigkeiten, Scope, realen Nachweisen, Blockern und nächstem freigegebenen Schritt.",
+        "Regelentwurf, Vorschlag, freigegebene Policy und brokerbestätigte Anwendung klar auseinanderhalten. Bestehende Speichern-Texte entsprechend präzisieren.",
+        "Bestehende Remoteprojektion vollständig prüfen: Kontobindung, Authentifizierung, Replay, Widerruf, TTL, Quelle/Empfang und Cachegrenzen. Keine ungeschützte Direktverbindung vom Web zu localhost.",
+        "Technisches Labor-Preview separat abnehmen: Jobs und Ergebnisnachweise müssen real funktionieren, während native/Demo-/Performance-Freigaben sichtbar offen bleiben dürfen. S20-Allround- und S26-Gesamtfreigabe sind dafür keine Voraussetzung."
+      ],
+      "required_artifacts": [
+        "evidence/S21/integrated-ui-report.json",
+        "evidence/S21/navigation-regression.json",
+        "evidence/S21/remote-projection-tests.json",
+        "evidence/S21/accessibility-report.md"
+      ],
+      "checks": [
+        {
+          "id": "S21-C01",
+          "description": "Bestehendes Konto-/Chartdesign bleibt erhalten; alle alten Hauptwege und Links funktionieren."
+        },
+        {
+          "id": "S21-C02",
+          "description": "Ohne Konto/Job/Ergebnis werden korrekte Leerzustände angezeigt, keine generierten Erfolgszahlen."
+        },
+        {
+          "id": "S21-C03",
+          "description": "Jede gezeigte Kennzahl öffnet Definition, Datenquelle, Zeitraum und Run-/Kontobezug."
+        },
+        {
+          "id": "S21-C04",
+          "description": "Abgelaufene oder widerrufene Kopplung liefert keine weitere freigegebene Kontoprojektion."
+        },
+        {
+          "id": "S21-C05",
+          "description": "Ein echter begrenzter Offlinejob läuft über UI→Job-ACK→Worker→Archiv→Ergebnisansicht; technische Preview behauptet keine native Handels- oder Profitabilitätsfreigabe."
+        }
+      ],
+      "allowed_paths": [
+        "apps/web/**",
+        "apps/hub/remote-view/**",
+        "adapters/remote-projection/**",
+        "tests/web/**",
+        "evidence/S21/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine automatische Produktionsveröffentlichung während reiner UI-Arbeit.",
+        "Keine Mehrnutzerfreigabe aus bisheriger Einzelnutzer-Authentifizierung ableiten."
+      ],
+      "stop_conditions": [
+        "Zugriff, Datenherkunft oder UI-/Serverzustand widersprechen sich."
+      ],
+      "rollback": "Vorheriges bestätigtes Webrelease wiederherstellen; fachliche Datenmigration separat behandeln.",
+      "sources": [
+        "WEB-01",
+        "Vercel RemoteView20",
+        "Trading_Local UI/MCP",
+        "Blueprint wahre Zustände"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S22",
+      "title": "KI-Zugriff auf echte Daten, Jobs und Vorschläge begrenzen",
+      "dependencies": [
+        "S02",
+        "S13",
+        "S16",
+        "S17",
+        "S21"
+      ],
+      "phase": "F · Breite und Produktintegration",
+      "legacy_refs": [
+        "AP19"
+      ],
+      "owner": "KI- und Toolintegration",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Eine KI kann Arbeit tatsächlich nachvollziehen und Forschung ausführen, ohne aus Textausgaben Handelsautorität zu erlangen.",
+      "inputs": [
+        "Gemeinsame Toolregistry und vorhandene Trading_Local-Rechte.",
+        "Job-, Daten-, Plan- und Ergebnisverträge."
+      ],
+      "tasks": [
+        "Lesewerkzeuge für Quellen, Datenqualität, Positionen, Ledger, Versuche, Kandidaten, Planstatus und Nachweise an dieselben Fachservices anschließen.",
+        "Forschungsaufträge benötigen ein vollständiges zulässiges Protokoll und ein Budget. Ein bloßer Gewinnwunsch ist kein Runparameter.",
+        "Strategie-/Parameteränderungen als versionierte Vorschläge mit Diff, Quellen, Versuchsnachweis, Wirkungsbereich und Rückfall erzeugen.",
+        "Toolrechte nach Projekt/Konto/Fähigkeit begrenzen; Secrets weder in Prompts noch in Ergebnissen ausgeben.",
+        "Externe PDFs, Webseiten und Logs als Daten behandeln. Darin enthaltene Anweisungen können keine Rechte, Ziele oder Planregeln ändern.",
+        "KI darf Misserfolge analysieren und neue Hypothesen formulieren; endgültige Policy-Promotion verlangt die gleichen Gates wie manuelle Arbeit.",
+        "Werkzeugfehler, leere Daten, Timeouts und fehlende Autorisierung als explizite Antworten liefern; kein behaupteter Run ohne Job-ACK."
+      ],
+      "required_artifacts": [
+        "evidence/S22/tool-registry.json",
+        "evidence/S22/ai-capability-tests.json",
+        "evidence/S22/proposal-evidence.json",
+        "evidence/S22/prompt-injection-tests.json"
+      ],
+      "checks": [
+        {
+          "id": "S22-C01",
+          "description": "Ein lesender Zugang kann keine Policy anwenden oder native Order auslösen."
+        },
+        {
+          "id": "S22-C02",
+          "description": "Manipulative Anweisungen in einem importierten Dokument ändern keine Systemrechte."
+        },
+        {
+          "id": "S22-C03",
+          "description": "Jeder behauptete Job hat eine bestätigte ID, Status und reale Ergebnisreferenz."
+        },
+        {
+          "id": "S22-C04",
+          "description": "KI- und manuell erzeugte Vorschläge durchlaufen denselben Versions-/Prüfpfad."
+        }
+      ],
+      "allowed_paths": [
+        "apps/hub/mcp/**",
+        "apps/web/api/tools/**",
+        "core/proposals/**",
+        "tests/tools/**",
+        "evidence/S22/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine freie Shell oder beliebige Brokerfunktion aus dem Chat heraus.",
+        "Kein persönlicher Brokerzugang im Browsercode."
+      ],
+      "stop_conditions": [
+        "Toolscope, Kontobindung oder tatsächlicher Empfänger der Daten ist unklar."
+      ],
+      "rollback": "Schreibende Vorschlags-/Jobfähigkeit deaktivieren; geprüfte Lesefunktionen weiter anbieten.",
+      "sources": [
+        "Trading_Local core/registry.mjs,tools.mjs",
+        "AP19",
+        "Blueprint Auftrag/ACK"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S23",
+      "title": "Bestätigte Konfiguration und begrenzte Demosteuerung anbinden",
+      "dependencies": [
+        "S05",
+        "S06",
+        "S08",
+        "S11",
+        "S12",
+        "S21",
+        "S22"
+      ],
+      "phase": "G · Nachweis am Zielsystem",
+      "legacy_refs": [
+        "AP05",
+        "AP20"
+      ],
+      "owner": "Integration und unabhängige QA",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Freigegebene Konfigurationen bis zum nativen Readback verfolgen und jeden steuernden Auftrag exakt an Konto, Version und Umfang binden.",
+      "inputs": [
+        "Native Host-/Observerabnahme aus S08.",
+        "Ein konkret benanntes, für den Test freigegebenes Demokonto; keine Echtgeldfreigabe aus diesem Plan ableiten."
+      ],
+      "tasks": [
+        "Bestehenden Vorschlag→Anwendung→Readback→ACK-Vertrag erweitern; unsupported und restart_required bleiben sichtbare Parameterzustände.",
+        "CommandEnvelope mit Konto/Bot/Runtime/Policyhash, Nonce, Ablauf, erwarteter Revision und erlaubter Operation definieren.",
+        "Vor Anwendung lokale Capability, frische Kontodaten, exakte Parametergrenzen und Konfliktfreiheit prüfen. Auf dem nativen Owner-Thread anwenden.",
+        "Nur bestätigtes Readback setzt applied. Empfang oder Annahme des Auftrags erzeugen noch keine Behauptung über wirksame Brokerregeln.",
+        "Start, Pause neuer Einstiege, geordnetes Stoppen und Notfallzustand fachlich trennen. Prozessstop darf nicht als bestätigte Positionsschließung erscheinen.",
+        "Wiederholung, Ablauf, neu gestartete Runtime, geänderte Revision, Netzwerkabbruch und widersprüchliche parallele Vorschläge testen.",
+        "Fernsteuerung zunächst auf zulässige Demo-Konfiguration beschränken. Produktionsänderung benötigt später eine konkrete Konto-/Operations-/Risikofreigabe."
+      ],
+      "required_artifacts": [
+        "evidence/S23/command-contract.json",
+        "evidence/S23/native-readback.json",
+        "evidence/S23/control-negative-tests.json",
+        "evidence/S23/demo-scope.json"
+      ],
+      "checks": [
+        {
+          "id": "S23-C01",
+          "description": "Wiederholter oder abgelaufener Command wird nicht erneut wirksam."
+        },
+        {
+          "id": "S23-C02",
+          "description": "Falsches Konto, fremde Runtime und veraltete Basisrevision werden abgewiesen."
+        },
+        {
+          "id": "S23-C03",
+          "description": "Nur das native Readback bestätigt applied; jedes teilweise Scheitern ist sichtbar."
+        },
+        {
+          "id": "S23-C04",
+          "description": "Kein Research-/KI-Zugang kann den lokalen Risikoprüfer umgehen."
+        }
+      ],
+      "allowed_paths": [
+        "apps/hub/control/**",
+        "adapters/ctrader/commands/**",
+        "contracts/commands/**",
+        "tests/control/**",
+        "evidence/S23/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Echtgeldausführung.",
+        "Keine pauschale schreibende Fernfreigabe."
+      ],
+      "stop_conditions": [
+        "Zielkonto/Runtime oder exakte Wirkung eines Parameters ist unklar."
+      ],
+      "rollback": "Neue Steuerfähigkeit deaktivieren; Konfigurationsrollback als neue bestätigte Revision durchführen.",
+      "sources": [
+        "Trading_Local core/control.mjs; sdk/CallbackRuntimeDispatcher.cs",
+        "AP05/AP20"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S24",
+      "title": "Prospektiven Schatten- und Demobetrieb durchführen",
+      "dependencies": [
+        "S08",
+        "S11",
+        "S12",
+        "S19",
+        "S20",
+        "S23"
+      ],
+      "phase": "G · Nachweis am Zielsystem",
+      "legacy_refs": [
+        "AP22"
+      ],
+      "owner": "Betrieb und unabhängige Bewertung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Auf nach dem Einfrieren eintreffenden Daten prüfen, ob Verhalten, Kosten und Stabilität zur Simulation passen.",
+      "inputs": [
+        "Eingefrorener Kandidat, Protokoll, native Leseschnittstelle und freigegebener Demoumfang.",
+        "Realzeit kann nicht durch historische Wiederholung ersetzt werden."
+      ],
+      "tasks": [
+        "Zuerst Schattenbetrieb ohne Orderwirkung: Signale, Ablehnungen, kalkulierte Fills und Kontext vollständig speichern.",
+        "Danach begrenzte Demoausführung mit demselben Policyhash. Jeder tatsächliche Auftrag und jede Abweichung vom Replay erhält einen Grund.",
+        "Mindestens 30 Handelssitzungen und mindestens 100 abgeschlossene Trades als vorläufige technische Beobachtungsuntergrenze vorab fixieren; bei langsamen Strategien Beobachtungszeit verlängern, nie Trades erzwingen.",
+        "Für statistische Profitabilitätsaussagen zusätzlich die im Protokoll erforderliche unabhängige Evidenz verlangen; 100 korrelierte Trades sind kein Erfolgsbeweis.",
+        "Preis-/Fillabweichung, Slippage, Swap, Sessionverhalten, Reconnect, Schutzbestätigung, Cancel/Fill-Rennen und Restbestände vergleichen.",
+        "Zwischenberichte dienen Fehlerdiagnose. Eine fachliche Policyänderung startet eine neue Kandidatenversion und gegebenenfalls eine neue Beobachtungsphase.",
+        "Zeitgebundene Zielwahrscheinlichkeit, maximalen Kontorückgang, Erholungszeit und Ausfallraten mit Nichterfolgen berichten.",
+        "Finalen Forschungsworker gleichzeitig mit nativem Demoexecutor belasten: Ressourcen-/Warteschlangenbudgets, Schutzlatenz, priorisierten Abbruch und Wiederanlauf messen; S17-Offlinebudget genügt dafür nicht."
+      ],
+      "required_artifacts": [
+        "evidence/S24/forward-protocol.json",
+        "evidence/S24/shadow-report.json",
+        "evidence/S24/demo-reconciliation.json",
+        "evidence/S24/prospective-decision.md",
+        "evidence/S24/native-worker-coexistence.json"
+      ],
+      "checks": [
+        {
+          "id": "S24-C01",
+          "description": "Kein Forward-Resultat wird als rein historischer unberührter Holdout umetikettiert oder umgekehrt."
+        },
+        {
+          "id": "S24-C02",
+          "description": "Simulation, Schattenmodell und tatsächliche Demo-Fills tragen verschiedene Evidenzlabels."
+        },
+        {
+          "id": "S24-C03",
+          "description": "Nicht erklärbare wirtschaftliche Abweichungen blockieren Promotion."
+        },
+        {
+          "id": "S24-C04",
+          "description": "Bei zu kleiner Evidenz lautet die Entscheidung inconclusive; ein Kalenderende erzwingt keinen Sieger."
+        },
+        {
+          "id": "S24-C05",
+          "description": "Unter finaler Workerlast bleiben vorab definierte lokale Schutz-/Antwortbudgets erfüllt; bei Überlast wird Forschung gedrosselt/abgebrochen und native Ausführung bleibt im freigegebenen Zustand."
+        }
+      ],
+      "allowed_paths": [
+        "operations/shadow/**",
+        "operations/demo/**",
+        "research/forward/**",
+        "tests/native-acceptance/**",
+        "evidence/S24/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine Echtgeldausführung als Teil der technischen Demoabnahme.",
+        "Keine Tricks zur Erhöhung der Tradezahl."
+      ],
+      "stop_conditions": [
+        "Ledgerabweichung, unbestätigter Schutz, Laufzeitinstabilität oder veränderte Policy im Messfenster."
+      ],
+      "rollback": "Neue Einstiege gemäß Demo-Runbook pausieren; Bestand nur über bestätigte zugelassene lokale Aktionen behandeln.",
+      "sources": [
+        "BOT-01 Shadowgrenzen",
+        "AP22",
+        "research/Champion-Decision.md"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S25",
+      "title": "Updates, Wiederherstellung und Dauerbetrieb mit Bestand prüfen",
+      "dependencies": [
+        "S06",
+        "S08",
+        "S21",
+        "S23",
+        "S24"
+      ],
+      "phase": "G · Nachweis am Zielsystem",
+      "legacy_refs": [
+        "AP21",
+        "AP22"
+      ],
+      "owner": "Release und Betrieb",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Eine Version zuverlässig installieren, aktualisieren und zurücknehmen können, während echte Zustände erhalten bleiben.",
+      "inputs": [
+        "Abgenommener Demokandidat und vollständiger Journal-/Brokerabgleich.",
+        "Gleicher Zielhost wie in der nativen Abnahme."
+      ],
+      "tasks": [
+        "Installer/Startpaket mit Code-, Datenbank-, Vertrags- und Runtimeversion sowie reproduzierbarem Buildmanifest erstellen.",
+        "Updatezustände mit offenen Positionen/Pendings proben: keine neuen Einstiege während unklarer Übergabe, bestätigter Schutz bleibt erhalten.",
+        "Migration mit Backup und Kompatibilitätsprüfung vorbereiten; fehlgeschlagene Migration darf die alte Anwendung nicht auf eine unlesbare Datenbank lenken.",
+        "Restart, Brokerunterbruch, volle Platte, duplizierte Pakete, veraltete Remoteansicht und beschädigten Cache im Dauerlauf prüfen.",
+        "Restore auf separater Testinstanz ausführen und dann native Brokerrealität neu abgleichen; alte Aufträge nie blind wiederholen.",
+        "Messbare Alarme für ausbleibenden Heartbeat, Shadow/Live-Abweichung, Datenlücke, Ressourcenlimit und fehlgeschlagene Schutzaktion einrichten.",
+        "Betriebsanleitung mit Start, Diagnose, Blocker, kontrollierter Pause, Update und Rückfall schreiben; Logs ohne Secrets exportierbar machen."
+      ],
+      "required_artifacts": [
+        "evidence/S25/release-manifest.json",
+        "evidence/S25/upgrade-with-state.json",
+        "evidence/S25/restore-drill.json",
+        "evidence/S25/operations-runbook.md"
+      ],
+      "checks": [
+        {
+          "id": "S25-C01",
+          "description": "Update/Restore erzeugt keine doppelte wirtschaftliche Wirkung und keinen stillen Verlust der Originalpläne."
+        },
+        {
+          "id": "S25-C02",
+          "description": "Schema- und Runtimekonflikt führt zu expliziter Sperre statt improvisiertem Weiterbetrieb."
+        },
+        {
+          "id": "S25-C03",
+          "description": "Alarme sind mit konkreten simulierten Störungen ausgelöst und beobachtet worden."
+        },
+        {
+          "id": "S25-C04",
+          "description": "Anleitung wurde auf sauberem Zielhost nachvollzogen; Build allein ist keine Installationsabnahme."
+        }
+      ],
+      "allowed_paths": [
+        "packaging/**",
+        "apps/hub/migrations/**",
+        "operations/runbooks/**",
+        "tests/upgrade/**",
+        "evidence/S25/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine unkontrollierte In-place-Migration des Produktionskontos.",
+        "Keine automatische Freigabe über bestandene Unit-Testzahl."
+      ],
+      "stop_conditions": [
+        "Wiederherstellung oder Bestandsübergabe ist ungeklärt."
+      ],
+      "rollback": "Vorheriges kompatibles Release und gesicherten Datenstand herstellen; danach nativen Bestand neu abgleichen.",
+      "sources": [
+        "Trading_Local Backup/Restore/Windowsabnahme",
+        "AP21/AP22"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S26",
+      "title": "Releaseentscheidung anhand des vollständigen Nachweises treffen",
+      "dependencies": [
+        "S20",
+        "S21",
+        "S22",
+        "S24",
+        "S25"
+      ],
+      "phase": "G · Nachweis am Zielsystem",
+      "legacy_refs": [
+        "AP24"
+      ],
+      "owner": "Unabhängige Releaseprüfung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Technische Produktreife und wirtschaftliche Evidenz getrennt entscheiden und genau den geprüften Stand freigeben.",
+      "inputs": [
+        "Vollständiger Nachweisordner mit Source-/Policy-/Daten-/Runhashes.",
+        "Ausstehende Befunde aus allen Schritten und unveränderte Freigabekriterien."
+      ],
+      "tasks": [
+        "Vier Entscheidungen getrennt treffen: Design akzeptiert, Forschungssystem technisch nutzbar, Demokandidat bestanden, wirtschaftliche Verbesserung belegt/ungeklärt/abgelehnt.",
+        "Alle harten technischen Gates, Ausführungsabweichungen, Datenlücken und offenen hohen Risiken vollständig zusammenführen.",
+        "Kandidat gegen vorherigen Champion, passende passive Referenz, Cash und konkurrierende feste Familien bewerten; unterschiedliche Exposition erklären.",
+        "Screenshotwerte der Konkurrenz nur als fremde unbestätigte Zielreferenz zeigen. Mangels Zeitraum/Markt/Kosten keinen fairen Direktvergleich behaupten.",
+        "Release umfasst genau einen reproduzierbaren Commit plus Policy-/Schema-/Datenkompatibilitätsmatrix und Rückfallversion.",
+        "Ein technisches Labor-Preview kann bereits über S21 eigenständig freigegeben werden. Diese S26-Gesamtfreigabe verlangt weiterhin S24/S25; bei wirtschaftlich unzureichendem Kandidaten darf nur der tatsächlich geprüfte technische/Demo-Umfang freigegeben werden, ohne Echtgeld- oder Gewinnbehauptung.",
+        "Ein späterer Echtgeldpilot ist ein separater konkreter Auftrag mit Konto, maximalem Kapital, Operationen, Verlust-/Risikogrenzen und Abbruchregel; der Plan autorisiert ihn nicht automatisch."
+      ],
+      "required_artifacts": [
+        "evidence/S26/release-decision.json",
+        "evidence/S26/evidence-index.json",
+        "evidence/S26/performance-scorecard.json",
+        "evidence/S26/known-limitations.md"
+      ],
+      "checks": [
+        {
+          "id": "S26-C01",
+          "description": "Keine offenen kritischen Ledger-/Causality-/Schutz-/Zugriffsbefunde im freigegebenen Umfang."
+        },
+        {
+          "id": "S26-C02",
+          "description": "Die Entscheidung gilt für exakte Versionen; nachträgliche Änderung invalidiert betroffene Nachweise."
+        },
+        {
+          "id": "S26-C03",
+          "description": "Erfolgs-/Fehlerfälle und Unsicherheit werden vollständig berichtet."
+        },
+        {
+          "id": "S26-C04",
+          "description": "Technikfreigabe wird nicht als Garantie für Gewinn oder Marktführerschaft bezeichnet."
+        }
+      ],
+      "allowed_paths": [
+        "releases/**",
+        "docs/release/**",
+        "operations/promotion/**",
+        "evidence/S26/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Keine pauschale Behauptung bester Bot der Welt.",
+        "Keine Echtgeldaktivierung durch das Bestehen dieser Karte."
+      ],
+      "stop_conditions": [
+        "Ein hartes Gate ist fehlgeschlagen oder ein für die Behauptung notwendiger Nachweis fehlt."
+      ],
+      "rollback": "Releasekandidat zurückziehen; letzten akzeptierten technischen Stand und bisherigen Champion behalten.",
+      "sources": [
+        "AP24",
+        "Blueprint D0/D1/D2",
+        "Konkurrenzscreenshot",
+        "research/Champion-Decision.md"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S27",
+      "title": "Zusatzdaten und lernende Modelle gezielt ergänzen",
+      "dependencies": [
+        "S16",
+        "S17",
+        "S19",
+        "S26"
+      ],
+      "phase": "H · Bedarfsabhängige Erweiterungen",
+      "legacy_refs": [
+        "AP25"
+      ],
+      "owner": "Erweiterte Forschung",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": false,
+      "goal": "News, Kalender, Mikrostruktur oder lernende Modelle nur für nachgewiesene ungelöste Fragen hinzufügen.",
+      "inputs": [
+        "Ein dokumentierter Befund zeigt, welcher Engpass mit den vorhandenen Daten/Regeln nicht beantwortet werden kann.",
+        "Aktivierungs-ADR mit Datenbedarf, Budget und Abnahmekriterium."
+      ],
+      "tasks": [
+        "Nachrichten-/Kalenderadapter zuerst nur als zeitgerechten Ereignis-/Handelsverbotsfilter prüfen; Veröffentlichung, Empfang und Revision speichern.",
+        "Orderbuch-/Trade-/Options-/Makrodaten nur übernehmen, wenn das konkrete Pattern diese Information benötigt und Historie sowie Nutzung geklärt sind.",
+        "Einfache trainierbare Klassifikation oder Regimefilter gegen deterministische Referenz vergleichen. Sequenzmodelle erst nach positivem einfachen Zusatznutzen prüfen.",
+        "Trainingsdaten, Featurefit, Modellversion, Kalibrierung, Inferenzzeit und Fallback vollständig in den bisherigen Runvertrag integrieren.",
+        "ML-Modell im Livepfad ausschließlich als eingefrorene freigegebene Version einsetzen; Nachtraining erzeugt einen neuen Kandidaten.",
+        "Komplexität, Rechenzeit und Datenkosten als zusätzliche Nachteile in die Entscheidung aufnehmen."
+      ],
+      "required_artifacts": [
+        "evidence/S27/extension-adr.md",
+        "evidence/S27/new-data-contract.json",
+        "evidence/S27/model-comparison.json",
+        "evidence/S27/fallback-tests.json"
+      ],
+      "checks": [
+        {
+          "id": "S27-C01",
+          "description": "Die Zusatzinformation verbessert die vorher definierte Entscheidung in äußerer Prüfung oder wird verworfen."
+        },
+        {
+          "id": "S27-C02",
+          "description": "Korrigierte spätere Newswerte werden nicht rückwirkend als damals verfügbar eingesetzt."
+        },
+        {
+          "id": "S27-C03",
+          "description": "Modellausfall oder ungeklärter Eingang führt auf den festgelegten sicheren Funktionsumfang zurück."
+        }
+      ],
+      "allowed_paths": [
+        "research/extensions/**",
+        "data/external/**",
+        "core/models/**",
+        "tests/models/**",
+        "evidence/S27/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Nicht Teil des ersten verbindlichen Kernreleases.",
+        "Kein unbeschränktes Online-RL auf Kontogeld."
+      ],
+      "stop_conditions": [
+        "Keine konkrete Frage, kein Datenzugang oder kein messbarer Zusatznutzen gegenüber der einfacheren Referenz."
+      ],
+      "rollback": "Erweiterung deaktivieren und eingefrorene Baseline verwenden.",
+      "sources": [
+        "Atlas BD02/BR01",
+        "Master SQC06/DOC09",
+        "AP25"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S28",
+      "title": "MT5-Ausführung, weitere Konten und Nutzer separat erweitern",
+      "dependencies": [
+        "S02",
+        "S05",
+        "S06",
+        "S11",
+        "S23",
+        "S25",
+        "S26"
+      ],
+      "phase": "H · Bedarfsabhängige Erweiterungen",
+      "legacy_refs": [
+        "AP26"
+      ],
+      "owner": "Broker- und Mehrnutzerintegration",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": false,
+      "goal": "Nach dem ersten stabilen System weitere Plattformen und Personen hinzufügen, ohne deren Konten oder Rechte zu vermischen.",
+      "inputs": [
+        "Konkreter Erweiterungsbedarf und eigener freigegebener Umfang.",
+        "Bewährte Domänenverträge, Kontobuch und Risikoprüfer."
+      ],
+      "tasks": [
+        "MT5 als eigenen nativen Adapter implementieren; Order-/Deal-/Netting-/Hedging-/Volumenbesonderheiten auf gemeinsame Verträge abbilden.",
+        "Die bereits portierten Strategieideen bleiben im gemeinsamen Entscheidungskern; ein Python-Referenzbot ist keine zweite unkontrollierte Produktionslogik.",
+        "Jedes Konto erhält eigenes Ledger, Risiko, Brokerprofil, Secrets, Daten-/Policyrechte und Ressourcenbudget.",
+        "Mehrnutzer-Authentifizierung, Mandantentrennung und Objektzugriffsprüfung für UI/API/MCP/Dateiexporte durchziehen.",
+        "Einladungs-/Widerrufs-/Gerätewechsel-/Offboardingwege mit tatsächlichen Berechtigungsnachweisen prüfen.",
+        "Schreibenden Fernzugriff erst nach eigenem Threat-/Commandreview und konkretem Konto-/Operationsumfang aktivierbar machen."
+      ],
+      "required_artifacts": [
+        "evidence/S28/mt5-adapter-parity.json",
+        "evidence/S28/tenant-isolation.json",
+        "evidence/S28/access-matrix.json",
+        "evidence/S28/extension-release.md"
+      ],
+      "checks": [
+        {
+          "id": "S28-C01",
+          "description": "Ein Nutzer/Token kann weder fremde Kontoobjekte lesen noch deren Vorschläge anwenden."
+        },
+        {
+          "id": "S28-C02",
+          "description": "MT5-Teilfills und Hedging/Netting führen auf dieselbe wirtschaftliche Buchlogik."
+        },
+        {
+          "id": "S28-C03",
+          "description": "Ein Konto- oder Plattformfehler beeinflusst keine andere Kontoberechtigung oder Risikoreservierung."
+        }
+      ],
+      "allowed_paths": [
+        "adapters/mt5/**",
+        "apps/hub/tenancy/**",
+        "apps/web/identity/**",
+        "tests/tenancy/**",
+        "evidence/S28/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Nicht im ersten Kernrelease.",
+        "Keine automatische Echtgeldverwaltung fremder Konten."
+      ],
+      "stop_conditions": [
+        "Kontotrennung, Native-Adapter-Parität oder reale Berechtigungsgrenzen nicht nachgewiesen."
+      ],
+      "rollback": "Neue Plattform/Mandantengruppe sperren; bestehendes Einzelnutzersystem weiter betreiben.",
+      "sources": [
+        "BOT-01 MT5-Donoren",
+        "AP26",
+        "WEB-EXT MT5Bars"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    },
+    {
+      "id": "S29",
+      "title": "Kontrollierte Weiterentwicklung dauerhaft betreiben",
+      "dependencies": [
+        "S26"
+      ],
+      "phase": "I · Laufende Verbesserung",
+      "legacy_refs": [
+        "AP12",
+        "AP17",
+        "AP24"
+      ],
+      "owner": "Betrieb und Research",
+      "reviewer": "Unabhängige Fachprüfung und Integrationsprüfung",
+      "enabled": true,
+      "goal": "Aus realen Fehlern, Datenänderungen und neuen Beobachtungen lernen, ohne den geprüften Champion heimlich zu verändern.",
+      "inputs": [
+        "Akzeptiertes technisches Release, Ergebnisregister, Drift-/Betriebsmetriken und Forschungsbudget."
+      ],
+      "tasks": [
+        "Laufend Datenfrische, Feedlücken, Exposition, Schutzbestätigung, Ledgerabgleich und Ressourcen beobachten.",
+        "In festen Forschungszyklen Kostenabweichung, Performance nach Marktphase, Verteilungsänderung und Kalibrierung prüfen; Driftalarm startet Diagnose, nicht sofortigen Strategiewechsel.",
+        "Neue Hypothesen als neue Arbeitsaufträge mit einem begrenzten Suchbudget anlegen. Bestehende historische Holdouts bleiben als verbraucht markiert.",
+        "Champion und Kandidat parallel vergleichbar beobachten; nur der gleiche Nachweisweg aus S16–S26 kann eine Promotion erlauben.",
+        "Daten-/Code-/Schema-/Brokeränderungen automatisch den betroffenen Tests und Schritten zuordnen. Abhängige Nachweise werden bei relevanter Änderung erneut geöffnet.",
+        "Wöchentlichen nachvollziehbaren Bericht mit Änderungen, Kosten, Gewinnen/Verlusten, No-trade-Fällen, Blockern und nächsten zugelassenen Versuchen erzeugen.",
+        "Monatlich Archiv/Restore/Source- und Lizenzstatus überprüfen; Ausbau nur bei erkennbarer Daten-/Rechen-/Produktgrenze planen."
+      ],
+      "required_artifacts": [
+        "evidence/S29/maintenance-policy.json",
+        "evidence/S29/research-cycle-template.json",
+        "evidence/S29/drift-response.md",
+        "evidence/S29/continuation-state.json"
+      ],
+      "checks": [
+        {
+          "id": "S29-C01",
+          "description": "Kein laufender Champion verändert sich ohne neue Version, vollständige Gates und gebundene Entscheidung."
+        },
+        {
+          "id": "S29-C02",
+          "description": "Automatisierung besitzt bestätigte Laufzeit, Budget, nächste Ausführung und Fehlermeldung; ein Plantext wird nicht als laufender Dienst ausgegeben."
+        },
+        {
+          "id": "S29-C03",
+          "description": "Ein neuer Datenstand kann historische Aussagen ergänzen, aber alte Berichte nicht unsichtbar überschreiben."
+        },
+        {
+          "id": "S29-C04",
+          "description": "Jeder Forschungszyklus endet mit Ergebnis, Ablehnung oder Blocker; kein unbegrenztes Suchen auf derselben Prüfmenge."
+        }
+      ],
+      "allowed_paths": [
+        "operations/monitoring/**",
+        "operations/research-cycles/**",
+        "docs/status/**",
+        "tests/drift/**",
+        "evidence/S29/**"
+      ],
+      "forbidden_paths": [
+        "secrets/**",
+        "production-data/**",
+        "**/.env",
+        "**/.env.*",
+        "**/*credentials*",
+        "plan.json",
+        "control/plan.lock.json"
+      ],
+      "exclusions": [
+        "Kein Versprechen dauerhafter Hintergrundarbeit aus einem Chat ohne eingerichteten Worker.",
+        "Keine Gewinn- oder Konkurrenzgarantie."
+      ],
+      "stop_conditions": [
+        "Voraussetzungen, Budget oder ein hartes Technikgate sind nicht mehr erfüllt."
+      ],
+      "rollback": "Forschungsqueue pausieren und neue Exposition gemäß freigegebener Policy begrenzen; Ursachen zuerst klären.",
+      "sources": [
+        "DOC09",
+        "AP12/AP17/AP24",
+        "Nutzerziel autonome fortlaufende Verbesserung"
+      ],
+      "budget": "Ein fachliches Teilziel pro Änderung; maximal zwei parallele, dateiseitig getrennte Arbeitspakete.",
+      "status": "pending",
+      "requires_resolved_scope": true,
+      "scope_status": "proposed",
+      "path_resolution_note": "Logische Zielpfade. S01 bildet auf reale Dateien ab, S02 bestätigt die Architektur; ein versioniertes Planamendment löst diese Scopes auf. Kein Zwang zum Monorepo-Umbau.",
+      "handoff": "Nachweise auf die genaue Plan-/Codeversion binden, unabhängiges Review einholen, planctl verify ausführen und erst dann finish. Folgeschritt ausschließlich über next auswählen.",
+      "completion_rule": "Alle Prüfungen und Lieferartefakte dieser Karte sind erforderlich. Teilweise fehlende native Evidenz ist nur erlaubt, wo die Karte dies ausdrücklich als späteres Gate bezeichnet."
+    }
+  ]
+}

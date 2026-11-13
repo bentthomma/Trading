@@ -1,0 +1,8 @@
+{
+  "scope": "Private modification of the fully archived intermediate journal renderer, NOT the missing final live/skin consumer. No HTML/CSS/strategy change; not integrated.",
+  "original_path": "baseline/recovery_donors/expected_patched_app.js",
+  "original_sha256": "54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127",
+  "candidate_sha256": "8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af",
+  "relay_proposal_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+  "independent_review": false
+}

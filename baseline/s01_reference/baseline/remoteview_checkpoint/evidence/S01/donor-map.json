@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "usage_rights": "Not independently established; no redistribution authorization inferred",
+  "entries": [
+    {
+      "component": "Hub / Observer ingestion",
+      "paths": [
+        "server.mjs",
+        "core/observation.mjs"
+      ],
+      "classification": "candidate_adapter",
+      "boundary": "Only synthetic account events; route now exists, no broker connection",
+      "historical_tests": "097_observation"
+    },
+    {
+      "component": "Journal / backups / restore",
+      "paths": [
+        "core/engine-journal.mjs",
+        "core/journal-archives.mjs",
+        "core/restore.mjs"
+      ],
+      "classification": "candidate_adapter",
+      "boundary": "Linux sandbox only; no user-data restore",
+      "historical_tests": [
+        "097_archive",
+        "097_restore"
+      ]
+    },
+    {
+      "component": "Native engine 2.0 alpha5",
+      "paths": [
+        "integrations/ctrader-th3revolution20/"
+      ],
+      "classification": "reference_only",
+      "boundary": "Not original 1.9; no new .algo build",
+      "historical_tests": "58 source input hashes and source-identity generator"
+    },
+    {
+      "component": "RemoteView20 website addon",
+      "paths": [
+        "integrations/vercel-view20/"
+      ],
+      "classification": "candidate_adapter",
+      "boundary": "Only 10-file addon, not complete deployed website",
+      "historical_tests": "097_observation and web-unit tests in remaining groups"
+    },
+    {
+      "component": "Trading Local 0.8.0",
+      "paths": [
+        "Trading_Local/"
+      ],
+      "classification": "reference_only",
+      "boundary": "Windows installation still untested",
+      "historical_tests": "080_core_http 18/18"
+    },
+    {
+      "component": "Production website (Vercel source input tree)",
+      "paths": [
+        "src/build-release20.mjs",
+        "src/build.mjs",
+        "src/assets.0",
+        "src/assets.1",
+        "src/assets.2",
+        "src/assets.3",
+        "src/skin.0",
+        "src/skin.8",
+        "src/bot-src.0",
+        "src/bot-src.2",
+        "src/account-addon.br",
+        "src/live-overlay.b64"
+      ],
+      "source": "Vercel dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+      "classification": "reference_only",
+      "boundary": "23 source inputs missing; no production reuse or deployment",
+      "historical_tests": "28/59 source bytes SHA1-matched to Vercel UID; derived five raw asset pages/files; four independent stage checks, missing overlay causes expected failure. No full build.",
+      "current_proof": "36/59 complete sources; original UI patch reproduces archived app.js in isolation; overlay, skin and full pipeline remain unavailable."
+    },
+    {
+      "component": "Original Engine 1.9 delivery preview",
+      "paths": [
+        "src/build.mjs",
+        "external delivery.json (not recovered)"
+      ],
+      "source": "Vercel dpl_DPoekz6ga9QJ5ebcWiRSLqFLKpRX",
+      "classification": "unresolved",
+      "boundary": "External bundle not retrieved; cannot equate with native 2.0-alpha5",
+      "historical_tests": "3 deployment source entries listed and read-only preview build inspected"
+    },
+    {
+      "component": "Recovered production Vercel source bytes and packed assets",
+      "source": "authenticated Vercel UID + private source archives, exact SHA1 match",
+      "paths": [
+        "baseline/vercel_recovered/src",
+        "baseline/derived_assets/public"
+      ],
+      "classification": "reference_only",
+      "new_proof": "Current manifest contains 36 SHA1+SHA256-bound source files; older31 unchanged",
+      "boundary": "No live overlay and no full build; no publication or product integration.",
+      "current_proof": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+    },
+    {
+      "component": "Historical Engine 1.2.1 binary build provenance",
+      "source": "Vercel dpl_6AuC... and dpl_RVq... build events + separate local 1.2.1 archive",
+      "paths": [
+        "evidence/S01/S01_HISTORICAL_VERCEL_BUILD_READBACK.json"
+      ],
+      "classification": "reference_only",
+      "new_proof": "Same provider-reported sourceSha256 but two distinct artifact SHA-256 and bytes; library 1.2.1 archive 30 manifest hashes verified",
+      "boundary": "Source-input identity is established; exact original binary bytes/rebuild and nondeterminism cause remain unverified. Engine1.9 is not recovered.",
+      "current_proof": "All12 original C# inputs reconstructed to the exact provider-reported packed sourceHash and three provider segment UIDs"
+    },
+    {
+      "component": "Original Engine1.2.1 source and synthetic receiver fixture",
+      "classification": "reference_only",
+      "source": "baseline/original_engine121_source.zip",
+      "paths": [
+        "src/bot-src.0",
+        "src/bot-src.1",
+        "src/bot-src.2"
+      ],
+      "current_proof": "S01_ENGINE121_PRODUCTION_BINDING.json and S01_ORIGINAL_WIRE_REPLAY_CURRENT.json",
+      "boundary": "No cTrader runtime, no bot or broker; archived wire fixture replayed in original Python receiver, not regenerated by C#"
+    },
+    {
+      "component": "Recovered original endpoint handlers and UI patch",
+      "classification": "reference_only",
+      "paths": [
+        "src/api/account-chart.js",
+        "src/api/live.js",
+        "src/api/probe.js",
+        "src/api/socket.js",
+        "src/patch_ui.mjs"
+      ],
+      "source": "authenticated provider responses plus exact selected old source members",
+      "current_proof": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json; original-source tests in tests/test_endpoint_recovery.py and tests/endpoint_dispatch.test.mjs",
+      "boundary": "No production repair or integration; WebSocket, cache and missing relay adapters are test doubles. Live trading and provider connectivity untested."
+    },
+    {
+      "component": "Production-bound account addon 1.3.4 (intermediate stage)",
+      "paths": [
+        "src/account-addon.br",
+        "src/build-account-addon.mjs",
+        "src/api/account-live.js",
+        "src/lib/security.mjs"
+      ],
+      "classification": "reference_only",
+      "generated_paths": [
+        "lib/ctrader-readonly.mjs",
+        "lib/account-handler.mjs",
+        "public/konto-live.html",
+        "public/konto-live.js",
+        "public/konto-live.css",
+        "add-account-link.mjs"
+      ],
+      "source_archive": "baseline/original_accountlive134.zip",
+      "source_archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "current_proof": "Unchanged real build script creates six byte-identical donor files; current original 26-test suite exercised on those generated modules.",
+      "boundary": "Not the final deployed reader: later missing skin overwrites lib/ctrader-readonly.mjs and public/konto-live.html. No real token, provider request or broker action."
+    },
+    {
+      "component": "Original RemoteView20 producer and production API adapter",
+      "classification": "reference_only",
+      "source": "baseline/original_platform097.zip plus unchanged 36/59 production source tree",
+      "binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+      "selected_sources": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+      "consumer_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+      "boundaries": [
+        "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+        "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+        "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+      ],
+      "no_product_integration": true
+    }
+  ]
+}

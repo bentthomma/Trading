@@ -1,0 +1,170 @@
+{
+  "started_utc": "2026-11-13T15:19:10.505729+00:00",
+  "uid": 0,
+  "commands": [
+    {
+      "name": "network_probe",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-c",
+        "import socket,errno; s=socket.socket();\ntry:s.connect(('127.0.0.1',9))\nexcept OSError as e:assert e.errno==errno.EPERM;print('CONNECT_DENIED_EPERM')\nelse:raise Exception('network gate failed')"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b2788f0760e4b5a56fef4630c1cf0f156867adb3373812473b0d465465adf24c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "node_version",
+      "argv": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "256a8e08ee35cb8ad36ae16385257192c3dbe7d80cfdeff9eaa886531b2f83bc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "contracts_and_architecture",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "evidence/S02",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "895f94571ed4b9967fa8adf82971eb99f157e4562da4a85dc9df57bc88ba2b70"
+    },
+    {
+      "name": "original_core",
+      "argv": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--test",
+        "/tmp/s02-original-7zc_v4pp/Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/tests/core.mjs"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ae906bd528e84d760140fd12c814aa82e29bb3d8b2ac296378188ed50fd82c41",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "original_website_and_research_boundaries",
+      "argv": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--test",
+        "evidence/S02/original_boundaries.mjs"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "439d4b1bebf75c469473ebecc09b03dfe705eea3d988cd4a9d98da94070fffe4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "mutation_original_actor_gate",
+      "argv": [
+        "/opt/nvm/versions/node/v22.16.0/bin/node",
+        "--test",
+        "--test-name-pattern",
+        "C03",
+        "evidence/S02/original_boundaries.mjs"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "974ee2aac863e3c61c14933bacfded524b6507f150660eab7b7bd17dca43a889",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "mutation_terminal_anchor",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/tmp/s02-mutation-b4bxf543/evidence/S02/test_contracts.py",
+        "Contracts.test_terminal_newlines_cannot_bypass_anchored_types"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "0208a735c9720059256d602efd3a37a7563c8264576c17e60e70dfd5430b3a56"
+    },
+    {
+      "name": "mutation_policy_binding",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/tmp/s02-mutation-js4bi3fr/evidence/S02/test_contracts.py",
+        "Contracts.test_catalog_must_be_exact_unique_valid_and_current"
+      ],
+      "exit_code": 1,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "3c969c614a82c21f7688da0989509416a104c357a73edbf4b6e35668e0d2fedf"
+    },
+    {
+      "name": "native_probe",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "evidence/S02/check_native.py",
+        "--output",
+        "/mnt/data/extremelab_s02_run/complete_checks_1/native"
+      ],
+      "exit_code": 2,
+      "stdout_sha256": "b4305ac81eada2a28d6581f63eb8e8b85461afc1d68190331091e0816c22dc72",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "plan_validate",
+      "argv": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "governance/masterplan/control/planctl.py",
+        "--project-root",
+        "/mnt/data/extremelab_s02_run/repo",
+        "validate"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "346320c7ffc76a3b45176074e213b2cb7bf94d5110dd32a8ccc6411700448e8a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "unique_test_methods": 46,
+  "native_test_methods": 0,
+  "product_installed": false,
+  "broker_actions": false,
+  "network_syscalls_denied": true,
+  "source_bindings": {
+    "bound_sources": 29,
+    "bound_archives": 1,
+    "contract_types": 12,
+    "future_scope_entries": 33,
+    "public_or_broker_activation": false
+  },
+  "node_version": "v22.16.0",
+  "python_version": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "python_test_methods": 34,
+  "original_test_methods": 10,
+  "new_original_boundary_methods": 2,
+  "extracted_original_files_unchanged": 882,
+  "mutations_detected": [
+    "original_actor_check_removed",
+    "terminal_anchor",
+    "policy_binding"
+  ],
+  "native": {
+    "criterion": "S02-C01",
+    "native_compiler_executed": false,
+    "native_event_count": 0,
+    "broker_or_bot_started": false,
+    "commands": [],
+    "status": "blocked",
+    "reason": "DOTNET_SDK_NOT_AVAILABLE",
+    "next": "Run this exact probe with an installed .NET SDK >=8 and its local framework reference pack. No external package sources required."
+  },
+  "checked_out_files_unchanged": 587,
+  "test_status": "passed",
+  "s02_gate_status": "native_blocked",
+  "finished_utc": "2026-11-13T15:19:24.766985+00:00",
+  "exit_code": 2
+}

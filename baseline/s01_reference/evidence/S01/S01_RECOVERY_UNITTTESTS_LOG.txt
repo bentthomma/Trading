@@ -1,0 +1,25 @@
+test_actual_fresh_run_and_source_hash_bound (test_s01_candidate.S01Tests.test_actual_fresh_run_and_source_hash_bound) ... ok
+test_candidate_donor_has_no_accidental_promotion (test_s01_candidate.S01Tests.test_candidate_donor_has_no_accidental_promotion) ... ok
+test_eight_real_stages_listed_but_not_claimed_built (test_s01_candidate.S01Tests.test_eight_real_stages_listed_but_not_claimed_built) ... ok
+test_manifest_consistency_if_present (test_s01_candidate.S01Tests.test_manifest_consistency_if_present) ... ok
+test_native19_not_relabelled (test_s01_candidate.S01Tests.test_native19_not_relabelled) ... ok
+test_no_broker_github_release_writes_claimed (test_s01_candidate.S01Tests.test_no_broker_github_release_writes_claimed) ... ok
+test_no_remote_source_marked_locally_preserved (test_s01_candidate.S01Tests.test_no_remote_source_marked_locally_preserved) ... ok
+test_official_dependency_unchanged (test_s01_candidate.S01Tests.test_official_dependency_unchanged) ... ok
+test_plan_file_unchanged_hash_if_bundled (test_s01_candidate.S01Tests.test_plan_file_unchanged_hash_if_bundled) ... ok
+test_selected_build_source_mapping_not_treated_as_repo (test_s01_candidate.S01Tests.test_selected_build_source_mapping_not_treated_as_repo) ... ok
+test_source_tree_has_59_unique_exact_provider_ids (test_s01_candidate.S01Tests.test_source_tree_has_59_unique_exact_provider_ids) ... ok
+test_website_response_truncation_is_visible (test_s01_candidate.S01Tests.test_website_response_truncation_is_visible) ... ok
+test_every_recovered_file_matches_vercel_uid_and_local_sha256 (test_s01_recovery.SourceRecovery.test_every_recovered_file_matches_vercel_uid_and_local_sha256) ... ok
+test_historical_binary_reproducibility_is_not_claimed (test_s01_recovery.SourceRecovery.test_historical_binary_reproducibility_is_not_claimed) ... ok
+test_official_s00_s01_and_missing_native_19_still_blocked (test_s01_recovery.SourceRecovery.test_official_s00_s01_and_missing_native_19_still_blocked) ... ok
+test_original_59_source_entries_and_exact_28_recovered (test_s01_recovery.SourceRecovery.test_original_59_source_entries_and_exact_28_recovered) ... ok
+test_packed_account_addon_has_six_expected_paths (test_s01_recovery.SourceRecovery.test_packed_account_addon_has_six_expected_paths) ... ok
+test_partial_replay_never_claims_full_build (test_s01_recovery.SourceRecovery.test_partial_replay_never_claims_full_build) ... ok
+test_primary_path_map_has_no_duplicates_and_recovered_hashes (test_s01_recovery.SourceRecovery.test_primary_path_map_has_no_duplicates_and_recovered_hashes) ... ok
+test_website_assets_four_chunks_and_five_files (test_s01_recovery.SourceRecovery.test_website_assets_four_chunks_and_five_files) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.009s
+
+OK

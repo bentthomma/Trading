@@ -1,0 +1,18 @@
+{
+  "work_id": "S01-ENDPOINTRECOVERY-20261113",
+  "preliminary_dispatch_run": {
+    "tests": 15,
+    "pass": 0,
+    "fail": 15,
+    "cause": "Recovery manifest was still31 sources, so the test harness correctly refused all newly restored handlers before execution. Inventory was updated to verified original bytes; no trust guard disabled.",
+    "product_execution": false
+  },
+  "library_scope": "Visible ZIP list and scoped content search only; recursive Google Drive listing unsupported; no global absence claim.",
+  "dependency_attempts": {
+    "ws_declared": "8.22.1",
+    "installed": false,
+    "npm_registry_download": "blocked: DNS failure and web/download unavailable",
+    "web_version_check": "npm package versions page confirms8.22.1 exists; does not establish local package bytes"
+  },
+  "documentation_fix": "Prior path-map unresolved text still said31 missing although previous manifest had28 missing. Current missing paths and counts are now derived from the source manifest."
+}

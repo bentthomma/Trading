@@ -1,0 +1,93 @@
+{
+  "source_archive_sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43",
+  "payload_sha256": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+  "payload_bytes": 31406,
+  "engine_version": "1.2.1",
+  "engine19_recovered": false,
+  "files": [
+    {
+      "path": "ExtremeLabCTraderOnlineSocket.cs",
+      "bytes": 1135,
+      "sha256": "cd9639cb62f505a898decf32588eb32513ede473991463a55a18ac5d72c4ff25"
+    },
+    {
+      "path": "ExtremeLabCore.cs",
+      "bytes": 10850,
+      "sha256": "324f5583e8ec95d3d298d9ff340e746db1e8c073704d85546db49c48851ef4a0"
+    },
+    {
+      "path": "ExtremeLabDiagnostics.cs",
+      "bytes": 4222,
+      "sha256": "cd426523ab6c8e2086757a239740d7a249d708ffa4cb7c024a2cf13f26fc032e"
+    },
+    {
+      "path": "ExtremeLabDiagnosticsIntegration.cs",
+      "bytes": 4862,
+      "sha256": "0550237c9fbaef35e09819c02d1d92b2ccbf81d8481bab8ba745b359401ba2b1"
+    },
+    {
+      "path": "ExtremeLabExecution.cs",
+      "bytes": 1464,
+      "sha256": "f10169f1b35a29588ae12b7252bda1bdf789a4c05edd39f545c5b0c2ad60faa8"
+    },
+    {
+      "path": "ExtremeLabMobile.cs",
+      "bytes": 68438,
+      "sha256": "8e65689769f1f8f9b47c8c1b002c9b03b9c454668bdb6db1c9619c7a471609fd"
+    },
+    {
+      "path": "ExtremeLabMobile.csproj",
+      "bytes": 463,
+      "sha256": "e8fe1749a1e7cab3a526aaae83139afee166c8f73c24587d30934e39719eec1b"
+    },
+    {
+      "path": "ExtremeLabOnlinePublisher.cs",
+      "bytes": 7219,
+      "sha256": "9b5ff59ca9fcd63a7d20cec5a3878f99dc160ccf5cb9d0d9acccfaae2842fb51"
+    },
+    {
+      "path": "ExtremeLabRecovery.cs",
+      "bytes": 6101,
+      "sha256": "0ff0bc3969f541b67bb283ae386b18ad0fd5a1cac8abde4edf181974305826bc"
+    },
+    {
+      "path": "ExtremeLabRuntime.cs",
+      "bytes": 5275,
+      "sha256": "2d97b6d1ef8af8ca8899989ab70e8e83dcad2b3cc23475443206d18eb84fbb91"
+    },
+    {
+      "path": "ExtremeLabTelemetryOutbox.cs",
+      "bytes": 6336,
+      "sha256": "dd2af56f7751a90c6a01d85e3a25a72e733c3adc1ff24e681c5f4df4629d6458"
+    },
+    {
+      "path": "ExtremeLabUI.cs",
+      "bytes": 10299,
+      "sha256": "3d7d9235c77dc62c7d0b71aef015be4b2d59011abbe61aeeaa20d21ca3521a76"
+    }
+  ],
+  "segments": [
+    {
+      "path": "src/bot-src.0",
+      "bytes": 10500,
+      "sha1": "c47e00bbee5c0ca058b82f22551fd889bd2c88e4",
+      "sha256": "e2036b08e1760ee56a3511b4efa63f5ba06da7b8b6e2e6cbf0b6ea2faf892548"
+    },
+    {
+      "path": "src/bot-src.1",
+      "bytes": 10500,
+      "sha1": "2af389e11c004cb94b600bd1b095f769c73b2435",
+      "sha256": "0e066b8cc210c917727a606690475db0075aa1ecc8aae05d59a35c25a7fbecfd"
+    },
+    {
+      "path": "src/bot-src.2",
+      "bytes": 10406,
+      "sha1": "30b8b6e95fe03e4b798bd61768608deef0d126da",
+      "sha256": "fe9d96d51756e84a34525d4e4ac0de8909c237f0b01881a4607bb55b7b6a74ed"
+    }
+  ],
+  "binary_build_executed": false,
+  "bot_executed": false,
+  "rights_or_independent_release_approval_inferred": false,
+  "original_archive_manifest_verified_files": 30
+}

@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "scope": "private_S06_restore_candidate_preparation",
+  "formal_S06_passed": false,
+  "base_revision": "d3c1e0ba1aeb11cb9df30240622caa944d6fb2bd",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "local_preparation_execution": {
+    "started_utc": "2026-11-13T21:48:42.987485+00:00",
+    "finished_utc": "2026-11-13T21:48:52.175145+00:00",
+    "uid": 0,
+    "node": "v22.16.0",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "exit_code": 0,
+    "unique_test_methods": 107,
+    "new_restore_methods": 22,
+    "unchanged_restore_journal_methods": 47,
+    "existing_fee_regression_methods": 38,
+    "HTTP_tests_excluded_from_offline_run": 8,
+    "prior_defect_counterexamples": 3,
+    "mutations_detected": [
+      "omit_target_binding",
+      "ignore_values",
+      "skip_worker_comparison"
+    ],
+    "source_patch_roundtrip": true,
+    "source_bindings": {
+      "schema_version": 1,
+      "base_revision": "d3c1e0ba1aeb11cb9df30240622caa944d6fb2bd",
+      "original_archive": {
+        "path": "baseline/s01_reference/baseline/original_platform097.zip",
+        "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d"
+      },
+      "original_modules": [
+        {
+          "path": "core/maintenance.mjs",
+          "bytes": 30095,
+          "sha256": "12e543eb526a4f8172f2f677a80ae374fbe0021ae9f28b8ee41bed88831103f9"
+        },
+        {
+          "path": "core/maintenance-journal.mjs",
+          "bytes": 9640,
+          "sha256": "a4dd1fae37d09e100227a506546aec11e7877c6b94b38f0f484c2ce1e4383a57"
+        },
+        {
+          "path": "core/store.mjs",
+          "bytes": 18333,
+          "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978"
+        },
+        {
+          "path": "core/restore.mjs",
+          "bytes": 5505,
+          "sha256": "4141919bd5a18ce126502e0ad0f7e74e7f81b9918e619d4bcaea3735a43ead59"
+        },
+        {
+          "path": "core/control.mjs",
+          "bytes": 45218,
+          "sha256": "9bbd47368f7b5c87a6ab402219f7d5cbc9cd173a7a244dfcbc3da741b897147c"
+        },
+        {
+          "path": "core/profile-lock.mjs",
+          "bytes": 4059,
+          "sha256": "c35b9d57443b7c5334a495d48cc62c70ad1a699f04158227dcf520fe6b32de64"
+        },
+        {
+          "path": "core/engine-journal.mjs",
+          "bytes": 26628,
+          "sha256": "1a56bc2cd9559dea9ac5231db2cab121d6a1c73e03410951390d7693bb63dd93"
+        },
+        {
+          "path": "core/journal-archives.mjs",
+          "bytes": 15327,
+          "sha256": "1504a1827a131ffe2057d8a68736769f4a3554d0bf090a0b5a2193e72af73529"
+        },
+        {
+          "path": "core/journal-archive-worker.mjs",
+          "bytes": 7789,
+          "sha256": "a03986abe97925f40eb317864c8692b6466c909d243a47272f7e4ebb71cf7907"
+        },
+        {
+          "path": "core/journal-archive-format.mjs",
+          "bytes": 10814,
+          "sha256": "991c79c47c8e4656fad58e680a2f1d83c4d39fe1b21d1625a840e14ce79c3146"
+        },
+        {
+          "path": "scripts/maintenance.mjs",
+          "bytes": 1509,
+          "sha256": "ac41433c967d4f0c611e1ec3f747363543d55e40035ae35b0b42088f4a4491fc"
+        },
+        {
+          "path": "tests/maintenance-worker.mjs",
+          "bytes": 25080,
+          "sha256": "6b428cda16e0b3f0eee764a05ee637703cc1e6a003f692ed60dc7a31fa3396d9"
+        },
+        {
+          "path": "tests/restore-review.mjs",
+          "bytes": 19816,
+          "sha256": "f2b197338a9c18e4794550e4e227ca96db4cc1a852b9a52b1d19223867bf9713"
+        },
+        {
+          "path": "tests/journal-archives.mjs",
+          "bytes": 12508,
+          "sha256": "0b73b5d5569a977b11c31c074c37bdbc3615bc043151a9ad5aecd0d0bb2afce9"
+        },
+        {
+          "path": "tests/support/journal-archive-fixture.mjs",
+          "bytes": 1850,
+          "sha256": "137f00ea3d8cd4cb95fd947734c21e503159a13a78ad9f6adc9b8c6aa41d5d4f"
+        },
+        {
+          "path": "tests/support/engine-journal-fixtures.mjs",
+          "bytes": 2087,
+          "sha256": "23263d9b48f2c394705d15d2d35c0a0b46831a371b1236a7b15f67d025b0f6ff"
+        }
+      ],
+      "bound_repo_files": [
+        {
+          "path": "governance/masterplan/plan.json",
+          "bytes": 205234,
+          "sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5"
+        },
+        {
+          "path": "governance/masterplan/control/state.json",
+          "bytes": 6526,
+          "sha256": "132d98a56271a7a4a13f3cd086927e862088ffda0f0959e230efd27f51b3c445"
+        },
+        {
+          "path": "evidence/S05/fee-reconciliation/order-lifecycle.patch",
+          "bytes": 17744,
+          "sha256": "29e5509e7d240f0813eb334fa1c0cc5d2f98532011938170664dc16cc824ada1"
+        },
+        {
+          "path": "evidence/S05/fee-reconciliation/source-bindings.json",
+          "bytes": 1587,
+          "sha256": "4c32e952f490e25c518286a85923c3e40be0e5358b752a91812d5e98383bff09"
+        },
+        {
+          "path": "evidence/S05/fee-reconciliation/state-contract.md",
+          "bytes": 6316,
+          "sha256": "5e8c2c5148aa5db83ec298a7aa69ab2146a3fd16a3475c5675eaec7486faeef7"
+        },
+        {
+          "path": "evidence/S05/fee-reconciliation/test_deferred_costs.mjs",
+          "bytes": 18681,
+          "sha256": "d5ed1563ceeee19e968dec39250d18e61a8a3ebb7111bb06f975ed66efed1f73"
+        },
+        {
+          "path": "evidence/S06/maintenance-target-kv.patch",
+          "bytes": 2097,
+          "sha256": "14e8c0656ca6e8cde99aa16176b0c415e97aab464fbdeb4dc16e4ad5a7d26dd6"
+        },
+        {
+          "path": "evidence/S06/test_restore_integrity.mjs",
+          "bytes": 19149,
+          "sha256": "cc934e27e2c2f454b479f4d8af498ad88e50db98b8c1259aefc0abe9db51176d"
+        },
+        {
+          "path": "evidence/S06/run_checks.py",
+          "bytes": 10389,
+          "sha256": "2313ad45c17780fb1c332605356307f8231571e32880157b4fd4ba64be85618d"
+        }
+      ],
+      "fee_candidate_sha256": "1084807f73188c32e9d6cb44641ebae7202a225735280b4697b9695c358d072d",
+      "restore_candidate_sha256": "5d9514577d4f8d4583a0363c40389b6ca0f055913bd04fcfdf59ff9b835933aa",
+      "product_files_changed_by_this_patch": [
+        "core/maintenance.mjs"
+      ],
+      "new_store_schema": false,
+      "product_installed": false,
+      "native_broker_evidence": false
+    }
+  },
+  "broker_reconciliation": {
+    "status": "not_observed",
+    "broker_access_authorized": false,
+    "native_compiler_executed": false
+  },
+  "prepared_results": {
+    "S06_GAP_01": "fixed_in_private_maintenance_patch",
+    "arbitrary_order_state_semantic_check": "open_integration_gap",
+    "full_restore_state_readability": "observed_on_synthetic_states_real_SQLite_and_worker",
+    "active_product_writer": "not_installed"
+  },
+  "final_package_run": "separate_external_execution_receipt_after_fresh_unpack",
+  "preparation_errors": [
+    "R11 originally expected authenticate() to throw; original API returns null; corrected assertion.",
+    "Initial full restore-review regression selection contained HTTP tests incompatible with no-connect guard; interrupted runs are not passes.",
+    "Negative name filter selected file-level parent and still ran HTTP tests; replaced by four positive original names."
+  ],
+  "limits": [
+    "R15 characterizes missing semantic validation in generic restore, not a fix.",
+    "Synthetic order KV key is an explicit test composition, not an installed product namespace.",
+    "SQLite state readability is not native/broker reconciliation.",
+    "Kill tests cover process interruption, not power failure or target-host durability.",
+    "Whole-KV hashing adds linear work and conservatively invalidates any changed KV value; no production-load measurement."
+  ]
+}

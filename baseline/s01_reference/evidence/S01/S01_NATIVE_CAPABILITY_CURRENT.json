@@ -1,0 +1,16 @@
+{
+  "dotnet_executable": null,
+  "native_build_executed": false,
+  "native_tests_executed": false,
+  "historical_sdk_requested": "6.0.428",
+  "metadata_attempt": {
+    "url": "https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/6.0/releases.json",
+    "result": "URLError: Temporary failure in name resolution"
+  },
+  "download_tool_attempt": {
+    "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-x64.tar.gz",
+    "result": "tool rejected URL because successful viewed URL unavailable; no binary downloaded"
+  },
+  "native_binary_reproducibility": "blocked_capability",
+  "old_core136_integration59_counts_not_rerun": true
+}

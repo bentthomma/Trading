@@ -1,0 +1,54 @@
+{
+  "scope": "Independently replayable subcomponents; NOT full 8-stage website build",
+  "runtime": "v22.16.0",
+  "original_files_sha1_verified": 28,
+  "external_network_access": false,
+  "broker_access": false,
+  "deployment": false,
+  "complete_website_build": false,
+  "steps": [
+    {
+      "file": "postbuild-132.mjs",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "file:///tmp/extremelab-s01-offline-3fpaed3v/postbuild-132.mjs:4\nif(code.split(from).length!==2)throw Error('Unexpected live UI source; not patched');\n                                     ^\n\nError: Unexpected live UI source; not patched\n    at file:///tmp/extremelab-s01-offline-3fpaed3v/postbuild-132.mjs:4:38\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.16.0\n"
+    },
+    {
+      "file": "build-account-addon.mjs",
+      "returncode": 0,
+      "stdout": "Read-only account connector added. No cBot modified. Credentials are still required.\nAccount reader 1.3.4: fixed cTrader DATA profile; user authentication still required.\n",
+      "stderr": ""
+    },
+    {
+      "file": "build-account-addon.mjs",
+      "returncode": 0,
+      "stdout": "Read-only account connector added. No cBot modified. Credentials are still required.\nAccount reader 1.3.4: fixed cTrader DATA profile; user authentication still required.\n",
+      "stderr": ""
+    },
+    {
+      "file": "build-revolution20.mjs",
+      "returncode": 0,
+      "stdout": "Th3R3v0lut10n 2.0 read-only view built; no trading authority.\n",
+      "stderr": ""
+    },
+    {
+      "file": "build-revolution20.mjs",
+      "returncode": 0,
+      "stdout": "Th3R3v0lut10n 2.0 read-only view built; no trading authority.\n",
+      "stderr": ""
+    },
+    {
+      "file": "build-account-addon.mjs",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "file:///tmp/extremelab-s01-offline-3fpaed3v/build-account-addon.mjs:6\nif(createHash('sha256').update(packed).digest('hex')!=='321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283')throw Error('ACCOUNT_ADDON_INTEGRITY');\n                                                                                                                                ^\n\nError: ACCOUNT_ADDON_INTEGRITY\n    at file:///tmp/extremelab-s01-offline-3fpaed3v/build-account-addon.mjs:6:129\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)\n\nNode.js v22.16.0\n"
+    }
+  ],
+  "postbuild_132": "BLOCKED_EXPECTED_MISSING_LIVE_OVERLAY",
+  "addon_repeated_run_byte_idempotent": true,
+  "view_repeated_run_byte_idempotent": true,
+  "derived_public_files_after_isolated_subcomponents": 16,
+  "partial_public_sha256": "3294876ec8ee18fbc1a6dbc8e7e4206679dc081efd344a8cd9c602dc341dd211",
+  "addon_tamper_rejected_without_public_mutation": true,
+  "overall": "EXPECTED_BLOCKER_WITH_INDEPENDENT_COMPONENTS_VERIFIED"
+}

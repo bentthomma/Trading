@@ -1,0 +1,64 @@
+{
+  "schema": "extremelab-s01-generated-stage/v1",
+  "classification": "verified_intermediate_stage_outputs_not_final_deployment_sources",
+  "stage": "build-account-addon.mjs",
+  "production_deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+  "packed_source_path": "src/account-addon.br",
+  "packed_sha256": "321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283",
+  "archive": "baseline/original_accountlive134.zip",
+  "archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+  "outputs": [
+    {
+      "path": "lib/ctrader-readonly.mjs",
+      "bytes": 16559,
+      "sha256": "fc98b6b083c13af16bf6cb720b3dafe80d1c685e5b7e523a1e33e56f02bede02",
+      "stored_at": "baseline/derived_account_stage/lib/ctrader-readonly.mjs",
+      "later_overwrite_observed": true,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "lib/account-handler.mjs",
+      "bytes": 3312,
+      "sha256": "a9257d0e687d70f730f62c1e66f3e9bf3199707c6ea7743f973914b39684d0fa",
+      "stored_at": "baseline/derived_account_stage/lib/account-handler.mjs",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "public/konto-live.html",
+      "bytes": 5450,
+      "sha256": "e36e674284b980f0ef9acb8e608bdc33d0bdde0999fa555fe300e4ad3ae79ec9",
+      "stored_at": "baseline/derived_account_stage/public/konto-live.html",
+      "later_overwrite_observed": true,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "public/konto-live.js",
+      "bytes": 9570,
+      "sha256": "bd8b6a64635372c02b9a15e38e2150dadf0fc941cc4f2c90371c6a589c18deba",
+      "stored_at": "baseline/derived_account_stage/public/konto-live.js",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "public/konto-live.css",
+      "bytes": 1261,
+      "sha256": "dffcb6394157a0203d4615a9f40e25a5fce93cf1ae86c5632eecbeb6d3639f50",
+      "stored_at": "baseline/derived_account_stage/public/konto-live.css",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "add-account-link.mjs",
+      "bytes": 485,
+      "sha256": "f26d1f7e9eac8b63db240ecf5682249624d335028fb36afa793a91f4cd487694",
+      "stored_at": "baseline/derived_account_stage/add-account-link.mjs",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    }
+  ],
+  "full_website_build": false,
+  "source_input_count_remains": 36,
+  "new_original_source_inputs": 0,
+  "stage_provenance_note": "Created by the unchanged full production addon script in a temporary workspace initialized from the existing base assets. Both decompressed payload and archived originals independently compared. Earlier missing overlay stages were not fabricated. No later skin or bot stage executed."
+}

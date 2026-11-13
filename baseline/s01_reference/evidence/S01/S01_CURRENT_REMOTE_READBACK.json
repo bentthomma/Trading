@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-11-12T23:44:43.047152+00:00",
+  "github": {
+    "read_only": true,
+    "branch": "main",
+    "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+    "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+    "tree_truncated": false,
+    "entries": [
+      {
+        "path": "README.md",
+        "sha": "7025cd085c2f9a785685aa3b4b7bae14f827dcd2",
+        "mode": "100644",
+        "size": 9
+      }
+    ],
+    "protected_from_branch_reply": false,
+    "branch_protection_endpoint_not_queried": true,
+    "source": "authenticated GitHub.fetch branch then exact recursive tree; no write actions"
+  },
+  "vercel": {
+    "deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "deployment_state": "READY",
+    "immutable_url": "extremelab-desk-4m1ohbw4s-ben-a958e9d0.vercel.app",
+    "source_files": 59,
+    "source_listing_read": true,
+    "source_content_route": "get_deployment_file_contents",
+    "content_limit_observed": "larger base64 strings truncated, no range argument exposed",
+    "published_this_run": false
+  },
+  "rights": "No secrets, environment variables, account/broker actions, deployment updates or new share links requested."
+}

@@ -1,0 +1,64 @@
+--- a/api/live.js
++++ b/api/live.js
+@@ -1,17 +1,60 @@
+ import {authenticated,validationError} from '../lib/security.mjs';
+ import {relayRequest} from '../lib/relay.mjs';
+ import {gzipSync} from 'node:zlib';
++
++// RFC 9110 sections 5.6.1, 8.4.1.3, 12.4.2 and 12.5.3.
++// Local policy: prefer identity for an absent field; reject malformed weights;
++// use the lowest weight for duplicate coding entries, including x-gzip aliases.
++function acceptedEncodings(value){
++ if(value===undefined)return {valid:true,gzip:0,identity:1};
++ if(Array.isArray(value)){
++  if(!value.every(v=>typeof v==='string'))return {valid:false};
++  value=value.join(',');
++ }
++ if(typeof value!=='string')return {valid:false};
++ const weights=new Map();
++ for(const item of value.split(',')){
++  const part=item.replace(/^[ \t]+|[ \t]+$/g,'');
++  if(!part)continue;
++  const match=/^([!#$%&'*+\-.^_`|~0-9A-Za-z]+)(?:[ \t]*;[ \t]*q=(0(?:\.\d{0,3})?|1(?:\.0{0,3})?))?$/i.exec(part);
++  if(!match)return {valid:false};
++  let coding=match[1].toLowerCase();
++  if(coding==='x-gzip')coding='gzip';
++  const q=match[2]===undefined?1:Number(match[2]);
++  weights.set(coding,Math.min(weights.get(coding)??1,q));
++ }
++ return {valid:true,gzip:weights.get('gzip')??weights.get('*')??0,
++  identity:weights.get('identity')??(weights.get('*')===0?0:1)};
++}
++function varyAcceptEncoding(res){
++ const previous=res.getHeader('Vary');
++ const fields=(Array.isArray(previous)?previous.join(','):String(previous??''))
++  .split(',').map(v=>v.trim()).filter(Boolean);
++ if(!fields.some(v=>v==='*'||v.toLowerCase()==='accept-encoding'))fields.push('Accept-Encoding');
++ res.setHeader('Vary',fields.join(', '));
++}
++
+ export default async function handler(req,res){
+  res.setHeader('Cache-Control','private, no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('X-Robots-Tag','noindex, nofollow');
++ varyAcceptEncoding(res);
++ const encodings=acceptedEncodings(req.headers['accept-encoding']);
+  let status=200,data;
+  try{
+   if(req.method!=='GET')throw validationError('READ_ONLY_ENDPOINT',405);
+   if(!authenticated(req))throw validationError('Anmeldung erforderlich.',401);
++  if(!encodings.valid)throw validationError('INVALID_ACCEPT_ENCODING',400);
++  if(encodings.gzip===0&&encodings.identity===0)throw validationError('NO_ACCEPTABLE_CONTENT_ENCODING',406);
+   const p=new URL(req.url,'https://internal.invalid').searchParams;
+   data=await relayRequest(p.get('action')||'live',p);
+  }catch(e){status=Number.isInteger(e.status)?e.status:503;data={error:status>=500?'Live-Verbindung nicht erreichbar; letzte Ansicht bleibt erhalten.':e.message,code:status>=500&&/^[A-Z_]+$/.test(e.message)?e.message:undefined};}
+  res.statusCode=status;res.setHeader('Content-Type','application/json; charset=utf-8');
+  let payload=Buffer.from(JSON.stringify(data));
+- if(payload.length>4096&&/\bgzip\b/.test(req.headers['accept-encoding']||'')){payload=gzipSync(payload);res.setHeader('Content-Encoding','gzip');res.setHeader('Vary','Accept-Encoding');}
++ // No acceptable representation: preserve method/auth status and send no entity.
++ if(!encodings.valid||(encodings.gzip===0&&encodings.identity===0)){
++  res.setHeader('Content-Length','0');res.end();return;
++ }
++ const useGzip=encodings.gzip>0&&(encodings.identity===0||encodings.gzip>encodings.identity||
++  (encodings.gzip===encodings.identity&&payload.length>4096));
++ if(useGzip){payload=gzipSync(payload);res.setHeader('Content-Encoding','gzip');}
+  res.setHeader('Content-Length',String(payload.length));res.end(payload);
+ }

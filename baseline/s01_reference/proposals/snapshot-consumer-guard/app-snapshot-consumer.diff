@@ -1,0 +1,90 @@
+--- a/public/app.js
++++ b/public/app.js
+@@ -12,10 +12,30 @@
+ const cls=v=>num(v)===null?'':Number(v)<0?'negative':Number(v)>0?'positive':'';
+ const labels={DEMO:'Demokonto',ENGINE:'Bot betriebsbereit',MODEL:'Modell bereit',SELECTED:'Instrument ausgewählt',MARKET:'Markt geöffnet',QUOTE:'Aktueller Kurs',HISTORY_SYNC:'Historie abgeglichen',PROTECTION:'Vorhandene Positionen geschützt',SYMBOL_POSITION:'Kein doppelter Symboltrade',PENDING_BUDGET:'Keine unbudgetierte Pending-Order',POSITION_CAP:'Positionsobergrenze',FRESH_SIGNAL:'Frisches M5-Signal',ZONE:'Extremzone',TREND:'Trendfreigabe',REVERSAL:'Umkehrkerze',DIRECTION:'Handelsrichtung erlaubt',BROKER_DIRECTION:'Broker erlaubt Richtung',COOLDOWN:'Abstand zum letzten Ausstieg',UNIQUE_SIGNAL:'Signal noch nicht gehandelt',PLAN:'Volumen, Kosten und Konto passen',ARMED:'Demo-Handel freigegeben'};
+ let all=[],rows=[],meta={bad:0,duplicates:0,gaps:0},run='',symbol='',decisions=[],at=-1,planSide=0,coverage=new Map(),lastStatus=null,start=null,currentPositions=[];
++// Structural guards only: raw events remain unchanged; no OHLC validation.
++const candleObject=c=>c!==null&&typeof c==='object'&&!Array.isArray(c);
++const candleList=cs=>Array.isArray(cs)&&cs.every(candleObject);
++function snapshotSource(x){
++ if(!candleObject(x))return null;
++ const direct=x.snapshot===true||x.partialSnapshot===true||candleObject(x.checkpoint);
++ const s=direct?x:x.format==='ExtremeLabAnalysis/2'&&candleObject(x.meta?.snapshot)?x.meta.snapshot:null;
++ if(!s)return null;
++ const c=candleObject(s.checkpoint)?s.checkpoint:{};
++ return {snapshot:true,partialSnapshot:typeof s.partialSnapshot==='boolean'?s.partialSnapshot:null,
++  hasMore:typeof s.hasMore==='boolean'?s.hasMore:null,
++  checkpoint:{complete:typeof c.complete==='boolean'?c.complete:null,
++   completeness:typeof c.completeness==='string'?c.completeness.slice(0,200):null,
++   invalidPayloadSequences:Array.isArray(c.invalidPayloadSequences)?c.invalidPayloadSequences.filter(n=>Number.isSafeInteger(n)&&n>=0):[]}};
++}
++function invalidCandlePayload(e){
++ if(e.kind==='BARS')return !candleList(e.data.candles);
++ if(e.kind==='BAR')return !candleObject(e.data.candle);
++ return e.kind==='DECISION'&&e.data.Candles!=null&&!candleList(e.data.Candles);
++}
+ function parse(text){
+- const events=[],keys=new Set();let bad=0,duplicates=0,ignored=0;
++ const events=[],keys=new Set();let bad=0,duplicates=0,ignored=0,snapshot=null;
+  if(text.length>65*1024*1024)throw Error('Datei über 65 MB. Bitte einen kleineren Journal-Zeitraum exportieren.');
+- let list;try{const x=JSON.parse(text);if(Array.isArray(x))list=x;else if(Array.isArray(x.events))list=x.events;}catch{}
++ let list;try{const x=JSON.parse(text);if(Array.isArray(x))list=x;else if(Array.isArray(x?.events)){list=x.events;snapshot=snapshotSource(x);}}catch{}
+  const candidates=list||text.split(/\r?\n/);
+  for(const line of candidates){
+   let e;try{if(typeof line==='object')e=line;else{const p=line.match(/XL[12]\s+(\{.*)$/);if(p)e=JSON.parse(p[1]);else if(line.trim().startsWith('{'))e=JSON.parse(line);else{ignored++;continue;}}}
+@@ -27,7 +47,7 @@
+  events.sort((a,b)=>ms(a.utc)-ms(b.utc)||(num(a.seq)||0)-(num(b.seq)||0));
+  let gaps=0,by=new Map();for(const e of events){if(e.schema===2&&num(e.seq)!==null){if(!by.has(e.run))by.set(e.run,[]);by.get(e.run).push(e.seq);}}
+  for(const s of by.values()){s.sort((a,b)=>a-b);for(let i=1;i<s.length;i++)gaps+=Math.max(0,s[i]-s[i-1]-1);}
+- return {events,bad,duplicates,gaps,ignored};
++ return {events,bad,duplicates,gaps,ignored,snapshot,invalidCandlePayloads:events.filter(invalidCandlePayload).map(e=>({run:e.run,seq:e.seq??null,kind:e.kind}))};
+ }
+ function load(text,name='Journal'){
+  try{const p=parse(text);if(!p.events.length)throw Error('Keine vollständigen XL1-/XL2-Ereignisse gefunden. Bitte Journal oder events.jsonl auswählen.');all=p.events;meta=p;
+@@ -73,8 +93,8 @@
+ }
+ function selectSymbol(s){symbol=s;decisions=rows.filter(e=>e.kind==='DECISION'&&e.data.Symbol===s);at=decisions.length-1;$('replay').max=Math.max(0,at);$('replay').value=Math.max(0,at);$('replay').disabled=at<0;renderList();renderDecision();}
+ function barsFor(e){
+- if(!e)return[];const direct=e.data.Candles;if(Array.isArray(direct)&&direct.length)return direct.filter(c=>ms(c.Time)+300000<=ms(e.utc)+1000);
+- const map=new Map();for(const ev of rows){if(ms(ev.utc)>ms(e.utc))break;if(ev.data.symbol!==e.data.Symbol)continue;if(ev.kind==='BARS')for(const c of ev.data.candles||[])map.set(c.Time,c);if(ev.kind==='BAR'&&ev.data.candle)map.set(ev.data.candle.Time,ev.data.candle);}
++ if(!e)return[];const direct=e.data.Candles;if(direct!=null&&!candleList(direct))return[];if(candleList(direct)&&direct.length)return direct.filter(c=>ms(c.Time)+300000<=ms(e.utc)+1000);
++ const map=new Map();for(const ev of rows){if(ms(ev.utc)>ms(e.utc))break;if(ev.data.symbol!==e.data.Symbol)continue;if(ev.kind==='BARS'&&candleList(ev.data.candles))for(const c of ev.data.candles)map.set(c.Time,c);if(ev.kind==='BAR'&&candleObject(ev.data.candle))map.set(ev.data.candle.Time,ev.data.candle);}
+  return [...map.values()].filter(c=>ms(c.Time)+300000<=ms(e.utc)+1000).sort((a,b)=>ms(a.Time)-ms(b.Time)).slice(-80);
+ }
+ function positionsAt(e){const p=rows.filter(x=>x.kind==='POSITIONS'&&ms(x.utc)<=ms(e.utc)).at(-1);return (Array.isArray(p?.data?.items)?p.data.items:[]).filter(x=>x.symbol===e.data.Symbol);}
+@@ -130,6 +150,16 @@
+ function renderParams(){const p=start?.data.parameters||start?.data||{};$('parameters').textContent=JSON.stringify(p,null,2);}
+ function renderQuality(){
+  const killed=all.filter(e=>e.kind==='INTERRUPTION').length;let v=rows.some(e=>e.schema===2);let warnings=[];
++ const invalid=(meta.invalidCandlePayloads||[]).filter(e=>e.run===run);
++ if(meta.snapshot){
++  warnings.push('Importierter Snapshot-Ausschnitt; kein vollständiges Journal und kein Live-Nachweis.');
++  if(meta.snapshot.partialSnapshot!==false||meta.snapshot.hasMore===true)warnings.push('Snapshot-Antwort unvollständig oder Umfang unbekannt; ein vollständiger Checkpoint belegt nicht eine vollständige Antwort.');
++  const c=meta.snapshot.checkpoint;
++  if(c.complete!==true)warnings.push(c.complete===false?'Checkpoint ausdrücklich unvollständig.':'Checkpoint-Vollständigkeit unbekannt.');
++  if(c.invalidPayloadSequences.length)warnings.push('Ungültige Kerzenpayloads laut Quelle: Ereignisse '+c.invalidPayloadSequences.join(', ')+'.');
++  if(c.completeness)warnings.push('Quelldiagnose: '+c.completeness);
++ }
++ if(invalid.length)warnings.push(invalid.length+' strukturell ungültige Kerzenpayloads: Rohereignisse bleiben erhalten, betroffene Kerzenpayloads werden nicht gezeichnet.');
+  if(!start)warnings.push('START-Ereignis fehlt: Laufbasis unvollständig.');if(!v)warnings.push('Altlog XL1: keine verlässliche Ereignisnummerierung; keine vollständige Prüfliste.');
+  if(meta.bad)warnings.push(meta.bad+' unlesbare strukturierte Zeilen.');if(meta.gaps)warnings.push(meta.gaps+' fehlende XL2-Ereignisnummern zwischen vorhandenen Ereignissen.');
+  if(meta.duplicates)warnings.push(meta.duplicates+' identische Ereignisse entfernt.');
+@@ -137,7 +167,7 @@
+  if(!v&&ad+fi-cl!==pos)warnings.push('Positionsübergänge nicht vollständig erklärbar: übernommen '+ad+', neue Fills '+fi+', dokumentiert geschlossen '+cl+', zuletzt offen '+(pos??'unbekannt')+'.');
+  if(!warnings.length)warnings.push('Keine erkannten internen Sequenzlücken. Das beweist nicht, dass Anfang und Ende des Exports vollständig sind.');
+  $('quality').innerHTML=warnings.map(x=>'<p>'+esc(x)+'</p>').join('');
+- $('qualityLabel').textContent=(meta.bad||meta.gaps||!v)?'Datenprüfung beachten':'XL2 eingelesen';
++ $('qualityLabel').textContent=(meta.bad||meta.gaps||!v||meta.snapshot||invalid.length)?'Datenprüfung beachten':'XL2 eingelesen';
+  $('logStats').textContent=all.length+' eindeutige Ereignisse · '+rows.length+' im Lauf · '+meta.bad+' beschädigt · '+meta.gaps+' Sequenzlücken';
+ }
+ function download(name,body,type='application/json'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([body],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),10000);}
+@@ -146,7 +176,7 @@
+ $('run').onchange=chooseRun;$('search').oninput=renderList;$('marketFilter').onchange=renderList;
+ $('prev').onclick=()=>{at=Math.max(0,at-1);renderDecision();};$('next').onclick=()=>{at=Math.min(decisions.length-1,at+1);renderDecision();};$('latest').onclick=()=>{at=decisions.length-1;renderDecision();};$('replay').oninput=e=>{at=+e.target.value;renderDecision();};
+ $('planSide').onchange=e=>{planSide=+e.target.value;renderDecision();};
+-$('export').onclick=()=>download('ExtremeLab_Analyse_'+(run||'leer')+'.json',JSON.stringify({format:'ExtremeLabAnalysis/2',source:'imported_journal_not_live',meta:{bad:meta.bad,duplicates:meta.duplicates,gaps:meta.gaps},selectedRun:run,events:all},null,2));
++$('export').onclick=()=>download('ExtremeLab_Analyse_'+(run||'leer')+'.json',JSON.stringify({format:'ExtremeLabAnalysis/2',source:'imported_journal_not_live',meta:{bad:meta.bad,duplicates:meta.duplicates,gaps:meta.gaps,snapshot:meta.snapshot,invalidCandlePayloads:meta.invalidCandlePayloads},selectedRun:run,events:all},null,2));
+ $('exportCurrent').onclick=()=>{const e=decisions[at];if(e)download('ExtremeLab_'+symbol+'_Entscheidung.json',JSON.stringify({event:e,bars:barsFor(e),positions:positionsAt(e)},null,2));};
+ $('noteSave').onclick=()=>{const e=decisions[at];if(e)download('ExtremeLab_'+symbol+'_Notiz.json',JSON.stringify({decisionId:e.data.Id,symbol,utc:e.utc,note:$('note').value,notAnOrder:true},null,2));};
+ let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(rows.length){renderSummary();renderDecision();}},120);});

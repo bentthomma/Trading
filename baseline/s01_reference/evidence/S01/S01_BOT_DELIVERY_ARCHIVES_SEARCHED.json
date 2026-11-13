@@ -1,0 +1,39 @@
+{
+  "scope": "Four accessible original archives; exact member hashes plus selected deterministic source transforms. Not an exhaustive Library/external storage search.",
+  "archives": [
+    {
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "bytes": 703909,
+      "members": 27,
+      "crc_valid": true,
+      "remaining_21_direct_full_hash_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+      "bytes": 32852,
+      "members": 17,
+      "crc_valid": true,
+      "remaining_21_direct_full_hash_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Release_1_2_1_Pruefung.zip",
+      "sha256": "c7ed79c05ecfbdd1ba75e0974aa850de44d78ed265859621570d8a8dadc24c0c",
+      "bytes": 14633,
+      "members": 12,
+      "crc_valid": true,
+      "remaining_21_direct_full_hash_matches": []
+    },
+    {
+      "archive": "Dashboard_Design_Motion_Quellcode_und_Tests.zip",
+      "sha256": "375d8969ad1c4f9a1f2c28daebde7759a2973f076a4f0e19dd11745d04e6e689",
+      "bytes": 1716986,
+      "members": 33,
+      "crc_valid": true,
+      "remaining_21_direct_full_hash_matches": []
+    }
+  ],
+  "two_recoveries": "standalone-comment transform documented separately",
+  "provider_limit": "Source content connector still truncated. No share links created; no bypass of access restrictions."
+}

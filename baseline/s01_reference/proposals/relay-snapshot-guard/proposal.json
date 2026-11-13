@@ -1,0 +1,17 @@
+{
+  "work_id": "S01-RELAY-SNAPSHOT-GUARD",
+  "original_archive_sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43",
+  "archive_member": "ExtremeLab_1_2_1_Integrationskandidat/relay/relay.py",
+  "original_sha256": "62fb6b0d437b090be6dd0b1a1e2af1d72e6a794e1c7b14b19ea523a4fa583f8c",
+  "proposal_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+  "changed_product_files": 1,
+  "production_deployed": false,
+  "canonical_gate_changed": false,
+  "website_source_count": 38,
+  "missing_website_sources": 21,
+  "read_projection_only": true,
+  "write_and_ack_semantics_changed": false,
+  "new_diagnostic": "checkpoint.invalidPayloadSequences",
+  "new_completeness_value": "invalid_candle_payload",
+  "scope": "Python archived relay 1.3.3-qa; not missing Vercel JavaScript relay; structural container/member check only, not OHLC semantics"
+}

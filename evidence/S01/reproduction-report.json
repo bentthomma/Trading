@@ -1,0 +1,71 @@
+{
+  "assertions_are_not_results": true,
+  "blocked_capabilities": [
+    {
+      "cause": "21 missing full inputs, first build stage stops at live-overlay.b64",
+      "does_not_block_inventory": true,
+      "id": "full_website_pipeline",
+      "input_paths": [
+        "src/api/bot14-download.js",
+        "src/api/bot15-download.js",
+        "src/build-bot14.mjs",
+        "src/build-bot15.mjs",
+        "src/build-ui.mjs",
+        "src/lib/relay.mjs",
+        "src/live-overlay.b64",
+        "src/public/bot14.html",
+        "src/public/bot14.js",
+        "src/public/bot15.html",
+        "src/public/bot15.js",
+        "src/public/connection-check.js",
+        "src/skin.0",
+        "src/skin.1",
+        "src/skin.2",
+        "src/skin.3",
+        "src/skin.4",
+        "src/skin.5",
+        "src/skin.6",
+        "src/skin.7",
+        "src/skin.8"
+      ]
+    },
+    {
+      "cause": "Delivery record exists; original ZIP and native bytes not recovered. Other engine versions are not substitutes.",
+      "does_not_block_inventory": true,
+      "id": "engine19_original_build"
+    },
+    {
+      "cause": "No new C# SDK/Windows/broker execution in this inventory work.",
+      "does_not_block_inventory": true,
+      "id": "native_target_execution"
+    }
+  ],
+  "broker_actions_authorized": false,
+  "complete_website_build": false,
+  "current_bounded_checks": [
+    "original first-import self-test on exact S00 branch, broker-free synthetic provider event",
+    "original S01 inventory regression tests on preserved snapshot",
+    "original first website build stage in temporary isolated copy",
+    "actual Git diff checked with existing collector and original S01 scope guard"
+  ],
+  "current_execution_record": "../../evidence/execution.json in the enclosing delivery; read completed status and command exitcodes, not this declaration",
+  "github_writes_authorized": false,
+  "historical_evidence": {
+    "epoch": "Historical executions only; not counted as new tests in this work.",
+    "path": "baseline/s01_reference/evidence/S01/reproduction-report.json"
+  },
+  "native_binary_build": false,
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "product_integration_authorized": false,
+  "schema": "extremelab-s01-closeout/v1",
+  "source_catalog": {
+    "path": "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json",
+    "sha256": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127"
+  },
+  "work_id": "S00-S01-NO-REVIEWER-CLOSURE",
+  "plan_version": "1.2.0",
+  "independent_review_required": false,
+  "completion_record": "governance/masterplan/control/state.json + evidence/S01/completion.json",
+  "scope_of_acceptance": "source_inventory_only",
+  "current_execution": "evidence/S01/test-execution.json; earlier run data kept explicitly as historical"
+}

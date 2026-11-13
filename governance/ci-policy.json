@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "private_local_mode_remote_not_installed",
+  "repository_id": 1454517485,
+  "repository_full_name": "bentthomma/Trading",
+  "default_branch": "main",
+  "step_id": "S00",
+  "required_status_context": "extremelab/s00-trusted-preflight",
+  "branch_protection_verified": false,
+  "controlled_progress_writer_verified": false,
+  "note": "Reviewerpflicht vom Nutzer aufgehoben. Repo-ID ist lesend gebunden; keine GitHub-Installation. Lokaler Controller darf mit echten Git-/Testbelegen abschließen. Veröffentlichungs-/Brokerrechte unverändert gesperrt.",
+  "independent_review_required": false,
+  "completion_mode": "single_actor_test_evidence"
+}

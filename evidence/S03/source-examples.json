@@ -1,0 +1,108 @@
+{
+  "schema": "extremelab-s03-original-source-examples/1",
+  "synthetic_only": true,
+  "source_mode": "original_core_sqlite_fixture",
+  "source_archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+  "ui_verified": false,
+  "broker_connected": false,
+  "cases": [
+    {
+      "id": "reported_agreement",
+      "status": "reports_available",
+      "source_fresh": true,
+      "position_id": "9007199254740993",
+      "entry": "1.100000000000000001",
+      "original_plan_state": "available",
+      "exit_state": "reported_values_agree",
+      "native_protection_confirmed": false,
+      "broker_independently_verified": false,
+      "flat_confirmed": false,
+      "trade_granted": false
+    },
+    {
+      "id": "fresh_partial",
+      "source_fresh": true,
+      "status": "incomplete",
+      "loaded_positions": 1,
+      "reported_count": 2,
+      "current_pair": false,
+      "comparison_scope": "partial_view"
+    },
+    {
+      "id": "fresh_feed_stale_row",
+      "source_fresh": true,
+      "row_fresh": false,
+      "current_pair": false,
+      "original_plan_state": "available"
+    },
+    {
+      "id": "empty_observer_historical_report",
+      "observed_positions": 0,
+      "loaded_reports": 1,
+      "engine_is_open_list": false,
+      "flat_confirmed": false,
+      "reported_presence": "reported_open",
+      "exit_state": "not_in_observer_snapshot"
+    },
+    {
+      "id": "observer_no_free_margin",
+      "account_keys": [
+        "balance",
+        "broker",
+        "currency",
+        "environment",
+        "equity",
+        "id",
+        "type"
+      ],
+      "invented_free_margin_rejected": true,
+      "global_snapshot_exists": false
+    },
+    {
+      "id": "journal_is_projection",
+      "top_level_fields": [
+        "account",
+        "ageMilliseconds",
+        "available",
+        "counts",
+        "currentStreamId",
+        "fresh",
+        "gap",
+        "independentBrokerProof",
+        "lastReceivedAt",
+        "limit",
+        "orders",
+        "plans",
+        "plansAreExecutionGrants",
+        "positions",
+        "reason",
+        "source",
+        "status",
+        "streams",
+        "supported",
+        "truncated",
+        "writesAllowed"
+      ],
+      "has_events": false,
+      "has_decisions": false,
+      "status_reason_groups": [
+        {
+          "code": "MARKET_CLOSED",
+          "count": 60
+        },
+        {
+          "code": "COST_BUDGET",
+          "count": 12
+        }
+      ],
+      "positions_are_reports": true
+    },
+    {
+      "id": "account_scope_mismatch",
+      "account_matched": false,
+      "joined_rows": 0,
+      "flat_confirmed": false,
+      "trade_granted": false
+    }
+  ]
+}

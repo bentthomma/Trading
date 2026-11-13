@@ -1,0 +1,237 @@
+{
+  "schema": "extremelab-s02-source-bindings/1",
+  "base_revision": "2426d406ee488fd808edbb5e0beb0bac754eadf3",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "archives": {
+    "baseline/s01_reference/baseline/original_platform097.zip": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d"
+  },
+  "private_product_patches": "Preserved as S01 proposals; not applied to original modules by S02",
+  "mt5_contract": "No actual MT5 execution source established in selected original source roots; future adapter remains blocked, not inferred from cTrader.",
+  "reference_manifest": {
+    "path": "baseline/s01_reference/vendor-manifests/S01_INTERFACE_SOURCE_BINDINGS.json",
+    "sha256": "290b684066ab5dfd53d3002c7b0c1bc086f8571652dce588df6b5f0adacfbbe6",
+    "archive_prefix": "baseline/s01_reference/",
+    "source_ids": [
+      "server",
+      "control",
+      "store",
+      "observation",
+      "journal",
+      "comparison",
+      "comparison-reader",
+      "registry",
+      "mcp",
+      "remote",
+      "native-observer",
+      "native-journal",
+      "native-outbox",
+      "native-dispatch",
+      "view-projection",
+      "view-http",
+      "view-service",
+      "view-api",
+      "view-ui"
+    ]
+  },
+  "additional_sources": [
+    {
+      "id": "capabilities",
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/capabilities.mjs",
+      "bytes": 9843,
+      "sha256": "f36af396364827afba3f1cf69d1fc18aa8cb4630c4252bb80bc156748040cf57",
+      "evidence": [
+        {
+          "anchor": "not an authorisation token",
+          "line": 66,
+          "start_line": 65,
+          "end_line": 69,
+          "excerpt_sha256": "a764383584b3d2a0402d11699c29461da767cf9bf13eb1f8e94702a224798283"
+        },
+        {
+          "anchor": "configuration.apply",
+          "line": 92,
+          "start_line": 91,
+          "end_line": 95,
+          "excerpt_sha256": "0208d2787e81466a016490d0ef7ee3847866f9df9cf78f4bbe39464ae608e0b1"
+        },
+        {
+          "anchor": "trading.live",
+          "line": 98,
+          "start_line": 97,
+          "end_line": 101,
+          "excerpt_sha256": "0eec4d1dfe49c2dcbb5b49bfba3b47c05de0c3c09095fff93e9c7ca5d39916a2"
+        }
+      ],
+      "evidence_scope": "static_source_binding"
+    },
+    {
+      "id": "schema",
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/schema.mjs",
+      "bytes": 9520,
+      "sha256": "caf21114e697df310a32dfc0d13e3a2671442e7e0752d533cc2f12d6094574c8",
+      "evidence": [
+        {
+          "anchor": "0 bedeutet budgetgesteuert",
+          "line": 17,
+          "start_line": 16,
+          "end_line": 20,
+          "excerpt_sha256": "a0af6df932d8adc48fbc1371545c5fe0b2234ec0b07b6c6f824f2bf834022479"
+        },
+        {
+          "anchor": "0 entfernt nur",
+          "line": 57,
+          "start_line": 56,
+          "end_line": 60,
+          "excerpt_sha256": "ed0453e1b106564aa795838c727d1cdd0457367831b44f1329e17fd5030f165f"
+        },
+        {
+          "anchor": "risk>values.totalRisk",
+          "line": 101,
+          "start_line": 100,
+          "end_line": 104,
+          "excerpt_sha256": "642cf143247f33411151ca5b6c50c5774bb8f889bf68e761623144726e5de131"
+        }
+      ],
+      "evidence_scope": "static_source_binding"
+    },
+    {
+      "id": "native-bridge",
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/sdk/HubBridge.cs",
+      "bytes": 16218,
+      "sha256": "ca5916c2056ae9b49ef8d263092a72d8d7cc54bc58e542cd450ddc535979dba6",
+      "evidence": [
+        {
+          "anchor": "BestEffortBlockAsync",
+          "line": 73,
+          "start_line": 72,
+          "end_line": 76,
+          "excerpt_sha256": "266fc1871716587c1d758bd375ce138e3e4517b27ba81eb103d16b6f7d476ab4"
+        },
+        {
+          "anchor": "SetBlockAsync",
+          "line": 86,
+          "start_line": 85,
+          "end_line": 89,
+          "excerpt_sha256": "eb2558fc20c62d81fe7ba0e28a8cd9bea54067daa4f4dd3765bbf76931f3a703"
+        },
+        {
+          "anchor": "_pendingAck = null",
+          "line": 134,
+          "start_line": 133,
+          "end_line": 137,
+          "excerpt_sha256": "185a2b779ef1b06cef6f63f903ca6e4c2570a9fd60e19178987148e958f095ae"
+        }
+      ],
+      "evidence_scope": "static_source_binding"
+    },
+    {
+      "id": "native-contracts",
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/sdk/HubContracts.cs",
+      "bytes": 1199,
+      "sha256": "182293bfad7ede94dfab76c571f39515605f5e0e48be9690a930742bac150719",
+      "evidence": [
+        {
+          "anchor": "public interface IHubValues",
+          "line": 4,
+          "start_line": 3,
+          "end_line": 7,
+          "excerpt_sha256": "b2bf1ff91c5dce2418943e99ec32e6ade54f0d39b1581a6305c43c7ca8e2bad8"
+        },
+        {
+          "anchor": "record HubContract",
+          "line": 12,
+          "start_line": 11,
+          "end_line": 15,
+          "excerpt_sha256": "c98159e4efada448d9ba021124c8a7490716d2eaaf373c0795aee04ba774ffdd"
+        }
+      ],
+      "evidence_scope": "static_source_binding"
+    },
+    {
+      "id": "native-protocol",
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/sdk/HubProtocol.cs",
+      "bytes": 14956,
+      "sha256": "a2e053aea3d7ab6288c2d9d03f47a9cb4b26b9812798cf4bfe4b63dcd0e21997",
+      "evidence": [
+        {
+          "anchor": "IsTerminal",
+          "line": 181,
+          "start_line": 180,
+          "end_line": 184,
+          "excerpt_sha256": "6fe929c3216e65041c99ba5dc0b9190001a6208b39d0ebe869730ed14d910f8e"
+        },
+        {
+          "anchor": "HttpStatusCode.Conflict",
+          "line": 229,
+          "start_line": 228,
+          "end_line": 232,
+          "excerpt_sha256": "71254f9e95b1a35c08c6ca81ff5d6fc5ba16d5048f0aecb7083139a0794e20f0"
+        }
+      ],
+      "evidence_scope": "static_source_binding"
+    },
+    {
+      "id": "original-core-tests",
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/tests/core.mjs",
+      "bytes": 9464,
+      "sha256": "1888fac8a53768443a20646d730443d237648c9ad8e68b8d9a27d5f5b7060b6c",
+      "evidence": [
+        {
+          "anchor": "test('",
+          "line": 25,
+          "start_line": 24,
+          "end_line": 28,
+          "excerpt_sha256": "9cdb14d19b95b06bfb4b5532db20cc70e353d0428aa79388858fa96f453e7aa0"
+        }
+      ],
+      "evidence_scope": "static_source_binding"
+    },
+    {
+      "id": "governance/masterplan/plan.json",
+      "kind": "repository_file",
+      "path": "governance/masterplan/plan.json",
+      "sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+      "bytes": 205234
+    },
+    {
+      "id": "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json",
+      "kind": "repository_file",
+      "path": "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json",
+      "sha256": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127",
+      "bytes": 48878
+    },
+    {
+      "id": "evidence/S01/path-map.json",
+      "kind": "repository_file",
+      "path": "evidence/S01/path-map.json",
+      "sha256": "5eda61b0f664d8befc78c617d3906b8479ad52ca8cae6dcbe4b1da0c30570bfa",
+      "bytes": 77272
+    },
+    {
+      "id": "baseline/s01_reference/docs/architecture/existing-interfaces.md",
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/docs/architecture/existing-interfaces.md",
+      "sha256": "d07e5f40c98653f1d5947b5676430a1d0f81f1729bfa28ca01e0544b4fa250f1",
+      "bytes": 23903
+    },
+    {
+      "id": "offline-network-guard",
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/tools/no_connect.py",
+      "bytes": 1378,
+      "sha256": "c325318380f4ab85900fc1535b9790abfb84389f60393924e1fdf416c218ea10"
+    }
+  ]
+}

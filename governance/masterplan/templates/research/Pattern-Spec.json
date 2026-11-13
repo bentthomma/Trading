@@ -1,0 +1,98 @@
+{
+  "schema": "extremelab-pattern-spec/1.0-draft",
+  "pattern_id": "MPR1_RETEST_PATTERN_DRAFT_V0",
+  "status": "DRAFT",
+  "ready_to_run": false,
+  "evidence_type": "OWN_HYPOTHESIS_WITH_SYNTHETIC_REFERENCE",
+  "name": "Kausal bestätigter Ausbruch und Rücktest einer eingefrorenen Zone",
+  "notice": "Mustererkennung ist zunächst eine Merkmalsdefinition. Sie ist keine bestätigte Handelsstrategie und keine Gewinnwahrscheinlichkeit.",
+  "source_refs": [
+    {
+      "file": "Trading_Start_und_Arbeitsbuch_1_0.pdf",
+      "sha256": "160c847357f0c5f883b820d85c79d5d18f815c182489459548b6b562fd25d167",
+      "chapter": "MP05",
+      "pages": "21-24",
+      "scope": "Originaler MPR1-Lehrvertrag; nicht identisch mit TECH05 oder LAB02 breakout_retest."
+    },
+    {
+      "file": "Marktverhalten_Atlas_Master_1_0.pdf",
+      "sha256": "e7c1f789c66886f187df48fa875b3946513ae75f65695d854dbc76e56d59a06f",
+      "chapters": ["BP03", "BP04", "BP09", "BP14", "BR01"],
+      "scope": "Beobachtung versus Mechanismus, Bestätigungszeit und Zeitebenen."
+    }
+  ],
+  "preflight": {
+    "rule": "Missing/null/empty required pointer or ready_to_run=false blocks feature-job start.",
+    "implementation_state": "NORMATIVE_CONTRACT_NOT_CONNECTED_TO_RUNNER_YET",
+    "required_pointers_non_null": ["/version_sha256", "/dataset_manifest_sha256", "/instrument_contract_sha256", "/calendar_version", "/time/quote_ttl_milliseconds", "/time/available_at_mapping", "/review/decision_ref"],
+    "additional_assertions": ["Ask >= Bid; strictly ordered unique events; finite positive tick-valid prices.", "No final higher-timeframe value before available_at.", "No synthetic values relabelled as observed historical market data."]
+  },
+  "version_sha256": null,
+  "dataset_manifest_sha256": null,
+  "instrument_contract_sha256": null,
+  "calendar_version": null,
+  "scope": {
+    "reference_instrument": "MPR1_SYNTHETIC_CASH_ASSET_CHF",
+    "price_unit": "CHF_per_unit",
+    "bars": "M5_BID",
+    "original_reference_is_synthetic": true,
+    "reuse_in_real_market_requires_new_version": true
+  },
+  "time": {
+    "timezone": "UTC",
+    "interval_convention": "left_closed_right_open",
+    "available_at_mapping": null,
+    "quote_ttl_milliseconds": null,
+    "bar_confirmation_rule": "Grenzquote gehört zur neuen Bar und macht vorherige Bar nach ihrem tatsächlichen Bestätigungsereignis verfügbar.",
+    "event_priority_at_equal_time": ["deadline_or_session_event", "bar_confirmation", "quote"],
+    "higher_timeframes": {
+      "context_candidates": ["H1", "D1"],
+      "use_for_trade_filter": false,
+      "meaning": "Optionale protokollierte Kontextmerkmale; im ursprünglichen MPR1 keine Entryfilter. Aktivierung wäre eine neue Strategievariante.",
+      "only_final_bars": true,
+      "no_independence_claim": true
+    }
+  },
+  "detector": {
+    "warmup_completed_bars": 20,
+    "maximum_simultaneous_candidates": 1,
+    "initial_state": "SCAN",
+    "reference_level": "R = max(Bid high of 20 fully completed bars before candidate breakout bar b)",
+    "breakout": "Bid close(b) > R + 0.20",
+    "on_breakout": "Freeze R, b and expiry bar b+3; transition WAIT_RETEST.",
+    "eligible_retest_bars": [1, 2, 3],
+    "invalidation_first": "Bid close < R - 0.20",
+    "confirmation": "Bid low <= R + 0.10 AND Bid high >= R - 0.10 AND Bid close > R + 0.10",
+    "on_confirmation": "Emit CONFIRMED only at actual available_at; store all source event IDs and frozen anchors.",
+    "expiry": "No confirmation by completion of b+3 => EXPIRED.",
+    "rescan": "Earliest next completed bar after terminal candidate event.",
+    "parameters_are_original_synthetic_price_distances": true,
+    "parameter_portability_warning": "Abstände 0.10/0.20 sind Lehrwerte in CHF pro synthetischem Stück. Für andere Instrumente neue dimensionierte Spezifikation, keine stille Übertragung."
+  },
+  "output_contract": {
+    "fields": ["pattern_event_id", "pattern_id", "version_sha256", "instrument_id", "anchor_time", "confirmed_at", "available_at", "state", "frozen_reference_level", "source_event_ids", "data_manifest_sha256", "invalidation_reason", "context_feature_versions"],
+    "states": ["CANDIDATE", "CONFIRMED", "INVALIDATED", "EXPIRED", "DATA_BLOCKED"],
+    "confidence": null,
+    "confidence_rule": "Kein numerischer Confidence-Wert ohne definiertes Ziel, eigenen Kalibrierungsnachweis und Version; null ist hier zulässige Nichtbehauptung."
+  },
+  "pivot_extension": {
+    "enabled": false,
+    "right_confirmation_bars": null,
+    "rule_if_enabled": "Extremzeit und Erkennungszeit getrennt; Signal frühestens nach verfügbarer rechter Bestätigung. Spätere Glättung darf Historie nicht rückdatieren."
+  },
+  "acceptance_fixtures": [
+    "Breakout bar itself cannot count as its retest.",
+    "Later high does not move frozen R.",
+    "Invalidation has priority over same-bar confirmation.",
+    "Confirmation outside b+1..b+3 produces no confirmed pattern.",
+    "Appending future bars preserves all prior pattern events.",
+    "A still-open H1/D1 bar cannot provide a final contextual close.",
+    "Replayed event ID does not emit a duplicate pattern.",
+    "Missing required quote or bar produces DATA_BLOCKED with reason, not a fabricated candle."
+  ],
+  "review": {
+    "decision_ref": null,
+    "technical_status": "NOT_IMPLEMENTED_IN_THIS_TEMPLATE",
+    "economic_status": "NOT_ESTABLISHED"
+  }
+}

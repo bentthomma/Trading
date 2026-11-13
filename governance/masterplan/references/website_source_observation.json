@@ -1,0 +1,295 @@
+{
+  "deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+  "base": "https://extremelab-bt.vercel.app/",
+  "files": [
+    {
+      "path": "api/account-chart.js",
+      "uid": "6e84205548e771ae4604ce12d4a95e9247288b30",
+      "observed_sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
+      "observed_bytes": 98,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "api/account-live.js",
+      "uid": "780c5eba2e1b5d7ba2fadbbdfbc7f71eb1a7cc0f",
+      "observed_sha256": "ca34d9547411a6b13b89310f30cb8cec548fbd8bfaea5b488e20161ab1a382ed",
+      "observed_bytes": 69,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "api/bot-download.js",
+      "uid": "6aea26a19a9f84fd97286554d44a6d564264329e",
+      "observed_sha256": "30e98564c80291f9722a328cf84ae1717c39594f77e4ea9b98dd6855023c51cc",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "api/bot14-download.js",
+      "uid": "0c263ed9e69115281823db49b1c3bfcadb5a2440",
+      "observed_sha256": "bf195df4ed7a57bc97d00510c5723fa9f9d2cb96533eec6100a58c7f330d353c",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "api/bot15-download.js",
+      "uid": "4e634916be6d936d41882059e1c4d18e9cc53178",
+      "observed_sha256": "134441077e94a68943a94ee4d39f864747be6456cb14d4c157f211642510e369",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "api/desk.js",
+      "uid": "cf355cb52eea32b9b69e2a8641b3b7b33555cdcc",
+      "observed_sha256": "793c3d67de374c828a1fe8c5465b86851e651d972b82b662ebb2b64b957443af",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "api/live.js",
+      "uid": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+      "observed_sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+      "observed_bytes": 1281,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "api/probe.js",
+      "uid": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
+      "observed_sha256": "cc585998e6c6b99e73edce74de9977e7b1b474c09457caecd285bf46f0ba085d",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "api/revolution.js",
+      "uid": "13f44cf339c6f462f2676dc54885de0c2878bf86",
+      "observed_sha256": "0b582f3db7e07a23f1c82d6a84a299f6d02232ffdff108814c5cb2108f626fb0",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "api/socket.js",
+      "uid": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
+      "observed_sha256": "7f180cb52fe38befa399e7ef19e6dc3cf47229f93f31c0d1bf91062e5a92b302",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "build-account-addon.mjs",
+      "uid": "6cb4aa622594795b140fd4cd68f76063c76463eb",
+      "observed_sha256": "a87c666dc997abc1ddae5399f33a105a7fd245211c27698c489441dca16fee5c",
+      "observed_bytes": 1012,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "build-bot.mjs",
+      "uid": "cb2628ce0d6dafe7f0a5805c23ac71df0ed1aa4b",
+      "observed_sha256": "52383e2917430d950ec9588c9d324d3be207920132991243d7e490b1dbfbbbc4",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "build-bot14.mjs",
+      "uid": "25acf7dee18a2ef6af2ea6189d8da4245ca71924",
+      "observed_sha256": "aff2ff0770649e359fa4e2e2949f7f753bb2355c226c27a8a4b0116327257583",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "build-bot15.mjs",
+      "uid": "cf82b256c9eae843aab76dad3a001e0703da3d94",
+      "observed_sha256": "6e6366f7554ddf009f62df3d2c0b5e0755a610631f742f843c3edca352a5dcf4",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "build-release20.mjs",
+      "uid": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38",
+      "observed_sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6",
+      "observed_bytes": 451,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "build-revolution20.mjs",
+      "uid": "b29c77450e2c140c8c3b04976c5e6c7996fc3c70",
+      "observed_sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439",
+      "observed_bytes": 1070,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "build-ui.mjs",
+      "uid": "50fb11eea21558d605a056880beac3dcd2a03f4e",
+      "observed_sha256": "3e6e7883b811f8ab7dcb67f532237b0affc7b804b20d905c304f8cd97e7f0675",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "build.mjs",
+      "uid": "d3a7b77bfb469b659b6a3b29db6e64552415f263",
+      "observed_sha256": "6ef5455d53cd08b614bb710999b04bc901d5da12639a5424ae52536d8bc841aa",
+      "observed_bytes": 1316,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "lib/http.mjs",
+      "uid": "06d25ef629e4cf23e3116aa50969c5b2a1c327be",
+      "observed_sha256": "9af64a81a5b4496cdc08a992ed94aa5e7f7fd9a9070190b2dc999eb2e1a4718e",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "lib/projection.mjs",
+      "uid": "2fda4938aec2b8bccd28a64cdcb747730d385982",
+      "observed_sha256": "843f4cc113faebadcd05d11b0843eaa34016ad02527f4beaa12190c398090c4c",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "lib/relay.mjs",
+      "uid": "90f1d748a4e0de90350cfdf53f99ca7a499d1566",
+      "observed_sha256": "1afd0199e91ba3d3fa41bf6b6f0a02c943c996ed18c1253136dbf0626dece9ff",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "lib/security.mjs",
+      "uid": "4b2f3da24483a775228bd72b112a60e81a9de2dc",
+      "observed_sha256": "82e23e5bc44d951f795071c9245d87c4148f3b7fc4e4d57dbdf44690f341dc55",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "lib/service.mjs",
+      "uid": "c03aa212b6033bab55f738dbf8c277974fcfd105",
+      "observed_sha256": "b1daeaf5eda728565d2f427ca20d5592c793139de77273177a54a715dc2d9949",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "lib/storage.mjs",
+      "uid": "b7ba7cc797aa174d3c59bcc1ca1287bfe3e4b851",
+      "observed_sha256": "c73a7d08a2fea36e2d6b6a2a6e3110782a69a8c648f0908487e1dc459218def9",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "package.json",
+      "uid": "b4cbe4597535e10ed1cca028366a88399e416522",
+      "observed_sha256": "63aa6b23f143b44d81b528ab8b9f973d29604032a9022220c431b99b2df41533",
+      "observed_bytes": 221,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "patch_ui.mjs",
+      "uid": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
+      "observed_sha256": "3e9326079ebebfd7d8f66634a504ba03c6198274b8745dbf748f178836bab18f",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "postbuild-132.mjs",
+      "uid": "1e4f81b57caab23448103cccfe39ab1f6a5695b1",
+      "observed_sha256": "431ccc89f5eb8c4aedbce2054dfad4bd98a9c63445cc4311e208f356c18d78bf",
+      "observed_bytes": 953,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "public/bot-download.js",
+      "uid": "2e5d871982b61d99fce67a1597a108d3b1786953",
+      "observed_sha256": "399d27ccad273a570b60c87d1a4b30a0eed32675bd652fb98e92ba4b16f8dbcb",
+      "observed_bytes": 1119,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "public/bot.html",
+      "uid": "2bf68374af1acaa1065e4751eb0631ab9a0a977c",
+      "observed_sha256": "da344e50260940e02bb6e0ae7d100306b4ba4b5de858384c2091c112cb077e80",
+      "observed_bytes": 1457,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "public/bot14.html",
+      "uid": "a3407e9429954026cb6c258836d1ee9382498f8a",
+      "observed_sha256": "e5e2f694ccc90ac323154ab7d145dfa2e41c1f008f655b014315421ba3af119d",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "public/bot14.js",
+      "uid": "c25db05dd4ba5ad380179bb16c592aa975bf68e3",
+      "observed_sha256": "56aa4eac9c8c622316c99d272bacdbb83b56adc10a077aa9f763efaa341d9525",
+      "observed_bytes": 1322,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "public/bot15.html",
+      "uid": "8bd6764e93dd56382267a2cba160357879413eae",
+      "observed_sha256": "4962e80b39b3a6e24d29d20bad20a1907e44297e7655644a528e79dfb64b3368",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "public/bot15.js",
+      "uid": "e21b2003d4af2e3981ba2c7503f0cb11cae38863",
+      "observed_sha256": "1037a86a3229b8c3fa27c3129cf8c4b6ac19f0331befdc11c8f8f594a5cdcd29",
+      "observed_bytes": 860,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "public/connection-check.js",
+      "uid": "dd9430f9514fb0f0715f371f106d8b467785b83f",
+      "observed_sha256": "f774af2c8898359407157dfbca4de449f2958f9c8cb6a064f815c95f1a96bd54",
+      "observed_bytes": 1079,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "public/connection.html",
+      "uid": "509a13f97726a6e4d8046e396d496083f26e4a92",
+      "observed_sha256": "20d35811f6a6cc8ac5a14ec380e700f0a626ee2f36096bf3bf6c2f7bf58f6852",
+      "observed_bytes": 811,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "vercel.json",
+      "uid": "cc1e1080ad18dcc3d6d8e0f7a3df9f8a27d22c97",
+      "observed_sha256": "fbcd3cd7d68d45f7a7bc65f7bf9935332d3abd31c1fb25d7c372e05546139d9f",
+      "observed_bytes": 786,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "version133.mjs",
+      "uid": "8ce6ecd6d3ed4755db8fadeb8e43bf5b5fc6ad6d",
+      "observed_sha256": "c85a18a87266df26fa267cbbc3e4290083c27bd3c23304d5e337b95b82298c99",
+      "observed_bytes": 424,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "view20-public/revolution-link.css",
+      "uid": "9de921e2cc570afe2a197d918ff6e532bb0b662b",
+      "observed_sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24",
+      "observed_bytes": 417,
+      "status": "COMPLETE"
+    },
+    {
+      "path": "view20-public/revolution.css",
+      "uid": "6dfd5a5c91cd5f9e3d25ae9c3a43645f756067b9",
+      "observed_sha256": "ce122be4d222a38b29edfbb12b32fa747d6eb16581ade0898f33a9faed8637b5",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "view20-public/revolution.html",
+      "uid": "feaafe8869faa062b1c845959b3fbd97d4e020c8",
+      "observed_sha256": "3e8fd80f1646904d7bb150d67d1af8e7203c6412d4bb04b710340862b674ede1",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    },
+    {
+      "path": "view20-public/revolution.js",
+      "uid": "8d206b064d1c375d84cece81969ad1a38704ca8f",
+      "observed_sha256": "ae30fb91f8af0aa6a6aee73fd161f82547a3910c7929ae5f7bfc83af6b30d447",
+      "observed_bytes": 1500,
+      "status": "PREFIX_ONLY_TOOL_TRUNCATED"
+    }
+  ],
+  "errors": [],
+  "note": "Prefix-only records are not full source or reproducible baselines."
+}

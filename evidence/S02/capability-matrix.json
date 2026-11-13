@@ -1,0 +1,151 @@
+{
+  "schema": "extremelab-capability-boundary/1",
+  "status": "design_contract_not_grant",
+  "default": "deny",
+  "capability_document_is_authority": false,
+  "principals": [
+    {
+      "id": "website_ui",
+      "capabilities": [
+        "projection.read",
+        "configuration.propose"
+      ],
+      "forbidden": [
+        "broker.execute",
+        "protection.disable",
+        "secret.read"
+      ],
+      "conditions": [
+        "Authenticated scoped session",
+        "Proposal never becomes confirmed state by display"
+      ]
+    },
+    {
+      "id": "research_worker",
+      "capabilities": [
+        "research.read",
+        "research.run",
+        "signal.propose"
+      ],
+      "forbidden": [
+        "configuration.apply",
+        "broker.execute",
+        "protection.disable",
+        "secret.read"
+      ],
+      "conditions": [
+        "Immutable input hashes",
+        "Result has no transferable execution right"
+      ]
+    },
+    {
+      "id": "mcp_reader",
+      "capabilities": [
+        "projection.read"
+      ],
+      "forbidden": [
+        "configuration.apply",
+        "broker.execute",
+        "secret.read"
+      ],
+      "conditions": [
+        "Actual existing agent token with read scope"
+      ]
+    },
+    {
+      "id": "mcp_proposer",
+      "capabilities": [
+        "projection.read",
+        "configuration.propose"
+      ],
+      "forbidden": [
+        "configuration.apply",
+        "broker.execute",
+        "secret.read"
+      ],
+      "conditions": [
+        "Separate explicit proposal scope; current registry still denies final confirm"
+      ]
+    },
+    {
+      "id": "local_human_session",
+      "capabilities": [
+        "projection.read",
+        "configuration.propose",
+        "demo.configuration.confirm"
+      ],
+      "forbidden": [
+        "implicit.live.grant",
+        "research.as.order"
+      ],
+      "conditions": [
+        "Bound proposal digest/revision/runtime/account",
+        "User removal of reviewer does not authorize broker actions"
+      ]
+    },
+    {
+      "id": "hub_core",
+      "capabilities": [
+        "journal.persist",
+        "configuration.validate",
+        "demo.configuration.deliver"
+      ],
+      "forbidden": [
+        "invent.broker.ack",
+        "research.as.order"
+      ],
+      "conditions": [
+        "Actor authorization",
+        "Fresh runtime/account",
+        "Local entry block",
+        "Demo only",
+        "ACK confirms actual values"
+      ]
+    },
+    {
+      "id": "native_execution_adapter",
+      "capabilities": [
+        "native.risk.check",
+        "native.protection.manage"
+      ],
+      "forbidden": [
+        "accept.research.as.order",
+        "trust.ui.as.authority"
+      ],
+      "conditions": [
+        "Not installed by S02",
+        "Broker execution separately authorized",
+        "Independent local risk and actual broker state",
+        "Uncertain dispatch reconciled before retry"
+      ]
+    }
+  ],
+  "execution_chain": [
+    "authenticated_operator_grant",
+    "account_and_environment_binding",
+    "confirmed_policy_hash_and_revision",
+    "known_fresh_account_state",
+    "schema_and_units_validation",
+    "local_risk_reservation",
+    "native_adapter_preflight",
+    "broker_submission",
+    "broker_receipt_reconciliation"
+  ],
+  "installed_by_this_package": [],
+  "current_original_limits": {
+    "hub_live_trading": "not_implemented",
+    "hub_backtest_run": "not_implemented",
+    "hub_start_trading_engine": "not_implemented",
+    "observer_process_start": "separate existing human-gated path, not invoked",
+    "research_job_orchestrator": "future S17",
+    "native_trading_authorization": "not granted"
+  },
+  "source_ids": [
+    "control",
+    "registry",
+    "capabilities",
+    "native-bridge"
+  ],
+  "research_to_order_conversion": "No automatic conversion. SignalIntent cannot validate as OrderIntent/BrokerOrder. A syntactically valid OrderIntent is still only an intent, never a grant.",
+  "website_outage": "Website holds no authoritative confirmed protection state. Local Hub SQLite survives UI absence; native broker protection remains native/broker-owned."
+}

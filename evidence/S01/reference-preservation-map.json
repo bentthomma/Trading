@@ -1,0 +1,14 @@
+{
+  "direct_files": 389,
+  "reconstructed_files": [
+    {
+      "canonical_source": "governance/masterplan/governance/history/v1_1_0_pre_owner_change/plan.json",
+      "original_relative_path": "baseline/masterplan_1_1_0_plan.json",
+      "reason": "Original1.1 source reference now explicitly historical; active1.2 plan is separate. Original-source regression snapshot remains byte-exact.",
+      "restore_only_into_temporary_snapshot_for_original_checks": true,
+      "sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d"
+    }
+  ],
+  "reference_root": "baseline/s01_reference",
+  "schema": "exact-byte-preservation-map/v1"
+}

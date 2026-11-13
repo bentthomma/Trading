@@ -1,0 +1,71 @@
+{
+  "scope": "PLAN_GUARD_ONLY_NOT_PRODUCT_TESTS",
+  "exit_code": 0,
+  "tests": 32,
+  "plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+  "commands": [
+    {
+      "command": "validate",
+      "exit_code": 0,
+      "result": {
+        "valid": true,
+        "plan_id": "EXTREMELAB-CONSOLIDATED-MASTERPLAN-20261111",
+        "version": "1.0.0",
+        "plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+        "steps": 30,
+        "locked": false
+      },
+      "stderr": ""
+    },
+    {
+      "command": "lock",
+      "exit_code": 0,
+      "result": {
+        "locked": true,
+        "plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e"
+      },
+      "stderr": ""
+    },
+    {
+      "command": "next",
+      "exit_code": 0,
+      "result": {
+        "plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+        "free_slots": 2,
+        "ready_steps": [
+          "S00"
+        ],
+        "blocked_scope": [
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26",
+          "S27",
+          "S28",
+          "S29"
+        ]
+      },
+      "stderr": ""
+    }
+  ]
+}

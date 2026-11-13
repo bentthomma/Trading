@@ -1,0 +1,49 @@
+{
+  "archive_path": "baseline/inventory_sources/dashboard_original.zip",
+  "archive_sha256": "375d8969ad1c4f9a1f2c28daebde7759a2973f076a4f0e19dd11745d04e6e689",
+  "archive_bytes": 1716986,
+  "library_file_id": "file_000000000fe881f4a38f8b46c64a1825",
+  "crc_valid": true,
+  "entries": 33,
+  "bundle_sha256": "4b7c92010239a166489b7ac918c4876614c949d2ad0c9c3953b5fcf3b43b0c00",
+  "decoded_bytes": 144862,
+  "decoded_files": [
+    {
+      "generated_path": "public/p2/app.css",
+      "sha256": "220128492daefe6905815580525aabf4010f5f44446803cd241dacee757b17de",
+      "production_input_match": null
+    },
+    {
+      "generated_path": "public/p2/app.js",
+      "sha256": "6a6a08dda968e001b9f9d77d33a3e65d52ece7a6ba3a56fe431f4df1bdc10b22",
+      "production_input_match": null
+    },
+    {
+      "generated_path": "public/p2/boot.js",
+      "sha256": "6b7b4671d79a6039d64b6766b7b6f8c9bfb79d6cfa3dc4b447b32469ec553e91",
+      "production_input_match": null
+    },
+    {
+      "generated_path": "public/p2/data.mjs",
+      "sha256": "53f53b2fd1b6570e29a31c01979b0525a6d117ef20ecbfbe82d5e807539439b8",
+      "production_input_match": null
+    },
+    {
+      "generated_path": "public/p2/index.html",
+      "sha256": "a50f38bbb72057d3388cb874cdcbea97f66e3c801df2671770b4a01b3dae7674",
+      "production_input_match": null
+    },
+    {
+      "generated_path": "public/p2/plot.mjs",
+      "sha256": "33d49afb814dbf27674f4cc65aaa4a835453f962211e9caea703d9890d81d144",
+      "production_input_match": null
+    }
+  ],
+  "direct_input_matches": [],
+  "missing_production_inputs_recovered": 0,
+  "production_skin_expected_sha256": "abab24849786a62c367d84913173868afd3e22ad3dcc16d68b9ee3698ed5d37e",
+  "is_required_skin_bundle": false,
+  "builder_executed": false,
+  "design_implementation": false,
+  "note": "Original polished-02 presentation bundle is not the missing production skin bundle. No input substitution."
+}

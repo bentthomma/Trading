@@ -1,0 +1,36 @@
+{
+  "source": "authenticated truncated build-ui.mjs prefix, not executable full file",
+  "later_stage": "build-ui.mjs",
+  "release_order": [
+    "build.mjs",
+    "postbuild-132.mjs",
+    "version133.mjs",
+    "build-account-addon.mjs",
+    "build-bot.mjs",
+    "build-bot14.mjs",
+    "build-ui.mjs",
+    "build-revolution20.mjs"
+  ],
+  "observed_bundle_members": [
+    "public/interface.html",
+    "public/dashboard.css",
+    "public/dashboard.js",
+    "public/ui-core.mjs",
+    "public/charts.mjs",
+    "public/mark.svg",
+    "lib/ctrader-readonly.mjs",
+    "lib/market-reader.mjs"
+  ],
+  "observed_page_aliases": [
+    "public/index.html",
+    "public/konto-live.html"
+  ],
+  "overwrites_of_addon_members": [
+    "lib/ctrader-readonly.mjs",
+    "public/konto-live.html"
+  ],
+  "skin_payload_sha256": "abab24849786a62c367d84913173868afd3e22ad3dcc16d68b9ee3698ed5d37e",
+  "full_skin_stage_executed": false,
+  "final_deployment_reader_verified": false,
+  "conclusion": "Addon-stage outputs are verified intermediate sources, NOT proof of the final reader or UI after skin and subsequent stages."
+}

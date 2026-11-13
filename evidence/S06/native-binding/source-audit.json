@@ -1,0 +1,541 @@
+{
+  "audit_scope": "Original source/contract correspondence, no C# runtime or installed writer",
+  "base_revision": "ed47b63828680ad382f907472bcf2587c7e4af3d",
+  "original_modules_verified": 32,
+  "repo_sources_verified": 11,
+  "native_deal_fields": [
+    "Id",
+    "OrderId",
+    "PositionId",
+    "Label",
+    "Symbol",
+    "Side",
+    "Impact",
+    "Units",
+    "Status",
+    "AtUtc",
+    "LinkedOpeningDealIds"
+  ],
+  "native_identity_fields": [
+    "Broker",
+    "Account",
+    "Environment",
+    "Label",
+    "Symbol",
+    "Side",
+    "Kind",
+    "RequestedUnits",
+    "PlanId"
+  ],
+  "journal_account_fields": [
+    "Broker",
+    "Id",
+    "Environment",
+    "Currency"
+  ],
+  "journal_event_fields": [
+    "EventId",
+    "Sequence",
+    "SourceTime",
+    "Type",
+    "CorrelationId",
+    "CausationId",
+    "PayloadHash",
+    "Payload"
+  ],
+  "journal_receipt_fields": [
+    "Accepted",
+    "Stored",
+    "Duplicates",
+    "ContiguousSequence",
+    "HighWaterSequence",
+    "Gap",
+    "GrantsTrading"
+  ],
+  "journal_wire_types": {
+    "plan.recorded": {
+      "fields": [
+        "planId",
+        "revision",
+        "scenarioId",
+        "intentId",
+        "symbol",
+        "side",
+        "orderKind",
+        "configRevision",
+        "createdAt",
+        "entry",
+        "stop",
+        "target",
+        "units",
+        "riskCash",
+        "marginEstimate",
+        "costEstimate",
+        "currency",
+        "timeframes",
+        "exit",
+        "validUntil",
+        "reasonCode",
+        "reason",
+        "score"
+      ],
+      "matched_by_source_inspection": true,
+      "CSharp_executed": false
+    },
+    "order.reported": {
+      "fields": [
+        "intentId",
+        "planId",
+        "label",
+        "brokerOrderId",
+        "positionId",
+        "state",
+        "requestedUnits",
+        "filledUnits",
+        "remainingUnits",
+        "reason",
+        "actorEvidence"
+      ],
+      "matched_by_source_inspection": true,
+      "CSharp_executed": false
+    },
+    "position.reported": {
+      "fields": [
+        "positionId",
+        "planId",
+        "symbol",
+        "side",
+        "units",
+        "entry",
+        "stop",
+        "target",
+        "net",
+        "exitMode",
+        "reason"
+      ],
+      "matched_by_source_inspection": true,
+      "CSharp_executed": false
+    },
+    "engine.status": {
+      "fields": [
+        "candidateScenarios",
+        "pendingCount",
+        "positionCount",
+        "readySymbols",
+        "totalSymbols",
+        "blocked",
+        "reason",
+        "decisionReasons"
+      ],
+      "matched_by_source_inspection": true,
+      "CSharp_executed": false
+    }
+  },
+  "S02_deal_required_fields": [
+    "deal_id",
+    "broker_order_id",
+    "position_id",
+    "account",
+    "side",
+    "quantity",
+    "price",
+    "commission",
+    "execution_time",
+    "source_proof_id"
+  ],
+  "S02_account_required_fields": [
+    "provider",
+    "account_id",
+    "environment",
+    "currency",
+    "model"
+  ],
+  "runtime_order_reducer_scan": {
+    "scope": "All preserved .mjs/.js excluding tests/evidence/node_modules/artifacts; lexical inspection, not dynamic execution trace",
+    "files": [
+      {
+        "path": "adapters/broker.mjs",
+        "sha256": "23bec51a1f672ebb5be46ab0e03844a55ad71426d2f866bfe763664daa9f3169"
+      },
+      {
+        "path": "adapters/cli.mjs",
+        "sha256": "759219ed5a7285e28d82e492720d96102b3a8e5419b3d3b02646d974819681c3"
+      },
+      {
+        "path": "adapters/legacy-reader.mjs",
+        "sha256": "d2339af0c1817e087fa2e65f414b43e5185126cce7f533ba79a264c7c8bddab1"
+      },
+      {
+        "path": "adapters/observer-cli-worker.mjs",
+        "sha256": "1de0dbd1c888238a64423a0613a70173a7a5c862a1db55919bb9b632da5e6e96"
+      },
+      {
+        "path": "adapters/observer-cli.mjs",
+        "sha256": "81016af4798d221a93d6e2659181c8117cfd731d56e3408cd03d198e51c4ffe4"
+      },
+      {
+        "path": "adapters/providers.mjs",
+        "sha256": "ccaea78240f3be34952a5994632e19f6935bf21adb792d82bf508938c943e093"
+      },
+      {
+        "path": "core/account-entry-guard.mjs",
+        "sha256": "06c1d9fe0229b0cb4142ffa01ebbe573f12bddcf67c1ab07ae98776545ae6833"
+      },
+      {
+        "path": "core/application.mjs",
+        "sha256": "c12043183f481d1d20051d03b28a2f98642bb2daea0cb553f6c7aea08f847112"
+      },
+      {
+        "path": "core/artifacts.mjs",
+        "sha256": "13d359b925bbb33a70e63a492085a6c114623355b5c5d3e3459625bd159638fb"
+      },
+      {
+        "path": "core/browser-launch.mjs",
+        "sha256": "3ba0ffc16995b8e180de26abae2c5436a026d37af9fd605c5c0fefb1b295969c"
+      },
+      {
+        "path": "core/build-transition-worker.mjs",
+        "sha256": "fa44ab52bcecb8fd327b7c05da449122ac7fde851316826d128b1cbf71d650fb"
+      },
+      {
+        "path": "core/build-transitions.mjs",
+        "sha256": "0675e57e9978b870e4e87613bc0f4b9b6c1299483d5f2ccc82f0e553dd3af172"
+      },
+      {
+        "path": "core/capabilities.mjs",
+        "sha256": "f36af396364827afba3f1cf69d1fc18aa8cb4630c4252bb80bc156748040cf57"
+      },
+      {
+        "path": "core/control.mjs",
+        "sha256": "9bbd47368f7b5c87a6ab402219f7d5cbc9cd173a7a244dfcbc3da741b897147c"
+      },
+      {
+        "path": "core/core-build-context.mjs",
+        "sha256": "dd7205ee903b8090e366bd38f1719d4c28aa4821f1a7ca13cc485ba8ff96a267"
+      },
+      {
+        "path": "core/deployment.mjs",
+        "sha256": "f0e0fa61640b4b4a125024cfaa919709e7e950ce8101355b358136e120910385"
+      },
+      {
+        "path": "core/engine-journal.mjs",
+        "sha256": "1a56bc2cd9559dea9ac5231db2cab121d6a1c73e03410951390d7693bb63dd93"
+      },
+      {
+        "path": "core/errors.mjs",
+        "sha256": "803d4626fab45b2ec38bc3c57fdbc34535008fa5bdefd44aa7226886724d3736"
+      },
+      {
+        "path": "core/installation-status.mjs",
+        "sha256": "6f59df87f1f1eb55a7fd1cbd7a217f3b25ac9f9b43148b3cbf4e815661e558c4"
+      },
+      {
+        "path": "core/journal-archive-format.mjs",
+        "sha256": "991c79c47c8e4656fad58e680a2f1d83c4d39fe1b21d1625a840e14ce79c3146"
+      },
+      {
+        "path": "core/journal-archive-worker.mjs",
+        "sha256": "a03986abe97925f40eb317864c8692b6466c909d243a47272f7e4ebb71cf7907"
+      },
+      {
+        "path": "core/journal-archives.mjs",
+        "sha256": "1504a1827a131ffe2057d8a68736769f4a3554d0bf090a0b5a2193e72af73529"
+      },
+      {
+        "path": "core/journal-build-lineage.mjs",
+        "sha256": "c67e79a3f61f6eb500f8c328efe3c794182d69e345f4cf2937dd71d05658654a"
+      },
+      {
+        "path": "core/maintenance-journal.mjs",
+        "sha256": "a4dd1fae37d09e100227a506546aec11e7877c6b94b38f0f484c2ce1e4383a57"
+      },
+      {
+        "path": "core/maintenance.mjs",
+        "sha256": "12e543eb526a4f8172f2f677a80ae374fbe0021ae9f28b8ee41bed88831103f9"
+      },
+      {
+        "path": "core/mcp.mjs",
+        "sha256": "b8df5695fd3c953caa68dd3d1be491bbc164e62419724398807c7cc7804ccfcf"
+      },
+      {
+        "path": "core/native-stage-evidence.mjs",
+        "sha256": "7fdc4ca9538981832f3a46a54d3ffb800090b274adcb7b609a08fc159ad11280"
+      },
+      {
+        "path": "core/observation.mjs",
+        "sha256": "af52f2ec951f26bed4f1c7c51acf928cb31fe58470619fb16522e1cccdb65ba6"
+      },
+      {
+        "path": "core/observer-process.mjs",
+        "sha256": "2d5489e81abc8e11a5c7e24208b090d2db2a73483e47037a351f3436fcf967e1"
+      },
+      {
+        "path": "core/package-integrity.mjs",
+        "sha256": "8614f54e1108d0ee4d1349e7b0c3d3013071712fb5b17a5e0ae62c89d22c95f3"
+      },
+      {
+        "path": "core/planning/decimal.mjs",
+        "sha256": "058d19e4c5beb71da030a376effb746e310d952d8ab462c7b57dfe5375ec6a7f"
+      },
+      {
+        "path": "core/planning/order-lifecycle.mjs",
+        "sha256": "fc5c5c82f2b6dcdc73dba863a8abde35fd86728ea8261970cb375b934c2650d4"
+      },
+      {
+        "path": "core/planning/session.mjs",
+        "sha256": "dc494d02950d73c924b24996ac356329aff4df05acc67709fe0c67ceb9c04d08"
+      },
+      {
+        "path": "core/profile-lock.mjs",
+        "sha256": "c35b9d57443b7c5334a495d48cc62c70ad1a699f04158227dcf520fe6b32de64"
+      },
+      {
+        "path": "core/reconciliation-read20.mjs",
+        "sha256": "9d93d080858478ad3afbe6c65d32fe7513b5682a4999b02be253fac4c049f193"
+      },
+      {
+        "path": "core/reconciliation20.mjs",
+        "sha256": "a81776bf38e646462444b687f819fb7814ef65c3c6128f1cbc6a7dd1002e6197"
+      },
+      {
+        "path": "core/registry.mjs",
+        "sha256": "a4a6b5ca140d2539128d23ff764fd72d9af78ec65f1d035a5932de5d38a3d40e"
+      },
+      {
+        "path": "core/remote-view20.mjs",
+        "sha256": "8ace0751f7917d299a843578127a2b832051da463bdbf30723cbbeca5f46fe7c"
+      },
+      {
+        "path": "core/restore.mjs",
+        "sha256": "4141919bd5a18ce126502e0ad0f7e74e7f81b9918e619d4bcaea3735a43ead59"
+      },
+      {
+        "path": "core/revolution-artifacts.mjs",
+        "sha256": "23e60f76f65f79a44974a06592cc61103ee008d469fce85d395be1eed2ca390e"
+      },
+      {
+        "path": "core/schema.mjs",
+        "sha256": "caf21114e697df310a32dfc0d13e3a2671442e7e0752d533cc2f12d6094574c8"
+      },
+      {
+        "path": "core/store.mjs",
+        "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978"
+      },
+      {
+        "path": "core/system-check.mjs",
+        "sha256": "84cc5b9c601a59d62d94769d23be6804a3d9c72b0573cd8245a0bb9ee7f3a8f6"
+      },
+      {
+        "path": "core/target-admission-context.mjs",
+        "sha256": "f2d51fc9aa0fbf75efebaa9cf7d29934d90437d16ff7260b6b03d6f4530c41ce"
+      },
+      {
+        "path": "core/target-admission-worker.mjs",
+        "sha256": "299fc230859210ac76446645c0bc93ac248a3c434b9760e40f749ed4d4de285d"
+      },
+      {
+        "path": "core/target-admissions.mjs",
+        "sha256": "a1c8a3614bda76b9fe5d80a54c6eca64c74a29084a70fd230a879985be941080"
+      },
+      {
+        "path": "core/target-install-evidence.mjs",
+        "sha256": "2c9c862a02c0e8d4429485d728b5c5e919e0712a83022b15f2f3e5c708d7267e"
+      },
+      {
+        "path": "core/target-runtime-reports.mjs",
+        "sha256": "fa3fdb679d63d57642a1f67773db580d6b49918b84887fb85095e2b32c92547f"
+      },
+      {
+        "path": "core/vault.mjs",
+        "sha256": "cff930c0079653de1423f2986954c94ccc9b6899bf617e85824c9adf8014c466"
+      },
+      {
+        "path": "core/windows-acceptance-report.mjs",
+        "sha256": "2ac9a4baa49427319b9506eba4230d5f1145c32bb8744c5fa1b16e9af4542842"
+      },
+      {
+        "path": "integrations/ctrader-extremelab17/package-artifact.mjs",
+        "sha256": "4ac15b91da7ddd179a014ab6bfa6939214c1440bb9186a2a7df08666068d4d72"
+      },
+      {
+        "path": "integrations/ctrader-observer20/scripts/generate-source-identity.mjs",
+        "sha256": "2d2fb996948b7884a61875d17fb33d016b9565fe3a43b75b71cc3758490cd87b"
+      },
+      {
+        "path": "integrations/ctrader-th3revolution20/scripts/generate-source-identity.mjs",
+        "sha256": "39c4cf3d9a909a81776e739f02be4b9d8b719c8e7e0f00ab177c1b21c5e5968c"
+      },
+      {
+        "path": "integrations/vercel-view20/api/revolution.js",
+        "sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139"
+      },
+      {
+        "path": "integrations/vercel-view20/build-addon.mjs",
+        "sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439"
+      },
+      {
+        "path": "integrations/vercel-view20/build-release20.mjs",
+        "sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6"
+      },
+      {
+        "path": "integrations/vercel-view20/lib/http.mjs",
+        "sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7"
+      },
+      {
+        "path": "integrations/vercel-view20/lib/projection.mjs",
+        "sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3"
+      },
+      {
+        "path": "integrations/vercel-view20/lib/service.mjs",
+        "sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604"
+      },
+      {
+        "path": "integrations/vercel-view20/public/revolution.js",
+        "sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f"
+      },
+      {
+        "path": "public/app.js",
+        "sha256": "b0f5e61b5d2076cfcc3e9a3494690e67a293f5ffdf4ca99460dd7869c2efdecb"
+      },
+      {
+        "path": "public/boot.js",
+        "sha256": "6b7b4671d79a6039d64b6766b7b6f8c9bfb79d6cfa3dc4b447b32469ec553e91"
+      },
+      {
+        "path": "public/build-transitions.mjs",
+        "sha256": "171a9db744fa6580acf5ae74e5f802baeb05924a25023d0eaf37dde9486ec847"
+      },
+      {
+        "path": "public/chat.mjs",
+        "sha256": "215c070799000f1ff12525c3118f53751e221b1cb36db6baf57091b7c007f842"
+      },
+      {
+        "path": "public/connection.mjs",
+        "sha256": "ac9d123f9e4ae24cc8f45d1c7be6638d0d7db380217d14fcc35a7688c86626a0"
+      },
+      {
+        "path": "public/data.mjs",
+        "sha256": "620e31889d743fb4f636d870335549d6c804465f7cb22f69bd63b1c32a5b2167"
+      },
+      {
+        "path": "public/engine-journal.mjs",
+        "sha256": "0215c512cc0df083adde241f7567cecef041639039b43aac7dd195cc3c878076"
+      },
+      {
+        "path": "public/hub.js",
+        "sha256": "87e2353c06cd0cb64a4cfd2ea6f93c27c1c1f7d7ae8ab461f3a666fd572834a9"
+      },
+      {
+        "path": "public/installation.mjs",
+        "sha256": "8efb49c12681402016dd1eeaf779589a53fab351385a4405dc0927f8951671e1"
+      },
+      {
+        "path": "public/journal-archives.mjs",
+        "sha256": "7ca1503360c29e5b7c289ec79220b8284518a70f0d97dd0e309643f850784be7"
+      },
+      {
+        "path": "public/maintenance.mjs",
+        "sha256": "6f40bc2267dabfd8f88062597c53e3a2de6a6b38587b26268af0dd65fb977454"
+      },
+      {
+        "path": "public/management.mjs",
+        "sha256": "bf36274151c0905ded868b26eda71d25ac0e9fe94cabc1f13e86b36c63fb5475"
+      },
+      {
+        "path": "public/observation.mjs",
+        "sha256": "d0b7f2a8a9711b14ecb7556f0a45b10b3c3385ceffb945eb7075e54805db5bde"
+      },
+      {
+        "path": "public/observer-process.mjs",
+        "sha256": "b000f7282b59e0c31b03fe934269bb2543fc90721710968490b479969f33d46b"
+      },
+      {
+        "path": "public/plot.mjs",
+        "sha256": "33d49afb814dbf27674f4cc65aaa4a835453f962211e9caea703d9890d81d144"
+      },
+      {
+        "path": "public/reconciliation-controller20.mjs",
+        "sha256": "5a38a5ec9cbac87f53e8c3ba81d2ca8b6f6dc38daf577149d49bea111809a245"
+      },
+      {
+        "path": "public/reconciliation20.mjs",
+        "sha256": "6014e36a925054cd5bf656cac4b954e97b2c5fb3ed5667994b889c6034c604c3"
+      },
+      {
+        "path": "public/release-admission.mjs",
+        "sha256": "a6ecc58b98396ff9eb998e1b024d4cb13bed6c749cef81e3f6a45eeeb9a355f9"
+      },
+      {
+        "path": "public/remote-view20.mjs",
+        "sha256": "3aaeadd0d6cc4512cc6c58a4d0eced23e0a72c49f7c2b78540d6f6e1f8bc400c"
+      },
+      {
+        "path": "public/session.mjs",
+        "sha256": "218ff1bc994a43d36c57ae0a5d29b237d33061b29fd16f3fb4eb8cc7ebfebe7e"
+      },
+      {
+        "path": "public/setup.mjs",
+        "sha256": "d48cc160c8d706ce9458b2e337240e0049f0ed928b2bc0f98b58497e398a4ec4"
+      },
+      {
+        "path": "public/system.mjs",
+        "sha256": "270bd508af389909b7a9eea8f50efabb07db8e5054253064a2ab2a8c9f926dff"
+      },
+      {
+        "path": "public/target-admissions.mjs",
+        "sha256": "1db726fa29049a3d42b67e9e543a0337f728307f8da81b69480489cd0c6fd613"
+      },
+      {
+        "path": "research/run-research.mjs",
+        "sha256": "244e7f6409e46eea53f6fb8ffbca5cbf91748fb38a3c84fde83afdca909f30bf"
+      },
+      {
+        "path": "scripts/build-installer.mjs",
+        "sha256": "06853c09545bfe7fe441efe74c3af9ffe8da3e4dcae84a1c85c5ca761d78ad59"
+      },
+      {
+        "path": "scripts/check-sdk-contract.mjs",
+        "sha256": "62fe9a00b61099af81a8a9708e8f7368c03c57657dee600db724222f047cded8"
+      },
+      {
+        "path": "scripts/maintenance.mjs",
+        "sha256": "ac41433c967d4f0c611e1ec3f747363543d55e40035ae35b0b42088f4a4491fc"
+      },
+      {
+        "path": "scripts/mcp-verify.mjs",
+        "sha256": "e9fe405bbf990b0b189650304a26c220c98e11a85611783276bfead432585aba"
+      },
+      {
+        "path": "scripts/verify-journal-archive.mjs",
+        "sha256": "167f8607b9259c47006afe0c36b84e217c943f4688014c999945b89d862d1193"
+      },
+      {
+        "path": "scripts/windows/host.mjs",
+        "sha256": "589361429e13b62807db712ab38528893ae540ea80d164ce0c327e32fb707b53"
+      },
+      {
+        "path": "scripts/windows-acceptance.mjs",
+        "sha256": "6c18ab04c9dfc515545fc44bc04f9d65848467f9a97c0efe983a30f51836c65a"
+      },
+      {
+        "path": "server.mjs",
+        "sha256": "f1bd2940bcbaa63056c42cbbc117adc1ad774618f012c0b39da330a5c93c0082"
+      }
+    ],
+    "count": 92,
+    "module_mentions": [],
+    "external_named_calls": []
+  },
+  "field_mapping_rows": 28,
+  "formal_status": {
+    "S00": "passed",
+    "S01": "passed",
+    "S02": "blocked",
+    "S05": "pending",
+    "S06": "pending"
+  },
+  "CSharp_compilations": 0,
+  "native_broker_evidence": false,
+  "product_installed": false,
+  "historical_native_receipts_are_not_current_test_runs": true
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "s01-vercel-preview19/v1",
+  "retrieval_date": "2026-11-12",
+  "team_id": "team_9CV4XJ0RQxIVJeMBBRqtfuGZ",
+  "deployment_id": "dpl_DPoekz6ga9QJ5ebcWiRSLqFLKpRX",
+  "source_tree_entries": 3,
+  "source_files": [
+    {
+      "path": "src/build.mjs",
+      "uid": "45bd84f8ea13776415be0c28d23ac98f6f8630fd",
+      "retrieval_status": "content_read_complete_not_materialized"
+    },
+    {
+      "path": "src/package.json",
+      "uid": "dde0627653453cb844c5c0dbe84f85fe5041d8b9",
+      "retrieval_status": "provider_listing_only"
+    },
+    {
+      "path": "src/vercel.json",
+      "uid": "a8f6e29402e6926297da41d7397aea189afffd12",
+      "retrieval_status": "provider_listing_only"
+    }
+  ],
+  "build_source_observation": "Preview build.mjs fetches delivery.json from an external transient endpoint and checks its SHA256 before writing files. This deployment input tree does not contain the actual source/binary release archive.",
+  "external_delivery_sha256_declared": "fa032264e11efeb4ab7b54c0a4c93a97935281fb08b8fb4d4c41ba5f5e14875e",
+  "expected_original_release_zip_sha256_from_historical_delivery_note": "57d1f113b0274b54f8643a6c472aeaadd8700efce305b1fabf84b91f17492a2f",
+  "expected_original_algo_sha256_from_historical_delivery_note": "44ee56ad0e47285a2ca0d238a35fc23e3209e9ec063228aa755c6cf7ac1654a1",
+  "original_release_binary_bytes_recovered": false,
+  "original_release_zip_bytes_recovered": false,
+  "untrusted_link_or_external_bundle_fetched": false
+}

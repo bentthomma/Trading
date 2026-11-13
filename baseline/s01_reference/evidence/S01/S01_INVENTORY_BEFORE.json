@@ -1,0 +1,77 @@
+{
+  "work_id": "S01-INVENTORY-CONSOLIDATION",
+  "created_utc": "2026-11-13T11:24:24.949816+00:00",
+  "predecessor": {
+    "sha256": "80e603e63abd663c27199179662e08b8be28cc77fc6c36919d5e92d4f3e760ff",
+    "bytes": 13005209,
+    "manifest_verified_files": 320
+  },
+  "findings": [
+    {
+      "file": "evidence/S01/baseline-lock.json",
+      "field": "remaining_gaps[1]",
+      "observed": "Full 59-file production website input not recovered: 36 byte-identical, 23 unmaterialized; complete build blocked by missing inputs",
+      "explanation": "Stale current summary: actual recovered bytes38, missing21."
+    },
+    {
+      "file": "evidence/S01/reproduction-report.json",
+      "field": "website_full_build.reason",
+      "observed": "31/59 source files recovered. Missing live-overlay.b64 prevents original first stage completing; skin.0-8 and build-bot*.mjs/build-ui.mjs remain incomplete.",
+      "explanation": "Current website subsection contradicts actual38/21 source set."
+    },
+    {
+      "file": "evidence/S01/reproduction-report.json",
+      "field": "website_full_build.source_files_recovered_current",
+      "observed": 36,
+      "explanation": "Current website subsection contradicts actual38/21 source set."
+    },
+    {
+      "file": "evidence/S01/reproduction-report.json",
+      "field": "website_full_build.source_files_unavailable_current",
+      "observed": 23,
+      "explanation": "Current website subsection contradicts actual38/21 source set."
+    },
+    {
+      "file": "evidence/S01/path-map.json",
+      "field": "unresolved[-1]",
+      "observed": "23 of 59 original production website source inputs remain unavailable; complete eight-stage build blocked",
+      "explanation": "Stale23 missing contradicts current21 exact missing paths."
+    },
+    {
+      "file": "evidence/S01/donor-map.json",
+      "field": "production_website.boundary",
+      "observed": "23 source inputs missing; no production reuse or deployment",
+      "explanation": "Stale36/23 in operative donor mapping."
+    },
+    {
+      "file": "evidence/S01/donor-map.json",
+      "field": "production_website.current_proof",
+      "observed": "36/59 complete sources; original UI patch reproduces archived app.js in isolation; overlay, skin and full pipeline remain unavailable.",
+      "explanation": "Stale36/23 in operative donor mapping."
+    },
+    {
+      "file": "evidence/S01/version-crosswalk.md",
+      "field": "opening current table",
+      "observed": "| Produktionswebsite, gebundenes Vercel-Deployment | 36 von 59 Eingabedateien vollständig lokal vorhanden; alle SHA1-UID- und SHA256-gebunden | 23 fehlen. Kein vollständiger Build oder Deployment. |",
+      "explanation": "Multiple current appendices contradict the opening current table."
+    },
+    {
+      "file": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+      "field": "src/api/bot-download.js.classification",
+      "observed": "blocked_capability",
+      "explanation": "Ambiguous source/capability field: source exists; native/full integration capability remains separately blocked."
+    },
+    {
+      "file": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+      "field": "src/build-bot.mjs.classification",
+      "observed": "blocked_capability",
+      "explanation": "Ambiguous source/capability field: source exists; native/full integration capability remains separately blocked."
+    },
+    {
+      "file": "evidence/S01/GATE_STATUS.json",
+      "field": "inventory_candidate",
+      "observed": "expanded_private_28_of_59_source_bytes_pending_independent_review",
+      "explanation": "Frozen historical gate checkpoint, retained byte-identical; source counts not authoritative current facts. Formal pending remains binding."
+    }
+  ]
+}

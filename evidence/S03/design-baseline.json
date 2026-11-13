@@ -1,0 +1,145 @@
+{
+  "schema": "extremelab-s03-documentation-preparation/1",
+  "status": "prepared_not_activated",
+  "formal_step_status": "pending",
+  "base_revision": "b9845dc9f0434bd6ee7a94af239625a58f6b9135",
+  "plan_version": "1.2.0",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "purpose": "Nur vorgezogene Dokumentation gemäß neuem Nutzerauftrag; keine Start-/Abnahmebehauptung für S03",
+  "references": [
+    {
+      "id": "A01-r04",
+      "title": "Botübersicht",
+      "source_path": "governance/masterplan/assets/design/approved/A01-r04.png",
+      "source_filename": "exec-b1eb450e-1978-4621-b959-2a0000fc50e3.png",
+      "sha256": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0",
+      "width_px": 1586,
+      "height_px": 992,
+      "css_viewport": null,
+      "device_pixel_ratio": null,
+      "approval_scope": "desktop_baseline",
+      "approval_date": "2026-11-11",
+      "approval_timezone": "Europe/Zurich",
+      "implemented": false
+    },
+    {
+      "id": "A02-r03",
+      "title": "Beobachtung",
+      "source_path": "governance/masterplan/assets/design/approved/A02-r03.png",
+      "source_filename": "exec-a3a0fa45-be71-4276-8975-b05bec2a006c.png",
+      "sha256": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029",
+      "width_px": 1585,
+      "height_px": 992,
+      "css_viewport": null,
+      "device_pixel_ratio": null,
+      "approval_scope": "desktop_baseline",
+      "approval_date": "2026-11-11",
+      "approval_timezone": "Europe/Zurich",
+      "implemented": false
+    },
+    {
+      "id": "A03-r03",
+      "title": "Forschung",
+      "source_path": "governance/masterplan/assets/design/approved/A03-r03.png",
+      "source_filename": "exec-8d4ccf91-615d-42dd-92f5-61e8584c9dfa.png",
+      "sha256": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64",
+      "width_px": 1585,
+      "height_px": 992,
+      "css_viewport": null,
+      "device_pixel_ratio": null,
+      "approval_scope": "desktop_baseline",
+      "approval_date": "2026-11-11",
+      "approval_timezone": "Europe/Zurich",
+      "implemented": false
+    },
+    {
+      "id": "A04-r03",
+      "title": "Bot-Einstellungen",
+      "source_path": "governance/masterplan/assets/design/approved/A04-r03.png",
+      "source_filename": "exec-d72e505c-8618-4da9-ada2-49fe1da050ac.png",
+      "sha256": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9",
+      "width_px": 1585,
+      "height_px": 992,
+      "css_viewport": null,
+      "device_pixel_ratio": null,
+      "approval_scope": "desktop_baseline",
+      "approval_date": "2026-11-11",
+      "approval_timezone": "Europe/Zurich",
+      "implemented": false
+    },
+    {
+      "id": "A05-r03",
+      "title": "Positionen",
+      "source_path": "governance/masterplan/assets/design/approved/A05-r03.png",
+      "source_filename": "exec-fdd1412d-2c91-454c-84f7-fe4f6086c2f1.png",
+      "sha256": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4",
+      "width_px": 1585,
+      "height_px": 992,
+      "css_viewport": null,
+      "device_pixel_ratio": null,
+      "approval_scope": "desktop_baseline",
+      "approval_date": "2026-11-11",
+      "approval_timezone": "Europe/Zurich",
+      "implemented": false
+    }
+  ],
+  "approval_evidence": {
+    "source_id": "approval",
+    "user_evidence": "Ok ja passt Also Plan fertig machen Design kommt nach Technik also das gesamte Design Zeugs jetzt passend in den Plan integrieren wie wo was Design Animation regeln idk.. detailliert klar. Benutzerfreundlichkeit, clean, usw. Smoothe wechseln ausfahren sowie einfahren beides Animationen Wechsel sind allegemein animiert nichts soll einfach plop da oder plop da sondern alles Smooth",
+    "approved_scope": [
+      "desktop_baseline"
+    ],
+    "record_revalidated": true,
+    "new_approval_given": false
+  },
+  "navigation": {
+    "main": [
+      "Übersicht",
+      "Beobachtung",
+      "Forschung",
+      "Positionen"
+    ],
+    "settings_entry": "Zahnrad",
+    "setup_card_instances": [
+      {
+        "screen_id": "overview",
+        "component_id": "observed_setup"
+      }
+    ],
+    "strategy_catalog": false,
+    "secondary_access": [
+      "Wissen innerhalb Forschung",
+      "Projektfortschritt als Detailzugang",
+      "Journal/Analyse als kontextgebundene Details"
+    ]
+  },
+  "visual_start_values": {
+    "background": "#070a08",
+    "surface": "#0b0f0d",
+    "border": "#1d2621",
+    "text": "#edf1ee",
+    "secondary": "#89968e",
+    "accent": "#26dc77",
+    "font_name": "Inter",
+    "card_radius_px": 17,
+    "control_radius_px": 9,
+    "tokens_implemented": false,
+    "contrast_measured_this_run": false
+  },
+  "limits": {
+    "desktop_concept_approved": true,
+    "mobile_verified": false,
+    "motion_verified": false,
+    "keyboard_verified": false,
+    "product_data_verified": false,
+    "runtime_performance_verified": false,
+    "broker_authorization": false,
+    "image_values_are_fixture_configuration": false
+  },
+  "historical_references": {
+    "policy": "Nicht ausgewählte frühere Varianten sind überholt, keine alternativen Freigaben. Keine alte Bilddatei wurde verändert oder entfernt.",
+    "selected_direction": "A",
+    "research_depth_reference": "B nur fachliche Detailtiefe innerhalb A, keine neue Hauptnavigation"
+  },
+  "document_version_note": "Designquellen mit Kopf 1.1.0 sind unveränderte Referenzen im aktiven Plan 1.2.0; kein Downgrade und keine neue Desktopfreigabe."
+}

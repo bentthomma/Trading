@@ -1,0 +1,27 @@
+diff --git a/core/maintenance.mjs b/core/maintenance.mjs
+index 84aad2b..976f7d3 100644
+--- a/core/maintenance.mjs
++++ b/core/maintenance.mjs
+@@ -132,10 +132,21 @@ async function selectedBackup(directory,id){
+   if(!source)fail('RESTORE_BACKUP_NOT_FOUND','Die ausgewählte Sicherung ist nicht mehr vorhanden. Die Liste erneut laden.',404);
+   return source;
+ }
++// Full replacement also rolls back generic KV records (journal cursors, pending
++// costs and future state namespaces). Bind their exact bytes, without guessing
++// which unknown keys are "safe" to omit. Only a digest enters the private job;
++// keys and values are never exposed by the preview. Ordered framing is stable
++// across physical SQLite row order and distinguishes insertion/deletion/edit.
++function targetKvDigest(db){
++  const hash=createHash('sha256').update('trading-local-restore-target-kv:v1\n');
++  for(const row of db.prepare('SELECT key,value FROM kv ORDER BY key COLLATE BINARY').iterate())
++    hash.update(JSON.stringify([row.key,row.value])+'\n');
++  return hash.digest('hex');
++}
+ function targetSnapshot(store){
+   const connection=store.get('connection'),provider=store.get('provider');
+   const identity=connection?{mode:connection.mode,connectionId:connection.connectionId,accountId:connection.accountId,environment:connection.environment}:null;
+-  return {profileId:profile(store.db).id,policy:store.get('policy'),onboarding:store.get('onboarding'),connection:identity,provider,cliPath:store.get('cliPath'),
++  return {kvSha256:targetKvDigest(store.db),profileId:profile(store.db).id,policy:store.get('policy'),onboarding:store.get('onboarding'),connection:identity,provider,cliPath:store.get('cliPath'),
+     bots:store.db.prepare('SELECT id,revision,actual_revision,runtime_id,account_id,environment,runtime_status,archived_at,lifecycle_revision FROM bots ORDER BY id').all(),
+     pending:store.db.prepare("SELECT id,bot_id,revision,runtime_id,delivered_at FROM proposals WHERE status='pending' ORDER BY id").all(),
+     latestMessage:store.db.prepare('SELECT max(id) AS id FROM messages').get().id};

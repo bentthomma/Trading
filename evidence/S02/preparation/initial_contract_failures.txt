@@ -1,0 +1,82 @@
+test_all_envelope_versions_and_payload_hash_required (test_contracts.Contracts.test_all_envelope_versions_and_payload_hash_required) ... ok
+test_calendar_timezone_and_leap_second_errors_rejected (test_contracts.Contracts.test_calendar_timezone_and_leap_second_errors_rejected) ... ok
+test_catalog_must_be_exact_unique_valid_and_current (test_contracts.Contracts.test_catalog_must_be_exact_unique_valid_and_current) ... ok
+test_control_characters_and_schema_depth_rejected (test_contracts.Contracts.test_control_characters_and_schema_depth_rejected) ... ok
+test_exact_lots_conversion_and_volume_grid (test_contracts.Contracts.test_exact_lots_conversion_and_volume_grid) ... ok
+test_exact_tick_grid_not_float_tolerance (test_contracts.Contracts.test_exact_tick_grid_not_float_tolerance) ... ok
+test_future_information_and_expired_orders_rejected (test_contracts.Contracts.test_future_information_and_expired_orders_rejected) ... ok
+test_high_precision_cashflow_exact_and_no_forced_instrument (test_contracts.Contracts.test_high_precision_cashflow_exact_and_no_forced_instrument) ... 
+  test_high_precision_cashflow_exact_and_no_forced_instrument (test_contracts.Contracts.test_high_precision_cashflow_exact_and_no_forced_instrument) (case=0) ... FAIL
+test_instrument_and_policy_unknown_fields_not_trusted (test_contracts.Contracts.test_instrument_and_policy_unknown_fields_not_trusted) ... ok
+test_large_ids_and_uint64_are_strings_not_ieee_numbers (test_contracts.Contracts.test_large_ids_and_uint64_are_strings_not_ieee_numbers) ... ok
+test_market_bar_and_feature_integrity (test_contracts.Contracts.test_market_bar_and_feature_integrity) ... ok
+test_microsecond_distinctions_survive (test_contracts.Contracts.test_microsecond_distinctions_survive) ... ok
+test_noncanonical_decimals_rejected (test_contracts.Contracts.test_noncanonical_decimals_rejected) ... ok
+test_nonfinite_raw_json_and_duplicate_keys_rejected (test_contracts.Contracts.test_nonfinite_raw_json_and_duplicate_keys_rejected) ... ok
+test_observation_missing_times_remains_explicit_null (test_contracts.Contracts.test_observation_missing_times_remains_explicit_null) ... ok
+test_order_variant_discriminator_and_policy_restrictions (test_contracts.Contracts.test_order_variant_discriminator_and_policy_restrictions) ... ok
+test_payload_hash_is_checked_without_trusting_input (test_contracts.Contracts.test_payload_hash_is_checked_without_trusting_input) ... ok
+test_raw_economic_numbers_rejected (test_contracts.Contracts.test_raw_economic_numbers_rejected) ... ok
+test_reordered_objects_have_same_hash_but_not_reordered_arrays (test_contracts.Contracts.test_reordered_objects_have_same_hash_but_not_reordered_arrays) ... ok
+test_risk_ratios_not_percent_misinterpretation (test_contracts.Contracts.test_risk_ratios_not_percent_misinterpretation) ... ok
+test_signals_cannot_be_relabelled_as_orders (test_contracts.Contracts.test_signals_cannot_be_relabelled_as_orders) ... 
+  test_signals_cannot_be_relabelled_as_orders (test_contracts.Contracts.test_signals_cannot_be_relabelled_as_orders) (case=2) ... FAIL
+test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) ... 
+  test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) (case=0) ... FAIL
+  test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) (case=1) ... FAIL
+  test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) (case=2) ... FAIL
+test_twelve_typed_events_roundtrip_byte_identical (test_contracts.Contracts.test_twelve_typed_events_roundtrip_byte_identical) ... ok
+test_units_and_versions_are_not_inferred_from_symbol (test_contracts.Contracts.test_units_and_versions_are_not_inferred_from_symbol) ... ok
+test_unknown_account_and_incomplete_data_never_executable (test_contracts.Contracts.test_unknown_account_and_incomplete_data_never_executable) ... ok
+test_unknown_fields_at_every_nesting_level_rejected (test_contracts.Contracts.test_unknown_fields_at_every_nesting_level_rejected) ... ok
+test_unknown_position_is_not_flat_or_protected (test_contracts.Contracts.test_unknown_position_is_not_flat_or_protected) ... ok
+
+======================================================================
+FAIL: test_high_precision_cashflow_exact_and_no_forced_instrument (test_contracts.Contracts.test_high_precision_cashflow_exact_and_no_forced_instrument) (case=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/extremelab_s02_run/repo/evidence/S02/test_contracts.py", line 51, in compare
+    self.assertEqual(p['ok'],allowed,(n,'python',p))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False != True : (0, 'python', {'ok': False})
+
+======================================================================
+FAIL: test_signals_cannot_be_relabelled_as_orders (test_contracts.Contracts.test_signals_cannot_be_relabelled_as_orders) (case=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/extremelab_s02_run/repo/evidence/S02/test_contracts.py", line 51, in compare
+    self.assertEqual(p['ok'],allowed,(n,'python',p))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True != False : (2, 'python', {'ok': True, 'canonical': '{"account_ref":{"account_id":"900719925474099312345","currency":"CHF","environment":"demo","model":"hedging","provider":"synthetic-provider"},"bot_id":"synthetic-bot","coverage":{"completeness":"complete","gap_state":"none","source_sequence_through":"6","truncated":false},"data_version":"synthetic-data/1","event_id":"s02-SignalIntent","instrument_version":"TEST-EURUSD-v1","kind":"SignalIntent","payload":{"feature_snapshot_id":"feature-test-1","reason_code":"FIXTURE_NOT_STRATEGY","side":"buy","signal_id":"test-signal-1","source_run_id":"other-run","strategy_version":"synthetic-only-v1"},"payload_hash":"1a541c0d0e7d46c89b12ad3d1bf1b14bfc5972289570da8a4c5a7c8375874d7e","policy_version":"risk-policy-v1","run_id":"s02-test-run","schema_version":"extremelab.domain/1.0.0","sequence":"6","source_id":"offline-fixture","source_schema_version":"synthetic/1","stream_id":"stream-test-001","times":{"available_at":"2026-11-13T12:00:00.000000Z","decision_at":"2026-11-13T12:00:00.000000Z","event_time":"2026-11-13T12:00:00.000000Z","execution_not_before":"2026-11-13T12:00:00.000000Z","features_ready_at":"2026-11-13T12:00:00.000000Z","received_at":"2026-11-13T12:00:00.000000Z"}}', 'sha256': 'c23f34d04fe9b72691072ea82f0ae34cb517406c79d8befcdbedc6b9dbec9eef'})
+
+======================================================================
+FAIL: test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) (case=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/extremelab_s02_run/repo/evidence/S02/test_contracts.py", line 51, in compare
+    self.assertEqual(p['ok'],allowed,(n,'python',p))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True != False : (0, 'python', {'ok': True, 'canonical': '{"account_ref":{"account_id":"900719925474099312345","currency":"CHF","environment":"demo","model":"hedging","provider":"synthetic-provider"},"bot_id":"synthetic-bot","coverage":{"completeness":"complete","gap_state":"none","source_sequence_through":"7","truncated":false},"data_version":"synthetic-data/1","event_id":"event\\n","instrument_version":"TEST-EURUSD-v1","kind":"OrderIntent","payload":{"account":{"account_id":"900719925474099312345","currency":"CHF","environment":"demo","model":"hedging","provider":"synthetic-provider"},"authorization_chain_id":"authorization-test-NOT-A-REAL-GRANT","distance":{"instrument_version":"TEST-EURUSD-v1","unit":"pip","value":"45.6"},"expected_account_revision":"9007199254740993","expected_policy_revision":"7","expires_at":"2026-11-13T12:00:01.000000Z","idempotency_key":"test-idempotency-1","intent_id":"test-order-1","limit_price":{"currency":"USD","instrument_version":"TEST-EURUSD-v1","per_unit":"units","value":"1.23456"},"order_type":"limit","policy_hash":"15f913038cb373e059859b76f34812578e76cd0fa836f7a3111bfdafb7ec3736","protective_stop":{"currency":"USD","instrument_version":"TEST-EURUSD-v1","per_unit":"units","value":"1.23"},"quantity":{"conversion_version":"synthetic-fx-contract-v1","instrument_version":"TEST-EURUSD-v1","unit":"lots","value":"0.01"},"risk_reservation_id":"reservation-test-1","side":"buy","signal_id":"test-signal-1","time_in_force":"GTC","trigger_price":null},"payload_hash":"c18db3e0f011c9c07a4b5d492c96e0d5602a10476e0f6f164144b1782ac0843d","policy_version":"risk-policy-v1","run_id":"s02-test-run","schema_version":"extremelab.domain/1.0.0","sequence":"7","source_id":"offline-fixture","source_schema_version":"synthetic/1","stream_id":"stream-test-001","times":{"available_at":"2026-11-13T12:00:00.000000Z","decision_at":"2026-11-13T12:00:00.000000Z","event_time":"2026-11-13T12:00:00.000000Z","execution_not_before":"2026-11-13T12:00:00.000000Z","features_ready_at":"2026-11-13T12:00:00.000000Z","received_at":"2026-11-13T12:00:00.000000Z"}}', 'sha256': '27307e1a4ca8114449048dbaafaeb50d98336a41ccd2e22daee789f45d83164f'})
+
+======================================================================
+FAIL: test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) (case=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/extremelab_s02_run/repo/evidence/S02/test_contracts.py", line 51, in compare
+    self.assertEqual(p['ok'],allowed,(n,'python',p))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True != False : (1, 'python', {'ok': True, 'canonical': '{"account_ref":{"account_id":"900719925474099312345","currency":"CHF","environment":"demo","model":"hedging","provider":"synthetic-provider"},"bot_id":"synthetic-bot","coverage":{"completeness":"complete","gap_state":"none","source_sequence_through":"7","truncated":false},"data_version":"synthetic-data/1","event_id":"s02-OrderIntent","instrument_version":"TEST-EURUSD-v1","kind":"OrderIntent","payload":{"account":{"account_id":"900719925474099312345","currency":"CHF","environment":"demo","model":"hedging","provider":"synthetic-provider"},"authorization_chain_id":"authorization-test-NOT-A-REAL-GRANT","distance":{"instrument_version":"TEST-EURUSD-v1","unit":"pip","value":"45.6"},"expected_account_revision":"9007199254740993","expected_policy_revision":"7","expires_at":"2026-11-13T12:00:01.000000Z","idempotency_key":"test-idempotency-1","intent_id":"test-order-1","limit_price":{"currency":"USD","instrument_version":"TEST-EURUSD-v1","per_unit":"units","value":"1.23456"},"order_type":"limit","policy_hash":"15f913038cb373e059859b76f34812578e76cd0fa836f7a3111bfdafb7ec3736","protective_stop":{"currency":"USD","instrument_version":"TEST-EURUSD-v1","per_unit":"units","value":"1.23"},"quantity":{"conversion_version":"synthetic-fx-contract-v1","instrument_version":"TEST-EURUSD-v1","unit":"lots","value":"0.01"},"risk_reservation_id":"reservation-test-1","side":"buy","signal_id":"test-signal-1","time_in_force":"GTC","trigger_price":null},"payload_hash":"c18db3e0f011c9c07a4b5d492c96e0d5602a10476e0f6f164144b1782ac0843d","policy_version":"risk-policy-v1","run_id":"s02-test-run","schema_version":"extremelab.domain/1.0.0","sequence":"7\\n","source_id":"offline-fixture","source_schema_version":"synthetic/1","stream_id":"stream-test-001","times":{"available_at":"2026-11-13T12:00:00.000000Z","decision_at":"2026-11-13T12:00:00.000000Z","event_time":"2026-11-13T12:00:00.000000Z","execution_not_before":"2026-11-13T12:00:00.000000Z","features_ready_at":"2026-11-13T12:00:00.000000Z","received_at":"2026-11-13T12:00:00.000000Z"}}', 'sha256': '0547278731b7d5eb02ce3d99e0fadffb509ff9a1df8640dc5959cfa0e8ec79f2'})
+
+======================================================================
+FAIL: test_terminal_newlines_cannot_bypass_anchored_types (test_contracts.Contracts.test_terminal_newlines_cannot_bypass_anchored_types) (case=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/extremelab_s02_run/repo/evidence/S02/test_contracts.py", line 51, in compare
+    self.assertEqual(p['ok'],allowed,(n,'python',p))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True != False : (2, 'python', {'ok': True, 'canonical': '{"account_ref":{"account_id":"900719925474099312345","currency":"CHF\\n","environment":"demo","model":"hedging","provider":"synthetic-provider"},"bot_id":"synthetic-bot","coverage":{"completeness":"complete","gap_state":"none","source_sequence_through":"7","truncated":false},"data_version":"synthetic-data/1","event_id":"s02-OrderIntent","instrument_version":"TEST-EURUSD-v1","kind":"OrderIntent","payload":{"account":{"account_id":"900719925474099312345","currency":"CHF\\n","environment":"demo","model":"hedging","provider":"synthetic-provider"},"authorization_chain_id":"authorization-test-NOT-A-REAL-GRANT","distance":{"instrument_version":"TEST-EURUSD-v1","unit":"pip","value":"45.6"},"expected_account_revision":"9007199254740993","expected_policy_revision":"7","expires_at":"2026-11-13T12:00:01.000000Z","idempotency_key":"test-idempotency-1","intent_id":"test-order-1","limit_price":{"currency":"USD","instrument_version":"TEST-EURUSD-v1","per_unit":"units","value":"1.23456"},"order_type":"limit","policy_hash":"15f913038cb373e059859b76f34812578e76cd0fa836f7a3111bfdafb7ec3736","protective_stop":{"currency":"USD","instrument_version":"TEST-EURUSD-v1","per_unit":"units","value":"1.23"},"quantity":{"conversion_version":"synthetic-fx-contract-v1","instrument_version":"TEST-EURUSD-v1","unit":"lots","value":"0.01"},"risk_reservation_id":"reservation-test-1","side":"buy","signal_id":"test-signal-1","time_in_force":"GTC","trigger_price":null},"payload_hash":"e3c3c67333869a91fc42f92f9792651d6a177c0c9df12be87d8f3c30655b72e8","policy_version":"risk-policy-v1","run_id":"s02-test-run","schema_version":"extremelab.domain/1.0.0","sequence":"7","source_id":"offline-fixture","source_schema_version":"synthetic/1","stream_id":"stream-test-001","times":{"available_at":"2026-11-13T12:00:00.000000Z","decision_at":"2026-11-13T12:00:00.000000Z","event_time":"2026-11-13T12:00:00.000000Z","execution_not_before":"2026-11-13T12:00:00.000000Z","features_ready_at":"2026-11-13T12:00:00.000000Z","received_at":"2026-11-13T12:00:00.000000Z"}}', 'sha256': '7269e6fb05899a77cbb9c9e15bd4734a57b9406f94372d83650ddad23d4b93f7'})
+
+----------------------------------------------------------------------
+Ran 27 tests in 3.903s
+
+FAILED (failures=5)

@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "artifact_kind": "independent_local_code_review",
+  "step_id": "S00",
+  "status": "approved_local_preparation_only",
+  "S00_completion_approved": false,
+  "reviewed_revision": "8b9d51b6f651105574ac9e952ca0d2b1d1621451",
+  "repository_kind": "local_governance_staging_only",
+  "plan_version": "1.1.0",
+  "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "reviewer": {
+    "identity": "/root/plan_guard_design",
+    "identity_scope": "local_agent_identity",
+    "platform_identity_verified": false,
+    "wrote_reviewed_S00_implementation": false,
+    "earlier_guard_authorship_excluded_from_independent_review": true
+  },
+  "implementation_authors": [
+    {
+      "identity": "/root",
+      "scope": "trusted_gate.py, github_s00.py, plan-gates.yml, ci-policy.json, test_trusted_gate.py, S00_RUNBOOK.md, governance.json"
+    },
+    {
+      "identity": "/root/plan_design_integration",
+      "scope": "collect_changes.py and test_collect_changes.py"
+    }
+  ],
+  "review_scope": {
+    "method": "Read-only independent source and regression-test review; all nine reviewed files verified byte-for-byte against the reviewed commit.",
+    "files_match_reviewed_commit": true,
+    "reviewed_file_count": 9,
+    "baseline_guard": "Earlier planctl.py implementation by this reviewer is excluded from this independent review; root reviewed that guard separately.",
+    "third_party_actions": "Pinned action origins were checked; this is not a full audit of third-party action implementations.",
+    "code_decision": "No remaining concrete code findings within the agreed S00 preparation scope."
+  },
+  "reviewed_files_sha256": {
+    "tools/acceptance/collect_changes.py": "919262ca0ec997807d310e4cd39ecfd9d59597fe67593a72044f64dee870a2d0",
+    "tools/acceptance/test_collect_changes.py": "f35599ec6b0f7aff8e0f035aebe12403ed932bfb0e6f60e9162838089dbca0c7",
+    "tools/acceptance/trusted_gate.py": "e4edebef4ec56274750c5dcf73eb262c930090eabadcfdbd4bd2cb3c2f488ea5",
+    "tools/acceptance/github_s00.py": "e5a74f9ce687f60b360d9888ec33a6ec25b1c1ef72fceb406e297cd16515dffa",
+    "tools/acceptance/test_trusted_gate.py": "730aca57151e8096b67cec2569709f288c277697ebff7fd7106d6b74df561478",
+    ".github/workflows/plan-gates.yml": "208dafd3547b136dcd5f601fc57c90b112d795eda2d85ccbb7d7e987e4d814c6",
+    "governance/ci-policy.json": "a73701c91128742da02cc231f6a43c503248e413bf9be3957dc740fa2f63b9b9",
+    "docs/plan/S00_RUNBOOK.md": "8be6e3437956774314964bec95ee982babf27f774bc1fb5c576829766df50d2a",
+    "evidence/S00/governance.json": "33a622f780ef811ce6fa3b41a55570a2b0a193284cffcf31c90f917eb6d90bea"
+  },
+  "resolved_findings": [
+    {
+      "id": "S00-R01",
+      "status": "resolved",
+      "finding": "An older workflow checkout could validate a PR whose trusted base had advanced.",
+      "resolution": "assert_trusted_revision requires the trusted checkout to equal the current PR base; stale events fail closed."
+    },
+    {
+      "id": "S00-R02",
+      "status": "resolved",
+      "finding": "A superseded run could publish a result for a newer untested PR head.",
+      "resolution": "The real inline publisher performs no status write when the current head differs from the tested head."
+    },
+    {
+      "id": "S00-R03",
+      "status": "resolved",
+      "finding": "A retarget to another branch with an equal base SHA was not fully bound to the checked target.",
+      "resolution": "Head, base SHA, base ref and repository ID are bound between validation and publication."
+    },
+    {
+      "id": "S00-R04",
+      "status": "resolved",
+      "finding": "Reviewer exclusion did not account for all attributed implementation accounts.",
+      "resolution": "All PR commits are enumerated with pagination; attributed authors and committers, PR author and observed synchronize sender are excluded. Incomplete or unattributed history fails closed."
+    },
+    {
+      "id": "S00-R05",
+      "status": "resolved",
+      "finding": "A synchronize event with a missing or null sender was treated like an event without an observed push.",
+      "resolution": "synchronize_sender requires a dictionary with a positive integer account ID. A targeted regression covers missing/null, empty, Boolean, zero and string identities and a valid identity."
+    },
+    {
+      "id": "S00-R06",
+      "status": "resolved",
+      "finding": "Test subprocesses could inherit additional Actions tokens.",
+      "resolution": "Child environments use a small allowlist; GitHub, Actions and custom token variables, Git configuration injection variables and PYTHONPATH are removed."
+    },
+    {
+      "id": "S00-R07",
+      "status": "resolved",
+      "finding": "An early failure could leave an inaccurate state_mutated assertion.",
+      "resolution": "The finally path compares actual state bytes; modification or removal reports state_mutated=true and forces failure."
+    },
+    {
+      "id": "S00-R08",
+      "status": "resolved",
+      "finding": "Failure to write GITHUB_OUTPUT could leave a successful JSON result.",
+      "resolution": "The exception path sets status=failed and returns failure; the regression executes the actual adapter with an unavailable output parent."
+    }
+  ],
+  "additional_review_observations": [
+    "Collector operates on real Git objects and explicit worktree revisions; both rename paths, copies, deletions, mode changes, ignored/untracked paths and gitlinks are represented.",
+    "Collector refuses unsupported content filters, sparse or assume-unchanged indexes, partial/promisor repositories and legacy grafts; implicit transports are disabled.",
+    "Candidate PR code is not checked out or executed by the prepared trusted CI path.",
+    "The entire nested canonical masterplan is immutable, and trusted runtime self-replacement is rejected.",
+    "Runbook and governance evidence distinguish local preparation, installed trusted CI, external review identity and protected step completion.",
+    "The prepared workflow does not invoke finish."
+  ],
+  "remaining_code_findings": [],
+  "test_evidence": {
+    "path": "evidence/S00/ci-negative-tests.json",
+    "execution_actor": "/root",
+    "source": "Root reported the completed final aggregate run and its logs.",
+    "reported_total": 98,
+    "reported_passed": 98,
+    "reported_failed": 0,
+    "breakdown": {
+      "baseline_guard_tests": 47,
+      "collector_tests": 28,
+      "wrapper_workflow_tests": 23
+    },
+    "independently_executed_by_this_reviewer": false,
+    "scope": "Local tests only; fixtures are not real GitHub CI or platform reviewer evidence."
+  },
+  "open_completion_blockers": [
+    {
+      "id": "S00-B01",
+      "state": "blocked",
+      "requirement": "Bind the actual ExtremeLab repository and independently install the reviewed bootstrap into its trusted default branch.",
+      "missing_evidence": "Actual repository binding and installed trusted bootstrap revision."
+    },
+    {
+      "id": "S00-B02",
+      "state": "not_verified",
+      "requirement": "Establish and verify a genuinely separate configured platform reviewer identity for the exact candidate commit.",
+      "missing_evidence": "Real platform identity and review evidence; local fixture identities and agent identities are insufficient."
+    },
+    {
+      "id": "S00-B03",
+      "state": "not_run",
+      "requirement": "Run real positive and negative CI exercises using the installed trusted verifier.",
+      "missing_evidence": "Platform runs with exact repository, base and head bindings."
+    },
+    {
+      "id": "S00-B04",
+      "state": "not_verified",
+      "requirement": "Verify repository rules, trusted status source, stale-review handling, last-push approval and protection against direct self-approval of progress.",
+      "missing_evidence": "Actual branch/ruleset configuration and effective enforcement evidence."
+    },
+    {
+      "id": "S00-B05",
+      "state": "not_installed",
+      "requirement": "Install and independently review the protected progress writer with real CI/review evidence, exact revisions and cross-runner serialization using regular verify and finish commands.",
+      "missing_evidence": "Protected completion path and its enforcement evidence."
+    }
+  ],
+  "gate_interpretation": "S00-C03 permits an explicitly blocked branch-protection state to be documented. It does not waive the required trustworthy CI/diff source, separated review or protected progress path.",
+  "reported_controller_state": {
+    "step_id": "S00",
+    "status": "blocked",
+    "source": "Root confirmation after the final aggregate test run."
+  },
+  "review_actions": {
+    "git_commits_created": false,
+    "controller_state_changed": false,
+    "plan_amended": false
+  },
+  "decision_limits": [
+    "Approval applies only to the reviewed local S00 preparation.",
+    "No product step is approved by this review.",
+    "No actual GitHub CI, branch protection or protected progress writer is asserted.",
+    "Later evidence-only commits preserve this code review only if the bound implementation, workflow and policy files remain unchanged."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "work_id": "S01-ENDPOINTRECOVERY-20261113",
+  "source_files_reproduced": 5,
+  "files": [
+    {
+      "path": "src/api/account-chart.js",
+      "bytes": 98,
+      "sha1": "6e84205548e771ae4604ce12d4a95e9247288b30",
+      "sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
+      "method": "complete_connector_response",
+      "transformation": null
+    },
+    {
+      "path": "src/api/live.js",
+      "bytes": 1281,
+      "sha1": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+      "sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+      "method": "complete_connector_response",
+      "transformation": null
+    },
+    {
+      "path": "src/api/probe.js",
+      "bytes": 1724,
+      "sha1": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
+      "sha256": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
+      "method": "connector_prefix_and_archived_suffix_transform",
+      "transformation": "compact-lines-preserve-export"
+    },
+    {
+      "path": "src/api/socket.js",
+      "bytes": 2358,
+      "sha1": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
+      "sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
+      "method": "connector_prefix_and_archived_suffix",
+      "transformation": null
+    },
+    {
+      "path": "src/patch_ui.mjs",
+      "bytes": 2653,
+      "sha1": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
+      "sha256": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1",
+      "method": "connector_prefix_and_archived_suffix_transform",
+      "transformation": "remove-comment"
+    }
+  ],
+  "publishes": false,
+  "product_repair": false,
+  "full_website_build": false
+}

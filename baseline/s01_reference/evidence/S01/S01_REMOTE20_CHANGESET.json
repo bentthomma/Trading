@@ -1,0 +1,54 @@
+{
+  "previous_manifested_files": 147,
+  "unchanged_previous_files": 138,
+  "changed_previous_files": [
+    {
+      "path": "README.md",
+      "before": "22fa1791e9ba8e49d5ddf17f0c5a3562f3400abc335703463899db4c1d468809",
+      "after": "8af4f16dce3804bff16f5fc69f4e8ae37a2263e2abb0ea1c3ad49a28795d7a1b"
+    },
+    {
+      "path": "RUN_S01_REPORT.md",
+      "before": "f18058dacf196abff4683d4675327fe20b50e6181596f96609bd7e75a235818e",
+      "after": "e9346dd606e57523226840e284a77ba32018ab61978c86447ac49d422af98e6f"
+    },
+    {
+      "path": "UEBERGABE.md",
+      "before": "1454055cc29e2f6a6eb2a640b02a7ebf640b0264b6283669d6d84330a9129346",
+      "after": "a67e7cb9cd445713d4a7dfb9d26ba8eab28c45cf39b73c63d17ae2f229ee54b0"
+    },
+    {
+      "path": "evidence/S01/S01_CAPABILITY_MATRIX.json",
+      "before": "b55aed7fc3fdf77c6224f26477ca30cc4bfa09fd6d46c54db3eaffddb0088005",
+      "after": "b12bb09b23ae2b1df9611adb5c0b9de30feb2d87b6535f2a7f2bcac3cd273c0c"
+    },
+    {
+      "path": "evidence/S01/baseline-lock.json",
+      "before": "958eeb837b2f7b522f90093f7a04bee65d501ce9924b0ac6e3d1e24c7952b2fd",
+      "after": "a4802cc23a4ba7533f466aaa818bbfede016f3d585ca5ba7da41b53efcf42765"
+    },
+    {
+      "path": "evidence/S01/donor-map.json",
+      "before": "21607756017a2783823b7be20ddbf7af67861001ad231de12206537ad8260298",
+      "after": "47b48f75249de96cb84241114ebd77f8f2ee680a13a682bacd8a81fa3f630989"
+    },
+    {
+      "path": "evidence/S01/path-map.json",
+      "before": "c13a17c6906ff760fc2fb912fe41fe73f3509cc6517b847a7451d31327e5919b",
+      "after": "70f1dc89f11fd64fc83691a20c8c27e7560b0da452dfd1c06508608e02f6e675"
+    },
+    {
+      "path": "evidence/S01/reproduction-report.json",
+      "before": "5e65cf8f0e7480aa572ae9b1d6ec09d469e253b40231ecb60269aa1400971698",
+      "after": "4e60258b2da046ac4ac16e4a979ceab7eb545a0f2ae0d9855ad508224c044345"
+    },
+    {
+      "path": "evidence/S01/version-crosswalk.md",
+      "before": "45c25db43da18aa1bfd7627a9f51a9014d1bee455970a91c27e0200a5b4d52d9",
+      "after": "b4ddf45d6192ec7df7fd26395866c9e37e4f52d2e035848506350e91d516bdbb"
+    }
+  ],
+  "product_source_changes": 0,
+  "gate_changes": 0,
+  "plan_changes": 0
+}

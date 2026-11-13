@@ -1,0 +1,18 @@
+[
+  {
+    "archive": "ExtremeLab_Autotest_20261106.zip",
+    "archive_sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+    "member": "ExtremeLab_Autotest_20261106/patched/public/app.js",
+    "local_path": "baseline/recovery_donors/expected_patched_app.js",
+    "bytes": 25315,
+    "sha256": "54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127"
+  },
+  {
+    "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+    "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+    "member": "ExtremeLab_Online_1_3/tests/security.test.mjs",
+    "local_path": "baseline/recovery_donors/security.test.mjs",
+    "bytes": 2080,
+    "sha256": "9f07334832a7ae28ad95b006da12c626e1650c6109f9050bf0b984415541f8ed"
+  }
+]

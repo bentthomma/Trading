@@ -1,0 +1,60 @@
+{
+  "schema": "extremelab-readonly-source-observation/v1",
+  "observed_utc": "2026-11-13T11:25:34.023279+00:00",
+  "record_type": "selected_fields_transcribed_from_current_connector_outputs",
+  "github": {
+    "method": "GitHub.fetch GET branches/main and git/trees/<tree>?recursive=1",
+    "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+    "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+    "branch": "main",
+    "protected": false,
+    "truncated": false,
+    "entries": [
+      {
+        "path": "README.md",
+        "mode": "100644",
+        "type": "blob",
+        "sha": "7025cd085c2f9a785685aa3b4b7bae14f827dcd2",
+        "size": 9
+      }
+    ],
+    "source_refs": [
+      "turn3file0",
+      "turn13file0"
+    ],
+    "pr_and_workflow_lists_queried": false
+  },
+  "production_alias": {
+    "method": "Vercel.get_alias",
+    "alias": "extremelab-bt.vercel.app",
+    "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "deployment_url": "extremelab-desk-4m1ohbw4s-ben-a958e9d0.vercel.app",
+    "project_id": "prj_pIEbUZ8G8K4oWx7FgnLgClOaAFkg",
+    "redirect": null,
+    "no_mutation": true
+  },
+  "source_read": {
+    "method": "Vercel.get_deployment_file_contents",
+    "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "source_path": "src/lib/relay.mjs",
+    "file_id": "90f1d748a4e0de90350cfdf53f99ca7a499d1566",
+    "truncated": true,
+    "omitted_base64_characters": 1372,
+    "full_bytes_preserved": false,
+    "prefix_returned": true,
+    "prefix_content_saved": false,
+    "full_hash_verified": false
+  },
+  "library_search": {
+    "scope": "conversation and Library search plus partial root/recursive zip metadata listings",
+    "exhaustive": false,
+    "pagination_warning": "advertised cursor continuation was refused; recursive Google Drive unsupported",
+    "newer_verified_handoff_found": false,
+    "additional_archive_examined": "baseline/inventory_sources/dashboard_original.zip"
+  },
+  "operations": {
+    "github_writes": false,
+    "deployments": false,
+    "broker_or_account_actions": false
+  }
+}

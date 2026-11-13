@@ -1,0 +1,14 @@
+{
+  "source": "Vercel list_deployment_files, authenticated with owner team; provider metadata re-read independently",
+  "retrieval_date": "2026-11-12",
+  "count": 59,
+  "sorted_path_uid_lines": 59,
+  "canonical_listing_fingerprint": {
+    "algorithm": "FNV-1a-64 over sorted UTF-8 path|uid lines + final newline; a transcription cross-check not a cryptographic source digest",
+    "value": "b3f987b10f49c18b",
+    "concatenated_bytes": 3572
+  },
+  "local_listing_sha256": "ad8a150d646683f9c77d049fee650b811a2ed839b6bab4172ee55131e76c5466",
+  "all_listed_uids_are_provider_declared_sha1_format": true,
+  "full_content_verified_for_all": false
+}

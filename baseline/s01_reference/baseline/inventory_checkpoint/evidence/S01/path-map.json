@@ -1,0 +1,668 @@
+{
+  "schema": 1,
+  "paths": [
+    {
+      "path": "core/build-transitions.mjs",
+      "source_archive": "platform097",
+      "sha256": "0675e57e9978b870e4e87613bc0f4b9b6c1299483d5f2ccc82f0e553dd3af172",
+      "bytes": 14158,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/capabilities.mjs",
+      "source_archive": "platform097",
+      "sha256": "f36af396364827afba3f1cf69d1fc18aa8cb4630c4252bb80bc156748040cf57",
+      "bytes": 9843,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/engine-journal.mjs",
+      "source_archive": "platform097",
+      "sha256": "1a56bc2cd9559dea9ac5231db2cab121d6a1c73e03410951390d7693bb63dd93",
+      "bytes": 26628,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/journal-archives.mjs",
+      "source_archive": "platform097",
+      "sha256": "1504a1827a131ffe2057d8a68736769f4a3554d0bf090a0b5a2193e72af73529",
+      "bytes": 15327,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/maintenance-journal.mjs",
+      "source_archive": "platform097",
+      "sha256": "a4dd1fae37d09e100227a506546aec11e7877c6b94b38f0f484c2ce1e4383a57",
+      "bytes": 9640,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/observation.mjs",
+      "source_archive": "platform097",
+      "sha256": "af52f2ec951f26bed4f1c7c51acf928cb31fe58470619fb16522e1cccdb65ba6",
+      "bytes": 17360,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/restore.mjs",
+      "source_archive": "platform097",
+      "sha256": "4141919bd5a18ce126502e0ad0f7e74e7f81b9918e619d4bcaea3735a43ead59",
+      "bytes": 5505,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "core/target-admissions.mjs",
+      "source_archive": "platform097",
+      "sha256": "a1c8a3614bda76b9fe5d80a54c6eca64c74a29084a70fd230a879985be941080",
+      "bytes": 11042,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "integrations/ctrader-th3revolution20/scripts/generate-source-identity.mjs",
+      "source_archive": "platform097",
+      "sha256": "39c4cf3d9a909a81776e739f02be4b9d8b719c8e7e0f00ab177c1b21c5e5968c",
+      "bytes": 1739,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "integrations/vercel-view20/api/revolution.js",
+      "source_archive": "platform097",
+      "sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139",
+      "bytes": 1543,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "integrations/vercel-view20/build-release20.mjs",
+      "source_archive": "platform097",
+      "sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6",
+      "bytes": 451,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "server.mjs",
+      "source_archive": "platform097",
+      "sha256": "f1bd2940bcbaa63056c42cbbc117adc1ad774618f012c0b39da330a5c93c0082",
+      "bytes": 62295,
+      "status": "present_source_not_approved_for_integration"
+    },
+    {
+      "path": "src/account-addon.br",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "35011ac9bfcfa393b34bf6916210b723fccbf0ff",
+      "source_sha256": "321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283",
+      "bytes": 11686,
+      "recovered_local_path": "baseline/vercel_recovered/src/account-addon.br",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/api/account-live.js",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "780c5eba2e1b5d7ba2fadbbdfbc7f71eb1a7cc0f",
+      "source_sha256": "ca34d9547411a6b13b89310f30cb8cec548fbd8bfaea5b488e20161ab1a382ed",
+      "bytes": 69,
+      "recovered_local_path": "baseline/vercel_recovered/src/api/account-live.js",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/api/desk.js",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "cf355cb52eea32b9b69e2a8641b3b7b33555cdcc",
+      "source_sha256": "1aff4975b785e3ee13da1dda038faad293307685c6d46cfb76c7530f2e6fcce9",
+      "bytes": 5909,
+      "recovered_local_path": "baseline/vercel_recovered/src/api/desk.js",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/api/revolution.js",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "13f44cf339c6f462f2676dc54885de0c2878bf86",
+      "source_sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139",
+      "bytes": 1543,
+      "recovered_local_path": "baseline/vercel_recovered/src/api/revolution.js",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/assets.0",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "a16e1e6556d74b3c98522d7887bcd3a9f67594fa",
+      "status": "source_bytes_verified_private_no_integration",
+      "source_sha256": "424db7b1fbe6ace3e01e626c1241a384009b3b906fc40c1e12083f428d208b6b",
+      "bytes": 4500,
+      "recovered_local_path": "baseline/vercel_recovered/src/assets.0"
+    },
+    {
+      "path": "src/assets.1",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "ed82a1c6c817bbf1c9df3f841e9c7fb0852d5f46",
+      "source_sha256": "f4d4549d5bca064a3b07b0ac6a0b00616bdf334b6fc488b989d9a90cabdba18b",
+      "bytes": 4500,
+      "recovered_local_path": "baseline/vercel_recovered/src/assets.1",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/assets.2",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "db642b510fab96c0e028951978b144b27288dd36",
+      "source_sha256": "2568b3879d407193705746add6092ec66a3920e337106d14beb0e6c907a3d303",
+      "bytes": 4500,
+      "recovered_local_path": "baseline/vercel_recovered/src/assets.2",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/assets.3",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "5892b4a9adb564459f13e265e4827c6ee08ecdf9",
+      "source_sha256": "d9f6386a4be6655378df36e7d047e6d83dea0a5da76ec4a00520daad11ed13f3",
+      "bytes": 2498,
+      "recovered_local_path": "baseline/vercel_recovered/src/assets.3",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/bot-src.0",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "c47e00bbee5c0ca058b82f22551fd889bd2c88e4",
+      "status": "source_bytes_verified_private_no_integration",
+      "source_sha256": "e2036b08e1760ee56a3511b4efa63f5ba06da7b8b6e2e6cbf0b6ea2faf892548",
+      "local_path": "baseline/vercel_recovered/src/bot-src.0",
+      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
+    },
+    {
+      "path": "src/build-account-addon.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "6cb4aa622594795b140fd4cd68f76063c76463eb",
+      "source_sha256": "a87c666dc997abc1ddae5399f33a105a7fd245211c27698c489441dca16fee5c",
+      "bytes": 1012,
+      "recovered_local_path": "baseline/vercel_recovered/src/build-account-addon.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/build-release20.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38",
+      "status": "source_bytes_verified_private_no_integration",
+      "source_sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6",
+      "bytes": 451,
+      "recovered_local_path": "baseline/vercel_recovered/src/build-release20.mjs"
+    },
+    {
+      "path": "src/build-revolution20.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "b29c77450e2c140c8c3b04976c5e6c7996fc3c70",
+      "source_sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439",
+      "bytes": 1070,
+      "recovered_local_path": "baseline/vercel_recovered/src/build-revolution20.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/build.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "d3a7b77bfb469b659b6a3b29db6e64552415f263",
+      "status": "source_bytes_verified_private_no_integration",
+      "source_sha256": "6ef5455d53cd08b614bb710999b04bc901d5da12639a5424ae52536d8bc841aa",
+      "bytes": 1316,
+      "recovered_local_path": "baseline/vercel_recovered/src/build.mjs"
+    },
+    {
+      "path": "src/lib/http.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "06d25ef629e4cf23e3116aa50969c5b2a1c327be",
+      "source_sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7",
+      "bytes": 2796,
+      "recovered_local_path": "baseline/vercel_recovered/src/lib/http.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/lib/projection.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "2fda4938aec2b8bccd28a64cdcb747730d385982",
+      "source_sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3",
+      "bytes": 6049,
+      "recovered_local_path": "baseline/vercel_recovered/src/lib/projection.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/lib/security.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "4b2f3da24483a775228bd72b112a60e81a9de2dc",
+      "source_sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f",
+      "bytes": 3309,
+      "recovered_local_path": "baseline/vercel_recovered/src/lib/security.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/lib/service.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "c03aa212b6033bab55f738dbf8c277974fcfd105",
+      "source_sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604",
+      "bytes": 7496,
+      "recovered_local_path": "baseline/vercel_recovered/src/lib/service.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/lib/storage.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "b7ba7cc797aa174d3c59bcc1ca1287bfe3e4b851",
+      "source_sha256": "afd0f7747f23d738ee688710f209099dd39fadbde7b5a65c0daabe07ea55931d",
+      "bytes": 2730,
+      "recovered_local_path": "baseline/vercel_recovered/src/lib/storage.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/live-overlay.b64",
+      "source_archive": "vercel-production-deployment-source-tree",
+      "source_uid": "e8a1affc744cb33812fbda76cb9d95f2885a0914",
+      "status": "provider_mapped_not_materialized_no_integration"
+    },
+    {
+      "path": "src/package.json",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "b4cbe4597535e10ed1cca028366a88399e416522",
+      "status": "source_bytes_verified_private_no_integration",
+      "source_sha256": "63aa6b23f143b44d81b528ab8b9f973d29604032a9022220c431b99b2df41533",
+      "bytes": 221,
+      "recovered_local_path": "baseline/vercel_recovered/src/package.json"
+    },
+    {
+      "path": "src/postbuild-132.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "1e4f81b57caab23448103cccfe39ab1f6a5695b1",
+      "source_sha256": "431ccc89f5eb8c4aedbce2054dfad4bd98a9c63445cc4311e208f356c18d78bf",
+      "bytes": 953,
+      "recovered_local_path": "baseline/vercel_recovered/src/postbuild-132.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/public/bot-download.js",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "2e5d871982b61d99fce67a1597a108d3b1786953",
+      "source_sha256": "399d27ccad273a570b60c87d1a4b30a0eed32675bd652fb98e92ba4b16f8dbcb",
+      "bytes": 1119,
+      "recovered_local_path": "baseline/vercel_recovered/src/public/bot-download.js",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/public/bot.html",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "2bf68374af1acaa1065e4751eb0631ab9a0a977c",
+      "source_sha256": "da344e50260940e02bb6e0ae7d100306b4ba4b5de858384c2091c112cb077e80",
+      "bytes": 1457,
+      "recovered_local_path": "baseline/vercel_recovered/src/public/bot.html",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/public/connection.html",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "509a13f97726a6e4d8046e396d496083f26e4a92",
+      "source_sha256": "20d35811f6a6cc8ac5a14ec380e700f0a626ee2f36096bf3bf6c2f7bf58f6852",
+      "bytes": 811,
+      "recovered_local_path": "baseline/vercel_recovered/src/public/connection.html",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/skin.0",
+      "source_archive": "vercel-production-deployment-source-tree",
+      "source_uid": "5fa03aba3d6558e9c8abfc205e9a5403f91a8c2d",
+      "status": "provider_mapped_not_materialized_no_integration"
+    },
+    {
+      "path": "src/vercel.json",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "cc1e1080ad18dcc3d6d8e0f7a3df9f8a27d22c97",
+      "source_sha256": "fbcd3cd7d68d45f7a7bc65f7bf9935332d3abd31c1fb25d7c372e05546139d9f",
+      "bytes": 786,
+      "recovered_local_path": "baseline/vercel_recovered/src/vercel.json",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/version133.mjs",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "8ce6ecd6d3ed4755db8fadeb8e43bf5b5fc6ad6d",
+      "source_sha256": "c85a18a87266df26fa267cbbc3e4290083c27bd3c23304d5e337b95b82298c99",
+      "bytes": 424,
+      "recovered_local_path": "baseline/vercel_recovered/src/version133.mjs",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/view20-public/revolution-link.css",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "9de921e2cc570afe2a197d918ff6e532bb0b662b",
+      "source_sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24",
+      "bytes": 417,
+      "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution-link.css",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/view20-public/revolution.css",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "6dfd5a5c91cd5f9e3d25ae9c3a43645f756067b9",
+      "source_sha256": "78c42edb7bc27a1770df3b0c4e32f9f2bfb46472c97876289de369ec5630bbfd",
+      "bytes": 2494,
+      "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution.css",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/view20-public/revolution.html",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "feaafe8869faa062b1c845959b3fbd97d4e020c8",
+      "source_sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30",
+      "bytes": 2693,
+      "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution.html",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/view20-public/revolution.js",
+      "source_archive": "vercel-production-source-recovered",
+      "source_uid": "8d206b064d1c375d84cece81969ad1a38704ca8f",
+      "source_sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f",
+      "bytes": 11174,
+      "recovered_local_path": "baseline/vercel_recovered/src/view20-public/revolution.js",
+      "status": "source_bytes_verified_private_no_integration"
+    },
+    {
+      "path": "src/bot-src.1",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "2af389e11c004cb94b600bd1b095f769c73b2435",
+      "source_sha256": "0e066b8cc210c917727a606690475db0075aa1ecc8aae05d59a35c25a7fbecfd",
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/bot-src.1",
+      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
+    },
+    {
+      "path": "src/bot-src.2",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "30b8b6e95fe03e4b798bd61768608deef0d126da",
+      "source_sha256": "fe9d96d51756e84a34525d4e4ac0de8909c237f0b01881a4607bb55b7b6a74ed",
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/bot-src.2",
+      "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
+    },
+    {
+      "path": "src/api/account-chart.js",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "6e84205548e771ae4604ce12d4a95e9247288b30",
+      "source_sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
+      "bytes": 98,
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/api/account-chart.js",
+      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+    },
+    {
+      "path": "src/api/live.js",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+      "source_sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+      "bytes": 1281,
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/api/live.js",
+      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+    },
+    {
+      "path": "src/api/probe.js",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
+      "source_sha256": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
+      "bytes": 1724,
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/api/probe.js",
+      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+    },
+    {
+      "path": "src/api/socket.js",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
+      "source_sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
+      "bytes": 2358,
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/api/socket.js",
+      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+    },
+    {
+      "path": "src/patch_ui.mjs",
+      "source_archive": "vercel-production-recovered-private",
+      "source_uid": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
+      "source_sha256": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1",
+      "bytes": 2653,
+      "status": "source_bytes_verified_private_no_integration",
+      "local_path": "baseline/vercel_recovered/src/patch_ui.mjs",
+      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+    },
+    {
+      "path": "src/build-bot.mjs",
+      "source_archive": "vercel-production-recovered-with-original-release121",
+      "source_sha256": "8f860380eedb09dbdd75fd32bad0666ff489aef3ed65f7d674d584a92c8875a8",
+      "bytes": 3076,
+      "source_uid": "cb2628ce0d6dafe7f0a5805c23ac71df0ed1aa4b",
+      "status": "source_bytes_verified_private_no_integration",
+      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json"
+    },
+    {
+      "path": "src/api/bot-download.js",
+      "source_archive": "vercel-production-recovered-with-original-release121",
+      "source_sha256": "218ca030d075a988ed0ee260a59631efd2ac674607dd018573f44ff903dabde0",
+      "bytes": 1979,
+      "source_uid": "6aea26a19a9f84fd97286554d44a6d564264329e",
+      "status": "source_bytes_verified_private_no_integration",
+      "binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json"
+    }
+  ],
+  "unresolved": [
+    "Original Engine 1.9 release ZIP/native binary",
+    "Native .NET10/Windows/cTrader provider build and independent S00 gate",
+    "Original Engine 1.9 release bytes, release ZIP and .algo still unavailable",
+    "Binary reproducibility for historical Engine1.2.1 cannot be established from build logs alone",
+    "23 of 59 original production website source inputs remain unavailable; complete eight-stage build blocked"
+  ],
+  "mapping_scope": "source inventory only; no product path amendment or integration authorization",
+  "current_s01_source_recovery_manifest": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+  "source_binding_current": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
+  "current_work_id": "S01-RELAY-SNAPSHOT-GUARD",
+  "current_recovered_source_count": 38,
+  "current_missing_source_paths": [
+    "src/api/bot14-download.js",
+    "src/api/bot15-download.js",
+    "src/build-bot14.mjs",
+    "src/build-bot15.mjs",
+    "src/build-ui.mjs",
+    "src/lib/relay.mjs",
+    "src/live-overlay.b64",
+    "src/public/bot14.html",
+    "src/public/bot14.js",
+    "src/public/bot15.html",
+    "src/public/bot15.js",
+    "src/public/connection-check.js",
+    "src/skin.0",
+    "src/skin.1",
+    "src/skin.2",
+    "src/skin.3",
+    "src/skin.4",
+    "src/skin.5",
+    "src/skin.6",
+    "src/skin.7",
+    "src/skin.8"
+  ],
+  "current_endpoint_binding": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
+  "generated_intermediate_outputs": [
+    {
+      "path": "lib/ctrader-readonly.mjs",
+      "bytes": 16559,
+      "sha256": "fc98b6b083c13af16bf6cb720b3dafe80d1c685e5b7e523a1e33e56f02bede02",
+      "stored_at": "baseline/derived_account_stage/lib/ctrader-readonly.mjs",
+      "later_overwrite_observed": true,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "lib/account-handler.mjs",
+      "bytes": 3312,
+      "sha256": "a9257d0e687d70f730f62c1e66f3e9bf3199707c6ea7743f973914b39684d0fa",
+      "stored_at": "baseline/derived_account_stage/lib/account-handler.mjs",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "public/konto-live.html",
+      "bytes": 5450,
+      "sha256": "e36e674284b980f0ef9acb8e608bdc33d0bdde0999fa555fe300e4ad3ae79ec9",
+      "stored_at": "baseline/derived_account_stage/public/konto-live.html",
+      "later_overwrite_observed": true,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "public/konto-live.js",
+      "bytes": 9570,
+      "sha256": "bd8b6a64635372c02b9a15e38e2150dadf0fc941cc4f2c90371c6a589c18deba",
+      "stored_at": "baseline/derived_account_stage/public/konto-live.js",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "public/konto-live.css",
+      "bytes": 1261,
+      "sha256": "dffcb6394157a0203d4615a9f40e25a5fce93cf1ae86c5632eecbeb6d3639f50",
+      "stored_at": "baseline/derived_account_stage/public/konto-live.css",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    },
+    {
+      "path": "add-account-link.mjs",
+      "bytes": 485,
+      "sha256": "f26d1f7e9eac8b63db240ecf5682249624d335028fb36afa793a91f4cd487694",
+      "stored_at": "baseline/derived_account_stage/add-account-link.mjs",
+      "later_overwrite_observed": false,
+      "final_deployment_identity_verified": false
+    }
+  ],
+  "generated_path_scope": "These paths are a separate intermediate-stage namespace, not additional provider input paths and not asserted final deployed bytes. The later skin stage rewrites the reader and account page.",
+  "current_capability_boundaries": "S01_CAPABILITY_MATRIX.json",
+  "current_remote_view20_integration": {
+    "work_id": "S01-REMOTE20-INTEGRATION-20261113",
+    "baseline_archive": "baseline/prior_addon_build_audit.zip",
+    "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+    "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+    "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+    "new_production_inputs": 0,
+    "available_production_inputs": 36,
+    "missing_production_inputs": 23,
+    "original_product_source_changed": false,
+    "formal_status_changed": false,
+    "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+    "known_boundaries": [
+      "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+      "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+      "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+    ],
+    "counterexamples_are_fixes": false,
+    "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
+    "not_verified": [
+      "Actual SDK/cloud consistency or durability",
+      "physical HTTP/websocket transport or browser rendering",
+      "Windows DPAPI",
+      "complete website build",
+      "cTrader/native bot execution",
+      "official S01 acceptance"
+    ]
+  },
+  "current_bot_delivery_recovery": {
+    "work_id": "S01-BOT-DELIVERY-RECOVERY",
+    "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
+    "sources_recovered": 38,
+    "sources_missing": 21,
+    "native_compilation": false,
+    "website_full_build": false,
+    "formal_acceptance": false,
+    "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun"
+  },
+  "private_live_encoding_proposal": {
+    "work_id": "S01-LIVE-ENCODING-FIX",
+    "kind": "private_patch_not_integrated",
+    "proposal": "proposals/live-encoding/proposal.json",
+    "original_sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+    "candidate_sha256": "e4c0e4f238e2ce4585f3b9cf0fa74f1530e5179378f83c4e1181bc49d11d713f",
+    "original_inputs": 38,
+    "missing_original_inputs": 21,
+    "new_recovered_inputs": 0,
+    "testing": "Native Node HTTP over AF_UNIX with original security and real zlib; only unavailable relay is synthetic.",
+    "execution_evidence": "external final verification JSON and fresh execution logs; old current_* records are historical",
+    "original_product_sources_changed": false,
+    "canonical_status_changed": false,
+    "full_website_build": false,
+    "native_bot_build": false,
+    "new_method_design": {
+      "native_http": 18,
+      "original_security": 9,
+      "relevant_inventory": 20,
+      "total": 49
+    },
+    "approval": false
+  },
+  "private_relay_snapshot_guard": {
+    "work_id": "S01-RELAY-SNAPSHOT-GUARD",
+    "basis_package_sha256": "a4e99bb549eb34e6fde1aca0b2c775c1136bf361ac0653617df29648085a133b",
+    "proposal": "proposals/relay-snapshot-guard/proposal.json",
+    "original_relay": "baseline/relay_snapshot/relay.py",
+    "original_relay_sha256": "62fb6b0d437b090be6dd0b1a1e2af1d72e6a794e1c7b14b19ea523a4fa583f8c",
+    "proposal_relay_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+    "producer_source": "baseline/relay_snapshot/ExtremeLabMobile.cs",
+    "legacy_test": "baseline/relay_snapshot/test_relay_legacy.py",
+    "runner": "tools/run_relay_snapshot_checks.py",
+    "scope": "Archived Python relay 1.3.3-qa; separate private read-projection correction only",
+    "website_sources": {
+      "complete": 38,
+      "total": 59,
+      "missing": 21,
+      "change": 0
+    },
+    "formal_status_changed": false,
+    "installed": false,
+    "independent_review": false,
+    "historical_runs_not_added_to_current_count": true,
+    "fresh_execution_authority": "External ExtremeLab_S01_RelaySnapshotGuard_Abschlusspruefung.json and Pruefprotokolle.zip",
+    "new_contract_fields": [
+      "checkpoint.invalidPayloadSequences",
+      "checkpoint.completeness=invalid_candle_payload"
+    ],
+    "limitations": [
+      "Not the missing Vercel JavaScript relay",
+      "No complete website pipeline or final UI client",
+      "No OHLC/timestamp/finite-number validation",
+      "No ingestion rejection or journal deletion",
+      "No live/demo broker, account, TLS or cloud test",
+      "No C# recompilation",
+      "No official S01 acceptance"
+    ]
+  },
+  "private_snapshot_consumer_guard": {
+    "work_id": "S01-SNAPSHOT-CONSUMER-GUARD",
+    "scope": "Private correction in archived intermediate journal-import renderer, not final live/skin client. No HTML/CSS changes or product integration.",
+    "predecessor_zip_sha256": "58a172d87232d80a0951f3e0ca65d7f5f4b0d30681492509c61e411e6d61d5f0",
+    "original_renderer_sha256": "54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127",
+    "proposal_renderer_sha256": "8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af",
+    "upstream_relay_proposal_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+    "original_build_stage": "baseline/vercel_recovered/src/patch_ui.mjs reproduces the original consumer from baseline/derived_assets/public/app.js",
+    "newly_recovered_production_inputs": 0,
+    "complete_original_inputs": 38,
+    "total_original_inputs": 59,
+    "missing_original_inputs": 21,
+    "proposal_path": "proposals/snapshot-consumer-guard/app.js",
+    "product_integrated": false,
+    "final_website_client_available": false,
+    "independent_review_completed": false,
+    "canonical_status_changed": false,
+    "deployment_authorized": false,
+    "broker_or_account_action": false,
+    "verification": "tools/run_snapshot_consumer_checks.py; final outcome in external fresh-unpack execution.json, not inferred from historical reports",
+    "development_execution": "16 distinct new methods passed; final execution is authoritative; repeats are not additive",
+    "expected_fresh_test_methods": {
+      "browser": 14,
+      "source": 2,
+      "existing_inventory": 20,
+      "total": 36
+    },
+    "not_claimed": [
+      "Final website build or skin consumer integration",
+      "Live HTTP/WebSocket or Vercel integration in this invocation",
+      "Complete OHLC/schema validation",
+      "Authenticated provenance of imported snapshot metadata",
+      "Native bot compile or startup"
+    ]
+  }
+}

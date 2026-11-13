@@ -1,0 +1,1200 @@
+{
+  "schema": "extremelab-s03-field-trace/1",
+  "scope": "documentation_and_source_examples_only",
+  "source_base_revision": "b9845dc9f0434bd6ee7a94af239625a58f6b9135",
+  "contracts": [
+    {
+      "id": "hub_bot",
+      "scope": "local_original_not_final_website",
+      "method": "GET",
+      "route": "/api/hub/bots/{botId}",
+      "reader": "Control.bot / #botSnapshot",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 566,
+          "end_line": 566,
+          "excerpt_sha256": "8de029a9a00111f6b5e81e60d3a0620743df9a2ec68a6308980f05e9a050727d",
+          "first_contains": "const botMatch=path.match",
+          "last_contains": "const botMatch=path.match"
+        },
+        {
+          "source_id": "server",
+          "start_line": 569,
+          "end_line": 569,
+          "excerpt_sha256": "f171f07211cb883c9fe631be3c122ba88630464b8d592f9f3d91ab253e1878d8",
+          "first_contains": "if(!action&&method==='GET')",
+          "last_contains": "if(!action&&method==='GET')"
+        },
+        {
+          "source_id": "control",
+          "start_line": 53,
+          "end_line": 69,
+          "excerpt_sha256": "37d5ab0a44669de202d1f2cc811fa1ca3ada34349b2153cbe3a47d8dc8412cf0",
+          "first_contains": "  #botSnapshot(b){",
+          "last_contains": "    return bot;"
+        }
+      ],
+      "fields": [
+        "bot.id",
+        "bot.revision",
+        "bot.actualRevision",
+        "bot.desired",
+        "bot.actual",
+        "bot.status",
+        "bot.runtimeId",
+        "bot.accountId",
+        "bot.environment",
+        "bot.lastSeen",
+        "bot.runtimeBlocked",
+        "bot.releaseApproved",
+        "bot.controlBlocker",
+        "bot.proposals"
+      ],
+      "caveat": "Transportstatus, Vorschlagsrevision und tatsächliche Konfiguration sind getrennt. bot() kann über expire() lokale Timeoutmetadaten nachführen; GET ist keine Brokeraktion, aber nicht garantiert ohne lokalen DB-Schreibeffekt."
+    },
+    {
+      "id": "observer",
+      "scope": "local_original_not_final_website",
+      "method": "GET",
+      "route": "/api/hub/bots/{botId}/observation",
+      "reader": "ObservationService.view",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 570,
+          "end_line": 570,
+          "excerpt_sha256": "bf69a5186edb4362a9b6bf8efbe6b03db9350c1e88b247daded99e66dd55929d",
+          "first_contains": "if(action==='observation'&&method==='GET')",
+          "last_contains": "if(action==='observation'&&method==='GET')"
+        },
+        {
+          "source_id": "observation",
+          "start_line": 48,
+          "end_line": 59,
+          "excerpt_sha256": "f564ab4085f236f205c272bc6bee24c6c69fb52343ad3f55a912f373f1a71f3d",
+          "first_contains": "exact(v.account",
+          "last_contains": "  rows(v.orders"
+        },
+        {
+          "source_id": "observation",
+          "start_line": 174,
+          "end_line": 194,
+          "excerpt_sha256": "9aef24774833ee2bff2c9373dcf4d51c275540afe0f58271200af21a392c980a",
+          "first_contains": "  status(raw){",
+          "last_contains": "  view(botId,actor){"
+        },
+        {
+          "source_id": "observation",
+          "start_line": 194,
+          "end_line": 198,
+          "excerpt_sha256": "acd34ce3d9488e742d0a0d40626a2beeea9d4a7f23abac76a7e84cd2b47f9915",
+          "first_contains": "  view(botId,actor){",
+          "last_contains": "    catch{return"
+        }
+      ],
+      "fields": [
+        "available",
+        "fresh",
+        "status",
+        "reason",
+        "observedAt",
+        "receivedAt",
+        "coverage.positionsComplete",
+        "observation.account.broker",
+        "observation.account.id",
+        "observation.account.environment",
+        "observation.account.currency",
+        "observation.account.equity",
+        "observation.account.balance",
+        "observation.coverage.positionCount",
+        "observation.positions[].id",
+        "observation.positions[].entry",
+        "observation.positions[].units",
+        "observation.positions[].stop",
+        "observation.positions[].target",
+        "observation.positions[].net",
+        "observation.symbols[].bid",
+        "observation.symbols[].ask",
+        "observation.symbols[].quoteAt"
+      ],
+      "absent_fields": [
+        "observation.account.freeMargin",
+        "observation.positions[].currentPrice",
+        "observation.positions[].originalPlan"
+      ],
+      "caveat": "Gekoppelte Observermeldung, ausdrücklich kein unabhängiger Brokerbeleg. Nicht-atomarer Snapshot; fresh kann bei partial true sein. Kein freeMargin-Feld, kein originaler Plan (planId muss null sein)."
+    },
+    {
+      "id": "journal_projection",
+      "scope": "local_original_not_final_website",
+      "method": "GET",
+      "route": "/api/hub/bots/{botId}/journal?limit={1..100}",
+      "reader": "EngineJournal.view",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 574,
+          "end_line": 574,
+          "excerpt_sha256": "e3120ebd7db26c0152a15f8accaed8f67a93c25cf0e57b93ca6338585946d3d3",
+          "first_contains": "if(action==='journal'&&method==='GET')",
+          "last_contains": "if(action==='journal'&&method==='GET')"
+        },
+        {
+          "source_id": "journal",
+          "start_line": 253,
+          "end_line": 253,
+          "excerpt_sha256": "5d72ee4e93db4f9930ac3318ad5e8bebd285c07d2f24093f09310d003cf94046",
+          "first_contains": "  view(botId,actor,",
+          "last_contains": "  view(botId,actor,"
+        },
+        {
+          "source_id": "journal",
+          "start_line": 258,
+          "end_line": 280,
+          "excerpt_sha256": "9ba8b2d835fede9e32820501cd48b642a20bbc878494aae748ecf12706347c0e",
+          "first_contains": "  #readView(botId,actor,limit,complete){",
+          "last_contains": "      writesAllowed:false,plansAreExecutionGrants:false};"
+        }
+      ],
+      "fields": [
+        "available",
+        "fresh",
+        "reason",
+        "account",
+        "currentStreamId",
+        "gap",
+        "truncated",
+        "counts.positions",
+        "counts.plans",
+        "counts.orders",
+        "streams[].cursor",
+        "streams[].highWater",
+        "positions[].report.positionId",
+        "positions[].report.planId",
+        "positions[].report.units",
+        "positions[].sourceTime",
+        "positions[].fresh",
+        "positions[].sequence",
+        "positions[].streamId",
+        "plans[].plan",
+        "plans[].planHash",
+        "status.report.decisionReasons"
+      ],
+      "absent_fields": [
+        "events",
+        "decisions",
+        "openPositionCount"
+      ],
+      "caveat": "Neueste gespeicherte Projektionen pro Schlüssel und gruppierte Gründe, keine vollständige chronologische Entscheidungs-/Positionshistorie. counts.positions zählt Berichte, nicht offenen Bestand. Roharchive sind separat möglich, keine belegte finale UI-Timeline."
+    },
+    {
+      "id": "reconciliation",
+      "scope": "local_original_not_final_website",
+      "method": "GET",
+      "route": "/api/hub/reconciliation20?engineBotId={id}&observerBotId={id}",
+      "reader": "readReconciliation20 / reconcilePositionViews20",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 488,
+          "end_line": 495,
+          "excerpt_sha256": "d122bec5b73d8c396aca685e579089e548bfc1f71118861be09de16fd348c83d",
+          "first_contains": "if(path==='/api/hub/reconciliation20'){",
+          "last_contains": "readReconciliation20(control"
+        },
+        {
+          "source_id": "comparison-reader",
+          "start_line": 7,
+          "end_line": 19,
+          "excerpt_sha256": "73b443eda0355ec51e87ae3ab8daa8f99be77d3d8853d42da1796cf77c1274c1",
+          "first_contains": "export function readReconciliation20",
+          "last_contains": " }),engineBotId"
+        },
+        {
+          "source_id": "reconciliation",
+          "start_line": 139,
+          "end_line": 157,
+          "excerpt_sha256": "b86632be9fbfb6e7f3e1eb115ec19b83ef1bce1bd236fe1580e2d40ae0f3a30c",
+          "first_contains": "export function reconcilePositionViews20",
+          "last_contains": "  if(!same)return result;"
+        },
+        {
+          "source_id": "reconciliation",
+          "start_line": 109,
+          "end_line": 119,
+          "excerpt_sha256": "ff69067e6d6cc3946f35f223a2e212636f7c420d16c8f8748c02120fae01d1a8",
+          "first_contains": "function originalPlan(row,plans,engine,issues){",
+          "last_contains": "    revision:plan.revision"
+        }
+      ],
+      "fields": [
+        "accountMatched",
+        "status",
+        "fresh",
+        "sources.observer.partial",
+        "sources.engine.gap",
+        "coverage.engineIsOpenPositionList",
+        "positions[].positionId",
+        "positions[].comparison.currentPair",
+        "positions[].originalPlan.state",
+        "positions[].originalPlan.planHash",
+        "positions[].originalPlan.values",
+        "positions[].engine.values",
+        "positions[].observer.values",
+        "positions[].exitHealth.state",
+        "flatConfirmed",
+        "nativeProtectionConfirmed",
+        "brokerIndependentlyVerified"
+      ],
+      "caveat": "Zwei Profile ausdrücklich auswählen; Konto, Broker, Umgebung und Währung müssen passen. Nie nach Symbol/Label oder nur Kontonummer joinen. Fehlender, mehrdeutiger oder korrupter Originalplan bleibt unbekannt. Übereinstimmende Meldungen sind kein unabhängig bestätigter Schutz."
+    },
+    {
+      "id": "remote_projection",
+      "scope": "bounded_remote_export_original_not_final_website",
+      "method": null,
+      "route": null,
+      "reader": "remote-view20 snapshot / validateRemoteProjection20",
+      "anchors": [
+        {
+          "source_id": "remote-producer",
+          "start_line": 12,
+          "end_line": 30,
+          "excerpt_sha256": "d52348eb5840328015cb5107007a49ce0254aa84d3cb2447df8ea7b79cbd13ae",
+          "first_contains": "if(bot.manifest.id==='th3rev.observer.v1'){",
+          "last_contains": " return validateRemoteProjection20(base,now);"
+        },
+        {
+          "source_id": "view-projection",
+          "start_line": 6,
+          "end_line": 6,
+          "excerpt_sha256": "41dd4ecb83589aab12352e524bd0f3715fff4e01df3318fb09ddac4892eac59d",
+          "first_contains": "export const REMOTE20_ROWS=20;",
+          "last_contains": "export const REMOTE20_ROWS=20;"
+        },
+        {
+          "source_id": "view-projection",
+          "start_line": 24,
+          "end_line": 24,
+          "excerpt_sha256": "5c16b32cf49042564088039de23fc812bd05fa55fd3f2bbc6d4c36638425feca",
+          "first_contains": "exact(v,['schemaVersion'",
+          "last_contains": "exact(v,['schemaVersion'"
+        },
+        {
+          "source_id": "view-projection",
+          "start_line": 30,
+          "end_line": 30,
+          "excerpt_sha256": "d34a488c883b27b9d2166a6954de1d3229c930efde426c46391311e0a364ad5f",
+          "first_contains": "exact(v.counts",
+          "last_contains": "exact(v.counts"
+        }
+      ],
+      "fields": [
+        "source.kind",
+        "source.fresh",
+        "source.sourceAt",
+        "counts.positions",
+        "counts.positionCountIsOpenInventory",
+        "truncated",
+        "positions[].id",
+        "positions[].net"
+      ],
+      "absent_fields": [
+        "equity",
+        "freeMargin",
+        "account.equity",
+        "account.freeMargin"
+      ],
+      "caveat": "Höchstens 20 Zeilen je Kategorie, ggf. weitere Kompressionskürzung. Nur paired_observer plus positionCountIsOpenInventory=true ist gemeldeter Bestandszähler. Empfangszeit ersetzt keine Quellzeit. Keine komplette Konto-/Originalplan-/Backupdarstellung."
+    },
+    {
+      "id": "configuration_history",
+      "scope": "local_original_not_final_website",
+      "method": "GET",
+      "route": "/api/hub/bots/{botId}/configuration-history",
+      "reader": "Control.configurationHistory",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 581,
+          "end_line": 581,
+          "excerpt_sha256": "9b49f398330148c0fc3cacb455db417caa8bb6b521d0384344e0b6c152614752",
+          "first_contains": "if(action==='configuration-history'&&method==='GET')",
+          "last_contains": "if(action==='configuration-history'&&method==='GET')"
+        },
+        {
+          "source_id": "control",
+          "start_line": 203,
+          "end_line": 210,
+          "excerpt_sha256": "6595dd31180cc1a499043d3919a938bda4b79eabd2326752e758610725b2a0f8",
+          "first_contains": "  configurationHistory(botId,",
+          "last_contains": "  prepareHistoricalConfiguration"
+        }
+      ],
+      "fields": [
+        "actualRevision",
+        "entries[].proposalId",
+        "entries[].revision",
+        "entries[].values",
+        "entries[].appliedAt",
+        "nextBeforeRevision",
+        "totalApplied"
+      ],
+      "caveat": "Nur übernommene Konfigurationen, nicht Strategieentscheidungen, Brokerfills oder Positionshistorie."
+    },
+    {
+      "id": "proposal_create",
+      "scope": "local_original_not_final_website",
+      "method": "POST",
+      "route": "/api/hub/bots/{botId}/proposals",
+      "reader": "Control.propose",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 575,
+          "end_line": 575,
+          "excerpt_sha256": "0d81ff3db36cd2db1343f58efb3b3f36806d783d5e858c6279a604bee60d8c71",
+          "first_contains": "if(action==='proposals'&&method==='POST')",
+          "last_contains": "if(action==='proposals'&&method==='POST')"
+        },
+        {
+          "source_id": "control",
+          "start_line": 220,
+          "end_line": 244,
+          "excerpt_sha256": "1e87f65129617effd8154b8d3402fa3b8826440432558958c24c5092050fd91d",
+          "first_contains": "  #propose(botId,input,actor,historySource=null){",
+          "last_contains": "  confirm(id,hash,actor=HUMAN,review){"
+        }
+      ],
+      "input_fields": [
+        "values",
+        "expectedRevision",
+        "idempotencyKey"
+      ],
+      "fields": [
+        "proposal.id",
+        "proposal.revision",
+        "proposal.status",
+        "proposal.digest",
+        "proposal.values",
+        "bot.desired",
+        "bot.actual"
+      ],
+      "caveat": "Erzeugt persistenten Vorschlag und aktualisiert desired/revision; deshalb nicht als rein lokale oder schreibfreie Prüfung ausgeben. Erteilt keine Anwendung. Erneute gleiche Anfragekennung muss zum gleichen Request passen."
+    },
+    {
+      "id": "proposal_confirm",
+      "scope": "local_original_not_final_website",
+      "method": "POST",
+      "route": "/api/hub/proposals/{proposalId}/confirm",
+      "reader": "Control.confirm",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 584,
+          "end_line": 585,
+          "excerpt_sha256": "48bf85b9426f66ac53f556c66726e3e62b53003243fa7c596d998d15299a3cd7",
+          "first_contains": "const proposalMatch=path.match",
+          "last_contains": "if(proposalMatch&&method"
+        },
+        {
+          "source_id": "control",
+          "start_line": 244,
+          "end_line": 262,
+          "excerpt_sha256": "a2dd7c4c9d0d8785ccf7d08465b7fa63985a4edb8219f1014f2365c26651b104",
+          "first_contains": "  confirm(id,hash,actor=HUMAN,review){",
+          "last_contains": "  cancel(id,actor=HUMAN)"
+        }
+      ],
+      "input_fields": [
+        "digest",
+        "runtimeId",
+        "actualRevision",
+        "accountId"
+      ],
+      "fields": [
+        "proposal.status",
+        "proposal.expiresAt",
+        "proposal.deliveredAt",
+        "proposal.completedAt",
+        "proposal.reason",
+        "bot.actualRevision",
+        "bot.actual"
+      ],
+      "caveat": "Lokale autorisierte Bestätigung; zuerst pending, nicht angewandt. HTTP 200 kann auch bestehendes pending/applied zurückgeben; nur gebundenen Quittungs-/Readbackzustand auswerten. Die Aktion ist hier nicht freigegeben/ausgeführt."
+    },
+    {
+      "id": "proposal_cancel",
+      "scope": "local_original_not_final_website",
+      "method": "POST",
+      "route": "/api/hub/proposals/{proposalId}/cancel",
+      "reader": "Control.cancel",
+      "anchors": [
+        {
+          "source_id": "server",
+          "start_line": 585,
+          "end_line": 585,
+          "excerpt_sha256": "3c34889765350e76684eae757b99d6f17dcbe8c36b4ec2eff0817a5651f82396",
+          "first_contains": "if(proposalMatch&&method",
+          "last_contains": "if(proposalMatch&&method"
+        },
+        {
+          "source_id": "control",
+          "start_line": 262,
+          "end_line": 262,
+          "excerpt_sha256": "852cd062ffb037dee135c686fb70b5e693a03faf13143739bfdfb45ad2701a5e",
+          "first_contains": "  cancel(id,actor=HUMAN)",
+          "last_contains": "  cancel(id,actor=HUMAN)"
+        }
+      ],
+      "fields": [
+        "proposal.status",
+        "proposal.reason"
+      ],
+      "caveat": "Nur gespeicherter proposed-Vorschlag; pending oder bereits versandte Änderung lässt sich nicht als unverändert verwerfen. Lokaler ungesendeter Entwurf ist davon getrennt."
+    }
+  ],
+  "components": [
+    {
+      "binding_id": "bot_state",
+      "screen_id": "overview",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "hub_bot",
+      "field_paths": [
+        "bot.status",
+        "bot.runtimeBlocked",
+        "bot.releaseApproved",
+        "bot.controlBlocker"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "active_approach",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S14/S19/S21: stabiler Ansatz-Lesevertrag fehlt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "market_count",
+      "screen_id": "overview",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "observer",
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S07/S09/S21: Marktuniversum und aggregierter Reader offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "position_count",
+      "screen_id": "overview",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.coverage.positionCount",
+        "coverage.positionsComplete",
+        "fresh",
+        "reason"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "job_count",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S17/S21: Forschungsjobregister noch nicht umgesetzt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "market_chart",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S07/S09/S21: finaler Markt-/Chartreader fehlt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "observed_setup",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S09/S14/S15/S21: geprüfte Setup-Projektion fehlt; kein Orderstatus.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "setup_details",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S31/S32: Detailoberfläche nicht implementiert.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "recent_decisions",
+      "screen_id": "overview",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "journal_projection",
+      "field_paths": [
+        "status.report.decisionReasons"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S09/S14/S21: Der vorhandene Journal-GET liefert Statusaggregate und aktuelle Projektionen, keine vollständige chronologische Strategieentscheidungsliste. Rohjournalarchive nicht als fertige UI-Timeline ausgeben.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "positions_preview",
+      "screen_id": "overview",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.positions[].id",
+        "observation.positions[].entry",
+        "observation.positions[].net",
+        "observedAt"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "research_preview",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S17/S21: Jobprogress und Totals offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "equity",
+      "screen_id": "overview",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.account.equity",
+        "observation.account.currency",
+        "observedAt"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S05/S21: konsolidierte Kontoprojektion; globale snapshots werden nicht automatisch aus Journal gefüllt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "free_margin",
+      "screen_id": "overview",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "observer",
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S05/S21: Separater gebundener Kontoreader erforderlich. Observer liefert equity/balance, aber weder freeMargin noch usedMargin; Remoteprojektion liefert diese Werte ebenfalls nicht.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "open_pnl",
+      "screen_id": "overview",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.positions[].net",
+        "coverage.positionsComplete",
+        "observation.account.currency"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S05/S21: konsolidierte Kontoprojektion; globale snapshots werden nicht automatisch aus Journal gefüllt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "market_timeframes",
+      "screen_id": "observation",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S09/S21: finaler Multi-Timeframe-Reader offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "data_freshness",
+      "screen_id": "observation",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "observer",
+      "field_paths": [
+        "fresh",
+        "status",
+        "reason",
+        "observedAt",
+        "receivedAt"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "activity_counts",
+      "screen_id": "observation",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "journal_projection",
+      "field_paths": [
+        "status.report.decisionReasons"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S09/S21: Aggregationsdefinition und Reader fehlen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "inspection_history",
+      "screen_id": "observation",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "journal_projection",
+      "field_paths": [
+        "status.report.decisionReasons",
+        "streams[].cursor",
+        "streams[].highWater"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S09/S21: Zeitlich geordnete Einzelprüfungen mit Markt/Zeitebene fehlen im gelesenen Projektionsvertrag; decisionReasons sind gruppierte Zähler.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "market_selection",
+      "screen_id": "observation",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S31/S33: UI noch nicht implementiert.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "small_chart",
+      "screen_id": "observation",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S07/S09/S21: finaler Chartreader offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "jobs",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S17/S21: Jobregister/Progress-API fehlt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "trial_context",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S07/S10/S16: Manifest-/Protokollbindung noch nicht umgesetzt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "comparison",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S16/S18/S21: Vergleichsdienst und Bewertung offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "research_result",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S05/S10/S16: Metrikdefinitionen und geprüfte Ergebnisquelle fehlen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "new_trial",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S17/S22: authentisierte Job-API noch nicht implementiert.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "cancel_trial",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S17/S22: Cancel-/Resumevertrag fehlt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "knowledge",
+      "screen_id": "research",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S13/S21: Bibliothekslesemodell offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "positions_inventory",
+      "screen_id": "positions",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.positions[].id",
+        "observation.positions[].units",
+        "observation.positions[].stop",
+        "observation.positions[].target"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "position_totals",
+      "screen_id": "positions",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.coverage.positionCount",
+        "observation.positions[].net",
+        "coverage.positionsComplete"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S05/S21: vollständige gemeinsame Kontoprojektion offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "position_chart",
+      "screen_id": "positions",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "observer",
+      "field_paths": [
+        "observation.symbols[].bid",
+        "observation.symbols[].ask",
+        "observation.symbols[].quoteAt"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S07/S09/S21: endgültige Chartquelle offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "original_plan",
+      "screen_id": "positions",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "reconciliation",
+      "field_paths": [
+        "positions[].originalPlan.state",
+        "positions[].originalPlan.planHash",
+        "positions[].originalPlan.values"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "current_protection",
+      "screen_id": "positions",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "reconciliation",
+      "field_paths": [
+        "positions[].observer.values",
+        "positions[].engine.values",
+        "positions[].exitHealth.state",
+        "nativeProtectionConfirmed"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S08/S23: unabhängiger nativer Readback nicht nachgewiesen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "position_history",
+      "screen_id": "positions",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "journal_projection",
+      "field_paths": [
+        "positions[].report.positionId",
+        "positions[].sourceTime",
+        "positions[].sequence",
+        "positions[].streamId"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S06/S21: Der vorhandene Projektionsread ist keine vollständige Chronik je Position. Scopegebundene Ereignis-/Archivzuordnung und Timeline-Lesepfad bleiben offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "open_plan",
+      "screen_id": "positions",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S32: Detailfläche noch nicht implementiert.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "operating_mode",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "hub_bot",
+      "field_paths": [
+        "bot.environment",
+        "bot.runtimeBlocked",
+        "bot.releaseApproved"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S23/S32: UI-Adapteranbindung und konkreter freigegebener Operationsumfang offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "entry_policy",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "hub_bot",
+      "field_paths": [
+        "bot.runtimeBlocked",
+        "bot.controlBlocker"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S23: Feldkonvertierung/Native-ACK vor Aktivierung prüfen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "protection_policy",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "reconciliation",
+      "field_paths": [
+        "nativeProtectionConfirmed",
+        "positions[].exitHealth.state"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S08/S23: wirklicher Schutzzustand/Operationsfreigabe fehlt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "limits",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "hub_bot",
+      "field_paths": [
+        "bot.desired",
+        "bot.actual"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S11/S23: vollständige alte/neue Risikofeldzuordnung offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "connection",
+      "screen_id": "settings",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "hub_bot",
+      "field_paths": [
+        "bot.status",
+        "bot.lastSeen",
+        "bot.runtimeId",
+        "bot.accountId",
+        "bot.environment"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "change_diff",
+      "screen_id": "settings",
+      "mapping_level": "existing_source_fields",
+      "contract_id": "hub_bot",
+      "field_paths": [
+        "bot.revision",
+        "bot.desired",
+        "bot.actualRevision",
+        "bot.actual",
+        "bot.proposals"
+      ],
+      "target_contract_open": false,
+      "missing_contract": null,
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "check_changes",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "proposal_create",
+      "field_paths": [
+        "proposal.id",
+        "proposal.status",
+        "proposal.digest"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S21/S23/S32: endgültiger UI-Aufruf fehlt.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "confirm_changes",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "proposal_confirm",
+      "field_paths": [
+        "proposal.status",
+        "proposal.expiresAt",
+        "bot.actualRevision"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S23: konkrete Bestätigungsintegration noch offen.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "discard_draft",
+      "screen_id": "settings",
+      "mapping_level": "partial_source_target_open",
+      "contract_id": "proposal_cancel",
+      "field_paths": [
+        "proposal.status"
+      ],
+      "target_contract_open": true,
+      "missing_contract": "S32: UI-Entwurfsverwaltung noch nicht implementiert.",
+      "production_ui_connected": false
+    },
+    {
+      "binding_id": "progress_detail",
+      "screen_id": "overview",
+      "mapping_level": "target_contract_open",
+      "contract_id": null,
+      "field_paths": [],
+      "target_contract_open": true,
+      "missing_contract": "S21: sichere Leseprojektion von Planstatus offen.",
+      "production_ui_connected": false
+    }
+  ],
+  "rules": [
+    {
+      "id": "quality_axes",
+      "rule": "Frische, Vollständigkeit, Identität und Berechtigung unabhängig darstellen; fresh=true kann gleichzeitig partial/incomplete sein.",
+      "anchors": [
+        {
+          "source_id": "observation",
+          "start_line": 188,
+          "end_line": 192,
+          "excerpt_sha256": "0b3fe78cdb63b460a214dd714ea30e84025f04703a14ae4c1d5a71698bb39f58",
+          "first_contains": "    const partial=!!m",
+          "last_contains": "      brokerIndependentlyVerified:false"
+        },
+        {
+          "source_id": "reconciliation",
+          "start_line": 151,
+          "end_line": 151,
+          "excerpt_sha256": "422198a50b6a61a4bcd31ae4fab40cc6f181dbc426a1b836297a9d2a6e4c417b",
+          "first_contains": "    fresh:same&&observer.fresh&&engine.fresh,status:",
+          "last_contains": "    fresh:same&&observer.fresh&&engine.fresh,status:"
+        }
+      ]
+    },
+    {
+      "id": "row_freshness",
+      "rule": "Jüngster Empfang oder Status erfrischt keine ältere einzelne Positionszeile; sourceTime/fresh pro Zeile prüfen.",
+      "anchors": [
+        {
+          "source_id": "journal",
+          "start_line": 272,
+          "end_line": 272,
+          "excerpt_sha256": "05b6091cf134f41013c4c47af022d6beba24d322db09907f1ec4c8bc1708be3d",
+          "first_contains": "    const perReport=r=>",
+          "last_contains": "    const perReport=r=>"
+        },
+        {
+          "source_id": "reconciliation",
+          "start_line": 104,
+          "end_line": 104,
+          "excerpt_sha256": "36bc0748d0d48c18d0ffa02669ac993b00656055fd5cc7830dece85a174b9285",
+          "first_contains": "  if(!recent(sourceAge))reasons.push",
+          "last_contains": "  if(!recent(sourceAge))reasons.push"
+        }
+      ]
+    },
+    {
+      "id": "reported_inventory",
+      "rule": "Geladene Zeilen, gemeldeter Gesamtbestand und historische Berichte sind drei verschiedene Mengen. Eine leere Projektion bestätigt keine geschlossene Position.",
+      "anchors": [
+        {
+          "source_id": "reconciliation",
+          "start_line": 153,
+          "end_line": 153,
+          "excerpt_sha256": "7b8f151019a84b8959cafc6e644b5ec95226117a6b6e7aa5306e1b8475a2124e",
+          "first_contains": "    coverage:{",
+          "last_contains": "    coverage:{"
+        },
+        {
+          "source_id": "remote-producer",
+          "start_line": 14,
+          "end_line": 14,
+          "excerpt_sha256": "e06402bbc2ecc9c11702f4b3cb924fe98fcaf32e976b8b1461fd9e09efebc804",
+          "first_contains": "counts:{positions:o.coverage.positionCount",
+          "last_contains": "counts:{positions:o.coverage.positionCount"
+        },
+        {
+          "source_id": "remote-producer",
+          "start_line": 19,
+          "end_line": 19,
+          "excerpt_sha256": "cdbf76774a6b9c63e99df01ac78848f42d17833a3fa5294eb47af27f413f8328",
+          "first_contains": "counts:{positions:v.counts.positions",
+          "last_contains": "counts:{positions:v.counts.positions"
+        }
+      ]
+    },
+    {
+      "id": "report_not_protection",
+      "rule": "Originalplan und übereinstimmende Meldungen sind kein nativer Schutzbeleg. nativeProtectionConfirmed/flatConfirmed/brokerIndependentlyVerified bleiben false.",
+      "anchors": [
+        {
+          "source_id": "reconciliation",
+          "start_line": 150,
+          "end_line": 150,
+          "excerpt_sha256": "753cf50bf4803f567167c4eea4ba050c71453eb0a85bd60358cb94b53d22cfca",
+          "first_contains": "  const result={schemaVersion",
+          "last_contains": "  const result={schemaVersion"
+        },
+        {
+          "source_id": "reconciliation",
+          "start_line": 117,
+          "end_line": 117,
+          "excerpt_sha256": "e85eb1194f2ffd76e7a607271b99dcd2a8e13aabe2bbec6016ed50ab1c97a6ea",
+          "first_contains": "    source:'paired_engine_original_plan'",
+          "last_contains": "    source:'paired_engine_original_plan'"
+        }
+      ]
+    },
+    {
+      "id": "account_selection",
+      "rule": "Profilselektion, Broker, Konto, Umgebung und Währung explizit binden; keine Zusammenführung nur nach Symbol/ID-Ziffern.",
+      "anchors": [
+        {
+          "source_id": "reconciliation",
+          "start_line": 17,
+          "end_line": 17,
+          "excerpt_sha256": "2ee97dbdf52e06af81acbf28dd72b5f82c40816c28d209dd03461423751d96fe",
+          "first_contains": "const sameAccount=",
+          "last_contains": "const sameAccount="
+        },
+        {
+          "source_id": "comparison-reader",
+          "start_line": 9,
+          "end_line": 9,
+          "excerpt_sha256": "e4c537190e33e06344991f89334a9e9ffe275773ba669ab01c0f58082cb03b44",
+          "first_contains": " if([engineBotId,observerBotId]",
+          "last_contains": " if([engineBotId,observerBotId]"
+        },
+        {
+          "source_id": "reconciliation",
+          "start_line": 157,
+          "end_line": 157,
+          "excerpt_sha256": "e87997c3582a0f933e68c5c3bd0580685ff59720177c6386020d32f52ba65a51",
+          "first_contains": "  if(!same)return result;",
+          "last_contains": "  if(!same)return result;"
+        }
+      ]
+    },
+    {
+      "id": "no_free_margin_derivation",
+      "rule": "equity/balance sind keine Quelle für freie Margin; Konto-Observer und Remoteprojektion enthalten dieses Feld nicht.",
+      "anchors": [
+        {
+          "source_id": "observation",
+          "start_line": 48,
+          "end_line": 48,
+          "excerpt_sha256": "87d42cefdac9bef5bac07d77dae8b1c98f78e9427ae6c98e69f982f14db682d5",
+          "first_contains": "  exact(v.account",
+          "last_contains": "  exact(v.account"
+        },
+        {
+          "source_id": "view-projection",
+          "start_line": 24,
+          "end_line": 24,
+          "excerpt_sha256": "5c16b32cf49042564088039de23fc812bd05fa55fd3f2bbc6d4c36638425feca",
+          "first_contains": " exact(v,['schemaVersion'",
+          "last_contains": " exact(v,['schemaVersion'"
+        }
+      ]
+    },
+    {
+      "id": "projection_not_timeline",
+      "rule": "Journal-GET ist eine begrenzte Projektionsansicht, nicht die vollständige Historie. Detailtimeline bleibt offener Vertrag.",
+      "anchors": [
+        {
+          "source_id": "journal",
+          "start_line": 264,
+          "end_line": 264,
+          "excerpt_sha256": "21947f4b0871b2453e77ff5427bc61c9f1f02ed536cb47497b91aadf76805480",
+          "first_contains": "    const rows=(type,",
+          "last_contains": "    const rows=(type,"
+        },
+        {
+          "source_id": "journal",
+          "start_line": 279,
+          "end_line": 279,
+          "excerpt_sha256": "4d3c88dc2cfe2bc57414859fdc815ddc9b3649b380501b56706e24008086d842",
+          "first_contains": "      plans,orders,positions,status,counts,limit,truncated:",
+          "last_contains": "      plans,orders,positions,status,counts,limit,truncated:"
+        }
+      ]
+    },
+    {
+      "id": "proposal_not_application",
+      "rule": "Lokaler Entwurf, persistiertes proposed, pending/ausgeliefert und applied müssen unterscheidbar sein. Prüfen darf nicht verdeckt einen Vorschlag speichern; HTTP 200 ist kein Apply-Nachweis.",
+      "anchors": [
+        {
+          "source_id": "control",
+          "start_line": 220,
+          "end_line": 244,
+          "excerpt_sha256": "1e87f65129617effd8154b8d3402fa3b8826440432558958c24c5092050fd91d",
+          "first_contains": "  #propose(botId,input,actor,historySource=null){",
+          "last_contains": "  confirm(id,hash,actor=HUMAN,review){"
+        },
+        {
+          "source_id": "control",
+          "start_line": 244,
+          "end_line": 262,
+          "excerpt_sha256": "a2dd7c4c9d0d8785ccf7d08465b7fa63985a4edb8219f1014f2365c26651b104",
+          "first_contains": "  confirm(id,hash,actor=HUMAN,review){",
+          "last_contains": "  cancel(id,actor=HUMAN)"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "components": 44,
+    "contracts": 9,
+    "rules": 8
+  },
+  "diagnostic_source_examples": "source-examples.json",
+  "product_ui_verified": false,
+  "formal_completion": false
+}

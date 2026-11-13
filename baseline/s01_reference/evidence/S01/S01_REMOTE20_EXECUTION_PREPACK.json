@@ -1,0 +1,106 @@
+{
+  "schema": "extremelab-s01-remote20-execution/v1",
+  "fresh_output_dir": "/mnt/data/extremelab_s01_next/checkpoints/consolidated_prepack",
+  "uid": 0,
+  "tests": {
+    "production_entry": {
+      "tests": 14,
+      "pass": 14,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "original_remote20": {
+      "tests": 18,
+      "pass": 18,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0
+    },
+    "inventory": {
+      "tests": 20,
+      "pass": 20,
+      "fail": 0,
+      "skipped": 0
+    }
+  },
+  "mutations": [
+    {
+      "name": "owner_session",
+      "exit": 1,
+      "failing_test_methods": [
+        "production entry uses original owner-session authentication and exact origin before pairing"
+      ]
+    },
+    {
+      "name": "registry_etag",
+      "exit": 1,
+      "failing_test_methods": [
+        "pair registry commit followed by cache failure is an ambiguous failure, not a rollback; explicit revoke recovers",
+        "revoke registry commit followed by cache failure leaves cached auth until explicit refresh",
+        "failed revoke cache update cannot extend cached authorization past original five-minute bound",
+        "actual SDK adapter supplies prior ETag and rejects an intervening write without overwriting"
+      ]
+    },
+    {
+      "name": "persisted_slot",
+      "exit": 1,
+      "failing_test_methods": [
+        "ambiguous snapshot cache commit does not fake producer ACK or retry the same persisted slot"
+      ]
+    }
+  ],
+  "package_tamper": [
+    {
+      "kind": "changed_bytes",
+      "exit": 2
+    },
+    {
+      "kind": "extra_file",
+      "exit": 2
+    },
+    {
+      "kind": "symlink",
+      "exit": 2
+    }
+  ],
+  "network": "seccomp denied connect/sendto/sendmsg/sendmmsg in test child processes; not a general sandbox",
+  "live_provider": false,
+  "broker_actions": false,
+  "source_modified": false,
+  "manifest_before": {
+    "verified_files": 228,
+    "formal_status_unchanged": true,
+    "s01_private_work": "active",
+    "independent_review": false
+  },
+  "network_probe": "EPERM_CONFIRMED",
+  "runtime": {
+    "node": "v24.11.1",
+    "node_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "linux"
+  },
+  "source_binding": {
+    "archive_selected_members": 64,
+    "production_correspondences": 10,
+    "unchanged_provider_sources": 36,
+    "canonical_plan_and_gate_unchanged": true
+  },
+  "manifest_after": {
+    "verified_files": 228,
+    "formal_status_unchanged": true,
+    "s01_private_work": "active",
+    "independent_review": false
+  },
+  "unique_test_methods": 52,
+  "status": "OFFLINE_ORIGINAL_CONSUMER_REPLAY_PASSED_WITH_DOCUMENTED_NONATOMIC_BOUNDARIES",
+  "not_performed": [
+    "Real Vercel SDK/cloud cache/blob semantics",
+    "real HTTP network or browser rendering",
+    "complete website pipeline",
+    "cTrader/native bot build or broker connection",
+    "official S01 acceptance"
+  ],
+  "scope_note": "Prepackaging run only, not the final ZIP replay. 52 different test methods. Extra browser startup/navigation attempts below are not successful tests."
+}

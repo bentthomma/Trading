@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-11-13T12:53:49.739625+00:00",
+  "source": "GitHub connector GET only; branch and exact tree responses in current conversation",
+  "branch": "main",
+  "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+  "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+  "protected_flag": false,
+  "entries": [
+    "README.md"
+  ],
+  "truncated": false,
+  "no_write_actions": true,
+  "not_checked": [
+    "all PRs",
+    "all workflows",
+    "separate branch-protection endpoint",
+    "rulesets"
+  ]
+}

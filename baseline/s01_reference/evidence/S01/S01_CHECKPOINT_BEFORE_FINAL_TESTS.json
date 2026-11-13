@@ -1,0 +1,14 @@
+{
+  "work_id": "S01-ENDPOINTRECOVERY-20261113",
+  "timestamp": "2026-11-12T23:44:43.047152+00:00",
+  "baseline_sha256": "1d7f7fb0bcce96cabf6c913fc12b77401a3ec1fc3789245672d58b0b4f40056b",
+  "new_source_hashes": {
+    "src/api/account-chart.js": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
+    "src/api/live.js": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+    "src/api/probe.js": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
+    "src/api/socket.js": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
+    "src/patch_ui.mjs": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1"
+  },
+  "new_originals_complete": true,
+  "checks_not_yet_final": "See closure report; do not treat checkpoint as acceptance"
+}

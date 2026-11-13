@@ -1,0 +1,55 @@
+{
+  "scope": "Space/Pages and linked originals: source search, no integration",
+  "captured_utc": "2026-11-13T13:52:46.823557+00:00",
+  "pages": [
+    {
+      "id": "page_3f242358b75c819195af6c24e79ce5ec",
+      "title": "ExtremeLab Projektplan und Entwicklungsstand",
+      "read_complete": true
+    },
+    {
+      "id": "page_337674debf4c8191a3d893ec1583e5a3",
+      "title": "ExtremeLab Entwurf der adaptiven Gewinnsicherung",
+      "read_complete": true,
+      "saved_exact_code_blocks": 2
+    }
+  ],
+  "engine19_deployment": {
+    "id": "dpl_DPoekz6ga9QJ5ebcWiRSLqFLKpRX",
+    "observed_state": "READY",
+    "source_files": [
+      {
+        "path": "src/build.mjs",
+        "uid": "45bd84f8ea13776415be0c28d23ac98f6f8630fd"
+      },
+      {
+        "path": "src/package.json",
+        "uid": "dde0627653453cb844c5c0dbe84f85fe5041d8b9"
+      },
+      {
+        "path": "src/vercel.json",
+        "uid": "a8f6e29402e6926297da41d7397aea189afffd12"
+      }
+    ],
+    "build_source_response_truncated": true,
+    "artifact_bytes_retrieved": false,
+    "local_download_blocker": "DNS name resolution failed",
+    "expected_historical_package_sha256": "57d1f113b0274b54f8643a6c472aeaadd8700efce305b1fabf84b91f17492a2f"
+  },
+  "site_plugin": {
+    "id": "plugin_asdk_app_sites_86bad50fce00819198d207f790f61228",
+    "release_id": "PluginRelease_bb7d338fc284819183303c70a5596f4a",
+    "listed_files": [
+      ".app.json",
+      ".codex-plugin/plugin.json"
+    ],
+    "full_application_source_in_plugin": false
+  },
+  "source_count_unchanged": {
+    "complete": 38,
+    "expected": 59,
+    "not_complete": 21
+  },
+  "new_behavior_tests": 0,
+  "external_mutations": []
+}

@@ -1,0 +1,31 @@
+{
+  "pages": 91,
+  "all_pages_rendered": true,
+  "contact_sheets": [
+    "evidence/pdf-qa/contact-1.png",
+    "evidence/pdf-qa/contact-2.png",
+    "evidence/pdf-qa/contact-3.png",
+    "evidence/pdf-qa/contact-4.png"
+  ],
+  "detailed_pages": [
+    1,
+    2,
+    7,
+    15,
+    18,
+    19,
+    76,
+    90
+  ],
+  "visual_review": {
+    "status": "PASSED",
+    "reviewed_contact_sheets": 4,
+    "detailed_pages_visually_reviewed": [
+      7,
+      15,
+      90
+    ],
+    "findings": "Keine überlappenden oder abgeschnittenen Inhalte in den geprüften Ansichten. Arbeitskarten beginnen jeweils auf einer neuen Seite; dadurch entstehen bewusst freie Seitenbereiche."
+  },
+  "out_of_page_text_findings": 0
+}

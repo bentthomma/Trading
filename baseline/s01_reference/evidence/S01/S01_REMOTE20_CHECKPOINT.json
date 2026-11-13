@@ -1,0 +1,8 @@
+{
+  "phase": "before_final_executions",
+  "utc": "2026-11-13T08:32:53.137052+00:00",
+  "input_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+  "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "gate_sha256": "2936921abd08be8e03ef560565704db259248c2b12ae40c57503383d21dbe8f6",
+  "already_executed": "14 new methods passed in first in-place test run before producer-instance restart assertion was added; 18 original tests passed separately. Final complete result recorded externally."
+}

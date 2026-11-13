@@ -1,0 +1,19 @@
+{
+  "checked_date": "2026-11-13",
+  "historical_data_not_refreshed": true,
+  "sources": [
+    {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html",
+      "supports": "Provider describes US FIZ to CIZ change and dividend timing; not proof of our old bytes."
+    },
+    {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/f-f_3developed.html",
+      "supports": "Regional return and RF definitions in USD; not evidence that archived RF columns must be numerically identical."
+    },
+    {
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/f-f_5_factors_2x3.html",
+      "supports": "US factor construction and RF provider change; not a causal explanation of found differences."
+    }
+  ],
+  "licence_granted_by_this_audit": false
+}

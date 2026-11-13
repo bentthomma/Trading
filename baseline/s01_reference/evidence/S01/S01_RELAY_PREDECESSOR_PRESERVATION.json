@@ -1,0 +1,19 @@
+{
+  "predecessor_manifest_files": 277,
+  "preserved_at_same_path": 268,
+  "restored_from_checkpoint": [
+    "README.md",
+    "RUN_S01_REPORT.md",
+    "UEBERGABE.md",
+    "evidence/S01/S01_CURRENT_HANDOFF.md",
+    "evidence/S01/baseline-lock.json",
+    "evidence/S01/donor-map.json",
+    "evidence/S01/path-map.json",
+    "evidence/S01/reproduction-report.json",
+    "evidence/S01/version-crosswalk.md"
+  ],
+  "predecessor_manifest_bytes_preserved": true,
+  "original_production_inputs_unchanged": 38,
+  "prior_live_encoding_proposal_unchanged": true,
+  "canonical_plan_and_gate_unchanged": true
+}

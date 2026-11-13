@@ -1,0 +1,57 @@
+{
+  "consistent": false,
+  "errors": [
+    {
+      "code": "CURRENT_COUNT_MISMATCH",
+      "field": "website_full_build.source_files_recovered_current",
+      "observed": 36,
+      "expected": 38
+    },
+    {
+      "code": "CURRENT_COUNT_MISMATCH",
+      "field": "website_full_build.source_files_unavailable_current",
+      "observed": 23,
+      "expected": 21
+    },
+    {
+      "code": "CURRENT_REASON_STALE",
+      "field": "website_full_build.reason",
+      "observed": "31/59 source files recovered. Missing live-overlay.b64 prevents original first stage completing; skin.0-8 and build-bot*.mjs/build-ui.mjs remain incomplete.",
+      "expected": 38
+    },
+    {
+      "code": "CURRENT_GAP_STALE",
+      "field": "remaining_gaps",
+      "observed": "Full 59-file production website input not recovered: 36 byte-identical, 23 unmaterialized; complete build blocked by missing inputs",
+      "expected": [
+        38,
+        21
+      ]
+    },
+    {
+      "code": "CURRENT_PATH_GAP_STALE",
+      "field": "unresolved",
+      "observed": "23 of 59 original production website source inputs remain unavailable; complete eight-stage build blocked",
+      "expected": 21
+    },
+    {
+      "code": "CURRENT_DONOR_GAP_STALE",
+      "field": "boundary",
+      "observed": "23 source inputs missing; no production reuse or deployment",
+      "expected": 21
+    },
+    {
+      "code": "CURRENT_DONOR_PROOF_STALE",
+      "field": "current_proof",
+      "observed": "36/59 complete sources; original UI patch reproduces archived app.js in isolation; overlay, skin and full pipeline remain unavailable.",
+      "expected": 38
+    },
+    {
+      "code": "CURRENT_CROSSWALK_STALE",
+      "field": "opening current table",
+      "observed": "36 von 59 Eingabedateien",
+      "expected": 38
+    }
+  ],
+  "formal_acceptance": false
+}

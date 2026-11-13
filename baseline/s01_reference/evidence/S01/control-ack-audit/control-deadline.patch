@@ -1,0 +1,29 @@
+--- a/core/control.mjs
++++ b/core/control.mjs
+@@ -46,7 +46,7 @@
+   proposal(id){const p=this.db.prepare('SELECT * FROM proposals WHERE id=?').get(id);if(!p)fail('PROPOSAL_NOT_FOUND','Änderung wurde nicht gefunden.',404);return this.proposalShape(p);}
+   proposalShape(p){return {id:p.id,botId:p.bot_id,revision:p.revision,values:JSON.parse(p.values_json),digest:p.digest,status:p.status,actorId:p.actor_id,baseRevision:p.base_revision,runtimeId:p.runtime_id,scope:'new-trades',createdAt:iso(p.created_at),confirmedAt:iso(p.confirmed_at),expiresAt:iso(p.expires_at),deliveredAt:iso(p.delivered_at),completedAt:iso(p.completed_at),reason:p.reason,historySource:this.store.get('proposalHistorySource:'+p.id)};}
+   expire(){
+-    const expired=this.db.prepare("SELECT id,bot_id FROM proposals WHERE status='pending' AND expires_at<?").all(this.now());
++    const expired=this.db.prepare("SELECT id,bot_id FROM proposals WHERE status='pending' AND expires_at<=?").all(this.now());
+     for(const p of expired){this.db.prepare("UPDATE proposals SET status='timed_out',reason='ACK_TIMEOUT' WHERE id=? AND status='pending'").run(p.id);this.store.event('configuration.unconfirmed',{proposalId:p.id,reason:'ACK_TIMEOUT'},'system',p.bot_id);}
+   }
+   bot(id){this.expire();return this.#botSnapshot(this.rawBot(id));}
+@@ -355,12 +355,15 @@
+       this.observation.committedHeartbeat(input,actor,b);
+     });
+     let command=null;const policy=this.store.get('policy'),granted=this.runtimeGranted(b.id,runtimeId,accountId,input.environment,policy);
+-    const next=this.db.prepare("SELECT * FROM proposals WHERE bot_id=? AND runtime_id=? AND status='pending' AND expires_at>=? ORDER BY confirmed_at LIMIT 1").get(b.id,runtimeId,this.now());
++    // Bind deadline selection and response metadata to one decision instant.
++    // The native callback still checks its current clock before applying.
++    const responseTime=this.now();
++    const next=this.db.prepare("SELECT * FROM proposals WHERE bot_id=? AND runtime_id=? AND status='pending' AND expires_at>? ORDER BY confirmed_at LIMIT 1").get(b.id,runtimeId,responseTime);
+     if(next&&!policy.blocked&&!fault&&granted){
+       if(!next.delivered_at){this.db.prepare('UPDATE proposals SET delivered_at=? WHERE id=?').run(this.now(),next.id);this.store.event('configuration.dispatched',{proposalId:next.id,revision:next.revision},'system',b.id);}
+       command={id:next.id,revision:next.revision,baseRevision:next.base_revision,digest:next.digest,values:JSON.parse(next.values_json),scope:'new-trades',runtimeId,expiresAt:iso(next.expires_at)};
+     }
+-    return {serverTime:iso(this.now()),blocked:m.id===OBSERVER_ID||policy.blocked||!granted||!!fault,command:m.id===OBSERVER_ID?null:command};
++    return {serverTime:iso(responseTime),blocked:m.id===OBSERVER_ID||policy.blocked||!granted||!!fault,command:m.id===OBSERVER_ID?null:command};
+   }
+   ack(input,actor){
+     this.assertBridge(actor,input.botId);const buildBlocker=buildEntryBlocker(this.store,input.botId);if(buildBlocker)fail(buildBlocker,'Die alte Parametervollmacht endet am Buildübergang. Keine neue Steuerfreigabe.',409);if(JSON.parse(this.rawBot(input.botId).manifest).id===OBSERVER_ID)fail('OBSERVER_READ_ONLY','Der Beobachter übernimmt keine Steueraufträge.',403);this.expire();const b=this.rawBot(input.botId),p=this.proposal(input.commandId);

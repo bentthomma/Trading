@@ -1,0 +1,97 @@
+{
+  "schema_version": "extremelab.s05.order-map/1.0.0",
+  "status": "unactivated_contract_and_original_source_map",
+  "source": "archived core/planning/order-lifecycle.mjs",
+  "product_writer_implemented": false,
+  "native_adapter_executed": false,
+  "axes": {
+    "transport": [
+      "draft",
+      "validated",
+      "reserved",
+      "durable",
+      "dispatching",
+      "dispatched",
+      "outcome_unknown",
+      "released_before_send"
+    ],
+    "broker": [
+      "not_observed",
+      "working",
+      "partially_filled",
+      "filled",
+      "remainder_cancelled",
+      "remainder_expired",
+      "rejected_no_fill"
+    ],
+    "control": [
+      "none",
+      "cancel_requested",
+      "amend_requested",
+      "result_unknown",
+      "confirmed"
+    ]
+  },
+  "rules": [
+    {
+      "id": "intent-not-position",
+      "statement": "Only linked execution evidence adds a filled position; validation/ACK alone does not."
+    },
+    {
+      "id": "cancel-not-close",
+      "statement": "Cancel command, native remainder termination and actual executed position closure are distinct."
+    },
+    {
+      "id": "unknown-send",
+      "statement": "Keep operation identity and obligations until actual reconciliation; no blind send-again."
+    },
+    {
+      "id": "duplicates",
+      "statement": "Dedupe transport event IDs and economic deal IDs separately; conflicts remain blocking incidents."
+    },
+    {
+      "id": "late-fills",
+      "statement": "Cancellation arrival may precede the final fill record; retain missing execution quantities."
+    },
+    {
+      "id": "unknown-fee",
+      "statement": "Unknown is not zero. No net account result until fee/currency/FX evidence is sufficient."
+    }
+  ],
+  "integration_requirements": {
+    "charge_identity": "Account+source+economic charge identity and fee kind must distinguish costs already represented by Deal.commission from new Cashflow charges. No unlinked duplicate debit.",
+    "fee_reordering": "Existing reducer consumes the receipt for DEAL_COST_CONFIRMED before its Deal exists. Retain unresolved ORIGINAL payload durably and reconcile it after exact deal identity; design/migration still required.",
+    "account_dimensions": "Do not drop S02 currency/model/provider identity when mapping legacy broker/id/environment.",
+    "time_precision": "S02 uses six fractional UTC digits, legacy reducer exactly three; do not silently truncate execution time. A versioned projection must retain original time.",
+    "quantity": "pieces/units/lots and multiplier must be explicit; 36 MPR1 pieces are not an arbitrary broker volume.",
+    "cash_and_fx": "The archived reducer is a quantity/cost projection, not an account cash writer. Versioned FX, partial realization allocation, cashflows and net trade definitions remain unimplemented here.",
+    "authority": "Valid schemas, cash arithmetic and state projection do not authorize an order."
+  },
+  "known_gap": {
+    "id": "S05-GAP-01",
+    "name": "fee_before_fill_nonconvergence",
+    "reproduced": true,
+    "fixed": false,
+    "receipt_retry_does_not_enrich": true,
+    "potential_net_cash_impact": "not computed; fee is explicitly unknown, no confirmed loss claim"
+  },
+  "partial_example": {
+    "kind": "new_synthetic_interface_case_not_MPR1_execution_model",
+    "requested": "36",
+    "fills": [
+      "12",
+      "6"
+    ],
+    "cancelled_unfilled": "18",
+    "closed": "3",
+    "open": "15",
+    "fees_CHF": "0.105"
+  },
+  "MPR1_excludes": [
+    "partial_liquidity_fills",
+    "foreign_currency",
+    "short_sales",
+    "overnight_financing",
+    "real_broker_execution"
+  ]
+}

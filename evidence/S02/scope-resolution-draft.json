@@ -1,0 +1,1491 @@
+{
+  "schema": "extremelab-scope-resolution-draft/1",
+  "active": false,
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "source_map": "evidence/S02/source-bindings.json",
+  "reason_not_active": "Native C01 evidence and final S02 acceptance pending; no false resolved flags. Real donor archive members are preserved; future targets are intentionally not asserted to exist.",
+  "constraints": {
+    "S03": "documentation_only",
+    "S21": "data_state_contract_integration_no_CSS_or_layout",
+    "S30_to_S35": "design_gates_unchanged",
+    "broker_and_publication": "separate_explicit_authorization"
+  },
+  "steps": [
+    {
+      "step_id": "S03",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "docs/ui/baseline/**",
+        "docs/ui/navigation/**",
+        "evidence/S03/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "docs/ui/baseline/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/navigation/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S03/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Designimplementierung, keine Tokens im produktiven Theme, keine öffentliche Layout- oder Menüänderung.",
+        "Keine neue Bildgeneration oder Wiederöffnung der bestätigten Desktopauswahl als Voraussetzung dieser Dokumentation.",
+        "Keine technische oder wirtschaftliche Abnahme allein aus den Referenzbildern."
+      ]
+    },
+    {
+      "step_id": "S04",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "adapters/ctrader/observer/**",
+        "apps/hub/ingest/**",
+        "research/diagnostics/**",
+        "tests/observer/**",
+        "evidence/S04/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "adapters/ctrader/observer/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/ingest/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/diagnostics/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/observer/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S04/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "observation",
+        "native-observer",
+        "comparison-reader"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Strategieoptimierung auf unvollständige Kontohistorie.",
+        "Keine automatische Altpositionsübernahme."
+      ]
+    },
+    {
+      "step_id": "S05",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/ledger/**",
+        "core/orders/**",
+        "contracts/ledger/**",
+        "tests/ledger/**",
+        "evidence/S05/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/ledger/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/orders/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/ledger/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/ledger/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S05/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "journal",
+        "store"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine optimierte Signalwahl; keine Broker-Sonderfälle durch generische Lot-Faktoren kaschieren."
+      ]
+    },
+    {
+      "step_id": "S06",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/hub/journal/**",
+        "apps/hub/storage/**",
+        "core/recovery/**",
+        "tests/recovery/**",
+        "evidence/S06/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/hub/journal/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/storage/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/recovery/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/recovery/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S06/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "journal",
+        "native-outbox",
+        "store"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine stillen Datenlöschungen zur Fehlerbehebung.",
+        "Keine Erweiterung von Risiko nach einem Neustart."
+      ]
+    },
+    {
+      "step_id": "S07",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "data/catalog/**",
+        "data/transforms/**",
+        "data/quality/**",
+        "contracts/data/**",
+        "tests/data/**",
+        "evidence/S07/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "data/catalog/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "data/transforms/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "data/quality/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/data/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/data/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S07/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "journal",
+        "observation"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine automatische kostenpflichtige Datenbeschaffung.",
+        "Keine öffentliche Weiterverteilung ungeklärter Datensätze."
+      ]
+    },
+    {
+      "step_id": "S08",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "runtime/**",
+        "adapters/ctrader/host/**",
+        "apps/hub/supervisor/**",
+        "tests/runtime/**",
+        "evidence/S08/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "runtime/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "adapters/ctrader/host/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/supervisor/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/runtime/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S08/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "native-bridge",
+        "capabilities"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine neue Cloudinfrastruktur auf Kosten des Nutzers ohne konkreten Bedarf und Budget.",
+        "Keine Umgehung nativer Netzwerkgrenzen."
+      ]
+    },
+    {
+      "step_id": "S09",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/features/**",
+        "core/timeframes/**",
+        "contracts/features/**",
+        "tests/causality/**",
+        "evidence/S09/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/features/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/timeframes/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/features/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/causality/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S09/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine optimierten Rezeptgewichte; keine automatische Auswahl anhand späterer Gewinne."
+      ]
+    },
+    {
+      "step_id": "S10",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/replay/**",
+        "core/execution-model/**",
+        "adapters/simulation/**",
+        "tests/replay/**",
+        "evidence/S10/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/replay/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/execution-model/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "adapters/simulation/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/replay/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S10/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Leistungsoptimierung vor korrektem Ledger.",
+        "Keine Ergebnisfüllung für unbekannte Ausführung."
+      ]
+    },
+    {
+      "step_id": "S11",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/risk/**",
+        "core/portfolio/**",
+        "contracts/risk/**",
+        "tests/risk/**",
+        "evidence/S11/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/risk/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/portfolio/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/risk/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/risk/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S11/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "schema",
+        "native-contracts"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Renditeziele durch nachträglich erhöhten Hebel erfüllen.",
+        "Keine pauschale Empfehlung eines Risikoprozents für ein echtes Konto."
+      ]
+    },
+    {
+      "step_id": "S12",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/exits/**",
+        "core/sessions/**",
+        "adapters/ctrader/protection/**",
+        "tests/exits/**",
+        "evidence/S12/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/exits/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/sessions/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "adapters/ctrader/protection/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/exits/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S12/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "native-bridge",
+        "schema"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Noch keine Wahl des profitabelsten Exitparameters.",
+        "Keine autonome Verwaltung unbekannter Altpositionen."
+      ]
+    },
+    {
+      "step_id": "S13",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "knowledge/**",
+        "contracts/research/**",
+        "research/hypotheses/**",
+        "tests/knowledge/**",
+        "evidence/S13/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "knowledge/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/research/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/hypotheses/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/knowledge/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S13/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Kein automatischer Wissen-zu-Gewinn-Compiler.",
+        "Keine vollständige Umsetzung aller Lehrblätter vor dem ersten funktionierenden Durchlauf."
+      ]
+    },
+    {
+      "step_id": "S14",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/strategies/**",
+        "adapters/legacy-reference/**",
+        "research/reference-policies/**",
+        "tests/strategy-parity/**",
+        "evidence/S14/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/strategies/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "adapters/legacy-reference/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/reference-policies/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/strategy-parity/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S14/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine gemeinsame Hyperparameteroptimierung aller Familien.",
+        "Keine Verwendung von Codekommentaren als Performancebeleg."
+      ]
+    },
+    {
+      "step_id": "S15",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/patterns/**",
+        "research/patterns/**",
+        "contracts/patterns/**",
+        "tests/patterns/**",
+        "evidence/S15/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/patterns/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/patterns/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/patterns/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/patterns/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S15/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Bild-KI auf beliebigen Screenshots als erste Handelsentscheidung.",
+        "Keine RL-/Deep-Learning-Plattform ohne belastbaren einfachen Vergleich."
+      ]
+    },
+    {
+      "step_id": "S16",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "research/protocols/**",
+        "research/evaluation/**",
+        "contracts/runs/**",
+        "tests/evaluation/**",
+        "evidence/S16/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "research/protocols/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/evaluation/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/runs/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/evaluation/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S16/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Kein Rennen bis zu einer gewünschten Screenshotzahl.",
+        "Kein globales Siegerlabel aus einem einzigen günstigen Markt."
+      ]
+    },
+    {
+      "step_id": "S17",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/research-worker/**",
+        "apps/hub/jobs/**",
+        "apps/web/api/research/**",
+        "research/run-store/**",
+        "tests/jobs/**",
+        "evidence/S17/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/research-worker/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/jobs/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/api/research/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/run-store/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/jobs/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S17/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine unbegrenzte Cloudschleife und keine automatische Budgeterhöhung.",
+        "Kein Trading direkt aus einem Workerresultat."
+      ]
+    },
+    {
+      "step_id": "S18",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "research/experiments/exits/**",
+        "research/experiments/parameters/**",
+        "research/reports/**",
+        "tests/experiments/**",
+        "evidence/S18/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "research/experiments/exits/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/experiments/parameters/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/reports/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/experiments/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S18/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Kein Verschieben des Stopbudgets zur Ergebnisverschönerung.",
+        "Kein endloser Suchlauf bis Profitfaktor/80%-Ziel zufällig erreicht wird."
+      ]
+    },
+    {
+      "step_id": "S19",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "core/selector/**",
+        "research/experiments/selector/**",
+        "contracts/policies/**",
+        "tests/selector/**",
+        "evidence/S19/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "core/selector/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/experiments/selector/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/policies/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/selector/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S19/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Auswahl des rückblickend besten Bots pro Kerze.",
+        "Kein autonomes Lernen auf dem laufenden Echtgeldbestand."
+      ]
+    },
+    {
+      "step_id": "S20",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "research/universe/**",
+        "research/experiments/allround/**",
+        "data/equities/**",
+        "tests/universe/**",
+        "evidence/S20/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "research/universe/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/experiments/allround/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "data/equities/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/universe/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S20/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Nicht alle weltweiten Aktien und alle Intervalle als bereits verfügbar versprechen.",
+        "Keine Renditeannualisierung kurzer Extrempfade als belastbare Jahresprognose."
+      ]
+    },
+    {
+      "step_id": "S21",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/web/data/**",
+        "apps/web/state/**",
+        "apps/web/integration/**",
+        "apps/web/test-harness/**",
+        "apps/web/api/projection/**",
+        "apps/web/route-compat/**",
+        "apps/hub/remote-view/**",
+        "adapters/remote-projection/**",
+        "tests/web/integration/**",
+        "evidence/S21/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/web/data/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/state/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/integration/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/test-harness/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/api/projection/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/route-compat/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/remote-view/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "adapters/remote-projection/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/integration/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S21/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "remote",
+        "view-projection",
+        "server"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Umsetzung der fünf freigegebenen Layouts, keine neuen Hauptseiten, keine visuelle Politur oder Animation vor S30.",
+        "Keine Änderung an fachlicher Engine, Gewinnberechnung oder Brokerrechten zugunsten eines vereinfachten UI-Zustands.",
+        "Kein technisches Preview als fertiges neues Produktdesign oder als Gesamtfreigabe ausgeben."
+      ]
+    },
+    {
+      "step_id": "S22",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/hub/mcp/**",
+        "apps/web/api/tools/**",
+        "core/proposals/**",
+        "tests/tools/**",
+        "evidence/S22/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/hub/mcp/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/api/tools/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/proposals/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/tools/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S22/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "registry",
+        "mcp"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine freie Shell oder beliebige Brokerfunktion aus dem Chat heraus.",
+        "Kein persönlicher Brokerzugang im Browsercode."
+      ]
+    },
+    {
+      "step_id": "S23",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/hub/control/**",
+        "adapters/ctrader/commands/**",
+        "contracts/commands/**",
+        "tests/control/**",
+        "evidence/S23/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/hub/control/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "adapters/ctrader/commands/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "contracts/commands/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/control/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S23/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "control",
+        "native-bridge",
+        "native-contracts"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Echtgeldausführung.",
+        "Keine pauschale schreibende Fernfreigabe."
+      ]
+    },
+    {
+      "step_id": "S24",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "operations/shadow/**",
+        "operations/demo/**",
+        "research/forward/**",
+        "tests/native-acceptance/**",
+        "evidence/S24/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "operations/shadow/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "operations/demo/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "research/forward/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/native-acceptance/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S24/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "native-bridge",
+        "native-observer",
+        "native-journal"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Echtgeldausführung als Teil der technischen Demoabnahme.",
+        "Keine Tricks zur Erhöhung der Tradezahl."
+      ]
+    },
+    {
+      "step_id": "S25",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "packaging/**",
+        "apps/hub/migrations/**",
+        "operations/runbooks/**",
+        "tests/upgrade/**",
+        "evidence/S25/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "packaging/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/migrations/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "operations/runbooks/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/upgrade/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S25/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [
+        "store"
+      ],
+      "donor_status": "source_bound_not_ported",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine unkontrollierte In-place-Migration des Produktionskontos.",
+        "Keine automatische Freigabe über bestandene Unit-Testzahl."
+      ]
+    },
+    {
+      "step_id": "S30",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/web/design-system/**",
+        "apps/web/styles/tokens/**",
+        "apps/web/component-preview/**",
+        "apps/web/components/transitions/**",
+        "docs/ui/implementation/**",
+        "tests/web/components/**",
+        "evidence/S30/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/web/design-system/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/styles/tokens/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/component-preview/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/transitions/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/implementation/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/components/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S30/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine neue Designrichtung oder zusätzliche Hauptnavigation.",
+        "Keine Produktseitenvollimplementierung in dieser Karte und keine Änderungen am Entscheidungskern.",
+        "Keine nachträgliche Behauptung, ein freigegebenes Bild belege mobile Bedienung oder Motion."
+      ]
+    },
+    {
+      "step_id": "S31",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/web/shell/**",
+        "apps/web/pages/overview/**",
+        "apps/web/pages/observation/**",
+        "apps/web/pages/research/**",
+        "apps/web/pages/positions/**",
+        "apps/web/view-models/**",
+        "apps/web/route-compat/**",
+        "tests/web/pages/**",
+        "docs/ui/page-mapping/**",
+        "evidence/S31/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/web/shell/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/pages/overview/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/pages/observation/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/pages/research/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/pages/positions/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/view-models/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/route-compat/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/pages/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/page-mapping/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S31/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Kein Strategie-/Regelkatalog als zusätzliche Produktseite.",
+        "Keine Änderung an Forschungsselektion, Risiko-, Geld- oder Orderlogik.",
+        "Keine öffentliche Veröffentlichung einer unvollständig abgenommenen Oberfläche."
+      ]
+    },
+    {
+      "step_id": "S32",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/web/settings/**",
+        "apps/web/components/dialogs/**",
+        "apps/web/components/drawers/**",
+        "apps/web/components/forms/**",
+        "apps/web/components/states/**",
+        "apps/web/view-models/configuration/**",
+        "tests/web/states/**",
+        "docs/ui/state-matrix/**",
+        "evidence/S32/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/web/settings/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/dialogs/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/drawers/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/forms/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/states/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/view-models/configuration/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/states/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/state-matrix/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S32/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine neuen Steuerrechte, Parametersemantik oder Brokeroperationen.",
+        "Keine optisch erfolgreiche Bestätigung vor dem fachlichen ACK/Readback.",
+        "Keine leeren Demoaktionen, die eine reale Wirkung vorspiegeln."
+      ]
+    },
+    {
+      "step_id": "S33",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/web/motion/**",
+        "apps/web/design-system/motion/**",
+        "apps/web/components/transitions/**",
+        "apps/web/live-view/**",
+        "apps/web/view-state/**",
+        "tests/web/motion/**",
+        "tests/web/live-updates/**",
+        "docs/ui/motion/**",
+        "evidence/S33/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/web/motion/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/design-system/motion/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/transitions/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/live-view/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/view-state/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/motion/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/live-updates/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/motion/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S33/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine fachliche Zustandsänderung oder verzögerte Warnmeldung zugunsten eines Effekts.",
+        "Keine simulierten Kurse, Fakeprogress, Dauerblinken, Parallaxdekoration oder flächige teure Blur-Animation.",
+        "Keine Änderung der freigegebenen Informationshierarchie oder des Forschungs-/Brokerprotokolls."
+      ]
+    },
+    {
+      "step_id": "S34",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "apps/web/styles/responsive/**",
+        "apps/web/components/responsive/**",
+        "apps/web/accessibility/**",
+        "apps/web/performance/**",
+        "apps/web/design-system/responsive/**",
+        "tests/web/responsive/**",
+        "tests/web/accessibility/**",
+        "tests/web/performance/**",
+        "docs/ui/quality/**",
+        "evidence/S34/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "apps/web/styles/responsive/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/components/responsive/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/accessibility/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/performance/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/design-system/responsive/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/responsive/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/accessibility/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/web/performance/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/quality/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S34/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine Geräte-/Netzwerkleistung aus einem Mockup ableiten.",
+        "Keine kosmetische Verbesserung durch Weglassen von Warnungen, Messwerten oder Verlustfällen.",
+        "Keine Änderungen an Markt-/Broker- oder Forschungslogik."
+      ]
+    },
+    {
+      "step_id": "S35",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "tests/web/acceptance/**",
+        "docs/ui/acceptance/**",
+        "evidence/S35/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "tests/web/acceptance/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/ui/acceptance/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S35/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine eigenmächtige Anpassung der Referenzen, Freigabe oder Abnahmekriterien, um Fehler zu verstecken.",
+        "Keine Produktcodekorrekturen in derselben Abnahmeänderung; sie gehen an S30–S34 zurück.",
+        "Keine wirtschaftliche Überlegenheitsbehauptung oder Echtgeldaktivierung aus Designabnahme."
+      ]
+    },
+    {
+      "step_id": "S26",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "releases/**",
+        "docs/release/**",
+        "operations/promotion/**",
+        "evidence/S26/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "releases/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/release/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "operations/promotion/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S26/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Keine pauschale Behauptung bester Bot der Welt.",
+        "Keine Echtgeldaktivierung durch das Bestehen dieser Karte."
+      ]
+    },
+    {
+      "step_id": "S27",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "research/extensions/**",
+        "data/external/**",
+        "core/models/**",
+        "tests/models/**",
+        "evidence/S27/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "research/extensions/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "data/external/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "core/models/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/models/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S27/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Nicht Teil des ersten verbindlichen Kernreleases.",
+        "Kein unbeschränktes Online-RL auf Kontogeld."
+      ]
+    },
+    {
+      "step_id": "S28",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "adapters/mt5/**",
+        "apps/hub/tenancy/**",
+        "apps/web/identity/**",
+        "tests/tenancy/**",
+        "evidence/S28/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "adapters/mt5/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/hub/tenancy/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "apps/web/identity/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/tenancy/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S28/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Nicht im ersten Kernrelease.",
+        "Keine automatische Echtgeldverwaltung fremder Konten."
+      ]
+    },
+    {
+      "step_id": "S29",
+      "current_scope_status": "proposed",
+      "proposed_target_paths": [
+        "operations/monitoring/**",
+        "operations/research-cycles/**",
+        "docs/status/**",
+        "tests/drift/**",
+        "evidence/S29/**"
+      ],
+      "target_paths_exist": [
+        {
+          "glob": "operations/monitoring/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "operations/research-cycles/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "docs/status/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "tests/drift/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        },
+        {
+          "glob": "evidence/S29/**",
+          "classification": "declared_new_namespace_not_existing_implementation"
+        }
+      ],
+      "source_ids": [],
+      "donor_status": "new_implementation_or_separate_source_selection_required",
+      "activation": "requires_versioned_plan_amendment_after_S02",
+      "preserved_exclusions": [
+        "Kein Versprechen dauerhafter Hintergrundarbeit aus einem Chat ohne eingerichteten Worker.",
+        "Keine Gewinn- oder Konkurrenzgarantie."
+      ]
+    }
+  ]
+}

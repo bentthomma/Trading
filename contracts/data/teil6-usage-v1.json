@@ -1,0 +1,58 @@
+{
+  "schema": "extremelab.dataset-use-contract/v1",
+  "status": "private_unactivated_preparation",
+  "identity": "Raw archive SHA-256 + actual transform SHA-256 + exact table and lineage hashes",
+  "source_resolution_rules": {
+    "open_only": {
+      "intrabar_path_known": false,
+      "stop_fill_proof": false,
+      "mode": "segmented_open_to_open_or_audit",
+      "point_in_time_selection_approved": false,
+      "reason": "Membership uses later full-bar quality information; not a causal online decision feed."
+    },
+    "raw_ohlcv": {
+      "intrabar_order_known": false,
+      "bid_ask_known": false,
+      "guaranteed_fill": false
+    },
+    "raw_ticks": {
+      "source_order_retained": true,
+      "equal_time_rows_retained": true,
+      "volume_zero_means": "unavailable",
+      "backward_time_action": "quarantine_for_replay_no_silent_sort"
+    },
+    "monthly_returns": {
+      "minute_or_tick_strategy_eligible": false
+    },
+    "synthetic": {
+      "market_coverage_evidence": false
+    },
+    "missing_source": {
+      "implicit_substitution_allowed": false
+    }
+  },
+  "historical_metadata": {
+    "instrument_identity": "provider-specific, not broker execution identity",
+    "historical_tick_size": "not_supplied",
+    "historical_lot_step": "not_supplied",
+    "session_calendar": "not_supplied",
+    "halt_causes": "not_confirmed",
+    "stock_splits_dividends_delistings": "not_supplied",
+    "point_in_time_universe": "not_supplied",
+    "negative_futures_prices": "must use separate instrument contract; never infer universal positivity from positive spot/FX data"
+  },
+  "versioning": {
+    "source_or_transform_change": "new_dataset_version",
+    "archived_run_rebinding": false,
+    "overwrite_existing_output": false,
+    "silent_interpolation": false,
+    "silent_quote_swap_or_deduplication": false,
+    "originals_modified": false
+  },
+  "authority": {
+    "broker": false,
+    "commercial": false,
+    "website_redistribution": false
+  },
+  "compatibility_checker": "data/quality/teil6_audit.py gate() checks a catalogue relation; it is not authentication, signing, an execution gateway, or legal clearance"
+}

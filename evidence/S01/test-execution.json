@@ -1,0 +1,282 @@
+{
+  "started_utc": "2026-11-13T14:46:08.474167+00:00",
+  "executed_uid": 65534,
+  "network_connections_denied": true,
+  "commands": [
+    {
+      "name": "clone",
+      "command": [
+        "/usr/bin/git",
+        "clone",
+        "/mnt/data/extremelab_no_reviewer_work/preinventory.bundle",
+        "/mnt/data/extremelab_no_reviewer_work/check_inventory_1/repo"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Cloning into '/mnt/data/extremelab_no_reviewer_work/check_inventory_1/repo'...\nhint: Using 'master' as the name for the initial branch. This default branch name\nhint: is subject to change. To configure the initial branch name to use in all\nhint: of your new repositories, which will suppress this warning, call:\nhint:\nhint: \tgit config --global init.defaultBranch <name>\nhint:\nhint: Names commonly chosen instead of 'master' are 'main', 'trunk' and\nhint: 'development'. The just-created branch can be renamed via this command:\nhint:\nhint: \tgit branch -m <name>\nwarning: unable to access '/home/oai/.config//git/ignore': Permission denied\nwarning: unable to access '/home/oai/.config//git/attributes': Permission denied\n"
+    },
+    {
+      "name": "remove-remote",
+      "command": [
+        "/usr/bin/git",
+        "remote",
+        "remove",
+        "origin"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "head",
+      "command": [
+        "/usr/bin/git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "5f9e68c73491ed3c3c2736b6cfc636766ed9aa88\n",
+      "stderr": ""
+    },
+    {
+      "name": "current-inventory",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "evidence/S01/check_current_inventory.py",
+        "/mnt/data/extremelab_no_reviewer_work/check_inventory_1/repo"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"counts\": {\n    \"complete_original\": 38,\n    \"prefix_only\": 5,\n    \"metadata_only\": 16\n  },\n  \"total\": 59,\n  \"archives_hash_and_crc\": 11,\n  \"space_reference_files\": 2,\n  \"plan_sha256\": \"bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5\",\n  \"catalog_sha256\": \"f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127\",\n  \"deployment_performed\": false,\n  \"broker_actions_performed\": false,\n  \"scope\": \"Inventory integrity only; missing full build remains blocked_capability\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "current-negative-tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "evidence/S01",
+        "-p",
+        "test_current_inventory.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_broker_permission_not_granted (test_current_inventory.CurrentInventory.test_broker_permission_not_granted) ... ok\ntest_changed_original_source_rejected (test_current_inventory.CurrentInventory.test_changed_original_source_rejected) ... ok\ntest_complete_inventory_and_local_policy (test_current_inventory.CurrentInventory.test_complete_inventory_and_local_policy) ... ok\ntest_invented_missing_source_rejected (test_current_inventory.CurrentInventory.test_invented_missing_source_rejected) ... ok\ntest_no_hidden_reviewer_gate (test_current_inventory.CurrentInventory.test_no_hidden_reviewer_gate) ... ok\ntest_stale_catalog_binding_rejected (test_current_inventory.CurrentInventory.test_stale_catalog_binding_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.488s\n\nOK\n"
+    },
+    {
+      "name": "original-package",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "verify_package.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"verified_files\": 389, \"formal_status_unchanged\": true, \"s01_private_work\": \"active\", \"independent_review\": false}\n",
+      "stderr": ""
+    },
+    {
+      "name": "original-inventory",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/check_inventory_consistency.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"work_id\": \"S01-INVENTORY-CONSOLIDATION\",\n  \"counts\": {\n    \"source_total\": 59,\n    \"complete_original_inputs\": 38,\n    \"prefix_only_inputs\": 5,\n    \"metadata_only_inputs\": 16,\n    \"unavailable_full_inputs\": 21\n  },\n  \"reconstructed_predecessor_files\": 320,\n  \"production_originals_unchanged\": 38,\n  \"formal_acceptance\": false,\n  \"product_integration\": false,\n  \"independent_review\": false,\n  \"errors\": [],\n  \"consistent\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "original-inventory-tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_inventory_consistency.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_alias_cannot_be_silently_retargeted (test_inventory_consistency.InventoryConsistency.test_alias_cannot_be_silently_retargeted) ... ok\ntest_catalog_traversal_is_rejected (test_inventory_consistency.InventoryConsistency.test_catalog_traversal_is_rejected) ... ok\ntest_consistently_rebound_prefix_as_complete_is_rejected (test_inventory_consistency.InventoryConsistency.test_consistently_rebound_prefix_as_complete_is_rejected) ... ok\ntest_current_59_sources_and_predecessor_reconstruction (test_inventory_consistency.InventoryConsistency.test_current_59_sources_and_predecessor_reconstruction) ... ok\ntest_current_index_cannot_grant_acceptance (test_inventory_consistency.InventoryConsistency.test_current_index_cannot_grant_acceptance) ... ok\ntest_duplicate_catalog_path_rejected (test_inventory_consistency.InventoryConsistency.test_duplicate_catalog_path_rejected) ... ok\ntest_extra_original_file_is_rejected (test_inventory_consistency.InventoryConsistency.test_extra_original_file_is_rejected) ... ok\ntest_formal_gate_is_not_rewritten_to_repair_historical_counts (test_inventory_consistency.InventoryConsistency.test_formal_gate_is_not_rewritten_to_repair_historical_counts) ... ok\ntest_full_build_cannot_be_inferred_from_inventory (test_inventory_consistency.InventoryConsistency.test_full_build_cannot_be_inferred_from_inventory) ... ok\ntest_historical_test_total_cannot_be_relabelled_current (test_inventory_consistency.InventoryConsistency.test_historical_test_total_cannot_be_relabelled_current) ... ok\ntest_intermediate_reader_cannot_be_promoted (test_inventory_consistency.InventoryConsistency.test_intermediate_reader_cannot_be_promoted) ... ok\ntest_missing_input_placeholder_rejected_without_incrementing_count (test_inventory_consistency.InventoryConsistency.test_missing_input_placeholder_rejected_without_incrementing_count) ... ok\ntest_original_dashboard_payload_is_not_production_skin (test_inventory_consistency.InventoryConsistency.test_original_dashboard_payload_is_not_production_skin) ... ok\ntest_original_operative_contradictions_reproduced (test_inventory_consistency.InventoryConsistency.test_original_operative_contradictions_reproduced) ... ok\ntest_prefix_metadata_distinction_is_checked (test_inventory_consistency.InventoryConsistency.test_prefix_metadata_distinction_is_checked) ... ok\ntest_private_proposal_cannot_replace_original_with_rebound_local_hash (test_inventory_consistency.InventoryConsistency.test_private_proposal_cannot_replace_original_with_rebound_local_hash) ... ok\ntest_replaced_source_symlink_rejected_even_if_target_bytes_match (test_inventory_consistency.InventoryConsistency.test_replaced_source_symlink_rejected_even_if_target_bytes_match) ... ok\ntest_stale_donor_narrative_is_rejected (test_inventory_consistency.InventoryConsistency.test_stale_donor_narrative_is_rejected) ... ok\ntest_stale_reproduction_counts_are_rejected (test_inventory_consistency.InventoryConsistency.test_stale_reproduction_counts_are_rejected) ... ok\ntest_unbundled_historical_archive_cannot_be_claimed_complete (test_inventory_consistency.InventoryConsistency.test_unbundled_historical_archive_cannot_be_claimed_complete) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 1.495s\n\nOK\n"
+    },
+    {
+      "name": "original-policy-tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/mnt/data/extremelab_no_reviewer_work/input/ExtremeLab_S00_S01_Abschlusspruefstand/tools/legacy_policy_suite.py",
+        "/mnt/data/extremelab_no_reviewer_work/check_inventory_1/original-s01"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_candidate_donor_has_no_accidental_promotion (preserved_s01_policy.S01Tests.test_candidate_donor_has_no_accidental_promotion) ... ok\ntest_eight_real_stages_listed_but_not_claimed_built (preserved_s01_policy.S01Tests.test_eight_real_stages_listed_but_not_claimed_built) ... ok\ntest_historical_runtime_evidence_retained_not_rerun (preserved_s01_policy.S01Tests.test_historical_runtime_evidence_retained_not_rerun) ... ok\ntest_native19_not_relabelled (preserved_s01_policy.S01Tests.test_native19_not_relabelled) ... ok\ntest_no_broker_github_release_writes_claimed (preserved_s01_policy.S01Tests.test_no_broker_github_release_writes_claimed) ... ok\ntest_no_remote_source_marked_locally_preserved (preserved_s01_policy.S01Tests.test_no_remote_source_marked_locally_preserved) ... ok\ntest_official_dependency_unchanged (preserved_s01_policy.S01Tests.test_official_dependency_unchanged) ... ok\ntest_plan_file_unchanged_hash_if_bundled (preserved_s01_policy.S01Tests.test_plan_file_unchanged_hash_if_bundled) ... ok\ntest_selected_build_source_mapping_not_treated_as_repo (preserved_s01_policy.S01Tests.test_selected_build_source_mapping_not_treated_as_repo) ... ok\ntest_source_tree_has_59_unique_exact_provider_ids (preserved_s01_policy.S01Tests.test_source_tree_has_59_unique_exact_provider_ids) ... ok\ntest_website_response_truncation_is_visible (preserved_s01_policy.S01Tests.test_website_response_truncation_is_visible) ... ok\ntest_actual_nested_manifest_is_included_and_hash_checked (__main__.NestedManifestChecks.test_actual_nested_manifest_is_included_and_hash_checked) ... ok\ntest_mutated_nested_manifest_is_rejected (__main__.NestedManifestChecks.test_mutated_nested_manifest_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.083s\n\nOK\n"
+    },
+    {
+      "name": "original-source-tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_s01_recovery.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_every_recovered_file_matches_vercel_uid_and_local_sha256 (test_s01_recovery.SourceRecovery.test_every_recovered_file_matches_vercel_uid_and_local_sha256) ... ok\ntest_historical_binary_reproducibility_is_not_claimed (test_s01_recovery.SourceRecovery.test_historical_binary_reproducibility_is_not_claimed) ... ok\ntest_official_s00_s01_and_missing_native_19_still_blocked (test_s01_recovery.SourceRecovery.test_official_s00_s01_and_missing_native_19_still_blocked) ... ok\ntest_original_59_source_entries_and_exact_38_recovered (test_s01_recovery.SourceRecovery.test_original_59_source_entries_and_exact_38_recovered) ... ok\ntest_packed_account_addon_has_six_expected_paths (test_s01_recovery.SourceRecovery.test_packed_account_addon_has_six_expected_paths) ... ok\ntest_partial_replay_never_claims_full_build (test_s01_recovery.SourceRecovery.test_partial_replay_never_claims_full_build) ... ok\ntest_primary_path_map_has_no_duplicates_and_recovered_hashes (test_s01_recovery.SourceRecovery.test_primary_path_map_has_no_duplicates_and_recovered_hashes) ... ok\ntest_website_assets_four_chunks_and_five_files (test_s01_recovery.SourceRecovery.test_website_assets_four_chunks_and_five_files) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.005s\n\nOK\n"
+    },
+    {
+      "name": "original-limited-build",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/check_build_boundary.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"top_level_stages\": [\n    {\n      \"path\": \"build.mjs\",\n      \"complete_source_present\": true\n    },\n    {\n      \"path\": \"postbuild-132.mjs\",\n      \"complete_source_present\": true\n    },\n    {\n      \"path\": \"version133.mjs\",\n      \"complete_source_present\": true\n    },\n    {\n      \"path\": \"build-account-addon.mjs\",\n      \"complete_source_present\": true\n    },\n    {\n      \"path\": \"build-bot.mjs\",\n      \"complete_source_present\": true\n    },\n    {\n      \"path\": \"build-bot14.mjs\",\n      \"complete_source_present\": false\n    },\n    {\n      \"path\": \"build-ui.mjs\",\n      \"complete_source_present\": false\n    },\n    {\n      \"path\": \"build-revolution20.mjs\",\n      \"complete_source_present\": true\n    }\n  ],\n  \"nested_imports\": [\n    {\n      \"parent\": \"build.mjs\",\n      \"path\": \"patch-live.mjs\",\n      \"complete_source_present\": false,\n      \"origin\": \"generated_from_live-overlay.b64\"\n    },\n    {\n      \"parent\": \"build.mjs\",\n      \"path\": \"build-bot15.mjs\",\n      \"complete_source_present\": false,\n      \"origin\": \"listed_provider_source\"\n    }\n  ],\n  \"full_pipeline_executed\": false,\n  \"full_pipeline_successful\": false,\n  \"first_stage_attempt\": {\n    \"script\": \"build.mjs\",\n    \"exit_code\": 1,\n    \"expected_missing_input\": \"live-overlay.b64\",\n    \"original_asset_outputs_verified\": 5,\n    \"stdout\": \"\",\n    \"stderr\": \"node:fs:442\\n    return binding.readFileUtf8(path, stringToFlags(options.flag));\\n                   ^\\n\\nError: ENOENT: no such file or directory, open 'live-overlay.b64'\\n    at Object.readFileSync (node:fs:442:20)\\n    at file:///tmp/s01-first-stage-avwzhbbf/build.mjs:8:18\\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {\\n  errno: -2,\\n  code: 'ENOENT',\\n  syscall: 'open',\\n  path: 'live-overlay.b64'\\n}\\n\\nNode.js v22.16.0\\n\"\n  },\n  \"connect_deny_probe\": \"CONNECT_DENIED_EPERM\",\n  \"network_restriction\": \"Linux seccomp: connect, sendto, sendmsg, sendmmsg denied with EPERM; no general sandbox claim\",\n  \"native_compiler_invoked\": false,\n  \"bot_executed\": false,\n  \"source_inputs_unchanged\": true,\n  \"toolchain\": {\n    \"node\": \"v22.16.0\",\n    \"dotnet_path\": null\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "clean-source-after-tests",
+      "command": [
+        "/usr/bin/git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "warning: unable to access '/home/oai/.config//git/attributes': Permission denied\nwarning: unable to access '/home/oai/.config//git/ignore': Permission denied\nwarning: unable to access '/home/oai/.config//git/ignore': Permission denied\n"
+    },
+    {
+      "name": "inventory-after",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "evidence/S01/check_current_inventory.py",
+        "/mnt/data/extremelab_no_reviewer_work/check_inventory_1/repo"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"counts\": {\n    \"complete_original\": 38,\n    \"prefix_only\": 5,\n    \"metadata_only\": 16\n  },\n  \"total\": 59,\n  \"archives_hash_and_crc\": 11,\n  \"space_reference_files\": 2,\n  \"plan_sha256\": \"bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5\",\n  \"catalog_sha256\": \"f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127\",\n  \"deployment_performed\": false,\n  \"broker_actions_performed\": false,\n  \"scope\": \"Inventory integrity only; missing full build remains blocked_capability\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "test_methods": 47,
+  "tested_head": "5f9e68c73491ed3c3c2736b6cfc636766ed9aa88",
+  "inventory": {
+    "counts": {
+      "complete_original": 38,
+      "prefix_only": 5,
+      "metadata_only": 16
+    },
+    "total": 59,
+    "archives_hash_and_crc": 11,
+    "space_reference_files": 2,
+    "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+    "catalog_sha256": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127",
+    "deployment_performed": false,
+    "broker_actions_performed": false,
+    "scope": "Inventory integrity only; missing full build remains blocked_capability"
+  },
+  "original_s01_reconstruction": 390,
+  "original_space_files": 11,
+  "partial_build": {
+    "top_level_stages": [
+      {
+        "path": "build.mjs",
+        "complete_source_present": true
+      },
+      {
+        "path": "postbuild-132.mjs",
+        "complete_source_present": true
+      },
+      {
+        "path": "version133.mjs",
+        "complete_source_present": true
+      },
+      {
+        "path": "build-account-addon.mjs",
+        "complete_source_present": true
+      },
+      {
+        "path": "build-bot.mjs",
+        "complete_source_present": true
+      },
+      {
+        "path": "build-bot14.mjs",
+        "complete_source_present": false
+      },
+      {
+        "path": "build-ui.mjs",
+        "complete_source_present": false
+      },
+      {
+        "path": "build-revolution20.mjs",
+        "complete_source_present": true
+      }
+    ],
+    "nested_imports": [
+      {
+        "parent": "build.mjs",
+        "path": "patch-live.mjs",
+        "complete_source_present": false,
+        "origin": "generated_from_live-overlay.b64"
+      },
+      {
+        "parent": "build.mjs",
+        "path": "build-bot15.mjs",
+        "complete_source_present": false,
+        "origin": "listed_provider_source"
+      }
+    ],
+    "full_pipeline_executed": false,
+    "full_pipeline_successful": false,
+    "first_stage_attempt": {
+      "script": "build.mjs",
+      "exit_code": 1,
+      "expected_missing_input": "live-overlay.b64",
+      "original_asset_outputs_verified": 5,
+      "stdout": "",
+      "stderr": "node:fs:442\n    return binding.readFileUtf8(path, stringToFlags(options.flag));\n                   ^\n\nError: ENOENT: no such file or directory, open 'live-overlay.b64'\n    at Object.readFileSync (node:fs:442:20)\n    at file:///tmp/s01-first-stage-avwzhbbf/build.mjs:8:18\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: 'live-overlay.b64'\n}\n\nNode.js v22.16.0\n"
+    },
+    "connect_deny_probe": "CONNECT_DENIED_EPERM",
+    "network_restriction": "Linux seccomp: connect, sendto, sendmsg, sendmmsg denied with EPERM; no general sandbox claim",
+    "native_compiler_invoked": false,
+    "bot_executed": false,
+    "source_inputs_unchanged": true,
+    "toolchain": {
+      "node": "v22.16.0",
+      "dotnet_path": null
+    }
+  },
+  "inventory_after": {
+    "counts": {
+      "complete_original": 38,
+      "prefix_only": 5,
+      "metadata_only": 16
+    },
+    "total": 59,
+    "archives_hash_and_crc": 11,
+    "space_reference_files": 2,
+    "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+    "catalog_sha256": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127",
+    "deployment_performed": false,
+    "broker_actions_performed": false,
+    "scope": "Inventory integrity only; missing full build remains blocked_capability"
+  },
+  "status": "passed_inventory_checks",
+  "finished_utc": "2026-11-13T14:46:19.406393+00:00"
+}

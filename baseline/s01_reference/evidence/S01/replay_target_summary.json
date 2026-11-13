@@ -1,0 +1,26 @@
+[
+  {
+    "label": "097_target",
+    "returncode": 0,
+    "seconds": 12.549,
+    "summary": {
+      "tests": 79,
+      "pass": 79,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "runtime": "v24.11.1",
+    "runtime_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
+    "source_archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+    "test_files": [
+      "tests/target-admissions.mjs",
+      "tests/target-http.mjs",
+      "tests/target-process.mjs",
+      "tests/target-ui.mjs"
+    ],
+    "live_flags_enabled": false,
+    "broker_started": false
+  }
+]

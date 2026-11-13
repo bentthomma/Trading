@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "coverage": {
+    "local_full_bytes_sha1_sha256_verified": 28,
+    "provider_metadata_only": 25,
+    "prefix_only_in_connector": 6
+  },
+  "full_recovered": 28,
+  "missing_full_bytes": 31,
+  "source_archive_selection": {
+    "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip": 3,
+    "ExtremeLab_Online_1_3_Web_Vorabversion.zip": 7,
+    "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip": 10,
+    "authenticated Vercel complete byte response": 8
+  },
+  "original_previous_s01_package_sha256": "69cbd85b929c5cd6eaf0a0092ffabfade0d2d37b14e8f80d148361b4bf1ff55c",
+  "official_S00": "NOT_ACCEPTED",
+  "official_S01": "pending",
+  "full_site_build": false,
+  "native19": false
+}

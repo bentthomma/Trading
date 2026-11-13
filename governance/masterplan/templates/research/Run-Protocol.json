@@ -1,0 +1,249 @@
+{
+  "schema": "extremelab-research-protocol/1.0-draft",
+  "template_id": "RUN-PROTOCOL-TEMPLATE-001",
+  "language": "de-CH",
+  "status": "DRAFT",
+  "ready_to_run": false,
+  "result_status": "NOT_RUN",
+  "notice": "Ausführbarer Vertrag erst nach ausgefüllten Pflichtfeldern, implementierter Vorprüfung und versionierter Abnahme. Dieser Entwurf startet keine Forschung und erteilt keine Handelsfreigabe.",
+  "experiment_id": null,
+  "project_id": null,
+  "plan_step_id": null,
+  "hypothesis_id": null,
+  "owner": null,
+  "independent_reviewer": null,
+  "experiment_kind": "historical_economic_policy_test",
+  "source_refs": [
+    {
+      "file": "Trading_Start_und_Arbeitsbuch_1_0.pdf",
+      "sha256": "160c847357f0c5f883b820d85c79d5d18f815c182489459548b6b562fd25d167",
+      "chapters": ["MP03", "MP05", "MP06", "MP07", "MP08", "MP09", "MP11", "MP12"],
+      "pages": "13-16, 21-40, 44-49",
+      "scope": "Zeitvertrag, Lehrfixtures, gemeinsames Kapital und Forschungsabnahme; keine Profitabilitätsvalidierung."
+    },
+    {
+      "file": "Trading_Master_1_0.pdf",
+      "sha256": "4186b9a2baa61d5cedb415c00d5b5ef3302deafb0c96ff277c8eed2d1731f81c",
+      "chapters": ["RES01", "RES02", "RES03", "RES05", "RES06", "SQC08", "DOC08", "DOC09"],
+      "scope": "Auswahl, Zeitabhängigkeit, Register und Drift; bereits bekannte Beispiele."
+    }
+  ],
+  "preflight": {
+    "rule": "REJECT if any required pointer is absent, null, an empty string, an empty collection or a placeholder; REJECT if ready_to_run is not true; READY requires independent signed decision on the exact frozen hash.",
+    "implementation_state": "NORMATIVE_CONTRACT_NOT_CONNECTED_TO_RUNNER_YET",
+    "placeholder_tokens": ["TODO", "TBD", "...", "AUSFUELLEN"],
+    "required_pointers_non_null": [
+      "/experiment_id", "/project_id", "/plan_step_id", "/hypothesis_id", "/owner", "/independent_reviewer",
+      "/freeze/protocol_sha256", "/freeze/frozen_at_utc", "/freeze/reviewer_decision_ref",
+      "/code/commit_sha", "/code/engine_sha256", "/code/runtime_lock_sha256",
+      "/data/dataset_id", "/data/raw_manifest_sha256", "/data/transformation_sha256", "/data/universe_snapshot_sha256",
+      "/data/instrument_contract_sha256", "/data/available_at_rule", "/data/calendar_version", "/data/license_decision_ref",
+      "/splits/fold_table_sha256", "/splits/locked_holdout/start_utc", "/splits/locked_holdout/end_utc", "/splits/locked_holdout/access_control_ref",
+      "/policies/candidate_sha256", "/policies/champion_or_fixed_primary_reference_sha256", "/policies/fixed_family_specs_sha256",
+      "/policies/cash_reference_sha256", "/policies/matched_exposure_reference_sha256",
+      "/account/initial_capital_decimal", "/account/account_currency", "/account/account_model_id", "/account/contract_adapter_id",
+      "/execution/base_cost_contract_sha256", "/execution/quote_ttl_milliseconds", "/execution/liquidity_and_fill_contract_sha256",
+      "/risk/frozen_risk_contract_sha256", "/risk/insolvency_definition", "/risk/margin_and_liquidation_contract_sha256",
+      "/statistics/joint_time_block_length_days", "/statistics/cluster_definition_sha256",
+      "/gates/frozen_gate_decision_ref", "/outputs/new_run_root"
+    ],
+    "additional_assertions": [
+      "Candidate, comparator and pattern specs must each pass their own readiness checks on exact versions.",
+      "All timestamps are UTC instants with actual precision; publication and available_at are not replaced by observation dates.",
+      "Each fitted transform uses training data only; training labels must be mature at fit time.",
+      "No historical performance test may use synthetic or unverified imported prices while labelled historical_quotes.",
+      "Every required cost and risk field is explicit; unknown spread, FX, borrow, multiplier or margin cannot silently become zero or one.",
+      "LAB04 published 2020-2025 data are consumed historical evidence and cannot be assigned untouched_holdout status.",
+      "Output directory is new; no prior results or protocol hashes are overwritten.",
+      "No economic promotion follows a technical fixture pass alone."
+    ]
+  },
+  "freeze": {
+    "protocol_sha256": null,
+    "frozen_at_utc": null,
+    "reviewer_decision_ref": null,
+    "change_policy": "Nach Freeze eine neue Revision und neues Experiment anlegen; bereits geöffnete Testabschnitte bleiben als gesehen markiert.",
+    "hash_scope": "Canonical JSON excluding this self-hash field; canonicalization version must be frozen in the implementation.",
+    "external_timestamp_or_repository_ref": null,
+    "hash_limit": "Ein Hash belegt Byteidentität, keine Wahrheit der Daten oder vorherige Unkenntnis von Ergebnissen."
+  },
+  "code": {
+    "commit_sha": null,
+    "engine_sha256": null,
+    "runtime_lock_sha256": null,
+    "deterministic_random_seed": 19101,
+    "numerics": "Geld, Preis und Mengen mit expliziten Einheiten; exakte Dezimalrepräsentation und festgelegte Rundung."
+  },
+  "data": {
+    "dataset_id": null,
+    "data_reality": "historical_quotes",
+    "raw_manifest_sha256": null,
+    "transformation_sha256": null,
+    "universe_snapshot_sha256": null,
+    "instrument_contract_sha256": null,
+    "available_at_rule": null,
+    "calendar_version": null,
+    "license_decision_ref": null,
+    "publication_vintage": null,
+    "required_fields": ["instrument_id", "event_id", "event_time", "available_at", "received_at", "bid", "ask", "quality_status", "source_version"],
+    "corporate_actions_and_delistings": "Aktienexperimente benötigen historisch gültige Universen und vertraglich behandelte Splits, Dividenden, Halts und Delistings.",
+    "profile_rule": "Je Experiment eine klar definierte Vertragskohorte. Weitere Märkte, Kontomodelle oder Zeitebenen erzeugen registrierte Profile, keine stillen Typwechsel.",
+    "known_previous_evidence": [
+      {
+        "id": "LAB04_PUBLISHED_2020_2025",
+        "human_seen": true,
+        "evaluation_role": "reproduction",
+        "holdout_state": "consumed",
+        "forbidden_claim": "new_untouched_holdout"
+      }
+    ]
+  },
+  "splits": {
+    "fold_table_sha256": null,
+    "inner_design": "Training und anschließende innere Validierung für begrenzte Wahl; keine Feature-Fits über die Grenze.",
+    "outer_design": "Chronologischer äußerer Walk-forward prüft das gesamte Auswahl-/Refitverfahren. Frühere Prognosen bleiben unverändert archiviert.",
+    "provisional_window_plan": {
+      "training_months": 24,
+      "inner_validation_months": 6,
+      "outer_test_months_per_fold": 3,
+      "minimum_outer_folds": 6,
+      "note": "Vorläufiger Forschungsplan, vor Datenauswertung anhand Datenfrequenz und Labelhorizont prüfen und dann fixieren; keine universelle optimale Fensterlänge."
+    },
+    "label_rule": "Purging anhand label_start/label_end und label_available_at; erforderliches Embargo gesondert begründen. Rohdaten am Übergang sind nicht automatisch verboten.",
+    "fit_rule": "Normalisierung, Imputation, Featurewahl, Regimemodell, Kalibrierung und Meta-Modell jeweils ausschließlich in ihrer zugelassenen Trainingsfassung fitten.",
+    "locked_holdout": {
+      "start_utc": null,
+      "end_utc": null,
+      "access_control_ref": null,
+      "state": "not_available",
+      "human_seen": "unknown",
+      "used_for_selection": [],
+      "open_policy": "Einmal nach vollständigem Freeze auswerten; danach consumed. Jede spätere Anpassung ist eine neue Forschungsfassung."
+    }
+  },
+  "search_budget": {
+    "max_new_candidate_variants": 48,
+    "max_primary_strategy_families": 4,
+    "max_timeframe_profiles": 2,
+    "budget_is_global_across_agents": true,
+    "count_statuses": ["completed", "negative", "inconclusive", "aborted", "invalid"],
+    "counting_rule": "Jede neue Strategie-/Filter-/Fenster-/Parameter-/Datenausschlusskombination registrieren. Reproduktion derselben Bytes gesondert zählen und nicht als unabhängige Evidenz addieren.",
+    "manual_changes_are_trials": true,
+    "exhaustion_action": "BLOCK_NEW_VARIANTS_AND_REVIEW"
+  },
+  "policies": {
+    "candidate_sha256": null,
+    "champion_or_fixed_primary_reference_sha256": null,
+    "fixed_family_specs_sha256": null,
+    "cash_reference_sha256": null,
+    "matched_exposure_reference_sha256": null,
+    "fixed_family_examples": ["fixed_donchian", "fixed_ema_trend", "fixed_range_reversion"],
+    "selection_rule": "Primäre Referenz und Kandidat vor Holdout wählen; nachträglich beste Holdout-Familie nur als Diagnose markieren.",
+    "equal_entry_diagnostic": {
+      "purpose": "Exitwirkung bei identischen eingefrorenen Entryereignissen, Mengen und Anfangspositionen isolieren.",
+      "not_a_portfolio_superiority_test": true,
+      "keep_take_profit_and_other_rules_equal": true
+    },
+    "full_policy_comparison": {
+      "purpose": "Gesamte Policy einschließlich Folgeeintritten, Haltedauer, Reservierungen und gemeinsamer Kasse prüfen.",
+      "shared_inputs_and_contracts": true,
+      "no_retroactive_entry_reuse_after_capital_was_locked": true
+    }
+  },
+  "account": {
+    "initial_capital_decimal": null,
+    "account_currency": null,
+    "account_model_id": null,
+    "contract_adapter_id": null,
+    "one_shared_cash_ledger_per_policy_and_market_path": true,
+    "comparison_policies_have_separate_equal_start_accounts": true,
+    "capital_profiles_for_later_registered_studies": ["100", "1000", "10000"],
+    "small_account_rule": "Mindestmengen und Kosten bleiben unverändert; null ausführbare Menge ist NO_TRADE, kein impliziter Hebelwechsel.",
+    "portfolio_rule": "Alle Module teilen Reservierungen, Nettierung, Positionslimits und Faktor-/Währungsrisiken; Einzelsystemkonten werden nicht addiert."
+  },
+  "execution": {
+    "base_cost_contract_sha256": null,
+    "liquidity_and_fill_contract_sha256": null,
+    "quote_ttl_milliseconds": null,
+    "required_cost_components": ["bid_ask", "commission", "latency_slippage", "financing_swap", "borrow_if_short", "fx_conversion", "market_impact"],
+    "stress_design": "Baseline und vorab begründete ungünstigere Quote-/Slippage-/Finanzierungsfälle mit derselben Policy; feste Gebühren nicht unbesehen wie Spread skalieren.",
+    "gap_rule": "Zum ersten tatsächlich verfügbaren zulässigen Marktpreis modellieren; kein garantierter Fill am Stop.",
+    "ohlc_rule": "Unbekannte Intrabarreihenfolge nicht als Ticknachweis ausgeben; eigene konservative OHLC-Modellvariante mit eigener ID.",
+    "missing_quote_rule": "Keine neue Orderfreigabe; bestehende Position bleibt offen und wird nach dem vorher festgelegten Bewertungs-/Recoveryvertrag geführt.",
+    "end_state_rule": "Markierte offene Bestände und künstliche Schlussliquidation getrennt; Endkonvention vor dem Lauf fixieren."
+  },
+  "risk": {
+    "frozen_risk_contract_sha256": null,
+    "insolvency_definition": null,
+    "margin_and_liquidation_contract_sha256": null,
+    "hard_constraints": ["cash_and_reservations", "gross_and_net_exposure", "margin_headroom", "sector_factor_currency_concentration", "gap_stress", "liquidity_capacity"],
+    "stop_is_not_loss_guarantee": true,
+    "breach_policy": "Ein technischer Limitbruch invalidiert den Lauf; ein korrekt modellierter Verlust über einer Forschungsgrenze bleibt sichtbar und verfehlt das Risikogate.",
+    "no_trade_reasons_must_be_counted": true
+  },
+  "metrics": {
+    "primary": ["paired_net_growth_difference", "net_return", "max_equity_drawdown"],
+    "joint_dimensions": ["time_to_target", "tail_loss", "observed_insolvency", "exposure", "turnover", "capacity", "cost_sensitivity", "no_trade", "fill_quality", "concentration", "recovery_duration"],
+    "target_multiples": ["2", "10", "30"],
+    "horizon_days_for_separate_registered_reports": [7, 30, 90, 365],
+    "time_to_target_rule": "Definition des Kontowerts vorab fixieren; Nichterreichen ist zensiert. Zieltreffer und spätere Drawdowns gemeinsam berichten.",
+    "no_trade_reporting": "Alle Fälle in der Gesamtauswertung; bedingte Trading-only-Auswertung separat mit Nenner. Null Trades macht Winrate/PF nicht automatisch 0 oder 100.",
+    "descriptive_only": ["win_rate", "profit_factor"],
+    "competitor_screenshot_status": "EXTERNAL_UNVERIFIED_REFERENCE_UNKNOWN_TEST_CONDITIONS"
+  },
+  "statistics": {
+    "paired_comparisons": true,
+    "joint_time_block_length_days": null,
+    "cluster_definition_sha256": null,
+    "bootstrap_repetitions": 5000,
+    "interval_level_decimal": "0.95",
+    "resampling_unit": "Gemeinsame Kalenderzeitblöcke vollständiger Portfoliopfade; gleichzeitig betroffene Instrumente bleiben zusammen. Bei zusätzlichem Clusterdesign Gruppen und Gewichtung vorab fixieren.",
+    "block_length_source": "Nur Trainingsdiagnose; vor Schlussauswertung fixieren.",
+    "individual_trades_are_not_iid_units": true,
+    "selection_uncertainty": "Äußeren Auswahlprozess mitprüfen; bloßer Bootstrap des nachträglich gewählten Siegers korrigiert die Suche nicht.",
+    "multiple_testing": "Familie und Korrektur vorab fixieren. Korrektur nur auf gültige, abhängigkeitsgerechte Einzeltests anwenden; unbekannte Versuchshistorie als Einschränkung ausweisen.",
+    "ruin_uncertainty": "Null beobachtete Fälle nicht als Nullrisiko interpretieren. Nenner, Szenariomodell, Zeitabhängigkeit und Intervall berichten."
+  },
+  "gates": {
+    "status": "PROVISIONAL_RESEARCH_GATES_NOT_LIVE_RISK_LIMITS",
+    "frozen_gate_decision_ref": null,
+    "technical": "Null kritische Zeit-, Ledger-, Einheiten-, Deduplikations- oder Manifestverletzungen.",
+    "coverage": {
+      "minimum_outer_folds": 6,
+      "minimum_outer_decision_days_total": 252,
+      "minimum_joint_time_blocks": 30,
+      "minimum_equity_symbols_if_equity_cohort": 20,
+      "minimum_equity_sectors_if_equity_cohort": 4,
+      "failure_result": "INCONCLUSIVE",
+      "failure_reason": "INSUFFICIENT_COVERAGE",
+      "limit": "Diese Mindestzahlen garantieren keine statistische Power; tatsächliche Unsicherheit bleibt entscheidend."
+    },
+    "economic": {
+      "primary_reference_paired_annualized_point_advantage_min_decimal": "0.02",
+      "paired_advantage_95_percent_lower_bound_must_exceed": "0",
+      "positive_outer_folds_minimum_of_six": 4,
+      "net_result_must_exceed_frozen_cash_reference": true,
+      "matched_exposure_comparison_required": true,
+      "note": "Vorläufige Mindesthürde von 2 Prozentpunkten pro Jahr für die geplante längerfristige Untersuchung; nicht auf sieben Tage hochrechnen und nicht nach Ergebnis absenken."
+    },
+    "risk_and_capacity": {
+      "provisional_max_equity_drawdown_decimal": "0.20",
+      "max_drawdown_worsening_vs_primary_reference_percentage_points": "0",
+      "unresolved_insolvency_or_liquidation_events_allowed": 0,
+      "net_advantage_under_predeclared_cost_stress_required": true,
+      "capacity_must_be_supported_by_observed_contract_relevant_liquidity": true,
+      "note": "Forschungs-Ablehnungsgrenzen, keine garantierten Verlustriegel. Wenn Marktliquidität nicht messbar ist, ist Kapazität nicht belegt."
+    },
+    "pass_action": "ADVANCE_TO_PROSPECTIVE_SHADOW_ONLY",
+    "valid_but_failed_action": "REJECTED_FOR_THIS_PROTOCOL",
+    "missing_or_imprecise_action": "INCONCLUSIVE",
+    "never_pass_on_pf_or_winrate_alone": true
+  },
+  "outputs": {
+    "new_run_root": null,
+    "required_artifacts": ["frozen_protocol.json", "input_manifest.json", "trial_registry.jsonl", "features_provenance.jsonl", "decisions.jsonl", "orders.jsonl", "fills.jsonl", "ledger.jsonl", "no_trade_reasons.jsonl", "metrics.json", "paired_comparison.json", "uncertainty.json", "validation.json", "champion_decision.md", "artifact_sha256.json"],
+    "append_only_trial_registry": true,
+    "failed_runs_retained": true,
+    "privacy": "Keine Zugangsdaten in Forschungsartefakten; Kontoidentitäten nur nach freigegebenem Datenvertrag."
+  }
+}

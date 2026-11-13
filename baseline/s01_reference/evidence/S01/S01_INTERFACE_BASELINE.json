@@ -1,0 +1,21 @@
+{
+  "work_id": "S01-INTERFACE-MAP",
+  "created_utc": "2026-11-13T12:07:37.557376+00:00",
+  "basis_archive": "ExtremeLab_S01_InventoryConsolidation_Offline.zip",
+  "basis_sha256": "e948472e28dad697a677add0fa74fb0915d6d115de34f0cec81157e7bad727a6",
+  "prior_manifest": "baseline/interface_checkpoint/ORIGINAL_MANIFEST.json",
+  "github": {
+    "connector_reads_only": true,
+    "branch": "main",
+    "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+    "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+    "tree_truncated": false,
+    "files": [
+      "README.md"
+    ],
+    "protected_flag": false,
+    "scope": "branch and full git tree; no full protection/ruleset inspection"
+  },
+  "formal_gate_changed": false,
+  "product_sources_changed": false
+}

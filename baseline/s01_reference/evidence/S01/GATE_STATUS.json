@@ -1,0 +1,26 @@
+{
+  "masterplan": "1.1.0",
+  "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "step": "S01",
+  "declared_dependency": [
+    "S00"
+  ],
+  "dependency_status": "S00_NOT_ACCEPTED",
+  "s01_official_status": "pending",
+  "inventory_candidate": "expanded_private_28_of_59_source_bytes_pending_independent_review",
+  "checks": {
+    "S01-C01": "partially_satisfied_28_of_59_exact_bytes; 31 unavailable; inventory classification explicit",
+    "S01-C02": "partially_satisfied_archived_node_replays_and_verified_safe_subcomponents; full build and native1.9 blocked_capability",
+    "S01-C03": "satisfied_documentary_no_product_rights",
+    "S01-C04": "partially_satisfied_deployment_and_domain_identified; development_repo_source_binding_unverified"
+  },
+  "finish_authorized": false,
+  "runtime_release_authorized": false,
+  "source_and_build_gaps": [
+    "S00 independent acceptance absent",
+    "Original Engine1.9 source and binary absent",
+    "31 of 59 Vercel source bytes missing",
+    "Raw asset extraction works but missing live-overlay blocks postbuild-132",
+    "Full site build/native cTrader builds absent"
+  ]
+}

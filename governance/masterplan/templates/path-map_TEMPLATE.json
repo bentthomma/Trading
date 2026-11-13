@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "status": "DRAFT",
+  "source_revision": null,
+  "reviewer": null,
+  "mappings": [
+    {
+      "logical_module": "apps/hub/storage",
+      "actual_repository": null,
+      "existing_paths": [],
+      "new_paths": [],
+      "source_evidence": null,
+      "migration_needed": null,
+      "affected_steps": ["S05", "S06"],
+      "approved": false
+    }
+  ],
+  "rules": [
+    "Vorhandene core/, sdk/, public/ und server.mjs-Pfade zuerst prüfen.",
+    "Logische Pfade erzwingen keinen Monorepo-Umbau.",
+    "Erst geprüfter Planamendment setzt spätere scope_status auf resolved."
+  ]
+}

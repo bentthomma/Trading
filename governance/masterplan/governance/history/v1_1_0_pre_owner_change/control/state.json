@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "steps": {
+    "S00": {
+      "status": "pending"
+    },
+    "S01": {
+      "status": "pending"
+    },
+    "S02": {
+      "status": "pending"
+    },
+    "S03": {
+      "status": "pending"
+    },
+    "S04": {
+      "status": "pending"
+    },
+    "S05": {
+      "status": "pending"
+    },
+    "S06": {
+      "status": "pending"
+    },
+    "S07": {
+      "status": "pending"
+    },
+    "S08": {
+      "status": "pending"
+    },
+    "S09": {
+      "status": "pending"
+    },
+    "S10": {
+      "status": "pending"
+    },
+    "S11": {
+      "status": "pending"
+    },
+    "S12": {
+      "status": "pending"
+    },
+    "S13": {
+      "status": "pending"
+    },
+    "S14": {
+      "status": "pending"
+    },
+    "S15": {
+      "status": "pending"
+    },
+    "S16": {
+      "status": "pending"
+    },
+    "S17": {
+      "status": "pending"
+    },
+    "S18": {
+      "status": "pending"
+    },
+    "S19": {
+      "status": "pending"
+    },
+    "S20": {
+      "status": "pending"
+    },
+    "S21": {
+      "status": "pending"
+    },
+    "S22": {
+      "status": "pending"
+    },
+    "S23": {
+      "status": "pending"
+    },
+    "S24": {
+      "status": "pending"
+    },
+    "S25": {
+      "status": "pending"
+    },
+    "S30": {
+      "status": "pending"
+    },
+    "S31": {
+      "status": "pending"
+    },
+    "S32": {
+      "status": "pending"
+    },
+    "S33": {
+      "status": "pending"
+    },
+    "S34": {
+      "status": "pending"
+    },
+    "S35": {
+      "status": "pending"
+    },
+    "S26": {
+      "status": "pending"
+    },
+    "S27": {
+      "status": "pending"
+    },
+    "S28": {
+      "status": "pending"
+    },
+    "S29": {
+      "status": "pending"
+    }
+  },
+  "history": [
+    {
+      "path": "governance/amendments/AM-001-design-after-technology.json",
+      "sha256": "8218352868fa19a745c5c882703bc3f3229828645b236a2336a63d0b7acc9923",
+      "previous_plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+      "author": "/root",
+      "reviewer": "/root/plan_guard_design",
+      "affected_steps": [
+        "S00",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S18",
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23",
+        "S24",
+        "S25",
+        "S26",
+        "S27",
+        "S28",
+        "S29",
+        "S30",
+        "S31",
+        "S32",
+        "S33",
+        "S34",
+        "S35"
+      ],
+      "at": "2026-11-11T20:11:37.573052Z",
+      "action": "relock"
+    }
+  ]
+}

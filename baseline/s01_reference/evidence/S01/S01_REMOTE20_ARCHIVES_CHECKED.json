@@ -1,0 +1,40 @@
+{
+  "archives": [
+    {
+      "name": "ExtremeLab_Autotest_20261106.zip",
+      "sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+      "bytes": 2535352,
+      "members": 45,
+      "crc_error": null
+    },
+    {
+      "name": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+      "bytes": 32852,
+      "members": 17,
+      "crc_error": null
+    },
+    {
+      "name": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "bytes": 703909,
+      "members": 27,
+      "crc_error": null
+    },
+    {
+      "name": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "bytes": 6031279,
+      "members": 1028,
+      "crc_error": null
+    }
+  ],
+  "nested_search": {
+    "unique_blobs_scanned": 276,
+    "max_depth": 5,
+    "max_member_bytes": 15000000,
+    "found": []
+  },
+  "additional_platform_scan": "Raw files smaller than 1 MB compared to missing source SHA1 values: no matches. This is not a full exclusion of all possible alternate encodings.",
+  "library_limits": "Semantic searches returned current reports and unrelated skin matches. Direct-root ZIP listings located actual archive IDs; recursive pagination reported inconsistent cursors. No assertion of exhaustive Library or external storage search."
+}

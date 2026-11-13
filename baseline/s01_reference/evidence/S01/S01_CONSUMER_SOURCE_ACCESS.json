@@ -1,0 +1,67 @@
+{
+  "schema": "extremelab-source-access-observation/v1",
+  "observed_date": "2026-11-13",
+  "library_scope": "Conversation attachments, relevant search results and partial Library listings; Google Drive not comprehensively searched; listing pagination continuation was refused despite a displayed cursor.",
+  "newer_handoff_found": false,
+  "complete_final_consumer_recovered": false,
+  "inspected_archives": [
+    {
+      "name": "Dashboard_Design_Motion_Quellcode_und_Tests.zip",
+      "bytes": 1716986,
+      "sha256": "375d8969ad1c4f9a1f2c28daebde7759a2973f076a4f0e19dd11745d04e6e689",
+      "zip_crc_error": null,
+      "members": 33,
+      "result": "No complete final snapshot consumer/skin bundle recovered. Archive content is not silently substituted for missing production inputs.",
+      "code_executed_from_this_copy": false
+    },
+    {
+      "name": "ExtremeLab_1_2_0_Paket.zip",
+      "bytes": 1978466,
+      "sha256": "71c8acedde4cd08232be13f7687112c4390618ad675e7b158422e7ae437ef40d",
+      "zip_crc_error": null,
+      "members": 31,
+      "result": "No complete final snapshot consumer/skin bundle recovered. Archive content is not silently substituted for missing production inputs.",
+      "code_executed_from_this_copy": false
+    },
+    {
+      "name": "ExtremeLab_Autotest_20261106.zip",
+      "bytes": 2535352,
+      "sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+      "zip_crc_error": null,
+      "members": 45,
+      "result": "No complete final snapshot consumer/skin bundle recovered. Archive content is not silently substituted for missing production inputs.",
+      "code_executed_from_this_copy": false
+    },
+    {
+      "name": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "bytes": 703909,
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "zip_crc_error": null,
+      "members": 27,
+      "result": "No complete final snapshot consumer/skin bundle recovered. Archive content is not silently substituted for missing production inputs.",
+      "code_executed_from_this_copy": false
+    }
+  ],
+  "static_url_attempts": [
+    {
+      "url": "https://extremelab-desk.vercel.app/dashboard.js",
+      "result": "Web tool could not retrieve; not evidence that resource does not exist"
+    },
+    {
+      "url": "https://extremelab-desk.vercel.app/ui-core.mjs",
+      "result": "Web tool could not retrieve; not evidence that resource does not exist"
+    },
+    {
+      "url": "https://extremelab-desk.vercel.app/online.js",
+      "result": "Web tool could not retrieve; not evidence that resource does not exist"
+    }
+  ],
+  "vercel_file_contents_repeated": false,
+  "reason": "Existing source capture truncation was already established; no identical truncated fetch is counted as progress.",
+  "private_historical_journal_data_used_in_tests": false,
+  "retained_source_status": {
+    "present": 38,
+    "total": 59,
+    "missing": 21
+  }
+}

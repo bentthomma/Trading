@@ -1,0 +1,469 @@
+{
+  "schema": "extremelab-scope-delta/1",
+  "base_plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "version": "1.2.1",
+  "steps": [
+    {
+      "id": "S03",
+      "allowed_paths": [
+        "docs/ui/baseline/**",
+        "docs/ui/navigation/**",
+        "evidence/S03/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S04",
+      "allowed_paths": [
+        "product/Trading_Local/integrations/ctrader-observer20/observer/src/Observer.csproj",
+        "product/Trading_Local/integrations/ctrader-observer20/observer/src/ObserverProtocol.cs",
+        "product/Trading_Local/integrations/ctrader-observer20/observer/src/ObserverSource.cs",
+        "product/Trading_Local/integrations/ctrader-observer20/observer/src/Th3RevolutionObserver20.cs",
+        "product/Trading_Local/integrations/ctrader-observer20/observer/tests/ObserverTests.csproj",
+        "product/Trading_Local/integrations/ctrader-observer20/observer/tests/Program.cs",
+        "product/Trading_Local/core/observation.mjs",
+        "product/Trading_Local/core/reconciliation-read20.mjs",
+        "product/Trading_Local/core/reconciliation20.mjs",
+        "research/diagnostics/**",
+        "tests/observer/**",
+        "evidence/S04/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S05",
+      "allowed_paths": [
+        "core/ledger/**",
+        "core/orders/**",
+        "contracts/ledger/**",
+        "tests/ledger/**",
+        "evidence/S05/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S06",
+      "allowed_paths": [
+        "product/Trading_Local/core/engine-journal.mjs",
+        "product/Trading_Local/core/journal-archive-format.mjs",
+        "product/Trading_Local/core/journal-archive-worker.mjs",
+        "product/Trading_Local/core/journal-archives.mjs",
+        "product/Trading_Local/core/journal-build-lineage.mjs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3JournalDispatch20.cs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3JournalOutbox20.cs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3JournalProtocol20.cs",
+        "product/Trading_Local/core/maintenance-journal.mjs",
+        "product/Trading_Local/core/profile-lock.mjs",
+        "product/Trading_Local/core/restore.mjs",
+        "product/Trading_Local/core/store.mjs",
+        "core/recovery/**",
+        "tests/recovery/**",
+        "evidence/S06/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S07",
+      "allowed_paths": [
+        "data/catalog/**",
+        "data/transforms/**",
+        "data/quality/**",
+        "contracts/data/**",
+        "tests/data/**",
+        "evidence/S07/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S08",
+      "allowed_paths": [
+        "runtime/**",
+        "product/Trading_Local/core/observer-process.mjs",
+        "product/Trading_Local/core/target-runtime-reports.mjs",
+        "product/Trading_Local/sdk/CallbackRuntimeDispatcher.cs",
+        "product/Trading_Local/sdk/HubBridge.cs",
+        "product/Trading_Local/sdk/HubContracts.cs",
+        "product/Trading_Local/sdk/HubProtocol.cs",
+        "product/Trading_Local/core/application.mjs",
+        "product/Trading_Local/core/capabilities.mjs",
+        "product/Trading_Local/core/system-check.mjs",
+        "product/Trading_Local/core/target-admission-context.mjs",
+        "product/Trading_Local/core/target-admission-worker.mjs",
+        "product/Trading_Local/core/target-admissions.mjs",
+        "tests/runtime/**",
+        "evidence/S08/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S09",
+      "allowed_paths": [
+        "core/features/**",
+        "core/timeframes/**",
+        "contracts/features/**",
+        "tests/causality/**",
+        "evidence/S09/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S10",
+      "allowed_paths": [
+        "core/replay/**",
+        "core/execution-model/**",
+        "adapters/simulation/**",
+        "tests/replay/**",
+        "evidence/S10/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S11",
+      "allowed_paths": [
+        "core/risk/**",
+        "core/portfolio/**",
+        "contracts/risk/**",
+        "tests/risk/**",
+        "evidence/S11/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S12",
+      "allowed_paths": [
+        "core/exits/**",
+        "core/sessions/**",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/ExtremeLabExitAdapter19.cs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3FrozenExitAdapter20.cs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3FrozenExitRecovery20.cs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3SessionAdapter20.cs",
+        "product/Trading_Local/integrations/ctrader-th3revolution20/src/Th3SessionRules20.cs",
+        "tests/exits/**",
+        "evidence/S12/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S13",
+      "allowed_paths": [
+        "knowledge/**",
+        "contracts/research/**",
+        "research/hypotheses/**",
+        "tests/knowledge/**",
+        "evidence/S13/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S14",
+      "allowed_paths": [
+        "core/strategies/**",
+        "adapters/legacy-reference/**",
+        "research/reference-policies/**",
+        "tests/strategy-parity/**",
+        "evidence/S14/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S15",
+      "allowed_paths": [
+        "core/patterns/**",
+        "research/patterns/**",
+        "contracts/patterns/**",
+        "tests/patterns/**",
+        "evidence/S15/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S16",
+      "allowed_paths": [
+        "research/protocols/**",
+        "research/evaluation/**",
+        "contracts/runs/**",
+        "tests/evaluation/**",
+        "evidence/S16/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S17",
+      "allowed_paths": [
+        "apps/research-worker/**",
+        "apps/hub/jobs/**",
+        "apps/web/api/research/**",
+        "research/run-store/**",
+        "tests/jobs/**",
+        "evidence/S17/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S18",
+      "allowed_paths": [
+        "research/experiments/exits/**",
+        "research/experiments/parameters/**",
+        "research/reports/**",
+        "tests/experiments/**",
+        "evidence/S18/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S19",
+      "allowed_paths": [
+        "core/selector/**",
+        "research/experiments/selector/**",
+        "contracts/policies/**",
+        "tests/selector/**",
+        "evidence/S19/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S20",
+      "allowed_paths": [
+        "research/universe/**",
+        "research/experiments/allround/**",
+        "data/equities/**",
+        "tests/universe/**",
+        "evidence/S20/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S21",
+      "allowed_paths": [
+        "apps/web/data/**",
+        "apps/web/state/**",
+        "apps/web/integration/**",
+        "apps/web/test-harness/**",
+        "apps/web/api/projection/**",
+        "apps/web/route-compat/**",
+        "product/Trading_Local/core/remote-view20.mjs",
+        "product/Trading_Local/integrations/vercel-view20/api/revolution.js",
+        "product/Trading_Local/integrations/vercel-view20/lib/http.mjs",
+        "product/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+        "product/Trading_Local/integrations/vercel-view20/lib/service.mjs",
+        "tests/web/integration/**",
+        "evidence/S21/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S22",
+      "allowed_paths": [
+        "product/Trading_Local/core/mcp.mjs",
+        "product/Trading_Local/core/registry.mjs",
+        "apps/web/api/tools/**",
+        "core/proposals/**",
+        "tests/tools/**",
+        "evidence/S22/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S23",
+      "allowed_paths": [
+        "product/Trading_Local/core/control.mjs",
+        "product/Trading_Local/core/schema.mjs",
+        "product/Trading_Local/sdk/CallbackRuntimeDispatcher.cs",
+        "product/Trading_Local/sdk/HubBridge.cs",
+        "product/Trading_Local/sdk/HubContracts.cs",
+        "product/Trading_Local/sdk/HubProtocol.cs",
+        "contracts/commands/**",
+        "tests/control/**",
+        "evidence/S23/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S24",
+      "allowed_paths": [
+        "operations/shadow/**",
+        "operations/demo/**",
+        "research/forward/**",
+        "tests/native-acceptance/**",
+        "evidence/S24/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S25",
+      "allowed_paths": [
+        "packaging/**",
+        "product/Trading_Local/core/maintenance-journal.mjs",
+        "product/Trading_Local/core/maintenance.mjs",
+        "product/Trading_Local/core/package-integrity.mjs",
+        "product/Trading_Local/core/profile-lock.mjs",
+        "product/Trading_Local/core/restore.mjs",
+        "product/Trading_Local/core/store.mjs",
+        "operations/runbooks/**",
+        "tests/upgrade/**",
+        "evidence/S25/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S30",
+      "allowed_paths": [
+        "apps/web/design-system/**",
+        "apps/web/styles/tokens/**",
+        "apps/web/component-preview/**",
+        "apps/web/components/transitions/**",
+        "docs/ui/implementation/**",
+        "tests/web/components/**",
+        "evidence/S30/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S31",
+      "allowed_paths": [
+        "apps/web/shell/**",
+        "apps/web/pages/overview/**",
+        "apps/web/pages/observation/**",
+        "apps/web/pages/research/**",
+        "apps/web/pages/positions/**",
+        "apps/web/view-models/**",
+        "apps/web/route-compat/**",
+        "tests/web/pages/**",
+        "docs/ui/page-mapping/**",
+        "evidence/S31/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S32",
+      "allowed_paths": [
+        "apps/web/settings/**",
+        "apps/web/components/dialogs/**",
+        "apps/web/components/drawers/**",
+        "apps/web/components/forms/**",
+        "apps/web/components/states/**",
+        "apps/web/view-models/configuration/**",
+        "tests/web/states/**",
+        "docs/ui/state-matrix/**",
+        "evidence/S32/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S33",
+      "allowed_paths": [
+        "apps/web/motion/**",
+        "apps/web/design-system/motion/**",
+        "apps/web/components/transitions/**",
+        "apps/web/live-view/**",
+        "apps/web/view-state/**",
+        "tests/web/motion/**",
+        "tests/web/live-updates/**",
+        "docs/ui/motion/**",
+        "evidence/S33/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S34",
+      "allowed_paths": [
+        "apps/web/styles/responsive/**",
+        "apps/web/components/responsive/**",
+        "apps/web/accessibility/**",
+        "apps/web/performance/**",
+        "apps/web/design-system/responsive/**",
+        "tests/web/responsive/**",
+        "tests/web/accessibility/**",
+        "tests/web/performance/**",
+        "docs/ui/quality/**",
+        "evidence/S34/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S35",
+      "allowed_paths": [
+        "tests/web/acceptance/**",
+        "docs/ui/acceptance/**",
+        "evidence/S35/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S26",
+      "allowed_paths": [
+        "releases/**",
+        "docs/release/**",
+        "operations/promotion/**",
+        "evidence/S26/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S27",
+      "allowed_paths": [
+        "research/extensions/**",
+        "data/external/**",
+        "core/models/**",
+        "tests/models/**",
+        "evidence/S27/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S28",
+      "allowed_paths": [
+        "adapters/mt5/**",
+        "apps/hub/tenancy/**",
+        "apps/web/identity/**",
+        "tests/tenancy/**",
+        "evidence/S28/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    },
+    {
+      "id": "S29",
+      "allowed_paths": [
+        "operations/monitoring/**",
+        "operations/research-cycles/**",
+        "docs/status/**",
+        "tests/drift/**",
+        "evidence/S29/**"
+      ],
+      "scope_status": "resolved",
+      "path_resolution_note": "S02 exact path decision: evidence/S02/path-decision/resolution.json (sha256 f48fa227a2862c0f8f6a3687cb939a9605adf59f1c9b476bd4c5ff706aad1c12). Archive members preserve original tree; new namespaces are explicitly unimplemented. No materialization, rights grant, gate removal or product integration."
+    }
+  ]
+}

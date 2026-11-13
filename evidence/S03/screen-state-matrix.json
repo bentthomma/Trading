@@ -1,0 +1,1609 @@
+{
+  "schema": "extremelab-s03-screen-state-documentation/1",
+  "status": "prepared_not_implemented",
+  "orthogonal_axes": {
+    "data": [
+      "loading",
+      "empty",
+      "fresh",
+      "delayed",
+      "stale",
+      "partial",
+      "error",
+      "permission_denied"
+    ],
+    "operation": [
+      "idle",
+      "draft",
+      "validating",
+      "pending_confirmation",
+      "confirmed",
+      "rejected",
+      "conflict"
+    ],
+    "research": [
+      "queued",
+      "running",
+      "cancel_requested",
+      "cancelled",
+      "complete",
+      "incomplete",
+      "failed"
+    ],
+    "note": "Diese Achsen können kombiniert auftreten. Ein ACK ändert weder Datenfrische noch Coverage."
+  },
+  "screens": [
+    {
+      "id": "overview",
+      "title": "Übersicht",
+      "reference_id": "A01-r04",
+      "primary_navigation": true,
+      "component_ids": [
+        "bot_state",
+        "active_approach",
+        "market_count",
+        "position_count",
+        "job_count",
+        "market_chart",
+        "observed_setup",
+        "setup_details",
+        "recent_decisions",
+        "positions_preview",
+        "research_preview",
+        "equity",
+        "free_margin",
+        "open_pnl",
+        "progress_detail"
+      ],
+      "setup_instances": 1,
+      "states": [
+        {
+          "state": "loading",
+          "presentation": "Daten werden geladen",
+          "rule": "Letzte Werte nur mit vorheriger Quellzeit, reservierte Fläche; keine falsche Nullbilanz.",
+          "action_rule": "keine zustandsabhängigen Schreibaktionen",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "empty",
+          "presentation": "Keine Daten im bestätigten Umfang",
+          "rule": "Nur nach erfolgreichem vollständigen Read; unbekannt ist nicht leer.",
+          "action_rule": "Import/Filter optional, keine Handelsfreigabe",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "delayed",
+          "presentation": "Antwort verzögert",
+          "rule": "Bekannte Werte und Quellzeit bleiben; Anfragezeit nicht zur Marktzeit erklären.",
+          "action_rule": "keine automatischen Wiederholungen wirtschaftlicher Aktionen",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "stale",
+          "presentation": "Daten veraltet",
+          "rule": "Quelle und Berechnung getrennt kennzeichnen; Browserreload/Heartbeat reicht nicht.",
+          "action_rule": "keine neuen Handelsabsichten aus ungeklärtem Zustand",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "partial",
+          "presentation": "Daten unvollständig",
+          "rule": "Coverage/Sequenzlücke/Truncation anzeigen; Totals nur für bekannten Umfang.",
+          "action_rule": "keine Aussage vollständiger Kontoreconciliation",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "error",
+          "presentation": "Abruf fehlgeschlagen",
+          "rule": "Konkreter lokaler Fehler plus letzte bekannte Quelle; keine Geheimnisse im Text.",
+          "action_rule": "Wiederholen nur lesend/idempotent, kein blinder Schreibretry",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "permission_denied",
+          "presentation": "Berechtigung fehlt",
+          "rule": "Keine sensiblen Daten aus vorherigem anderen Konto zeigen.",
+          "action_rule": "unautorisierte Aktionen gesperrt; Modusschalter erteilt nichts",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "draft",
+          "presentation": "Entwurf",
+          "rule": "Basisrevision und lokale Unterschiede sichtbar, keine angewandten Regeln behaupten.",
+          "action_rule": "nur prüfen/verwerfen; Forschung nur Jobentwurf",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "pending_confirmation",
+          "presentation": "Bestätigung offen",
+          "rule": "Auftrags-/Jobkennung sichtbar, persistierter Status getrennt von Transportstatus.",
+          "action_rule": "kein Doppelsenden; Schließen hebt offenen Vorgang nicht auf",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "rejected",
+          "presentation": "Abgelehnt",
+          "rule": "Grund und unveränderte bestätigte Werte erhalten; kein optimistischer Erfolg.",
+          "action_rule": "kontrollierter neuer Vorschlag statt stiller Wiederholung",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "conflict",
+          "presentation": "Stand hat sich geändert",
+          "rule": "Entwurf nicht überschreiben; aktuelle/basierte Revision und Abgleich zeigen.",
+          "action_rule": "kein automatisches Merge oder erneutes Anwenden",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "result",
+          "presentation": "Ergebnis",
+          "rule": "Ergebnis und Belegstatus aus Quelle, nicht aus Animation oder HTTP 200 alleine.",
+          "action_rule": "keine automatische Ergebnis-zu-Broker-Umwandlung",
+          "scope_note": "Setupkarte nur hier; beobachtet, geplant und tatsächlich ausgeführt trennen.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        }
+      ],
+      "product_verified": false
+    },
+    {
+      "id": "observation",
+      "title": "Beobachtung",
+      "reference_id": "A02-r03",
+      "primary_navigation": true,
+      "component_ids": [
+        "market_timeframes",
+        "data_freshness",
+        "activity_counts",
+        "inspection_history",
+        "market_selection",
+        "small_chart"
+      ],
+      "setup_instances": 0,
+      "states": [
+        {
+          "state": "loading",
+          "presentation": "Daten werden geladen",
+          "rule": "Letzte Werte nur mit vorheriger Quellzeit, reservierte Fläche; keine falsche Nullbilanz.",
+          "action_rule": "keine zustandsabhängigen Schreibaktionen",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "empty",
+          "presentation": "Keine Daten im bestätigten Umfang",
+          "rule": "Nur nach erfolgreichem vollständigen Read; unbekannt ist nicht leer.",
+          "action_rule": "Import/Filter optional, keine Handelsfreigabe",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "delayed",
+          "presentation": "Antwort verzögert",
+          "rule": "Bekannte Werte und Quellzeit bleiben; Anfragezeit nicht zur Marktzeit erklären.",
+          "action_rule": "keine automatischen Wiederholungen wirtschaftlicher Aktionen",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "stale",
+          "presentation": "Daten veraltet",
+          "rule": "Quelle und Berechnung getrennt kennzeichnen; Browserreload/Heartbeat reicht nicht.",
+          "action_rule": "keine neuen Handelsabsichten aus ungeklärtem Zustand",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "partial",
+          "presentation": "Daten unvollständig",
+          "rule": "Coverage/Sequenzlücke/Truncation anzeigen; Totals nur für bekannten Umfang.",
+          "action_rule": "keine Aussage vollständiger Kontoreconciliation",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "error",
+          "presentation": "Abruf fehlgeschlagen",
+          "rule": "Konkreter lokaler Fehler plus letzte bekannte Quelle; keine Geheimnisse im Text.",
+          "action_rule": "Wiederholen nur lesend/idempotent, kein blinder Schreibretry",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "permission_denied",
+          "presentation": "Berechtigung fehlt",
+          "rule": "Keine sensiblen Daten aus vorherigem anderen Konto zeigen.",
+          "action_rule": "unautorisierte Aktionen gesperrt; Modusschalter erteilt nichts",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "draft",
+          "presentation": "Entwurf",
+          "rule": "Basisrevision und lokale Unterschiede sichtbar, keine angewandten Regeln behaupten.",
+          "action_rule": "nur prüfen/verwerfen; Forschung nur Jobentwurf",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "pending_confirmation",
+          "presentation": "Bestätigung offen",
+          "rule": "Auftrags-/Jobkennung sichtbar, persistierter Status getrennt von Transportstatus.",
+          "action_rule": "kein Doppelsenden; Schließen hebt offenen Vorgang nicht auf",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "rejected",
+          "presentation": "Abgelehnt",
+          "rule": "Grund und unveränderte bestätigte Werte erhalten; kein optimistischer Erfolg.",
+          "action_rule": "kontrollierter neuer Vorschlag statt stiller Wiederholung",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "conflict",
+          "presentation": "Stand hat sich geändert",
+          "rule": "Entwurf nicht überschreiben; aktuelle/basierte Revision und Abgleich zeigen.",
+          "action_rule": "kein automatisches Merge oder erneutes Anwenden",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "result",
+          "presentation": "Ergebnis",
+          "rule": "Ergebnis und Belegstatus aus Quelle, nicht aus Animation oder HTTP 200 alleine.",
+          "action_rule": "keine automatische Ergebnis-zu-Broker-Umwandlung",
+          "scope_note": "Feed-/Featurezeit pro Zeitebene; Marktfilter und Auswahl stabil.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        }
+      ],
+      "product_verified": false
+    },
+    {
+      "id": "research",
+      "title": "Forschung",
+      "reference_id": "A03-r03",
+      "primary_navigation": true,
+      "component_ids": [
+        "jobs",
+        "trial_context",
+        "comparison",
+        "research_result",
+        "new_trial",
+        "cancel_trial",
+        "knowledge"
+      ],
+      "setup_instances": 0,
+      "states": [
+        {
+          "state": "loading",
+          "presentation": "Daten werden geladen",
+          "rule": "Letzte Werte nur mit vorheriger Quellzeit, reservierte Fläche; keine falsche Nullbilanz.",
+          "action_rule": "keine zustandsabhängigen Schreibaktionen",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "empty",
+          "presentation": "Keine Daten im bestätigten Umfang",
+          "rule": "Nur nach erfolgreichem vollständigen Read; unbekannt ist nicht leer.",
+          "action_rule": "Import/Filter optional, keine Handelsfreigabe",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "delayed",
+          "presentation": "Antwort verzögert",
+          "rule": "Bekannte Werte und Quellzeit bleiben; Anfragezeit nicht zur Marktzeit erklären.",
+          "action_rule": "keine automatischen Wiederholungen wirtschaftlicher Aktionen",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "stale",
+          "presentation": "Daten veraltet",
+          "rule": "Quelle und Berechnung getrennt kennzeichnen; Browserreload/Heartbeat reicht nicht.",
+          "action_rule": "keine neuen Handelsabsichten aus ungeklärtem Zustand",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "partial",
+          "presentation": "Daten unvollständig",
+          "rule": "Coverage/Sequenzlücke/Truncation anzeigen; Totals nur für bekannten Umfang.",
+          "action_rule": "keine Aussage vollständiger Kontoreconciliation",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "error",
+          "presentation": "Abruf fehlgeschlagen",
+          "rule": "Konkreter lokaler Fehler plus letzte bekannte Quelle; keine Geheimnisse im Text.",
+          "action_rule": "Wiederholen nur lesend/idempotent, kein blinder Schreibretry",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "permission_denied",
+          "presentation": "Berechtigung fehlt",
+          "rule": "Keine sensiblen Daten aus vorherigem anderen Konto zeigen.",
+          "action_rule": "unautorisierte Aktionen gesperrt; Modusschalter erteilt nichts",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "draft",
+          "presentation": "Entwurf",
+          "rule": "Basisrevision und lokale Unterschiede sichtbar, keine angewandten Regeln behaupten.",
+          "action_rule": "nur prüfen/verwerfen; Forschung nur Jobentwurf",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "pending_confirmation",
+          "presentation": "Bestätigung offen",
+          "rule": "Auftrags-/Jobkennung sichtbar, persistierter Status getrennt von Transportstatus.",
+          "action_rule": "kein Doppelsenden; Schließen hebt offenen Vorgang nicht auf",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "rejected",
+          "presentation": "Abgelehnt",
+          "rule": "Grund und unveränderte bestätigte Werte erhalten; kein optimistischer Erfolg.",
+          "action_rule": "kontrollierter neuer Vorschlag statt stiller Wiederholung",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "conflict",
+          "presentation": "Stand hat sich geändert",
+          "rule": "Entwurf nicht überschreiben; aktuelle/basierte Revision und Abgleich zeigen.",
+          "action_rule": "kein automatisches Merge oder erneutes Anwenden",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "result",
+          "presentation": "Ergebnis",
+          "rule": "Ergebnis und Belegstatus aus Quelle, nicht aus Animation oder HTTP 200 alleine.",
+          "action_rule": "keine automatische Ergebnis-zu-Broker-Umwandlung",
+          "scope_note": "Runquelle, Kosten-/Datenversion; unvollständiger Run kein Gewinner.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        }
+      ],
+      "product_verified": false
+    },
+    {
+      "id": "positions",
+      "title": "Positionen",
+      "reference_id": "A05-r03",
+      "primary_navigation": true,
+      "component_ids": [
+        "positions_inventory",
+        "position_totals",
+        "position_chart",
+        "original_plan",
+        "current_protection",
+        "position_history",
+        "open_plan"
+      ],
+      "setup_instances": 0,
+      "states": [
+        {
+          "state": "loading",
+          "presentation": "Daten werden geladen",
+          "rule": "Letzte Werte nur mit vorheriger Quellzeit, reservierte Fläche; keine falsche Nullbilanz.",
+          "action_rule": "keine zustandsabhängigen Schreibaktionen",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "empty",
+          "presentation": "Keine Daten im bestätigten Umfang",
+          "rule": "Nur nach erfolgreichem vollständigen Read; unbekannt ist nicht leer.",
+          "action_rule": "Import/Filter optional, keine Handelsfreigabe",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "delayed",
+          "presentation": "Antwort verzögert",
+          "rule": "Bekannte Werte und Quellzeit bleiben; Anfragezeit nicht zur Marktzeit erklären.",
+          "action_rule": "keine automatischen Wiederholungen wirtschaftlicher Aktionen",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "stale",
+          "presentation": "Daten veraltet",
+          "rule": "Quelle und Berechnung getrennt kennzeichnen; Browserreload/Heartbeat reicht nicht.",
+          "action_rule": "keine neuen Handelsabsichten aus ungeklärtem Zustand",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "partial",
+          "presentation": "Daten unvollständig",
+          "rule": "Coverage/Sequenzlücke/Truncation anzeigen; Totals nur für bekannten Umfang.",
+          "action_rule": "keine Aussage vollständiger Kontoreconciliation",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "error",
+          "presentation": "Abruf fehlgeschlagen",
+          "rule": "Konkreter lokaler Fehler plus letzte bekannte Quelle; keine Geheimnisse im Text.",
+          "action_rule": "Wiederholen nur lesend/idempotent, kein blinder Schreibretry",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "permission_denied",
+          "presentation": "Berechtigung fehlt",
+          "rule": "Keine sensiblen Daten aus vorherigem anderen Konto zeigen.",
+          "action_rule": "unautorisierte Aktionen gesperrt; Modusschalter erteilt nichts",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "draft",
+          "presentation": "Entwurf",
+          "rule": "Basisrevision und lokale Unterschiede sichtbar, keine angewandten Regeln behaupten.",
+          "action_rule": "nur prüfen/verwerfen; Forschung nur Jobentwurf",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "pending_confirmation",
+          "presentation": "Bestätigung offen",
+          "rule": "Auftrags-/Jobkennung sichtbar, persistierter Status getrennt von Transportstatus.",
+          "action_rule": "kein Doppelsenden; Schließen hebt offenen Vorgang nicht auf",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "rejected",
+          "presentation": "Abgelehnt",
+          "rule": "Grund und unveränderte bestätigte Werte erhalten; kein optimistischer Erfolg.",
+          "action_rule": "kontrollierter neuer Vorschlag statt stiller Wiederholung",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "conflict",
+          "presentation": "Stand hat sich geändert",
+          "rule": "Entwurf nicht überschreiben; aktuelle/basierte Revision und Abgleich zeigen.",
+          "action_rule": "kein automatisches Merge oder erneutes Anwenden",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "read_only_related_detail_only",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "result",
+          "presentation": "Ergebnis",
+          "rule": "Ergebnis und Belegstatus aus Quelle, nicht aus Animation oder HTTP 200 alleine.",
+          "action_rule": "keine automatische Ergebnis-zu-Broker-Umwandlung",
+          "scope_note": "Observerbestand und historische Engineberichte nicht verwechseln; ursprünglichen Plan erhalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        }
+      ],
+      "product_verified": false
+    },
+    {
+      "id": "settings",
+      "title": "Bot-Einstellungen",
+      "reference_id": "A04-r03",
+      "primary_navigation": false,
+      "component_ids": [
+        "operating_mode",
+        "entry_policy",
+        "protection_policy",
+        "limits",
+        "connection",
+        "change_diff",
+        "check_changes",
+        "confirm_changes",
+        "discard_draft"
+      ],
+      "setup_instances": 0,
+      "states": [
+        {
+          "state": "loading",
+          "presentation": "Daten werden geladen",
+          "rule": "Letzte Werte nur mit vorheriger Quellzeit, reservierte Fläche; keine falsche Nullbilanz.",
+          "action_rule": "keine zustandsabhängigen Schreibaktionen",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "empty",
+          "presentation": "Keine Daten im bestätigten Umfang",
+          "rule": "Nur nach erfolgreichem vollständigen Read; unbekannt ist nicht leer.",
+          "action_rule": "Import/Filter optional, keine Handelsfreigabe",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "delayed",
+          "presentation": "Antwort verzögert",
+          "rule": "Bekannte Werte und Quellzeit bleiben; Anfragezeit nicht zur Marktzeit erklären.",
+          "action_rule": "keine automatischen Wiederholungen wirtschaftlicher Aktionen",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "stale",
+          "presentation": "Daten veraltet",
+          "rule": "Quelle und Berechnung getrennt kennzeichnen; Browserreload/Heartbeat reicht nicht.",
+          "action_rule": "keine neuen Handelsabsichten aus ungeklärtem Zustand",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "partial",
+          "presentation": "Daten unvollständig",
+          "rule": "Coverage/Sequenzlücke/Truncation anzeigen; Totals nur für bekannten Umfang.",
+          "action_rule": "keine Aussage vollständiger Kontoreconciliation",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "error",
+          "presentation": "Abruf fehlgeschlagen",
+          "rule": "Konkreter lokaler Fehler plus letzte bekannte Quelle; keine Geheimnisse im Text.",
+          "action_rule": "Wiederholen nur lesend/idempotent, kein blinder Schreibretry",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "permission_denied",
+          "presentation": "Berechtigung fehlt",
+          "rule": "Keine sensiblen Daten aus vorherigem anderen Konto zeigen.",
+          "action_rule": "unautorisierte Aktionen gesperrt; Modusschalter erteilt nichts",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "draft",
+          "presentation": "Entwurf",
+          "rule": "Basisrevision und lokale Unterschiede sichtbar, keine angewandten Regeln behaupten.",
+          "action_rule": "nur prüfen/verwerfen; Forschung nur Jobentwurf",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "pending_confirmation",
+          "presentation": "Bestätigung offen",
+          "rule": "Auftrags-/Jobkennung sichtbar, persistierter Status getrennt von Transportstatus.",
+          "action_rule": "kein Doppelsenden; Schließen hebt offenen Vorgang nicht auf",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "rejected",
+          "presentation": "Abgelehnt",
+          "rule": "Grund und unveränderte bestätigte Werte erhalten; kein optimistischer Erfolg.",
+          "action_rule": "kontrollierter neuer Vorschlag statt stiller Wiederholung",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "conflict",
+          "presentation": "Stand hat sich geändert",
+          "rule": "Entwurf nicht überschreiben; aktuelle/basierte Revision und Abgleich zeigen.",
+          "action_rule": "kein automatisches Merge oder erneutes Anwenden",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        },
+        {
+          "state": "result",
+          "presentation": "Ergebnis",
+          "rule": "Ergebnis und Belegstatus aus Quelle, nicht aus Animation oder HTTP 200 alleine.",
+          "action_rule": "keine automatische Ergebnis-zu-Broker-Umwandlung",
+          "scope_note": "Entwurf → Prüfung → ausstehend → native Bestätigung/Ablehnung; vorhandenen Schutz nicht ausschalten.",
+          "applicability": "screen_or_local_detail",
+          "implementation_status": "NOT_RUN"
+        }
+      ],
+      "product_verified": false
+    }
+  ],
+  "transition_checks": [
+    {
+      "transition": "route",
+      "start_enter_ms": 180,
+      "start_exit_ms": 140,
+      "displacement": "6 px maximal",
+      "specific_rule": "Persistenter Header; Auswahlmarker 160 ms; neuestes Ziel gewinnt.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "local_tab",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        120,
+        160
+      ],
+      "displacement": "dezent oder keiner",
+      "specific_rule": "Auswahlmarker 140 ms; stabiler Container; veraltete Antwort bleibt ohne Anzeigehoheit.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "accordion",
+      "start_enter_ms": 240,
+      "start_exit_ms": 200,
+      "displacement": "gemessene Höhe",
+      "specific_rule": "Inhalt 160 ms ein und 120 ms aus; aus aktueller Höhe umkehren.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "drawer",
+      "start_enter_ms": 280,
+      "start_exit_ms": 220,
+      "displacement": "tatsächliche Kante",
+      "specific_rule": "Backdrop 180 ms ein, 160–200 ms aus; eine Instanz; Fokus zurück.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "popover",
+      "start_enter_ms": [
+        140,
+        180
+      ],
+      "start_exit_ms": [
+        120,
+        160
+      ],
+      "displacement": "4 px",
+      "specific_rule": "Ursprung beim Auslöser; Viewportbegrenzung.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "dialog",
+      "start_enter_ms": [
+        220,
+        280
+      ],
+      "start_exit_ms": [
+        160,
+        200
+      ],
+      "displacement": "12 px oder Skalierung 0,98→1",
+      "specific_rule": "Backdrop 160–180 ms; Fokus und Inertzustand erhalten.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "tooltip",
+      "start_enter_ms": 120,
+      "start_exit_ms": 100,
+      "displacement": "4 px",
+      "specific_rule": "300 ms Verweilen, gezielter Fokus ohne Hoverzwang; entfernten Auslöser bereinigen.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "table_row",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        140,
+        180
+      ],
+      "displacement": "reservierter Platz",
+      "specific_rule": "Nach Austritt Platzabbau 180 ms; stabile Entitätskennung.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "table_reorder",
+      "start_enter_ms": [
+        180,
+        220
+      ],
+      "start_exit_ms": [
+        180,
+        220
+      ],
+      "displacement": "zwischen tatsächlichen Zeilenpositionen",
+      "specific_rule": "Kein automatisches Umsortieren während Bearbeitung oder offenem Detail.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "toast",
+      "start_enter_ms": [
+        180,
+        220
+      ],
+      "start_exit_ms": [
+        160,
+        180
+      ],
+      "displacement": "8 px",
+      "specific_rule": "Deduplizieren; wichtiger Fehler bleibt im Kontext auffindbar.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "loading_to_content",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        100,
+        140
+      ],
+      "displacement": "stabile Fläche",
+      "specific_rule": "Keine künstliche Wartezeit für fertigen Cacheinhalt; Platzhalter hat einen Austritt.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "empty_error_recovery",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        160,
+        200
+      ],
+      "displacement": "stabile Fläche",
+      "specific_rule": "Kontext erhalten; reale Ursache; bestätigte Erholung.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "connection_state",
+      "start_enter_ms": [
+        120,
+        180
+      ],
+      "start_exit_ms": 160,
+      "displacement": "kein räumlicher Versatz nötig",
+      "specific_rule": "Letzter bestätigter Stand bleibt; Aktualität erst nach fachlichem Abgleich.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "inline_detail",
+      "start_enter_ms": [
+        220,
+        280
+      ],
+      "start_exit_ms": [
+        180,
+        220
+      ],
+      "displacement": "gemessene Fläche",
+      "specific_rule": "Scrollanker, Auswahl und Fokusrückgabe bleiben korrekt.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    }
+  ],
+  "test_cases": [
+    {
+      "id": "DUX-001",
+      "primary_step": "S30",
+      "cause_and_procedure": "Visuelle Umsetzung soll beginnen",
+      "expected_result": "Plan zeigt bestandene technische Vorgänger und freigegebene Referenzbasis; sonst kein Start von S30–S35",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "S30–S35 nicht starten; fehlenden technischen Eintrittsnachweis nachholen."
+    },
+    {
+      "id": "DUX-002",
+      "primary_step": "S30",
+      "cause_and_procedure": "Referenzen werden übernommen",
+      "expected_result": "Alle fünf Dateien, Hashes und Nutzerentscheidung passen; fehlende oder veränderte Referenz blockiert die Baseline",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Referenzübernahme sperren; fehlende Datei oder abweichenden Hash mit der tatsächlichen Freigabe abgleichen."
+    },
+    {
+      "id": "DUX-003",
+      "primary_step": "S31",
+      "cause_and_procedure": "Navigation und Setupplatzierung",
+      "expected_result": "Genau vier Hauptbereiche, Einstellungen über Zahnrad, Setup nur einmal auf Übersicht; Duplikate und Strategiekatalog entfernen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Navigationsabweichung, Setupduplikat oder Strategiekatalog innerhalb des betroffenen Umsetzungsschritts korrigieren."
+    },
+    {
+      "id": "DUX-004",
+      "primary_step": "S31",
+      "cause_and_procedure": "Bot beobachtet, handelt aber noch nicht",
+      "expected_result": "Übersicht unterscheidet Kontext, offene Bestätigung und tatsächliche Order; unbestätigte Wirkung korrigieren",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Irreführenden Ausführungszustand korrigieren; denselben beobachteten und bestätigten Ablauf erneut prüfen."
+    },
+    {
+      "id": "DUX-005",
+      "primary_step": "S31",
+      "cause_and_procedure": "Markt und Botzustand unterschiedlich frisch",
+      "expected_result": "Beobachtung zeigt beide Zeitbezüge korrekt; gemeinsame falsche „Aktuell“-Anzeige ist Fehler",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Daten- und Botzeitpunkt getrennt binden; veralteten Zustand erneut einspeisen."
+    },
+    {
+      "id": "DUX-006",
+      "primary_step": "S31",
+      "cause_and_procedure": "Forschungsauftrag ist unvollständig oder verliert",
+      "expected_result": "Quelle, Protokollbezug und passender Ergebnisstatus bleiben sichtbar; keine automatische Gewinneranzeige",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Falsche Gewinner- oder Fertiganzeige entfernen; Ergebnisstatus an den bestätigten Forschungsstand binden."
+    },
+    {
+      "id": "DUX-007",
+      "primary_step": "S32",
+      "cause_and_procedure": "Konfiguration speichern, senden, Ablehnung empfangen",
+      "expected_result": "Entwurf, ausstehend und native Bestätigung/Ablehnung bleiben getrennt; kein optimistischer Erfolg ohne ACK",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Abnahme der schreibenden Bedienung blockieren; ausstehende und bestätigte Wirkung fachlich trennen und Ablehnung erneut prüfen."
+    },
+    {
+      "id": "DUX-008",
+      "primary_step": "S31",
+      "cause_and_procedure": "Position erhält neue Regeln oder Schutzänderung",
+      "expected_result": "Ursprungsplan bleibt erhalten, aktueller Schutz ist belegt; keine stillschweigende Übernahme eines Entwurfs",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Ursprungsplan und bestätigten Schutz wiederherstellen; unbeabsichtigte Konfigurationsübernahme beheben."
+    },
+    {
+      "id": "DUX-009",
+      "primary_step": "S33",
+      "cause_and_procedure": "Hauptbereiche schnell hin und zurück wechseln",
+      "expected_result": "Eintritt und Austritt vollständig, neuester Zielbereich gewinnt, kein Reload und kein alter Inhalt unter neuem Titel",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Veraltete Navigationsantwort oder fehlenden Austritt beheben; schnelle Hin-und-zurück-Sequenz erneut prüfen."
+    },
+    {
+      "id": "DUX-010",
+      "primary_step": "S33",
+      "cause_and_procedure": "Drei lokale Tabs binnen 300 ms wählen",
+      "expected_result": "Ein gültiger letzter Tab, keine gestapelten Inhalte oder verwaisten Requests; Fokus bleibt sinnvoll",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Anfragehoheit und Tabzustand korrigieren; letzte Auswahl und Fokus erneut prüfen."
+    },
+    {
+      "id": "DUX-011",
+      "primary_step": "S33",
+      "cause_and_procedure": "Accordion während Öffnung schließen und erneut öffnen",
+      "expected_result": "Verlauf kehrt aus aktueller Höhe um; kein Sprung, kein hängender Zwischenzustand",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Messung und Unterbrechung ab aktuellem sichtbaren Zustand korrigieren."
+    },
+    {
+      "id": "DUX-012",
+      "primary_step": "S33",
+      "cause_and_procedure": "Drawer per Button, Escape und Außenklick schließen",
+      "expected_result": "Gleiche saubere Ausfahrt, keine Restabdunklung, Fokus zurück; nicht abbrechbare Aufgaben korrekt weiterführen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Austritt, Cleanup oder Fokusrückgabe korrigieren; jeden tatsächlich angebotenen Schließweg prüfen."
+    },
+    {
+      "id": "DUX-013",
+      "primary_step": "S33",
+      "cause_and_procedure": "Popover/Tooltip am Rand öffnen und Auslöser entfernen",
+      "expected_result": "Sichtbare Position bleibt innerhalb des Viewports; Austritt und Cleanup erfolgen ohne schwebenden Rest",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Viewportbegrenzung und Entfernen verwaister Ebenen korrigieren."
+    },
+    {
+      "id": "DUX-014",
+      "primary_step": "S32",
+      "cause_and_procedure": "Dialog mit Tastatur öffnen, bearbeiten, schließen",
+      "expected_result": "Fokus innerhalb der gültigen Ebene, Rückkehr korrekt, Hintergrund nicht bedienbar; Eingaben bei Abbruch nach Vertrag",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Dialogfokus und Abbruchverhalten korrigieren; Tastaturpfad vollständig erneut prüfen."
+    },
+    {
+      "id": "DUX-015",
+      "primary_step": "S33",
+      "cause_and_procedure": "Zeile einfügen, bestätigen, entfernen, erneut empfangen",
+      "expected_result": "Eine Entität bleibt eine Zeile; Eintritt und Austritt ohne Sprung oder doppelten Datensatz",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Entitätskennung, Deduplizierung oder Entfernen nach Austritt korrigieren."
+    },
+    {
+      "id": "DUX-016",
+      "primary_step": "S33",
+      "cause_and_procedure": "Sortierung ändern, während Detail oder Eingabe offen ist",
+      "expected_result": "Stabile Auswahl und Bedienposition; keine automatische Umordnung unter dem Nutzer",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Ungewollte automatische Umordnung während Bedienung aussetzen; Auswahl erhalten."
+    },
+    {
+      "id": "DUX-017",
+      "primary_step": "S33",
+      "cause_and_procedure": "Gleiche Toastmeldung und neue wichtige Meldung",
+      "expected_result": "Duplikate zusammengefasst, geordnete Ein-/Ausblendung; wichtiger Fehler bleibt im Kontext auffindbar",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Meldungen zusammenführen und wichtige Fehler im Kontext dauerhaft auffindbar machen."
+    },
+    {
+      "id": "DUX-018",
+      "primary_step": "S32",
+      "cause_and_procedure": "Cachetreffer, langsame Antwort, Fehler, erneuter Erfolg",
+      "expected_result": "Kein kurzes Ladeflackern; reservierte Fläche; vollständige weiche Übergänge in beide Richtungen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Platzreservierung, Anfragehoheit oder Erholungsübergang korrigieren; tatsächliche Zustandsfolge erneut prüfen."
+    },
+    {
+      "id": "DUX-019",
+      "primary_step": "S34",
+      "cause_and_procedure": "Reduzierte Bewegung aktivieren",
+      "expected_result": "Räumliche Animationen reduziert, Bedienung und Zustände vollständig; keine Pflicht zu voller Fahrt",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Räumliche Bewegung im reduzierten Modus entfernen und vollständige Funktion erneut prüfen."
+    },
+    {
+      "id": "DUX-020",
+      "primary_step": "S33",
+      "cause_and_procedure": "Quote-Last und identische Heartbeats liefern",
+      "expected_result": "Feldweise korrekte Werte, keine erfundenen Zwischenwerte oder wiederholte Eintrittsanimation",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Erfundene Werte, wiederholte Animation oder unnötige Remounts beseitigen; Quote-Fixture erneut abspielen."
+    },
+    {
+      "id": "DUX-021",
+      "primary_step": "S33",
+      "cause_and_procedure": "Während Updates Chart zoomen und Seite scrollen",
+      "expected_result": "Zeitbereich, Zoom, Scrollanker, Fokus und offene Details bleiben erhalten",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Zustandsbesitz von Zoom, Scroll, Auswahl und Fokus korrigieren; betroffenen Updatepfad erneut prüfen."
+    },
+    {
+      "id": "DUX-022",
+      "primary_step": "S33",
+      "cause_and_procedure": "Nachrichten verspätet, doppelt und mit Lücke liefern",
+      "expected_result": "Keine Rückkehr zu älterem Zustand; Lücke und Abgleich nachvollziehbar; Journalereignisse bleiben erhalten",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Reihenfolge, Lückenerkennung oder Journalerhalt korrigieren; identische Fehlersequenz erneut abspielen."
+    },
+    {
+      "id": "DUX-023",
+      "primary_step": "S32",
+      "cause_and_procedure": "Formular ändern und externe neue Konfiguration empfangen",
+      "expected_result": "Lokaler Entwurf bleibt erhalten, Konflikt wird benannt; kein Überschreiben oder unbemerktes Anwenden",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Entwurfszustand vom bestätigten Zustand trennen und Konflikt ausdrücklich anzeigen."
+    },
+    {
+      "id": "DUX-024",
+      "primary_step": "S32",
+      "cause_and_procedure": "Verbindung unterbrechen und neu aufbauen",
+      "expected_result": "Letzter Stand mit Zeit bleibt sichtbar, erst bestätigter Abgleich macht Daten aktuell; keine Nullbilanz",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Letzten bestätigten Stand und Zeit erhalten; Aktualität erst nach fachlichem Abgleich setzen."
+    },
+    {
+      "id": "DUX-025",
+      "primary_step": "S34",
+      "cause_and_procedure": "Alle relevanten Wege nur per Tastatur nutzen",
+      "expected_result": "Logische Reihenfolge, sichtbarer Fokus, keine Falle, benannte Iconaktionen; jeder fehlende Weg ist ein Befund",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Fehlenden Tastaturweg, Namen oder Fokus korrigieren; betreffenden Ablauf erneut prüfen."
+    },
+    {
+      "id": "DUX-026",
+      "primary_step": "S34",
+      "cause_and_procedure": "Normal-, Hover-, Fokus-, Fehler- und Auswahlfarben messen",
+      "expected_result": "Kontrastziele und zusätzliche Zustandskennzeichnung erfüllt; tatsächlich ungeeignete Paarung korrigieren",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Tatsächlich unzureichende Farbpaare oder reine Farbcodierung korrigieren und erneut messen."
+    },
+    {
+      "id": "DUX-027",
+      "primary_step": "S34",
+      "cause_and_procedure": "Viewportmatrix, Touch und 200 % Zoom prüfen",
+      "expected_result": "Kein verdeckter Abschluss, kein globaler Querüberlauf, bedienbare Ziele; fehlerhafter Breakpoint blockiert S34",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Betroffenen Breakpoint oder Interaktionsbereich korrigieren; S34 bleibt bis zum Nachweis offen."
+    },
+    {
+      "id": "DUX-028",
+      "primary_step": "S34",
+      "cause_and_procedure": "Übergänge mit festem Datensatz messen und aufnehmen",
+      "expected_result": "Eintritt und Austritt erfüllen dokumentierte Zeitziele; Traces und Videos referenziert; Stillstände werden behoben",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Trace analysieren und belegte Ursache beheben; betroffenen Eintritt, Austritt oder Umkehr erneut messen."
+    },
+    {
+      "id": "DUX-029",
+      "primary_step": "S34",
+      "cause_and_procedure": "Last, Burst, Hintergrundtab und Wiederkehr prüfen",
+      "expected_result": "Keine Aktualisierungsflut oder neue Vollanimation, aktuelle Anzeige ohne verlorene Fachereignisse",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Nachholflut, Journalverlust oder wiederholte Eintrittssequenz beheben und denselben Lastfall erneut prüfen."
+    },
+    {
+      "id": "DUX-030",
+      "primary_step": "S35",
+      "cause_and_procedure": "Fünf Referenzen gegen Browseraufnahmen vergleichen",
+      "expected_result": "Geometrie, Hierarchie und Farben passen; Masken eng begründet; unfreigegebene sichtbare Abweichung bleibt offen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Nicht freigegebene sichtbare Abweichung korrigieren oder konkret nach dem Änderungsweg entscheiden; keine großflächige Maske."
+    },
+    {
+      "id": "DUX-031",
+      "primary_step": "S34",
+      "cause_and_procedure": "Lange Namen, große Beträge, fehlende Daten und Sprache prüfen",
+      "expected_result": "Einheiten, Vorzeichen und Texte eindeutig, kein Abschneiden relevanter Inhalte oder falscher Nullwert",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Formatierung, Layout oder fehlenden Datenzustand korrigieren und Grenzfall wiederholen."
+    },
+    {
+      "id": "DUX-032",
+      "primary_step": "S35",
+      "cause_and_procedure": "Gesamten Stand zur Designabnahme vorlegen",
+      "expected_result": "Exakte Referenzen, Produktrevision, bekannte Ausnahmen und Prüfergebnis sind vollständig; keine pauschale Freigabe ungeprüfter Bereiche",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Fehlenden Nachweis ergänzen oder offene Abweichung behandeln; keine pauschale Produktfreigabe eintragen."
+    }
+  ],
+  "responsive_checks": [
+    {
+      "viewport_css": {
+        "width": 1440,
+        "height": 900
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 1024,
+        "height": 768
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 390,
+        "height": 844
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 360,
+        "height": 800
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 320,
+        "height": 740
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    }
+  ],
+  "all_product_cases_executed": false,
+  "source_template_sha256": "b766da254b260218a61e5ce8da6ea186173f6f187822c1744727a6862d35024f",
+  "source_semantic_rules": "field-contracts.json#rules",
+  "compound_state_requirements": [
+    {
+      "id": "fresh_but_partial",
+      "visible": [
+        "Aktuell gemeldet",
+        "Daten unvollständig"
+      ],
+      "forbidden": [
+        "vollständig bestätigt"
+      ],
+      "source_rule": "quality_axes"
+    },
+    {
+      "id": "fresh_feed_stale_row",
+      "visible": [
+        "Quellzeit der Zeile",
+        "Ältere Meldung"
+      ],
+      "forbidden": [
+        "gesamte Tabelle als aktuell markieren"
+      ],
+      "source_rule": "row_freshness"
+    },
+    {
+      "id": "engine_reports_no_observed_positions",
+      "visible": [
+        "Kein Bestand im aktuellen Observerumfang",
+        "Historischer Bericht bleibt separat"
+      ],
+      "forbidden": [
+        "Position geschlossen bestätigt"
+      ],
+      "source_rule": "reported_inventory"
+    },
+    {
+      "id": "reported_agreement_no_native_proof",
+      "visible": [
+        "Meldungen stimmen überein",
+        "Nativer Schutz nicht unabhängig bestätigt"
+      ],
+      "forbidden": [
+        "Schutz bestätigt"
+      ],
+      "source_rule": "report_not_protection"
+    },
+    {
+      "id": "free_margin_unavailable",
+      "visible": [
+        "Nicht verfügbar",
+        "Kontoreader fehlt"
+      ],
+      "forbidden": [
+        "0 als Ersatz",
+        "equity minus balance"
+      ],
+      "source_rule": "no_free_margin_derivation"
+    },
+    {
+      "id": "pending_after_confirm",
+      "visible": [
+        "Bestätigung ausstehend",
+        "Vorschlagskennung"
+      ],
+      "forbidden": [
+        "Angewandt aus HTTP 200"
+      ],
+      "source_rule": "proposal_not_application"
+    }
+  ]
+}

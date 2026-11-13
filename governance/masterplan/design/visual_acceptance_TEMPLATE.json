@@ -1,0 +1,1192 @@
+{
+  "template_version": "1.1.0",
+  "language": "de-CH",
+  "purpose": "Auszufüllender Nachweis für S30–S35. Die Vorlage ist weder ein bestandener Test noch eine Freigabe der Produktimplementierung.",
+  "report_status": "DRAFT",
+  "ready_for_acceptance": false,
+  "recorded_at": null,
+  "recorded_by": null,
+  "path_convention": "Alle Evidenzpfade relativ zur Wurzel des Masterplanpakets oder mit eindeutigem externem Artefaktbezug; keine angenommenen Dateien.",
+  "source_documents": {
+    "plan": "plan.json",
+    "ux_motion_spec": "design/UX_MOTION_SPEC.md",
+    "design_decisions": "design/DESIGNENTSCHEIDUNGEN.md",
+    "desktop_basis_approval": "design/approval.json",
+    "reference_inventory": "design/reference_inventory.json",
+    "plan_sha256_at_test": null,
+    "ux_motion_spec_sha256_at_test": null
+  },
+  "entry_gates": {
+    "rule": "Visuelle Umsetzung erst nach den technischen Vorgängern; S35 vor Gesamtabschluss S26. plan.json bleibt maßgeblich.",
+    "required_technical_steps": [
+      {
+        "step_id": "S21",
+        "verified_status": "NOT_CHECKED",
+        "evidence_path": null
+      },
+      {
+        "step_id": "S22",
+        "verified_status": "NOT_CHECKED",
+        "evidence_path": null
+      },
+      {
+        "step_id": "S25",
+        "verified_status": "NOT_CHECKED",
+        "evidence_path": null
+      }
+    ],
+    "desktop_design_basis_accepted_in_conversation": true,
+    "approval_record_verified": false,
+    "technical_product_verified": false,
+    "five_references_verified": false,
+    "entry_check_status": "NOT_RUN"
+  },
+  "approved_desktop_references": [
+    {
+      "id": "A01-r04",
+      "view": "Botübersicht",
+      "path": "assets/design/approved/A01-r04.png",
+      "sha256_from_inventory": null,
+      "actual_sha256_at_test": null,
+      "pixel_width": null,
+      "pixel_height": null,
+      "verified_status": "NOT_RUN",
+      "comparison_artifacts": [],
+      "comparison_viewport_css": null,
+      "fixture_id": null,
+      "masks": [],
+      "implementation_match_status": "NOT_RUN"
+    },
+    {
+      "id": "A02-r03",
+      "view": "Beobachtung",
+      "path": "assets/design/approved/A02-r03.png",
+      "sha256_from_inventory": null,
+      "actual_sha256_at_test": null,
+      "pixel_width": null,
+      "pixel_height": null,
+      "verified_status": "NOT_RUN",
+      "comparison_artifacts": [],
+      "comparison_viewport_css": null,
+      "fixture_id": null,
+      "masks": [],
+      "implementation_match_status": "NOT_RUN"
+    },
+    {
+      "id": "A03-r03",
+      "view": "Forschung",
+      "path": "assets/design/approved/A03-r03.png",
+      "sha256_from_inventory": null,
+      "actual_sha256_at_test": null,
+      "pixel_width": null,
+      "pixel_height": null,
+      "verified_status": "NOT_RUN",
+      "comparison_artifacts": [],
+      "comparison_viewport_css": null,
+      "fixture_id": null,
+      "masks": [],
+      "implementation_match_status": "NOT_RUN"
+    },
+    {
+      "id": "A04-r03",
+      "view": "Bot-Einstellungen",
+      "path": "assets/design/approved/A04-r03.png",
+      "sha256_from_inventory": null,
+      "actual_sha256_at_test": null,
+      "pixel_width": null,
+      "pixel_height": null,
+      "verified_status": "NOT_RUN",
+      "comparison_artifacts": [],
+      "comparison_viewport_css": null,
+      "fixture_id": null,
+      "masks": [],
+      "implementation_match_status": "NOT_RUN"
+    },
+    {
+      "id": "A05-r03",
+      "view": "Positionen",
+      "path": "assets/design/approved/A05-r03.png",
+      "sha256_from_inventory": null,
+      "actual_sha256_at_test": null,
+      "pixel_width": null,
+      "pixel_height": null,
+      "verified_status": "NOT_RUN",
+      "comparison_artifacts": [],
+      "comparison_viewport_css": null,
+      "fixture_id": null,
+      "masks": [],
+      "implementation_match_status": "NOT_RUN"
+    }
+  ],
+  "immutable_product_rules": {
+    "main_navigation": [
+      "Übersicht",
+      "Beobachtung",
+      "Forschung",
+      "Positionen"
+    ],
+    "settings_entry": "Zahnrad",
+    "observed_setup_placement": "Ausschließlich Übersicht, genau eine Karte.",
+    "strategy_catalog_main_view": false,
+    "research_style": "Fachliche Tiefe von B innerhalb der freigegebenen Gestaltung A.",
+    "image_numbers_are_illustrations": true,
+    "native_confirmation_required_for_applied_financial_effect": true,
+    "full_page_reload_for_live_updates_allowed": false,
+    "animated_fabricated_price_values_allowed": false,
+    "mobile_design_basis_status": "DERIVATION_TO_VERIFY",
+    "actual_motion_status": "NOT_VERIFIED"
+  },
+  "build_under_test": {
+    "repository": null,
+    "commit_sha": null,
+    "build_id": null,
+    "environment_url": null,
+    "production_build": null,
+    "component_version": null,
+    "token_version": null,
+    "test_runner_version": null,
+    "fixture_version": null,
+    "fixture_seed": null,
+    "fixture_hash": null,
+    "observed_test_start": null,
+    "observed_test_end": null
+  },
+  "motion_start_tokens": {
+    "status": "PROPOSED_START_VALUES_NOT_MEASURED_RESULTS",
+    "quick_ms": {
+      "initial": 140,
+      "allowed_range": [
+        100,
+        180
+      ]
+    },
+    "content_ms": {
+      "initial": 200,
+      "allowed_range": [
+        160,
+        240
+      ]
+    },
+    "panel_ms": {
+      "initial": 280,
+      "allowed_range": [
+        220,
+        320
+      ]
+    },
+    "exit_ms": {
+      "initial": 180,
+      "allowed_range": [
+        140,
+        220
+      ]
+    },
+    "ease_enter": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "ease_exit": "cubic-bezier(0.4, 0, 1, 1)",
+    "ease_change": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "small_offset_css_px": [
+      4,
+      8
+    ],
+    "panel_offset_css_px": [
+      12,
+      20
+    ],
+    "reduced_motion": "Keine räumlichen Fahrten oder Skalierung; bis 100 ms Opazität oder direkter Zustandswechsel.",
+    "documented_adjustments": []
+  },
+  "transition_checks": [
+    {
+      "transition": "route",
+      "start_enter_ms": 180,
+      "start_exit_ms": 140,
+      "displacement": "6 px maximal",
+      "specific_rule": "Persistenter Header; Auswahlmarker 160 ms; neuestes Ziel gewinnt.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "local_tab",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        120,
+        160
+      ],
+      "displacement": "dezent oder keiner",
+      "specific_rule": "Auswahlmarker 140 ms; stabiler Container; veraltete Antwort bleibt ohne Anzeigehoheit.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "accordion",
+      "start_enter_ms": 240,
+      "start_exit_ms": 200,
+      "displacement": "gemessene Höhe",
+      "specific_rule": "Inhalt 160 ms ein und 120 ms aus; aus aktueller Höhe umkehren.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "drawer",
+      "start_enter_ms": 280,
+      "start_exit_ms": 220,
+      "displacement": "tatsächliche Kante",
+      "specific_rule": "Backdrop 180 ms ein, 160–200 ms aus; eine Instanz; Fokus zurück.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "popover",
+      "start_enter_ms": [
+        140,
+        180
+      ],
+      "start_exit_ms": [
+        120,
+        160
+      ],
+      "displacement": "4 px",
+      "specific_rule": "Ursprung beim Auslöser; Viewportbegrenzung.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "dialog",
+      "start_enter_ms": [
+        220,
+        280
+      ],
+      "start_exit_ms": [
+        160,
+        200
+      ],
+      "displacement": "12 px oder Skalierung 0,98→1",
+      "specific_rule": "Backdrop 160–180 ms; Fokus und Inertzustand erhalten.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "tooltip",
+      "start_enter_ms": 120,
+      "start_exit_ms": 100,
+      "displacement": "4 px",
+      "specific_rule": "300 ms Verweilen, gezielter Fokus ohne Hoverzwang; entfernten Auslöser bereinigen.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "table_row",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        140,
+        180
+      ],
+      "displacement": "reservierter Platz",
+      "specific_rule": "Nach Austritt Platzabbau 180 ms; stabile Entitätskennung.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "table_reorder",
+      "start_enter_ms": [
+        180,
+        220
+      ],
+      "start_exit_ms": [
+        180,
+        220
+      ],
+      "displacement": "zwischen tatsächlichen Zeilenpositionen",
+      "specific_rule": "Kein automatisches Umsortieren während Bearbeitung oder offenem Detail.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "toast",
+      "start_enter_ms": [
+        180,
+        220
+      ],
+      "start_exit_ms": [
+        160,
+        180
+      ],
+      "displacement": "8 px",
+      "specific_rule": "Deduplizieren; wichtiger Fehler bleibt im Kontext auffindbar.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "loading_to_content",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        100,
+        140
+      ],
+      "displacement": "stabile Fläche",
+      "specific_rule": "Keine künstliche Wartezeit für fertigen Cacheinhalt; Platzhalter hat einen Austritt.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "empty_error_recovery",
+      "start_enter_ms": [
+        160,
+        200
+      ],
+      "start_exit_ms": [
+        160,
+        200
+      ],
+      "displacement": "stabile Fläche",
+      "specific_rule": "Kontext erhalten; reale Ursache; bestätigte Erholung.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "connection_state",
+      "start_enter_ms": [
+        120,
+        180
+      ],
+      "start_exit_ms": 160,
+      "displacement": "kein räumlicher Versatz nötig",
+      "specific_rule": "Letzter bestätigter Stand bleibt; Aktualität erst nach fachlichem Abgleich.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    },
+    {
+      "transition": "inline_detail",
+      "start_enter_ms": [
+        220,
+        280
+      ],
+      "start_exit_ms": [
+        180,
+        220
+      ],
+      "displacement": "gemessene Fläche",
+      "specific_rule": "Scrollanker, Auswahl und Fokusrückgabe bleiben korrekt.",
+      "enter_status": "NOT_RUN",
+      "exit_status": "NOT_RUN",
+      "rapid_reverse_status": "NOT_RUN",
+      "focus_cleanup_status": "NOT_RUN",
+      "reduced_motion_status": "NOT_RUN",
+      "actual_enter_ms": null,
+      "actual_exit_ms": null,
+      "video_evidence": [],
+      "trace_evidence": [],
+      "findings": []
+    }
+  ],
+  "responsive_checks": [
+    {
+      "viewport_css": {
+        "width": 1440,
+        "height": 900
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 1024,
+        "height": 768
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 390,
+        "height": 844
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 360,
+        "height": 800
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    },
+    {
+      "viewport_css": {
+        "width": 320,
+        "height": 740
+      },
+      "zoom_percent": 100,
+      "device_pixel_ratio": null,
+      "device_id": null,
+      "keyboard_path_status": "NOT_RUN",
+      "touch_target_status": "NOT_RUN",
+      "no_global_horizontal_overflow_status": "NOT_RUN",
+      "critical_content_visible_status": "NOT_RUN",
+      "enter_and_exit_status": "NOT_RUN",
+      "evidence": []
+    }
+  ],
+  "additional_accessibility_checks": {
+    "desktop_zoom_200_percent": {
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    "high_pixel_density_real_device": {
+      "status": "NOT_RUN",
+      "device_pixel_ratio": null,
+      "evidence": []
+    },
+    "on_screen_keyboard_and_changed_height": {
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    "reduced_motion": {
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    "keyboard_only_flows": {
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    "screen_reader_status_announcements": {
+      "status": "NOT_RUN",
+      "evidence": []
+    },
+    "chosen_contrast_targets": {
+      "regular_text_min_ratio": 4.5,
+      "large_text_min_ratio": 3,
+      "necessary_control_graphics_min_ratio": 3,
+      "status": "NOT_MEASURED",
+      "measurements": []
+    },
+    "chosen_touch_target_min_css_px": {
+      "width": 44,
+      "height": 44,
+      "status": "NOT_MEASURED"
+    }
+  },
+  "visual_comparison_protocol": {
+    "reference_viewport_match_required": true,
+    "fixed_fixture_required": true,
+    "side_by_side_and_overlay_required": true,
+    "initial_constant_spacing_tolerance_css_px": 2,
+    "tolerances_frozen_at_s30": false,
+    "measured_geometry_tolerances": [],
+    "dynamic_masks_must_be_narrow_and_justified": true,
+    "whole_card_masks_to_hide_layout_failures_allowed": false,
+    "baseline_browser_capture_after_reference_review": null
+  },
+  "performance_protocol": {
+    "status": "PROPOSED_PROTOCOL_NOT_AN_ACHIEVED_RESULT",
+    "minimum_real_device_types": [
+      "Notebook",
+      "Mobilgerät"
+    ],
+    "emulation_replaces_real_devices": false,
+    "required_device_metadata": [
+      "device_id",
+      "manufacturer_model",
+      "os_version",
+      "browser_version",
+      "cpu",
+      "gpu",
+      "memory_gb",
+      "refresh_hz",
+      "device_pixel_ratio",
+      "viewport_css",
+      "power_mode",
+      "measurement_tool_version"
+    ],
+    "device_records": [],
+    "initial_fixture": {
+      "observed_market_rows": 100,
+      "open_positions": 50,
+      "research_jobs": 20,
+      "loaded_chart_points": 2000,
+      "steady_quotes_per_second": 200,
+      "steady_seconds": 60,
+      "burst_quotes_per_second": 1000,
+      "burst_seconds": 5,
+      "minimum_repetitions_per_representative_enter_exit_reverse_flow": 5,
+      "actual_fixture_identity": null,
+      "capacity_contract_reference": null,
+      "higher_capacity_case_if_required": null
+    },
+    "initial_targets_for_60_hz_devices": {
+      "frame_interval_p95_max_ms": 20,
+      "max_application_caused_visible_stall_ms": 100,
+      "local_input_to_first_visible_feedback_p95_max_ms": 100,
+      "enter_and_exit_measured_separately": true
+    },
+    "measurement_runs": [],
+    "run_record_template": {
+      "run_id": null,
+      "device_id": null,
+      "fixture_id": null,
+      "flow": null,
+      "direction": null,
+      "sample_count": null,
+      "frame_interval_p95_ms": null,
+      "max_application_caused_visible_stall_ms": null,
+      "local_input_to_first_visible_feedback_p95_ms": null,
+      "operating_system_background_activity_notes": null,
+      "trace_path": null,
+      "video_path": null,
+      "status": "NOT_RUN",
+      "findings": []
+    }
+  },
+  "test_cases": [
+    {
+      "id": "DUX-001",
+      "primary_step": "S30",
+      "cause_and_procedure": "Visuelle Umsetzung soll beginnen",
+      "expected_result": "Plan zeigt bestandene technische Vorgänger und freigegebene Referenzbasis; sonst kein Start von S30–S35",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "S30–S35 nicht starten; fehlenden technischen Eintrittsnachweis nachholen."
+    },
+    {
+      "id": "DUX-002",
+      "primary_step": "S30",
+      "cause_and_procedure": "Referenzen werden übernommen",
+      "expected_result": "Alle fünf Dateien, Hashes und Nutzerentscheidung passen; fehlende oder veränderte Referenz blockiert die Baseline",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Referenzübernahme sperren; fehlende Datei oder abweichenden Hash mit der tatsächlichen Freigabe abgleichen."
+    },
+    {
+      "id": "DUX-003",
+      "primary_step": "S31",
+      "cause_and_procedure": "Navigation und Setupplatzierung",
+      "expected_result": "Genau vier Hauptbereiche, Einstellungen über Zahnrad, Setup nur einmal auf Übersicht; Duplikate und Strategiekatalog entfernen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Navigationsabweichung, Setupduplikat oder Strategiekatalog innerhalb des betroffenen Umsetzungsschritts korrigieren."
+    },
+    {
+      "id": "DUX-004",
+      "primary_step": "S31",
+      "cause_and_procedure": "Bot beobachtet, handelt aber noch nicht",
+      "expected_result": "Übersicht unterscheidet Kontext, offene Bestätigung und tatsächliche Order; unbestätigte Wirkung korrigieren",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Irreführenden Ausführungszustand korrigieren; denselben beobachteten und bestätigten Ablauf erneut prüfen."
+    },
+    {
+      "id": "DUX-005",
+      "primary_step": "S31",
+      "cause_and_procedure": "Markt und Botzustand unterschiedlich frisch",
+      "expected_result": "Beobachtung zeigt beide Zeitbezüge korrekt; gemeinsame falsche „Aktuell“-Anzeige ist Fehler",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Daten- und Botzeitpunkt getrennt binden; veralteten Zustand erneut einspeisen."
+    },
+    {
+      "id": "DUX-006",
+      "primary_step": "S31",
+      "cause_and_procedure": "Forschungsauftrag ist unvollständig oder verliert",
+      "expected_result": "Quelle, Protokollbezug und passender Ergebnisstatus bleiben sichtbar; keine automatische Gewinneranzeige",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Falsche Gewinner- oder Fertiganzeige entfernen; Ergebnisstatus an den bestätigten Forschungsstand binden."
+    },
+    {
+      "id": "DUX-007",
+      "primary_step": "S32",
+      "cause_and_procedure": "Konfiguration speichern, senden, Ablehnung empfangen",
+      "expected_result": "Entwurf, ausstehend und native Bestätigung/Ablehnung bleiben getrennt; kein optimistischer Erfolg ohne ACK",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Abnahme der schreibenden Bedienung blockieren; ausstehende und bestätigte Wirkung fachlich trennen und Ablehnung erneut prüfen."
+    },
+    {
+      "id": "DUX-008",
+      "primary_step": "S31",
+      "cause_and_procedure": "Position erhält neue Regeln oder Schutzänderung",
+      "expected_result": "Ursprungsplan bleibt erhalten, aktueller Schutz ist belegt; keine stillschweigende Übernahme eines Entwurfs",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Ursprungsplan und bestätigten Schutz wiederherstellen; unbeabsichtigte Konfigurationsübernahme beheben."
+    },
+    {
+      "id": "DUX-009",
+      "primary_step": "S33",
+      "cause_and_procedure": "Hauptbereiche schnell hin und zurück wechseln",
+      "expected_result": "Eintritt und Austritt vollständig, neuester Zielbereich gewinnt, kein Reload und kein alter Inhalt unter neuem Titel",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Veraltete Navigationsantwort oder fehlenden Austritt beheben; schnelle Hin-und-zurück-Sequenz erneut prüfen."
+    },
+    {
+      "id": "DUX-010",
+      "primary_step": "S33",
+      "cause_and_procedure": "Drei lokale Tabs binnen 300 ms wählen",
+      "expected_result": "Ein gültiger letzter Tab, keine gestapelten Inhalte oder verwaisten Requests; Fokus bleibt sinnvoll",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Anfragehoheit und Tabzustand korrigieren; letzte Auswahl und Fokus erneut prüfen."
+    },
+    {
+      "id": "DUX-011",
+      "primary_step": "S33",
+      "cause_and_procedure": "Accordion während Öffnung schließen und erneut öffnen",
+      "expected_result": "Verlauf kehrt aus aktueller Höhe um; kein Sprung, kein hängender Zwischenzustand",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Messung und Unterbrechung ab aktuellem sichtbaren Zustand korrigieren."
+    },
+    {
+      "id": "DUX-012",
+      "primary_step": "S33",
+      "cause_and_procedure": "Drawer per Button, Escape und Außenklick schließen",
+      "expected_result": "Gleiche saubere Ausfahrt, keine Restabdunklung, Fokus zurück; nicht abbrechbare Aufgaben korrekt weiterführen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Austritt, Cleanup oder Fokusrückgabe korrigieren; jeden tatsächlich angebotenen Schließweg prüfen."
+    },
+    {
+      "id": "DUX-013",
+      "primary_step": "S33",
+      "cause_and_procedure": "Popover/Tooltip am Rand öffnen und Auslöser entfernen",
+      "expected_result": "Sichtbare Position bleibt innerhalb des Viewports; Austritt und Cleanup erfolgen ohne schwebenden Rest",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Viewportbegrenzung und Entfernen verwaister Ebenen korrigieren."
+    },
+    {
+      "id": "DUX-014",
+      "primary_step": "S32",
+      "cause_and_procedure": "Dialog mit Tastatur öffnen, bearbeiten, schließen",
+      "expected_result": "Fokus innerhalb der gültigen Ebene, Rückkehr korrekt, Hintergrund nicht bedienbar; Eingaben bei Abbruch nach Vertrag",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Dialogfokus und Abbruchverhalten korrigieren; Tastaturpfad vollständig erneut prüfen."
+    },
+    {
+      "id": "DUX-015",
+      "primary_step": "S33",
+      "cause_and_procedure": "Zeile einfügen, bestätigen, entfernen, erneut empfangen",
+      "expected_result": "Eine Entität bleibt eine Zeile; Eintritt und Austritt ohne Sprung oder doppelten Datensatz",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Entitätskennung, Deduplizierung oder Entfernen nach Austritt korrigieren."
+    },
+    {
+      "id": "DUX-016",
+      "primary_step": "S33",
+      "cause_and_procedure": "Sortierung ändern, während Detail oder Eingabe offen ist",
+      "expected_result": "Stabile Auswahl und Bedienposition; keine automatische Umordnung unter dem Nutzer",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Ungewollte automatische Umordnung während Bedienung aussetzen; Auswahl erhalten."
+    },
+    {
+      "id": "DUX-017",
+      "primary_step": "S33",
+      "cause_and_procedure": "Gleiche Toastmeldung und neue wichtige Meldung",
+      "expected_result": "Duplikate zusammengefasst, geordnete Ein-/Ausblendung; wichtiger Fehler bleibt im Kontext auffindbar",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Meldungen zusammenführen und wichtige Fehler im Kontext dauerhaft auffindbar machen."
+    },
+    {
+      "id": "DUX-018",
+      "primary_step": "S32",
+      "cause_and_procedure": "Cachetreffer, langsame Antwort, Fehler, erneuter Erfolg",
+      "expected_result": "Kein kurzes Ladeflackern; reservierte Fläche; vollständige weiche Übergänge in beide Richtungen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Platzreservierung, Anfragehoheit oder Erholungsübergang korrigieren; tatsächliche Zustandsfolge erneut prüfen."
+    },
+    {
+      "id": "DUX-019",
+      "primary_step": "S34",
+      "cause_and_procedure": "Reduzierte Bewegung aktivieren",
+      "expected_result": "Räumliche Animationen reduziert, Bedienung und Zustände vollständig; keine Pflicht zu voller Fahrt",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Räumliche Bewegung im reduzierten Modus entfernen und vollständige Funktion erneut prüfen."
+    },
+    {
+      "id": "DUX-020",
+      "primary_step": "S33",
+      "cause_and_procedure": "Quote-Last und identische Heartbeats liefern",
+      "expected_result": "Feldweise korrekte Werte, keine erfundenen Zwischenwerte oder wiederholte Eintrittsanimation",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Erfundene Werte, wiederholte Animation oder unnötige Remounts beseitigen; Quote-Fixture erneut abspielen."
+    },
+    {
+      "id": "DUX-021",
+      "primary_step": "S33",
+      "cause_and_procedure": "Während Updates Chart zoomen und Seite scrollen",
+      "expected_result": "Zeitbereich, Zoom, Scrollanker, Fokus und offene Details bleiben erhalten",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Zustandsbesitz von Zoom, Scroll, Auswahl und Fokus korrigieren; betroffenen Updatepfad erneut prüfen."
+    },
+    {
+      "id": "DUX-022",
+      "primary_step": "S33",
+      "cause_and_procedure": "Nachrichten verspätet, doppelt und mit Lücke liefern",
+      "expected_result": "Keine Rückkehr zu älterem Zustand; Lücke und Abgleich nachvollziehbar; Journalereignisse bleiben erhalten",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Reihenfolge, Lückenerkennung oder Journalerhalt korrigieren; identische Fehlersequenz erneut abspielen."
+    },
+    {
+      "id": "DUX-023",
+      "primary_step": "S32",
+      "cause_and_procedure": "Formular ändern und externe neue Konfiguration empfangen",
+      "expected_result": "Lokaler Entwurf bleibt erhalten, Konflikt wird benannt; kein Überschreiben oder unbemerktes Anwenden",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Entwurfszustand vom bestätigten Zustand trennen und Konflikt ausdrücklich anzeigen."
+    },
+    {
+      "id": "DUX-024",
+      "primary_step": "S32",
+      "cause_and_procedure": "Verbindung unterbrechen und neu aufbauen",
+      "expected_result": "Letzter Stand mit Zeit bleibt sichtbar, erst bestätigter Abgleich macht Daten aktuell; keine Nullbilanz",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Letzten bestätigten Stand und Zeit erhalten; Aktualität erst nach fachlichem Abgleich setzen."
+    },
+    {
+      "id": "DUX-025",
+      "primary_step": "S34",
+      "cause_and_procedure": "Alle relevanten Wege nur per Tastatur nutzen",
+      "expected_result": "Logische Reihenfolge, sichtbarer Fokus, keine Falle, benannte Iconaktionen; jeder fehlende Weg ist ein Befund",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Fehlenden Tastaturweg, Namen oder Fokus korrigieren; betreffenden Ablauf erneut prüfen."
+    },
+    {
+      "id": "DUX-026",
+      "primary_step": "S34",
+      "cause_and_procedure": "Normal-, Hover-, Fokus-, Fehler- und Auswahlfarben messen",
+      "expected_result": "Kontrastziele und zusätzliche Zustandskennzeichnung erfüllt; tatsächlich ungeeignete Paarung korrigieren",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Tatsächlich unzureichende Farbpaare oder reine Farbcodierung korrigieren und erneut messen."
+    },
+    {
+      "id": "DUX-027",
+      "primary_step": "S34",
+      "cause_and_procedure": "Viewportmatrix, Touch und 200 % Zoom prüfen",
+      "expected_result": "Kein verdeckter Abschluss, kein globaler Querüberlauf, bedienbare Ziele; fehlerhafter Breakpoint blockiert S34",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Betroffenen Breakpoint oder Interaktionsbereich korrigieren; S34 bleibt bis zum Nachweis offen."
+    },
+    {
+      "id": "DUX-028",
+      "primary_step": "S34",
+      "cause_and_procedure": "Übergänge mit festem Datensatz messen und aufnehmen",
+      "expected_result": "Eintritt und Austritt erfüllen dokumentierte Zeitziele; Traces und Videos referenziert; Stillstände werden behoben",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Trace analysieren und belegte Ursache beheben; betroffenen Eintritt, Austritt oder Umkehr erneut messen."
+    },
+    {
+      "id": "DUX-029",
+      "primary_step": "S34",
+      "cause_and_procedure": "Last, Burst, Hintergrundtab und Wiederkehr prüfen",
+      "expected_result": "Keine Aktualisierungsflut oder neue Vollanimation, aktuelle Anzeige ohne verlorene Fachereignisse",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Nachholflut, Journalverlust oder wiederholte Eintrittssequenz beheben und denselben Lastfall erneut prüfen."
+    },
+    {
+      "id": "DUX-030",
+      "primary_step": "S35",
+      "cause_and_procedure": "Fünf Referenzen gegen Browseraufnahmen vergleichen",
+      "expected_result": "Geometrie, Hierarchie und Farben passen; Masken eng begründet; unfreigegebene sichtbare Abweichung bleibt offen",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Nicht freigegebene sichtbare Abweichung korrigieren oder konkret nach dem Änderungsweg entscheiden; keine großflächige Maske."
+    },
+    {
+      "id": "DUX-031",
+      "primary_step": "S34",
+      "cause_and_procedure": "Lange Namen, große Beträge, fehlende Daten und Sprache prüfen",
+      "expected_result": "Einheiten, Vorzeichen und Texte eindeutig, kein Abschneiden relevanter Inhalte oder falscher Nullwert",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Formatierung, Layout oder fehlenden Datenzustand korrigieren und Grenzfall wiederholen."
+    },
+    {
+      "id": "DUX-032",
+      "primary_step": "S35",
+      "cause_and_procedure": "Gesamten Stand zur Designabnahme vorlegen",
+      "expected_result": "Exakte Referenzen, Produktrevision, bekannte Ausnahmen und Prüfergebnis sind vollständig; keine pauschale Freigabe ungeprüfter Bereiche",
+      "status": "NOT_RUN",
+      "executed_at": null,
+      "tested_build_commit": null,
+      "fixture_id": null,
+      "device_ids": [],
+      "evidence": [],
+      "actual_result": null,
+      "finding_ids": [],
+      "failure_action": "Fehlenden Nachweis ergänzen oder offene Abweichung behandeln; keine pauschale Produktfreigabe eintragen."
+    }
+  ],
+  "findings": [],
+  "exceptions": [],
+  "change_decisions": [],
+  "final_acceptance": {
+    "status": "NOT_REQUESTED",
+    "desktop_implementation_status": "NOT_RUN",
+    "mobile_implementation_status": "NOT_RUN",
+    "motion_both_directions_status": "NOT_RUN",
+    "live_data_and_control_truth_status": "NOT_RUN",
+    "all_required_cases_have_matching_evidence": false,
+    "open_blocking_findings": null,
+    "reviewed_reference_ids": [],
+    "reviewed_product_commit": null,
+    "decision_by": null,
+    "decided_at": null,
+    "decision_evidence_path": null,
+    "scope_limits": [],
+    "economic_performance_inferred_from_design": false
+  },
+  "completion_rules": [
+    "NOT_RUN, BLOCKED und FAIL sind keine bestandenen Nachweise. Eine Vorlage wird niemals als ausgeführter Test behandelt.",
+    "PASS benötigt tatsächlichen Ablauf, passenden Produktcommit, Fixture, relevante Geräteangabe und öffnungsfähige Evidenz.",
+    "Die angenommenen fünf Desktopbilder bestätigen die Gestaltungsbasis. Sie bestätigen keine tatsächliche Implementierung, mobile Ableitung, Bewegung, Datengenauigkeit oder Handelsleistung.",
+    "Alle DUX-001 bis DUX-032 werden geprüft. Eine fachlich nicht anwendbare Teilprüfung benötigt einen konkreten Änderungsentscheid; sie wird nicht pauschal als PASS eingetragen.",
+    "Ein- und Ausfahren sowie Enter und Exit werden getrennt belegt. Schnelle Umkehr und reduzierte Bewegung erhalten eigene Nachweise.",
+    "Offene wesentliche Abweichungen verhindern den Abschluss des betroffenen Schritts. Änderungen folgen dem Masterplan und werden nicht durch Maskierung oder neue Baselines verdeckt.",
+    "ready_for_acceptance darf erst nach tatsächlicher Vollständigkeitsprüfung auf true wechseln. Der Wert ersetzt weder die Prüfung noch die tatsächliche Freigabeentscheidung."
+  ]
+}

@@ -1,0 +1,13 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';
+import {sha,allowedKey,signSession,validSession,sessionFrom,sameOrigin,validateEvents} from '../lib/security.mjs';
+const secret='a'.repeat(64),key='secret-very-long-test-key';
+test('secret hash accepted; wrong key rejected',()=>{assert(allowedKey(key,sha(key)));assert(!allowedKey('wrong',sha(key)));assert(!allowedKey(key,''));assert(!allowedKey(null,sha(key)));});
+test('signed cookie valid and expiry enforced',()=>{const t=signSession(secret,1000);assert(validSession(t,secret,1001));assert(!validSession(t,secret,1000+8*3600*1000));assert(!validSession(t,'wrong',1001));assert(!validSession(t+'x',secret,1001));});
+test('cookie extraction',()=>{assert.equal(sessionFrom({headers:{cookie:'foo=bar; __Host-el_session=abc.def; x=y'}}),'abc.def');});
+test('origin mandatory and exact',()=>{assert(sameOrigin({headers:{origin:'https://ok.vercel.app'}},{APP_ORIGIN:'https://ok.vercel.app'}));assert(!sameOrigin({headers:{}},{APP_ORIGIN:'https://ok.vercel.app'}));assert(!sameOrigin({headers:{origin:'https://evil.vercel.app'}},{APP_ORIGIN:'https://ok.vercel.app'}));});
+const e={schema:2,run:'test',seq:1,utc:'2026-11-05T00:00:00Z',kind:'STATUS',data:{equity:100}};
+test('deduplicate identical records',()=>{const p=validateEvents({events:[e,e]});assert.equal(p.events.length,1);assert.equal(p.duplicates,1);assert.equal(p.source,'imported_journal_not_live');});
+test('conflicting sequenced records rejected',()=>{assert.throws(()=>validateEvents({events:[e,{...e,data:{equity:900}}]}));});
+test('invalid collections rejected',()=>{for(const v of [null,[],{}, {events:[]},{events:[{...e,seq:-1}]},{events:[{...e,utc:'invalid'}]},{events:[{...e,kind:'<script>'}]}])assert.throws(()=>validateEvents(v));});
+test('records ordered without inventing missing sequences',()=>{const p=validateEvents({events:[{...e,seq:3,utc:'2026-11-05T00:05:00Z'},e]});assert.deepEqual(p.events.map(x=>x.seq),[1,3]);});
+test('invalid future session not accepted',()=>{assert(!validSession(signSession(secret,1000000),secret,0));});

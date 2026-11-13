@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "basis": "d3c1e0ba1aeb11cb9df30240622caa944d6fb2bd",
+  "scope": "private_S06_preparation",
+  "formal_acceptance": false,
+  "paths": [
+    {
+      "id": "R-SQLITE",
+      "source": "core/store.mjs:Store.backup",
+      "checked": [
+        "R06",
+        "R07"
+      ],
+      "retains_order_v2": true,
+      "meaning": "exact_selected_snapshot",
+      "broker_reconciled": false
+    },
+    {
+      "id": "R-CONFIG",
+      "source": "core/control.mjs:export/confirmRestore",
+      "checked": [
+        "R12",
+        "R13"
+      ],
+      "retains_order_v2": false,
+      "meaning": "profile_append_not_order_restore",
+      "preserves_existing_target_order": true
+    },
+    {
+      "id": "R-JOURNAL",
+      "source": "core/journal-archive-worker.mjs:createArchive",
+      "checked": [
+        "R14"
+      ],
+      "retains_order_v2": false,
+      "retains_original_plan": true,
+      "meaning": "historical_raw_journal_only"
+    },
+    {
+      "id": "R-FULL",
+      "source": "core/maintenance.mjs:runRestoreWorker",
+      "checked": [
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11"
+      ],
+      "retains_order_v2": true,
+      "meaning": "selected_old_state_plus_pre_restore_backup",
+      "broker_reconciled": false
+    },
+    {
+      "id": "R-DECISION",
+      "source": "core/maintenance.mjs:targetSnapshot",
+      "checked": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R21"
+      ],
+      "status": "private_patch",
+      "meaning": "exact_full_KV_change_detection_not_authority"
+    },
+    {
+      "id": "R-CRASH",
+      "source": "core/maintenance.mjs:rollback",
+      "checked": [
+        "R17-staging",
+        "R17-verifying"
+      ],
+      "meaning": "actual_SIGKILL_and_second_process",
+      "power_loss_test": false
+    },
+    {
+      "id": "R-RETENTION",
+      "source": "core/store.mjs:event",
+      "checked": [
+        "R16"
+      ],
+      "meaning": "audit_row_pruned_KV_preserved"
+    },
+    {
+      "id": "R-SEMANTIC",
+      "source": "core/maintenance.mjs:semanticCheck",
+      "checked": [
+        "R15"
+      ],
+      "status": "open_gap",
+      "meaning": "generic_restore_does_not_validate_arbitrary_order_JSON"
+    },
+    {
+      "id": "R-JOB-VERSION",
+      "source": "core/maintenance.mjs:preRestoreBackup/prepareRestoreJob",
+      "checked": [
+        "R19",
+        "R20"
+      ],
+      "meaning": "old_pending_job_rejected_completed_retry_idempotent"
+    }
+  ],
+  "criteria": {
+    "S06-C01": {
+      "status": "partial_private_evidence",
+      "covered": "restore interruption and retained reservations / fees; existing S05 tests reused",
+      "not_covered": "native send boundary and economic broker effects"
+    },
+    "S06-C02": {
+      "status": "partial_private_evidence",
+      "covered": "restore source/target mismatch, lock and unresolved recovery deny exchange or startup",
+      "not_covered": "production writer disk-full and native protection availability"
+    },
+    "S06-C03": {
+      "status": "partial_private_evidence",
+      "covered": "original intent and legacy provenance preserved, no invented amounts",
+      "not_covered": "native orphan account inventory"
+    },
+    "S06-C04": {
+      "status": "open",
+      "covered": "real database readability, state retention, blocked authority and recovery",
+      "not_covered": "actual native broker reconciliation; not authorized/executed"
+    }
+  },
+  "new_test_methods": 22,
+  "historical_test_results_are_not_current": true,
+  "native_binding_followup": {
+    "path": "evidence/S06/native-binding/field-matrix.json",
+    "analysis": "evidence/S06/native-binding/integration-gaps.md",
+    "base_revision": "ed47b63828680ad382f907472bcf2587c7e4af3d",
+    "native_execution": false,
+    "product_writer_connected": false,
+    "journal_wire_cost_event_supported": false,
+    "open_projection_to_raw_gap": "NB-04/J13",
+    "existing_restore_tests_are_previous_evidence": true
+  }
+}

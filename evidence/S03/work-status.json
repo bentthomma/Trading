@@ -1,0 +1,46 @@
+{
+  "schema": "extremelab-private-preparation-status/1",
+  "step": "S03",
+  "preparation_state": "documentation_validated_pending_dependencies",
+  "official_state_changed": false,
+  "official_status": "pending",
+  "blocking_dependencies": [
+    "S02: native C#-Nachweis offen",
+    "AM-003: Pfadaktivierung noch nicht erfolgt"
+  ],
+  "user_authority": "Aktueller Auftrag: unabhängige Offlinearbeit trotz S02-Blocker vorbereiten; keine Änderung fachlicher Gates oder Produktfreigabe.",
+  "forbidden_claims": [
+    "S03 passed",
+    "S02 C01 passed",
+    "UI implementation accepted",
+    "broker authorized"
+  ],
+  "criteria": [
+    {
+      "id": "S03-C01",
+      "status": "prepared_for_later_verification",
+      "description": "Genau die fünf aktuellen Desktopreferenzen sind mit ihrer tatsächlichen Version und ihrem SHA256 verknüpft; frühere Entwürfe sind als überholt gekennzeichnet."
+    },
+    {
+      "id": "S03-C02",
+      "status": "prepared_for_later_verification",
+      "description": "Die Dokumentation enthält genau vier Hauptbereiche, Einstellungen über das Zahnrad und genau eine Setup-Kachel in der Übersicht; Strategie-/Regelkataloge sind ausgeschlossen."
+    },
+    {
+      "id": "S03-C03",
+      "status": "prepared_for_later_verification",
+      "description": "Desktopfreigabe, noch offene mobile/motionbezogene Validierung und noch nicht implementierte Funktionen sind eindeutig getrennt."
+    },
+    {
+      "id": "S03-C04",
+      "status": "prepared_for_later_verification",
+      "description": "Der tatsächliche Dateidiff enthält ausschliesslich Dokumentation/Nachweise; keine Produkt-CSS-, Layout-, Navigations- oder Animationsänderung."
+    },
+    {
+      "id": "S03-C05",
+      "status": "prepared_for_later_verification",
+      "description": "Jede geplante Kennzahl oder Aktion besitzt eine belegte Quelle beziehungsweise einen ausdrücklich offenen Vertrag; Bildinhalte gelten nicht als Live- oder Ergebnisnachweis."
+    }
+  ],
+  "validation_note": "Vorgänger: 21 Dokumentmethoden historisch. Feldzuordnung und Original-Projektionsnachweise werden im aktuellen externen Lauf separat ausgeführt; keine UI-/native Abnahme."
+}

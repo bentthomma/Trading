@@ -1,0 +1,31 @@
+{
+  "schema": "extremelab-s01-readonly-status/v1",
+  "observed_utc_date": "2026-11-13",
+  "github": {
+    "repository": "bentthomma/Trading",
+    "branch": "main",
+    "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+    "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+    "protected_in_branch_response": false,
+    "tree_truncated": false,
+    "files": [
+      {
+        "path": "README.md",
+        "blob": "7025cd085c2f9a785685aa3b4b7bae14f827dcd2",
+        "size": 9
+      }
+    ],
+    "queries": [
+      "GitHub.fetch branches/main",
+      "GitHub.fetch git/trees/47fdd2b4cb70efc67db93f93f178015259204d86?recursive=1"
+    ],
+    "workflow_and_pr_lists_queried": false
+  },
+  "sources_unchanged": {
+    "full": 36,
+    "total": 59,
+    "missing": 23
+  },
+  "changes_public": false,
+  "broker_actions": false
+}

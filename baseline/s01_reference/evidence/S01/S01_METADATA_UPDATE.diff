@@ -1,0 +1,520 @@
+--- prior/evidence/S01/baseline-lock.json
++++ current/evidence/S01/baseline-lock.json
+@@ -1,6 +1,6 @@
+ {
+   "schema": "s01-recovered-sources/v2",
+-  "work_id": "S01-SOURCEBINDING-20261112",
++  "work_id": "S01-ENDPOINTRECOVERY-20261113",
+   "canonical_plan": "1.1.0",
+   "canonical_plan_markdown_sha256": "186d75abc4775c53d17000d5b04072495b61761466dfd0b9b06b1c50c3b1baa0",
+   "prior_artifact": {
+@@ -122,15 +122,18 @@
+   "resolved_source_gaps": [
+     "Trading Local 0.8.0 complete archive recovered",
+     "Later platform 0.9.7 recovered with passive Observer, journal, restore and source-bound native derivative",
+-    "Original Engine1.2.1 archive -> exact 31,406-byte production payload -> all three provider-UID-matching bot-src segments; NOT Engine1.9"
++    "Original Engine1.2.1 archive -> exact 31,406-byte production payload -> all three provider-UID-matching bot-src segments; NOT Engine1.9",
++    "Five production originals: api/account-chart.js, api/live.js, api/probe.js, api/socket.js, patch_ui.mjs; full provider UID matches after complete response or bounded reconstruction."
+   ],
+   "remaining_gaps": [
+     "S00 independent GitHub protected trust root and reviewer acceptance missing",
+-    "Full 59-file production website input not recovered: 31 byte-identical, 28 unmaterialized; complete build blocked by missing inputs",
++    "Full 59-file production website input not recovered: 36 byte-identical, 23 unmaterialized; complete build blocked by missing inputs",
+     "Runtime live overlay patch (live-overlay.b64) unavailable: original postbuild stage fails closed on raw assets",
+     "Original Engine 1.9 release source, package and binary unavailable",
+     "Two historical 1.2.1 Vercel builds report same sourceSha256 but different .algo sizes/hashes; binary reproducibility not proven",
+-    "Full offline eight-stage website and original native .NET10/Windows/cTrader builds remain blocked"
++    "Full offline eight-stage website and original native .NET10/Windows/cTrader builds remain blocked",
++    "Endpoint sources now recovered, but native ws8.22.1 and remote provider dependencies are not installed; handler-dispatch tests are not protocol or deployed integration.",
++    "Live endpoint still lacks complete lib/relay.mjs; chart endpoint lacks skin-generated lib/market-reader.mjs."
+   ],
+   "native_derivative": {
+     "version": "2.0.0-alpha.5",
+@@ -146,8 +149,8 @@
+       "compared": 26
+     }
+   },
+-  "predecessor_work_id": "S01-PREACCEPTANCE-REMOTE-AUDIT-20261112",
+-  "upstream_package_sha256": "7bdb9303655f56cf3dcf4d03a61a1e27b673ccb77700286af6aa0466a12b1c80",
++  "predecessor_work_id": "S01-SOURCEBINDING-20261112",
++  "upstream_package_sha256": "1d7f7fb0bcce96cabf6c913fc12b77401a3ec1fc3789245672d58b0b4f40056b",
+   "source_tree_prod_v2": {
+     "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+     "provider_entries": 59,
+@@ -194,7 +197,7 @@
+   },
+   "private_work_authorized_by_latest_user": true,
+   "scope": "S01 private source inventory continuation directed by user; no canonical plan/status modification",
+-  "upstream_package_path": "baseline/prior_s01_source_recovery.zip",
++  "upstream_package_path": "baseline/prior_s01_sourcebinding.zip",
+   "runtime_historical": {
+     "name": "Node",
+     "version": "24.11.1",
+@@ -251,6 +254,52 @@
+       "src/skin.6",
+       "src/skin.7",
+       "src/skin.8"
++    ],
++    "historical_not_current": true
++  },
++  "source_tree_prod_v5": {
++    "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
++    "provider_entries": 59,
++    "full_bytes_preserved_locally": 36,
++    "missing_full_bytes": 23,
++    "byte_archive_state": "PARTIAL_DO_NOT_RELEASE",
++    "full_build_reproduced": false,
++    "source_uid_manifest": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
++    "engine121_source_binding_verified": true,
++    "engine19_recovered": false,
++    "missing_paths": [
++      "src/api/bot-download.js",
++      "src/api/bot14-download.js",
++      "src/api/bot15-download.js",
++      "src/build-bot.mjs",
++      "src/build-bot14.mjs",
++      "src/build-bot15.mjs",
++      "src/build-ui.mjs",
++      "src/lib/relay.mjs",
++      "src/live-overlay.b64",
++      "src/public/bot14.html",
++      "src/public/bot14.js",
++      "src/public/bot15.html",
++      "src/public/bot15.js",
++      "src/public/connection-check.js",
++      "src/skin.0",
++      "src/skin.1",
++      "src/skin.2",
++      "src/skin.3",
++      "src/skin.4",
++      "src/skin.5",
++      "src/skin.6",
++      "src/skin.7",
++      "src/skin.8"
++    ],
++    "historical_not_current": false,
++    "work_id": "S01-ENDPOINTRECOVERY-20261113",
++    "new_sources": [
++      "src/api/account-chart.js",
++      "src/api/live.js",
++      "src/api/probe.js",
++      "src/api/socket.js",
++      "src/patch_ui.mjs"
+     ]
+   }
+ }
+--- prior/evidence/S01/donor-map.json
++++ current/evidence/S01/donor-map.json
+@@ -71,9 +71,9 @@
+       ],
+       "source": "Vercel dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+       "classification": "reference_only",
+-      "boundary": "28 source files missing; no production reuse or deployment",
++      "boundary": "23 source inputs missing; no production reuse or deployment",
+       "historical_tests": "28/59 source bytes SHA1-matched to Vercel UID; derived five raw asset pages/files; four independent stage checks, missing overlay causes expected failure. No full build.",
+-      "current_proof": "31/59 complete sources; current original build.mjs produces 5 asset files and then stops at missing overlay; complete pipeline not reproduced"
++      "current_proof": "36/59 complete sources; original UI patch reproduces archived app.js in isolation; overlay, skin and full pipeline remain unavailable."
+     },
+     {
+       "component": "Original Engine 1.9 delivery preview",
+@@ -94,8 +94,9 @@
+         "baseline/derived_assets/public"
+       ],
+       "classification": "reference_only",
+-      "new_proof": "Current manifest contains 31 SHA1+SHA256-bound source files; older 28 are unchanged",
+-      "boundary": "No live overlay and no full build; no publication or product integration."
++      "new_proof": "Current manifest contains 36 SHA1+SHA256-bound source files; older31 unchanged",
++      "boundary": "No live overlay and no full build; no publication or product integration.",
++      "current_proof": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+     },
+     {
+       "component": "Historical Engine 1.2.1 binary build provenance",
+@@ -119,6 +120,20 @@
+       ],
+       "current_proof": "S01_ENGINE121_PRODUCTION_BINDING.json and S01_ORIGINAL_WIRE_REPLAY_CURRENT.json",
+       "boundary": "No cTrader runtime, no bot or broker; archived wire fixture replayed in original Python receiver, not regenerated by C#"
++    },
++    {
++      "component": "Recovered original endpoint handlers and UI patch",
++      "classification": "reference_only",
++      "paths": [
++        "src/api/account-chart.js",
++        "src/api/live.js",
++        "src/api/probe.js",
++        "src/api/socket.js",
++        "src/patch_ui.mjs"
++      ],
++      "source": "authenticated provider responses plus exact selected old source members",
++      "current_proof": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json; original-source tests in tests/test_endpoint_recovery.py and tests/endpoint_dispatch.test.mjs",
++      "boundary": "No production repair or integration; WebSocket, cache and missing relay adapters are test doubles. Live trading and provider connectivity untested."
+     }
+   ]
+ }
+--- prior/evidence/S01/path-map.json
++++ current/evidence/S01/path-map.json
+@@ -375,16 +375,94 @@
+       "status": "source_bytes_verified_private_no_integration",
+       "local_path": "baseline/vercel_recovered/src/bot-src.2",
+       "provenance": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
++    },
++    {
++      "path": "src/api/account-chart.js",
++      "source_archive": "vercel-production-recovered-private",
++      "source_uid": "6e84205548e771ae4604ce12d4a95e9247288b30",
++      "source_sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
++      "bytes": 98,
++      "status": "source_bytes_verified_private_no_integration",
++      "local_path": "baseline/vercel_recovered/src/api/account-chart.js",
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++    },
++    {
++      "path": "src/api/live.js",
++      "source_archive": "vercel-production-recovered-private",
++      "source_uid": "185785a143e2a1aaf34e767d71297c7e5370abe0",
++      "source_sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
++      "bytes": 1281,
++      "status": "source_bytes_verified_private_no_integration",
++      "local_path": "baseline/vercel_recovered/src/api/live.js",
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++    },
++    {
++      "path": "src/api/probe.js",
++      "source_archive": "vercel-production-recovered-private",
++      "source_uid": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
++      "source_sha256": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
++      "bytes": 1724,
++      "status": "source_bytes_verified_private_no_integration",
++      "local_path": "baseline/vercel_recovered/src/api/probe.js",
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++    },
++    {
++      "path": "src/api/socket.js",
++      "source_archive": "vercel-production-recovered-private",
++      "source_uid": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
++      "source_sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
++      "bytes": 2358,
++      "status": "source_bytes_verified_private_no_integration",
++      "local_path": "baseline/vercel_recovered/src/api/socket.js",
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
++    },
++    {
++      "path": "src/patch_ui.mjs",
++      "source_archive": "vercel-production-recovered-private",
++      "source_uid": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
++      "source_sha256": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1",
++      "bytes": 2653,
++      "status": "source_bytes_verified_private_no_integration",
++      "local_path": "baseline/vercel_recovered/src/patch_ui.mjs",
++      "provenance": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+     }
+   ],
+   "unresolved": [
+     "Original Engine 1.9 release ZIP/native binary",
+     "Native .NET10/Windows/cTrader provider build and independent S00 gate",
+-    "31 of 59 original production website source bytes remain unavailable; 8-stage offline build blocked",
+     "Original Engine 1.9 release bytes, release ZIP and .algo still unavailable",
+-    "Binary reproducibility for historical Engine1.2.1 cannot be established from build logs alone"
++    "Binary reproducibility for historical Engine1.2.1 cannot be established from build logs alone",
++    "23 of 59 original production website source inputs remain unavailable; complete eight-stage build blocked"
+   ],
+   "mapping_scope": "source inventory only; no product path amendment or integration authorization",
+   "current_s01_source_recovery_manifest": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+-  "source_binding_current": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json"
++  "source_binding_current": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
++  "current_work_id": "S01-ENDPOINTRECOVERY-20261113",
++  "current_recovered_source_count": 36,
++  "current_missing_source_paths": [
++    "src/api/bot-download.js",
++    "src/api/bot14-download.js",
++    "src/api/bot15-download.js",
++    "src/build-bot.mjs",
++    "src/build-bot14.mjs",
++    "src/build-bot15.mjs",
++    "src/build-ui.mjs",
++    "src/lib/relay.mjs",
++    "src/live-overlay.b64",
++    "src/public/bot14.html",
++    "src/public/bot14.js",
++    "src/public/bot15.html",
++    "src/public/bot15.js",
++    "src/public/connection-check.js",
++    "src/skin.0",
++    "src/skin.1",
++    "src/skin.2",
++    "src/skin.3",
++    "src/skin.4",
++    "src/skin.5",
++    "src/skin.6",
++    "src/skin.7",
++    "src/skin.8"
++  ],
++  "current_endpoint_binding": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json"
+ }
+--- prior/evidence/S01/reproduction-report.json
++++ current/evidence/S01/reproduction-report.json
+@@ -233,8 +233,8 @@
+     "stage_sources_present_in_provider_tree": 8,
+     "stage_contents_incomplete": true,
+     "build_executed": false,
+-    "source_files_recovered_current": 31,
+-    "source_files_unavailable_current": 28,
++    "source_files_recovered_current": 36,
++    "source_files_unavailable_current": 23,
+     "derived_website_assets_verified": 5,
+     "partial_replay_log": "evidence/S01/S01_PARTIAL_WEBSITE_REPLAY.json",
+     "historical_build_readback": "evidence/S01/S01_HISTORICAL_VERCEL_BUILD_READBACK.json",
+@@ -311,7 +311,7 @@
+       "binary_build": false
+     }
+   },
+-  "evidence_epoch_note": "All old baseline, native_identity, groups and new_source_recovery_2026_11_12 fields are inherited historical evidence, not executions in S01-SOURCEBINDING-20261112. Current executions listed separately.",
++  "evidence_epoch_note": "Old baseline, groups, current_sourcebinding_executions and native reports are preserved historical evidence. Only current_endpoint_recovery_executions belong to S01-ENDPOINTRECOVERY-20261113. No historical tests added to current totals.",
+   "current_sourcebinding_executions": {
+     "work_id": "S01-SOURCEBINDING-20261112",
+     "source_packing": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
+@@ -326,5 +326,17 @@
+     "new_csharp_fixture_generated": false,
+     "full_website_pipeline": false,
+     "old_test_totals_counted_as_new": false
++  },
++  "current_endpoint_recovery_executions": {
++    "work_id": "S01-ENDPOINTRECOVERY-20261113",
++    "source_reconstruction": "evidence/S01/S01_ENDPOINT_RECONSTRUCTION_CURRENT.json",
++    "test_report": "evidence/S01/S01_ENDPOINT_EXECUTIONS_CURRENT.json",
++    "full_website_pipeline": false,
++    "native_websocket_protocol_tested": false,
++    "provider_cache_blob_tested": false,
++    "live_relay_original_available": false,
++    "native_csharp_build_executed": false,
++    "product_source_changed": false,
++    "test_counts": "See fresh external closure report; internal execution report records prepackaging run only."
+   }
+ }
+--- prior/evidence/S01/version-crosswalk.md
++++ current/evidence/S01/version-crosswalk.md
+@@ -1,15 +1,16 @@
+ # S01 – Quellen- und Versionsabgleich
+ 
+-## Aktueller Arbeitsstand: S01-SOURCEBINDING-20261112
++## Aktueller Arbeitsstand: S01-ENDPOINTRECOVERY-20261113
+ 
+ | Bestand | Aktueller Nachweis | Abgrenzung |
+ |---|---|---|
+-| Produktionswebsite, gebundenes Vercel-Deployment | 31 von 59 Eingabedateien vollständig lokal vorhanden; alle SHA1-UID- und SHA256-gebunden | 28 fehlen. Kein vollständiger Build oder Deployment. |
++| Produktionswebsite, gebundenes Vercel-Deployment | 36 von 59 Eingabedateien vollständig lokal vorhanden; alle SHA1-UID- und SHA256-gebunden | 23 fehlen. Kein vollständiger Build oder Deployment. |
++| Endpunkte / UI-Patch | Fünf zusätzliche Produktionsdateien komplett hashgebunden; originaler UI-Patch wird unverändert isoliert geprüft | Fehlende Relay-/Skinquellen bleiben fehlend; Handlerprüfungen verwenden explizite Dienst-/Transportattrappen. |
+ | Engine 1.2.1 | Originalarchiv 30/30 Manifestdateien geprüft; 12 originale C#-Inputs reproduzieren exakt alle drei Produktionssegmente und den vollständigen gepackten Sourcehash | Keine Engine1.9 und kein neuer nativer Binärbuild. |
+-| 1.2.1 Empfänger/Protokoll | Originaler Python-Empfänger mit original archivierter synthetischer Wire-Fixture jetzt über Loopback-TLS/SQLite geprüft | Kein laufender C#-Sender, kein cTrader, kein Broker. |
++| 1.2.1 Empfänger/Protokoll | Historisch im Vorgänger mit archivierter synthetischer Wire-Fixture über Loopback-TLS/SQLite geprüft; hier nicht erneut ausgeführt | Kein laufender C#-Sender, kein cTrader, kein Broker. |
+ | Engine 1.9 | Historischer Liefernachweis und Preview-Wrapper | Originalquellen und Releasebytes weiterhin nicht wiederhergestellt. |
+ | Native Engine 2.0.0-alpha.5 | Separater bekannter Quellstand und historische Source-Identity-Prüfung | Nicht mit1.2.1 oder1.9 gleichsetzen; in diesem Lauf nicht neu gebaut. |
+-| Trading Local 0.8.0 / Plattform0.9.7 | Bereits gefundene getrennte Archivstände;0.9.7 jetzt nur auf passende Produktionssource-UIDs gescannt | Frühere Runtimezahlen bleiben historisch; keine neue Hub-Abnahme. |
++| Trading Local 0.8.0 / Plattform0.9.7 | Bereits gefundene getrennte Archivstände;0.9.7 im Vorgänger auf passende Produktionssource-UIDs gescannt | Frühere Runtimezahlen bleiben historisch; keine neue Hub-Abnahme. |
+ | AccountLive1.3.4 / RemoteView20 | Bestehende unabhängige Website-Addons | Kein vollständiges Websiteprodukt. |
+ 
+ Die ursprüngliche Website-`package.json` nennt1.3.1 und Node22.x. Die separate Hubplattform0.9.7 verlangt eine andere Laufzeit; diese Nummern sind kein gemeinsamer Produktrelease.
+@@ -18,4 +19,4 @@
+ 
+ ## Historie und Freigaben
+ 
+-Vollständige frühere Version dieses Crosswalks im unveränderten `baseline/prior_s01_source_recovery.zip`. Frühere Node-/native Testzahlen werden nicht als in diesem Lauf neu ausgeführt gezählt. S00 und der kanonische Planstatus wurden nicht geändert. Die aktuelle Nutzeranweisung autorisiert die private S01-Arbeit, keine öffentliche Installation oder Brokeraktion.
++Vollständige unmittelbare Vorgängerfassung dieses Crosswalks im unveränderten `baseline/prior_s01_sourcebinding.zip`; ältere Fassung in `baseline/prior_s01_source_recovery.zip`. Frühere Node-/native Testzahlen werden nicht als in diesem Lauf neu ausgeführt gezählt. S00 und der kanonische Planstatus wurden nicht geändert. Die aktuelle Nutzeranweisung autorisiert die private S01-Arbeit, keine öffentliche Installation oder Brokeraktion.
+--- prior/vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json
++++ current/vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json
+@@ -2,8 +2,8 @@
+   "schema": "extremelab-s01-vercel-recovery/v1",
+   "original_deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+   "source_total": 59,
+-  "source_recovered": 31,
+-  "source_blocked": 28,
++  "source_recovered": 36,
++  "source_blocked": 23,
+   "fully_recovered_website": false,
+   "allowed_operations": "read-only source archive; broker-free offline review",
+   "deploy_authorized": false,
+@@ -29,12 +29,23 @@
+     },
+     {
+       "path": "src/api/account-chart.js",
+-      "status": "not_recovered",
++      "status": "byte_recovered",
+       "source_uid_sha1": "6e84205548e771ae4604ce12d4a95e9247288b30",
+-      "bytes_present": false,
+-      "classification": "blocked_capability",
+-      "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "bytes_present": true,
++      "prior_connector_retrieval_status": "provider_listing_only",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "sha1_verified": true,
++      "bytes": 98,
++      "sha256": "b51730b35e32b1c9e55f6ea78994dd6442735347a35e7d28721d5037026dddb0",
++      "method": "complete_connector_response",
++      "provenance": {
++        "evidence": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++        "provider_uid": "6e84205548e771ae4604ce12d4a95e9247288b30",
++        "donor_archive": null,
++        "donor_archive_sha256": null,
++        "donor_member": null,
++        "transformation": null
++      }
+     },
+     {
+       "path": "src/api/account-live.js",
+@@ -101,21 +112,43 @@
+     },
+     {
+       "path": "src/api/live.js",
+-      "status": "not_recovered",
++      "status": "byte_recovered",
+       "source_uid_sha1": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+-      "bytes_present": false,
+-      "classification": "blocked_capability",
+-      "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "bytes_present": true,
++      "prior_connector_retrieval_status": "provider_listing_only",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "sha1_verified": true,
++      "bytes": 1281,
++      "sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
++      "method": "complete_connector_response",
++      "provenance": {
++        "evidence": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++        "provider_uid": "185785a143e2a1aaf34e767d71297c7e5370abe0",
++        "donor_archive": null,
++        "donor_archive_sha256": null,
++        "donor_member": null,
++        "transformation": null
++      }
+     },
+     {
+       "path": "src/api/probe.js",
+-      "status": "not_recovered",
++      "status": "byte_recovered",
+       "source_uid_sha1": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
+-      "bytes_present": false,
+-      "classification": "blocked_capability",
+-      "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "bytes_present": true,
++      "prior_connector_retrieval_status": "provider_listing_only",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "sha1_verified": true,
++      "bytes": 1724,
++      "sha256": "882893dd83930b5414cf1bc409d296f14a0d40f2a0878966e701c5973e4b8546",
++      "method": "connector_prefix_and_archived_suffix_transform",
++      "provenance": {
++        "evidence": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++        "provider_uid": "f58b0d02add33a4c18880288cf00a23a9c521b0c",
++        "donor_archive": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
++        "donor_archive_sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
++        "donor_member": "ExtremeLab_Live_Bridge_1_3_2/web/probe.js",
++        "transformation": "compact-lines-preserve-export"
++      }
+     },
+     {
+       "path": "src/api/revolution.js",
+@@ -137,12 +170,23 @@
+     },
+     {
+       "path": "src/api/socket.js",
+-      "status": "not_recovered",
++      "status": "byte_recovered",
+       "source_uid_sha1": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
+-      "bytes_present": false,
+-      "classification": "blocked_capability",
+-      "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "bytes_present": true,
++      "prior_connector_retrieval_status": "provider_listing_only",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "sha1_verified": true,
++      "bytes": 2358,
++      "sha256": "6ca57a8034f622e55983a7ca3956ad3a650ce500c4ab1262059f7cba95eefba2",
++      "method": "connector_prefix_and_archived_suffix",
++      "provenance": {
++        "evidence": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++        "provider_uid": "d9530e568b57c20894f1a738cf5ad4fef3e944a3",
++        "donor_archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
++        "donor_archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
++        "donor_member": "ExtremeLab_Online_1_3/api/socket.js",
++        "transformation": null
++      }
+     },
+     {
+       "path": "src/assets.0",
+@@ -509,12 +553,23 @@
+     },
+     {
+       "path": "src/patch_ui.mjs",
+-      "status": "not_recovered",
++      "status": "byte_recovered",
+       "source_uid_sha1": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
+-      "bytes_present": false,
+-      "classification": "blocked_capability",
+-      "prior_connector_retrieval_status": "provider_listing_only",
+-      "source_availability": "provider_metadata_only"
++      "bytes_present": true,
++      "prior_connector_retrieval_status": "provider_listing_only",
++      "source_availability": "local_full_bytes_sha1_sha256_verified",
++      "sha1_verified": true,
++      "bytes": 2653,
++      "sha256": "8806662607300b188e59088bd1340862b5802af1bc5189f8a99875b5de0b6ed1",
++      "method": "connector_prefix_and_archived_suffix_transform",
++      "provenance": {
++        "evidence": "evidence/S01/S01_ENDPOINT_PROVIDER_CAPTURES.json",
++        "provider_uid": "6a7d1e0a3048e4cabcd40d6787deec35019867d5",
++        "donor_archive": "ExtremeLab_Autotest_20261106.zip",
++        "donor_archive_sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
++        "donor_member": "ExtremeLab_Autotest_20261106/patched/patch_ui.mjs",
++        "transformation": "remove-comment"
++      }
+     },
+     {
+       "path": "src/postbuild-132.mjs",
+@@ -805,7 +860,7 @@
+       "source_availability": "local_full_bytes_sha1_sha256_verified"
+     }
+   ],
+-  "work_id": "S01-SOURCEBINDING-20261112",
+-  "verified_at_utc": "2026-11-12T23:10:59.097017+00:00",
+-  "recovery_note": "28 prior files unchanged; 3 production bot segments exactly reconstructed from original 1.2.1 sources; not Engine1.9, not a native binary build"
++  "work_id": "S01-ENDPOINTRECOVERY-20261113",
++  "verified_at_utc": "2026-11-12T23:41:26.766618+00:00",
++  "recovery_note": "31 predecessor source files unchanged; 5 additional provider-UID-matching originals recovered; 2 complete responses, 3 prefix/donor reconstructions; 23 inputs still missing. No full build or release."
+ }
+--- prior/tests/test_bot_source_binding.py
++++ current/tests/test_bot_source_binding.py
+@@ -89,10 +89,10 @@
+     def test_current_artifacts_agree_and_do_not_promote_native_capability(self):
+         manifest=json.loads((ROOT/'vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json').read_text())
+         lock=json.loads((ROOT/'evidence/S01/baseline-lock.json').read_text())
+-        self.assertEqual(manifest['source_recovered'],31);self.assertEqual(manifest['source_blocked'],28)
+-        self.assertEqual(lock['source_tree_prod_v4']['full_bytes_preserved_locally'],31)
+-        self.assertEqual(len(lock['source_tree_prod_v4']['missing_paths']),28)
+-        self.assertFalse(lock['release_authorized']);self.assertFalse(lock['source_tree_prod_v4']['engine19_recovered'])
++        self.assertEqual(manifest['source_recovered'],36);self.assertEqual(manifest['source_blocked'],23)
++        self.assertEqual(lock['source_tree_prod_v5']['full_bytes_preserved_locally'],36)
++        self.assertEqual(len(lock['source_tree_prod_v5']['missing_paths']),23)
++        self.assertFalse(lock['release_authorized']);self.assertFalse(lock['source_tree_prod_v5']['engine19_recovered'])
+     def test_actual_build_graph_includes_nested_bot15_and_missing_overlay(self):
+         d=json.loads((ROOT/'evidence/S01/S01_BUILD_BOUNDARY_CURRENT.json').read_text())
+         self.assertEqual(len(d['top_level_stages']),8)
+--- prior/tests/test_s01_recovery.py
++++ current/tests/test_s01_recovery.py
+@@ -5,11 +5,11 @@
+ REC=ROOT/'vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json'
+ D=json.loads(REC.read_text())
+ class SourceRecovery(unittest.TestCase):
+- def test_original_59_source_entries_and_exact_31_recovered(self):
++ def test_original_59_source_entries_and_exact_36_recovered(self):
+   rows=D['sources'];self.assertEqual(len(rows),59)
+   self.assertEqual(len({x['path'] for x in rows}),59)
+-  self.assertEqual(sum(x['status']=='byte_recovered' for x in rows),31)
+-  self.assertEqual(sum(x['status']=='not_recovered' for x in rows),28)
++  self.assertEqual(sum(x['status']=='byte_recovered' for x in rows),36)
++  self.assertEqual(sum(x['status']=='not_recovered' for x in rows),23)
+   self.assertFalse(D['fully_recovered_website'])
+  def test_every_recovered_file_matches_vercel_uid_and_local_sha256(self):
+   for r in D['sources']:

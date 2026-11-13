@@ -1,0 +1,29 @@
+--- a/relay/relay.py
++++ b/relay/relay.py
+@@ -246,13 +246,23 @@
+                     declared_ok=type(declared) is int and 1<=declared<=128
+                     declarations_consistent=declared_ok and all(e['data'].get('totalParts')==declared for e in chunk_events)
+                     complete=(contiguous and len(parts)==declared) if declarations_consistent else None
++                    # Retain raw telemetry, but never infer a usable candle snapshot
++                    # from malformed payloads already acknowledged by the journal.
++                    invalid_payloads=[e['seq'] for e in chunk_events
++                        if not isinstance(e['data'].get('candles'),list)
++                        or any(not isinstance(c,dict) for c in e['data']['candles'])]
++                    if invalid_payloads:
++                        complete=False
+                     checkpoint=dict(firstSequence=start,observedParts=parts,
+                         declaredParts=declared if declared_ok else None,complete=complete,
+-                        completeness= 'verified_declared_parts' if complete is True else
++                        completeness= 'invalid_candle_payload' if invalid_payloads else
++                            'verified_declared_parts' if complete is True else
+                             'missing_or_inconsistent_parts' if not contiguous or declared_ok else
+                             'unknown_total_parts_not_declared',
+-                        candlesObserved=sum(len(e['data'].get('candles',[])) for e in chunk_events))
+-                    if not contiguous or (declared_ok and complete is not True):
++                        candlesObserved=sum(len(e['data']['candles']) for e in chunk_events
++                            if e['seq'] not in invalid_payloads),
++                        invalidPayloadSequences=invalid_payloads)
++                    if invalid_payloads or not contiguous or (declared_ok and complete is not True):
+                         more=True
+                 # Sort by event sequence, never by late arrival order.
+                 rows=sorted(rows+chunks+updates,key=lambda r:json.loads(r[1])['seq'])

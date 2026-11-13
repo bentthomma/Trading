@@ -1,0 +1,81 @@
+{
+  "pdf": "MASTERPLAN.pdf",
+  "pages": 155,
+  "landscape_reference_pages": [
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "rendered_all_pages": true,
+  "render_scale": 0.55,
+  "out_of_page_text": [],
+  "contact_sheets": [
+    "evidence/pdf-qa/contact-01.jpg",
+    "evidence/pdf-qa/contact-02.jpg",
+    "evidence/pdf-qa/contact-03.jpg",
+    "evidence/pdf-qa/contact-04.jpg",
+    "evidence/pdf-qa/contact-05.jpg",
+    "evidence/pdf-qa/contact-06.jpg",
+    "evidence/pdf-qa/contact-07.jpg",
+    "evidence/pdf-qa/contact-08.jpg"
+  ],
+  "detail_pages": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    20,
+    21,
+    22,
+    23,
+    24,
+    32,
+    34,
+    118,
+    122,
+    138,
+    154
+  ],
+  "toc_entries": 60,
+  "step_outline_count": 36,
+  "pages_below_300_text_characters": [],
+  "visual_review_status": "PASS_WITH_NONBLOCKING_LAYOUT_NOTE",
+  "pdf_sha256": "157eeabbb08c2b05576462dcf2029ac2014f291b095f2431aa7bbcc1e96ea50c",
+  "root_detail_review_pages": [
+    20,
+    21,
+    22,
+    23,
+    24,
+    122
+  ],
+  "independent_visual_review": [
+    {
+      "reviewer": "/root/plan_design_integration",
+      "contact_sheet_pages": "1–80",
+      "detail_pages": [
+        4,
+        32,
+        34
+      ],
+      "blocking_findings": 0
+    },
+    {
+      "reviewer": "/root/motion_ux_spec",
+      "contact_sheet_pages": "81–155",
+      "detail_pages": [
+        138,
+        154,
+        155
+      ],
+      "blocking_findings": 0
+    }
+  ],
+  "nonblocking_notes": [
+    "Kurze Schlussseiten einzelner Arbeitskarten entstehen durch den eigenständigen Beginn jeder folgenden Karte; Inhalte sind vollständig."
+  ],
+  "not_product_acceptance": true
+}

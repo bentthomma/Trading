@@ -1,0 +1,703 @@
+{
+  "scope": "Planpaket und Wächter; keine Produktprüfung",
+  "version": "1.1.0",
+  "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "original_plan_unchanged": true,
+  "original_plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+  "unit_tests": {
+    "tests": 47,
+    "returncode": 0,
+    "evidence": "evidence/plan_package_test_output.txt"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "control/planctl.py",
+        "relock",
+        "--amendment",
+        "governance/amendments/AM-001-design-after-technology.json"
+      ],
+      "returncode": 0,
+      "stdout": {
+        "relocked": true,
+        "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+        "reset_steps": [
+          "S00",
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S26",
+          "S27",
+          "S28",
+          "S29",
+          "S30",
+          "S31",
+          "S32",
+          "S33",
+          "S34",
+          "S35"
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "control/planctl.py",
+        "validate"
+      ],
+      "returncode": 0,
+      "stdout": {
+        "valid": true,
+        "plan_id": "EXTREMELAB-CONSOLIDATED-MASTERPLAN-20261111",
+        "version": "1.1.0",
+        "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+        "steps": 36,
+        "locked": true
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "control/planctl.py",
+        "next"
+      ],
+      "returncode": 0,
+      "stdout": {
+        "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+        "free_slots": 2,
+        "ready_steps": [
+          "S00"
+        ],
+        "blocked_scope": [
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S07",
+          "S08",
+          "S09",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15",
+          "S16",
+          "S17",
+          "S18",
+          "S19",
+          "S20",
+          "S21",
+          "S22",
+          "S23",
+          "S24",
+          "S25",
+          "S30",
+          "S31",
+          "S32",
+          "S33",
+          "S34",
+          "S35",
+          "S26",
+          "S27",
+          "S28",
+          "S29"
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "control/planctl.py",
+        "status"
+      ],
+      "returncode": 0,
+      "stdout": {
+        "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+        "max_in_progress": 2,
+        "in_progress": 0,
+        "free_slots": 2,
+        "steps": [
+          {
+            "id": "S00",
+            "title": "Plansteuerung im Arbeitsprojekt verankern",
+            "status": "pending",
+            "ready": true,
+            "blocked_scope": false,
+            "scope_status": "resolved",
+            "blockers": [],
+            "actor": null
+          },
+          {
+            "id": "S01",
+            "title": "Quellen, Versionen und Produktionsstand eindeutig sichern",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": false,
+            "scope_status": "resolved",
+            "blockers": [
+              "Abhängigkeit S00 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S02",
+            "title": "Zielarchitektur, Begriffe und Schnittstellen festlegen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": false,
+            "scope_status": "resolved",
+            "blockers": [
+              "Abhängigkeit S01 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S03",
+            "title": "Freigegebene Designreferenzen früh dokumentieren und erhalten",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S01 ist nicht passed",
+              "Abhängigkeit S02 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S04",
+            "title": "Botzustand und Verlustursachen lesend rekonstruieren",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S05",
+            "title": "Gemeinsames Geld- und Orderbuch bauen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S06",
+            "title": "Journal, Wiederanlauf und Originalpläne dauerhaft machen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S05 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S07",
+            "title": "Datenkatalog, Herkunft und Qualitätsprüfungen aufbauen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S08",
+            "title": "Zielhost, Datenladen und Prozessüberwachung absichern",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S01 ist nicht passed",
+              "Abhängigkeit S04 ist nicht passed",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S07 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S09",
+            "title": "Mehrzeitanalyse mit kausalen Merkmalen vereinheitlichen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed",
+              "Abhängigkeit S07 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S10",
+            "title": "Deterministischen Replay- und Ausführungssimulator bauen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S05 ist nicht passed",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S07 ist nicht passed",
+              "Abhängigkeit S09 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S11",
+            "title": "Portfolio-, Margin- und Risikoprüfung zentralisieren",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S05 ist nicht passed",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S10 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S12",
+            "title": "Gewinnsicherung, Sessions und sichere Ausstiege spezifizieren",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S10 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S13",
+            "title": "Wissensbibliothek in prüfbare Hypothesen übersetzen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed",
+              "Abhängigkeit S07 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S14",
+            "title": "Strategiefamilien als unveränderte Referenzen portieren",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S09 ist nicht passed",
+              "Abhängigkeit S10 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed",
+              "Abhängigkeit S12 ist nicht passed",
+              "Abhängigkeit S13 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S15",
+            "title": "Nachvollziehbare Mustererkennung hinzufügen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S09 ist nicht passed",
+              "Abhängigkeit S13 ist nicht passed",
+              "Abhängigkeit S14 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S16",
+            "title": "Versuchsprotokoll und unabhängige Bewertung einfrieren",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S07 ist nicht passed",
+              "Abhängigkeit S10 ist nicht passed",
+              "Abhängigkeit S14 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S17",
+            "title": "Fortsetzbare Forschungsjobs und Ergebnisregister bauen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S10 ist nicht passed",
+              "Abhängigkeit S16 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S18",
+            "title": "Exits und Parameter mit kontrollierten Vergleichen verbessern",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S12 ist nicht passed",
+              "Abhängigkeit S14 ist nicht passed",
+              "Abhängigkeit S15 ist nicht passed",
+              "Abhängigkeit S16 ist nicht passed",
+              "Abhängigkeit S17 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S19",
+            "title": "Regimeabhängige Auswahl gegen feste Strategien prüfen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S09 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed",
+              "Abhängigkeit S14 ist nicht passed",
+              "Abhängigkeit S16 ist nicht passed",
+              "Abhängigkeit S17 ist nicht passed",
+              "Abhängigkeit S18 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S20",
+            "title": "Breiten Allround-Test über Märkte, Zeiten und Kapital durchführen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S07 ist nicht passed",
+              "Abhängigkeit S10 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed",
+              "Abhängigkeit S16 ist nicht passed",
+              "Abhängigkeit S17 ist nicht passed",
+              "Abhängigkeit S19 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S21",
+            "title": "Website technisch mit Daten, Jobs und Zuständen verbinden",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S03 ist nicht passed",
+              "Abhängigkeit S04 ist nicht passed",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S13 ist nicht passed",
+              "Abhängigkeit S16 ist nicht passed",
+              "Abhängigkeit S17 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S22",
+            "title": "KI-Zugriff auf echte Daten, Jobs und Vorschläge begrenzen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed",
+              "Abhängigkeit S13 ist nicht passed",
+              "Abhängigkeit S16 ist nicht passed",
+              "Abhängigkeit S17 ist nicht passed",
+              "Abhängigkeit S21 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S23",
+            "title": "Bestätigte Konfiguration und begrenzte Demosteuerung anbinden",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S05 ist nicht passed",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S08 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed",
+              "Abhängigkeit S12 ist nicht passed",
+              "Abhängigkeit S21 ist nicht passed",
+              "Abhängigkeit S22 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S24",
+            "title": "Prospektiven Schatten- und Demobetrieb durchführen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S08 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed",
+              "Abhängigkeit S12 ist nicht passed",
+              "Abhängigkeit S19 ist nicht passed",
+              "Abhängigkeit S20 ist nicht passed",
+              "Abhängigkeit S23 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S25",
+            "title": "Updates, Wiederherstellung und Dauerbetrieb mit Bestand prüfen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S08 ist nicht passed",
+              "Abhängigkeit S21 ist nicht passed",
+              "Abhängigkeit S23 ist nicht passed",
+              "Abhängigkeit S24 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S30",
+            "title": "Freigegebene Referenzen in Design-Tokens und Bauteile übersetzen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S21 ist nicht passed",
+              "Abhängigkeit S22 ist nicht passed",
+              "Abhängigkeit S25 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S31",
+            "title": "Vier Hauptseiten nach den freigegebenen Desktopreferenzen bauen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S30 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S32",
+            "title": "Bot-Einstellungen, Dialoge und vollständige Bedienzustände umsetzen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S31 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S33",
+            "title": "Alle Wechsel und Liveaktualisierungen ruhig in beide Richtungen animieren",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S31 ist nicht passed",
+              "Abhängigkeit S32 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S34",
+            "title": "Responsive Bedienung, Zugänglichkeit und Laufzeitqualität nachweisen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S33 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S35",
+            "title": "Fünf Referenzansichten, Motion und Bedienung gemeinsam abnehmen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S30 ist nicht passed",
+              "Abhängigkeit S31 ist nicht passed",
+              "Abhängigkeit S32 ist nicht passed",
+              "Abhängigkeit S33 ist nicht passed",
+              "Abhängigkeit S34 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S26",
+            "title": "Releaseentscheidung anhand des vollständigen Nachweises treffen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S20 ist nicht passed",
+              "Abhängigkeit S21 ist nicht passed",
+              "Abhängigkeit S22 ist nicht passed",
+              "Abhängigkeit S24 ist nicht passed",
+              "Abhängigkeit S25 ist nicht passed",
+              "Abhängigkeit S35 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S27",
+            "title": "Zusatzdaten und lernende Modelle gezielt ergänzen",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "Schritt ist nicht aktiviert",
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S16 ist nicht passed",
+              "Abhängigkeit S17 ist nicht passed",
+              "Abhängigkeit S19 ist nicht passed",
+              "Abhängigkeit S26 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S28",
+            "title": "MT5-Ausführung, weitere Konten und Nutzer separat erweitern",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "Schritt ist nicht aktiviert",
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S02 ist nicht passed",
+              "Abhängigkeit S05 ist nicht passed",
+              "Abhängigkeit S06 ist nicht passed",
+              "Abhängigkeit S11 ist nicht passed",
+              "Abhängigkeit S23 ist nicht passed",
+              "Abhängigkeit S25 ist nicht passed",
+              "Abhängigkeit S26 ist nicht passed"
+            ],
+            "actor": null
+          },
+          {
+            "id": "S29",
+            "title": "Kontrollierte Weiterentwicklung dauerhaft betreiben",
+            "status": "pending",
+            "ready": false,
+            "blocked_scope": true,
+            "scope_status": "proposed",
+            "blockers": [
+              "blocked_scope: Pfadumfang ist noch nicht auf reale Repositorypfade aufgelöst",
+              "Abhängigkeit S26 ist nicht passed"
+            ],
+            "actor": null
+          }
+        ]
+      },
+      "stderr": ""
+    }
+  ],
+  "product_steps_pending": 36,
+  "scope_blocked_steps": 33,
+  "only_ready_step": "S00",
+  "design_references_verified": 5,
+  "review_report": "audits/final_plan_review.md"
+}

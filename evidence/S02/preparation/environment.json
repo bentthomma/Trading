@@ -1,0 +1,10 @@
+{
+  "kind": "observed_environment_not_product_test",
+  "dotnet_executable_found": false,
+  "sdk_url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.100/dotnet-sdk-8.0.100-linux-x64.tar.gz",
+  "curl_probe_exit_code": 6,
+  "curl_probe_result": "Could not resolve host: builds.dotnet.microsoft.com",
+  "mediated_download_tool": "download failed; no archive received",
+  "native_compiler_executed": false,
+  "official_download_reference": "https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.100-linux-x64-binaries-targz"
+}

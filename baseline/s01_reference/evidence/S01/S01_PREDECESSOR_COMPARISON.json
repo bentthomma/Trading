@@ -1,0 +1,24 @@
+{
+  "predecessor_manifest_files": 95,
+  "byte_unchanged_predecessor_files": 84,
+  "changed_predecessor_paths": [
+    "README.md",
+    "RUN_S01_REPORT.md",
+    "UEBERGABE.md",
+    "evidence/S01/baseline-lock.json",
+    "evidence/S01/donor-map.json",
+    "evidence/S01/path-map.json",
+    "evidence/S01/reproduction-report.json",
+    "evidence/S01/version-crosswalk.md",
+    "tests/test_bot_source_binding.py",
+    "tests/test_s01_recovery.py",
+    "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json"
+  ],
+  "previous_production_sources": 31,
+  "previous_production_sources_byte_identical": 31,
+  "new_production_originals": 5,
+  "canonical_plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "gate_sha256": "2936921abd08be8e03ef560565704db259248c2b12ae40c57503383d21dbe8f6",
+  "gate_byte_unchanged": true,
+  "product_sources_patched": 0
+}

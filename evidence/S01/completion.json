@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "step_id": "S01",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "base_revision": "e486de547923c7b66f5ddc25f44fbc2295b4a885",
+  "head_revision": "79a957705b7e14b7ba4885dc666b468325fac78d",
+  "actor": "ChatGPT-local",
+  "changed_files": [
+    "evidence/S01/baseline-lock.json",
+    "evidence/S01/check_current_inventory.py",
+    "evidence/S01/closeout-readiness.json",
+    "evidence/S01/donor-map.json",
+    "evidence/S01/local-acceptance.md",
+    "evidence/S01/path-map.json",
+    "evidence/S01/reference-preservation-map.json",
+    "evidence/S01/reproduction-report.json",
+    "evidence/S01/test-execution.json",
+    "evidence/S01/test_current_inventory.py",
+    "evidence/S01/version-crosswalk.md",
+    "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json"
+  ],
+  "artifacts": {
+    "evidence/S01/baseline-lock.json": "b12c2a64bdb542469242274c5d8c06cbfdcf3d30bfd4b87b4dafbb3cb724943c",
+    "evidence/S01/version-crosswalk.md": "fa186c34d9e5b66a3871594dd83f6ab127dea103ca40a6818f603f97e42f5e22",
+    "evidence/S01/donor-map.json": "d8a4941682da3db4b73e1f7d67b93e4f109edc8e4b682ac485e686c978031e1f",
+    "evidence/S01/reproduction-report.json": "750ae9dfd1e15c764da8938cb23b5778c03b356c495ebc93cf7eadc36cb9ee4f",
+    "evidence/S01/path-map.json": "5eda61b0f664d8befc78c617d3906b8479ad52ca8cae6dcbe4b1da0c30570bfa",
+    "evidence/S01/test-execution.json": "9e08b88803eef6bf1f368f24362c2999a342054495cc9f733cc44c282aa37be0",
+    "evidence/S01/local-acceptance.md": "844c3552b7b6ceaeaf3d28962cd9b8859a00699e2caece57f4f9f6ff979bf8e7",
+    "evidence/S01/reference-preservation-map.json": "527bbf1b5cd816777803b4ebf2ab1b9fc0488e4dbe7b6b6bcd84e2d7a6c37112",
+    "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127"
+  },
+  "checks": [
+    {
+      "id": "S01-C01",
+      "status": "pass",
+      "summary": "Actual inventory validates 59 unique classifications, 38 complete SHA1/SHA256 matches, five prefixes,16 metadata; archives and separate Space sources verified.",
+      "proof_artifacts": [
+        "evidence/S01/test-execution.json",
+        "evidence/S01/local-acceptance.md",
+        "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json"
+      ]
+    },
+    {
+      "id": "S01-C02",
+      "status": "pass",
+      "summary": "Existing build evidence retained as historical; current bounded original build produces five exact files then explicitly reports missing overlay. No full website/native1.9 claimed; blocked_capability accepted by original criterion.",
+      "proof_artifacts": [
+        "evidence/S01/test-execution.json",
+        "evidence/S01/local-acceptance.md",
+        "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json"
+      ]
+    },
+    {
+      "id": "S01-C03",
+      "status": "pass",
+      "summary": "All product-integration/publication/broker flags remain false. Original files, historical builds and private candidate patches are distinct.",
+      "proof_artifacts": [
+        "evidence/S01/test-execution.json",
+        "evidence/S01/local-acceptance.md",
+        "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json"
+      ]
+    },
+    {
+      "id": "S01-C04",
+      "status": "pass",
+      "summary": "Bound production alias/deployment retained with historical read date; actual private local development branch has no remote. No installation or publication.",
+      "proof_artifacts": [
+        "evidence/S01/test-execution.json",
+        "evidence/S01/local-acceptance.md",
+        "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json"
+      ]
+    }
+  ],
+  "scope_of_acceptance": "source_inventory_only",
+  "independent_review_required": false
+}

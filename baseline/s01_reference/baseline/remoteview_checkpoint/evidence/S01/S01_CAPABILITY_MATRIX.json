@@ -1,0 +1,121 @@
+{
+  "schema": "extremelab-s01-capability-matrix/v1",
+  "plan_version": "1.1.0",
+  "private_work_scope": "S01 source/version/build inventory, no canonical finish",
+  "plan_interpretation": "S01 C02 explicitly permits blocked_capability for missing originals while completing inventory preparation. C03 does not release affected native integrations. No plan gate is changed.",
+  "capabilities": [
+    {
+      "id": "complete_input_inventory",
+      "status": "documented",
+      "available_original_inputs": 36,
+      "missing_original_inputs": 23,
+      "total": 59,
+      "missing_paths": [
+        "src/api/bot-download.js",
+        "src/api/bot14-download.js",
+        "src/api/bot15-download.js",
+        "src/build-bot.mjs",
+        "src/build-bot14.mjs",
+        "src/build-bot15.mjs",
+        "src/build-ui.mjs",
+        "src/lib/relay.mjs",
+        "src/live-overlay.b64",
+        "src/public/bot14.html",
+        "src/public/bot14.js",
+        "src/public/bot15.html",
+        "src/public/bot15.js",
+        "src/public/connection-check.js",
+        "src/skin.0",
+        "src/skin.1",
+        "src/skin.2",
+        "src/skin.3",
+        "src/skin.4",
+        "src/skin.5",
+        "src/skin.6",
+        "src/skin.7",
+        "src/skin.8"
+      ]
+    },
+    {
+      "id": "account_addon_intermediate_stage",
+      "status": "offline_reproduced",
+      "full_input_provenance": true,
+      "outputs": 6,
+      "original_tests": 26,
+      "actual_provider_integration": false
+    },
+    {
+      "id": "final_reader_after_skin",
+      "status": "blocked_capability",
+      "missing": [
+        "src/build-ui.mjs",
+        "src/skin.0..8"
+      ],
+      "reason": "Later stage replaces the verified intermediate reader. Its complete sources and bytes are missing; passing addon tests cannot be transferred to it."
+    },
+    {
+      "id": "complete_website_build",
+      "status": "blocked_capability",
+      "missing": [
+        "src/live-overlay.b64",
+        "src/build-bot.mjs",
+        "src/build-bot14.mjs",
+        "src/build-bot15.mjs",
+        "src/build-ui.mjs",
+        "src/skin.0..8"
+      ],
+      "reason": "No complete first stage or full release pipeline; actual first-stage ENOENT proof is historical EndpointRecovery, not rerun here."
+    },
+    {
+      "id": "native_handler_runtime",
+      "status": "partially_linked_offline",
+      "now_native_importable": "api/account-live.js on genuine addon-stage output",
+      "still_missing": [
+        "lib/relay.mjs",
+        "generated lib/market-reader.mjs",
+        "native ws / Vercel packages"
+      ],
+      "reason": "Import success is not Vercel host / HTTP / WebSocket / provider acceptance."
+    },
+    {
+      "id": "engine19_original_build",
+      "status": "blocked_capability",
+      "reason": "Original source/release and matching native environment remain unavailable; no new C# compilation."
+    },
+    {
+      "id": "official_S01_finish",
+      "status": "not_performed",
+      "reason": "No independent acceptance or canonical gate modification."
+    },
+    {
+      "id": "remote20_original_producer_to_production_entry",
+      "status": "offline_original_consumer_replayed",
+      "production_file_bindings": 10,
+      "original_local_source_subset": 64,
+      "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+      "transport": "in-process request/response adapter, no physical network",
+      "providers": "explicit in-memory cache/blob interface doubles",
+      "known_nonatomic_boundaries": [
+        "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+        "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+        "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+      ],
+      "actual_cloud_verified": false,
+      "browser_verified": false
+    }
+  ],
+  "nested_build_edges": [
+    {
+      "source": "build.mjs",
+      "callee": "build-bot15.mjs",
+      "proof": "full hash-verified original source; await import"
+    },
+    {
+      "source": "version133.mjs",
+      "callee": "build-account-addon.mjs",
+      "proof": "full hash-verified original source; await import"
+    }
+  ],
+  "addon_runs_in_successful_release_wrapper": 2,
+  "nested_edge_note": "Static call order, not a completed execution of the unavailable full pipeline. version133 imports addon, then the wrapper invokes addon as a new Node process."
+}

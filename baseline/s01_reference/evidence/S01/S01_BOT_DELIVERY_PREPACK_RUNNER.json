@@ -1,0 +1,377 @@
+{
+  "work_id": "S01-BOT-DELIVERY-RECOVERY",
+  "executed_at_utc": "2026-11-13T09:38:03.123754+00:00",
+  "uid": 0,
+  "python": "3.13.5",
+  "commands": [
+    {
+      "name": "package_before",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/mnt/data/extremelab_s01_next/ExtremeLab_S01_BotDeliveryRecovery_Offline/verify_package.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "package_before.log"
+    },
+    {
+      "name": "node_version",
+      "command": [
+        "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+        "--version"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "node_version.log"
+    },
+    {
+      "name": "network_denied",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-c",
+        "import socket,errno; s=socket.socket();\ntry:s.connect(('127.0.0.1',9))\nexcept OSError as e:assert e.errno==errno.EPERM;print('EPERM: network denied')\nelse:raise AssertionError('network allowed')"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "network_denied.log"
+    },
+    {
+      "name": "source_binding",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/mnt/data/extremelab_s01_next/ExtremeLab_S01_BotDeliveryRecovery_Offline/tools/bot_delivery_sources.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "source_binding.log"
+    },
+    {
+      "name": "new_sources_and_builder",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_bot_delivery_sources.py",
+        "-v"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "new_sources_and_builder.log"
+    },
+    {
+      "name": "inventory_candidate",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_s01_candidate.py",
+        "-v"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "inventory_candidate.log"
+    },
+    {
+      "name": "inventory_recovery",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_s01_recovery.py",
+        "-v"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "inventory_recovery.log"
+    },
+    {
+      "name": "original_download_checks",
+      "command": [
+        "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+        "/tmp/el-delivery-stage-f7p7nx7v/original.test.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "original_download_checks.log"
+    },
+    {
+      "name": "download_boundary_tests",
+      "command": [
+        "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+        "--test",
+        "--test-reporter=tap",
+        "/mnt/data/extremelab_s01_next/ExtremeLab_S01_BotDeliveryRecovery_Offline/tests/bot_delivery_boundaries.test.mjs"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "download_boundary_tests.log"
+    },
+    {
+      "name": "mutation_owner_check_removed",
+      "command": [
+        "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+        "--test",
+        "--test-reporter=tap",
+        "--test-name-pattern=warm artifact",
+        "/mnt/data/extremelab_s01_next/ExtremeLab_S01_BotDeliveryRecovery_Offline/tests/bot_delivery_boundaries.test.mjs"
+      ],
+      "exit": 1,
+      "expected_exit": "nonzero",
+      "log": "mutation_owner_check_removed.log"
+    },
+    {
+      "name": "mutation_checksum_check_removed",
+      "command": [
+        "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+        "--test",
+        "--test-reporter=tap",
+        "--test-name-pattern=cold module",
+        "/mnt/data/extremelab_s01_next/ExtremeLab_S01_BotDeliveryRecovery_Offline/tests/bot_delivery_boundaries.test.mjs"
+      ],
+      "exit": 1,
+      "expected_exit": "nonzero",
+      "log": "mutation_checksum_check_removed.log"
+    },
+    {
+      "name": "package_changed_byte",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/tmp/el-delivery-package-negative-wltzlpqj/copy/verify_package.py"
+      ],
+      "exit": 2,
+      "expected_exit": "nonzero",
+      "log": "package_changed_byte.log"
+    },
+    {
+      "name": "package_extra_file",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/tmp/el-delivery-package-negative-wltzlpqj/copy/verify_package.py"
+      ],
+      "exit": 2,
+      "expected_exit": "nonzero",
+      "log": "package_extra_file.log"
+    },
+    {
+      "name": "package_symlink",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/tmp/el-delivery-package-negative-wltzlpqj/copy/verify_package.py"
+      ],
+      "exit": 2,
+      "expected_exit": "nonzero",
+      "log": "package_symlink.log"
+    },
+    {
+      "name": "package_after",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "/mnt/data/extremelab_s01_next/ExtremeLab_S01_BotDeliveryRecovery_Offline/verify_package.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "package_after.log"
+    }
+  ],
+  "native_compilation": false,
+  "real_bot_started": false,
+  "website_full_build": false,
+  "independent_acceptance": false,
+  "package_before": {
+    "verified_files": 255,
+    "formal_status_unchanged": true,
+    "s01_private_work": "active",
+    "independent_review": false
+  },
+  "node_version": "v24.11.1",
+  "node_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
+  "source_binding": {
+    "recovered": [
+      {
+        "path": "src/build-bot.mjs",
+        "bytes": 3076,
+        "sha256": "8f860380eedb09dbdd75fd32bad0666ff489aef3ed65f7d674d584a92c8875a8"
+      },
+      {
+        "path": "src/api/bot-download.js",
+        "bytes": 1979,
+        "sha256": "218ca030d075a988ed0ee260a59631efd2ac674607dd018573f44ff903dabde0"
+      }
+    ],
+    "donor_manifest_members": 11,
+    "native_build": false,
+    "formal_acceptance": false
+  },
+  "python_groups": [
+    {
+      "name": "new_sources_and_builder",
+      "methods": 7
+    },
+    {
+      "name": "inventory_candidate",
+      "methods": 12
+    },
+    {
+      "name": "inventory_recovery",
+      "methods": 8
+    }
+  ],
+  "original_download_assertions": {
+    "scope": "local synthetic session and binary fixture; NOT owner login or actual .algo execution",
+    "passed": 15,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "anonymous binary denied",
+        "pass": true
+      },
+      {
+        "name": "signed synthetic session downloads exact bytes",
+        "pass": true
+      },
+      {
+        "name": "content type is binary",
+        "pass": true
+      },
+      {
+        "name": "fixed attachment filename",
+        "pass": true
+      },
+      {
+        "name": "checksum accompanies download",
+        "pass": true
+      },
+      {
+        "name": "private no-store",
+        "pass": true
+      },
+      {
+        "name": "authenticated HEAD no binary body",
+        "pass": true
+      },
+      {
+        "name": "expired session denied",
+        "pass": true
+      },
+      {
+        "name": "tampered signature denied",
+        "pass": true
+      },
+      {
+        "name": "method restricted",
+        "pass": true
+      },
+      {
+        "name": "public manifest no binary",
+        "pass": true
+      },
+      {
+        "name": "ambiguous query denied",
+        "pass": true
+      },
+      {
+        "name": "arbitrary path denied",
+        "pass": true
+      },
+      {
+        "name": "corrupt artifact fails closed",
+        "pass": true
+      },
+      {
+        "name": "missing artifact fails closed",
+        "pass": true
+      }
+    ]
+  },
+  "node_methods": {
+    "tests": 6,
+    "pass": 6,
+    "fail": 0,
+    "skipped": 0
+  },
+  "behavior_mutations": [
+    {
+      "mutation": "owner_check_removed",
+      "caught_by_behavior_assertion": true
+    },
+    {
+      "mutation": "checksum_check_removed",
+      "caught_by_behavior_assertion": true
+    }
+  ],
+  "distinct_test_methods": 33,
+  "additional_original_assertions": 15,
+  "builder_outcomes": [
+    {
+      "mode": "missing",
+      "exit": 1,
+      "sdk_download_refused": false,
+      "native_compilation": false
+    },
+    {
+      "mode": "reordered",
+      "exit": 1,
+      "sdk_download_refused": false,
+      "native_compilation": false
+    },
+    {
+      "mode": "tamper",
+      "exit": 1,
+      "sdk_download_refused": false,
+      "native_compilation": false
+    },
+    {
+      "mode": "valid",
+      "exit": 1,
+      "sdk_download_refused": true,
+      "native_compilation": false,
+      "extracted_original_sources": 12,
+      "download_arguments": [
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--max-time",
+        "60",
+        "https://dot.net/v1/dotnet-install.sh",
+        "-o",
+        "<ephemeral installer path>"
+      ],
+      "temporary_source_tree_remains_at_failure": true
+    }
+  ],
+  "package_negative_probes": [
+    "changed_bytes",
+    "extra_file",
+    "symlink"
+  ],
+  "package_after": {
+    "verified_files": 255,
+    "formal_status_unchanged": true,
+    "s01_private_work": "active",
+    "independent_review": false
+  },
+  "bounded_checks_passed": true
+}

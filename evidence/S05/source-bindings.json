@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "base_revision": "84de33629ebd05b4eb28e5351334357dc6827e75",
+  "plan": {
+    "path": "governance/masterplan/plan.json",
+    "sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5"
+  },
+  "platform_archive": {
+    "path": "baseline/s01_reference/baseline/original_platform097.zip",
+    "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+    "members": [
+      {
+        "path": "core/planning/decimal.mjs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/planning/decimal.mjs",
+        "bytes": 3102,
+        "sha256": "058d19e4c5beb71da030a376effb746e310d952d8ab462c7b57dfe5375ec6a7f"
+      },
+      {
+        "path": "core/planning/order-lifecycle.mjs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/planning/order-lifecycle.mjs",
+        "bytes": 35231,
+        "sha256": "fc5c5c82f2b6dcdc73dba863a8abde35fd86728ea8261970cb375b934c2650d4"
+      },
+      {
+        "path": "core/store.mjs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/store.mjs",
+        "bytes": 18333,
+        "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978"
+      },
+      {
+        "path": "core/errors.mjs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/errors.mjs",
+        "bytes": 1315,
+        "sha256": "803d4626fab45b2ec38bc3c57fdbc34535008fa5bdefd44aa7226886724d3736"
+      },
+      {
+        "path": "core/schema.mjs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/schema.mjs",
+        "bytes": 9520,
+        "sha256": "caf21114e697df310a32dfc0d13e3a2671442e7e0752d533cc2f12d6094574c8"
+      },
+      {
+        "path": "tests/planning-orders.mjs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/tests/planning-orders.mjs",
+        "bytes": 22176,
+        "sha256": "969ce754aa719287e5d17b5983890dcdfb130d101242149cc13339b94ea6b542"
+      },
+      {
+        "path": "docs/NATIVE_ORDER_LEDGER20_DE.md",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/docs/NATIVE_ORDER_LEDGER20_DE.md",
+        "bytes": 10116,
+        "sha256": "06ec0d44f99b7960dae68d409fcdde578249ca6a6745f9afcb378e3c4eb35e96"
+      },
+      {
+        "path": "integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+        "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/ctrader-th3revolution20/src/Th3NativeOrderLedger20.cs",
+        "bytes": 23121,
+        "sha256": "2c6261f55f638e5be0e51c27bac007f194ef769f2388bc6b392f65ee2bd72df4"
+      }
+    ]
+  },
+  "selected_master_sources": {
+    "outer_path": "private_inputs/MPR1_LAB03_SelectedSources.zip",
+    "bytes": 70502,
+    "sha256": "5babdad90bdf0696bf62990c415be502aa04b3b997e0d3be5bea5cec8b9a511f",
+    "members": [
+      {
+        "path": "master_1_0/guide_figures_05_08.py",
+        "bytes": 24978,
+        "sha256": "03edbe624b6a070385ac39808256b4cb403c19b1449debef62802573e8a193db"
+      },
+      {
+        "path": "master_1_0/guide_author.py",
+        "bytes": 127310,
+        "sha256": "4f76257342262ad5b99ba9dca456d1a87f4e72a78e127860de5d7170f0947e80"
+      },
+      {
+        "path": "materials/data/master_1_0/MPG05.json",
+        "bytes": 3069,
+        "sha256": "a876a5f5267577dd47eda196a059614b3aad6a96368b2f76a4090b2dc8c6deef"
+      },
+      {
+        "path": "materials/portfolio_lab.py",
+        "bytes": 44261,
+        "sha256": "bbb614d142b12802c096d4bee59f8a8dde5478e68d841bea6a354c30561f482c"
+      },
+      {
+        "path": "materials/data/lab03/lab03_model_contract.json",
+        "bytes": 5736,
+        "sha256": "d72db83b9808b53d649f91aa0fe6b0ee5042dfe3b49c33de7a86e3e9166055f3"
+      },
+      {
+        "path": "materials/data/lab03/lab03_config.json",
+        "bytes": 467,
+        "sha256": "3bf293b4b2f38c2b1568f2af196c12dae043e46aab9b2f3a22f3611b76c895a2"
+      },
+      {
+        "path": "materials/data/lab03/lab03_budget_fixture.json",
+        "bytes": 322,
+        "sha256": "fbabaa39959347b6666268e48989cb36bcb9f9fddc91127272275710931167f2"
+      }
+    ],
+    "full_archive_name": "Trading_Master_1_0_Arbeitsmaterialien.zip",
+    "full_archive_sha256": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0"
+  },
+  "workbook": {
+    "outer_path": "private_inputs/Trading_Start_und_Arbeitsbuch_1_0.pdf",
+    "bytes": 1863737,
+    "sha256": "160c847357f0c5f883b820d85c79d5d18f815c182489459548b6b562fd25d167",
+    "source_pages": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "authoritative_arithmetic_pages": [
+      25,
+      26,
+      27
+    ]
+  },
+  "S02_bindings": [
+    {
+      "path": "contracts/domain/v1/schema.json",
+      "sha256": "8c3f975a2543975035e9dc5c341d2e239baec82145d38a802eadfb3d10797f32"
+    },
+    {
+      "path": "adapters/contracts/v1/domain.py",
+      "sha256": "0299cf6b724788bea2391d74b836cc8b22244398e10750f1be767103f284187a"
+    },
+    {
+      "path": "evidence/S02/domain-contract.json",
+      "sha256": "32ebe9084b01ef3ad8f4f61ea2e02737438d3d17b17318ead0fad2a942cbc66e"
+    }
+  ],
+  "scope": "Source recovery, cash oracle and original-module boundaries only. No product integration."
+}

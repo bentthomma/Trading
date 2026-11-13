@@ -1,0 +1,593 @@
+{
+  "archive": {
+    "bytes": 264138803,
+    "file_id": "file_00000000b2348210afb4652b9007760e",
+    "filename": "Adaptive_Trading_Lab_Teil6.zip",
+    "raw_storage": "external private original input; not committed to git",
+    "sha256": "cf2dd5842c6a22a15e82f6d19d7c16cf404d6b613640289dfe663e525bcdef3d"
+  },
+  "audit_transform": {
+    "historical_original_transform_replayed": false,
+    "path": "data/quality/teil6_audit.py",
+    "sha256": "559bf3737eb5957aaffcea1a98cc3075348407a60dbea63a09b18a8dd93f6262"
+  },
+  "base_revision": "e69a917a5cac207d0c9f88a2a98f69bf56d524b1",
+  "catalogue_version": "9eb36bbb418eacb91c99dd404e36421e58577d4e0cd85713b01bc5c1ee3b35bd",
+  "dataset_version": "ad2d6fb82bc10bc2c09fb44ede4afa9af0a700ee1a773f0008c7034fca6b8672",
+  "dataset_version_scope": "teil6_original_component_only",
+  "formal_status_changed": false,
+  "master_monthly": {
+    "raw_provider_archives_present": 0,
+    "report": "data/catalog/master-monthly-v1/monthly-profile.json",
+    "version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde"
+  },
+  "products": [
+    {
+      "archive_files": 240,
+      "archive_sha256": "cf2dd5842c6a22a15e82f6d19d7c16cf404d6b613640289dfe663e525bcdef3d",
+      "availability": "verified_bytes",
+      "broker_symbol_mapping": null,
+      "historical_tick_and_lot_filters": null,
+      "id": "binance-spot-h1-raw",
+      "kind": "raw_trade_ohlcv",
+      "price_unit": "USDT per base asset",
+      "production_authority": false,
+      "quarantined": false,
+      "research_modes": [
+        "raw_ohlcv_audit"
+      ],
+      "resolution": "1h",
+      "rights_clearance": false,
+      "rows": 175240,
+      "symbols": [
+        "BNBUSDT",
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT"
+      ],
+      "timestamp_rule": "UTC; ms through 2024, us from 2025",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "executable_quotes": false,
+      "id": "binance-open-legacy",
+      "intrabar_path": false,
+      "kind": "derived_open_prices",
+      "numeric_semantics": "float64 round-trip text, not source-exact decimal",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "research_modes": [
+        "legacy_representation_audit"
+      ],
+      "resolution": "1h",
+      "rights_clearance": false,
+      "rows": 43805,
+      "selection_basis": "retrospective full-bar quality filter",
+      "sha256": "37907d4b384392c4cfdf512a6367a4a73c51624441b9025bb1f6a725db08f289",
+      "values": 175220,
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "dataset_version": "ad2d6fb82bc10bc2c09fb44ede4afa9af0a700ee1a773f0008c7034fca6b8672",
+      "executable_quotes": false,
+      "id": "binance-open-exact-v1",
+      "imputed_values": 0,
+      "intrabar_path": false,
+      "kind": "derived_open_prices",
+      "lineage_sha256": "933851825b6d581c4c6c6b61900c9deecc412522772431af8fd3e23a2e0acaa9",
+      "missing_hours": 19,
+      "numeric_semantics": "original decimal strings retained",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "research_modes": [
+        "exact_open_audit",
+        "segmented_open_to_open"
+      ],
+      "resolution": "1h",
+      "rights_clearance": false,
+      "rows": 43805,
+      "selection_basis": "retrospective full-bar quality filter",
+      "sha256": "523c71daf4a11d5d9b932c357d6fcbd1a89b7cd11e61914df3faba83e6b1a2f2",
+      "transform_sha256": "559bf3737eb5957aaffcea1a98cc3075348407a60dbea63a09b18a8dd93f6262",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "broker_symbol_mapping": null,
+      "diagnostic_reader_allowed": true,
+      "historical_tick_and_lot_filters": null,
+      "id": "histdata-eurusd-ticks-main",
+      "kind": "raw_bid_ask_quotes",
+      "months": [
+        "202402",
+        "202403",
+        "202404",
+        "202405",
+        "202406",
+        "202407",
+        "202408",
+        "202409",
+        "202410",
+        "202411",
+        "202412",
+        "202501",
+        "202502",
+        "202503",
+        "202504",
+        "202505",
+        "202506",
+        "202507",
+        "202508",
+        "202509",
+        "202510",
+        "202511"
+      ],
+      "partitions": [
+        {
+          "csv_sha256": "7494dea6e2ad949a1c60f6e9febd46894accef2bd6e0df427232cac01a94edcb",
+          "month": "202402",
+          "quarantined_for_replay": false,
+          "rows": 1702058,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202402.zip",
+          "zip_sha256": "bf38a79ae8032429adef649c35005100ba60eb88d247ac0432b48590db133517"
+        },
+        {
+          "csv_sha256": "6e6d5b668b3a0348221082513bac8fe02a8e8767d574049e9799206218aed690",
+          "month": "202403",
+          "quarantined_for_replay": false,
+          "rows": 1476727,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202403.zip",
+          "zip_sha256": "b70fcaf5ee82ca6dc847f8a6c0f4354ecb456ae8579faed8563b53ac2ac324df"
+        },
+        {
+          "csv_sha256": "8ae19d919df75c343180da3747c495ecef3899b767060262d965726c388c5093",
+          "month": "202404",
+          "quarantined_for_replay": false,
+          "rows": 1560509,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202404.zip",
+          "zip_sha256": "cb9b219aa3c557f8f4c3e5bddcdd3fc75a7f5113590329153fc17fce34ad17f2"
+        },
+        {
+          "csv_sha256": "893c856d7f6e9c5c5faaf404929d9fc4ce2852201c3c25f583fbca4c08ac3894",
+          "month": "202405",
+          "quarantined_for_replay": false,
+          "rows": 1240628,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202405.zip",
+          "zip_sha256": "c81fd7c2c94829664e523dd18e54e985c07f7b7be6f4fa5998cbe7a15569360c"
+        },
+        {
+          "csv_sha256": "2df69d77777659d21c174ca8c6269d65de9d058ae7f93f7e54d6f8dcf4f635ea",
+          "month": "202406",
+          "quarantined_for_replay": false,
+          "rows": 1344506,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202406.zip",
+          "zip_sha256": "162e85bb8da67b35852b2950f1aa2e6d2eff7f2fef738849bc1327e4f5392d12"
+        },
+        {
+          "csv_sha256": "2caa350929f00ea49e8311d70776e56e1bfe101d72ec092cd0ffe927d5d7aa06",
+          "month": "202407",
+          "quarantined_for_replay": false,
+          "rows": 1463751,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202407.zip",
+          "zip_sha256": "d46ff671cd5fd65c605d7c03496217dcbca3ed39086dc3afe202f193f518442c"
+        },
+        {
+          "csv_sha256": "607f0bafc7a876673ea669b1290dcd0e152735ae16cfc7ce790f0d9f64a1db0f",
+          "month": "202408",
+          "quarantined_for_replay": false,
+          "rows": 1840228,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202408.zip",
+          "zip_sha256": "89d4922aab8b3e83f10d8c9635f4e247652e8c0c1f7dcda306cbf83fc4b2751a"
+        },
+        {
+          "csv_sha256": "1bad8560b44ea966ec8388b4f30abc7508a9860de21979474ae20c5973c78bd4",
+          "month": "202409",
+          "quarantined_for_replay": false,
+          "rows": 1805004,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202409.zip",
+          "zip_sha256": "00ab61749d1d70081c18f9dfe4a175e160c54de29edb779a713432fcbae10059"
+        },
+        {
+          "csv_sha256": "4bae67238691b879d9bca02651f2fbc5004e723217861d818e1aed9f9c81ca92",
+          "month": "202410",
+          "quarantined_for_replay": false,
+          "rows": 1772075,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202410.zip",
+          "zip_sha256": "5041948a91b7c3ab6036c08c5adfbe2438c7c3d21ff7ccdaafbc8d61f18d039d"
+        },
+        {
+          "csv_sha256": "acbf1f7d162a9e4eb5ae5d7df98290a1101b7e4b7a2e4c02c7f7725e9acb44d6",
+          "month": "202411",
+          "quarantined_for_replay": false,
+          "rows": 2312773,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202411.zip",
+          "zip_sha256": "2ca378fffe3fcaee698ef2486e6407d72afd8f292002983463c338f329838f17"
+        },
+        {
+          "csv_sha256": "7c450bc13d62e11850757eae23e60f3f3af29e3ce85eddc19deb880ef2bec0bf",
+          "month": "202412",
+          "quarantined_for_replay": false,
+          "rows": 1979900,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202412.zip",
+          "zip_sha256": "a4dd430ed823a7671dd012faff1eda56f46a7cc54dd7bdb5cd5dc19db3eda3c5"
+        },
+        {
+          "csv_sha256": "841dd276909ca7d1974474b41c7c7c57f2746ddd5de95745e01fb5ffd8109475",
+          "month": "202501",
+          "quarantined_for_replay": false,
+          "rows": 2283239,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202501.zip",
+          "zip_sha256": "159f906f8055f6ee835d95806cf7fdf4023b6e3ef098aa308d2ab6ce53ac964a"
+        },
+        {
+          "csv_sha256": "09b197dec4f64394baa0b15e456db584c00546a3daf469c8104faaa794fabad8",
+          "month": "202502",
+          "quarantined_for_replay": false,
+          "rows": 2053257,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202502.zip",
+          "zip_sha256": "63c3b2717c024f7aada8642b38e7a944646dbe2440303632918e5c594db2313e"
+        },
+        {
+          "csv_sha256": "3ad5c6adb32890003387c1e6b076c3a950c604dfd2c61322cc1a3212322c1b7a",
+          "month": "202503",
+          "quarantined_for_replay": false,
+          "rows": 2353340,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202503.zip",
+          "zip_sha256": "0746c04af3a4aba26a559d0bbd665bbeda8e237c624b51625e63bf10066cc096"
+        },
+        {
+          "csv_sha256": "b36650c3ecd6261f27fd61f3aaf5e7c75155c8b613bf000bc5cdf718f18fb0f4",
+          "month": "202504",
+          "quarantined_for_replay": false,
+          "rows": 3916978,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202504.zip",
+          "zip_sha256": "613aa42d654e66853ec35d233a372adf66d818614a2ebe9f92be4add59f7970e"
+        },
+        {
+          "csv_sha256": "f4c3cff1e91a6971bb8bd45aed1f3800a2aee33015da12786ce8cb4395e8f286",
+          "month": "202505",
+          "quarantined_for_replay": false,
+          "rows": 2412228,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202505.zip",
+          "zip_sha256": "3ce49d7b44e8b17c942ad2d5e77e317c023a5884f090c086806b888dae633f77"
+        },
+        {
+          "csv_sha256": "bda47292629b908444f551d6e5617d410d738eb56a494222ac8a7846f49e2bb7",
+          "month": "202506",
+          "quarantined_for_replay": false,
+          "rows": 2044343,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202506.zip",
+          "zip_sha256": "a36a057d0afcb38e11cab1bec01c4e6de83f053530e0ea99c88acf99145af77c"
+        },
+        {
+          "csv_sha256": "b65a6897a1010efbb2d52367d10c5991337b6d6172bee7f6f375c61a339dff10",
+          "month": "202507",
+          "quarantined_for_replay": false,
+          "rows": 1555775,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202507.zip",
+          "zip_sha256": "c671c79da3955d7f97dcbe4386165ac059878d29019e7ca6453b286bad2a2a74"
+        },
+        {
+          "csv_sha256": "f9005db79861be05b31d93c82db5c0ae72180c7d8995a2e5af2f60918873990a",
+          "month": "202508",
+          "quarantined_for_replay": false,
+          "rows": 1338471,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202508.zip",
+          "zip_sha256": "c9b4869da23f24082614b8666159ce4a1f83573f5e687879634d7640f507a229"
+        },
+        {
+          "csv_sha256": "f6e0dbb9227c3c24c7cfe7dabf1a264c27f1221086188f6f5cd413751c06ddaf",
+          "month": "202509",
+          "quarantined_for_replay": false,
+          "rows": 1493622,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202509.zip",
+          "zip_sha256": "d3a6310bd8427b6d9ea2d68c0edf5da2c469511a61b957b0a0d41c45dc9d9310"
+        },
+        {
+          "csv_sha256": "016aa9b056852c17710007470b00bf37d5317aba255681c3acda6cfcdee78be6",
+          "month": "202510",
+          "quarantined_for_replay": true,
+          "rows": 1483175,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202510.zip",
+          "zip_sha256": "80ff5b3bb0e172e30cf6003feb59bbb147629443041555d5e44ab54e40f7de5e"
+        },
+        {
+          "csv_sha256": "7db8d3cf9dafb1e7f87f295b28ecb79c8c666dde3d5c7aa06cc4721dfd086615",
+          "month": "202511",
+          "quarantined_for_replay": false,
+          "rows": 1242212,
+          "source_member": "adaptive_trading_lab/data_fx/histdata/raw/HISTDATA_COM_ASCII_EURUSD_T_202511.zip",
+          "zip_sha256": "3e2b099ea6e94657b27c03ae64f4238d13ece34748289148b3675c250b0e65ae"
+        }
+      ],
+      "production_authority": false,
+      "quarantined": true,
+      "research_modes": [],
+      "resolution": "tick",
+      "rights_clearance": false,
+      "rows": 40674799,
+      "time_rule": "documented fixed EST; observed backward jump remains unresolved",
+      "venue": null,
+      "volume_semantics": "unavailable; zero is provider placeholder",
+      "website_redistribution_authorized": false
+    },
+    {
+      "archive_member": "adaptive_trading_lab/data_fx/histdata/rejected_pilots/HISTDATA_COM_ASCII_EURUSD_T_200401.zip",
+      "availability": "verified_bytes",
+      "crossed_quotes": 941593,
+      "id": "histdata-eurusd-pilot-200401",
+      "kind": "raw_bid_ask_quotes",
+      "production_authority": false,
+      "quarantined": true,
+      "reason": "previously rejected pilot, not automatically repaired or merged",
+      "research_modes": [],
+      "resolution": "tick",
+      "rights_clearance": false,
+      "rows": 941613,
+      "website_redistribution_authorized": false,
+      "zip_sha256": "8514eba5b551dad4d481125f74f572300636d90d85c4627c1d4f5b79502a0e61"
+    },
+    {
+      "availability": "verified_derived_collection",
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "id": "monthly-factor-portfolios",
+      "kind": "monthly_research_returns",
+      "members": [
+        "FF_US_5F",
+        "FF_US_MOM",
+        "FF_US_INDUSTRY10_VW",
+        "FF_EUROPE_3F",
+        "FF_JAPAN_3F",
+        "FF_ASIA_PACIFIC_EX_JAPAN_3F",
+        "FF_US_MARKET_CASH_MONTHLY"
+      ],
+      "production_authority": false,
+      "quarantined": false,
+      "raw_transform_replay": false,
+      "reason": "Seven preserved monthly derived datasets; full provider ZIPs remain unavailable.",
+      "research_modes": [],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "test_code",
+      "id": "synthetic-decoder-counterexamples",
+      "kind": "synthetic_test_rows",
+      "production_authority": false,
+      "quarantined": false,
+      "reason": "Only tests/data/test_teil6_audit.py; no observed history or performance claim",
+      "research_modes": [],
+      "resolution": "test_only",
+      "rights_clearance": false,
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "absent_from_inspected_archive",
+      "id": "equity-history",
+      "kind": "market_history",
+      "production_authority": false,
+      "quarantined": false,
+      "reason": "No point-in-time universe, splits/dividends/delistings or price series in this input.",
+      "research_modes": [],
+      "resolution": "unknown",
+      "rights_clearance": false,
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "absent_from_inspected_archive",
+      "id": "gold-silver-history",
+      "kind": "market_history",
+      "production_authority": false,
+      "quarantined": false,
+      "reason": "Historical bot positions or symbol strings are not time series.",
+      "research_modes": [],
+      "resolution": "unknown",
+      "rights_clearance": false,
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "absent_from_inspected_archive",
+      "id": "other-fx-history",
+      "kind": "market_history",
+      "production_authority": false,
+      "quarantined": false,
+      "reason": "Only EURUSD tick inputs were present.",
+      "research_modes": [],
+      "resolution": "unknown",
+      "rights_clearance": false,
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "cma": "long_short_factor_return",
+        "hml": "long_short_factor_return",
+        "mkt_excess": "market_excess_return",
+        "rf": "cash_benchmark_monthly_return",
+        "rmw": "long_short_factor_return",
+        "smb": "long_short_factor_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/research_collection/us_five_factors.csv",
+      "id": "FF_US_5F",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "3e86a78c058daad2fa60f14118fe08b1145450b76ee1fa9440d29b81888eddb1",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "mom": "long_short_factor_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/research_collection/us_momentum.csv",
+      "id": "FF_US_MOM",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "d7fa3c412c29db69d27e4815e58d8f5aa1d5c75e62441af7738cb97086f43bcd",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "durbl": "industry_total_research_return",
+        "enrgy": "industry_total_research_return",
+        "hitec": "industry_total_research_return",
+        "hlth": "industry_total_research_return",
+        "manuf": "industry_total_research_return",
+        "nodur": "industry_total_research_return",
+        "other": "industry_total_research_return",
+        "shops": "industry_total_research_return",
+        "telcm": "industry_total_research_return",
+        "utils": "industry_total_research_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/research_collection/us_industry10_value_weighted.csv",
+      "id": "FF_US_INDUSTRY10_VW",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "954e3f876da9dcdf72e7d4ef830f7f756d689d88777c438b607cdc75731bbc7c",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "hml": "long_short_factor_return",
+        "mkt_excess": "market_excess_return",
+        "rf": "cash_benchmark_monthly_return",
+        "smb": "long_short_factor_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/research_collection/europe_three_factors.csv",
+      "id": "FF_EUROPE_3F",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "3ca69d4efeee754fc3ae6df1d09f2af067a8474375599e5165c1c4cde508dcae",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "hml": "long_short_factor_return",
+        "mkt_excess": "market_excess_return",
+        "rf": "cash_benchmark_monthly_return",
+        "smb": "long_short_factor_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/research_collection/japan_three_factors.csv",
+      "id": "FF_JAPAN_3F",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "fa3a9a64da2e7fefc3a817413d80db61b11cc0ab2167036a1936f2d448f7c69f",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "hml": "long_short_factor_return",
+        "mkt_excess": "market_excess_return",
+        "rf": "cash_benchmark_monthly_return",
+        "smb": "long_short_factor_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/research_collection/asia_pacific_ex_japan_three_factors.csv",
+      "id": "FF_ASIA_PACIFIC_EX_JAPAN_3F",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "462636c249d33a23561cffd0a3fea77a801f2fc9a7d3083b9fa57644a5760451",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    },
+    {
+      "availability": "verified_bytes",
+      "columns": {
+        "cash_return": "cash_benchmark_monthly_return",
+        "risky_return": "total_research_market_return"
+      },
+      "dataset_version": "7c0efd451ef54dd71d83a19fa83799618b04650b59a86b981468d847db4f2bde",
+      "derived_member": "materials/data/lab04/input.csv",
+      "id": "FF_US_MARKET_CASH_MONTHLY",
+      "kind": "monthly_research_returns",
+      "point_in_time_eligible": false,
+      "production_authority": false,
+      "quarantined": false,
+      "raw_source_replay_verified": false,
+      "research_modes": [
+        "monthly_returns_audit"
+      ],
+      "resolution": "monthly",
+      "rights_clearance": false,
+      "rows": 336,
+      "sha256": "256c2e281a437b2fd9d71c3f49da8e094da69a1bf86f2c10b099df51f3f75158",
+      "source_archive": "35aaaa4eb8e40a7811f6a2ddc9a1b2991c0968b07cb8dbc08b25a1a5c95d0fb0",
+      "website_redistribution_authorized": false
+    }
+  ],
+  "schema": "extremelab.dataset-registry/v1",
+  "scope": "Teil6 + preserved Master monthly data audit; no full S07 acceptance"
+}

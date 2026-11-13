@@ -1,0 +1,157 @@
+{
+  "schema": "extremelab-strategy-spec/1.0-draft",
+  "strategy_id": "MPR1_REFERENCE_RESEARCH_DRAFT_V0",
+  "status": "DRAFT",
+  "ready_to_run": false,
+  "evidence_type": "SYNTHETIC_TEACHING_SPECIFICATION",
+  "result_status": "NOT_RUN",
+  "notice": "Diese Vorlage bildet einen begrenzten synthetischen Originalvertrag ab. Sie ist kein bereits implementierter Bot. Reale Instrumente, MTF-Filter oder adaptive Exits benötigen eigene Versionen und neue Abnahme.",
+  "source_refs": [
+    {
+      "file": "Trading_Start_und_Arbeitsbuch_1_0.pdf",
+      "sha256": "160c847357f0c5f883b820d85c79d5d18f815c182489459548b6b562fd25d167",
+      "chapters": ["MP05", "MP06", "MP07", "MP11"],
+      "pages": "21-32, 44-46"
+    },
+    {
+      "file": "Trading_Master_1_0.pdf",
+      "sha256": "4186b9a2baa61d5cedb415c00d5b5ef3302deafb0c96ff277c8eed2d1731f81c",
+      "chapters": ["DOC06", "DOC08", "DOC09", "DOC10"],
+      "scope": "Order-/Fill-/Kontotrennung, Provenienz, Drift und Adaptergrenzen."
+    }
+  ],
+  "preflight": {
+    "rule": "Missing/null/empty required pointer or ready_to_run=false blocks strategy-run start. Companion Run-Protocol must independently pass.",
+    "implementation_state": "NORMATIVE_CONTRACT_NOT_CONNECTED_TO_RUNNER_YET",
+    "required_pointers_non_null": ["/version_sha256", "/pattern_spec_sha256", "/code_sha256", "/dataset_manifest_sha256", "/instrument_contract_sha256", "/execution/quote_ttl_milliseconds", "/execution/available_at_mapping", "/portfolio/reservation_contract_sha256", "/review/decision_ref"],
+    "conditional_requirements": [
+      "If historical or broker data are used: create a new real-instrument strategy version; require actual costs, FX, financing, margin, calendar, volume limits and execution observations.",
+      "If multi_timeframe.trade_filter_enabled=true: require frozen context rule and feature-spec hashes, plus new strategy ID.",
+      "If adaptive_exit.enabled=true: require its full state machine, update timing, gap behavior, version and matched-control protocol."
+    ]
+  },
+  "version_sha256": null,
+  "pattern_spec_sha256": null,
+  "code_sha256": null,
+  "dataset_manifest_sha256": null,
+  "instrument_contract_sha256": null,
+  "instrument": {
+    "id": "MPR1_SYNTHETIC_CASH_ASSET_CHF",
+    "account_currency": "CHF",
+    "price_currency": "CHF",
+    "price_tick_decimal": "0.01",
+    "quantity_step_decimal": "1",
+    "minimum_quantity_decimal": "1",
+    "multiplier_decimal": "1",
+    "fully_funded_cash_only": true,
+    "short_allowed": false,
+    "synthetic_omissions": ["dividends", "FX", "interest", "overnight_financing", "borrow", "real_liquidity_constraints"],
+    "omissions_do_not_apply_to_real_market_adapters": true
+  },
+  "session": {
+    "timezone": "UTC",
+    "start": "08:00:00",
+    "end": "12:00:00",
+    "no_new_entries_and_ordered_exit_after": "11:55:00",
+    "runs_cover_one_synthetic_session": true,
+    "initial_position": "FLAT",
+    "bar_interval": "M5",
+    "bar_price_side": "BID",
+    "empty_required_bar_result": "INCOMPLETE_DATA"
+  },
+  "state_machine": {
+    "states": ["SCAN", "WAIT_RETEST", "QUEUED", "OPEN", "CLOSED", "EXPIRED", "REJECTED", "UNRESOLVED_OPEN", "DATA_BLOCKED"],
+    "pattern_source": "Pattern-Spec.json exact accepted hash",
+    "position_exists_only_after_fill": true,
+    "maximum_one_setup_or_position": true,
+    "on_confirmed_pattern": "QUEUED with actual available_at; original R remains frozen.",
+    "queue_expiry_seconds": 60,
+    "expiry_is_exclusive": true,
+    "entry_candidate": "Only first subsequent validly ordered quote with timestamp strictly later than confirmation available_at and before expiry and 11:55.",
+    "single_candidate_quote_policy": "If a valid candidate quote fails spread/price/size gates, reject setup; do not wait opportunistically for a more favorable quote.",
+    "missing_or_invalid_input": "Block new decisions and retain existing position as unresolved where required; no silent dropped adverse quote.",
+    "rescan_after_end": "Earliest following completed bar."
+  },
+  "execution": {
+    "quote_ttl_milliseconds": null,
+    "available_at_mapping": null,
+    "maximum_entry_spread_decimal": "0.04",
+    "entry_price_formula": "ceil_to_tick(Ask + 0.01)",
+    "entry_price_cap_formula": "R + 0.50",
+    "initial_stop_formula": "S = R - 0.40",
+    "entry_gate": "Both entry price and current Bid must exceed S; all price/size/quote-quality gates pass.",
+    "normal_stop_fill_formula": "floor_to_tick(Bid - 0.02) when Bid <= S",
+    "target_formula": "T = ceil_to_tick(entry + 2 * (entry - S))",
+    "target_fill_formula": "floor_to_tick(Bid - 0.01) when Bid >= T",
+    "time_exit_fill_formula": "floor_to_tick(Bid - 0.01) on first valid quote at or after scheduled exit event",
+    "commission_per_unit_per_side_decimal": "0.005",
+    "price_adjustments_not_double_counted_as_fees": true,
+    "at_most_one_fill_per_quote": true,
+    "earliest_exit_after_entry": "A subsequent quote; never the entry quote again.",
+    "fill_liquidity_assumption": "Full fill without quantity scarcity: synthetic reference assumption only.",
+    "non_positive_computed_fill_price_result": "UNRESOLVED_INVALID_EXECUTION",
+    "gap_rule": "Use first available Bid and stated adverse slippage; never cap loss to S or planned budget.",
+    "ohlc_substitution_allowed": false,
+    "target_is_quote_trigger_market_execution_not_guaranteed_limit_fill": true
+  },
+  "sizing": {
+    "synthetic_fixture_initial_cash_decimal": "10000",
+    "synthetic_fixture_risk_fraction_decimal": "0.0025",
+    "risk_fraction_is_not_live_recommendation": true,
+    "risk_per_unit_formula": "entry - floor_to_tick(S - 0.02) + 2 * 0.005",
+    "quantity_risk_formula": "floor((equity_before_entry * 0.0025) / risk_per_unit)",
+    "quantity_cash_formula": "floor(free_cash_after_reservations / (entry + 0.005))",
+    "quantity_formula": "min(quantity_risk, quantity_cash)",
+    "round_up_to_minimum_forbidden": true,
+    "below_minimum_result": "NO_TRADE_MINIMUM_VOLUME_OR_BUDGET",
+    "equity_and_cash_are_distinct_fields": true
+  },
+  "exit_priority": {
+    "after_entry_completed_bars_limit": 10,
+    "entry_quote_interval_counts_as_first_bar": true,
+    "on_time_exit_quote": "Already breached stop takes priority and retains adverse stop slippage.",
+    "end_without_quote": "UNRESOLVED_OPEN; do not claim a fully closed result.",
+    "original_stop_and_target_are_fixed": true,
+    "adaptive_exit": {
+      "enabled": false,
+      "spec_sha256": null,
+      "future_comparison_rule": "Separate new policy. Equal-entry diagnostic and full shared-capital policy comparison both required; keep unrelated take-profit assumptions matched."
+    }
+  },
+  "multi_timeframe": {
+    "context_candidates": ["H1", "D1"],
+    "trade_filter_enabled": false,
+    "context_rule": null,
+    "feature_specs_sha256": null,
+    "only_final_available_bars": true,
+    "extension_rule": "Original MPR1 remains M5-only. A MTF gate is a new registered hypothesis and version, not an undocumented improvement."
+  },
+  "portfolio": {
+    "reservation_contract_sha256": null,
+    "one_shared_account_per_run": true,
+    "same_capital_cannot_be_reused_by_other_modules": true,
+    "single_position_reference": true,
+    "multi_instrument_extension_requires_new_version": true,
+    "real_margin_support": "NOT_IMPLEMENTED_BY_THIS_REFERENCE",
+    "real_margin_absence_blocks_real_derivative_use": true
+  },
+  "required_trace_fields": ["event_id", "event_time", "available_at", "source_event_ids", "state_before", "state_after", "reason", "desired_quantity", "allowed_quantity", "filled_quantity", "entry_or_exit_price", "fee", "cash", "position", "equity", "reserved_cash", "strategy_sha256", "data_manifest_sha256"],
+  "acceptance_fixtures": [
+    {"id": "MPR1_NORMAL_STOP", "entry": "100.25", "stop": "99.60", "quantity": "36", "exit": "99.58", "net_pnl": "-24.48", "end_cash": "9975.52"},
+    {"id": "MPR1_TARGET", "entry": "100.25", "stop": "99.60", "quantity": "36", "target_trigger": "101.55", "exit": "101.54", "net_pnl": "46.08"},
+    {"id": "MPR1_GAP", "entry": "100.25", "stop": "99.60", "quantity": "36", "first_bid": "99.10", "exit": "99.08", "net_pnl": "-42.48"},
+    {"id": "MPR1_IMMEDIATE_MARK", "cash_after_entry": "6390.82", "quantity": "36", "mark_bid": "100.22", "equity": "9998.74"},
+    {"id": "MPR1_PRICE_REJECT", "reference_level": "100.00", "candidate_ask": "100.82", "expected": "REJECTED_NO_FILL"},
+    {"id": "MPR1_QUOTE_EXPIRED", "quote_delay_seconds": 60, "expected": "EXPIRED_NO_FILL"},
+    {"id": "MPR1_TINY_CASH", "cash": "12", "expected_quantity": "0", "expected": "NO_TRADE"},
+    {"id": "PREFIX_INVARIANCE", "expected": "Changing only later inputs leaves prior feature, decision and ledger bytes unchanged under the canonical format."},
+    {"id": "DUPLICATE_EVENT", "expected": "Repeated event ID creates no second fill or booking."}
+  ],
+  "review": {
+    "decision_ref": null,
+    "technical_status": "NOT_IMPLEMENTED_IN_THIS_TEMPLATE",
+    "economic_status": "NOT_ESTABLISHED",
+    "broker_status": "NOT_CONNECTED",
+    "promotion_scope": "TECHNICAL_REFERENCE_ONLY_AFTER_CHECKS"
+  }
+}

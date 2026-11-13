@@ -1,0 +1,75 @@
+{
+  "contract_id": "extremelab.domain/1.0.0",
+  "status": "private_architecture_contract_not_deployed",
+  "schema_path": "contracts/domain/v1/schema.json",
+  "schema_sha256": "8c3f975a2543975035e9dc5c341d2e239baec82145d38a802eadfb3d10797f32",
+  "plan_version": "1.2.0",
+  "domain_types": [
+    "InstrumentVersion",
+    "Quote",
+    "Bar",
+    "FeatureSnapshot",
+    "SignalIntent",
+    "OrderIntent",
+    "BrokerOrder",
+    "Deal",
+    "Position",
+    "Cashflow",
+    "Run",
+    "PolicyVersion"
+  ],
+  "number_rules": {
+    "economic_scalars": "canonical finite base10 string; no exponent, leading zeros, redundant trailing fractional zeros or negative zero",
+    "quantity_unit": [
+      "units",
+      "pieces",
+      "lots"
+    ],
+    "unit_conversion": "explicit instrument-version and conversion-version; no symbol heuristics",
+    "sequence": "uint64 decimal string, stream-local; no JSON number",
+    "indicator": "decimal text with formula version and absolute tolerance; no implicit float authority"
+  },
+  "time_rules": {
+    "encoding": "UTC YYYY-MM-DDTHH:mm:ss.ffffffZ; exactly 6 fractional digits; calendar validated; no leap seconds in v1",
+    "fields": [
+      "event_time",
+      "available_at",
+      "received_at",
+      "features_ready_at",
+      "decision_at",
+      "execution_not_before"
+    ],
+    "unknown": "null is explicit, never synthesized from received_at",
+    "execution": "all six fields mandatory for OrderIntent; available_at and received_at <= features_ready_at <= decision_at <= execution_not_before < expires_at; event_time <= available_at in same validated source timeline"
+  },
+  "identity_rules": {
+    "account": [
+      "provider",
+      "account_id",
+      "environment",
+      "currency",
+      "model"
+    ],
+    "instrument": "versioned identity, not symbol alone",
+    "event": "source_id + stream_id + sequence; conflicting content rejected",
+    "payload_hash": "SHA-256 of project canonical ASCII JSON, sorted ASCII property names, exact strings; not a signature",
+    "account_state": "known/stale/unknown/not_applicable independent of hedging/netting model; OrderIntent requires known"
+  },
+  "compatibility": {
+    "unknown_schema": "reject command path; quarantine unconverted observations",
+    "unknown_fields": "reject at every object level",
+    "unknown_versions": "no executable resolution",
+    "migration": "new derived event with adapter version + original provenance; never overwrite historical source",
+    "legacy_numeric_fields": "preserve legacy profile; map percent to fraction only explicitly; cannot recover precision already lost",
+    "legacy_positions_zero": "Old profile positions=0 means budget-governed without count cap: map explicitly to maximum_positions=null, never to new contract 0. Other risk constraints still required; no automatic policy activation."
+  },
+  "non_goals": [
+    "No endpoint installation",
+    "No broker calls",
+    "No strategy change",
+    "No account-level or cross-host exactly-once claim",
+    "No new authorization authority"
+  ],
+  "source_map": "evidence/S02/source-bindings.json",
+  "open_native_evidence": "C# runner included; must be compiled and run before S02-C01 can be recorded pass"
+}

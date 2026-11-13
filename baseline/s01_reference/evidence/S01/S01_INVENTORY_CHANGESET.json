@@ -1,0 +1,23 @@
+{
+  "modified_existing_files": [
+    "README.md",
+    "RUN_S01_REPORT.md",
+    "UEBERGABE.md",
+    "evidence/S01/S01_CAPABILITY_MATRIX.json",
+    "evidence/S01/S01_CURRENT_HANDOFF.md",
+    "evidence/S01/baseline-lock.json",
+    "evidence/S01/donor-map.json",
+    "evidence/S01/path-map.json",
+    "evidence/S01/reproduction-report.json",
+    "evidence/S01/version-crosswalk.md",
+    "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json"
+  ],
+  "modified_existing_count": 11,
+  "original_product_files_changed": 0,
+  "proposals_changed": 0,
+  "original_tests_changed": 0,
+  "masterplan_changed": false,
+  "gate_checkpoint_changed": false,
+  "prior_files": 320,
+  "new_tooling_scope": "read-only inventory checker, isolated negative tests and offline runner"
+}

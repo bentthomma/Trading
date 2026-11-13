@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "plan_id": "EXTREMELAB-CONSOLIDATED-MASTERPLAN-20261111",
+  "plan_version": "1.1.0",
+  "plan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "locked_at": "2026-11-11T20:11:37.569981Z",
+  "step_fingerprints": {
+    "S00": "4f0d94e64cb1811cf4e7f39558609999b0cd252247720a46950a19ed3a24c76d",
+    "S01": "165ffcd6fbe40e1dd32d4023f88897c4492e7aef7ccb9a44ae7542237103f00c",
+    "S02": "97a3b3af03f4bc56b3993371bb5af9e807981b1ba5198c71bac9a4e7cd8d494b",
+    "S03": "7683072a5f814dc0f15f52bcf2e3fe47fca51bb73444714b4bdbc40f01736fcd",
+    "S04": "06898031714231d207481d8ae16e94a70db4c7d25dbc0e3a06faa62e4ebd9631",
+    "S05": "5825549bef3736f2b91134e03bf8f733a6bf5e9390c39fddc674ecb79221f564",
+    "S06": "b8f42907aa03c97512e22cda6acefa96975a83f54d3e59c35ce674cc1e49f12c",
+    "S07": "1f370e716c7fef5f9913ffccf8e193ccf85efa19d24b0acd4899bc218c1a82cb",
+    "S08": "ccf23f7ad6695d8e2f72eb45f3c07e8bdcb1018c5a22d76f628f11c4b359b4e4",
+    "S09": "cb6c2f66039310959d029ecca2e2fbc13739eb24c8d66c33c1099936e7fed22e",
+    "S10": "582f977b1ddf0ce2ee34878554fb4225f53ecf208572638a09e8b89955dad9f0",
+    "S11": "bdb2fc025c77ba414dd1a8a8c1e996c066a151481c02d5e2b316e73d46cc5539",
+    "S12": "b27df18217ae9149465c2ef8b0778452883e305257e787a7c21e907f44cd0598",
+    "S13": "223dab86701f06ca0f9309b82fbf5219c245d805c199aab3f7e09eae8e3f1d3a",
+    "S14": "43801cd56526df03d8cfbd255afef2815215717f78d99658d250ebb4a9952a88",
+    "S15": "1a3469ad4bcd234171352376850b14a659478753498fec1a21eb4ca51a245077",
+    "S16": "c5c8ec3ef93858d5cf0d6c9f506e6ec0befaeac98014e8cf127e19a1829860bd",
+    "S17": "00dc77f93da327c0ea025627341a20b458df12805dc5f651ca463c43a001cffb",
+    "S18": "35aa2872b8b8115c6721bfc204a104251daf40058b37fb7d374c41c1ee1f671d",
+    "S19": "a90051f1257c14f156a0c7e529df6715d86cadc518252fcead480610574f4643",
+    "S20": "5c6ca680431f6c483a736f18a3d7cb9bc2a0556f52fbd6482c44aba84abc7995",
+    "S21": "6fd51d1df8f4feb6ab75b1c46dec50273b60bd7084f6ba1cc4599cb5dd36c476",
+    "S22": "d897a95af7fbff70249cb9b032d19e29715d8d5472b61c20f11bb0ed5d8dff67",
+    "S23": "623c1df57d56f37b3727c6e09195a240f2cfd3eed60ccf156e366f0b7fb1371a",
+    "S24": "b418e807f0275d5486058ae91a5aa815463b9c4a0618a3f974853c206b093cba",
+    "S25": "7af7b3ffff9b3b0d176ce23ae907c31a8a9d29bfafdaaf6b0aad02a9c0947fcf",
+    "S30": "e2659c84899b8d821b148f818844f5897ee0ba85942ffccadae1abca44417c91",
+    "S31": "69146f87f5a81e18c79f646f2a6f989473093af710c9e0f3916bc77df47cb121",
+    "S32": "dae7eb9a89d972f1d4c651ddb22d1e01f15c18f93b4df87a921faf0f8957a1ec",
+    "S33": "89a490f8979853a0d9f7b512bbd9f9066a2be720a05d5ffedd0ab7fa091c2e9e",
+    "S34": "3227c7c91cf48880f2aa0255cdd8cf7ea289e6e71a13211d0db0547837f5f142",
+    "S35": "d87e62eabfb8e058c50856a1f7aefdf68b7b63b578ef36042415a83c01718623",
+    "S26": "3643e316f59ea10bb56099d69da026b6e516621d451ed3cf411297fd5b3461cb",
+    "S27": "59bc4db481799c4ae3373e0e86cc500561dd400b92dc764a018c46262dd1ccb5",
+    "S28": "5ff1895e771a6c7a50b311622a0df4ddd23876bc5632e307bcc1acf4a74cca0d",
+    "S29": "12da0f72e25f102ef870b202c001a1959a74286d16416383cebfef1bfcdf2b2e"
+  },
+  "dependencies": {
+    "S00": [],
+    "S01": [
+      "S00"
+    ],
+    "S02": [
+      "S01"
+    ],
+    "S03": [
+      "S01",
+      "S02"
+    ],
+    "S04": [
+      "S02"
+    ],
+    "S05": [
+      "S02"
+    ],
+    "S06": [
+      "S05"
+    ],
+    "S07": [
+      "S02"
+    ],
+    "S08": [
+      "S01",
+      "S04",
+      "S06",
+      "S07"
+    ],
+    "S09": [
+      "S02",
+      "S07"
+    ],
+    "S10": [
+      "S05",
+      "S06",
+      "S07",
+      "S09"
+    ],
+    "S11": [
+      "S05",
+      "S06",
+      "S10"
+    ],
+    "S12": [
+      "S10",
+      "S11"
+    ],
+    "S13": [
+      "S02",
+      "S07"
+    ],
+    "S14": [
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13"
+    ],
+    "S15": [
+      "S09",
+      "S13",
+      "S14"
+    ],
+    "S16": [
+      "S07",
+      "S10",
+      "S14"
+    ],
+    "S17": [
+      "S06",
+      "S10",
+      "S16"
+    ],
+    "S18": [
+      "S12",
+      "S14",
+      "S15",
+      "S16",
+      "S17"
+    ],
+    "S19": [
+      "S09",
+      "S11",
+      "S14",
+      "S16",
+      "S17",
+      "S18"
+    ],
+    "S20": [
+      "S07",
+      "S10",
+      "S11",
+      "S16",
+      "S17",
+      "S19"
+    ],
+    "S21": [
+      "S03",
+      "S04",
+      "S06",
+      "S13",
+      "S16",
+      "S17"
+    ],
+    "S22": [
+      "S02",
+      "S13",
+      "S16",
+      "S17",
+      "S21"
+    ],
+    "S23": [
+      "S05",
+      "S06",
+      "S08",
+      "S11",
+      "S12",
+      "S21",
+      "S22"
+    ],
+    "S24": [
+      "S08",
+      "S11",
+      "S12",
+      "S19",
+      "S20",
+      "S23"
+    ],
+    "S25": [
+      "S06",
+      "S08",
+      "S21",
+      "S23",
+      "S24"
+    ],
+    "S30": [
+      "S21",
+      "S22",
+      "S25"
+    ],
+    "S31": [
+      "S30"
+    ],
+    "S32": [
+      "S31"
+    ],
+    "S33": [
+      "S31",
+      "S32"
+    ],
+    "S34": [
+      "S33"
+    ],
+    "S35": [
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34"
+    ],
+    "S26": [
+      "S20",
+      "S21",
+      "S22",
+      "S24",
+      "S25",
+      "S35"
+    ],
+    "S27": [
+      "S16",
+      "S17",
+      "S19",
+      "S26"
+    ],
+    "S28": [
+      "S02",
+      "S05",
+      "S06",
+      "S11",
+      "S23",
+      "S25",
+      "S26"
+    ],
+    "S29": [
+      "S26"
+    ]
+  },
+  "global_rules_snapshot": {
+    "max_in_progress": 2,
+    "implementation_may_be_autonomous": true,
+    "product_deploy_in_this_turn": false,
+    "live_trading_authorized_by_plan": false,
+    "required_independent_review": true,
+    "no_force_completion": true,
+    "known_holdouts_are_consumed": true,
+    "scope_mapping_required": true,
+    "design_implementation_after_technical_acceptance": [
+      "S21",
+      "S22",
+      "S25"
+    ],
+    "design_implementation_steps": [
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34",
+      "S35"
+    ],
+    "economic_success_is_not_technical_or_design_prerequisite": true,
+    "desktop_reference_approval_is_not_runtime_acceptance": true,
+    "immutable_paths": [
+      "design/approval.json",
+      "assets/design/approved/**"
+    ]
+  },
+  "amendment": {
+    "path": "governance/amendments/AM-001-design-after-technology.json",
+    "sha256": "8218352868fa19a745c5c882703bc3f3229828645b236a2336a63d0b7acc9923",
+    "previous_plan_sha256": "07c66174b98f31225dd0f3b50e7f08e9db8bcd9a00287b91435c7ad9c015a62e",
+    "author": "/root",
+    "reviewer": "/root/plan_guard_design",
+    "affected_steps": [
+      "S00",
+      "S01",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S18",
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S23",
+      "S24",
+      "S25",
+      "S26",
+      "S27",
+      "S28",
+      "S29",
+      "S30",
+      "S31",
+      "S32",
+      "S33",
+      "S34",
+      "S35"
+    ],
+    "at": "2026-11-11T20:11:37.573052Z"
+  }
+}

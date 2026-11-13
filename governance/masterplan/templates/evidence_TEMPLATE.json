@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "step_id": null,
+  "plan_sha256": null,
+  "base_revision": null,
+  "head_revision": null,
+  "actor": null,
+  "changed_files": [],
+  "artifacts": {},
+  "checks": [],
+  "note": "Alle Pflichtartefakte, tatsächliche Gitrevision und ausgeführten Tests belegen. Fester Pfad evidence/<Sxx>/completion.json. Keine Revieweridentität erforderlich."
+}

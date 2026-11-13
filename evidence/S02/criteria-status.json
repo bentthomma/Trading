@@ -1,0 +1,45 @@
+{
+  "schema": "extremelab-s02-criteria-status/1",
+  "is_completion_evidence": false,
+  "plan_version": "1.2.0",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "checks": [
+    {
+      "id": "S02-C01",
+      "status": "blocked",
+      "evidence": "Twelve shared events roundtrip byte-identically in actual Python and Node processes; C# records and reproducible runner present.",
+      "missing": "Real native .NET compile and C# roundtrip. No installed dotnet executable; official SDK download attempts failed. No native pass inferred from source text."
+    },
+    {
+      "id": "S02-C02",
+      "status": "pass_bounded",
+      "evidence": "Python and JavaScript reject unknown object fields, nonfinite/noncanonical economic values, invalid units, missing and inconsistent instrument/policy version references, impossible dates and input coverage.",
+      "boundary": "Design-time validators only. Catalog authenticity, authorization and native runtime checks are not replaced by this result."
+    },
+    {
+      "id": "S02-C03",
+      "status": "pass_bounded",
+      "evidence": "Real original registry/control denies research agent final confirmation and broker tools; SignalIntent does not validate as OrderIntent or BrokerOrder.",
+      "boundary": "No new dispatch route exists here. Future native execution must enforce the documented separate chain."
+    },
+    {
+      "id": "S02-C04",
+      "status": "pass_bounded",
+      "evidence": "Original Control/Store retains confirmed local values without a website and after real SQLite reopen. Restart gates entries rather than deleting confirmed history.",
+      "boundary": "No actual broker protection order or native C# runtime tested. Native fail-closed behavior is source-bound, not freshly executed."
+    }
+  ],
+  "scope_amendment": {
+    "status": "exact_decision_prepared_not_activated",
+    "entries": 33,
+    "exact_original_members": 49,
+    "independent_write_overlaps": 0,
+    "path": "evidence/S02/path-decision/resolution.json",
+    "plan_delta": "evidence/S02/path-decision/plan-changes.json",
+    "amendment": "evidence/S02/path-decision/AM-003.proposed.json",
+    "remaining": "Real native C01 execution first; then original relock, rebind current (not historical bootstrap) source assertions and exact S02 evidence. No new reviewer requirement. Existing rules and missing-source capabilities remain unchanged."
+  },
+  "formal_S02_finish": false,
+  "prior_S00_S01_changed": false,
+  "reviewer_gate_reintroduced": false
+}

@@ -1,0 +1,208 @@
+{
+  "work_id": "S01-INVENTORY-CONSOLIDATION",
+  "observed_utc": "2026-11-13T11:25:34.023279+00:00",
+  "source_total": 59,
+  "complete_original_inputs": 38,
+  "prefix_only_inputs": 5,
+  "metadata_only_inputs": 16,
+  "unavailable_full_inputs": 21,
+  "newly_recovered_inputs": 0,
+  "catalog_path": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+  "catalog_sha256": "b696abbc9b5e71471a17299838ef72f6a506dfc39ecc9ec3a0c0ac49da818e48",
+  "provider_tree_path": "vendor-manifests/vercel_prod_source_tree.json",
+  "provider_tree_sha256": "7c5bd4dd7dffe8fdb04719043b9c976e3ab7a3d24930e3c34bf284c68ce5c943",
+  "missing_paths": [
+    "src/api/bot14-download.js",
+    "src/api/bot15-download.js",
+    "src/build-bot14.mjs",
+    "src/build-bot15.mjs",
+    "src/build-ui.mjs",
+    "src/lib/relay.mjs",
+    "src/live-overlay.b64",
+    "src/public/bot14.html",
+    "src/public/bot14.js",
+    "src/public/bot15.html",
+    "src/public/bot15.js",
+    "src/public/connection-check.js",
+    "src/skin.0",
+    "src/skin.1",
+    "src/skin.2",
+    "src/skin.3",
+    "src/skin.4",
+    "src/skin.5",
+    "src/skin.6",
+    "src/skin.7",
+    "src/skin.8"
+  ],
+  "source_roles": {
+    "production_inputs": "baseline/vercel_recovered/src",
+    "derived_intermediate_outputs": [
+      "baseline/derived_assets",
+      "baseline/derived_account_stage",
+      "baseline/recovery_donors/expected_patched_app.js"
+    ],
+    "private_unintegrated_proposals": [
+      "proposals/live-encoding",
+      "proposals/relay-snapshot-guard",
+      "proposals/snapshot-consumer-guard"
+    ]
+  },
+  "production_domain": "https://extremelab-bt.vercel.app/",
+  "production_deployment": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+  "github_revision": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+  "development_scope": {
+    "mode": "private_offline_directory_not_git_branch",
+    "repository_sources_installed": false,
+    "production_to_development_repository_binding_verified": false
+  },
+  "formal_gate_path": "evidence/S01/GATE_STATUS.json",
+  "formal_gate_sha256": "2936921abd08be8e03ef560565704db259248c2b12ae40c57503383d21dbe8f6",
+  "formal_gate_note": "Unchanged historical gate checkpoint. Pending status is binding; embedded old28/31 input counts are historical, not current source inventory.",
+  "masterplan_sha256": "60303e48156a187d065ad66e884398a71853e955a4acc1322ab8d9dd9d97ae7d",
+  "inventory_prepared_for_independent_review": true,
+  "independent_review_completed": false,
+  "formal_acceptance": false,
+  "product_integration_authorized": false,
+  "runtime_capability_released": false,
+  "complete_website_build": false,
+  "native_binary_build": false,
+  "archive_scope": "See source_archive_availability; historical archive metadata is not treated as currently bundled bytes.",
+  "source_archive_availability": [
+    {
+      "id": "hub080",
+      "sha256": "535c028557c357b271716a7ac9df45f5d544cc5c52e08ec8c66d6af22cb10524",
+      "availability": "historical_source_record_only_not_bundled",
+      "current_archive_paths": [],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "hub080_duplicate",
+      "sha256": "535c028557c357b271716a7ac9df45f5d544cc5c52e08ec8c66d6af22cb10524",
+      "availability": "historical_source_record_only_not_bundled",
+      "current_archive_paths": [],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "platform092",
+      "sha256": "fc3fe5496744558ed56fa63eb7aac7069c12fbde6a6b6827374c01cdeec3f0fb",
+      "availability": "historical_source_record_only_not_bundled",
+      "current_archive_paths": [],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "platform097",
+      "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "availability": "complete_archive_bundled",
+      "current_archive_paths": [
+        "baseline/original_platform097.zip"
+      ],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "observer_alpha3",
+      "sha256": "5f78171dea7c376b7ea48f7855a6f6f1c0fce30915b69b26ee1d85e5df431da4",
+      "availability": "historical_source_record_only_not_bundled",
+      "current_archive_paths": [],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "accountlive134",
+      "sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "availability": "complete_archive_bundled",
+      "current_archive_paths": [
+        "baseline/original_accountlive134.zip"
+      ],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "engine121_original",
+      "sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43",
+      "availability": "complete_archive_bundled",
+      "current_archive_paths": [
+        "baseline/original_engine121_source.zip"
+      ],
+      "historical_manifest_present": false
+    },
+    {
+      "id": "release121audit",
+      "sha256": "c7ed79c05ecfbdd1ba75e0974aa850de44d78ed265859621570d8a8dadc24c0c",
+      "availability": "complete_archive_bundled",
+      "current_archive_paths": [
+        "baseline/original_release121_audit.zip"
+      ],
+      "historical_manifest_present": false
+    }
+  ],
+  "bundled_archives_verified": [
+    {
+      "path": "baseline/original_accountlive134.zip",
+      "sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "bytes": 295516,
+      "entries": 23,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/original_engine121_source.zip",
+      "sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43",
+      "bytes": 79172,
+      "entries": 31,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/original_live_bridge132.zip",
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+      "bytes": 32852,
+      "entries": 17,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/original_platform097.zip",
+      "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "bytes": 6031279,
+      "entries": 1028,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/original_release121_audit.zip",
+      "sha256": "c7ed79c05ecfbdd1ba75e0974aa850de44d78ed265859621570d8a8dadc24c0c",
+      "bytes": 14633,
+      "entries": 12,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/prior_addon_build_audit.zip",
+      "sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+      "bytes": 3276949,
+      "entries": 148,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/prior_endpointrecovery.zip",
+      "sha256": "269436124048029d40921cbb35d30be254d67e6a4f815761cdee69676a2fdeba",
+      "bytes": 1481920,
+      "entries": 128,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/prior_s01_preacceptance_2026_11_12.zip",
+      "sha256": "69cbd85b929c5cd6eaf0a0092ffabfade0d2d37b14e8f80d148361b4bf1ff55c",
+      "bytes": 89017,
+      "entries": 24,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/prior_s01_source_recovery.zip",
+      "sha256": "7bdb9303655f56cf3dcf4d03a61a1e27b673ccb77700286af6aa0466a12b1c80",
+      "bytes": 284270,
+      "entries": 71,
+      "crc_valid": true
+    },
+    {
+      "path": "baseline/prior_s01_sourcebinding.zip",
+      "sha256": "1d7f7fb0bcce96cabf6c913fc12b77401a3ec1fc3789245672d58b0b4f40056b",
+      "bytes": 710927,
+      "entries": 96,
+      "crc_valid": true
+    }
+  ]
+}

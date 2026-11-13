@@ -1,0 +1,11 @@
+--- a/materials/prepare_research_collection.py
++++ b/materials/prepare_research_collection.py
+@@ -252,7 +252,7 @@
+     if meta[key]!=e[key]:raise ValueError('Snapshot mismatch: '+spec['id']+' '+key)
+   outputs.append((spec['file'],data));results.append(meta)
+  # No output is published until every source table passes the complete validation.
+- out=args.output_dir;out.mkdir(parents=True,exist_ok=True)
++ out=args.output_dir;out.mkdir(parents=True,exist_ok=False)  # S07: never overwrite a frozen snapshot
+  for filename,raw in outputs:atomic(out/filename,raw)
+  provenance={'schema_version':'1.0','collection_id':'FF_RESEARCH_COLLECTION_1998_2025','provider':'Kenneth R. French Data Library',
+   'window':{'start':START,'end':END,'months_per_dataset':EXPECTED_ROWS},'dataset_count':6,

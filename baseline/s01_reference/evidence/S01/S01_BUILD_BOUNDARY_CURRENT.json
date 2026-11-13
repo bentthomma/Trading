@@ -1,0 +1,69 @@
+{
+  "top_level_stages": [
+    {
+      "path": "build.mjs",
+      "complete_source_present": true
+    },
+    {
+      "path": "postbuild-132.mjs",
+      "complete_source_present": true
+    },
+    {
+      "path": "version133.mjs",
+      "complete_source_present": true
+    },
+    {
+      "path": "build-account-addon.mjs",
+      "complete_source_present": true
+    },
+    {
+      "path": "build-bot.mjs",
+      "complete_source_present": false
+    },
+    {
+      "path": "build-bot14.mjs",
+      "complete_source_present": false
+    },
+    {
+      "path": "build-ui.mjs",
+      "complete_source_present": false
+    },
+    {
+      "path": "build-revolution20.mjs",
+      "complete_source_present": true
+    }
+  ],
+  "nested_imports": [
+    {
+      "parent": "build.mjs",
+      "path": "patch-live.mjs",
+      "complete_source_present": false,
+      "origin": "generated_from_live-overlay.b64"
+    },
+    {
+      "parent": "build.mjs",
+      "path": "build-bot15.mjs",
+      "complete_source_present": false,
+      "origin": "listed_provider_source"
+    }
+  ],
+  "full_pipeline_executed": false,
+  "full_pipeline_successful": false,
+  "first_stage_attempt": {
+    "script": "build.mjs",
+    "exit_code": 1,
+    "expected_missing_input": "live-overlay.b64",
+    "original_asset_outputs_verified": 5,
+    "stdout": "",
+    "stderr": "node:fs:442\n    return binding.readFileUtf8(path, stringToFlags(options.flag));\n                   ^\n\nError: ENOENT: no such file or directory, open 'live-overlay.b64'\n    at Object.readFileSync (node:fs:442:20)\n    at file:///tmp/s01-first-stage-lrxqswpy/build.mjs:8:18\n    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: 'live-overlay.b64'\n}\n\nNode.js v22.16.0\n"
+  },
+  "connect_deny_probe": "CONNECT_DENIED_EPERM",
+  "network_restriction": "Linux seccomp: connect, sendto, sendmsg, sendmmsg denied with EPERM; no general sandbox claim",
+  "native_compiler_invoked": false,
+  "bot_executed": false,
+  "source_inputs_unchanged": true,
+  "toolchain": {
+    "node": "v22.16.0",
+    "dotnet_path": null
+  }
+}

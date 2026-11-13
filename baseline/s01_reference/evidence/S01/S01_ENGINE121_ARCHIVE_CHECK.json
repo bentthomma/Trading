@@ -1,0 +1,158 @@
+{
+  "archive_sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43",
+  "entries": 31,
+  "crc_ok": true,
+  "manifest_files": [
+    {
+      "path": "README_DE.md",
+      "sha256": "98eba08a5b7cbd6e6bcd557a5b0c7c02fa7f3b5789001dfbd87f41e19b9ebf61",
+      "bytes": 5224
+    },
+    {
+      "path": "docs/PRUEFSTAND_DE.md",
+      "sha256": "6c947a0102458114e3d77853eb025dcb1ff055323bdbd0e530f0003c5336620f",
+      "bytes": 5855
+    },
+    {
+      "path": "evidence/build.log",
+      "sha256": "f4fb7046322e615d84b2d41c50f128d058251e273391bfd000ab9483577a12af",
+      "bytes": 1079
+    },
+    {
+      "path": "evidence/build_manifest.json",
+      "sha256": "408a9a81a43536d457e6ab5e2c10af326e96fb905ac5af4b7c4bf8ee74692e95",
+      "bytes": 320
+    },
+    {
+      "path": "evidence/core.log",
+      "sha256": "699135658099cbec93ad1d672544af34e364f0104989d122cd249255cd7bb4ec",
+      "bytes": 4706
+    },
+    {
+      "path": "evidence/csharp-python-interoperability.json",
+      "sha256": "c550920f459d9778cc97d5eed34ce5069f7b4912e115c8274bca0c49c889712f",
+      "bytes": 1249
+    },
+    {
+      "path": "evidence/integration.log",
+      "sha256": "e984d41cd224f36e11aafb5f3e47b882e293c16bf197f735468ded6d815fcd84",
+      "bytes": 2544
+    },
+    {
+      "path": "evidence/source-contracts.json",
+      "sha256": "f7d13fee72cabe1898887e5a979574b496e63819011847c89c1edb26f0945e00",
+      "bytes": 1491
+    },
+    {
+      "path": "evidence/wire-fixture.json",
+      "sha256": "cebbfb3691a7055aa2fbe6d1c81635d7557b59df87b1cf88b98c9d7dfe1f391f",
+      "bytes": 307
+    },
+    {
+      "path": "integration-tests/IntegrationTests.csproj",
+      "sha256": "1fcffa5b987a469906c8f382468bf2266a3a5ef939402c850f4ddc54ca1ba3cc",
+      "bytes": 502
+    },
+    {
+      "path": "integration-tests/Program.cs",
+      "sha256": "5a78f23fc0b93cd24f133f5ec0f0544640b77a86d1f2dfe31bdbb46f1445ab05",
+      "bytes": 12235
+    },
+    {
+      "path": "integration-tests/requirements.txt",
+      "sha256": "841facff92cb1463e50c304f065696de9ab07735119b2584354368b9187f017b",
+      "bytes": 37
+    },
+    {
+      "path": "integration-tests/test_csharp_wire.py",
+      "sha256": "e077043c0a6f5844dee7d74a01cce4e45744a9c21b580fafca76b501b9a6605b",
+      "bytes": 6483
+    },
+    {
+      "path": "relay/relay.py",
+      "sha256": "62fb6b0d437b090be6dd0b1a1e2af1d72e6a794e1c7b14b19ea523a4fa583f8c",
+      "bytes": 22772
+    },
+    {
+      "path": "relay/requirements.txt",
+      "sha256": "ce048e0d1e56892dea8766c244c0147503327f0e8f1b8d5735c03d4df5e5bdc8",
+      "bytes": 16
+    },
+    {
+      "path": "src/ExtremeLabCTraderOnlineSocket.cs",
+      "sha256": "cd9639cb62f505a898decf32588eb32513ede473991463a55a18ac5d72c4ff25",
+      "bytes": 1135
+    },
+    {
+      "path": "src/ExtremeLabCore.cs",
+      "sha256": "324f5583e8ec95d3d298d9ff340e746db1e8c073704d85546db49c48851ef4a0",
+      "bytes": 10850
+    },
+    {
+      "path": "src/ExtremeLabDiagnostics.cs",
+      "sha256": "cd426523ab6c8e2086757a239740d7a249d708ffa4cb7c024a2cf13f26fc032e",
+      "bytes": 4222
+    },
+    {
+      "path": "src/ExtremeLabDiagnosticsIntegration.cs",
+      "sha256": "0550237c9fbaef35e09819c02d1d92b2ccbf81d8481bab8ba745b359401ba2b1",
+      "bytes": 4862
+    },
+    {
+      "path": "src/ExtremeLabExecution.cs",
+      "sha256": "f10169f1b35a29588ae12b7252bda1bdf789a4c05edd39f545c5b0c2ad60faa8",
+      "bytes": 1464
+    },
+    {
+      "path": "src/ExtremeLabMobile.cs",
+      "sha256": "8e65689769f1f8f9b47c8c1b002c9b03b9c454668bdb6db1c9619c7a471609fd",
+      "bytes": 68438
+    },
+    {
+      "path": "src/ExtremeLabMobile.csproj",
+      "sha256": "e8fe1749a1e7cab3a526aaae83139afee166c8f73c24587d30934e39719eec1b",
+      "bytes": 463
+    },
+    {
+      "path": "src/ExtremeLabOnlinePublisher.cs",
+      "sha256": "9b5ff59ca9fcd63a7d20cec5a3878f99dc160ccf5cb9d0d9acccfaae2842fb51",
+      "bytes": 7219
+    },
+    {
+      "path": "src/ExtremeLabRecovery.cs",
+      "sha256": "0ff0bc3969f541b67bb283ae386b18ad0fd5a1cac8abde4edf181974305826bc",
+      "bytes": 6101
+    },
+    {
+      "path": "src/ExtremeLabRuntime.cs",
+      "sha256": "2d97b6d1ef8af8ca8899989ab70e8e83dcad2b3cc23475443206d18eb84fbb91",
+      "bytes": 5275
+    },
+    {
+      "path": "src/ExtremeLabTelemetryOutbox.cs",
+      "sha256": "dd2af56f7751a90c6a01d85e3a25a72e733c3adc1ff24e681c5f4df4629d6458",
+      "bytes": 6336
+    },
+    {
+      "path": "src/ExtremeLabUI.cs",
+      "sha256": "3d7d9235c77dc62c7d0b71aef015be4b2d59011abbe61aeeaa20d21ca3521a76",
+      "bytes": 10299
+    },
+    {
+      "path": "tests/ExtremeLabCoreTests.csproj",
+      "sha256": "e38a83d59c57ec3600d1ad3b467e772bfeab47bac75d917690aecda37ccfdcbf",
+      "bytes": 542
+    },
+    {
+      "path": "tests/Program.cs",
+      "sha256": "e54d8840a6e9483d5f011904c9ba206f835fce9356eb74d7af4cbac9f7099632",
+      "bytes": 20570
+    },
+    {
+      "path": "tools/patch_integration.py",
+      "sha256": "85685d49826267089f2062b94d4c27983e5cd89edc0c3e0848ba5e73cdf209de",
+      "bytes": 4036
+    }
+  ],
+  "source_library_id": "file_00000000ac3882468ee2eba7f3d0c9ef"
+}

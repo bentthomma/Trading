@@ -1,0 +1,22 @@
+{
+  "kind": "unsigned connector observation, not an approval",
+  "observed_date": "2026-11-13",
+  "repository": "bentthomma/Trading",
+  "branch": "main",
+  "commit": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+  "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+  "tree_truncated": false,
+  "entries": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "blob": "7025cd085c2f9a785685aa3b4b7bae14f827dcd2",
+      "size": 9
+    }
+  ],
+  "branch_response_protected": false,
+  "pr_lists_rechecked": false,
+  "workflow_lists_rechecked": false,
+  "read_via": "GitHub.fetch only",
+  "writes": false
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "mode": "observed_existing_behavior_not_new_policy",
+  "rules": [
+    {
+      "source": "core/store.mjs:event",
+      "target": "events",
+      "rule": "on each seq divisible by 1000 delete seq < max(0,current-100000)",
+      "pending_order_KV_deleted": false,
+      "tests": [
+        "R16"
+      ]
+    },
+    {
+      "source": "core/store.mjs:saveSnapshot",
+      "target": "snapshots",
+      "keep_rows": 20000,
+      "order_evidence_store": false,
+      "measurement": "source_only"
+    },
+    {
+      "source": "core/store.mjs:addMessage",
+      "target": "messages",
+      "keep_rows": 2000,
+      "order_evidence_store": false,
+      "measurement": "source_only"
+    },
+    {
+      "source": "core/store.mjs:backup",
+      "target": "regular_backup_files",
+      "keep_files": 10,
+      "sort": "filename",
+      "permanent_evidence_archive": false,
+      "measurement": "source_only"
+    },
+    {
+      "source": "core/maintenance.mjs:pruneJobs",
+      "target": "terminal_restore_jobs",
+      "keep_jobs": 50,
+      "pre_restore_backups_deleted_by_this_function": false,
+      "measurement": "source_only"
+    },
+    {
+      "source": "core/engine-journal.mjs",
+      "target": "raw_engine_journal_KV",
+      "events_per_bot_limit": 100000,
+      "payload_bytes_limit": 268435456,
+      "over_budget": "reject_not_prune",
+      "measurement": "source_only"
+    },
+    {
+      "source": "core/journal-archives.mjs",
+      "target": "archive_files",
+      "file_limit": 32,
+      "disk_budget_bytes": 536870912,
+      "over_budget": "reject_not_delete_sources",
+      "measurement": "source_and_unchanged_original_regressions"
+    },
+    {
+      "source": "existing_S05_candidate",
+      "target": "order_state_receipts",
+      "event_limit": 20000,
+      "deal_limit": 10000,
+      "over_budget": "reject_not_prune_costEvidence",
+      "measurement": "existing_F32_F34_regressions"
+    }
+  ],
+  "full_restore_max_source_bytes": 134217728,
+  "limits_not_claimed_compatible": true,
+  "economic_receipts_must_not_be_inferred_from_pruned_audit_rows": true,
+  "automatic_unresolved_evidence_deletion_added": false,
+  "full_capacity_benchmark_performed": false
+}

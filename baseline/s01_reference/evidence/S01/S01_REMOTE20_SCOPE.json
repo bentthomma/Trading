@@ -1,0 +1,28 @@
+{
+  "work_id": "S01-REMOTE20-INTEGRATION-20261113",
+  "baseline_archive": "baseline/prior_addon_build_audit.zip",
+  "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+  "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+  "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+  "new_production_inputs": 0,
+  "available_production_inputs": 36,
+  "missing_production_inputs": 23,
+  "original_product_source_changed": false,
+  "formal_status_changed": false,
+  "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+  "known_boundaries": [
+    "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+    "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+    "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+  ],
+  "counterexamples_are_fixes": false,
+  "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
+  "not_verified": [
+    "Actual SDK/cloud consistency or durability",
+    "physical HTTP/websocket transport or browser rendering",
+    "Windows DPAPI",
+    "complete website build",
+    "cTrader/native bot execution",
+    "official S01 acceptance"
+  ]
+}

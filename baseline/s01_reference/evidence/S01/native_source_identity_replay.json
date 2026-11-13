@@ -1,0 +1,20 @@
+{
+  "generator_executed": true,
+  "source_input_count": 58,
+  "source_hash": "b0b0aa1f3a55a987fccfa09d039047a25883a5926bae0d71bd3bba0cccf604e4",
+  "outputs": {
+    "integrations/ctrader-th3revolution20/SOURCE_BUILD_MANIFEST.json": {
+      "sha256_generated": "0625f114a6dc53bde19efa8b8c4c14c573154e351fd43fb16bb55c10035619dd",
+      "sha256_archived": "0625f114a6dc53bde19efa8b8c4c14c573154e351fd43fb16bb55c10035619dd",
+      "byte_identical": true
+    },
+    "integrations/ctrader-th3revolution20/src/Th3BuildIdentity20.g.cs": {
+      "sha256_generated": "37ac068e6869d05b34b012fc72a9f77c5718cc2e3d21660d279cd3dcd9c3f54c",
+      "sha256_archived": "37ac068e6869d05b34b012fc72a9f77c5718cc2e3d21660d279cd3dcd9c3f54c",
+      "byte_identical": true
+    }
+  },
+  "csharp_binary_build": false,
+  "broker_started": false,
+  "native_execution": false
+}

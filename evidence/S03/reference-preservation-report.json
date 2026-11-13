@@ -1,0 +1,70 @@
+{
+  "schema": "extremelab-reference-preservation/1",
+  "base_revision": "b9845dc9f0434bd6ee7a94af239625a58f6b9135",
+  "reference_count": 5,
+  "references": [
+    {
+      "id": "A01-r04",
+      "path": "governance/masterplan/assets/design/approved/A01-r04.png",
+      "sha256_expected": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0",
+      "sha256_observed": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0",
+      "dimensions": [
+        1586,
+        992
+      ],
+      "bytes_preserved": true
+    },
+    {
+      "id": "A02-r03",
+      "path": "governance/masterplan/assets/design/approved/A02-r03.png",
+      "sha256_expected": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029",
+      "sha256_observed": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029",
+      "dimensions": [
+        1585,
+        992
+      ],
+      "bytes_preserved": true
+    },
+    {
+      "id": "A03-r03",
+      "path": "governance/masterplan/assets/design/approved/A03-r03.png",
+      "sha256_expected": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64",
+      "sha256_observed": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64",
+      "dimensions": [
+        1585,
+        992
+      ],
+      "bytes_preserved": true
+    },
+    {
+      "id": "A04-r03",
+      "path": "governance/masterplan/assets/design/approved/A04-r03.png",
+      "sha256_expected": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9",
+      "sha256_observed": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9",
+      "dimensions": [
+        1585,
+        992
+      ],
+      "bytes_preserved": true
+    },
+    {
+      "id": "A05-r03",
+      "path": "governance/masterplan/assets/design/approved/A05-r03.png",
+      "sha256_expected": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4",
+      "sha256_observed": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4",
+      "dimensions": [
+        1585,
+        992
+      ],
+      "bytes_preserved": true
+    }
+  ],
+  "approval_sha256": "f8ab1f76c7d5a61ea11a334561019bdd2ac2be04a7a1dd7ed009275d5328de3e",
+  "inventory_sha256": "4941fdf744cbe169c2621ee0d8688c6dd4e56585bcc950bc1ebd4df3ac317cdc",
+  "new_images_generated": false,
+  "reference_files_modified": false,
+  "font_files_distributed": false,
+  "visual_inspection": "Alle fünf Originalbilder als lokales Kontaktblatt betrachtet; nur Konzeptinhalte eingeordnet. Kein Browser- oder Pixelvergleich einer Implementierung.",
+  "historical_variants": "Nicht reaktiviert, nicht überschrieben und nicht gelöscht.",
+  "product_acceptance": false
+}

@@ -1,0 +1,17 @@
+{
+  "observation": "Locally transcribed read-only GitHub connector results, not a signed attestation",
+  "repository": "bentthomma/Trading",
+  "head": "1a5cfe9d3139276f5432c79a8ee0be1938b7066c",
+  "tree": "47fdd2b4cb70efc67db93f93f178015259204d86",
+  "tree_truncated": false,
+  "paths": [
+    "README.md"
+  ],
+  "protected": false,
+  "connector_references": [
+    "turn4file0",
+    "turn19file0"
+  ],
+  "writes": false,
+  "observed_date": "2026-11-13"
+}

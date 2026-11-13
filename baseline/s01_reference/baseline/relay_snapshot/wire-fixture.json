@@ -1,0 +1,1 @@
+{"type":"batch","batch":"f4d7cc6d86ab44c8b5394fe91ddf484a","events":[{"schema":2,"run":"unit_run_20261106","seq":1,"utc":"2026-11-06T00:00:00Z","kind":"STATUS","data":{}},{"schema":2,"run":"unit_run_20261106","seq":2,"utc":"2026-11-06T00:00:00Z","kind":"STATUS","data":{"state":"SYNTHETIC_PROTOCOL_TEST"}}]}

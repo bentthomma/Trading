@@ -1,0 +1,500 @@
+{
+  "schema": 1,
+  "generated_at_date": "2026-11-12",
+  "product_source": "platform097",
+  "full_runtime": {
+    "version": "0.9.7",
+    "authoritative_execution": "8 disjoint captured-exit-code groups",
+    "summary": {
+      "tests": 983,
+      "pass": 964,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 19,
+      "todo": 0
+    },
+    "covered_test_files": 93,
+    "all_original_test_files": 93,
+    "groups": [
+      {
+        "label": "097_archive",
+        "files": 5,
+        "summary": {
+          "tests": 43,
+          "suites": 0,
+          "pass": 43,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_target",
+        "files": 4,
+        "summary": {
+          "tests": 79,
+          "suites": 0,
+          "pass": 79,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_lineage",
+        "files": 7,
+        "summary": {
+          "tests": 88,
+          "suites": 0,
+          "pass": 88,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_observation",
+        "files": 6,
+        "summary": {
+          "tests": 91,
+          "suites": 0,
+          "pass": 91,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_restore",
+        "files": 4,
+        "summary": {
+          "tests": 111,
+          "suites": 0,
+          "pass": 111,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_remaining_a",
+        "files": 23,
+        "summary": {
+          "tests": 179,
+          "suites": 0,
+          "pass": 174,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 5,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_remaining_b",
+        "files": 23,
+        "summary": {
+          "tests": 220,
+          "suites": 0,
+          "pass": 217,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 3,
+          "todo": 0
+        },
+        "returncode": 0
+      },
+      {
+        "label": "097_remaining_c",
+        "files": 21,
+        "summary": {
+          "tests": 172,
+          "suites": 0,
+          "pass": 161,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 11,
+          "todo": 0
+        },
+        "returncode": 0
+      }
+    ],
+    "source_files_checked": 1028,
+    "changed_originals": [],
+    "added_original_tree_files": [],
+    "skipped_cases": [
+      "ok 38 - technical 1.0 account-entry conflict is visible and cannot be confirmed in the actual Hub # SKIP",
+      "ok 113 - existing Ready20 guide confirms only the reviewed Core build lineage, not native activation # SKIP",
+      "ok 214 - Ready20 live journal explains immutable plans, native order reports and activity without implying broker completeness # SKIP",
+      "ok 261 - actual NSIS 3.13 cross-build binds a passive payload and pinned runtime while reporting Windows acceptance as open # SKIP Requires explicitly supplied official NSIS 3.13 and pinned Windows Node build inputs.",
+      "ok 284 - confirmed historical journal archive is created and downloaded from the actual existing Ready20 Hub guide # SKIP",
+      "ok 359 - Official MCP SDK 2.4.0 against real local HTTP and SQLite # SKIP Optional official SDK not installed: set TRADING_MCP_SDK to an isolated npm prefix (docs/MCP-CLIENT.md).",
+      "ok 429 - Observer has a complete authenticated product workflow without trade controls # SKIP",
+      "ok 462 - managed Observer has a real human-only prepare/start/readiness/stop/restart product flow # SKIP",
+      "ok 650 - authenticated Ready20 guide explicitly pairs observer reports with lifecycle-safe passive comparison # SKIP",
+      "ok 657 - passive reconciliation panel preserves exact values, provenance, expiry and safe DOM rendering # SKIP",
+      "ok 702 - local online pairing binds consent, file and late responses to the selected real profile # SKIP",
+      "ok 703 - remote product UI binds its account, preserves exact history and rejects stale/conflicting/unauthorized views # SKIP",
+      "ok 778 - startup: official runtime download with a deliberately incorrect fixture hash preserves the old file and removes partial data # SKIP Opt in with TRADING_RUNTIME_DOWNLOAD_TEST=1; this performs one real official Node download.",
+      "ok 780 - startup: real PowerShell process and launcher behavior # SKIP A regular PowerShell executable and permission to run these unsigned test scripts are required; policy is never changed.",
+      "ok 783 - startup: Windows CMD directly launches existing Node without executing a PowerShell script # SKIP Requires real Windows cmd.exe and native Windows Node.",
+      "ok 852 - existing Ready20 guide records a matching target only while preserving permanent hold # SKIP",
+      "ok 923 - Local UI uses real state, proposals and explicit bridge ACKs # SKIP",
+      "ok 924 - Guided full restore uses actual SQLite backups, a worker and a fresh managed Core # SKIP",
+      "ok 927 - Windows DPAPI protects a synthetic value and decrypts it after reopening under the actual user # SKIP Requires real Windows and CurrentUser DPAPI; never simulated."
+    ],
+    "full_single_run": {
+      "final_tap_present": true,
+      "exit_code_captured": false,
+      "note": "parent tool timed out; result independently confirmed in all disjoint groups"
+    },
+    "execution_epoch": "Historical prior S01 work, not executed in S01-ADDON-BUILD-AUDIT"
+  },
+  "baseline080": {
+    "label": "080_core_http",
+    "source_version": "080",
+    "command": [
+      "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+      "--test",
+      "--test-concurrency=2",
+      "--test-timeout=20000",
+      "--test-reporter=tap",
+      "tests/core.mjs",
+      "tests/http.mjs"
+    ],
+    "cwd": "/mnt/data/s01_runtime_20261112/baseline_080/Trading_Local",
+    "node": "/opt/pyvenv/lib/python3.13/site-packages/playwright/driver/node",
+    "node_version": "v24.11.1",
+    "runtime_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
+    "returncode": 0,
+    "elapsed_seconds": 1.895,
+    "summary": {
+      "tests": 18,
+      "suites": 0,
+      "pass": 18,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "test_files": [
+      "tests/core.mjs",
+      "tests/http.mjs"
+    ],
+    "network": "cooperative Node net/fetch guard, loopback only; not OS sandbox; no credentials; all live integration flags absent"
+  },
+  "native_identity": {
+    "operation": "regenerate original source identity on disposable source copy",
+    "returncode": 0,
+    "stdout": "{\"engine\":\"Th3Revolution20\",\"sourceHash\":\"b0b0aa1f3a55a987fccfa09d039047a25883a5926bae0d71bd3bba0cccf604e4\",\"inputs\":58}\n",
+    "stderr": "",
+    "original_output_hashes": {
+      "integrations/ctrader-th3revolution20/SOURCE_BUILD_MANIFEST.json": "0625f114a6dc53bde19efa8b8c4c14c573154e351fd43fb16bb55c10035619dd",
+      "integrations/ctrader-th3revolution20/src/Th3BuildIdentity20.g.cs": "37ac068e6869d05b34b012fc72a9f77c5718cc2e3d21660d279cd3dcd9c3f54c"
+    },
+    "regenerated_output_hashes": {
+      "integrations/ctrader-th3revolution20/SOURCE_BUILD_MANIFEST.json": "0625f114a6dc53bde19efa8b8c4c14c573154e351fd43fb16bb55c10035619dd",
+      "integrations/ctrader-th3revolution20/src/Th3BuildIdentity20.g.cs": "37ac068e6869d05b34b012fc72a9f77c5718cc2e3d21660d279cd3dcd9c3f54c"
+    },
+    "byte_identical": true,
+    "binary_rebuilt": false,
+    "native_execution": false
+  },
+  "native_binary_build": {
+    "status": "blocked_capability",
+    "reason": "Engine 1.9 release source and native build artifact unavailable; 2.0-alpha5 source generator re-run is not native .NET build; .NET10/windows ctrader host not available",
+    "source_identity_reproducible": true,
+    "binary_built": false
+  },
+  "website_full_build": {
+    "status": "blocked_capability",
+    "reason": "31/59 source files recovered. Missing live-overlay.b64 prevents original first stage completing; skin.0-8 and build-bot*.mjs/build-ui.mjs remain incomplete.",
+    "deployment_id": "dpl_6AuCdiuxGSFKnF7svRpykB7XRAmp",
+    "file_entries_listed": 59,
+    "build_stages": [
+      "build.mjs",
+      "postbuild-132.mjs",
+      "version133.mjs",
+      "build-account-addon.mjs",
+      "build-bot.mjs",
+      "build-bot14.mjs",
+      "build-ui.mjs",
+      "build-revolution20.mjs"
+    ],
+    "stage_sources_present_in_provider_tree": 8,
+    "stage_contents_incomplete": true,
+    "build_executed": false,
+    "source_files_recovered_current": 36,
+    "source_files_unavailable_current": 23,
+    "derived_website_assets_verified": 5,
+    "partial_replay_log": "evidence/S01/S01_PARTIAL_WEBSITE_REPLAY.json",
+    "historical_build_readback": "evidence/S01/S01_HISTORICAL_VERCEL_BUILD_READBACK.json",
+    "additional_nested_stage": {
+      "parent": "build.mjs",
+      "dependency": "build-bot15.mjs",
+      "source_complete": false
+    },
+    "first_stage_attempt": "evidence/S01/S01_BUILD_BOUNDARY_CURRENT.json"
+  },
+  "limitations": [
+    "19 original opt-in/platform-dependent cases skipped",
+    "Unit and local HTTP/SQLite tests are not live trading acceptance",
+    "Two interrupted orchestration attempts preserved, not counted as successes",
+    "OS network namespace denied; LD_PRELOAD probe ineffective; cooperative JS guard effective only for audited Node paths",
+    "No package install, no broker, no deployment, no native or demo bot start"
+  ],
+  "original_complete_runtime_097_historical_not_rerun": {
+    "tests": 983,
+    "pass": 964,
+    "skipped": 19,
+    "recorded_by_prior_run": true
+  },
+  "release_authorized": false,
+  "new_source_recovery_2026_11_12": {
+    "archive_sha1_match_count": 20,
+    "connector_content_sha1_recovered_count": 8,
+    "original_archive_byte_provenance": "evidence/S01/S01_ARCHIVE_SHA1_RECOVERY.json",
+    "source_hash_manifest": "vendor-manifests/S01_VERIFIED_RECOVERED_PRODUCTION_SOURCES.json",
+    "independent_component_replay": "evidence/S01/S01_PARTIAL_WEBSITE_REPLAY.json",
+    "not_as_full_build": true
+  },
+  "two_historical_builds_nonidentical_binary_same_reported_source": {
+    "source_sha256": "9e919ec1a94a5c0c569d7b9f46811ae98fed92a02b74773ef12d1821a14d81a3",
+    "artifact_bytes": [
+      90700,
+      90703
+    ],
+    "artifact_sha256": [
+      "09052b508b13366c13d843d96e2706b628dd2573b2083bb4d2a7af24407e5b16",
+      "763afdc68adadc580bbe73308329afaaaf00ba2d0b72af2bdf60e72f3ef1e502"
+    ],
+    "build_log_source": "Vercel authenticated build events",
+    "independent_binary_bytes_available": false,
+    "reproducible_binary": false,
+    "cause_identified": false,
+    "engine_version": "1.2.1; NOT Engine 1.9 nor 2.0",
+    "archive_source_to_packed_inputs_bound_in_current_run": true
+  },
+  "historical_preacceptance_executions": {
+    "node_version": "v24.11.1",
+    "node_executable_sha256": "5796fd9700e83170bc7ddfdf7f18858c794a9f91cb39dd6f9e95060b292f2563",
+    "source_archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+    "target_group": {
+      "executed": true,
+      "tests": 79,
+      "pass": 79,
+      "fail": 0,
+      "returncode": 0
+    },
+    "observation_group": {
+      "executed": true,
+      "tests": 91,
+      "pass": 91,
+      "fail": 0,
+      "returncode": 0
+    },
+    "generator": {
+      "executed": true,
+      "source_inputs": 58,
+      "source_hash": "b0b0aa1f3a55a987fccfa09d039047a25883a5926bae0d71bd3bba0cccf604e4",
+      "manifest_identical": true,
+      "generated_identity_identical": true,
+      "binary_build": false
+    }
+  },
+  "evidence_epoch_note": "All previous current_* or original runtime execution blocks are historical. This work only runs the bot-delivery recovery, original download checks, targeted boundaries and relevant inventory checks.",
+  "current_sourcebinding_executions": {
+    "work_id": "S01-SOURCEBINDING-20261112",
+    "source_packing": "evidence/S01/S01_ENGINE121_PRODUCTION_BINDING.json",
+    "original_receiver_fixture_replay": "evidence/S01/S01_ORIGINAL_WIRE_REPLAY_CURRENT.json",
+    "first_stage_attempt": "evidence/S01/S01_BUILD_BOUNDARY_CURRENT.json",
+    "native_csharp_compilation": {
+      "executed": false,
+      "status": "blocked_capability",
+      "cause": "dotnet not installed; official SDK metadata fetch failed due to DNS resolution; binary download unavailable in tools"
+    },
+    "native_csharp_test_runs": false,
+    "new_csharp_fixture_generated": false,
+    "full_website_pipeline": false,
+    "old_test_totals_counted_as_new": false
+  },
+  "current_endpoint_recovery_executions": {
+    "work_id": "S01-ENDPOINTRECOVERY-20261113",
+    "source_reconstruction": "evidence/S01/S01_ENDPOINT_RECONSTRUCTION_CURRENT.json",
+    "test_report": "evidence/S01/S01_ENDPOINT_EXECUTIONS_CURRENT.json",
+    "full_website_pipeline": false,
+    "native_websocket_protocol_tested": false,
+    "provider_cache_blob_tested": false,
+    "live_relay_original_available": false,
+    "native_csharp_build_executed": false,
+    "product_source_changed": false,
+    "test_counts": "See fresh external closure report; internal execution report records prepackaging run only."
+  },
+  "current_addon_build_audit": {
+    "work_id": "S01-ADDON-BUILD-AUDIT",
+    "historical_endpoint_recovery_tests_rerun": false,
+    "stage": "build-account-addon.mjs",
+    "stage_build_executed": true,
+    "verified_intermediate_outputs": 6,
+    "entrypoint_import_executed": true,
+    "original_tests_executed": 26,
+    "prepack_source_evidence": "S01_ADDON_BUILD_EXECUTIONS_PREPACK.json",
+    "fresh_endpackage_evidence": "external ExtremeLab_S01_AddonBuildAudit_Abschlusspruefung.json (only after actual completed run)",
+    "new_tests_scope": "Original-stage failure/replay behavior and intermediate/final provenance separation",
+    "final_website_build_status": "blocked_capability",
+    "known_unfixed_build_limits": [
+      "late addon errors can leave generated files",
+      "out-of-order rerun of addon removes later account-page view link until later stage is repeated"
+    ],
+    "subsequent_reader_overwrite_observed": true,
+    "counterexamples_are_not_product_fixes": true
+  },
+  "current_remote_view20_integration": {
+    "work_id": "S01-REMOTE20-INTEGRATION-20261113",
+    "baseline_archive": "baseline/prior_addon_build_audit.zip",
+    "baseline_archive_sha256": "ffe6f6ffd813d6304306ef08070899f981834b12a0a6e11810c5d55566fdcf4d",
+    "source_binding": "evidence/S01/S01_REMOTE20_SOURCE_BINDING.json",
+    "selected_platform_source_manifest": "vendor-manifests/S01_REMOTE20_PLATFORM_SOURCE_SUBSET.json",
+    "new_production_inputs": 0,
+    "available_production_inputs": 36,
+    "missing_production_inputs": 23,
+    "original_product_source_changed": false,
+    "formal_status_changed": false,
+    "test_scope": "Original local SQLite journal/Control/Vault/RemoteView20 producer -> unchanged production api/revolution.js + security/HTTP/service -> viewer JSON. Wire transport and Vercel Blob/cache are test doubles.",
+    "known_boundaries": [
+      "Registry commit followed by cache failure can persist a pairing despite error response and no returned token. Explicit owner status/revoke/re-pair recovery is exercised.",
+      "Revoke commit followed by cache failure can leave old cached authorization until explicit forced refresh or original five-minute maximum.",
+      "Cache snapshot commit followed by failure can leave a snapshot without producer ACK. Persisted slot survives producer-instance restart; next slot restores ACK without making stale source fresh."
+    ],
+    "counterexamples_are_fixes": false,
+    "fresh_package_evidence": "external ExtremeLab_S01_RemoteViewIntegration_Abschlusspruefung.json; populated only after actual fresh ZIP replay",
+    "not_verified": [
+      "Actual SDK/cloud consistency or durability",
+      "physical HTTP/websocket transport or browser rendering",
+      "Windows DPAPI",
+      "complete website build",
+      "cTrader/native bot execution",
+      "official S01 acceptance"
+    ]
+  },
+  "current_bot_delivery_recovery": {
+    "work_id": "S01-BOT-DELIVERY-RECOVERY",
+    "source_binding_evidence": "evidence/S01/S01_BOT_DELIVERY_SOURCE_BINDING.json",
+    "sources_recovered": 38,
+    "sources_missing": 21,
+    "native_compilation": false,
+    "website_full_build": false,
+    "formal_acceptance": false,
+    "current_results": "external final verification JSON; previous execution blocks retained as historical records, not rerun",
+    "evidence": "evidence/S01/S01_BOT_DELIVERY_PREPACK.json",
+    "new_original_download_assertions": 15,
+    "new_boundary_and_binding_methods": 13,
+    "related_inventory_methods": 20,
+    "execution_status": "prepack_passed_final_evidence_external",
+    "sdk_fetch_refused": true
+  },
+  "private_live_encoding_proposal": {
+    "work_id": "S01-LIVE-ENCODING-FIX",
+    "kind": "private_patch_not_integrated",
+    "proposal": "proposals/live-encoding/proposal.json",
+    "original_sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+    "candidate_sha256": "e4c0e4f238e2ce4585f3b9cf0fa74f1530e5179378f83c4e1181bc49d11d713f",
+    "original_inputs": 38,
+    "missing_original_inputs": 21,
+    "new_recovered_inputs": 0,
+    "testing": "Native Node HTTP over AF_UNIX with original security and real zlib; only unavailable relay is synthetic.",
+    "execution_evidence": "external final verification JSON and fresh execution logs; old current_* records are historical",
+    "original_product_sources_changed": false,
+    "canonical_status_changed": false,
+    "full_website_build": false,
+    "native_bot_build": false,
+    "new_method_design": {
+      "native_http": 18,
+      "original_security": 9,
+      "relevant_inventory": 20,
+      "total": 49
+    },
+    "approval": false
+  },
+  "private_relay_snapshot_guard": {
+    "work_id": "S01-RELAY-SNAPSHOT-GUARD",
+    "basis_package_sha256": "a4e99bb549eb34e6fde1aca0b2c775c1136bf361ac0653617df29648085a133b",
+    "proposal": "proposals/relay-snapshot-guard/proposal.json",
+    "original_relay": "baseline/relay_snapshot/relay.py",
+    "original_relay_sha256": "62fb6b0d437b090be6dd0b1a1e2af1d72e6a794e1c7b14b19ea523a4fa583f8c",
+    "proposal_relay_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+    "producer_source": "baseline/relay_snapshot/ExtremeLabMobile.cs",
+    "legacy_test": "baseline/relay_snapshot/test_relay_legacy.py",
+    "runner": "tools/run_relay_snapshot_checks.py",
+    "scope": "Archived Python relay 1.3.3-qa; separate private read-projection correction only",
+    "website_sources": {
+      "complete": 38,
+      "total": 59,
+      "missing": 21,
+      "change": 0
+    },
+    "formal_status_changed": false,
+    "installed": false,
+    "independent_review": false,
+    "historical_runs_not_added_to_current_count": true,
+    "fresh_execution_authority": "External ExtremeLab_S01_RelaySnapshotGuard_Abschlusspruefung.json and Pruefprotokolle.zip",
+    "new_contract_fields": [
+      "checkpoint.invalidPayloadSequences",
+      "checkpoint.completeness=invalid_candle_payload"
+    ],
+    "limitations": [
+      "Not the missing Vercel JavaScript relay",
+      "No complete website pipeline or final UI client",
+      "No OHLC/timestamp/finite-number validation",
+      "No ingestion rejection or journal deletion",
+      "No live/demo broker, account, TLS or cloud test",
+      "No C# recompilation",
+      "No official S01 acceptance"
+    ]
+  },
+  "private_snapshot_consumer_guard": {
+    "work_id": "S01-SNAPSHOT-CONSUMER-GUARD",
+    "scope": "Private correction in archived intermediate journal-import renderer, not final live/skin client. No HTML/CSS changes or product integration.",
+    "predecessor_zip_sha256": "58a172d87232d80a0951f3e0ca65d7f5f4b0d30681492509c61e411e6d61d5f0",
+    "original_renderer_sha256": "54c83b34deba050a30ed45c51d0b5a6cdb04a47513940ec2deb6f855179f7127",
+    "proposal_renderer_sha256": "8ee1a7a5701cbc662edcbeaed5130dd7e6b4f4124efc1472ea022c06936ab8af",
+    "upstream_relay_proposal_sha256": "7882cac35c82f994d6c0725fc94ca71cce264a73cc7fcc5dfebd55abbbc62e5a",
+    "original_build_stage": "baseline/vercel_recovered/src/patch_ui.mjs reproduces the original consumer from baseline/derived_assets/public/app.js",
+    "newly_recovered_production_inputs": 0,
+    "complete_original_inputs": 38,
+    "total_original_inputs": 59,
+    "missing_original_inputs": 21,
+    "proposal_path": "proposals/snapshot-consumer-guard/app.js",
+    "product_integrated": false,
+    "final_website_client_available": false,
+    "independent_review_completed": false,
+    "canonical_status_changed": false,
+    "deployment_authorized": false,
+    "broker_or_account_action": false,
+    "verification": "tools/run_snapshot_consumer_checks.py; final outcome in external fresh-unpack execution.json, not inferred from historical reports",
+    "development_execution": "16 distinct new methods passed; final execution is authoritative; repeats are not additive",
+    "expected_fresh_test_methods": {
+      "browser": 14,
+      "source": 2,
+      "existing_inventory": 20,
+      "total": 36
+    },
+    "not_claimed": [
+      "Final website build or skin consumer integration",
+      "Live HTTP/WebSocket or Vercel integration in this invocation",
+      "Complete OHLC/schema validation",
+      "Authenticated provenance of imported snapshot metadata",
+      "Native bot compile or startup"
+    ]
+  }
+}

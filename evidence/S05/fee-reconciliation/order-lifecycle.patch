@@ -1,0 +1,229 @@
+--- a/core/planning/order-lifecycle.mjs
++++ b/core/planning/order-lifecycle.mjs
+@@ -65,7 +65,105 @@
+   for(const issue of state.incidents)if(!issue.resolved&&issue.scope==='intent'&&codes.includes(issue.code)){issue.resolved=true;issue.resolvedBy=proof;}
+ }
+ 
++// Schema 2 keeps fee confirmations in the SAME durable order snapshot. The
++// execution's original fee basis is separate from the derived enrichment, so
++// contradictory confirmations cannot make arrival order select a fee.
++function feeBasis(state,deal,source='execution'){
++  const basis={source,fee:deal.fee,feeCurrency:deal.feeCurrency};
++  return {...basis,hash:digest({intentHash:state.intentHash,source,economics:dealEconomics(deal)})};
++}
++function feeValue(value){
++  validateDecimal(value);
++  if(value.trim()!==value)invalid('PLANNING_DECIMAL_INVALID','Eine Gebühr darf keine nachgestellten Leerzeichen oder Zeilenumbrüche enthalten.');
++  return value;
++}
++function costBody(row){
++  return {eventId:row.eventId,eventHash:row.eventHash,intentHash:row.intentHash,at:row.at,
++    dealId:row.dealId,fee:row.fee,feeCurrency:row.feeCurrency};
++}
++function rememberCost(state,event){
++  const p=event.payload;
++  const row={eventId:event.id,eventHash:digest(event),intentHash:state.intentHash,at:event.at,
++    dealId:id(p.dealId,'dealId'),fee:feeValue(p.fee),feeCurrency:text(p.feeCurrency,'feeCurrency',12)};
++  state.costEvidence.push({...row,hash:digest(row)});
++}
++function activeCostIncident(state,issue){
++  incident(state,issue);
++  const {code,field=null,expected=null,actual=null,scope='intent'}=issue;
++  const row=state.incidents.find(i=>i.id===digest({code,field,expected,actual,scope}));
++  row.resolved=false;row.resolvedBy=null;
++}
++function projectCosts(state){
++  const deals=new Map([...state.fills,...state.closes].map(d=>[d.dealId,d])),byDeal=new Map();
++  for(const row of state.costEvidence){
++    if(!byDeal.has(row.dealId))byDeal.set(row.dealId,[]);
++    byDeal.get(row.dealId).push(row);
++  }
++  const pending=[],conflicted=[],legacyGaps=new Set(state.legacyCostGaps.map(g=>g.dealId));
++  for(const dealId of [...new Set([...deals.keys(),...byDeal.keys()])].sort()){
++    const d=deals.get(dealId),rows=byDeal.get(dealId)??[],variants=new Map();
++    if(d&&d.feeBasis.fee!==null){
++      const v={fee:d.feeBasis.fee,feeCurrency:d.feeBasis.feeCurrency};variants.set(canonical(v),v);
++    }
++    for(const row of rows){const v={fee:row.fee,feeCurrency:row.feeCurrency};variants.set(canonical(v),v);}
++    const conflict=variants.size>1;
++    if(conflict){
++      conflicted.push(dealId);
++      activeCostIncident(state,{code:'DEAL_COST_CONFLICT',field:'dealId',expected:'single_fee_value',
++        actual:{dealId,values:[...variants.keys()].sort().map(k=>variants.get(k))},scope:'account',
++        eventId:rows.map(r=>r.eventId).sort()[0]??null});
++    }
++    if(!d){
++      pending.push(dealId);
++      activeCostIncident(state,{code:'DEAL_COST_WITHOUT_EXECUTION',field:'dealId',expected:'known_deal',actual:dealId,
++        eventId:rows.map(r=>r.eventId).sort()[0]});
++      continue;
++    }
++    // Never change the execution/legacy basis. Multiple fee claims leave an
++    // originally unknown amount unknown, even if one arrived before the fill.
++    let value={fee:d.feeBasis.fee,feeCurrency:d.feeBasis.feeCurrency};
++    if(value.fee===null&&!conflict&&variants.size===1)value=[...variants.values()][0];
++    d.fee=value.fee;d.feeCurrency=value.feeCurrency;d.hash=digest(dealEconomics(d));
++    if(!conflict&&d.fee!==null&&rows.length&&!legacyGaps.has(dealId)){
++      for(const issue of state.incidents){
++        if(!issue.resolved&&issue.scope==='intent'&&issue.code==='DEAL_COST_WITHOUT_EXECUTION'&&issue.actual===dealId){
++          issue.resolved=true;issue.resolvedBy='matched_cost:'+dealId;
++        }
++      }
++    }
++  }
++  return {pendingCostDealIds:pending,conflictedFeeDealIds:conflicted};
++}
++function validateCostEvidence(value){
++  if(!Array.isArray(value.costEvidence)||value.costEvidence.length>MAX_EVENTS||
++     !Array.isArray(value.legacyCostGaps)||value.legacyCostGaps.length>MAX_EVENTS)
++    invalid('ORDER_STATE_INVALID','Der gespeicherte Kostenbelegvertrag fehlt oder überschreitet sein Limit.');
++  const receipts=new Map(value.receipts.map(r=>[r.id,r.hash])),ids=new Set();
++  for(const row of value.costEvidence){
++    rec(row,'costEvidence');
++    if(Object.keys(row).sort().join(',')!=='at,dealId,eventHash,eventId,fee,feeCurrency,hash,intentHash')
++      invalid('ORDER_STATE_INVALID','Unbekannte oder fehlende Kostenbelegfelder.');
++    id(row.eventId,'cost.eventId');id(row.dealId,'cost.dealId');time(row.at,'cost.at');
++    feeValue(row.fee);text(row.feeCurrency,'cost.feeCurrency',12);
++    if(ids.has(row.eventId)||!receipts.has(row.eventId)||typeof row.eventHash!=='string'||!/^[a-f0-9]{64}$/.test(row.eventHash)||receipts.get(row.eventId)!==row.eventHash||row.intentHash!==value.intentHash||
++       row.hash!==digest(costBody(row))||row.at>value.updatedAt)
++      invalid('ORDER_STATE_INVALID','Ein Kostenbeleg ist doppelt, verändert oder ohne Empfangsbeleg.');
++    ids.add(row.eventId);
++  }
++  const gaps=new Set();
++  for(const gap of value.legacyCostGaps){
++    rec(gap,'legacyCostGap');
++    if(Object.keys(gap).sort().join(',')!=='dealId,incidentId')invalid('ORDER_STATE_INVALID','Ungültiger Altdatenverweis.');
++    id(gap.dealId,'legacy.dealId');
++    const issue=value.incidents.find(i=>i.id===gap.incidentId);
++    if(gaps.has(gap.incidentId)||!issue||issue.resolved||issue.scope!=='intent'||
++       issue.code!=='DEAL_COST_WITHOUT_EXECUTION'||issue.actual!==gap.dealId)
++      invalid('ORDER_STATE_INVALID','Eine unbelegte historische Gebühr darf nicht still aufgelöst werden.');
++    gaps.add(gap.incidentId);
++  }
++}
+ function project(state){
++  const feeProjection=state.schemaVersion===2?projectCosts(state):{};
+   const knownFilled=sum(state.fills),reportedClosed=sum(state.closes),accepted=maxDecimal(state.broker.acceptedUnits??state.intent.requestedUnits,state.broker.observedMaxUnits??'0');
+   const reportedFilled=maxDecimal(state.broker.reportedFilledUnits??'0',state.broker.terminal?.filledUnits??'0');
+   const confirmedFilled=maxDecimal(maxDecimal(knownFilled,reportedFilled),reportedClosed);
+@@ -100,7 +198,7 @@
+     openPositionUnits:open,closedUnits:closed,reportedClosedUnits:reportedClosed,unmatchedCloseUnits:unmatchedCloses,unattributedFilledUnits:unattributed,
+     workingUnits:working,uncertainRemainderUnits:uncertainty,remainingPossibleFillUnits:potential,terminatedRemainderUnits:terminalFinal?remaining:'0',reservationUnits:reservation};
+   state.positions=positions;
+-  state.costs={fees:currencies.map(currency=>({currency,amount:allDeals.filter(x=>x.feeCurrency===currency&&x.fee!==null).reduce((total,x)=>addDecimal(total,x.fee),'0')})),unknownFeeDealCount:allDeals.filter(x=>x.fee===null).length};
++  state.costs={fees:currencies.map(currency=>({currency,amount:allDeals.filter(x=>x.feeCurrency===currency&&x.fee!==null).reduce((total,x)=>addDecimal(total,x.fee),'0')})),unknownFeeDealCount:allDeals.filter(x=>x.fee===null).length,...feeProjection};
+   const active=state.incidents.filter(x=>!x.resolved);
+   state.reconciliation={required:active.length>0||state.transport.status==='outcome_unknown'||unattributed!=='0'||uncertainty!=='0',
+     blockingScope:active.some(x=>x.scope==='account')?'account':active.length||state.transport.status==='outcome_unknown'||unattributed!=='0'||uncertainty!=='0'?'intent':null,
+@@ -112,7 +210,7 @@
+   rec(input,'intent');const origin={planId:id(input.planId,'planId'),intentId:id(input.intentId,'intentId'),account:account(input.account),symbol:text(input.symbol,'symbol'),side:direction(input.side),kind:kind(input.kind),
+     requestedUnits:validateDecimal(input.requestedUnits,{positive:true}),createdAt:time(input.createdAt,'createdAt'),expiresAt:time(input.expiresAt,'expiresAt',{nullable:true})};
+   if(origin.expiresAt!==null&&origin.expiresAt<=origin.createdAt)invalid('ORDER_EXPIRY_INVALID','Der ursprüngliche Ablauf muss nach Erstellung der Absicht liegen.');
+-  return project({schemaVersion:1,intent:origin,intentHash:digest(origin),updatedAt:origin.createdAt,
++  return project({schemaVersion:2,costEvidence:[],legacyCostGaps:[],intent:origin,intentHash:digest(origin),updatedAt:origin.createdAt,
+     transport:{status:'draft',operationId:null,mayHaveStarted:false},
+     broker:{orderId:null,acceptedUnits:null,acceptedAt:null,reportedFilledUnits:'0',observedMaxUnits:null,workingObservedAt:null,terminal:null,status:'not_observed'},
+     control:{status:'none',action:null,commandId:null,actor:null,requestedAt:null,confirmedAt:null,outcome:null},fills:[],closes:[],positions:[],costs:{fees:[],unknownFeeDealCount:0},incidents:[],receipts:[],quantities:{},reconciliation:{}});
+@@ -121,7 +219,10 @@
+ /** Revalidate persisted input and recompute quantities; a corrupt projection is not trusted. */
+ export function validateOrderState(value){
+   rec(value,'state');
+-  if(value.schemaVersion!==1||!object(value.intent)||digest(value.intent)!==value.intentHash)invalid('ORDER_STATE_INVALID','Die ursprüngliche Absicht ist beschädigt oder wurde verändert.');
++  if(![1,2].includes(value.schemaVersion)||!object(value.intent)||digest(value.intent)!==value.intentHash)invalid('ORDER_STATE_INVALID','Die ursprüngliche Absicht ist beschädigt oder wurde verändert.');
++  if(value.schemaVersion===1&&(['costEvidence','legacyCostGaps'].some(k=>Object.hasOwn(value,k))||
++    [...(value.fills??[]),...(value.closes??[])].some(d=>Object.hasOwn(d,'feeBasis'))))
++    invalid('ORDER_STATE_INVALID','Ein Version-2-Zustand darf nicht als Version 1 gelesen werden.');
+   const check=createOrderState(value.intent); // Revalidates the immutable contract.
+   if(!same(check.intent,value.intent)||!object(value.transport)||!TRANSPORT.includes(value.transport.status)||typeof value.transport.mayHaveStarted!=='boolean')invalid('ORDER_STATE_INVALID','Der gespeicherte Transportzustand ist ungültig.');
+   if(!Array.isArray(value.receipts)||value.receipts.length>MAX_EVENTS||!Array.isArray(value.fills)||!Array.isArray(value.closes)||value.fills.length+value.closes.length>MAX_DEALS||!Array.isArray(value.incidents)||value.incidents.length>MAX_EVENTS)invalid('ORDER_STATE_INVALID','Der gespeicherte Orderzustand überschreitet seinen Vertrag.');
+@@ -139,11 +240,41 @@
+   for(const d of [...value.fills,...value.closes]){
+     id(d.dealId,'dealId');id(d.positionId,'positionId');id(d.orderId,'deal.orderId');validateDecimal(d.units,{positive:true});time(d.executedAt,'executedAt',{nullable:true});
+     if(d.price!==null)validateDecimal(d.price);if(d.fee!==null){validateDecimal(d.fee);text(d.feeCurrency,'feeCurrency',12);}
++    if(value.schemaVersion===2){
++      const b=rec(d.feeBasis,'feeBasis');
++      if(Object.keys(b).sort().join(',')!=='fee,feeCurrency,hash,source'||!['execution','legacy_snapshot'].includes(b.source))
++        invalid('ORDER_STATE_INVALID','Die ursprüngliche Gebührenbasis fehlt.');
++      if(b.fee!==null){feeValue(b.fee);text(b.feeCurrency,'basis.feeCurrency',12);}
++      else if(b.feeCurrency!==null)invalid('ORDER_STATE_INVALID','Unbekannter Betrag besitzt keine bestätigte Gebührenwährung.');
++      const economics={...dealEconomics(d),fee:b.fee,feeCurrency:b.feeCurrency};
++      if(b.hash!==digest({intentHash:value.intentHash,source:b.source,economics}))
++        invalid('ORDER_STATE_INVALID','Die ursprüngliche Gebührenbasis ist verändert.');
++    }
+     if(typeof d.hash!=='string'||d.hash!==digest(dealEconomics(d))||deals.has(d.dealId))invalid('ORDER_STATE_INVALID','Dealbelege sind beschädigt oder doppelt.');deals.add(d.dealId);
+   }
++  if(value.schemaVersion===2)validateCostEvidence(value);
+   const detached=clone(value),recalculated=project(detached);
+   if(!same(recalculated.quantities,value.quantities)||!same(recalculated.positions,value.positions)||!same(recalculated.costs,value.costs))invalid('ORDER_STATE_INVALID','Die Mengenprojektion widerspricht den gespeicherten Belegen.');
++  if(value.schemaVersion===2&&(!same(recalculated.fills,value.fills)||!same(recalculated.closes,value.closes)||!same(recalculated.incidents,value.incidents)||!same(recalculated.reconciliation,value.reconciliation)))
++    invalid('ORDER_STATE_INVALID','Die gespeicherten Abgleichsperren widersprechen den Kostenbelegen.');
+   return recalculated;
++}
++
++/** Explicit, in-memory upgrade. Persist with the existing Store transaction;
++ * keep the original snapshot for rollback. No missing payload is invented. */
++export function upgradeOrderState(value){
++  const verified=validateOrderState(value);
++  if(verified.schemaVersion===2)return value;
++  const next=clone(verified);next.schemaVersion=2;next.costEvidence=[];
++  next.legacyCostGaps=next.incidents.filter(i=>!i.resolved&&i.scope==='intent'&&i.code==='DEAL_COST_WITHOUT_EXECUTION')
++    .map(i=>({incidentId:i.id,dealId:id(i.actual,'legacy.dealId')}));
++  for(const d of [...next.fills,...next.closes])d.feeBasis=feeBasis(next,d,'legacy_snapshot');
++  return validateOrderState(project(next));
++}
++function requireCurrentState(value){
++  const state=validateOrderState(value);
++  if(state.schemaVersion!==2)invalid('ORDER_STATE_UPGRADE_REQUIRED','Version 1 benötigt eine ausdrückliche Migration; fehlende historische Kostenbelege bleiben ungeklärt.');
++  return state;
+ }
+ 
+ function validateEvent(event){
+@@ -160,7 +291,7 @@
+ function dealEconomics(deal){return {kind:deal.kind,dealId:deal.dealId,orderId:deal.orderId,positionId:deal.positionId,units:deal.units,price:deal.price,executedAt:deal.executedAt,fee:deal.fee,feeCurrency:deal.feeCurrency};}
+ function dealFrom(event,close){
+   const p=event.payload,fee=p.fee??null,price=p.price??null;
+-  if(price!==null)validateDecimal(price);if(fee!==null)validateDecimal(fee);
++  if(price!==null)validateDecimal(price);if(fee!==null)feeValue(fee);
+   const feeCurrency=fee===null?null:text(p.feeCurrency,'feeCurrency',12);
+   const d={kind:close?'close':'fill',dealId:id(p.dealId,'dealId'),orderId:id(close?p.closingOrderId:p.orderId,'deal.orderId'),positionId:id(p.positionId,'positionId'),
+     units:validateDecimal(p.units,{positive:true}),price,executedAt:time(p.executedAt,'executedAt',{nullable:true}),fee,feeCurrency,observedAt:event.at,firstEventId:event.id};
+@@ -178,6 +309,7 @@
+     return;
+   }
+   if(state.fills.length+state.closes.length>=MAX_DEALS)invalid('ORDER_DEAL_LIMIT','Der einzelne Orderverlauf benötigt ein grösseres geprüftes Journalbudget; keine Ausführungsbelege verwerfen.');
++  deal.feeBasis=feeBasis(state,deal);
+   (close?state.closes:state.fills).push(deal);
+   if(state.transport.mayHaveStarted)state.transport.status='dispatched';
+   else incident(state,{code:'DISPATCH_PROOF_MISSING',field:'transport.mayHaveStarted',expected:true,actual:false,eventId:event.id});
+@@ -221,7 +353,7 @@
+ }
+ 
+ export function reduceOrderEvent(current,rawEvent){
+-  const verified=validateOrderState(current),event=validateEvent(rawEvent),hash=digest(event),prior=verified.receipts.find(x=>x.id===event.id);
++  const verified=requireCurrentState(current),event=validateEvent(rawEvent),hash=digest(event),prior=verified.receipts.find(x=>x.id===event.id);
+   if(prior?.hash===hash)return current;
+   const state=clone(verified);
+   if(prior){incident(state,{code:'ORDER_EVENT_CONFLICT',field:'event.id',expected:prior.hash,actual:hash,scope:'account',eventId:event.id});return project(state);}
+@@ -289,12 +421,7 @@
+       if(compareDecimal(units,maxDecimal(sum(state.fills),state.broker.reportedFilledUnits))<0){incident(state,{code:'AMENDMENT_BELOW_FILLED',field:'acceptedUnits',expected:sum(state.fills),actual:units,eventId:event.id});break;}
+       state.broker.acceptedUnits=units;state.control.status='confirmed';state.control.confirmedAt=event.at;state.control.outcome='amend_confirmed';break;
+     }
+-    case 'DEAL_COST_CONFIRMED':{
+-      const dealId=id(p.dealId,'dealId'),d=[...state.fills,...state.closes].find(x=>x.dealId===dealId),fee=validateDecimal(p.fee),currency=text(p.feeCurrency,'feeCurrency',12);
+-      if(!d){incident(state,{code:'DEAL_COST_WITHOUT_EXECUTION',field:'dealId',expected:'known_deal',actual:dealId,eventId:event.id});break;}
+-      if(d.fee!==null&&(d.fee!==fee||d.feeCurrency!==currency)){incident(state,{code:'DEAL_COST_CONFLICT',field:'fee',expected:d.fee,actual:fee,scope:'account',eventId:event.id});break;}
+-      d.fee=fee;d.feeCurrency=currency;d.hash=digest(dealEconomics(d));break;
+-    }
++    case 'DEAL_COST_CONFIRMED':rememberCost(state,event);break;
+   }
+   receipt(state,event);return project(state);
+ }
+@@ -305,7 +432,7 @@
+  * History rows carry explicit final-execution coverage, not an inferred timeout.
+  */
+ export function reconcileOrder(current,input){
+-  let state=validateOrderState(current);rec(input,'snapshot');const observed=time(input.observedAt,'observedAt'),who=account(input.account),coverage=rec(input.coverage,'coverage');
++  let state=requireCurrentState(current);rec(input,'snapshot');const observed=time(input.observedAt,'observedAt'),who=account(input.account),coverage=rec(input.coverage,'coverage');
+   for(const name of ['ordersComplete','positionsComplete','historyComplete'])if(typeof coverage[name]!=='boolean')invalid('ORDER_COVERAGE_INVALID','Die Bestandsabdeckung muss ausdrücklich bekannt sein.');
+   for(const key of ['orders','positions','deals','history'])if(!Array.isArray(input[key])||input[key].length>10000)invalid('ORDER_SNAPSHOT_LIMIT','Der Orderabgleich ist nicht begrenzt.');
+   const proof='reconcile:'+digest({account:who,observedAt:observed,coverage,orders:input.orders,positions:input.positions,deals:input.deals,history:input.history});

@@ -1,0 +1,297 @@
+{
+  "schema": "extremelab-relay-snapshot-execution/v1",
+  "work_id": "S01-RELAY-SNAPSHOT-GUARD",
+  "started_utc": "2026-11-13T10:29:00.665909+00:00",
+  "uid": 0,
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "manifest_sha256": "06874661fa272bb5bb01feee474281a71194d556cf391880626e619af68ff974",
+  "executions": [
+    {
+      "label": "01_package_before",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "verify_package.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.87,
+      "log_sha256": "1a4abcbef5c9204c791f2f570e9acf3e6443b47abfbd454fcda142a2846fae01"
+    },
+    {
+      "label": "02_patch_forward",
+      "command": [
+        "/usr/bin/patch",
+        "--batch",
+        "--fuzz=0",
+        "-p1",
+        "-i",
+        "/mnt/data/ExtremeLab_S01_RelaySnapshotGuard_Offline/proposals/relay-snapshot-guard/relay-snapshot.diff"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.013,
+      "log_sha256": "44f7dd19362baad882309c446fbd76dbf81873a714725915d7382350d7cb8fc4"
+    },
+    {
+      "label": "03_patch_reverse",
+      "command": [
+        "/usr/bin/patch",
+        "--batch",
+        "--fuzz=0",
+        "-R",
+        "-p1",
+        "-i",
+        "/mnt/data/ExtremeLab_S01_RelaySnapshotGuard_Offline/proposals/relay-snapshot-guard/relay-snapshot.diff"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.01,
+      "log_sha256": "44f7dd19362baad882309c446fbd76dbf81873a714725915d7382350d7cb8fc4"
+    },
+    {
+      "label": "04_original_scalar_counterexample",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py",
+        "--test",
+        "NativeHTTPTests.test_ws_ack_then_invalid_snapshot_is_diagnostic_not_500"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 1.026,
+      "log_sha256": "d97fce1016dc6d20a5565c927da9da070c981c53dd3016794e66889d2fdb0792",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "meaning": "Original behavior violates correction contract; excluded from passing methods"
+    },
+    {
+      "label": "05_original_string_counterexample",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py",
+        "--test",
+        "NativeHTTPTests.test_string_candles_never_become_complete_over_http"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 0.96,
+      "log_sha256": "f07f67ba19f2573b8fc7062035a03f50b4a8728c37efd82883426d235cd715b0",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "meaning": "Original behavior violates correction contract; excluded from passing methods"
+    },
+    {
+      "label": "06_candidate_snapshot",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.387,
+      "log_sha256": "c19ba86d35c64d0e1aa0a617fa1302e84bb02072b1d11ef98c4f1463075b9836",
+      "counts": {
+        "tests": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "label": "07_original_storage_regressions",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py",
+        "--legacy"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.174,
+      "log_sha256": "e7e87af7df9315d874c85a14150d39a3dad22ae9ca24ca8f0a67aee485cc76ab",
+      "counts": {
+        "tests": 24,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    {
+      "label": "08_inventory_policy",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_s01_candidate.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.729,
+      "log_sha256": "eaf9366cd3d37c91b277e0e6ed31f29ceb84fcf10b67d59014878e6cd03a46f7",
+      "methods": 12
+    },
+    {
+      "label": "09_inventory_sources",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_s01_recovery.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.676,
+      "log_sha256": "99ac2e3ade648f67a1c95e788368c840b05088fdfd5ba3550bdbcadb35d5d03b",
+      "methods": 8
+    },
+    {
+      "label": "10_mutation_discard_diagnosis",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py",
+        "--test",
+        "NativeHTTPTests.test_string_candles_never_become_complete_over_http"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 1.163,
+      "log_sha256": "8f85d47be12609840a0cac8771c6368d2df8cefe987c5229eab05cf508091002",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "behavior_regression_detected": true
+    },
+    {
+      "label": "11_mutation_complete_override",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py",
+        "--test",
+        "NativeHTTPTests.test_string_candles_never_become_complete_over_http"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 0.987,
+      "log_sha256": "34143d5498895aad451d73b71dd35ade34d19643a35d03ddc34d8c5f6708f38a",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "behavior_regression_detected": true
+    },
+    {
+      "label": "12_mutation_partial_unknown_total",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "tools/run_relay_snapshot_unit.py",
+        "--test",
+        "StoreTests.test_unknown_total_with_bad_payload_is_still_partial"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 0.96,
+      "log_sha256": "04d2989f905faaee069df74a7db87f3766d3c0f5ad5eba82b06a392ee8084307",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skipped": 0
+      },
+      "behavior_regression_detected": true
+    },
+    {
+      "label": "13_package_changed_bytes",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "verify_package.py"
+      ],
+      "returncode": 2,
+      "elapsed_seconds": 0.733,
+      "log_sha256": "edb5c9a94912b66ca6eab97d85915ef52edda337a2a5d54612aabd8d9fdd6e1d",
+      "expected_rejection": "HASH_MISMATCH"
+    },
+    {
+      "label": "14_package_extra_file",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "verify_package.py"
+      ],
+      "returncode": 2,
+      "elapsed_seconds": 0.758,
+      "log_sha256": "40ee046a6ada72e9bc3d433103bdbb9d42f30cf23182df7dad48920ee5b4bf6b",
+      "expected_rejection": "SOURCE_FILE_SET_MISMATCH"
+    },
+    {
+      "label": "15_package_symlink",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "verify_package.py"
+      ],
+      "returncode": 2,
+      "elapsed_seconds": 0.746,
+      "log_sha256": "07b0f1f337261e1eb981355001082e7260092ae02243029c2de31d84b5f4bed2",
+      "expected_rejection": "SYMLINK_NOT_ALLOWED"
+    },
+    {
+      "label": "16_package_after",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-B",
+        "verify_package.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.751,
+      "log_sha256": "1a4abcbef5c9204c791f2f570e9acf3e6443b47abfbd454fcda142a2846fae01"
+    }
+  ],
+  "success": true,
+  "original_website_inputs": 38,
+  "missing_website_inputs": 21,
+  "production_integration": false,
+  "canonical_gate_changed": false,
+  "network_scope": "real HTTP/WebSocket over Unix sockets; AF_INET/INET6/PACKET denied",
+  "broker_or_account_access": false,
+  "verified_files_before": 301,
+  "verified_source_bindings": {
+    "relay.py": "62fb6b0d437b090be6dd0b1a1e2af1d72e6a794e1c7b14b19ea523a4fa583f8c",
+    "wire-fixture.json": "cebbfb3691a7055aa2fbe6d1c81635d7557b59df87b1cf88b98c9d7dfe1f391f",
+    "ExtremeLabMobile.cs": "8e65689769f1f8f9b47c8c1b002c9b03b9c454668bdb6db1c9619c7a471609fd",
+    "test_relay_legacy.py": "dfd0573abc7a963f65c5e1bf59123f665fb2481c5cabdd954ea690c39ecf62f5"
+  },
+  "native_patch_roundtrip": "exact_proposal_and_original_bytes",
+  "verified_files_after": 301,
+  "distinct_methods": {
+    "new_source_store_http": 19,
+    "unchanged_original_storage": 24,
+    "inventory": 20,
+    "total": 63
+  },
+  "original_counterexamples_reproduced": 2,
+  "behavior_mutations_detected": 3,
+  "package_tamper_rejected": 3,
+  "finished_utc": "2026-11-13T10:29:13.744987+00:00",
+  "evidence_epoch": "PREPACK; not the final fresh-archive test"
+}

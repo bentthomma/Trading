@@ -1,0 +1,175 @@
+{
+  "catalogue_version": "9eb36bbb418eacb91c99dd404e36421e58577d4e0cd85713b01bc5c1ee3b35bd",
+  "limitations": {
+    "brokers_connected": 0,
+    "crypto_missing_hours": 19,
+    "crypto_quarantined_source_rows": 20,
+    "fx_clock_reversals": 1,
+    "fx_months_scanned": 22,
+    "fx_rows_scanned": 40674799,
+    "fx_session_or_completeness_certification": false,
+    "monthly_raw_provider_parity": false,
+    "monthly_series_loaded": true,
+    "monthly_unique_calendar_months": 336
+  },
+  "products": [
+    {
+      "availability": "verified_bytes",
+      "granularity": "1h",
+      "id": "binance-spot-h1-raw",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "raw_ohlcv_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "1h",
+      "id": "binance-open-legacy",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "legacy_representation_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "1h",
+      "id": "binance-open-exact-v1",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "exact_open_audit",
+        "segmented_open_to_open"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "tick",
+      "id": "histdata-eurusd-ticks-main",
+      "live_or_commercial_authority": false,
+      "quarantined": true,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "tick",
+      "id": "histdata-eurusd-pilot-200401",
+      "live_or_commercial_authority": false,
+      "quarantined": true,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "verified_derived_collection",
+      "granularity": "monthly",
+      "id": "monthly-factor-portfolios",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "test_code",
+      "granularity": "test_only",
+      "id": "synthetic-decoder-counterexamples",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "absent_from_inspected_archive",
+      "granularity": "unknown",
+      "id": "equity-history",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "absent_from_inspected_archive",
+      "granularity": "unknown",
+      "id": "gold-silver-history",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "absent_from_inspected_archive",
+      "granularity": "unknown",
+      "id": "other-fx-history",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": []
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_US_5F",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_US_MOM",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_US_INDUSTRY10_VW",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_EUROPE_3F",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_JAPAN_3F",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_ASIA_PACIFIC_EX_JAPAN_3F",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    },
+    {
+      "availability": "verified_bytes",
+      "granularity": "monthly",
+      "id": "FF_US_MARKET_CASH_MONTHLY",
+      "live_or_commercial_authority": false,
+      "quarantined": false,
+      "reviewed_modes": [
+        "monthly_returns_audit"
+      ]
+    }
+  ],
+  "schema": "extremelab.coverage-grid/v1"
+}

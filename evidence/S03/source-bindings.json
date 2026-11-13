@@ -1,0 +1,335 @@
+{
+  "schema": "extremelab-s03-source-bindings/1",
+  "base_revision": "b9845dc9f0434bd6ee7a94af239625a58f6b9135",
+  "plan_sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+  "sources": {
+    "active-plan": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/plan.json",
+      "sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5",
+      "bytes": 205234,
+      "role": "Verbindlicher Plan 1.2.0, nicht geändert"
+    },
+    "active-state": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/control/state.json",
+      "sha256": "132d98a56271a7a4a13f3cd086927e862088ffda0f0959e230efd27f51b3c445",
+      "bytes": 6526,
+      "role": "Unveränderter offizieller Fortschritt"
+    },
+    "approval": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/design/approval.json",
+      "sha256": "f8ab1f76c7d5a61ea11a334561019bdd2ac2be04a7a1dd7ed009275d5328de3e",
+      "bytes": 1728,
+      "role": "Historische Nutzerfreigabe nur desktop_baseline"
+    },
+    "reference-inventory": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/design/reference_inventory.json",
+      "sha256": "4941fdf744cbe169c2621ee0d8688c6dd4e56585bcc950bc1ebd4df3ac317cdc",
+      "bytes": 1465,
+      "role": "Exakte Auswahl der fünf Referenzen"
+    },
+    "design-decisions": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/design/DESIGNENTSCHEIDUNGEN.md",
+      "sha256": "e22bd0f3189de320d63ffb62b9a2c79ee8ce31dc31520bfcdecce02d09bd90d3",
+      "bytes": 8148,
+      "role": "Erhaltene Gestaltungsvorgaben; Dokumentfassung 1.1.0"
+    },
+    "motion-contract": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/design/UX_MOTION_SPEC.md",
+      "sha256": "4081b06fb93223b9a50a1d82270a29735c81c0714d86a7904d460c3483843aa5",
+      "bytes": 36387,
+      "role": "Spätere UI-Abnahmevorgaben, keine gemessene Implementierung"
+    },
+    "visual-template": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/design/visual_acceptance_TEMPLATE.json",
+      "sha256": "b766da254b260218a61e5ce8da6ea186173f6f187822c1744727a6862d35024f",
+      "bytes": 41489,
+      "role": "32 noch nicht ausgeführte Produktfälle und 14 Übergangspaare"
+    },
+    "source-catalog": {
+      "kind": "repository_file",
+      "path": "vendor-manifests/S01_CLOSEOUT_SOURCE_CATALOG.json",
+      "sha256": "f00b3fa967401470916445677faed6f0ce00aff1185c98cbfa04adccdadfa127",
+      "bytes": 48878,
+      "role": "38/59 vollständige Websiteinputs"
+    },
+    "domain-contract": {
+      "kind": "repository_file",
+      "path": "evidence/S02/domain-contract.json",
+      "sha256": "32ebe9084b01ef3ad8f4f61ea2e02737438d3d17b17318ead0fad2a942cbc66e",
+      "bytes": 3206,
+      "role": "Zielmodell; nativer Nachweis noch offen"
+    },
+    "domain-schema": {
+      "kind": "repository_file",
+      "path": "contracts/domain/v1/schema.json",
+      "sha256": "8c3f975a2543975035e9dc5c341d2e239baec82145d38a802eadfb3d10797f32",
+      "bytes": 51801,
+      "role": "Neue versionierte Datenverträge, keine fertige UI-Anbindung"
+    },
+    "capability-contract": {
+      "kind": "repository_file",
+      "path": "evidence/S02/capability-matrix.json",
+      "sha256": "9d22de8ba62fd2cb3005ce8d5dee062832eac760a3bd341f652e8e7c33c28b6c",
+      "bytes": 4121,
+      "role": "Berechtigungsgrenzen, keine Berechtigungserteilung"
+    },
+    "existing-interfaces": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/docs/architecture/existing-interfaces.md",
+      "sha256": "d07e5f40c98653f1d5947b5676430a1d0f81f1729bfa28ca01e0544b4fa250f1",
+      "bytes": 23903,
+      "role": "Vorhandene Datenwege; vergangene Tests nicht erneut ausgeführt"
+    },
+    "build-website": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/build.mjs",
+      "sha256": "6ef5455d53cd08b614bb710999b04bc901d5da12639a5424ae52536d8bc841aa",
+      "bytes": 1316,
+      "role": "Gesicherter Originalbuilder; Gesamtbuild wegen fehlender Inputs offen"
+    },
+    "build-account": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/build-account-addon.mjs",
+      "sha256": "a87c666dc997abc1ddae5399f33a105a7fd245211c27698c489441dca16fee5c",
+      "bytes": 1012,
+      "role": "Zwischenstufe Konto; kann später durch Skin überschrieben werden"
+    },
+    "build-view": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/build-revolution20.mjs",
+      "sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439",
+      "bytes": 1070,
+      "role": "Originale separate Fernansicht"
+    },
+    "view-html": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/view20-public/revolution.html",
+      "sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30",
+      "bytes": 2693,
+      "role": "Originale Fernansicht, kein finaler Skin"
+    },
+    "path-draft": {
+      "kind": "repository_file",
+      "path": "evidence/S02/scope-resolution-draft.json",
+      "sha256": "ea3a1da3e043ac3a695de0838e749124d47fcb5460a2a1693c6aee2dca75cf41",
+      "bytes": 51778,
+      "role": "Nicht aktivierter späterer Pfadentwurf"
+    },
+    "server": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/server.mjs",
+      "sha256": "f1bd2940bcbaa63056c42cbbc117adc1ad774618f012c0b39da330a5c93c0082",
+      "bytes": 62295,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "control": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/control.mjs",
+      "sha256": "9bbd47368f7b5c87a6ab402219f7d5cbc9cd173a7a244dfcbc3da741b897147c",
+      "bytes": 45218,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "store": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/store.mjs",
+      "sha256": "e7b591605442b95162ad5f760f7ead582f4f2972797d9e8b006967753f414978",
+      "bytes": 18333,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "observation": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/observation.mjs",
+      "sha256": "af52f2ec951f26bed4f1c7c51acf928cb31fe58470619fb16522e1cccdb65ba6",
+      "bytes": 17360,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "journal": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/engine-journal.mjs",
+      "sha256": "1a56bc2cd9559dea9ac5231db2cab121d6a1c73e03410951390d7693bb63dd93",
+      "bytes": 26628,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "comparison-reader": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/reconciliation-read20.mjs",
+      "sha256": "9d93d080858478ad3afbe6c65d32fe7513b5682a4999b02be253fac4c049f193",
+      "bytes": 1453,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "registry": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/registry.mjs",
+      "sha256": "a4a6b5ca140d2539128d23ff764fd72d9af78ec65f1d035a5932de5d38a3d40e",
+      "bytes": 6863,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "view-projection": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+      "sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3",
+      "bytes": 6049,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "view-ui": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution.js",
+      "sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f",
+      "bytes": 11174,
+      "role": "Unveränderte Originalquelle; Quelle verfügbar bedeutet nicht finale Integration"
+    },
+    "schema": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/schema.mjs",
+      "sha256": "caf21114e697df310a32dfc0d13e3a2671442e7e0752d533cc2f12d6094574c8",
+      "bytes": 9520,
+      "role": "Altprofil positions=0 ist budgetgesteuert; keine automatische Zielkonvertierung"
+    },
+    "capabilities": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/capabilities.mjs",
+      "sha256": "f36af396364827afba3f1cf69d1fc18aa8cb4630c4252bb80bc156748040cf57",
+      "bytes": 9843,
+      "role": "Verfügbarkeitsdokument ist kein Autorisierungstoken"
+    },
+    "assets-0": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/assets.0",
+      "sha256": "424db7b1fbe6ace3e01e626c1241a384009b3b906fc40c1e12083f428d208b6b",
+      "bytes": 4500,
+      "role": "Unveränderter komprimierter Originalinput"
+    },
+    "assets-1": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/assets.1",
+      "sha256": "f4d4549d5bca064a3b07b0ac6a0b00616bdf334b6fc488b989d9a90cabdba18b",
+      "bytes": 4500,
+      "role": "Unveränderter komprimierter Originalinput"
+    },
+    "assets-2": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/assets.2",
+      "sha256": "2568b3879d407193705746add6092ec66a3920e337106d14beb0e6c907a3d303",
+      "bytes": 4500,
+      "role": "Unveränderter komprimierter Originalinput"
+    },
+    "assets-3": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/assets.3",
+      "sha256": "d9f6386a4be6655378df36e7d047e6d83dea0a5da76ec4a00520daad11ed13f3",
+      "bytes": 2498,
+      "role": "Unveränderter komprimierter Originalinput"
+    },
+    "account-addon": {
+      "kind": "repository_file",
+      "path": "baseline/s01_reference/baseline/vercel_recovered/src/account-addon.br",
+      "sha256": "321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283",
+      "bytes": 11686,
+      "role": "Originales komprimiertes Konto-Addon"
+    },
+    "A01-r04": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/assets/design/approved/A01-r04.png",
+      "sha256": "f5eeecedc449baed83abdd29255067545ed117fe99bc956d1f40525bd83bdad0",
+      "bytes": 1471754,
+      "role": "Bestätigtes Desktopkonzept; keine Implementierung oder Kontodaten"
+    },
+    "A02-r03": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/assets/design/approved/A02-r03.png",
+      "sha256": "530d38479f1891a278d7fdb79803486094e61579b850151ae5c9b4b872068029",
+      "bytes": 1419344,
+      "role": "Bestätigtes Desktopkonzept; keine Implementierung oder Kontodaten"
+    },
+    "A03-r03": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/assets/design/approved/A03-r03.png",
+      "sha256": "4922f4fea29ad27449e244de619687a76f127159d16ffc641ee591126425ed64",
+      "bytes": 1485466,
+      "role": "Bestätigtes Desktopkonzept; keine Implementierung oder Kontodaten"
+    },
+    "A04-r03": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/assets/design/approved/A04-r03.png",
+      "sha256": "6d1452ef6a03b45e7c3873bce4d1cc71b0e83ceecd02dc06153ad8d9705419f9",
+      "bytes": 1319121,
+      "role": "Bestätigtes Desktopkonzept; keine Implementierung oder Kontodaten"
+    },
+    "A05-r03": {
+      "kind": "repository_file",
+      "path": "governance/masterplan/assets/design/approved/A05-r03.png",
+      "sha256": "8ab9847b49f7c3db6d5a76d7b674dc3716334c78b90d9b7168856bd151a4f0b4",
+      "bytes": 1454494,
+      "role": "Bestätigtes Desktopkonzept; keine Implementierung oder Kontodaten"
+    },
+    "reconciliation": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/reconciliation20.mjs",
+      "sha256": "a81776bf38e646462444b687f819fb7814ef65c3c6128f1cbc6a7dd1002e6197",
+      "bytes": 19697,
+      "role": "Unveränderte Originalquelle; nur lokale Quellen-/Projektionsprüfung, kein Brokerbetrieb."
+    },
+    "remote-producer": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/core/remote-view20.mjs",
+      "sha256": "8ace0751f7917d299a843578127a2b832051da463bdbf30723cbbeca5f46fe7c",
+      "bytes": 10642,
+      "role": "Unveränderte Originalquelle; nur lokale Quellen-/Projektionsprüfung, kein Brokerbetrieb."
+    },
+    "reconciliation-fixtures": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/tests/support/reconciliation20-fixtures.mjs",
+      "sha256": "1ffa15daf16b5227fe9bcb0240616081217515e80cd19d9fe615d46616da69a1",
+      "bytes": 3514,
+      "role": "Unveränderte Originalquelle; nur lokale Quellen-/Projektionsprüfung, kein Brokerbetrieb."
+    },
+    "reconciliation-tests": {
+      "kind": "archive_member",
+      "archive": "baseline/s01_reference/baseline/original_platform097.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/tests/reconciliation20.mjs",
+      "sha256": "1930dd285382ba227d37fc6c93a3729758c6c8400a3fa8c3eb78a194669b9580",
+      "bytes": 14886,
+      "role": "Unveränderte Originalquelle; nur lokale Quellen-/Projektionsprüfung, kein Brokerbetrieb."
+    }
+  },
+  "runtime_source_tests_repeated": true,
+  "source_count": 42,
+  "source_contract_validation": "Neue Prüfung der vorhandenen Projektion und ihrer Originaltests; Nachweis getrennt von UI-/C#-Abnahme.",
+  "runtime_source_test_scope": "Nur vorhandene Originaltests von reconciliation20.mjs plus synthetische Original-Core/SQLite-Beispiele; keine UI-, C#- oder Brokerabnahme."
+}

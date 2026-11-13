@@ -1,0 +1,484 @@
+{
+  "archives": [
+    {
+      "archive": "ExtremeLab_Run_001_S00_Ausfuehrungspaket.zip",
+      "entries_read": 39,
+      "oversize_skipped": 0,
+      "matches": 0,
+      "sha256": "1c41c06024f629db3e627e8f474a46fd9c316e0c2dda15a50a3f408dcb5386e5"
+    },
+    {
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "entries_read": 27,
+      "oversize_skipped": 0,
+      "matches": 7,
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3"
+    },
+    {
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "entries_read": 732,
+      "oversize_skipped": 0,
+      "matches": 10,
+      "sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc"
+    },
+    {
+      "archive": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "entries_read": 23,
+      "oversize_skipped": 0,
+      "matches": 4,
+      "sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b"
+    },
+    {
+      "archive": "ExtremeLab_Masterplan_1_1_Ausfuehrungspaket.zip",
+      "entries_read": 112,
+      "oversize_skipped": 0,
+      "matches": 0,
+      "sha256": "ed5076394f2c2e8d4e98887a2abda33de8f7fe15f09b0bbdbf8bb654e418cb8a"
+    },
+    {
+      "archive": "ExtremeLab_1_2_1_Quellcode_und_Tests.zip",
+      "entries_read": 31,
+      "oversize_skipped": 0,
+      "matches": 0,
+      "sha256": "8baa784faa8fada648b30ff8b81d99edd21958149dbde1fd5a720459319c3c43"
+    },
+    {
+      "archive": "ExtremeLab_Autotest_20261106.zip",
+      "entries_read": 45,
+      "oversize_skipped": 0,
+      "matches": 1,
+      "sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e"
+    },
+    {
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "entries_read": 663,
+      "oversize_skipped": 0,
+      "matches": 10,
+      "sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099"
+    },
+    {
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "entries_read": 1028,
+      "oversize_skipped": 0,
+      "matches": 10,
+      "sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d"
+    },
+    {
+      "archive": "ExtremeLab_1_2_0_Paket.zip",
+      "entries_read": 31,
+      "oversize_skipped": 0,
+      "matches": 0,
+      "sha256": "71c8acedde4cd08232be13f7687112c4390618ad675e7b158422e7ae437ef40d"
+    },
+    {
+      "archive": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+      "entries_read": 17,
+      "oversize_skipped": 0,
+      "matches": 0,
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef"
+    }
+  ],
+  "unique_matches": 20,
+  "matched_paths": [
+    "src/account-addon.br",
+    "src/api/account-live.js",
+    "src/api/desk.js",
+    "src/api/revolution.js",
+    "src/assets.0",
+    "src/assets.1",
+    "src/assets.2",
+    "src/assets.3",
+    "src/build-account-addon.mjs",
+    "src/build-release20.mjs",
+    "src/build-revolution20.mjs",
+    "src/lib/http.mjs",
+    "src/lib/projection.mjs",
+    "src/lib/security.mjs",
+    "src/lib/service.mjs",
+    "src/lib/storage.mjs",
+    "src/view20-public/revolution-link.css",
+    "src/view20-public/revolution.css",
+    "src/view20-public/revolution.html",
+    "src/view20-public/revolution.js"
+  ],
+  "matches": [
+    {
+      "production_path": "src/assets.3",
+      "vercel_uid_sha1": "5892b4a9adb564459f13e265e4827c6ee08ecdf9",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/assets.3",
+      "bytes": 2498,
+      "content_sha256": "d9f6386a4be6655378df36e7d047e6d83dea0a5da76ec4a00520daad11ed13f3"
+    },
+    {
+      "production_path": "src/assets.0",
+      "vercel_uid_sha1": "a16e1e6556d74b3c98522d7887bcd3a9f67594fa",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/assets.0",
+      "bytes": 4500,
+      "content_sha256": "424db7b1fbe6ace3e01e626c1241a384009b3b906fc40c1e12083f428d208b6b"
+    },
+    {
+      "production_path": "src/assets.1",
+      "vercel_uid_sha1": "ed82a1c6c817bbf1c9df3f841e9c7fb0852d5f46",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/assets.1",
+      "bytes": 4500,
+      "content_sha256": "f4d4549d5bca064a3b07b0ac6a0b00616bdf334b6fc488b989d9a90cabdba18b"
+    },
+    {
+      "production_path": "src/assets.2",
+      "vercel_uid_sha1": "db642b510fab96c0e028951978b144b27288dd36",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/assets.2",
+      "bytes": 4500,
+      "content_sha256": "2568b3879d407193705746add6092ec66a3920e337106d14beb0e6c907a3d303"
+    },
+    {
+      "production_path": "src/lib/security.mjs",
+      "vercel_uid_sha1": "4b2f3da24483a775228bd72b112a60e81a9de2dc",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/lib/security.mjs",
+      "bytes": 3309,
+      "content_sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f"
+    },
+    {
+      "production_path": "src/lib/storage.mjs",
+      "vercel_uid_sha1": "b7ba7cc797aa174d3c59bcc1ca1287bfe3e4b851",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/lib/storage.mjs",
+      "bytes": 2730,
+      "content_sha256": "afd0f7747f23d738ee688710f209099dd39fadbde7b5a65c0daabe07ea55931d"
+    },
+    {
+      "production_path": "src/api/desk.js",
+      "vercel_uid_sha1": "cf355cb52eea32b9b69e2a8641b3b7b33555cdcc",
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "archive_sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "archive_member": "ExtremeLab_Online_1_3/api/desk.js",
+      "bytes": 5909,
+      "content_sha256": "1aff4975b785e3ee13da1dda038faad293307685c6d46cfb76c7530f2e6fcce9"
+    },
+    {
+      "production_path": "src/api/revolution.js",
+      "vercel_uid_sha1": "13f44cf339c6f462f2676dc54885de0c2878bf86",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/api/revolution.js",
+      "bytes": 1543,
+      "content_sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139"
+    },
+    {
+      "production_path": "src/build-revolution20.mjs",
+      "vercel_uid_sha1": "b29c77450e2c140c8c3b04976c5e6c7996fc3c70",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/build-addon.mjs",
+      "bytes": 1070,
+      "content_sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439"
+    },
+    {
+      "production_path": "src/build-release20.mjs",
+      "vercel_uid_sha1": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/build-release20.mjs",
+      "bytes": 451,
+      "content_sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6"
+    },
+    {
+      "production_path": "src/lib/http.mjs",
+      "vercel_uid_sha1": "06d25ef629e4cf23e3116aa50969c5b2a1c327be",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/lib/http.mjs",
+      "bytes": 2796,
+      "content_sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7"
+    },
+    {
+      "production_path": "src/lib/projection.mjs",
+      "vercel_uid_sha1": "2fda4938aec2b8bccd28a64cdcb747730d385982",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+      "bytes": 6049,
+      "content_sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3"
+    },
+    {
+      "production_path": "src/lib/service.mjs",
+      "vercel_uid_sha1": "c03aa212b6033bab55f738dbf8c277974fcfd105",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/lib/service.mjs",
+      "bytes": 7496,
+      "content_sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604"
+    },
+    {
+      "production_path": "src/view20-public/revolution-link.css",
+      "vercel_uid_sha1": "9de921e2cc570afe2a197d918ff6e532bb0b662b",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution-link.css",
+      "bytes": 417,
+      "content_sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24"
+    },
+    {
+      "production_path": "src/view20-public/revolution.css",
+      "vercel_uid_sha1": "6dfd5a5c91cd5f9e3d25ae9c3a43645f756067b9",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution.css",
+      "bytes": 2494,
+      "content_sha256": "78c42edb7bc27a1770df3b0c4e32f9f2bfb46472c97876289de369ec5630bbfd"
+    },
+    {
+      "production_path": "src/view20-public/revolution.html",
+      "vercel_uid_sha1": "feaafe8869faa062b1c845959b3fbd97d4e020c8",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution.html",
+      "bytes": 2693,
+      "content_sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30"
+    },
+    {
+      "production_path": "src/view20-public/revolution.js",
+      "vercel_uid_sha1": "8d206b064d1c375d84cece81969ad1a38704ca8f",
+      "archive": "Th3R3v0lut10n_2_0_Integrationskandidat_alpha5.zip",
+      "archive_sha256": "8fd2237def2b6ce06bbc13f4811b6cf49c289290b7d80bd6bf5da462f004ecdc",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution.js",
+      "bytes": 11174,
+      "content_sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f"
+    },
+    {
+      "production_path": "src/account-addon.br",
+      "vercel_uid_sha1": "35011ac9bfcfa393b34bf6916210b723fccbf0ff",
+      "archive": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "archive_member": "ExtremeLab_AccountLive_1_3_4/account-addon.br",
+      "bytes": 11686,
+      "content_sha256": "321aa9d5065ade59fc22bac871ea4f2b162c12ade105e3104477a19ae7c88283"
+    },
+    {
+      "production_path": "src/build-account-addon.mjs",
+      "vercel_uid_sha1": "6cb4aa622594795b140fd4cd68f76063c76463eb",
+      "archive": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "archive_member": "ExtremeLab_AccountLive_1_3_4/build-account-addon.mjs",
+      "bytes": 1012,
+      "content_sha256": "a87c666dc997abc1ddae5399f33a105a7fd245211c27698c489441dca16fee5c"
+    },
+    {
+      "production_path": "src/lib/security.mjs",
+      "vercel_uid_sha1": "4b2f3da24483a775228bd72b112a60e81a9de2dc",
+      "archive": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "archive_member": "ExtremeLab_AccountLive_1_3_4/lib/security.mjs",
+      "bytes": 3309,
+      "content_sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f"
+    },
+    {
+      "production_path": "src/api/account-live.js",
+      "vercel_uid_sha1": "780c5eba2e1b5d7ba2fadbbdfbc7f71eb1a7cc0f",
+      "archive": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "archive_sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "archive_member": "ExtremeLab_AccountLive_1_3_4/api/account-live.js",
+      "bytes": 69,
+      "content_sha256": "ca34d9547411a6b13b89310f30cb8cec548fbd8bfaea5b488e20161ab1a382ed"
+    },
+    {
+      "production_path": "src/lib/security.mjs",
+      "vercel_uid_sha1": "4b2f3da24483a775228bd72b112a60e81a9de2dc",
+      "archive": "ExtremeLab_Autotest_20261106.zip",
+      "archive_sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+      "archive_member": "ExtremeLab_Autotest_20261106/baseline/lib/security.mjs",
+      "bytes": 3309,
+      "content_sha256": "ca3a0a1764078861c7c29f640a2d6728b85aa91e663ce129b9e5694fc987387f"
+    },
+    {
+      "production_path": "src/api/revolution.js",
+      "vercel_uid_sha1": "13f44cf339c6f462f2676dc54885de0c2878bf86",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/api/revolution.js",
+      "bytes": 1543,
+      "content_sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139"
+    },
+    {
+      "production_path": "src/build-revolution20.mjs",
+      "vercel_uid_sha1": "b29c77450e2c140c8c3b04976c5e6c7996fc3c70",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/build-addon.mjs",
+      "bytes": 1070,
+      "content_sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439"
+    },
+    {
+      "production_path": "src/build-release20.mjs",
+      "vercel_uid_sha1": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/build-release20.mjs",
+      "bytes": 451,
+      "content_sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6"
+    },
+    {
+      "production_path": "src/lib/http.mjs",
+      "vercel_uid_sha1": "06d25ef629e4cf23e3116aa50969c5b2a1c327be",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/lib/http.mjs",
+      "bytes": 2796,
+      "content_sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7"
+    },
+    {
+      "production_path": "src/lib/projection.mjs",
+      "vercel_uid_sha1": "2fda4938aec2b8bccd28a64cdcb747730d385982",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+      "bytes": 6049,
+      "content_sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3"
+    },
+    {
+      "production_path": "src/lib/service.mjs",
+      "vercel_uid_sha1": "c03aa212b6033bab55f738dbf8c277974fcfd105",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/lib/service.mjs",
+      "bytes": 7496,
+      "content_sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604"
+    },
+    {
+      "production_path": "src/view20-public/revolution-link.css",
+      "vercel_uid_sha1": "9de921e2cc570afe2a197d918ff6e532bb0b662b",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution-link.css",
+      "bytes": 417,
+      "content_sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24"
+    },
+    {
+      "production_path": "src/view20-public/revolution.css",
+      "vercel_uid_sha1": "6dfd5a5c91cd5f9e3d25ae9c3a43645f756067b9",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution.css",
+      "bytes": 2494,
+      "content_sha256": "78c42edb7bc27a1770df3b0c4e32f9f2bfb46472c97876289de369ec5630bbfd"
+    },
+    {
+      "production_path": "src/view20-public/revolution.html",
+      "vercel_uid_sha1": "feaafe8869faa062b1c845959b3fbd97d4e020c8",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution.html",
+      "bytes": 2693,
+      "content_sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30"
+    },
+    {
+      "production_path": "src/view20-public/revolution.js",
+      "vercel_uid_sha1": "8d206b064d1c375d84cece81969ad1a38704ca8f",
+      "archive": "Th3R3v0lut10n_2_0_Arbeitsstand_2026_11_07.zip",
+      "archive_sha256": "740eff0d73b88e05c80658bc449fd1ac594bc76d3ee792f5872cd47f793b4099",
+      "archive_member": "Th3R3v0lut10n_2_0/Trading_Local/integrations/vercel-view20/public/revolution.js",
+      "bytes": 11174,
+      "content_sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f"
+    },
+    {
+      "production_path": "src/api/revolution.js",
+      "vercel_uid_sha1": "13f44cf339c6f462f2676dc54885de0c2878bf86",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/api/revolution.js",
+      "bytes": 1543,
+      "content_sha256": "a7cea24ac39ed3bcffa581e7c3caa9aaaff9bdd8e80050fffa670dc256909139"
+    },
+    {
+      "production_path": "src/build-revolution20.mjs",
+      "vercel_uid_sha1": "b29c77450e2c140c8c3b04976c5e6c7996fc3c70",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/build-addon.mjs",
+      "bytes": 1070,
+      "content_sha256": "03f13b98291ecd1828e4fffcbd6b66fefd8de9f70fef6f491a6be626ef1b3439"
+    },
+    {
+      "production_path": "src/build-release20.mjs",
+      "vercel_uid_sha1": "c69bf55c8c89b66dc2e2385cdbb5c9d5e5289f38",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/build-release20.mjs",
+      "bytes": 451,
+      "content_sha256": "438e82e83a219c45cbfbc81c81d4c87e0f12914db65742e0534ac5e5cb68d1d6"
+    },
+    {
+      "production_path": "src/lib/http.mjs",
+      "vercel_uid_sha1": "06d25ef629e4cf23e3116aa50969c5b2a1c327be",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/http.mjs",
+      "bytes": 2796,
+      "content_sha256": "72ce575cdb14e68deaa9e408302996ea3fb940a0f5fd42235bdca18f77e596b7"
+    },
+    {
+      "production_path": "src/lib/projection.mjs",
+      "vercel_uid_sha1": "2fda4938aec2b8bccd28a64cdcb747730d385982",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/projection.mjs",
+      "bytes": 6049,
+      "content_sha256": "091e2d07d413c73022e677ec93e4daa58d3c366e4bd3dd541ea5510a2e3aeff3"
+    },
+    {
+      "production_path": "src/lib/service.mjs",
+      "vercel_uid_sha1": "c03aa212b6033bab55f738dbf8c277974fcfd105",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/lib/service.mjs",
+      "bytes": 7496,
+      "content_sha256": "04cb153c5bcb0eb1785810b7adf1b12dca63fb7d86d9bb9f219a3f69381b2604"
+    },
+    {
+      "production_path": "src/view20-public/revolution-link.css",
+      "vercel_uid_sha1": "9de921e2cc570afe2a197d918ff6e532bb0b662b",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution-link.css",
+      "bytes": 417,
+      "content_sha256": "e9c538d1538c2cd37632ca7aa8ad1dbc01c1e166c6bd7bcb641b37157df78c24"
+    },
+    {
+      "production_path": "src/view20-public/revolution.css",
+      "vercel_uid_sha1": "6dfd5a5c91cd5f9e3d25ae9c3a43645f756067b9",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution.css",
+      "bytes": 2494,
+      "content_sha256": "78c42edb7bc27a1770df3b0c4e32f9f2bfb46472c97876289de369ec5630bbfd"
+    },
+    {
+      "production_path": "src/view20-public/revolution.html",
+      "vercel_uid_sha1": "feaafe8869faa062b1c845959b3fbd97d4e020c8",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution.html",
+      "bytes": 2693,
+      "content_sha256": "79a48486509be407b198268fb39c031e8e435c17bbf29f1aaf7d0f70a8384f30"
+    },
+    {
+      "production_path": "src/view20-public/revolution.js",
+      "vercel_uid_sha1": "8d206b064d1c375d84cece81969ad1a38704ca8f",
+      "archive": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7.zip",
+      "archive_sha256": "6530c9c46cab0c6f411fdb682f3c74d4c9140742e698aa48c835bc60ba190c6d",
+      "archive_member": "Th3R3v0lut10n_Technik_1_0_Arbeitsstand_0_9_7/Trading_Local/integrations/vercel-view20/public/revolution.js",
+      "bytes": 11174,
+      "content_sha256": "d22330a2ff7236151db4d36a99a47352186abb2642731fd58c2fc0b7bc4af81f"
+    }
+  ]
+}

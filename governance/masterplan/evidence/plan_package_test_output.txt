@@ -1,0 +1,52 @@
+test_approved_design_still_waits_for_every_technical_dependency (test_planctl.DesignApprovalTests.test_approved_design_still_waits_for_every_technical_dependency) ... ok
+test_changed_approval_after_start_blocks_verify_and_finish (test_planctl.DesignApprovalTests.test_changed_approval_after_start_blocks_verify_and_finish) ... ok
+test_changed_approval_bytes_block_start_even_with_same_json_meaning (test_planctl.DesignApprovalTests.test_changed_approval_bytes_block_start_even_with_same_json_meaning) ... ok
+test_changing_approved_scope_or_reference_set_needs_plan_amendment (test_planctl.DesignApprovalTests.test_changing_approved_scope_or_reference_set_needs_plan_amendment) ... ok
+test_cli_works_from_other_directory_and_blocks_missing_design_reference (test_planctl.DesignApprovalTests.test_cli_works_from_other_directory_and_blocks_missing_design_reference) ... ok
+test_corrupt_or_missing_reference_blocks_start (test_planctl.DesignApprovalTests.test_corrupt_or_missing_reference_blocks_start) ... ok
+test_corrupt_reference_after_start_blocks_verify_finish_and_validate (test_planctl.DesignApprovalTests.test_corrupt_reference_after_start_blocks_verify_finish_and_validate) ... ok
+test_entry_gate_schema_rejects_unknown_incomplete_or_unsafe_fields (test_planctl.DesignApprovalTests.test_entry_gate_schema_rejects_unknown_incomplete_or_unsafe_fields) ... ok
+test_missing_approval_blocks_start_and_readiness (test_planctl.DesignApprovalTests.test_missing_approval_blocks_start_and_readiness) ... ok
+test_reference_manifest_requires_unique_nonempty_hashed_files (test_planctl.DesignApprovalTests.test_reference_manifest_requires_unique_nonempty_hashed_files) ... ok
+test_reference_paths_cannot_escape_root (test_planctl.DesignApprovalTests.test_reference_paths_cannot_escape_root) ... ok
+test_symlink_escape_is_rejected_for_approval_and_reference (test_planctl.DesignApprovalTests.test_symlink_escape_is_rejected_for_approval_and_reference) ... ok
+test_valid_approval_runs_verify_and_finish_without_extra_permission (test_planctl.DesignApprovalTests.test_valid_approval_runs_verify_and_finish_without_extra_permission) ... ok
+test_wrong_plan_bound_approval_hash_blocks_start (test_planctl.DesignApprovalTests.test_wrong_plan_bound_approval_hash_blocks_start) ... ok
+test_wrong_scope_or_incomplete_approval_is_not_accepted (test_planctl.DesignApprovalTests.test_wrong_scope_or_incomplete_approval_is_not_accepted) ... ok
+test_any_plan_byte_change_blocks_existing_lock (test_planctl.PlanTests.test_any_plan_byte_change_blocks_existing_lock) ... ok
+test_block_resume_never_marks_step_passed (test_planctl.PlanTests.test_block_resume_never_marks_step_passed) ... ok
+test_cli_failure_returns_nonzero_without_state_write (test_planctl.PlanTests.test_cli_failure_returns_nonzero_without_state_write) ... ok
+test_cycle_is_rejected (test_planctl.PlanTests.test_cycle_is_rejected) ... ok
+test_different_actor_cannot_finish (test_planctl.PlanTests.test_different_actor_cannot_finish) ... ok
+test_disabled_step_cannot_start (test_planctl.PlanTests.test_disabled_step_cannot_start) ... ok
+test_duplicate_json_keys_are_rejected (test_planctl.PlanTests.test_duplicate_json_keys_are_rejected) ... ok
+test_duplicate_step_and_check_are_rejected (test_planctl.PlanTests.test_duplicate_step_and_check_are_rejected) ... ok
+test_external_symlink_is_rejected (test_planctl.PlanTests.test_external_symlink_is_rejected) ... ok
+test_failed_check_does_not_finish (test_planctl.PlanTests.test_failed_check_does_not_finish) ... ok
+test_finish_requires_start (test_planctl.PlanTests.test_finish_requires_start) ... ok
+test_globs_have_directory_semantics (test_planctl.PlanTests.test_globs_have_directory_semantics) ... ok
+test_in_progress_limit_is_enforced (test_planctl.PlanTests.test_in_progress_limit_is_enforced) ... ok
+test_initial_only_first_step_ready (test_planctl.PlanTests.test_initial_only_first_step_ready) ... ok
+test_missing_and_incorrect_hash_are_rejected (test_planctl.PlanTests.test_missing_and_incorrect_hash_are_rejected) ... ok
+test_missing_check_is_rejected (test_planctl.PlanTests.test_missing_check_is_rejected) ... ok
+test_missing_required_artifact_is_rejected (test_planctl.PlanTests.test_missing_required_artifact_is_rejected) ... ok
+test_path_traversal_and_absolute_paths_fail (test_planctl.PlanTests.test_path_traversal_and_absolute_paths_fail) ... ok
+test_proposed_scope_also_blocks_finish (test_planctl.PlanTests.test_proposed_scope_also_blocks_finish) ... ok
+test_proposed_scope_validates_but_blocks_start_and_next (test_planctl.PlanTests.test_proposed_scope_validates_but_blocks_start_and_next) ... ok
+test_relock_requires_exact_amendment_and_resets_dependants (test_planctl.PlanTests.test_relock_requires_exact_amendment_and_resets_dependants) ... ok
+test_scope_rejects_planfiles_even_with_broad_allow (test_planctl.PlanTests.test_scope_rejects_planfiles_even_with_broad_allow) ... ok
+test_scope_rejects_unlisted_paths (test_planctl.PlanTests.test_scope_rejects_unlisted_paths) ... ok
+test_scope_resolution_requires_amendment_then_allows_start (test_planctl.PlanTests.test_scope_resolution_requires_amendment_then_allows_start) ... ok
+test_scope_respects_forbidden_even_when_allowed (test_planctl.PlanTests.test_scope_respects_forbidden_even_when_allowed) ... ok
+test_self_review_is_rejected_case_insensitively (test_planctl.PlanTests.test_self_review_is_rejected_case_insensitively) ... ok
+test_start_requires_dependencies_and_does_not_write_on_error (test_planctl.PlanTests.test_start_requires_dependencies_and_does_not_write_on_error) ... ok
+test_unhashed_proof_reference_is_rejected (test_planctl.PlanTests.test_unhashed_proof_reference_is_rejected) ... ok
+test_unknown_dependency_is_rejected (test_planctl.PlanTests.test_unknown_dependency_is_rejected) ... ok
+test_verify_is_read_only_and_success_advances_next (test_planctl.PlanTests.test_verify_is_read_only_and_success_advances_next) ... ok
+test_workorder_contains_scope_and_checks (test_planctl.PlanTests.test_workorder_contains_scope_and_checks) ... ok
+test_wrong_evidence_planhash_and_step_are_rejected (test_planctl.PlanTests.test_wrong_evidence_planhash_and_step_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 0.660s
+
+OK

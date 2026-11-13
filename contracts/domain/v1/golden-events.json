@@ -1,0 +1,831 @@
+{
+  "fixture_id": "S02-SYNTHETIC-CONFORMANCE-1",
+  "contains_real_account_data": false,
+  "catalog": {
+    "instruments": [
+      {
+        "schema_version": "extremelab.domain/1.0.0",
+        "source_schema_version": "synthetic/1",
+        "event_id": "s02-InstrumentVersion",
+        "source_id": "offline-fixture",
+        "stream_id": "stream-test-001",
+        "sequence": "1",
+        "data_version": "synthetic-data/1",
+        "run_id": "s02-test-run",
+        "bot_id": "synthetic-bot",
+        "account_ref": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "account_state": "known",
+        "instrument_version": "TEST-EURUSD-v1",
+        "policy_version": "risk-policy-v1",
+        "times": {
+          "event_time": "2026-11-13T12:00:00.000000Z",
+          "available_at": "2026-11-13T12:00:00.000000Z",
+          "received_at": "2026-11-13T12:00:00.000000Z",
+          "features_ready_at": "2026-11-13T12:00:00.000000Z",
+          "decision_at": "2026-11-13T12:00:00.000000Z",
+          "execution_not_before": "2026-11-13T12:00:00.000000Z"
+        },
+        "coverage": {
+          "completeness": "complete",
+          "gap_state": "none",
+          "truncated": false,
+          "source_sequence_through": "1"
+        },
+        "kind": "InstrumentVersion",
+        "payload": {
+          "version_id": "TEST-EURUSD-v1",
+          "symbol": "EURUSD",
+          "provider": "synthetic-provider",
+          "venue": "synthetic-venue",
+          "base_quantity_unit": "units",
+          "quote_currency": "USD",
+          "tick_size": "0.00001",
+          "pip_size": "0.0001",
+          "units_per_lot": "100000",
+          "conversion_version": "synthetic-fx-contract-v1",
+          "minimum_quantity": "1000",
+          "maximum_quantity": "100000000000000000000",
+          "quantity_step": "1000",
+          "allows_negative_price": false,
+          "effective_at": "2026-11-13T12:00:00.000000Z"
+        },
+        "payload_hash": "96d3e64b9057a78090a3262df1154867d1ec826ae772affc991cde97efe2b3f8"
+      }
+    ],
+    "policies": [
+      {
+        "schema_version": "extremelab.domain/1.0.0",
+        "source_schema_version": "synthetic/1",
+        "event_id": "s02-PolicyVersion",
+        "source_id": "offline-fixture",
+        "stream_id": "stream-test-001",
+        "sequence": "2",
+        "data_version": "synthetic-data/1",
+        "run_id": "s02-test-run",
+        "bot_id": "synthetic-bot",
+        "account_ref": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "account_state": "known",
+        "instrument_version": "TEST-EURUSD-v1",
+        "policy_version": "risk-policy-v1",
+        "times": {
+          "event_time": "2026-11-13T12:00:00.000000Z",
+          "available_at": "2026-11-13T12:00:00.000000Z",
+          "received_at": "2026-11-13T12:00:00.000000Z",
+          "features_ready_at": "2026-11-13T12:00:00.000000Z",
+          "decision_at": "2026-11-13T12:00:00.000000Z",
+          "execution_not_before": "2026-11-13T12:00:00.000000Z"
+        },
+        "coverage": {
+          "completeness": "complete",
+          "gap_state": "none",
+          "truncated": false,
+          "source_sequence_through": "2"
+        },
+        "kind": "PolicyVersion",
+        "payload": {
+          "version_id": "risk-policy-v1",
+          "revision": "7",
+          "status": "active",
+          "environment": "demo",
+          "risk_per_trade": {
+            "value": "0.01",
+            "unit": "fraction"
+          },
+          "total_risk": {
+            "value": "0.05",
+            "unit": "fraction"
+          },
+          "minimum_margin_level": {
+            "value": "3",
+            "unit": "fraction"
+          },
+          "maximum_positions": "10",
+          "allow_short": false,
+          "effective_from": "2026-11-13T12:00:00.000000Z",
+          "supersedes": null
+        },
+        "payload_hash": "8a6f69245d6b9b1b2fa9ee71fedbbd2a879fa8088c95dd1dcc1d2b5a8d5034ba"
+      }
+    ]
+  },
+  "events": [
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-InstrumentVersion",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "1",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "1"
+      },
+      "kind": "InstrumentVersion",
+      "payload": {
+        "version_id": "TEST-EURUSD-v1",
+        "symbol": "EURUSD",
+        "provider": "synthetic-provider",
+        "venue": "synthetic-venue",
+        "base_quantity_unit": "units",
+        "quote_currency": "USD",
+        "tick_size": "0.00001",
+        "pip_size": "0.0001",
+        "units_per_lot": "100000",
+        "conversion_version": "synthetic-fx-contract-v1",
+        "minimum_quantity": "1000",
+        "maximum_quantity": "100000000000000000000",
+        "quantity_step": "1000",
+        "allows_negative_price": false,
+        "effective_at": "2026-11-13T12:00:00.000000Z"
+      },
+      "payload_hash": "96d3e64b9057a78090a3262df1154867d1ec826ae772affc991cde97efe2b3f8"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-PolicyVersion",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "2",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "2"
+      },
+      "kind": "PolicyVersion",
+      "payload": {
+        "version_id": "risk-policy-v1",
+        "revision": "7",
+        "status": "active",
+        "environment": "demo",
+        "risk_per_trade": {
+          "value": "0.01",
+          "unit": "fraction"
+        },
+        "total_risk": {
+          "value": "0.05",
+          "unit": "fraction"
+        },
+        "minimum_margin_level": {
+          "value": "3",
+          "unit": "fraction"
+        },
+        "maximum_positions": "10",
+        "allow_short": false,
+        "effective_from": "2026-11-13T12:00:00.000000Z",
+        "supersedes": null
+      },
+      "payload_hash": "8a6f69245d6b9b1b2fa9ee71fedbbd2a879fa8088c95dd1dcc1d2b5a8d5034ba"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-Quote",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "3",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "3"
+      },
+      "kind": "Quote",
+      "payload": {
+        "bid": {
+          "value": "1.23456",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "ask": {
+          "value": "1.23457",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "source_quote_id": "quote-9007199254740993123"
+      },
+      "payload_hash": "49fa831565a4c31c31f343641bc270abc215130a1b6da33639e68c769396e41e"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-Bar",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "4",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "4"
+      },
+      "kind": "Bar",
+      "payload": {
+        "open_time": "2026-11-13T11:59:00.000000Z",
+        "close_time": "2026-11-13T12:00:00.000000Z",
+        "timeframe_seconds": "60",
+        "open": {
+          "value": "1.2345",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "high": {
+          "value": "1.2346",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "low": {
+          "value": "1.2344",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "close": {
+          "value": "1.23456",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "volume": {
+          "value": "1000",
+          "unit": "units",
+          "instrument_version": "TEST-EURUSD-v1",
+          "conversion_version": "synthetic-fx-contract-v1"
+        },
+        "is_closed": true
+      },
+      "payload_hash": "37dca2807c4b2a3e80455eaf908eaad6b99a8c170d266e20e7cbefce25a4928e"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-FeatureSnapshot",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "5",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "5"
+      },
+      "kind": "FeatureSnapshot",
+      "payload": {
+        "snapshot_id": "feature-test-1",
+        "feature_set_version": "feature-set-v1",
+        "input_event_ids": [
+          "s02-Bar"
+        ],
+        "features": [
+          {
+            "feature_id": "atr",
+            "value": "0.0001200000000000000000000000000000000001",
+            "unit": "USD-per-unit",
+            "formula_version": "ATR-Wilder-14-v1",
+            "absolute_tolerance": "0.000000000001"
+          }
+        ]
+      },
+      "payload_hash": "d2c3dbd590e0ccf7c062acc944f2e4c081951a3b266fdd3432e3b74ee3b84f92"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-SignalIntent",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "6",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "6"
+      },
+      "kind": "SignalIntent",
+      "payload": {
+        "signal_id": "test-signal-1",
+        "feature_snapshot_id": "feature-test-1",
+        "strategy_version": "synthetic-only-v1",
+        "side": "buy",
+        "reason_code": "FIXTURE_NOT_STRATEGY",
+        "source_run_id": "s02-test-run"
+      },
+      "payload_hash": "44cbdb2cacc5a3adfb36a911ef8fd60ec604463dd17dedba5d663411fc15ed10"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-OrderIntent",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "7",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "7"
+      },
+      "kind": "OrderIntent",
+      "payload": {
+        "intent_id": "test-order-1",
+        "signal_id": "test-signal-1",
+        "account": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "side": "buy",
+        "order_type": "limit",
+        "quantity": {
+          "value": "0.01",
+          "unit": "lots",
+          "instrument_version": "TEST-EURUSD-v1",
+          "conversion_version": "synthetic-fx-contract-v1"
+        },
+        "limit_price": {
+          "value": "1.23456",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "trigger_price": null,
+        "protective_stop": {
+          "value": "1.23",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "distance": {
+          "value": "45.6",
+          "unit": "pip",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "time_in_force": "GTC",
+        "expires_at": "2026-11-13T12:00:01.000000Z",
+        "idempotency_key": "test-idempotency-1",
+        "expected_account_revision": "9007199254740993",
+        "expected_policy_revision": "7",
+        "policy_hash": "8a6f69245d6b9b1b2fa9ee71fedbbd2a879fa8088c95dd1dcc1d2b5a8d5034ba",
+        "risk_reservation_id": "reservation-test-1",
+        "authorization_chain_id": "authorization-test-NOT-A-REAL-GRANT"
+      },
+      "payload_hash": "e5cd24d68fd51ca932f0a7f72f02d371fb993bb478f302bc0c87a576f2d3092f"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-BrokerOrder",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "8",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "8"
+      },
+      "kind": "BrokerOrder",
+      "payload": {
+        "intent_id": "test-order-1",
+        "broker_order_id": "9007199254740993124",
+        "account": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "status": "unknown",
+        "filled_quantity": {
+          "value": "0",
+          "unit": "units",
+          "instrument_version": "TEST-EURUSD-v1",
+          "conversion_version": "synthetic-fx-contract-v1"
+        },
+        "source_proof_id": "synthetic-source-proof"
+      },
+      "payload_hash": "695d8d2500b9597789e957e551fadbcea88df1b8f7655cd2c1e1442065499fe4"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-Deal",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "9",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "9"
+      },
+      "kind": "Deal",
+      "payload": {
+        "deal_id": "9007199254740993125",
+        "broker_order_id": "9007199254740993124",
+        "position_id": "9007199254740993126",
+        "account": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "side": "buy",
+        "quantity": {
+          "value": "1000",
+          "unit": "units",
+          "instrument_version": "TEST-EURUSD-v1",
+          "conversion_version": "synthetic-fx-contract-v1"
+        },
+        "price": {
+          "value": "1.23456",
+          "currency": "USD",
+          "per_unit": "units",
+          "instrument_version": "TEST-EURUSD-v1"
+        },
+        "commission": {
+          "value": "-0.123456789012345678901234567890123456789",
+          "currency": "CHF"
+        },
+        "execution_time": "2026-11-13T12:00:00.000000Z",
+        "source_proof_id": "synthetic-deal-proof"
+      },
+      "payload_hash": "6404ee0e1c0d04d00cb2709b26b0fcf9bcc83fb159082b5717d2bfe6c542da94"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-Position",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "10",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "10"
+      },
+      "kind": "Position",
+      "payload": {
+        "position_id": "9007199254740993126",
+        "account": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "status": "unknown",
+        "side": "unknown",
+        "quantity": {
+          "value": "0",
+          "unit": "units",
+          "instrument_version": "TEST-EURUSD-v1",
+          "conversion_version": "synthetic-fx-contract-v1"
+        },
+        "average_price": null,
+        "broker_protection_status": "unknown",
+        "protection_proof_id": null,
+        "original_plan_id": null,
+        "observed_at": "2026-11-13T12:00:00.000000Z"
+      },
+      "payload_hash": "ae6d46db04207240f9a173b80659268ec1a48e3495e4bea259b32a9f8c943587"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-Cashflow",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "11",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "11"
+      },
+      "kind": "Cashflow",
+      "payload": {
+        "cashflow_id": "cashflow-1",
+        "account": {
+          "provider": "synthetic-provider",
+          "account_id": "900719925474099312345",
+          "environment": "demo",
+          "currency": "CHF",
+          "model": "hedging"
+        },
+        "kind": "commission",
+        "amount": {
+          "value": "-0.123456789012345678901234567890123456789",
+          "currency": "CHF"
+        },
+        "booking_time": "2026-11-13T12:00:00.000000Z",
+        "related_deal_id": "9007199254740993125",
+        "source_proof_id": "synthetic-deal-proof"
+      },
+      "payload_hash": "2918bdac9993f226d4af26d2484fe9662913f41ecccb46a5b3d42f9059dbf11c"
+    },
+    {
+      "schema_version": "extremelab.domain/1.0.0",
+      "source_schema_version": "synthetic/1",
+      "event_id": "s02-Run",
+      "source_id": "offline-fixture",
+      "stream_id": "stream-test-001",
+      "sequence": "12",
+      "data_version": "synthetic-data/1",
+      "run_id": "s02-test-run",
+      "bot_id": "synthetic-bot",
+      "account_ref": {
+        "provider": "synthetic-provider",
+        "account_id": "900719925474099312345",
+        "environment": "demo",
+        "currency": "CHF",
+        "model": "hedging"
+      },
+      "account_state": "known",
+      "instrument_version": "TEST-EURUSD-v1",
+      "policy_version": "risk-policy-v1",
+      "times": {
+        "event_time": "2026-11-13T12:00:00.000000Z",
+        "available_at": "2026-11-13T12:00:00.000000Z",
+        "received_at": "2026-11-13T12:00:00.000000Z",
+        "features_ready_at": "2026-11-13T12:00:00.000000Z",
+        "decision_at": "2026-11-13T12:00:00.000000Z",
+        "execution_not_before": "2026-11-13T12:00:00.000000Z"
+      },
+      "coverage": {
+        "completeness": "complete",
+        "gap_state": "none",
+        "truncated": false,
+        "source_sequence_through": "12"
+      },
+      "kind": "Run",
+      "payload": {
+        "run_id": "s02-test-run",
+        "mode": "research",
+        "status": "completed",
+        "engine_hash": "1111111111111111111111111111111111111111111111111111111111111111",
+        "data_hash": "2222222222222222222222222222222222222222222222222222222222222222",
+        "protocol_hash": "3333333333333333333333333333333333333333333333333333333333333333",
+        "seed": "18446744073709551615",
+        "started_at": "2026-11-13T12:00:00.000000Z",
+        "finished_at": "2026-11-13T12:00:00.000000Z",
+        "result_hash": "4444444444444444444444444444444444444444444444444444444444444444"
+      },
+      "payload_hash": "89a60a26554b277392e048031a16dc851b53ed50a0ee62aeeae02df43bc92605"
+    }
+  ]
+}

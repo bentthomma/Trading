@@ -1,0 +1,29 @@
+{
+  "checked_utc": "2026-11-13T12:32:26.124130+00:00",
+  "predecessors": [
+    {
+      "name": "ExtremeLab_S01_InterfaceMap_Offline.zip",
+      "sha256": "d75823854890646bcc804ff86941f89af4d36da02d9e2f3ac31e5a5bc22fc13a",
+      "verified_manifest_files": 359,
+      "role": "continuation_base",
+      "complete_archive_in_output": false
+    },
+    {
+      "name": "ExtremeLab_S01_InterfaceBinding_Offline.zip",
+      "sha256": "5f79259894050cf132caa2e436b1bd8ee01a393f92f89464e3236e4917c1b1e6",
+      "verified_manifest_files": 358,
+      "role": "parallel_documentation_not_merged",
+      "complete_archive_in_output": false
+    }
+  ],
+  "source_inventory": {
+    "complete": 38,
+    "total": 59,
+    "missing_complete": 21
+  },
+  "sibling_open_findings_preserved": [
+    "IF-11 row freshness",
+    "IF-12 inconsistent inventory flag"
+  ],
+  "new_native_execution": false
+}

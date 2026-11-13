@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "base_revision": "90a8a8b81679ec786832ea6d846d6af2183ae329",
+  "original_module_sha256": "fc5c5c82f2b6dcdc73dba863a8abde35fd86728ea8261970cb375b934c2650d4",
+  "candidate_original_relative_path": "core/planning/order-lifecycle.mjs",
+  "original_bindings": "evidence/S05/source-bindings.json",
+  "original_order_schema": 1,
+  "candidate_order_schema": 2,
+  "database_schema_change": false,
+  "formal_S05_pass": false,
+  "product_integration": false,
+  "files": {
+    "evidence/S05/fee-reconciliation/order-lifecycle.patch": {
+      "bytes": 17744,
+      "sha256": "29e5509e7d240f0813eb334fa1c0cc5d2f98532011938170664dc16cc824ada1"
+    },
+    "evidence/S05/fee-reconciliation/test_deferred_costs.mjs": {
+      "bytes": 18681,
+      "sha256": "d5ed1563ceeee19e968dec39250d18e61a8a3ebb7111bb06f975ed66efed1f73"
+    },
+    "evidence/S05/fee-reconciliation/run_checks.py": {
+      "bytes": 9462,
+      "sha256": "a75bde12458390cbbfed0a01382bb4449c7f04b3d18e3cf69ce33fe5fc6d26b3"
+    },
+    "governance/masterplan/plan.json": {
+      "bytes": 205234,
+      "sha256": "bdf130088d8a8fe57b69c88f39b7234460bda3dc363d2e3d8a8ff3a2521466c5"
+    },
+    "governance/masterplan/control/state.json": {
+      "bytes": 6526,
+      "sha256": "132d98a56271a7a4a13f3cd086927e862088ffda0f0959e230efd27f51b3c445"
+    }
+  },
+  "candidate": {
+    "bytes": 42662,
+    "sha256": "1084807f73188c32e9d6cb44641ebae7202a225735280b4697b9695c358d072d",
+    "generation": "Apply order-lifecycle.patch to hash-bound original in a new disposable tree; no full duplicate source in repository."
+  }
+}

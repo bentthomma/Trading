@@ -1,0 +1,27 @@
+// Public diagnostics ONLY: no account data, authentication bypass, storage or trading.
+import http from 'node:http';
+import {WebSocketServer} from 'ws';
+export const server = http.createServer((req,res)=>{
+ res.writeHead(200,{'Content-Type':'application/json','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow'});
+ res.end(JSON.stringify({service:'ExtremeLabProbe',version:'1.3.2',diagnosticOnly:true,storesPayload:false,trading:false}));
+});
+const wss = new WebSocketServer({noServer:true,maxPayload:256,perMessageDeflate:false});
+server.on('upgrade',(req,socket,head)=>{
+ let url;try{url=new URL(req.url,'https://invalid.local');}catch{socket.destroy();return;}
+ if(url.pathname!=='/api/probe'||url.search||wss.clients.size>=8){socket.write('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n');socket.destroy();return;}
+ wss.handleUpgrade(req,socket,head,ws=>wss.emit('connection',ws));
+});
+wss.on('connection',ws=>{
+ let received=false;
+ const timer=setTimeout(()=>ws.terminate(),10000);
+ ws.on('error',()=>{});
+ ws.on('close',()=>clearTimeout(timer));
+ ws.send(JSON.stringify({type:'probe_hello',service:'ExtremeLabProbe',diagnosticOnly:true}));
+ ws.on('message',(raw,binary)=>{
+  if(received||binary){ws.close(1008,'Invalid probe');return;}received=true;
+  let m;try{m=JSON.parse(raw.toString());}catch{ws.close(1008,'Invalid probe');return;}
+  if(!m||m.type!=='probe'||typeof m.nonce!=='string'||!/^[a-f0-9]{32}$/.test(m.nonce)||Object.keys(m).sort().join(',')!=='nonce,type'){ws.close(1008,'Invalid probe');return;}
+  ws.send(JSON.stringify({type:'probe_ack',service:'ExtremeLabProbe',nonce:m.nonce,serverUtc:new Date().toISOString(),diagnosticOnly:true}),()=>ws.close(1000,'Probe complete'));
+ });
+});
+export default server;

@@ -1,0 +1,34 @@
+{
+  "schema": "extremelab-private-source-proposal/v1",
+  "work_id": "S01-LIVE-ENCODING-FIX",
+  "status": "offline_proposal_not_integrated",
+  "base_archive_sha256": "ad0e0b5fa25c68f62a4872680804193ae420399d84748be900c1263b933f8326",
+  "files": [
+    {
+      "original": "baseline/vercel_recovered/src/api/live.js",
+      "candidate": "proposals/live-encoding/src/api/live.js",
+      "original_sha256": "f57f31f122dfd980ba3dfbc7b6fe935c28ea1ad1fae4fc605ef817ed0f6baac2",
+      "candidate_sha256": "e4c0e4f238e2ce4585f3b9cf0fa74f1530e5179378f83c4e1181bc49d11d713f"
+    }
+  ],
+  "original_source_count": 38,
+  "missing_original_inputs": 21,
+  "canonical_status_changed": false,
+  "source_uid_sha1": "185785a143e2a1aaf34e767d71297c7e5370abe0",
+  "release_approval": false,
+  "canonical_scope_execution": false,
+  "scope_note": "Private source-error counterproposal. Not an activated S01 product change or amendment. Original production-source inventory remains immutable.",
+  "local_policy_decisions": [
+    "Absent header: identity",
+    "Duplicate coding entries including aliases: minimum weight",
+    "Malformed syntax: bodyless 400 after authentication/method check",
+    "No acceptable representation: bodyless 406",
+    "Implicit identity preference: 1; 4096-byte threshold only for equal preferences"
+  ],
+  "still_missing": [
+    "Original lib/relay.mjs",
+    "Complete overlay/skin sources",
+    "Actual Vercel platform acceptance",
+    "Independent review of exact candidate and negotiation policies"
+  ]
+}

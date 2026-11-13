@@ -1,0 +1,23 @@
+{
+  "work_id": "S01-BOT-DELIVERY-RECOVERY",
+  "record": "PREPACK_ONLY; external final JSON is the actual fresh-archive evidence",
+  "distinct_test_methods": 33,
+  "groups": {
+    "new_source_and_builder_methods": 7,
+    "new_download_boundary_methods": 6,
+    "relevant_inventory_regressions": 20
+  },
+  "original_download_assertions": 15,
+  "original_script_unchanged": true,
+  "production_source_files_modified": 0,
+  "new_production_inputs": 2,
+  "sources_recovered": 38,
+  "sources_missing": 21,
+  "engine_source_extraction_count": 12,
+  "sdk_download": "explicitly_refused_before_fetch_or_compiler",
+  "native_compilation": false,
+  "behavior_mutations_caught": 2,
+  "package_negative_probes_caught": 3,
+  "previous_inventory_counter_adapted": "one existing test now expects38/21, original file preserved in checkpoint",
+  "historical_tests_recounted": false
+}

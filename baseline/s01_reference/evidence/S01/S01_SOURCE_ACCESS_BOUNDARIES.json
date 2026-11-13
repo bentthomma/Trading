@@ -1,0 +1,81 @@
+{
+  "work_id": "S01-ADDON-BUILD-AUDIT",
+  "recorded_at_utc": "2026-11-13T00:06:52.929647+00:00",
+  "archive_scan": [
+    {
+      "archive": "ExtremeLab_AccountLive_1_3_4_Quellcode_und_Tests.zip",
+      "sha256": "6d01f3abb68974f5f6a6289138bb52f21cf6f9275a5fed1d388fe4ee21bc8b1b",
+      "bytes": 295516,
+      "crc_ok": true,
+      "members_scanned": 23,
+      "missing_provider_source_uid_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Autotest_20261106.zip",
+      "sha256": "385f6eaf313dcb12a4e9c42072c5642646a41e99a33269d191a87bb1fa723c0e",
+      "bytes": 2535352,
+      "crc_ok": true,
+      "members_scanned": 45,
+      "missing_provider_source_uid_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Live_Bridge_1_3_2_Paket.zip",
+      "sha256": "42437c3573a16f60be2c745d1765d0d4e5106d61a4e44c8730ef0f21733249ef",
+      "bytes": 32852,
+      "crc_ok": true,
+      "members_scanned": 17,
+      "missing_provider_source_uid_matches": []
+    },
+    {
+      "archive": "ExtremeLab_Online_1_3_Web_Vorabversion.zip",
+      "sha256": "a44875c5f0661f3991191e96b1348cfbdcb00c38526fcda055c4adf922bf41a3",
+      "bytes": 703909,
+      "crc_ok": true,
+      "members_scanned": 27,
+      "missing_provider_source_uid_matches": []
+    }
+  ],
+  "scan_scope": "Exact raw member-byte SHA1 comparison against the 23 missing provider inputs. Not exhaustive across all Library, compressed nested payloads, or external drives. No unknown suffix synthesized.",
+  "source_response_limits": [
+    {
+      "path": "src/live-overlay.b64",
+      "truncated": true,
+      "prefix_bytes": 1500,
+      "omitted_base64_chars": 7620
+    },
+    {
+      "path": "src/build-ui.mjs",
+      "truncated": true,
+      "prefix_bytes": 1500,
+      "omitted_base64_chars": 228
+    },
+    {
+      "path": "src/lib/relay.mjs",
+      "truncated": true,
+      "prefix_bytes": 1500,
+      "omitted_base64_chars": 1372
+    },
+    {
+      "path": "src/api/bot14-download.js",
+      "truncated": true,
+      "prefix_bytes": 1500,
+      "omitted_base64_chars": 1188
+    }
+  ],
+  "static_source_fetches": {
+    "download_succeeded": false,
+    "paths": [
+      "/online.js",
+      "/bot14.js"
+    ],
+    "observed_errors": [
+      "web open inaccessible/internal error",
+      "container download rejected because URL not successfully viewed"
+    ],
+    "new_share_or_access_url_created": false
+  },
+  "new_original_source_files": 0,
+  "full_source_count": 36,
+  "remaining_original_sources": 23,
+  "library_coverage": "Partial semantic searches and root ZIP listing; pagination returned contradictory cursor availability. Google Drive root listed, not comprehensively traversed. No assertion that files do not exist elsewhere."
+}
